@@ -1,0 +1,435 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="actr" parenttype="????">Actor</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Actor">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="can see in darkness" />
+        <bit index="1" name="sneak uncovering target" />
+        <bit index="2" name="sneak uncovering pursuit position" />
+        <bit index="3" name="unused" />
+        <bit index="4" name="shoot at targets last location" />
+        <bit index="5" name="try to stay still when crouched" />
+        <bit index="6" name="crouch when not in combat" />
+        <bit index="7" name="crouch when guarding" />
+        <bit index="8" name="unused" />
+        <bit index="9" name="must crouch to shoot" />
+        <bit index="10" name="panic when surprised" />
+        <bit index="11" name="always charge at enemies" />
+        <bit index="12" name="gets in vehicles with player" />
+        <bit index="13" name="start firing before aligned" />
+        <bit index="14" name="standing must move forward" />
+        <bit index="15" name="crouching must move forward" />
+        <bit index="16" name="defensive crouch while charging" />
+        <bit index="17" name="use stalking behavior" />
+        <bit index="18" name="stalking freeze if exposed" />
+        <bit index="19" name="always berserk in attacking mode" />
+        <bit index="20" name="berserking uses panicked movement" />
+        <bit index="21" name="flying" />
+        <bit index="22" name="panicked by unopposable enemy" />
+        <bit index="23" name="crouch when hiding from unopposable" />
+        <bit index="24" name="always charge in attacking mode" />
+        <bit index="25" name="dive off ledges" />
+        <bit index="26" name="swarm" />
+        <bit index="27" name="suicidal melee attack" />
+        <bit index="28" name="cannot move while crouching" />
+        <bit index="29" name="fixed crouch facing" />
+        <bit index="30" name="crouch when in line of fire" />
+        <bit index="31" name="avoid friends line of fire" />
+      </value>
+      <value type="Flags" name="more flags" length="4">
+        <bit index="0" name="avoid all enemy attack vectors" />
+        <bit index="1" name="must stand to fire" />
+        <bit index="2" name="must stop to fire" />
+        <bit index="3" name="disallow vehicle combat" />
+        <bit index="4" name="pathfinding ignores danger" />
+        <bit index="5" name="panic in groups" />
+        <bit index="6" name="no corpse shooting" />
+      </value>
+      <value type="Pad" name="_unnamed" length="12" />
+      <value type="Enum" name="type">
+        <item value="0" name="elite" />
+        <item value="1" name="jackal" />
+        <item value="2" name="grunt" />
+        <item value="3" name="hunter" />
+        <item value="4" name="engineer" />
+        <item value="5" name="assassin" />
+        <item value="6" name="player" />
+        <item value="7" name="marine" />
+        <item value="8" name="crew" />
+        <item value="9" name="combat form" />
+        <item value="10" name="infection form" />
+        <item value="11" name="carrier form" />
+        <item value="12" name="monitor" />
+        <item value="13" name="sentinel" />
+        <item value="14" name="none" />
+        <item value="15" name="mounted weapon" />
+      </value>
+      <value type="Pad" name="_unnamed2" length="2" />
+      <value type="Real" name="max vision distance">
+        <tooltip>Maximum range of sight.</tooltip>
+      </value>
+      <value type="Angle" name="central vision angle">
+        <tooltip>Horizontal angle within which we see targets out to our maximum range.</tooltip>
+      </value>
+      <value type="Angle" name="max vision angle">
+        <tooltip>Maximum horizontal angle within which we see targets at range.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed3" length="4" />
+      <value type="Angle" name="peripheral vision angle">
+        <tooltip>Maximum horizontal angle within which we can see targets out of the corner of our eye.</tooltip>
+      </value>
+      <value type="Real" name="peripheral distance">
+        <tooltip>Maximum range at which we can see targets our of the corner of our eye.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed4" length="4" />
+      <value type="RealVector3D" name="standing gun offset">
+        <tooltip>Offset of gun from feet when standing (x=forward, y=left, z=up).</tooltip>
+      </value>
+      <value type="RealVector3D" name="crouching gun offset">
+        <tooltip>Offset of gun from feet when crouch (x=forward, y=left, z=up).</tooltip>
+      </value>
+      <value type="Real" name="hearing distance">
+        <tooltip>Maximum range at which sounds can be heard.</tooltip>
+      </value>
+      <value type="Real" name="notice projectile chance">
+        <tooltip>Random chance of noticing a dangerous enemy projectile (e.g. grenade).</tooltip>
+      </value>
+      <value type="Real" name="notice vehicle chance">
+        <tooltip>Random chance of noticing a dangerous vehicle.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed5" length="8" />
+      <value type="Real" name="combat perception time">
+        <tooltip>Time required to acknowledge a visible enemy when we are already in combat or searching for them.</tooltip>
+      </value>
+      <value type="Real" name="guard perception time">
+        <tooltip>Time required to acknowledge a visible enemy when we have been alerted.</tooltip>
+      </value>
+      <value type="Real" name="no">
+        <tooltip>Time required to acknowledge a visible enemy when we are not alerted.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed6" length="12" />
+      <value type="Pad" name="_unnamed7" length="8" />
+      <value type="Real" name="dive into cover chance">
+        <tooltip>Chance of running a dive animation when moving into cover.</tooltip>
+      </value>
+      <value type="Real" name="emerge from cover chance">
+        <tooltip>Chance of running an emerge animation when uncovering a target.</tooltip>
+      </value>
+      <value type="Real" name="dive from grenade chance">
+        <tooltip>Chance of running a dive animation when moving away from a grenade.</tooltip>
+      </value>
+      <value type="Real" name="pathfinding radius" />
+      <value type="Real" name="glass ignorance chance">
+        <tooltip>Chance of not noticing that breakable surfaces have been destroyed.</tooltip>
+      </value>
+      <value type="Real" name="stationary movement dist">
+        <tooltip>Movement distance which is considered 'stationary' for considering whether we crouch.</tooltip>
+      </value>
+      <value type="Real" name="fre">
+        <tooltip>Distance which we allow sidestepping for flying units.</tooltip>
+      </value>
+      <value type="Angle" name="begin moving angle">
+        <tooltip>We must be facing this close to our target before we start applying the throttle (default.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed8" length="4" />
+      <value type="RealEulerAngles2D" name="maximum aiming deviation">
+        <tooltip>How far we can turn our weapon.</tooltip>
+      </value>
+      <value type="RealEulerAngles2D" name="maximum looking deviation">
+        <tooltip>How far we can turn our head.</tooltip>
+      </value>
+      <value type="Angle" name="noncombat look delta L">
+        <tooltip>How far we can turn our head left away from our aiming vector when not in combat.</tooltip>
+      </value>
+      <value type="Angle" name="noncombat look delta R">
+        <tooltip>How far we can turn our head right away from our aiming vector when not in combat.</tooltip>
+      </value>
+      <value type="Angle" name="combat look delta L">
+        <tooltip>How far we can turn our head left away from our aiming vector when in combat.</tooltip>
+      </value>
+      <value type="Angle" name="combat look delta R">
+        <tooltip>How far we can turn our head right away from our aiming vector when in combat.</tooltip>
+      </value>
+      <value type="RealEulerAngles2D" name="idle aiming range">
+        <tooltip>Range in which we select random directions to aim in.</tooltip>
+      </value>
+      <value type="RealEulerAngles2D" name="idle looking range">
+        <tooltip>Range in which we select random directions to look at.</tooltip>
+      </value>
+      <value type="RealBounds" name="event look time modifier">
+        <tooltip>Multiplier for how long we look at interesting events (zero = unchanged).</tooltip>
+      </value>
+      <value type="RealBounds" name="noncombat idle facing">
+        <tooltip>Rate at which we change facing when looking around randomly when not in combat.</tooltip>
+      </value>
+      <value type="RealBounds" name="noncombat idle aiming">
+        <tooltip>Rate at which we change aiming directions when looking around randomly when not in combat.</tooltip>
+      </value>
+      <value type="RealBounds" name="noncombat idle looking">
+        <tooltip>Rate at which we change look around randomly when not in combat.</tooltip>
+      </value>
+      <value type="RealBounds" name="guard idle facing">
+        <tooltip>Rate at which we change facing when looking around randomly when guarding.</tooltip>
+      </value>
+      <value type="RealBounds" name="guard idle aiming">
+        <tooltip>Rate at which we change aiming directions when looking around randomly when guarding.</tooltip>
+      </value>
+      <value type="RealBounds" name="guard idle looking">
+        <tooltip>Rate at which we change look around randomly when guarding.</tooltip>
+      </value>
+      <value type="RealBounds" name="combat idle facing">
+        <tooltip>Rate at which we change facing when looking around randomly when searching or in combat.</tooltip>
+      </value>
+      <value type="RealBounds" name="combat idle aiming">
+        <tooltip>Rate at which we change aiming directions when looking around randomly when searching or in combat.</tooltip>
+      </value>
+      <value type="RealBounds" name="combat idle looking">
+        <tooltip>Rate at which we change look around randomly when searching or in combat.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed9" length="8" />
+      <value type="Pad" name="_unnamed10" length="16" />
+      <value type="TagReference" name="DO NOT USE" extensions="weap" />
+      <value type="Pad" name="_unnamed11" length="268" />
+      <value type="TagReference" name="DO NOT USE2" extensions="proj" />
+      <value type="Enum" name="unreachable danger trigger">
+        <tooltip>Danger level of an unreachable enemy which will trigger a retreat if it continues over time.</tooltip>
+        <item value="0" name="never" />
+        <item value="1" name="visible" />
+        <item value="2" name="shooting" />
+        <item value="3" name="shooting near us" />
+        <item value="4" name="damaging us" />
+        <item value="5" name="unused" />
+        <item value="6" name="unused" />
+        <item value="7" name="unused" />
+        <item value="8" name="unused" />
+        <item value="9" name="unused" />
+      </value>
+      <value type="Enum" name="vehicle danger trigger">
+        <tooltip>Danger level of a vehicle-based enemy which will trigger a retreat if it continues over time.</tooltip>
+        <item value="0" name="never" />
+        <item value="1" name="visible" />
+        <item value="2" name="shooting" />
+        <item value="3" name="shooting near us" />
+        <item value="4" name="damaging us" />
+        <item value="5" name="unused" />
+        <item value="6" name="unused" />
+        <item value="7" name="unused" />
+        <item value="8" name="unused" />
+        <item value="9" name="unused" />
+      </value>
+      <value type="Enum" name="player danger trigger">
+        <tooltip>Danger level of an enemy player which will trigger a retreat if it continues over time.</tooltip>
+        <item value="0" name="never" />
+        <item value="1" name="visible" />
+        <item value="2" name="shooting" />
+        <item value="3" name="shooting near us" />
+        <item value="4" name="damaging us" />
+        <item value="5" name="unused" />
+        <item value="6" name="unused" />
+        <item value="7" name="unused" />
+        <item value="8" name="unused" />
+        <item value="9" name="unused" />
+      </value>
+      <value type="Pad" name="_unnamed12" length="2" />
+      <value type="RealBounds" name="danger trigger time">
+        <tooltip>How long it takes for an unopposable enemy that has the above danger level to trigger a retreat.</tooltip>
+      </value>
+      <value type="ShortInteger" name="friends killed trigger">
+        <tooltip>If this many of our friends are killed by an unopposable enemy, we trigger a retreat (zero = never use this as a retreat condition).</tooltip>
+      </value>
+      <value type="ShortInteger" name="friends retreating trigger">
+        <tooltip>If this many of our friends are retreating from an unopposable enemy, we retreat as well (zero = never use this as a retreat condition).</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed13" length="12" />
+      <value type="RealBounds" name="retreat time">
+        <tooltip>How long we retreat from an unopposable enemy for.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed14" length="8" />
+      <value type="RealBounds" name="cowering time">
+        <tooltip>How long we hide in cover after being panicked.</tooltip>
+      </value>
+      <value type="Real" name="friend killed panic chance">
+        <tooltip>Chance of panicking when we see a friend killed near us and the enemy is looking at us too.</tooltip>
+      </value>
+      <value type="Enum" name="leader type">
+        <tooltip>If we see a friend of this type killed we have a chance of panicking.</tooltip>
+        <item value="0" name="elite" />
+        <item value="1" name="jackal" />
+        <item value="2" name="grunt" />
+        <item value="3" name="hunter" />
+        <item value="4" name="engineer" />
+        <item value="5" name="assassin" />
+        <item value="6" name="player" />
+        <item value="7" name="marine" />
+        <item value="8" name="crew" />
+        <item value="9" name="combat form" />
+        <item value="10" name="infection form" />
+        <item value="11" name="carrier form" />
+        <item value="12" name="monitor" />
+        <item value="13" name="sentinel" />
+        <item value="14" name="none" />
+        <item value="15" name="mounted weapon" />
+      </value>
+      <value type="Pad" name="_unnamed15" length="2" />
+      <value type="Real" name="leader killed panic chance">
+        <tooltip>Chance of panicking when we see a leader killed.</tooltip>
+      </value>
+      <value type="Real" name="panic damage threshold">
+        <tooltip>Panic if we take this much body damage in a short period of time.</tooltip>
+      </value>
+      <value type="Real" name="surprise distance">
+        <tooltip>The distance at which newly acknowledged props or weapon impacts are considered 'close' for surprise purposes.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed16" length="28" />
+      <value type="RealBounds" name="hide behind cover time">
+        <tooltip>How long we stay behind cover after seeking cover.</tooltip>
+      </value>
+      <value type="Real" name="hide targe">
+        <tooltip>If this is non-zero then we will only seek cover if our target has not been visible recently.</tooltip>
+      </value>
+      <value type="Real" name="hide shield fraction">
+        <tooltip>Elites and jackals only seek cover if their shield falls below this value.</tooltip>
+      </value>
+      <value type="Real" name="attack shield fraction">
+        <tooltip>Elites and jackals only come out from cover to attack if they have this much shields.</tooltip>
+      </value>
+      <value type="Real" name="pursue shield fraction">
+        <tooltip>Elites and jackals only come out from cover to pursue if they have this much shields.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed17" length="16" />
+      <value type="Enum" name="defensive crouch type">
+        <item value="0" name="never" />
+        <item value="1" name="danger" />
+        <item value="2" name="low shields" />
+        <item value="3" name="hide behind shield" />
+        <item value="4" name="any target" />
+        <item value="5" name="flood shamble" />
+      </value>
+      <value type="Pad" name="_unnamed18" length="2" />
+      <value type="Real" name="attacking crouch threshold">
+        <tooltip>When in attacking mode, if our crouch type is based on shields, we crouch when our shields are below this number; if our crouch type is based on danger, we crouch when our danger is above this number.</tooltip>
+      </value>
+      <value type="Real" name="defending crouch threshold">
+        <tooltip>When in defending mode, if our crouch type is based on shields, we crouch when our shields are below this number; if our crouch type is based on danger, we crouch when our danger is above this number.</tooltip>
+      </value>
+      <value type="Real" name="min stand time">
+        <tooltip>Minimum time to remain standing (zero = default).</tooltip>
+      </value>
+      <value type="Real" name="min crouch time">
+        <tooltip>Minimum time to remain crouching (zero = default).</tooltip>
+      </value>
+      <value type="Real" name="defending hide time modifier">
+        <tooltip>How much longer we hide behind cover for when in the defending state (zero = unchanged).</tooltip>
+      </value>
+      <value type="Real" name="attacking evasion threshold">
+        <tooltip>When in attacking mode, we consider seeking cover or evading when our danger gets this high.</tooltip>
+      </value>
+      <value type="Real" name="defending evasion threshold">
+        <tooltip>When in defending mode, we consider seeking cover or evading when our danger gets this high.</tooltip>
+      </value>
+      <value type="Real" name="evasion see">
+        <tooltip>Chance of seeking cover (otherwise we just evade).</tooltip>
+      </value>
+      <value type="Real" name="evasion delay time">
+        <tooltip>Minimum time period between evasion moves.</tooltip>
+      </value>
+      <value type="Real" name="max see">
+        <tooltip>Maximum distance we will consider going to find cover (zero = default).</tooltip>
+      </value>
+      <value type="Real" name="cover damage threshold">
+        <tooltip>How much damage we must take before we are allowed to seek cover (zero = always allowed to).</tooltip>
+      </value>
+      <value type="Real" name="stalking discovery time">
+        <tooltip>If our target sees us for this long while we are stalking them, our cover is blown and we do something else (zero = never stop stalking).</tooltip>
+      </value>
+      <value type="Real" name="stalking max distance">
+        <tooltip>Distance outside of which we don't bother stalking.</tooltip>
+      </value>
+      <value type="Angle" name="stationary facing angle">
+        <tooltip>Angle outside of which we must abandon a stationary facing direction and suffer any penalties.</tooltip>
+      </value>
+      <value type="Real" name="chang">
+        <tooltip>How long we must stand up for after changing our fixed stationary facing.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed19" length="4" />
+      <value type="RealBounds" name="uncover delay time">
+        <tooltip>Time to look at target's position after it becomes visible.</tooltip>
+      </value>
+      <value type="RealBounds" name="target search time">
+        <tooltip>Time we search at target's position.</tooltip>
+      </value>
+      <value type="RealBounds" name="pursui">
+        <tooltip>Time we search at a pursuit position.</tooltip>
+      </value>
+      <value type="ShortInteger" name="num positions coord">
+        <tooltip>Number of pursuit positions to check when in coordinated group search mode.</tooltip>
+      </value>
+      <value type="ShortInteger" name="num positions normal">
+        <tooltip>Number of pursuit positions to check when in normal search mode.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed20" length="32" />
+      <value type="Real" name="melee attack delay">
+        <tooltip>How long we must wait between attempting melee attacks.</tooltip>
+      </value>
+      <value type="Real" name="melee fudge factor">
+        <tooltip>Fudge factor that offsets how far in front of the target we start our attack (negative = we try to time our attack so that we go _through_ the target). this should be close to zero, but might be bigger for suiciding units.</tooltip>
+      </value>
+      <value type="Real" name="melee charge time">
+        <tooltip>How long we can stay in the charging state trying to reach our target before we give up.</tooltip>
+      </value>
+      <value type="RealBounds" name="melee leap range">
+        <tooltip>We can launch leaping melee attacks at targets within these ranges (zero = can't leap).</tooltip>
+      </value>
+      <value type="Real" name="melee leap velocity">
+        <tooltip>How fast we spring at targets when launching a leaping melee attack.</tooltip>
+      </value>
+      <value type="Real" name="melee leap chance">
+        <tooltip>Chance of launching a leaping melee attack at a ground-based target (we always leap at flying targets).</tooltip>
+      </value>
+      <value type="Real" name="melee leap ballistic">
+        <tooltip>Fraction that controls how ballistic our leaping melee trajectory is.</tooltip>
+      </value>
+      <value type="Real" name="berserk damage amount">
+        <tooltip>Amount of body damage in a short time that makes us berserk.</tooltip>
+      </value>
+      <value type="Real" name="berserk damage threshold">
+        <tooltip>How low our body health must get before we will consider berserking.</tooltip>
+      </value>
+      <value type="Real" name="berserk proximity">
+        <tooltip>If we ever get this close to a target, we berserk.</tooltip>
+      </value>
+      <value type="Real" name="suicide sensing dist">
+        <tooltip>When we are this close to a target, we check to see if they're getting away and if so blow up.</tooltip>
+      </value>
+      <value type="Real" name="berserk grenade chance">
+        <tooltip>Chance of berserking when we have a dangerous projectile stuck to us.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed21" length="12" />
+      <value type="RealBounds" name="guard position time">
+        <tooltip>Time after which we decide to change guard positions (zero = never).</tooltip>
+      </value>
+      <value type="RealBounds" name="combat position time">
+        <tooltip>Time after which we change combat firing positions.</tooltip>
+      </value>
+      <value type="Real" name="old position avoid dist">
+        <tooltip>Distance we try and stay from our last discarded firing position.</tooltip>
+      </value>
+      <value type="Real" name="friend avoid dist">
+        <tooltip>Distance we try and stay from any friends.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed22" length="40" />
+      <value type="RealBounds" name="noncombat idle speech time">
+        <tooltip>Time between idle vocalizations when we are not in combat.</tooltip>
+      </value>
+      <value type="RealBounds" name="combat idle speech time">
+        <tooltip>Time between idle vocalizations when we are in combat or searching.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed23" length="48" />
+      <value type="Pad" name="_unnamed24" length="128" />
+      <value type="TagReference" name="DO NOT USE3" extensions="actr" />
+      <value type="Pad" name="_unnamed25" length="48" />
+    </struct>
+  </plugin>
+</xml>

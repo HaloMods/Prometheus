@@ -1,0 +1,208 @@
+<xml>
+  <name type="bipd" parenttype="unit">Biped</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="CharacterPhysicsSentinelStructBlock">
+      <value type="Angle" name="moving turning speed" disabled="false" unit="degrees per second" />
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="turns without animating" />
+        <bit index="1" name="passes through other bipeds" />
+        <bit index="2" name="immune to falling damage" />
+        <bit index="3" name="rotate while airborne" />
+        <bit index="4" name="uses limp body physics" />
+        <bit index="5" name="unused" />
+        <bit index="6" name="random speed increase" />
+        <bit index="7" name="unused" />
+        <bit index="8" name="spawn death children on destroy" />
+        <bit index="9" name="stunned by emp damage" />
+        <bit index="10" name="dead physics when stunned" />
+        <bit index="11" name="always ragdoll when dead" />
+      </value>
+      <value type="Angle" name="stationary turning threshold" disabled="false" />
+      <value type="Real" name="jump velocity" disabled="false" unit="world units per second" />
+      <value type="Real" name="maximum soft landing time" disabled="false" unit="seconds">
+        <tooltip>the longest amount of time the biped can take to recover from a soft landing</tooltip>
+      </value>
+      <value type="Real" name="maximum hard landing time" disabled="false" unit="seconds">
+        <tooltip>the longest amount of time the biped can take to recover from a hard landing</tooltip>
+      </value>
+      <value type="Real" name="minimum soft landing velocity" disabled="false" unit="world units per second">
+        <tooltip>below this velocity the biped does not react when landing</tooltip>
+      </value>
+      <value type="Real" name="minimum hard landing velocity" disabled="false" unit="world units per second">
+        <tooltip>below this velocity the biped will not do a soft landing when returning to the ground</tooltip>
+      </value>
+      <value type="Real" name="maximum hard landing velocity" disabled="false" unit="world units per second">
+        <tooltip>the velocity corresponding to the maximum landing time</tooltip>
+      </value>
+      <value type="Real" name="death hard landing velocity" disabled="false" unit="world units per second">
+        <tooltip>the maximum velocity with which a character can strike the ground and live</tooltip>
+      </value>
+      <value type="Real" name="stun duration" disabled="false">
+        <tooltip>0 is the default.  Bipeds are stuned when damaged by vehicle collisions, also some are when they take emp damage</tooltip>
+      </value>
+      <value type="Real" name="standing camera height" disabled="false" unit="world units" />
+      <value type="Real" name="crouching camera height" disabled="false" unit="world units" />
+      <value type="Real" name="crouch transition time" disabled="false" unit="seconds" />
+      <value type="Angle" name="camera interpolation start" disabled="false" unit="degrees">
+        <tooltip>looking-downward angle that starts camera interpolation to fp position</tooltip>
+      </value>
+      <value type="Angle" name="camera interpolation end" disabled="false" unit="degrees">
+        <tooltip>looking-downward angle at which camera interpolation to fp position is complete</tooltip>
+      </value>
+      <value type="Real" name="camera forward movement scale" disabled="false">
+        <tooltip>amount of fp camera movement forward and back (1.0 is full)</tooltip>
+      </value>
+      <value type="Real" name="camera side movement scale" disabled="false">
+        <tooltip>amount of fp camera movement side-to-side (1.0 is full)</tooltip>
+      </value>
+      <value type="Real" name="camera vertical movement scale" disabled="false">
+        <tooltip>amount of fp camera movement vertically (1.0 is full)</tooltip>
+      </value>
+      <value type="Real" name="camera exclusion distance" disabled="false" unit="world units">
+        <tooltip>fp camera must always be at least this far out from root node</tooltip>
+      </value>
+      <value type="Real" name="autoaim width" disabled="false" unit="world units" />
+      <value type="Flags" name="flags2" length="4" disabled="false">
+        <bit index="0" name="locked by human targeting" />
+        <bit index="1" name="locked by plasma targeting" />
+        <bit index="2" name="always locked by plasma targeting" />
+      </value>
+      <value type="Real" name="lock on distance" disabled="false" />
+      <value type="Pad" name="_unnamed0" length="16" />
+      <value type="Real" name="head shot acc scale" disabled="false">
+        <tooltip>when the biped ragdolls from a head shot it acceleartes based on this value.  0 defaults to the standard acceleration scale</tooltip>
+      </value>
+      <value type="TagReference" name="area damage effect" disabled="false" extensions="effe" />
+      <value type="Flags" name="flags3" length="4" disabled="false">
+        <bit index="0" name="centered_at_origin" />
+        <bit index="1" name="shape spherical" />
+        <bit index="2" name="use player physics" />
+        <bit index="3" name="climb any surface" />
+        <bit index="4" name="flying" />
+        <bit index="5" name="not physical" />
+        <bit index="6" name="dead character collision group" />
+      </value>
+      <value type="Real" name="height standing" disabled="false" />
+      <value type="Real" name="height crouching" disabled="false" />
+      <value type="Real" name="radius" disabled="false" />
+      <value type="Real" name="mass" disabled="false" />
+      <value type="StringId" name="living material name" disabled="false">
+        <tooltip>collision material used when character is alive</tooltip>
+      </value>
+      <value type="StringId" name="dead material name" disabled="false">
+        <tooltip>collision material used when character is dead</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed1" length="4" />
+      <struct name="SpheresBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="material" disabled="true" block="MaterialsBlock" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="unused" />
+        </value>
+        <value type="Real" name="relative mass scale" disabled="false" />
+        <value type="RealFraction" name="friction" disabled="false" />
+        <value type="RealFraction" name="restitution" disabled="false" />
+        <value type="Real" name="volume " disabled="true" />
+        <value type="Real" name="mass" disabled="true" />
+        <value type="Skip" name="_unnamed0" length="2" />
+        <value type="ShortBlockIndex" name="phantom" disabled="true" block="PhantomsBlock" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="ShortInteger" name="size" disabled="true" />
+        <value type="ShortInteger" name="count" disabled="true" />
+        <value type="Skip" name="_unnamed2" length="4" />
+        <value type="Real" name="radius" disabled="true" />
+        <value type="Skip" name="_unnamed3" length="4" />
+        <value type="ShortInteger" name="size2" disabled="true" />
+        <value type="ShortInteger" name="count2" disabled="true" />
+        <value type="Skip" name="_unnamed4" length="4" />
+        <value type="Skip" name="_unnamed5" length="4" />
+        <value type="RealVector3d" name="rotation i" disabled="true" />
+        <value type="Skip" name="_unnamed6" length="4" />
+        <value type="RealVector3d" name="rotation j" disabled="true" />
+        <value type="Skip" name="_unnamed7" length="4" />
+        <value type="RealVector3d" name="rotation k" disabled="true" />
+        <value type="Skip" name="_unnamed8" length="4" />
+        <value type="RealVector3d" name="translation" disabled="true" />
+        <value type="Skip" name="_unnamed9" length="4" />
+      </struct>
+      <value type="Block" name="dead sphere shapes" disabled="false" struct="SpheresBlock" maxelements="1024" />
+      <struct name="PillsBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="material" disabled="true" block="MaterialsBlock" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="unused" />
+        </value>
+        <value type="Real" name="relative mass scale" disabled="false" />
+        <value type="RealFraction" name="friction" disabled="false" />
+        <value type="RealFraction" name="restitution" disabled="false" />
+        <value type="Real" name="volume " disabled="true" />
+        <value type="Real" name="mass" disabled="true" />
+        <value type="Skip" name="_unnamed0" length="2" />
+        <value type="ShortBlockIndex" name="phantom" disabled="true" block="PhantomsBlock" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="ShortInteger" name="size" disabled="true" />
+        <value type="ShortInteger" name="count" disabled="true" />
+        <value type="Skip" name="_unnamed2" length="4" />
+        <value type="Real" name="radius" disabled="true" />
+        <value type="RealVector3d" name="bottom" disabled="true" />
+        <value type="Skip" name="_unnamed3" length="4" />
+        <value type="RealVector3d" name="top" disabled="true" />
+        <value type="Skip" name="_unnamed4" length="4" />
+      </struct>
+      <value type="Block" name="pill shapes" disabled="false" struct="PillsBlock" maxelements="1024" />
+      <value type="Block" name="sphere shapes" disabled="false" struct="SpheresBlock" maxelements="1024" />
+      <value type="Angle" name="maximum slope angle" disabled="false" unit="degrees" />
+      <value type="Angle" name="downhill falloff angle" disabled="false" unit="degrees" />
+      <value type="Angle" name="downhill cutoff angle" disabled="false" unit="degrees" />
+      <value type="Angle" name="uphill falloff angle" disabled="false" unit="degrees" />
+      <value type="Angle" name="uphill cutoff angle" disabled="false" unit="degrees" />
+      <value type="Real" name="downhill velocity scale" disabled="false" />
+      <value type="Real" name="uphill velocity scale" disabled="false" />
+      <value type="Pad" name="_unnamed2" length="20" />
+      <value type="Angle" name="bank angle" disabled="false" unit="degrees">
+        <tooltip>angle at which we bank left/right when sidestepping or turning while moving forwards</tooltip>
+      </value>
+      <value type="Real" name="bank apply time" disabled="false" unit="seconds">
+        <tooltip>time it takes us to apply a bank</tooltip>
+      </value>
+      <value type="Real" name="bank decay time" disabled="false" unit="seconds">
+        <tooltip>time it takes us to recover from a bank</tooltip>
+      </value>
+      <value type="Real" name="pitch ratio" disabled="false">
+        <tooltip>amount that we pitch up/down when moving up or down</tooltip>
+      </value>
+      <value type="Real" name="max velocity" disabled="false" unit="world units per second">
+        <tooltip>max velocity when not crouching</tooltip>
+      </value>
+      <value type="Real" name="max sidestep velocity" disabled="false" unit="world units per second">
+        <tooltip>max sideways or up/down velocity when not crouching</tooltip>
+      </value>
+      <value type="Real" name="acceleration" disabled="false" unit="world units per second squared" />
+      <value type="Real" name="deceleration" disabled="false" unit="world units per second squared" />
+      <value type="Angle" name="angular velocity maximum" disabled="false" unit="degrees per second">
+        <tooltip>turn rate</tooltip>
+      </value>
+      <value type="Angle" name="angular acceleration maximum" disabled="false" unit="degrees per second squared">
+        <tooltip>turn acceleration rate</tooltip>
+      </value>
+      <value type="Real" name="crouch velocity modifier" disabled="false" unit="[0,1]">
+        <tooltip>how much slower we fly if crouching (zero = same speed)</tooltip>
+      </value>
+      <struct name="ContactPointBlock">
+        <value type="StringId" name="marker name" disabled="false" blockname="true" />
+      </struct>
+      <value type="Block" name="contact points" disabled="false" struct="ContactPointBlock" maxelements="3">
+        <tooltip>these are the points where the biped touches the ground</tooltip>
+      </value>
+      <value type="TagReference" name="reanimation character" disabled="false" extensions="char">
+        <tooltip>when the flood reanimate this guy, he turns into a ...</tooltip>
+      </value>
+      <value type="TagReference" name="death spawn character" disabled="false" extensions="char">
+        <tooltip>when I die, out of the ashes of my death crawls a ...</tooltip>
+      </value>
+      <value type="ShortInteger" name="death spawn count" disabled="false" />
+      <value type="Pad" name="_unnamed3" length="2" />
+    </struct>
+  </plugin>
+</xml>

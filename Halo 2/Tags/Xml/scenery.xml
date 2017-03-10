@@ -1,0 +1,25 @@
+<xml>
+  <name type="scen" parenttype="obje">Scenery</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="SceneryBlock">
+      <value type="Enum" name="pathfinding policy" length="2" disabled="false">
+        <item value="0" name="Pathfinding CUT-OUT" />
+        <item value="1" name="Pathfinding STATIC" />
+        <item value="2" name="Pathfinding DYNAMIC" />
+        <item value="3" name="Pathfinding NONE" />
+      </value>
+      <value type="Flags" name="flags" length="2" disabled="false">
+        <bit index="0" name="physically simulates">
+          <tooltip>stimulates?</tooltip>
+        </bit>
+      </value>
+      <value type="Enum" name="lightmapping policy" length="2" disabled="false">
+        <item value="0" name="Per-Vertex" />
+        <item value="1" name="Per-Pixel (not implemented)" />
+        <item value="2" name="Dynamic" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+    </struct>
+  </plugin>
+</xml>

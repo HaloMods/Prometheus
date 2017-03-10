@@ -1,0 +1,67 @@
+<xml>
+  <name type="whip" parenttype="????">CellularAutomata2d</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="CellularAutomata2dBlock">
+      <value type="ShortInteger" name="updates per second" disabled="false" unit="Hz" />
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Real" name="dead cell penalty" disabled="false" />
+      <value type="Real" name="live cell bonus" disabled="false" />
+      <value type="Pad" name="_unnamed1" length="80" />
+      <value type="ShortInteger" name="width" disabled="false" unit="cells" />
+      <value type="ShortInteger" name="height" disabled="false" unit="cells" />
+      <value type="Real" name="cell width" disabled="false" unit="world units" />
+      <value type="Real" name="height2" disabled="false" unit="world units" />
+      <value type="RealVector2d" name="velocity" disabled="false" unit="cells/update" />
+      <value type="Pad" name="_unnamed2" length="28" />
+      <value type="StringId" name="marker" disabled="false" />
+      <value type="Flags" name="interpolation flags" length="4" disabled="false">
+        <bit index="0" name="blend in hsv">
+          <tooltip>blends colors in hsv rather than rgb space</tooltip>
+        </bit>
+        <bit index="1" name="...more colors">
+          <tooltip>blends colors through more hues (goes the long way around the color wheel)</tooltip>
+        </bit>
+      </value>
+      <value type="RealRgbColor" name="base color" disabled="false" />
+      <value type="RealRgbColor" name="peak color" disabled="false" />
+      <value type="Pad" name="_unnamed3" length="76" />
+      <value type="ShortInteger" name="width2" disabled="false" unit="cells" />
+      <value type="ShortInteger" name="height3" disabled="false" unit="cells" />
+      <value type="Real" name="cell width2" disabled="false" unit="world units" />
+      <value type="RealVector2d" name="velocity2" disabled="false" unit="cells/update" />
+      <value type="Pad" name="_unnamed4" length="48" />
+      <value type="StringId" name="marker2" disabled="false" />
+      <value type="ShortInteger" name="texture width" disabled="false" unit="cells" />
+      <value type="Pad" name="_unnamed5" length="2" />
+      <value type="Pad" name="_unnamed6" length="48" />
+      <value type="TagReference" name="texture" disabled="false" extensions="bitm" />
+      <value type="Pad" name="_unnamed7" length="160" />
+      <struct name="RulesBlock">
+        <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+        <value type="RealRgbColor" name="tint color" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="32" />
+        <struct name="StatesBlock">
+          <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+          <value type="RealRgbColor" name="color" disabled="false" />
+          <value type="ShortInteger" name="counts as" disabled="false" unit="neighbors" />
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Real" name="initial placement weight" disabled="false" />
+          <value type="Pad" name="_unnamed1" length="24" />
+          <value type="ShortBlockIndex" name="zero" disabled="false" block="StatesBlock" />
+          <value type="ShortBlockIndex" name="one" disabled="false" block="StatesBlock" />
+          <value type="ShortBlockIndex" name="two" disabled="false" block="StatesBlock" />
+          <value type="ShortBlockIndex" name="three" disabled="false" block="StatesBlock" />
+          <value type="ShortBlockIndex" name="four" disabled="false" block="StatesBlock" />
+          <value type="ShortBlockIndex" name="five" disabled="false" block="StatesBlock" />
+          <value type="ShortBlockIndex" name="six" disabled="false" block="StatesBlock" />
+          <value type="ShortBlockIndex" name="seven" disabled="false" block="StatesBlock" />
+          <value type="ShortBlockIndex" name="eight" disabled="false" block="StatesBlock" />
+          <value type="Pad" name="_unnamed2" length="2" />
+        </struct>
+        <value type="Block" name="states" disabled="false" struct="StatesBlock" maxelements="16" />
+      </struct>
+      <value type="Block" name="rules" disabled="false" struct="RulesBlock" maxelements="16" />
+    </struct>
+  </plugin>
+</xml>

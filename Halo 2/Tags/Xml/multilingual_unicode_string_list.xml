@@ -1,0 +1,23 @@
+<xml>
+  <name type="unic" parenttype="????">MultilingualUnicodeStringList</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="MultilingualUnicodeStringListBlock">
+      <struct name="MultilingualUnicodeStringReferenceBlock">
+        <value type="StringId" name="string id" disabled="false" />
+        <value type="LongInteger" name="english offset" disabled="false" />
+        <value type="LongInteger" name="japanese offset" disabled="false" />
+        <value type="LongInteger" name="german offset" disabled="false" />
+        <value type="LongInteger" name="french offset" disabled="false" />
+        <value type="LongInteger" name="spanish offset" disabled="false" />
+        <value type="LongInteger" name="italian offset" disabled="false" />
+        <value type="LongInteger" name="korean offset" disabled="false" />
+        <value type="LongInteger" name="chinese offset" disabled="false" />
+        <value type="LongInteger" name="portuguese offset" disabled="false" />
+      </struct>
+      <value type="Block" name="string references" disabled="false" struct="MultilingualUnicodeStringReferenceBlock" maxelements="9216" />
+      <value type="Data" name="string data utf8" disabled="false" />
+      <value type="Pad" name="_unnamed0" length="36" />
+    </struct>
+  </plugin>
+</xml>

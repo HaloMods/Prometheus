@@ -1,0 +1,17 @@
+<xml>
+  <name type="mply" parenttype="????">MultiplayerScenarioDescription</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="MultiplayerScenarioDescriptionBlock">
+      <struct name="ScenarioDescriptionBlock">
+        <value type="TagReference" name="descriptive bitmap" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="displayed map name" disabled="false" extensions="unic" />
+        <value type="FixedLengthString" name="scenario tag directory path" disabled="false">
+          <tooltip>this is the path to the directory containing the scenario tag file of the same name</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="4" />
+      </struct>
+      <value type="Block" name="multiplayer scenarios" disabled="false" struct="ScenarioDescriptionBlock" maxelements="32" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="item" parenttype="obje">Item</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Item">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="always maintains z up" />
+        <bit index="1" name="destroyed by explosions" />
+        <bit index="2" name="unaffected by gravity" />
+      </value>
+      <value type="ShortInteger" name="message index" />
+      <value type="ShortInteger" name="sort order" />
+      <value type="Real" name="scale" />
+      <value type="ShortInteger" name="hud message value scale" />
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Pad" name="_unnamed2" length="16" />
+      <value type="Enum" name="A in">
+        <item value="0" name="none" />
+      </value>
+      <value type="Enum" name="B in">
+        <item value="0" name="none" />
+      </value>
+      <value type="Enum" name="C in">
+        <item value="0" name="none" />
+      </value>
+      <value type="Enum" name="D in">
+        <item value="0" name="none" />
+      </value>
+      <value type="Pad" name="_unnamed3" length="164" />
+      <value type="TagReference" name="material effects" extensions="foot" />
+      <value type="TagReference" name="collision sound" extensions="snd!" />
+      <value type="Pad" name="_unnamed4" length="120" />
+      <value type="RealBounds" name="detonation delay" />
+      <value type="TagReference" name="detonating effect" extensions="effe" />
+      <value type="TagReference" name="detonation effect" extensions="effe" />
+    </struct>
+  </plugin>
+</xml>

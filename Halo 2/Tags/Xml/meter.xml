@@ -1,0 +1,42 @@
+<xml>
+  <name type="metr" parenttype="????">Meter</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="MeterBlock">
+      <value type="Flags" name="flags" length="4" disabled="false" />
+      <value type="TagReference" name="stencil bitmaps" disabled="false" extensions="bitm">
+        <tooltip>two bitmaps specifying the mask and the meter levels</tooltip>
+      </value>
+      <value type="TagReference" name="source bitmap" disabled="false" extensions="bitm">
+        <tooltip>optional bitmap to draw into the unmasked regions of the meter (modulated by the colors below)</tooltip>
+      </value>
+      <value type="ShortInteger" name="stencil sequence index" disabled="false" />
+      <value type="ShortInteger" name="source sequence index" disabled="false" />
+      <value type="Pad" name="_unnamed0" length="16" />
+      <value type="Pad" name="_unnamed1" length="4" />
+      <value type="Enum" name="interpolate colors" length="2" disabled="false">
+        <item value="0" name="linearly" />
+        <item value="1" name="faster near empty" />
+        <item value="2" name="faster near full" />
+        <item value="3" name="through random noise" />
+      </value>
+      <value type="Enum" name="anchor colors" length="2" disabled="false">
+        <item value="0" name="at both ends" />
+        <item value="1" name="at empty" />
+        <item value="2" name="at full" />
+      </value>
+      <value type="Pad" name="_unnamed2" length="8" />
+      <value type="RealArgbColor" name="empty color" disabled="false" />
+      <value type="RealArgbColor" name="full color" disabled="false" />
+      <value type="Pad" name="_unnamed3" length="20" />
+      <value type="Real" name="unmask distance" disabled="false" unit="meter units">
+        <tooltip>fade from fully masked to fully unmasked this distance beyond full (and below empty)</tooltip>
+      </value>
+      <value type="Real" name="mask distance" disabled="false" unit="meter units">
+        <tooltip>fade from fully unmasked to fully masked this distance below full (and beyond empty)</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed4" length="20" />
+      <value type="Data" name="encoded stencil" disabled="false" />
+    </struct>
+  </plugin>
+</xml>

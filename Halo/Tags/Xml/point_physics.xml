@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="pphy" parenttype="????">PointPhysics</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="PointPhysics">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="flamethrower particle collision" />
+        <bit index="1" name="collides with structures" />
+        <bit index="2" name="collides with water surface" />
+        <bit index="3" name="uses simple wind">
+          <tooltip>The wind on this point won't have high-frequency variations.</tooltip>
+        </bit>
+        <bit index="4" name="uses damped wind">
+          <tooltip>The wind on this point will be artificially slow.</tooltip>
+        </bit>
+        <bit index="5" name="no gravity">
+          <tooltip>The point is not affected by gravity.</tooltip>
+        </bit>
+      </value>
+      <value type="Pad" name="_unnamed" length="28" />
+      <value type="Real" name="density" />
+      <value type="Real" name="air friction" />
+      <value type="Real" name="water friction" />
+      <value type="Real" name="surface friction">
+        <tooltip>When hitting the ground or interior, percentage of velocity lost in one collision.</tooltip>
+      </value>
+      <value type="Real" name="elasticity">
+        <tooltip>0.0 is inelastic collisions (no bounce) 1.0 is perfectly elastic (reflected velocity equals incoming velocity).</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed2" length="12" />
+    </struct>
+  </plugin>
+</xml>

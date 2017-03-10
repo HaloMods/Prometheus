@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="hud#" parenttype="????">HudNumber</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="HudNumber">
+      <value type="TagReference" name="digits bitmap" extensions="bitm" />
+      <value type="CharInteger" name="bitmap digit width" />
+      <value type="CharInteger" name="screen digit width" />
+      <value type="CharInteger" name="x offset" />
+      <value type="CharInteger" name="y offset" />
+      <value type="CharInteger" name="decimal point width" />
+      <value type="CharInteger" name="colon width" />
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Pad" name="_unnamed2" length="76" />
+    </struct>
+  </plugin>
+</xml>

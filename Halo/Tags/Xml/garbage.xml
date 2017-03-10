@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="garb" parenttype="item">Garbage</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Garbage">
+      <value type="Pad" name="_unnamed" length="168" />
+    </struct>
+  </plugin>
+</xml>

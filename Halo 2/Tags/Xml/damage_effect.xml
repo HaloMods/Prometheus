@@ -1,0 +1,194 @@
+<xml>
+  <name type="jpt!" parenttype="????">DamageEffect</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="DamageOuterConeAngleStructBlock">
+      <value type="RealBounds" name="radius" disabled="false" unit="world units" />
+      <value type="RealFraction" name="cutoff scale" disabled="false" unit="[0,1]" />
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="don't scale damage by distance" />
+        <bit index="1" name="area damage players only">
+          <tooltip>area of effect damage only affects players</tooltip>
+        </bit>
+      </value>
+      <value type="Enum" name="side effect" length="2" disabled="false">
+        <item value="0" name="none" />
+        <item value="1" name="harmless" />
+        <item value="2" name="lethal to the unsuspecting" />
+        <item value="3" name="emp" />
+      </value>
+      <value type="Enum" name="category" length="2" disabled="false">
+        <item value="0" name="none" />
+        <item value="1" name="falling" />
+        <item value="2" name="bullet" />
+        <item value="3" name="grenade" />
+        <item value="4" name="high explosive" />
+        <item value="5" name="sniper" />
+        <item value="6" name="melee" />
+        <item value="7" name="flame" />
+        <item value="8" name="mounted weapon" />
+        <item value="9" name="vehicle" />
+        <item value="10" name="plasma" />
+        <item value="11" name="needle" />
+        <item value="12" name="shotgun" />
+      </value>
+      <value type="Flags" name="flags2" length="4" disabled="false">
+        <bit index="0" name="does not hurt owner" />
+        <bit index="1" name="can cause headshots" />
+        <bit index="2" name="pings resistant units" />
+        <bit index="3" name="does not hurt friends" />
+        <bit index="4" name="does not ping units" />
+        <bit index="5" name="detonates explosives" />
+        <bit index="6" name="only hurts shields" />
+        <bit index="7" name="causes flaming death" />
+        <bit index="8" name="damage indicators always point down" />
+        <bit index="9" name="skips shields" />
+        <bit index="10" name="only hurts one infection form" />
+        <bit index="11" name="obsolete, was can cause multiplayer headshots" />
+        <bit index="12" name="infection form pop" />
+        <bit index="13" name="ignore seat scale for dir. dmg" />
+        <bit index="14" name="forces hard ping" />
+        <bit index="15" name="does not hurt players" />
+      </value>
+      <value type="Real" name="AOE core radius" disabled="false" unit="world units">
+        <tooltip>if this is area of effect damage</tooltip>
+      </value>
+      <value type="Real" name="damage lower bound" disabled="false" />
+      <value type="RealBounds" name="damage upper bound" disabled="false" />
+      <value type="Angle" name="dmg inner cone angle" disabled="false" />
+      <value type="Angle" name="dmg outer cone angle" disabled="false" />
+      <value type="Real" name="active camouflage damage" disabled="false" unit="[0,1]">
+        <tooltip>how much more visible this damage makes a player who is active camouflaged</tooltip>
+      </value>
+      <value type="Real" name="stun" disabled="false" unit="[0,1]">
+        <tooltip>amount of stun added to damaged unit</tooltip>
+      </value>
+      <value type="Real" name="maximum stun" disabled="false" unit="[0,1]">
+        <tooltip>damaged unit's stun will never exceed this amount</tooltip>
+      </value>
+      <value type="Real" name="stun time" disabled="false" unit="seconds">
+        <tooltip>duration of stun due to this damage</tooltip>
+      </value>
+      <value type="Real" name="instantaneous acceleration" disabled="false" unit="[0,+inf]" />
+      <value type="Real" name="rider direct damage scale" disabled="false" />
+      <value type="Real" name="rider maximum transfer damage scale" disabled="false" />
+      <value type="Real" name="rider minimum transfer damage scale" disabled="false" />
+      <value type="StringId" name="general_damage" disabled="false" />
+      <value type="StringId" name="specific_damage" disabled="false" />
+      <value type="Real" name="AI stun radius" disabled="false" unit="world units" />
+      <value type="RealBounds" name="AI stun bounds" disabled="false" unit="(0-1)" />
+      <value type="Real" name="shake radius" disabled="false" />
+      <value type="Real" name="EMP radius" disabled="false" />
+      <struct name="DamageEffectPlayerResponseBlock">
+        <value type="Enum" name="response type" length="2" disabled="false">
+          <item value="0" name="shielded" />
+          <item value="1" name="unshielded" />
+          <item value="2" name="all" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Enum" name="type" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="lighten" />
+          <item value="2" name="darken" />
+          <item value="3" name="max" />
+          <item value="4" name="min" />
+          <item value="5" name="invert" />
+          <item value="6" name="tint" />
+        </value>
+        <value type="Enum" name="priority" length="2" disabled="false">
+          <item value="0" name="low" />
+          <item value="1" name="medium" />
+          <item value="2" name="high" />
+        </value>
+        <value type="Real" name="duration" disabled="false" unit="seconds" />
+        <value type="Enum" name="fade function" length="2" disabled="false">
+          <item value="0" name="linear" />
+          <item value="1" name="late" />
+          <item value="2" name="very late" />
+          <item value="3" name="early" />
+          <item value="4" name="very early" />
+          <item value="5" name="cosine" />
+          <item value="6" name="zero" />
+          <item value="7" name="one" />
+        </value>
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="RealFraction" name="maximum intensity" disabled="false" unit="[0,1]" />
+        <value type="RealArgbColor" name="color" disabled="false" />
+        <value type="Real" name="duration2" disabled="false" unit="seconds" />
+        <struct name="ByteBlock">
+          <value type="CharInteger" name="Value" disabled="false" />
+        </struct>
+        <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="Real" name="duration3" disabled="false" unit="seconds" />
+        <value type="Block" name="data2" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="StringId" name="effect name" disabled="false" />
+        <value type="Real" name="duration4" disabled="false" unit="seconds" />
+        <value type="Block" name="data3" disabled="false" struct="ByteBlock" maxelements="1024" />
+      </struct>
+      <value type="Block" name="player responses" disabled="false" struct="DamageEffectPlayerResponseBlock" maxelements="2" />
+      <value type="Real" name="duration" disabled="false" unit="seconds" />
+      <value type="Enum" name="fade function" length="2" disabled="false">
+        <item value="0" name="linear" />
+        <item value="1" name="late" />
+        <item value="2" name="very late" />
+        <item value="3" name="early" />
+        <item value="4" name="very early" />
+        <item value="5" name="cosine" />
+        <item value="6" name="zero" />
+        <item value="7" name="one" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Angle" name="rotation" disabled="false" unit="degrees" />
+      <value type="Real" name="pushback" disabled="false" unit="world units" />
+      <value type="RealBounds" name="jitter" disabled="false" unit="world units" />
+      <value type="Real" name="duration2" disabled="false" unit="seconds">
+        <tooltip>the effect will last for this duration.</tooltip>
+      </value>
+      <value type="Enum" name="falloff function" length="2" disabled="false">
+        <item value="0" name="linear" />
+        <item value="1" name="late" />
+        <item value="2" name="very late" />
+        <item value="3" name="early" />
+        <item value="4" name="very early" />
+        <item value="5" name="cosine" />
+        <item value="6" name="zero" />
+        <item value="7" name="one" />
+        <tooltip>a function to envelope the effect's magnitude over time</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed1" length="2" />
+      <value type="Real" name="random translation" disabled="false" unit="world units">
+        <tooltip>random translation in all directions</tooltip>
+      </value>
+      <value type="Angle" name="random rotation" disabled="false" unit="degrees">
+        <tooltip>random rotation in all directions</tooltip>
+      </value>
+      <value type="Enum" name="wobble function" length="2" disabled="false">
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine (variable period)" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave (variable period)" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide (variable period)" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+        <tooltip>a function to perturb the effect's behavior over time</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed2" length="2" />
+      <value type="Real" name="wobble function period" disabled="false" unit="seconds" />
+      <value type="RealFraction" name="wobble weight" disabled="false">
+        <tooltip>a value of 0.0 signifies that the wobble function has no effect; a value of 1.0 signifies that the effect will not be felt when the wobble function's value is zero.</tooltip>
+      </value>
+      <value type="TagReference" name="sound" disabled="false" extensions="snd!" />
+      <value type="Real" name="forward velocity" disabled="false" unit="world units per second" />
+      <value type="Real" name="forward radius" disabled="false" unit="world units" />
+      <value type="Real" name="forward exponent" disabled="false" />
+      <value type="Real" name="outward velocity" disabled="false" unit="world units per second" />
+      <value type="Real" name="outward radius" disabled="false" unit="world units" />
+      <value type="Real" name="outward exponent" disabled="false" />
+    </struct>
+  </plugin>
+</xml>

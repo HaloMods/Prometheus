@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="flag" parenttype="????">Flag</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Flag">
+      <value type="Flags" name="flags" length="4" />
+      <value type="Enum" name="trailing edge shape">
+        <item value="0" name="flat" />
+        <item value="1" name="concave triangular" />
+        <item value="2" name="convex triangular" />
+        <item value="3" name="trapezoi" />
+        <item value="4" name="trapezoi" />
+      </value>
+      <value type="ShortInteger" name="trailing edge shape offset">
+        <tooltip>Zero places the shape exactly on the trailing edge, positive numbers push it off the edge.</tooltip>
+      </value>
+      <value type="Enum" name="attached edge shape">
+        <item value="0" name="flat" />
+        <item value="1" name="concave triangular" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="ShortInteger" name="width">
+        <tooltip>Flag size from attached to trailing edge.</tooltip>
+      </value>
+      <value type="ShortInteger" name="height">
+        <tooltip>Flag size along the direction of attachment (should be odd).</tooltip>
+      </value>
+      <value type="Real" name="cell width">
+        <tooltip>Width of the cell between each pair of vertices.</tooltip>
+      </value>
+      <value type="Real" name="cell height">
+        <tooltip>Height of the cell between each pair of vertices.</tooltip>
+      </value>
+      <value type="TagReference" name="red flag shader" blockname="true" extensions="shdr" />
+      <value type="TagReference" name="physics" extensions="pphy" />
+      <value type="Real" name="wind noise" blockname="true" />
+      <value type="Pad" name="_unnamed2" length="8" />
+      <value type="TagReference" name="blue flag shader" blockname="true" extensions="shdr" />
+      <struct name="FlagAttachmentPoint">
+        <value type="ShortInteger" name="height_to_next_attachment">
+          <tooltip>Flag vertices between this attachment point and the next.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Pad" name="_unnamed2" length="16" />
+        <value type="FixedLengthString" name="marker name" blockname="true" />
+      </struct>
+      <value type="Block" name="attachment points" struct="FlagAttachmentPoint" maxelements="5">
+        <tooltip>Attachment points determine where the flag is attached.</tooltip>
+      </value>
+    </struct>
+  </plugin>
+</xml>

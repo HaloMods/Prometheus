@@ -1,0 +1,3106 @@
+<xml>
+  <name type="scnr" parenttype="????">Scenario</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ScenarioBlock">
+      <value type="TagReference" name="Do not use" disabled="false" extensions="sbsp" />
+      <struct name="ScenarioSkyReferenceBlock">
+        <value type="TagReference" name="Sky" disabled="false" extensions="sky " />
+      </struct>
+      <value type="Block" name="Skies" disabled="false" struct="ScenarioSkyReferenceBlock" maxelements="32" />
+      <value type="Enum" name="Type" length="2" disabled="false">
+        <item value="0" name="" />
+        <item value="1" name="Multiplayer" />
+        <item value="2" name="" />
+        <item value="3" name="" />
+        <item value="4" name="" />
+      </value>
+      <value type="Flags" name="Flags" length="2" disabled="false">
+        <bit index="0" name="Cortana Hack">
+          <tooltip>Sorts Cortana in front of other transparent geometry.</tooltip>
+        </bit>
+        <bit index="1" name="Always Draw Sky">
+          <tooltip>Always draws sky 0, even if no +sky polygons are visible.</tooltip>
+        </bit>
+        <bit index="2" name="Don't Strip Pathfinding">
+          <tooltip>Always leaves pathfinding in, even for multiplayer scenario.</tooltip>
+        </bit>
+        <bit index="3" name="Symmetric Multiplayer Map" />
+        <bit index="4" name="Quick-Loading (Cinematic-Only) Scenario" />
+        <bit index="5" name="Characters Use Previous Mission Weapons" />
+        <bit index="6" name="Lightmaps Smooth Palettes with Neighbors" />
+        <bit index="7" name="Snap to White at Start" />
+      </value>
+      <struct name="ScenarioChildScenarioBlock">
+        <value type="TagReference" name="Child Scenario" disabled="false" extensions="scnr" />
+        <value type="Pad" name="_unnamed0" length="16" />
+      </struct>
+      <value type="Block" name="child scenarios" disabled="false" struct="ScenarioChildScenarioBlock" maxelements="16" />
+      <value type="Angle" name="Local North" disabled="false" />
+      <struct name="PredictedResourceBlock">
+        <value type="Enum" name="type" length="2" disabled="false">
+          <item value="0" name="bitmap" />
+          <item value="1" name="sound" />
+          <item value="2" name="render model geometry" />
+          <item value="3" name="cluster geometry" />
+          <item value="4" name="cluster instanced geometry" />
+          <item value="5" name="lightmap geometry object buckets" />
+          <item value="6" name="lightmap geometry instance buckets" />
+          <item value="7" name="lightmap cluster bitmaps" />
+          <item value="8" name="lightmap instance bitmaps" />
+        </value>
+        <value type="ShortInteger" name="resource index" disabled="false" />
+        <value type="PredictedResource" name="Predicted Resource Tag" length="4" disabled="false" />
+      </struct>
+      <value type="Block" name="Predicted Resources" disabled="true" struct="PredictedResourceBlock" maxelements="2048" />
+      <struct name="ScenarioFunctionBlock">
+        <value type="Flags" name="Flags" length="4" disabled="false">
+          <bit index="0" name="Scripted">
+            <tooltip>Level script will set this value; other settings here will be ignored.</tooltip>
+          </bit>
+          <bit index="1" name="Invert">
+            <tooltip>Result of function is 1 minus actual result.</tooltip>
+          </bit>
+          <bit index="2" name="Additive" />
+          <bit index="3" name="Always Active">
+            <tooltip>Function does not deactivate when at or below lower bound.</tooltip>
+          </bit>
+        </value>
+        <value type="FixedLengthString" name="Name" disabled="false" blockname="true" />
+        <value type="Real" name="Period" disabled="false" unit="Seconds">
+          <tooltip>Period for above function (lower values make function oscillate quickly; higher values make it oscillate slowly).</tooltip>
+        </value>
+        <value type="ShortBlockIndex" name="Scale Period By" disabled="false" block="ScenarioFunctionBlock">
+          <tooltip>Multiply this function by above period</tooltip>
+        </value>
+        <value type="Enum" name="Function" length="2" disabled="false">
+          <item value="0" name="one" />
+          <item value="1" name="zero" />
+          <item value="2" name="cosine" />
+          <item value="3" name="cosine (variable period)" />
+          <item value="4" name="diagonal wave" />
+          <item value="5" name="diagonal wave (variable period)" />
+          <item value="6" name="slide" />
+          <item value="7" name="slide (variable period)" />
+          <item value="8" name="noise" />
+          <item value="9" name="jitter" />
+          <item value="10" name="wander" />
+          <item value="11" name="spark" />
+        </value>
+        <value type="ShortBlockIndex" name="Scale Function By" disabled="false" block="ScenarioFunctionBlock">
+          <tooltip>Multiply this function by result of above function.</tooltip>
+        </value>
+        <value type="Enum" name="Wobble Function" length="2" disabled="false">
+          <item value="0" name="one" />
+          <item value="1" name="zero" />
+          <item value="2" name="cosine" />
+          <item value="3" name="cosine (variable period)" />
+          <item value="4" name="diagonal wave" />
+          <item value="5" name="diagonal wave (variable period)" />
+          <item value="6" name="slide" />
+          <item value="7" name="slide (variable period)" />
+          <item value="8" name="noise" />
+          <item value="9" name="jitter" />
+          <item value="10" name="wander" />
+          <item value="11" name="spark" />
+          <tooltip>Curve used for wobble.</tooltip>
+        </value>
+        <value type="Real" name="Wobble Period" disabled="false" unit="Seconds">
+          <tooltip>Time it takes for magnitude of this function to complete a wobble.</tooltip>
+        </value>
+        <value type="Real" name="Wobble Magnitude" disabled="false" unit="Percent">
+          <tooltip>Amount of random wobble in the magnitude.</tooltip>
+        </value>
+        <value type="RealFraction" name="Square Wave Threshold" disabled="false">
+          <tooltip>If non-zero, all values above square wave threshold are snapped to 1.0, and all values below it are snapped to 0.0 to create a square wave.</tooltip>
+        </value>
+        <value type="ShortInteger" name="Step Count" disabled="false">
+          <tooltip>Number of discrete values to snap to (e.g., step count of 5 snaps function to 0.00, 0.25, 0.50,0.75, or 1.00).</tooltip>
+        </value>
+        <value type="Enum" name="Map to" length="2" disabled="false">
+          <item value="0" name="linear" />
+          <item value="1" name="early" />
+          <item value="2" name="very early" />
+          <item value="3" name="late" />
+          <item value="4" name="very late" />
+          <item value="5" name="cosine" />
+          <item value="6" name="one" />
+          <item value="7" name="zero" />
+        </value>
+        <value type="ShortInteger" name="Sawtooth Count" disabled="false">
+          <tooltip>Number of times this function should repeat (e.g., sawtooth count of 5 gives function value of 1.0 at each of 0.25, 0.50, and 0.75, as well as at 1.0).</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="ShortBlockIndex" name="Scale Result by" disabled="false" block="ScenarioFunctionBlock">
+          <tooltip>Multiply this function (e.g., from a weapon, vehicle) final result of all of the above math.</tooltip>
+        </value>
+        <value type="Enum" name="Bounds Mode" length="2" disabled="false">
+          <item value="0" name="Clip" />
+          <item value="1" name="Clip and Normalize" />
+          <item value="2" name="Scale to Fit" />
+          <tooltip>Controls how bounds, below, are used.</tooltip>
+        </value>
+        <value type="FractionBounds" name="Bounds" disabled="false" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="ShortBlockIndex" name="Turn Off with" disabled="false" block="ScenarioFunctionBlock">
+          <tooltip>If specified function is off, so is this function.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed3" length="16" />
+        <value type="Pad" name="_unnamed4" length="16" />
+      </struct>
+      <value type="Block" name="Functions" disabled="false" struct="ScenarioFunctionBlock" maxelements="32" />
+      <value type="Data" name="Editor Scenario Data" disabled="false" />
+      <struct name="EditorCommentBlock">
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="Enum" name="Type" length="4" disabled="false">
+          <item value="0" name="Generic" />
+        </value>
+        <value type="FixedLengthString" name="Name" disabled="false" blockname="true" />
+        <value type="LongerFixedLengthString" name="Comment" disabled="false" />
+      </struct>
+      <value type="Block" name="Comments" disabled="false" struct="EditorCommentBlock" maxelements="65536" />
+      <struct name="DontUseMeScenarioEnvironmentObjectBlock">
+        <value type="ShortBlockIndex" name="BSP" disabled="true" block="ScenarioStructureBspReferenceBlock" />
+        <value type="ShortInteger" name="_unnamed0" />
+        <value type="LongInteger" name="Unique ID" disabled="true" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <value type="Tag" name="Object Definition Tag" disabled="true" />
+        <value type="LongInteger" name="Object" disabled="true" blockname="true" />
+        <value type="Pad" name="_unnamed2" length="44" />
+      </struct>
+      <value type="Block" name="" disabled="true" struct="DontUseMeScenarioEnvironmentObjectBlock" maxelements="4096" />
+      <struct name="ScenarioObjectNamesBlock">
+        <value type="FixedLengthString" name="Name" disabled="false" blockname="true" />
+        <value type="ShortBlockIndex" name="_unnamed0" block="_2????????????????A&#xC;??t&#x15;?P&#x1C;?H&#x18;?@&#xC;RQP???&#x8;" />
+        <value type="ShortInteger" name="_unnamed1" />
+      </struct>
+      <value type="Block" name="Object Names" disabled="true" struct="ScenarioObjectNamesBlock" maxelements="640" />
+      <struct name="ScenarioSceneryBlock">
+        <value type="ShortBlockIndex" name="Type" disabled="false" block="ScenarioSceneryPaletteBlock" />
+        <value type="ShortBlockIndex" name="Name" disabled="false" block="ScenarioObjectNamesBlock" blockname="true" />
+        <value type="Flags" name="Placement Flags" length="4" disabled="false">
+          <bit index="0" name="Not Automatically" />
+          <bit index="1" name="Unused" />
+          <bit index="2" name="Unused" />
+          <bit index="3" name="Unused" />
+          <bit index="4" name="Lock Type to Env. Object" />
+          <bit index="5" name="Lock Transform to Env. Object" />
+          <bit index="6" name="Never Placed" />
+          <bit index="7" name="Lock Name to Env. Object" />
+          <bit index="8" name="Create at Rest" />
+        </value>
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles3d" name="Rotation" disabled="false" />
+        <value type="Real" name="Scale" disabled="false" />
+        <value type="Flags" name="Transform Flags" length="2" disabled="false">
+          <bit index="0" name="Mirrored" />
+        </value>
+        <value type="ShortInteger" name="Manual BSP Flags" disabled="true" />
+        <value type="LongInteger" name="Unique ID" disabled="true" />
+        <value type="ShortBlockIndex" name="Origin BSP Index" disabled="true" block="ScenarioStructureBspReferenceBlock" />
+        <value type="Enum" name="Type2" length="1" disabled="true">
+          <item value="0" name="Biped" />
+          <item value="1" name="Vehicle" />
+          <item value="2" name="Weapon" />
+          <item value="3" name="Equipment" />
+          <item value="4" name="Garbage" />
+          <item value="5" name="Projectile" />
+          <item value="6" name="Scenery" />
+          <item value="7" name="Machine" />
+          <item value="8" name="Control" />
+          <item value="9" name="light_fixture" />
+          <item value="10" name="sound_scenery" />
+          <item value="11" name="Crate" />
+          <item value="12" name="Creature" />
+        </value>
+        <value type="Enum" name="Source" length="1" disabled="true">
+          <item value="0" name="Structure" />
+          <item value="1" name="Editor" />
+          <item value="2" name="Dynamic" />
+          <item value="3" name="Legacy" />
+        </value>
+        <value type="Enum" name="BSP Policy" length="1" disabled="false">
+          <item value="0" name="Default" />
+          <item value="1" name="Always Placed" />
+          <item value="2" name="Manual BSP Placement" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="ShortBlockIndex" name="Editor Folder" disabled="false" block="GScenarioEditorFolderBlock" />
+        <value type="StringId" name="Variant Name" disabled="false" />
+        <value type="Flags" name="Active Change Colors" length="4" disabled="false">
+          <bit index="0" name="Primary" />
+          <bit index="1" name="Secondary" />
+          <bit index="2" name="Tertiary" />
+          <bit index="3" name="Quaternary" />
+        </value>
+        <value type="RgbColor" name="Primary Color" disabled="false" />
+        <value type="RgbColor" name="Secondary Color" disabled="false" />
+        <value type="RgbColor" name="Tertiary Color" disabled="false" />
+        <value type="RgbColor" name="Quaternary Color" disabled="false" />
+        <value type="Enum" name="Pathfinding Policy" length="2" disabled="false">
+          <item value="0" name="Tag Default" />
+          <item value="1" name="Pathfinding DYNAMIC" />
+          <item value="2" name="Pathfinding CUT-OUT" />
+          <item value="3" name="Pathfinding STATIC" />
+          <item value="4" name="Pathfinding NONE" />
+        </value>
+        <value type="Enum" name="Lightmapping Policy" length="2" disabled="false">
+          <item value="0" name="Tag Default" />
+          <item value="1" name="Dynamic" />
+          <item value="2" name="Per-Vertex" />
+        </value>
+        <struct name="PathfindingObjectIndexListBlock">
+          <value type="ShortInteger" name="BSP Index" disabled="false" />
+          <value type="ShortInteger" name="Pathfinding Object Index" disabled="false" />
+        </struct>
+        <value type="Block" name="Pathfinding References" disabled="true" struct="PathfindingObjectIndexListBlock" maxelements="16" />
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Flags" name="Valid Multiplayer Games" length="2" disabled="false">
+          <bit index="0" name="Capture the Flag" />
+          <bit index="1" name="Slayer" />
+          <bit index="2" name="Oddball" />
+          <bit index="3" name="King of the Hill" />
+          <bit index="4" name="Juggernaut" />
+          <bit index="5" name="Territories" />
+          <bit index="6" name="Assault" />
+        </value>
+      </struct>
+      <value type="Block" name="Scenery" disabled="false" struct="ScenarioSceneryBlock" maxelements="2000" />
+      <struct name="ScenarioSceneryPaletteBlock">
+        <value type="TagReference" name="Name" disabled="false" extensions="scen" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="Scenery Palette" disabled="false" struct="ScenarioSceneryPaletteBlock" maxelements="256" />
+      <struct name="ScenarioBipedBlock">
+        <value type="ShortBlockIndex" name="Type" disabled="false" block="ScenarioBipedPaletteBlock" />
+        <value type="ShortBlockIndex" name="Name" disabled="false" block="ScenarioObjectNamesBlock" blockname="true" />
+        <value type="Flags" name="Placement Flags" length="4" disabled="false">
+          <bit index="0" name="Not Automatically" />
+          <bit index="1" name="Unused" />
+          <bit index="2" name="Unused" />
+          <bit index="3" name="Unused" />
+          <bit index="4" name="Lock Type to Env. Object" />
+          <bit index="5" name="Lock Transform to Env. Object" />
+          <bit index="6" name="Never Placed" />
+          <bit index="7" name="Lock Name to Env. Object" />
+          <bit index="8" name="Create at Rest" />
+        </value>
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles3d" name="Rotation" disabled="false" />
+        <value type="Real" name="Scale" disabled="false" />
+        <value type="Flags" name="Transform Flags" length="2" disabled="false">
+          <bit index="0" name="Mirrored" />
+        </value>
+        <value type="ShortInteger" name="Manual BSP Flags" disabled="true" />
+        <value type="LongInteger" name="Unique ID" disabled="true" />
+        <value type="ShortBlockIndex" name="Origin BSP Index" disabled="true" block="ScenarioStructureBspReferenceBlock" />
+        <value type="Enum" name="Type2" length="1" disabled="true">
+          <item value="0" name="Biped" />
+          <item value="1" name="Vehicle" />
+          <item value="2" name="Weapon" />
+          <item value="3" name="Equipment" />
+          <item value="4" name="Garbage" />
+          <item value="5" name="Projectile" />
+          <item value="6" name="Scenery" />
+          <item value="7" name="Machine" />
+          <item value="8" name="Control" />
+          <item value="9" name="light_fixture" />
+          <item value="10" name="sound_scenery" />
+          <item value="11" name="Crate" />
+          <item value="12" name="Creature" />
+        </value>
+        <value type="Enum" name="Source" length="1" disabled="true">
+          <item value="0" name="Structure" />
+          <item value="1" name="Editor" />
+          <item value="2" name="Dynamic" />
+          <item value="3" name="Legacy" />
+        </value>
+        <value type="Enum" name="BSP Policy" length="1" disabled="false">
+          <item value="0" name="Default" />
+          <item value="1" name="Always Placed" />
+          <item value="2" name="Manual BSP Placement" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="ShortBlockIndex" name="Editor Folder" disabled="false" block="GScenarioEditorFolderBlock" />
+        <value type="StringId" name="Variant Name" disabled="false" />
+        <value type="Flags" name="Active Change Colors" length="4" disabled="false">
+          <bit index="0" name="Primary" />
+          <bit index="1" name="Secondary" />
+          <bit index="2" name="Tertiary" />
+          <bit index="3" name="Quaternary" />
+        </value>
+        <value type="RgbColor" name="Primary Color" disabled="false" />
+        <value type="RgbColor" name="Secondary Color" disabled="false" />
+        <value type="RgbColor" name="Tertiary Color" disabled="false" />
+        <value type="RgbColor" name="Quaternary Color" disabled="false" />
+        <value type="Real" name="Body Vitality" disabled="false" unit="[0,1]" />
+        <value type="Flags" name="Flags" length="4" disabled="false">
+          <bit index="0" name="Dead" />
+          <bit index="1" name="Closed" />
+          <bit index="2" name="Not Enterable by Player" />
+        </value>
+      </struct>
+      <value type="Block" name="Bipeds" disabled="false" struct="ScenarioBipedBlock" maxelements="128" />
+      <struct name="ScenarioBipedPaletteBlock">
+        <value type="TagReference" name="Name" disabled="false" extensions="bipd" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="Biped Palette" disabled="false" struct="ScenarioBipedPaletteBlock" maxelements="256" />
+      <struct name="ScenarioVehicleBlock">
+        <value type="ShortBlockIndex" name="Type" disabled="false" block="ScenarioVehiclePaletteBlock" />
+        <value type="ShortBlockIndex" name="Name" disabled="false" block="ScenarioObjectNamesBlock" blockname="true" />
+        <value type="Flags" name="Placement Flags" length="4" disabled="false">
+          <bit index="0" name="Not Automatically" />
+          <bit index="1" name="Unused" />
+          <bit index="2" name="Unused" />
+          <bit index="3" name="Unused" />
+          <bit index="4" name="Lock Type to Env. Object" />
+          <bit index="5" name="Lock Transform to Env. Object" />
+          <bit index="6" name="Never Placed" />
+          <bit index="7" name="Lock Name to Env. Object" />
+          <bit index="8" name="Create at Rest" />
+        </value>
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles3d" name="Rotation" disabled="false" />
+        <value type="Real" name="Scale" disabled="false" />
+        <value type="Flags" name="Transform Flags" length="2" disabled="false">
+          <bit index="0" name="Mirrored" />
+        </value>
+        <value type="ShortInteger" name="Manual BSP Flags" disabled="true" />
+        <value type="LongInteger" name="Unique ID" disabled="true" />
+        <value type="ShortBlockIndex" name="Origin BSP Index" disabled="true" block="ScenarioStructureBspReferenceBlock" />
+        <value type="Enum" name="Type2" length="1" disabled="true">
+          <item value="0" name="Biped" />
+          <item value="1" name="Vehicle" />
+          <item value="2" name="Weapon" />
+          <item value="3" name="Equipment" />
+          <item value="4" name="Garbage" />
+          <item value="5" name="Projectile" />
+          <item value="6" name="Scenery" />
+          <item value="7" name="Machine" />
+          <item value="8" name="Control" />
+          <item value="9" name="light_fixture" />
+          <item value="10" name="sound_scenery" />
+          <item value="11" name="Crate" />
+          <item value="12" name="Creature" />
+        </value>
+        <value type="Enum" name="Source" length="1" disabled="true">
+          <item value="0" name="Structure" />
+          <item value="1" name="Editor" />
+          <item value="2" name="Dynamic" />
+          <item value="3" name="Legacy" />
+        </value>
+        <value type="Enum" name="BSP Policy" length="1" disabled="false">
+          <item value="0" name="Default" />
+          <item value="1" name="Always Placed" />
+          <item value="2" name="Manual BSP Placement" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="ShortBlockIndex" name="Editor Folder" disabled="false" block="GScenarioEditorFolderBlock" />
+        <value type="StringId" name="Variant Name" disabled="false" />
+        <value type="Flags" name="Active Change Colors" length="4" disabled="false">
+          <bit index="0" name="Primary" />
+          <bit index="1" name="Secondary" />
+          <bit index="2" name="Tertiary" />
+          <bit index="3" name="Quaternary" />
+        </value>
+        <value type="RgbColor" name="Primary Color" disabled="false" />
+        <value type="RgbColor" name="Secondary Color" disabled="false" />
+        <value type="RgbColor" name="Tertiary Color" disabled="false" />
+        <value type="RgbColor" name="Quaternary Color" disabled="false" />
+        <value type="Real" name="Body Vitality" disabled="false" unit="[0,1]" />
+        <value type="Flags" name="Flags" length="4" disabled="false">
+          <bit index="0" name="Dead" />
+          <bit index="1" name="Closed" />
+          <bit index="2" name="Not Enterable by Player" />
+        </value>
+      </struct>
+      <value type="Block" name="Vehicles" disabled="false" struct="ScenarioVehicleBlock" maxelements="256" />
+      <struct name="ScenarioVehiclePaletteBlock">
+        <value type="TagReference" name="Name" disabled="false" extensions="vehi" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="Vehicle Palette" disabled="false" struct="ScenarioVehiclePaletteBlock" maxelements="256" />
+      <struct name="ScenarioEquipmentBlock">
+        <value type="ShortBlockIndex" name="Type" disabled="false" block="ScenarioEquipmentPaletteBlock" />
+        <value type="ShortBlockIndex" name="Name" disabled="false" block="ScenarioObjectNamesBlock" blockname="true" />
+        <value type="Flags" name="Placement Flags" length="4" disabled="false">
+          <bit index="0" name="Not Automatically" />
+          <bit index="1" name="Unused" />
+          <bit index="2" name="Unused" />
+          <bit index="3" name="Unused" />
+          <bit index="4" name="Lock Type to Env. Object" />
+          <bit index="5" name="Lock Transform to Env. Object" />
+          <bit index="6" name="Never Placed" />
+          <bit index="7" name="Lock Name to Env. Object" />
+          <bit index="8" name="Create at Rest" />
+        </value>
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles3d" name="Rotation" disabled="false" />
+        <value type="Real" name="Scale" disabled="false" />
+        <value type="Flags" name="Transform Flags" length="2" disabled="false">
+          <bit index="0" name="Mirrored" />
+        </value>
+        <value type="ShortInteger" name="Manual BSP Flags" disabled="true" />
+        <value type="LongInteger" name="Unique ID" disabled="true" />
+        <value type="ShortBlockIndex" name="Origin BSP Index" disabled="true" block="ScenarioStructureBspReferenceBlock" />
+        <value type="Enum" name="Type2" length="1" disabled="true">
+          <item value="0" name="Biped" />
+          <item value="1" name="Vehicle" />
+          <item value="2" name="Weapon" />
+          <item value="3" name="Equipment" />
+          <item value="4" name="Garbage" />
+          <item value="5" name="Projectile" />
+          <item value="6" name="Scenery" />
+          <item value="7" name="Machine" />
+          <item value="8" name="Control" />
+          <item value="9" name="light_fixture" />
+          <item value="10" name="sound_scenery" />
+          <item value="11" name="Crate" />
+          <item value="12" name="Creature" />
+        </value>
+        <value type="Enum" name="Source" length="1" disabled="true">
+          <item value="0" name="Structure" />
+          <item value="1" name="Editor" />
+          <item value="2" name="Dynamic" />
+          <item value="3" name="Legacy" />
+        </value>
+        <value type="Enum" name="BSP Policy" length="1" disabled="false">
+          <item value="0" name="Default" />
+          <item value="1" name="Always Placed" />
+          <item value="2" name="Manual BSP Placement" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="ShortBlockIndex" name="Editor Folder" disabled="false" block="GScenarioEditorFolderBlock" />
+        <value type="Flags" name="Equipment Flags" length="4" disabled="false">
+          <bit index="0" name="Initially at Rest (Does Not Fall)" />
+          <bit index="1" name="Obsolete" />
+          <bit index="2" name="Does Accelerate (Moves Due to Explosions)" />
+        </value>
+      </struct>
+      <value type="Block" name="Equipment" disabled="false" struct="ScenarioEquipmentBlock" maxelements="256" />
+      <struct name="ScenarioEquipmentPaletteBlock">
+        <value type="TagReference" name="Name" disabled="false" extensions="eqip" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="Equipment Palette" disabled="false" struct="ScenarioEquipmentPaletteBlock" maxelements="256" />
+      <struct name="ScenarioWeaponBlock">
+        <value type="ShortBlockIndex" name="Type" disabled="false" block="ScenarioWeaponPaletteBlock" />
+        <value type="ShortBlockIndex" name="Name" disabled="false" block="ScenarioObjectNamesBlock" blockname="true" />
+        <value type="Flags" name="Placement Flags" length="4" disabled="false">
+          <bit index="0" name="Not Automatically" />
+          <bit index="1" name="Unused" />
+          <bit index="2" name="Unused" />
+          <bit index="3" name="Unused" />
+          <bit index="4" name="Lock Type to Env. Object" />
+          <bit index="5" name="Lock Transform to Env. Object" />
+          <bit index="6" name="Never Placed" />
+          <bit index="7" name="Lock Name to Env. Object" />
+          <bit index="8" name="Create at Rest" />
+        </value>
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles3d" name="Rotation" disabled="false" />
+        <value type="Real" name="Scale" disabled="false" />
+        <value type="Flags" name="Transform Flags" length="2" disabled="false">
+          <bit index="0" name="Mirrored" />
+        </value>
+        <value type="ShortInteger" name="Manual BSP Flags" disabled="true" />
+        <value type="LongInteger" name="Unique ID" disabled="true" />
+        <value type="ShortBlockIndex" name="Origin BSP Index" disabled="true" block="ScenarioStructureBspReferenceBlock" />
+        <value type="Enum" name="Type2" length="1" disabled="true">
+          <item value="0" name="Biped" />
+          <item value="1" name="Vehicle" />
+          <item value="2" name="Weapon" />
+          <item value="3" name="Equipment" />
+          <item value="4" name="Garbage" />
+          <item value="5" name="Projectile" />
+          <item value="6" name="Scenery" />
+          <item value="7" name="Machine" />
+          <item value="8" name="Control" />
+          <item value="9" name="light_fixture" />
+          <item value="10" name="sound_scenery" />
+          <item value="11" name="Crate" />
+          <item value="12" name="Creature" />
+        </value>
+        <value type="Enum" name="Source" length="1" disabled="true">
+          <item value="0" name="Structure" />
+          <item value="1" name="Editor" />
+          <item value="2" name="Dynamic" />
+          <item value="3" name="Legacy" />
+        </value>
+        <value type="Enum" name="BSP Policy" length="1" disabled="false">
+          <item value="0" name="Default" />
+          <item value="1" name="Always Placed" />
+          <item value="2" name="Manual BSP Placement" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="ShortBlockIndex" name="Editor Folder" disabled="false" block="GScenarioEditorFolderBlock" />
+        <value type="StringId" name="Variant Name" disabled="false" />
+        <value type="Flags" name="Active Change Colors" length="4" disabled="false">
+          <bit index="0" name="Primary" />
+          <bit index="1" name="Secondary" />
+          <bit index="2" name="Tertiary" />
+          <bit index="3" name="Quaternary" />
+        </value>
+        <value type="RgbColor" name="Primary Color" disabled="false" />
+        <value type="RgbColor" name="Secondary Color" disabled="false" />
+        <value type="RgbColor" name="Tertiary Color" disabled="false" />
+        <value type="RgbColor" name="Quaternary Color" disabled="false" />
+        <value type="ShortInteger" name="Rounds Left" disabled="false" />
+        <value type="ShortInteger" name="Rounds Loaded" disabled="false" />
+        <value type="Flags" name="Flags" length="4" disabled="false">
+          <bit index="0" name="Initially at Rest (Does Not Fall)" />
+          <bit index="1" name="Obsolete" />
+          <bit index="2" name="Does Accelerate (Moves Due to Explosions)" />
+        </value>
+      </struct>
+      <value type="Block" name="Weapons" disabled="false" struct="ScenarioWeaponBlock" maxelements="128" />
+      <struct name="ScenarioWeaponPaletteBlock">
+        <value type="TagReference" name="Name" disabled="false" extensions="weap" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="Weapon Palette" disabled="false" struct="ScenarioWeaponPaletteBlock" maxelements="256" />
+      <struct name="DeviceGroupBlock">
+        <value type="FixedLengthString" name="Name" disabled="false" blockname="true" />
+        <value type="Real" name="Initial Value" disabled="false" unit="[0,1]" />
+        <value type="Flags" name="Flags" length="4" disabled="false">
+          <bit index="0" name="Can change only once." />
+        </value>
+      </struct>
+      <value type="Block" name="Device Groups" disabled="false" struct="DeviceGroupBlock" maxelements="128" />
+      <struct name="ScenarioMachineBlock">
+        <value type="ShortBlockIndex" name="Type" disabled="false" block="ScenarioMachinePaletteBlock" />
+        <value type="ShortBlockIndex" name="Name" disabled="false" block="ScenarioObjectNamesBlock" blockname="true" />
+        <value type="Flags" name="Placement Flags" length="4" disabled="false">
+          <bit index="0" name="Not Automatically" />
+          <bit index="1" name="Unused" />
+          <bit index="2" name="Unused" />
+          <bit index="3" name="Unused" />
+          <bit index="4" name="Lock Type to Env. Object" />
+          <bit index="5" name="Lock Transform to Env. Object" />
+          <bit index="6" name="Never Placed" />
+          <bit index="7" name="Lock Name to Env. Object" />
+          <bit index="8" name="Create at Rest" />
+        </value>
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles3d" name="Rotation" disabled="false" />
+        <value type="Real" name="Scale" disabled="false" />
+        <value type="Flags" name="Transform Flags" length="2" disabled="false">
+          <bit index="0" name="Mirrored" />
+        </value>
+        <value type="ShortInteger" name="Manual BSP Flags" disabled="true" />
+        <value type="LongInteger" name="Unique ID" disabled="true" />
+        <value type="ShortBlockIndex" name="Origin BSP Index" disabled="true" block="ScenarioStructureBspReferenceBlock" />
+        <value type="Enum" name="Type2" length="1" disabled="true">
+          <item value="0" name="Biped" />
+          <item value="1" name="Vehicle" />
+          <item value="2" name="Weapon" />
+          <item value="3" name="Equipment" />
+          <item value="4" name="Garbage" />
+          <item value="5" name="Projectile" />
+          <item value="6" name="Scenery" />
+          <item value="7" name="Machine" />
+          <item value="8" name="Control" />
+          <item value="9" name="light_fixture" />
+          <item value="10" name="sound_scenery" />
+          <item value="11" name="Crate" />
+          <item value="12" name="Creature" />
+        </value>
+        <value type="Enum" name="Source" length="1" disabled="true">
+          <item value="0" name="Structure" />
+          <item value="1" name="Editor" />
+          <item value="2" name="Dynamic" />
+          <item value="3" name="Legacy" />
+        </value>
+        <value type="Enum" name="BSP Policy" length="1" disabled="false">
+          <item value="0" name="Default" />
+          <item value="1" name="Always Placed" />
+          <item value="2" name="Manual BSP Placement" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="ShortBlockIndex" name="Editor Folder" disabled="false" block="GScenarioEditorFolderBlock" />
+        <value type="ShortBlockIndex" name="Power Group" disabled="false" block="DeviceGroupBlock" />
+        <value type="ShortBlockIndex" name="Position Group" disabled="false" block="DeviceGroupBlock" />
+        <value type="Flags" name="Flags" length="4" disabled="false">
+          <bit index="0" name="Initially Open (1.0)" />
+          <bit index="1" name="Initially Off (0.0)" />
+          <bit index="2" name="Can change only once." />
+          <bit index="3" name="Position Reversed" />
+          <bit index="4" name="Not Usable from Any Side" />
+        </value>
+        <value type="Flags" name="Flags2" length="4" disabled="false">
+          <bit index="0" name="Does Not Operate Automatically" />
+          <bit index="1" name="One-Sided" />
+          <bit index="2" name="Never Appears Locked" />
+          <bit index="3" name="Opened by Melee Attack" />
+          <bit index="4" name="One-Sided for Player" />
+          <bit index="5" name="Does Not Close Automatically" />
+        </value>
+        <struct name="PathfindingObjectIndexListBlock">
+          <value type="ShortInteger" name="BSP Index" disabled="false" />
+          <value type="ShortInteger" name="Pathfinding Object Index" disabled="false" />
+        </struct>
+        <value type="Block" name="Pathfinding References" disabled="true" struct="PathfindingObjectIndexListBlock" maxelements="16" />
+      </struct>
+      <value type="Block" name="Machines" disabled="false" struct="ScenarioMachineBlock" maxelements="400" />
+      <struct name="ScenarioMachinePaletteBlock">
+        <value type="TagReference" name="Name" disabled="false" extensions="mach" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="Machine Palette" disabled="false" struct="ScenarioMachinePaletteBlock" maxelements="256" />
+      <struct name="ScenarioControlBlock">
+        <value type="ShortBlockIndex" name="Type" disabled="false" block="ScenarioControlPaletteBlock" />
+        <value type="ShortBlockIndex" name="Name" disabled="false" block="ScenarioObjectNamesBlock" blockname="true" />
+        <value type="Flags" name="Placement Flags" length="4" disabled="false">
+          <bit index="0" name="Not Automatically" />
+          <bit index="1" name="Unused" />
+          <bit index="2" name="Unused" />
+          <bit index="3" name="Unused" />
+          <bit index="4" name="Lock Type to Env. Object" />
+          <bit index="5" name="Lock Transform to Env. Object" />
+          <bit index="6" name="Never Placed" />
+          <bit index="7" name="Lock Name to Env. Object" />
+          <bit index="8" name="Create at Rest" />
+        </value>
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles3d" name="Rotation" disabled="false" />
+        <value type="Real" name="Scale" disabled="false" />
+        <value type="Flags" name="Transform Flags" length="2" disabled="false">
+          <bit index="0" name="Mirrored" />
+        </value>
+        <value type="ShortInteger" name="Manual BSP Flags" disabled="true" />
+        <value type="LongInteger" name="Unique ID" disabled="true" />
+        <value type="ShortBlockIndex" name="Origin BSP Index" disabled="true" block="ScenarioStructureBspReferenceBlock" />
+        <value type="Enum" name="Type2" length="1" disabled="true">
+          <item value="0" name="Biped" />
+          <item value="1" name="Vehicle" />
+          <item value="2" name="Weapon" />
+          <item value="3" name="Equipment" />
+          <item value="4" name="Garbage" />
+          <item value="5" name="Projectile" />
+          <item value="6" name="Scenery" />
+          <item value="7" name="Machine" />
+          <item value="8" name="Control" />
+          <item value="9" name="light_fixture" />
+          <item value="10" name="sound_scenery" />
+          <item value="11" name="Crate" />
+          <item value="12" name="Creature" />
+        </value>
+        <value type="Enum" name="Source" length="1" disabled="true">
+          <item value="0" name="Structure" />
+          <item value="1" name="Editor" />
+          <item value="2" name="Dynamic" />
+          <item value="3" name="Legacy" />
+        </value>
+        <value type="Enum" name="BSP Policy" length="1" disabled="false">
+          <item value="0" name="Default" />
+          <item value="1" name="Always Placed" />
+          <item value="2" name="Manual BSP Placement" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="ShortBlockIndex" name="Editor Folder" disabled="false" block="GScenarioEditorFolderBlock" />
+        <value type="ShortBlockIndex" name="Power Group" disabled="false" block="DeviceGroupBlock" />
+        <value type="ShortBlockIndex" name="Position Group" disabled="false" block="DeviceGroupBlock" />
+        <value type="Flags" name="Flags" length="4" disabled="false">
+          <bit index="0" name="Initially Open (1.0)" />
+          <bit index="1" name="Initially Off (0.0)" />
+          <bit index="2" name="Can change only once." />
+          <bit index="3" name="Position Reversed" />
+          <bit index="4" name="Not Usable from Any Side" />
+        </value>
+        <value type="Flags" name="Flags2" length="4" disabled="false">
+          <bit index="0" name="Usable from Both Sides" />
+        </value>
+        <value type="ShortInteger" name="DONT TOUCH THIS" disabled="true" />
+        <value type="Pad" name="_unnamed1" length="2" />
+      </struct>
+      <value type="Block" name="Controls" disabled="false" struct="ScenarioControlBlock" maxelements="100" />
+      <struct name="ScenarioControlPaletteBlock">
+        <value type="TagReference" name="Name" disabled="false" extensions="ctrl" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="Control Palette" disabled="false" struct="ScenarioControlPaletteBlock" maxelements="256" />
+      <struct name="ScenarioLightFixtureBlock">
+        <value type="ShortBlockIndex" name="Type" disabled="false" block="ScenarioLightFixturePaletteBlock" />
+        <value type="ShortBlockIndex" name="Name" disabled="false" block="ScenarioObjectNamesBlock" blockname="true" />
+        <value type="Flags" name="Placement Flags" length="4" disabled="false">
+          <bit index="0" name="Not Automatically" />
+          <bit index="1" name="Unused" />
+          <bit index="2" name="Unused" />
+          <bit index="3" name="Unused" />
+          <bit index="4" name="Lock Type to Env. Object" />
+          <bit index="5" name="Lock Transform to Env. Object" />
+          <bit index="6" name="Never Placed" />
+          <bit index="7" name="Lock Name to Env. Object" />
+          <bit index="8" name="Create at Rest" />
+        </value>
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles3d" name="Rotation" disabled="false" />
+        <value type="Real" name="Scale" disabled="false" />
+        <value type="Flags" name="Transform Flags" length="2" disabled="false">
+          <bit index="0" name="Mirrored" />
+        </value>
+        <value type="ShortInteger" name="Manual BSP Flags" disabled="true" />
+        <value type="LongInteger" name="Unique ID" disabled="true" />
+        <value type="ShortBlockIndex" name="Origin BSP Index" disabled="true" block="ScenarioStructureBspReferenceBlock" />
+        <value type="Enum" name="Type2" length="1" disabled="true">
+          <item value="0" name="Biped" />
+          <item value="1" name="Vehicle" />
+          <item value="2" name="Weapon" />
+          <item value="3" name="Equipment" />
+          <item value="4" name="Garbage" />
+          <item value="5" name="Projectile" />
+          <item value="6" name="Scenery" />
+          <item value="7" name="Machine" />
+          <item value="8" name="Control" />
+          <item value="9" name="light_fixture" />
+          <item value="10" name="sound_scenery" />
+          <item value="11" name="Crate" />
+          <item value="12" name="Creature" />
+        </value>
+        <value type="Enum" name="Source" length="1" disabled="true">
+          <item value="0" name="Structure" />
+          <item value="1" name="Editor" />
+          <item value="2" name="Dynamic" />
+          <item value="3" name="Legacy" />
+        </value>
+        <value type="Enum" name="BSP Policy" length="1" disabled="false">
+          <item value="0" name="Default" />
+          <item value="1" name="Always Placed" />
+          <item value="2" name="Manual BSP Placement" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="ShortBlockIndex" name="Editor Folder" disabled="false" block="GScenarioEditorFolderBlock" />
+        <value type="ShortBlockIndex" name="Power Group" disabled="false" block="DeviceGroupBlock" />
+        <value type="ShortBlockIndex" name="Position Group" disabled="false" block="DeviceGroupBlock" />
+        <value type="Flags" name="Flags" length="4" disabled="false">
+          <bit index="0" name="Initially Open (1.0)" />
+          <bit index="1" name="Initially Off (0.0)" />
+          <bit index="2" name="Can change only once." />
+          <bit index="3" name="Position Reversed" />
+          <bit index="4" name="Not Usable from Any Side" />
+        </value>
+        <value type="RealRgbColor" name="Color" disabled="false" />
+        <value type="Real" name="Intensity" disabled="false" />
+        <value type="Angle" name="Falloff Angle" disabled="false" unit="Degrees" />
+        <value type="Angle" name="Cutoff Angle" disabled="false" unit="Degrees" />
+      </struct>
+      <value type="Block" name="Light Fixtures" disabled="false" struct="ScenarioLightFixtureBlock" maxelements="500" />
+      <struct name="ScenarioLightFixturePaletteBlock">
+        <value type="TagReference" name="Name" disabled="false" extensions="lifi" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="Light Fixtures Palette" disabled="false" struct="ScenarioLightFixturePaletteBlock" maxelements="256" />
+      <struct name="ScenarioSoundSceneryBlock">
+        <value type="ShortBlockIndex" name="Type" disabled="false" block="ScenarioSoundSceneryPaletteBlock" />
+        <value type="ShortBlockIndex" name="Name" disabled="false" block="ScenarioObjectNamesBlock" blockname="true" />
+        <value type="Flags" name="Placement Flags" length="4" disabled="false">
+          <bit index="0" name="Not Automatically" />
+          <bit index="1" name="Unused" />
+          <bit index="2" name="Unused" />
+          <bit index="3" name="Unused" />
+          <bit index="4" name="Lock Type to Env. Object" />
+          <bit index="5" name="Lock Transform to Env. Object" />
+          <bit index="6" name="Never Placed" />
+          <bit index="7" name="Lock Name to Env. Object" />
+          <bit index="8" name="Create at Rest" />
+        </value>
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles3d" name="Rotation" disabled="false" />
+        <value type="Real" name="Scale" disabled="false" />
+        <value type="Flags" name="Transform Flags" length="2" disabled="false">
+          <bit index="0" name="Mirrored" />
+        </value>
+        <value type="ShortInteger" name="Manual BSP Flags" disabled="true" />
+        <value type="LongInteger" name="Unique ID" disabled="true" />
+        <value type="ShortBlockIndex" name="Origin BSP Index" disabled="true" block="ScenarioStructureBspReferenceBlock" />
+        <value type="Enum" name="Type2" length="1" disabled="true">
+          <item value="0" name="Biped" />
+          <item value="1" name="Vehicle" />
+          <item value="2" name="Weapon" />
+          <item value="3" name="Equipment" />
+          <item value="4" name="Garbage" />
+          <item value="5" name="Projectile" />
+          <item value="6" name="Scenery" />
+          <item value="7" name="Machine" />
+          <item value="8" name="Control" />
+          <item value="9" name="light_fixture" />
+          <item value="10" name="sound_scenery" />
+          <item value="11" name="Crate" />
+          <item value="12" name="Creature" />
+        </value>
+        <value type="Enum" name="Source" length="1" disabled="true">
+          <item value="0" name="Structure" />
+          <item value="1" name="Editor" />
+          <item value="2" name="Dynamic" />
+          <item value="3" name="Legacy" />
+        </value>
+        <value type="Enum" name="BSP Policy" length="1" disabled="false">
+          <item value="0" name="Default" />
+          <item value="1" name="Always Placed" />
+          <item value="2" name="Manual BSP Placement" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="ShortBlockIndex" name="Editor Folder" disabled="false" block="GScenarioEditorFolderBlock" />
+        <value type="Enum" name="Volume Type" length="4" disabled="false">
+          <item value="0" name="Sphere" />
+          <item value="1" name="Vertical Cylinder" />
+        </value>
+        <value type="Real" name="Height" disabled="false" />
+        <value type="RealBounds" name="Override Distance Bounds" disabled="false" />
+        <value type="AngleBounds" name="Override Cone Angle Bounds" disabled="false" />
+        <value type="Real" name="Override Outer Cone Gain" disabled="false" unit="dB" />
+      </struct>
+      <value type="Block" name="Sound Scenery" disabled="false" struct="ScenarioSoundSceneryBlock" maxelements="256" />
+      <struct name="ScenarioSoundSceneryPaletteBlock">
+        <value type="TagReference" name="Name" disabled="false" extensions="ssce" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="Sound Scenery Palette" disabled="false" struct="ScenarioSoundSceneryPaletteBlock" maxelements="256" />
+      <struct name="ScenarioLightBlock">
+        <value type="ShortBlockIndex" name="Type" disabled="false" block="ScenarioLightPaletteBlock" />
+        <value type="ShortBlockIndex" name="Name" disabled="false" block="ScenarioObjectNamesBlock" blockname="true" />
+        <value type="Flags" name="Placement Flags" length="4" disabled="false">
+          <bit index="0" name="Not Automatically" />
+          <bit index="1" name="Unused" />
+          <bit index="2" name="Unused" />
+          <bit index="3" name="Unused" />
+          <bit index="4" name="Lock Type to Env. Object" />
+          <bit index="5" name="Lock Transform to Env. Object" />
+          <bit index="6" name="Never Placed" />
+          <bit index="7" name="Lock Name to Env. Object" />
+          <bit index="8" name="Create at Rest" />
+        </value>
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles3d" name="Rotation" disabled="false" />
+        <value type="Real" name="Scale" disabled="false" />
+        <value type="Flags" name="Transform Flags" length="2" disabled="false">
+          <bit index="0" name="Mirrored" />
+        </value>
+        <value type="ShortInteger" name="Manual BSP Flags" disabled="true" />
+        <value type="LongInteger" name="Unique ID" disabled="true" />
+        <value type="ShortBlockIndex" name="Origin BSP Index" disabled="true" block="ScenarioStructureBspReferenceBlock" />
+        <value type="Enum" name="Type2" length="1" disabled="true">
+          <item value="0" name="Biped" />
+          <item value="1" name="Vehicle" />
+          <item value="2" name="Weapon" />
+          <item value="3" name="Equipment" />
+          <item value="4" name="Garbage" />
+          <item value="5" name="Projectile" />
+          <item value="6" name="Scenery" />
+          <item value="7" name="Machine" />
+          <item value="8" name="Control" />
+          <item value="9" name="light_fixture" />
+          <item value="10" name="sound_scenery" />
+          <item value="11" name="Crate" />
+          <item value="12" name="Creature" />
+        </value>
+        <value type="Enum" name="Source" length="1" disabled="true">
+          <item value="0" name="Structure" />
+          <item value="1" name="Editor" />
+          <item value="2" name="Dynamic" />
+          <item value="3" name="Legacy" />
+        </value>
+        <value type="Enum" name="BSP Policy" length="1" disabled="false">
+          <item value="0" name="Default" />
+          <item value="1" name="Always Placed" />
+          <item value="2" name="Manual BSP Placement" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="ShortBlockIndex" name="Editor Folder" disabled="false" block="GScenarioEditorFolderBlock" />
+        <value type="ShortBlockIndex" name="Power Group" disabled="false" block="DeviceGroupBlock" />
+        <value type="ShortBlockIndex" name="Position Group" disabled="false" block="DeviceGroupBlock" />
+        <value type="Flags" name="Flags" length="4" disabled="false">
+          <bit index="0" name="Initially Open (1.0)" />
+          <bit index="1" name="Initially Off (0.0)" />
+          <bit index="2" name="Can change only once." />
+          <bit index="3" name="Position Reversed" />
+          <bit index="4" name="Not Usable from Any Side" />
+        </value>
+        <value type="Enum" name="Type3" length="2" disabled="false">
+          <item value="0" name="sphere" />
+          <item value="1" name="orthogonal" />
+          <item value="2" name="projective" />
+          <item value="3" name="pyramid" />
+        </value>
+        <value type="Flags" name="Flags2" length="2" disabled="false">
+          <bit index="0" name="Custom Geometry" />
+          <bit index="1" name="Unused" />
+          <bit index="2" name="cinematic_only" />
+        </value>
+        <value type="Enum" name="Lightmap Type" length="2" disabled="false">
+          <item value="0" name="Use Light Tag Setting" />
+          <item value="1" name="Dynamic Only" />
+          <item value="2" name="Dynamic with Lightmaps" />
+          <item value="3" name="Lightmaps Only" />
+        </value>
+        <value type="Flags" name="Lightmap Flags" length="2" disabled="false">
+          <bit index="0" name="Unused" />
+        </value>
+        <value type="Real" name="Lightmap Half Life" disabled="false" />
+        <value type="Real" name="Lightmap Light Scale" disabled="false" />
+        <value type="RealPoint3d" name="Target Point" disabled="true" />
+        <value type="Real" name="Width" disabled="true" unit="World Units" />
+        <value type="Real" name="Height Scale" disabled="true" unit="World Units" />
+        <value type="Angle" name="Field of View" disabled="true" unit="Degrees" />
+        <value type="Real" name="Falloff Distance" disabled="true" unit="World Units" />
+        <value type="Real" name="Cutoff Distance" disabled="true" unit="World Units (from Far Plane)" />
+      </struct>
+      <value type="Block" name="Light Volumes" disabled="false" struct="ScenarioLightBlock" maxelements="500" />
+      <struct name="ScenarioLightPaletteBlock">
+        <value type="TagReference" name="Name" disabled="false" extensions="ligh" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="Light Volumes Palette" disabled="false" struct="ScenarioLightPaletteBlock" maxelements="256" />
+      <struct name="ScenarioProfilesBlock">
+        <value type="FixedLengthString" name="Name" disabled="false" blockname="true" />
+        <value type="RealFraction" name="Starting Health Damage" disabled="false" unit="[0,1]" />
+        <value type="RealFraction" name="Starting Shield Damage" disabled="false" unit="[0,1]" />
+        <value type="TagReference" name="Primary Weapon" disabled="false" extensions="weap" />
+        <value type="ShortInteger" name="Rounds Loaded" disabled="false" />
+        <value type="ShortInteger" name="Rounds Total" disabled="false" />
+        <value type="TagReference" name="Secondary Weapon" disabled="false" extensions="weap" />
+        <value type="ShortInteger" name="Rounds Loaded2" disabled="false" />
+        <value type="ShortInteger" name="Rounds Total2" disabled="false" />
+        <value type="CharInteger" name="Starting Fragmentation Grenade Count" disabled="false" />
+        <value type="CharInteger" name="Starting Plasma Grenade Count" disabled="false" />
+        <value type="CharInteger" name="Starting unknown Grenade Count" disabled="false" />
+        <value type="CharInteger" name="Starting unknown Grenade Count2" disabled="false" />
+      </struct>
+      <value type="Block" name="Player Starting Profile" disabled="false" struct="ScenarioProfilesBlock" maxelements="256" />
+      <struct name="ScenarioPlayersBlock">
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="Angle" name="Facing" disabled="false" unit="Degrees" />
+        <value type="Enum" name="Team Designator" length="2" disabled="false">
+          <item value="0" name="Red (Alpha)" />
+          <item value="1" name="Blue (Bravo)" />
+          <item value="2" name="Yellow (Charlie)" />
+          <item value="3" name="Green (Delta)" />
+          <item value="4" name="Purple (Echo)" />
+          <item value="5" name="Orange (Foxtrot)" />
+          <item value="6" name="Brown (Golf)" />
+          <item value="7" name="Pink (Hotel)" />
+          <item value="8" name="NEUTRAL" />
+        </value>
+        <value type="ShortInteger" name="BSP Index" disabled="false" />
+        <value type="Enum" name="Game Type 1" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="Capture the Flag" />
+          <item value="2" name="Slayer" />
+          <item value="3" name="Oddball" />
+          <item value="4" name="King of the Hill" />
+          <item value="5" name="Race" />
+          <item value="6" name="Headhunter" />
+          <item value="7" name="Juggernaut" />
+          <item value="8" name="Territories" />
+          <item value="9" name="stub" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="All Game Types" />
+          <item value="13" name="All Except CTF" />
+          <item value="14" name="All Except CTF &amp; Race" />
+        </value>
+        <value type="Enum" name="Game Type 2" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="Capture the Flag" />
+          <item value="2" name="Slayer" />
+          <item value="3" name="Oddball" />
+          <item value="4" name="King of the Hill" />
+          <item value="5" name="Race" />
+          <item value="6" name="Headhunter" />
+          <item value="7" name="Juggernaut" />
+          <item value="8" name="Territories" />
+          <item value="9" name="stub" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="All Game Types" />
+          <item value="13" name="All Except CTF" />
+          <item value="14" name="All Except CTF &amp; Race" />
+        </value>
+        <value type="Enum" name="Game Type 3" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="Capture the Flag" />
+          <item value="2" name="Slayer" />
+          <item value="3" name="Oddball" />
+          <item value="4" name="King of the Hill" />
+          <item value="5" name="Race" />
+          <item value="6" name="Headhunter" />
+          <item value="7" name="Juggernaut" />
+          <item value="8" name="Territories" />
+          <item value="9" name="stub" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="All Game Types" />
+          <item value="13" name="All Except CTF" />
+          <item value="14" name="All Except CTF &amp; Race" />
+        </value>
+        <value type="Enum" name="Game Type 4" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="Capture the Flag" />
+          <item value="2" name="Slayer" />
+          <item value="3" name="Oddball" />
+          <item value="4" name="King of the Hill" />
+          <item value="5" name="Race" />
+          <item value="6" name="Headhunter" />
+          <item value="7" name="Juggernaut" />
+          <item value="8" name="Territories" />
+          <item value="9" name="stub" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="All Game Types" />
+          <item value="13" name="All Except CTF" />
+          <item value="14" name="All Except CTF &amp; Race" />
+        </value>
+        <value type="Enum" name="Spawn Type 0" length="2" disabled="false">
+          <item value="0" name="Both" />
+          <item value="1" name="Initial Spawn Only" />
+          <item value="2" name="Respawn Only" />
+        </value>
+        <value type="Enum" name="Spawn Type 1" length="2" disabled="false">
+          <item value="0" name="Both" />
+          <item value="1" name="Initial Spawn Only" />
+          <item value="2" name="Respawn Only" />
+        </value>
+        <value type="Enum" name="Spawn Type 2" length="2" disabled="false">
+          <item value="0" name="Both" />
+          <item value="1" name="Initial Spawn Only" />
+          <item value="2" name="Respawn Only" />
+        </value>
+        <value type="Enum" name="Spawn Type 3" length="2" disabled="false">
+          <item value="0" name="Both" />
+          <item value="1" name="Initial Spawn Only" />
+          <item value="2" name="Respawn Only" />
+        </value>
+        <value type="StringId" name="_unnamed0" />
+        <value type="StringId" name="_unnamed1" />
+        <value type="Enum" name="Campaign Player Type" length="2" disabled="false">
+          <item value="0" name="masterchief" />
+          <item value="1" name="dervish" />
+          <item value="2" name="chief multiplayer" />
+          <item value="3" name="elite multiplayer" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="6" />
+      </struct>
+      <value type="Block" name="Player Starting Locations" disabled="false" struct="ScenarioPlayersBlock" maxelements="256" />
+      <struct name="ScenarioTriggerVolumeBlock">
+        <value type="StringId" name="Name" disabled="false" blockname="true" />
+        <value type="ShortBlockIndex" name="Object Name" disabled="false" block="ScenarioObjectNamesBlock" />
+        <value type="Skip" name="_unnamed0" length="2" />
+        <value type="StringId" name="Node Name" disabled="false" />
+        <value type="Real" name="_unnamed1" />
+        <value type="Real" name="_unnamed2" />
+        <value type="Real" name="_unnamed3" />
+        <value type="Real" name="_unnamed4" />
+        <value type="Real" name="_unnamed5" />
+        <value type="Real" name="_unnamed6" />
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealPoint3d" name="Extents" disabled="false" />
+        <value type="Pad" name="_unnamed7" length="4" />
+        <value type="ShortBlockIndex" name="Kill Trigger Volume" disabled="true" block="ScenarioKillTriggerVolumesBlock" />
+        <value type="Pad" name="_unnamed8" length="2" />
+      </struct>
+      <value type="Block" name="Kill Trigger Volumes" disabled="false" struct="ScenarioTriggerVolumeBlock" maxelements="256" />
+      <struct name="RecordedAnimationBlock">
+        <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+        <value type="CharInteger" name="version" disabled="true" />
+        <value type="CharInteger" name="raw animation data" disabled="true" />
+        <value type="CharInteger" name="unit control data version" disabled="true" />
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="ShortInteger" name="length of animation" disabled="true" unit="ticks" />
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="Data" name="recorded animation event stream" disabled="true" />
+      </struct>
+      <value type="Block" name="Recorded Animations" disabled="false" struct="RecordedAnimationBlock" maxelements="1024" />
+      <struct name="ScenarioNetpointsBlock">
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="Angle" name="Facing" disabled="false" unit="Degrees" />
+        <value type="Enum" name="Type" length="2" disabled="false">
+          <item value="0" name="CTF Flag Spawn" />
+          <item value="1" name="CTF Flag Return" />
+          <item value="2" name="Assault Bomb Spawn" />
+          <item value="3" name="Assault Bomb Return" />
+          <item value="4" name="Oddball Spawn" />
+          <item value="5" name="unused" />
+          <item value="6" name="Race Checkpoint" />
+          <item value="7" name="Teleporter (src)" />
+          <item value="8" name="Teleporter (dest)" />
+          <item value="9" name="Headhunter Bin" />
+          <item value="10" name="Territories Flag" />
+          <item value="11" name="King Hill 0" />
+          <item value="12" name="King Hill 1" />
+          <item value="13" name="King Hill 2" />
+          <item value="14" name="King Hill 3" />
+          <item value="15" name="King Hill 4" />
+          <item value="16" name="King Hill 5" />
+          <item value="17" name="King Hill 6" />
+          <item value="18" name="King Hill 7" />
+        </value>
+        <value type="Enum" name="Team Designator" length="2" disabled="false">
+          <item value="0" name="Red (Alpha)" />
+          <item value="1" name="Blue (Bravo)" />
+          <item value="2" name="Yellow (Charlie)" />
+          <item value="3" name="Green (Delta)" />
+          <item value="4" name="Purple (Echo)" />
+          <item value="5" name="Orange (Foxtrot)" />
+          <item value="6" name="Brown (Golf)" />
+          <item value="7" name="Pink (Hotel)" />
+          <item value="8" name="NEUTRAL" />
+        </value>
+        <value type="ShortInteger" name="Identifier" disabled="false" />
+        <value type="Flags" name="Flags" length="2" disabled="false">
+          <bit index="0" name="Multiple Flag/Bomb" />
+          <bit index="1" name="Single Flag/Bomb" />
+          <bit index="2" name="Neutral Flag/Bomb" />
+        </value>
+        <value type="StringId" name="_unnamed0" />
+        <value type="StringId" name="_unnamed1" />
+      </struct>
+      <value type="Block" name="Netgame Flags" disabled="false" struct="ScenarioNetpointsBlock" maxelements="200" />
+      <struct name="ScenarioNetgameEquipmentBlock">
+        <value type="Flags" name="Flags" length="4" disabled="false">
+          <bit index="0" name="Levitate" />
+          <bit index="1" name="Destroy Existing on New Spawn" />
+        </value>
+        <value type="Enum" name="Game Type 1" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="Capture the Flag" />
+          <item value="2" name="Slayer" />
+          <item value="3" name="Oddball" />
+          <item value="4" name="King of the Hill" />
+          <item value="5" name="Race" />
+          <item value="6" name="Headhunter" />
+          <item value="7" name="Juggernaut" />
+          <item value="8" name="Territories" />
+          <item value="9" name="stub" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="All Game Types" />
+          <item value="13" name="All Except CTF" />
+          <item value="14" name="All Except CTF &amp; Race" />
+        </value>
+        <value type="Enum" name="Game Type 2" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="Capture the Flag" />
+          <item value="2" name="Slayer" />
+          <item value="3" name="Oddball" />
+          <item value="4" name="King of the Hill" />
+          <item value="5" name="Race" />
+          <item value="6" name="Headhunter" />
+          <item value="7" name="Juggernaut" />
+          <item value="8" name="Territories" />
+          <item value="9" name="stub" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="All Game Types" />
+          <item value="13" name="All Except CTF" />
+          <item value="14" name="All Except CTF &amp; Race" />
+        </value>
+        <value type="Enum" name="Game Type 3" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="Capture the Flag" />
+          <item value="2" name="Slayer" />
+          <item value="3" name="Oddball" />
+          <item value="4" name="King of the Hill" />
+          <item value="5" name="Race" />
+          <item value="6" name="Headhunter" />
+          <item value="7" name="Juggernaut" />
+          <item value="8" name="Territories" />
+          <item value="9" name="stub" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="All Game Types" />
+          <item value="13" name="All Except CTF" />
+          <item value="14" name="All Except CTF &amp; Race" />
+        </value>
+        <value type="Enum" name="Game Type 4" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="Capture the Flag" />
+          <item value="2" name="Slayer" />
+          <item value="3" name="Oddball" />
+          <item value="4" name="King of the Hill" />
+          <item value="5" name="Race" />
+          <item value="6" name="Headhunter" />
+          <item value="7" name="Juggernaut" />
+          <item value="8" name="Territories" />
+          <item value="9" name="stub" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="All Game Types" />
+          <item value="13" name="All Except CTF" />
+          <item value="14" name="All Except CTF &amp; Race" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="ShortInteger" name="Spawn Time in seconds 0  default" disabled="false" />
+        <value type="ShortInteger" name="Respawn on Empty Time" disabled="false" unit="seconds" />
+        <value type="Enum" name="Respawn Timer Starts" length="2" disabled="false">
+          <item value="0" name="On Pick Up" />
+          <item value="1" name="On Body Depletion" />
+        </value>
+        <value type="Enum" name="Classification" length="1" disabled="false">
+          <item value="0" name="Weapon" />
+          <item value="1" name="Primary Light Land" />
+          <item value="2" name="Secondary Light Land" />
+          <item value="3" name="Primary Heavy Land" />
+          <item value="4" name="Primary Flying" />
+          <item value="5" name="Secondary Heavy Land" />
+          <item value="6" name="Primary Turret" />
+          <item value="7" name="Secondary Turret" />
+          <item value="8" name="Grenade" />
+          <item value="9" name="Powerup" />
+        </value>
+        <value type="Pad" name="_unnamed1" length="3" />
+        <value type="Pad" name="_unnamed2" length="40" />
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles3d" name="Orientation" disabled="false" />
+        <value type="TagReference" name="ItemVehicle Collection" disabled="false" extensions="itmc|vehc" />
+        <value type="Pad" name="_unnamed3" length="48" />
+      </struct>
+      <value type="Block" name="Netgame Equipment" disabled="false" struct="ScenarioNetgameEquipmentBlock" maxelements="100" />
+      <struct name="ScenarioStartingEquipmentBlock">
+        <value type="Flags" name="Flags" length="4" disabled="false">
+          <bit index="0" name="No Grenades" />
+          <bit index="1" name="Plasma Grenades" />
+        </value>
+        <value type="Enum" name="Game Type 1" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="Capture the Flag" />
+          <item value="2" name="Slayer" />
+          <item value="3" name="Oddball" />
+          <item value="4" name="King of the Hill" />
+          <item value="5" name="Race" />
+          <item value="6" name="Headhunter" />
+          <item value="7" name="Juggernaut" />
+          <item value="8" name="Territories" />
+          <item value="9" name="stub" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="All Game Types" />
+          <item value="13" name="All Except CTF" />
+          <item value="14" name="All Except CTF &amp; Race" />
+        </value>
+        <value type="Enum" name="Game Type 2" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="Capture the Flag" />
+          <item value="2" name="Slayer" />
+          <item value="3" name="Oddball" />
+          <item value="4" name="King of the Hill" />
+          <item value="5" name="Race" />
+          <item value="6" name="Headhunter" />
+          <item value="7" name="Juggernaut" />
+          <item value="8" name="Territories" />
+          <item value="9" name="stub" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="All Game Types" />
+          <item value="13" name="All Except CTF" />
+          <item value="14" name="All Except CTF &amp; Race" />
+        </value>
+        <value type="Enum" name="Game Type 3" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="Capture the Flag" />
+          <item value="2" name="Slayer" />
+          <item value="3" name="Oddball" />
+          <item value="4" name="King of the Hill" />
+          <item value="5" name="Race" />
+          <item value="6" name="Headhunter" />
+          <item value="7" name="Juggernaut" />
+          <item value="8" name="Territories" />
+          <item value="9" name="stub" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="All Game Types" />
+          <item value="13" name="All Except CTF" />
+          <item value="14" name="All Except CTF &amp; Race" />
+        </value>
+        <value type="Enum" name="Game Type 4" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="Capture the Flag" />
+          <item value="2" name="Slayer" />
+          <item value="3" name="Oddball" />
+          <item value="4" name="King of the Hill" />
+          <item value="5" name="Race" />
+          <item value="6" name="Headhunter" />
+          <item value="7" name="Juggernaut" />
+          <item value="8" name="Territories" />
+          <item value="9" name="stub" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="All Game Types" />
+          <item value="13" name="All Except CTF" />
+          <item value="14" name="All Except CTF &amp; Race" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="48" />
+        <value type="TagReference" name="Item Collection 1" disabled="false" extensions="itmc" />
+        <value type="TagReference" name="Item Collection 2" disabled="false" extensions="itmc" />
+        <value type="TagReference" name="Item Collection 3" disabled="false" extensions="itmc" />
+        <value type="TagReference" name="Item Collection 4" disabled="false" extensions="itmc" />
+        <value type="TagReference" name="Item Collection 5" disabled="false" extensions="itmc" />
+        <value type="TagReference" name="Item Collection 6" disabled="false" extensions="itmc" />
+        <value type="Pad" name="_unnamed1" length="48" />
+      </struct>
+      <value type="Block" name="Starting Equipment" disabled="false" struct="ScenarioStartingEquipmentBlock" maxelements="200" />
+      <struct name="ScenarioBspSwitchTriggerVolumeBlock">
+        <value type="ShortBlockIndex" name="Trigger Volume" disabled="false" block="ScenarioTriggerVolumeBlock" />
+        <value type="ShortInteger" name="Source" disabled="false" />
+        <value type="ShortInteger" name="Destination" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="2" />
+      </struct>
+      <value type="Block" name="BSP Switch Trigger Volumes" disabled="false" struct="ScenarioBspSwitchTriggerVolumeBlock" maxelements="256" />
+      <struct name="ScenarioDecalsBlock">
+        <value type="ShortBlockIndex" name="Decal Type" disabled="false" block="ScenarioDecalPaletteBlock" blockname="true" />
+        <value type="CharInteger" name="Yaw-127127" disabled="true" />
+        <value type="CharInteger" name="Pitch-127127" disabled="true" />
+        <value type="RealPoint3d" name="Position" disabled="true" />
+      </struct>
+      <value type="Block" name="Decals" disabled="false" struct="ScenarioDecalsBlock" maxelements="65536" />
+      <struct name="ScenarioDecalPaletteBlock">
+        <value type="TagReference" name="Reference" disabled="false" extensions="deca" blockname="true" />
+      </struct>
+      <value type="Block" name="Decals Palette" disabled="false" struct="ScenarioDecalPaletteBlock" maxelements="128" />
+      <struct name="ScenarioDetailObjectCollectionPaletteBlock">
+        <value type="TagReference" name="Name" disabled="false" extensions="dobc" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="Detail Object Collection Palette" disabled="false" struct="ScenarioDetailObjectCollectionPaletteBlock" maxelements="32" />
+      <struct name="StylePaletteBlock">
+        <value type="TagReference" name="reference" disabled="false" extensions="styl" blockname="true" />
+      </struct>
+      <value type="Block" name="Style Palette" disabled="false" struct="StylePaletteBlock" maxelements="50" />
+      <struct name="SquadGroupsBlock">
+        <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+        <value type="ShortBlockIndex" name="parent" disabled="false" block="SquadGroupsBlock" />
+        <value type="ShortBlockIndex" name="initial orders" disabled="false" block="OrdersBlock" />
+      </struct>
+      <value type="Block" name="Squad Groups" disabled="false" struct="SquadGroupsBlock" maxelements="100" />
+      <struct name="SquadsBlock">
+        <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="unused" />
+          <bit index="1" name="never search" />
+          <bit index="2" name="start timer immediately" />
+          <bit index="3" name="no timer, delay forever" />
+          <bit index="4" name="magic sight after timer" />
+          <bit index="5" name="automatic migration" />
+          <bit index="6" name="DEPRECATED" />
+          <bit index="7" name="respawn enabled" />
+          <bit index="8" name="blind" />
+          <bit index="9" name="deaf" />
+          <bit index="10" name="braindead" />
+          <bit index="11" name="3d_firing_positions" />
+          <bit index="12" name="initially placed" />
+          <bit index="13" name="units not enterable by player" />
+        </value>
+        <value type="Enum" name="team" length="2" disabled="false">
+          <item value="0" name="default" />
+          <item value="1" name="player" />
+          <item value="2" name="human" />
+          <item value="3" name="covenant" />
+          <item value="4" name="flood" />
+          <item value="5" name="sentinel" />
+          <item value="6" name="heretic" />
+          <item value="7" name="prophet" />
+          <item value="8" name="unused8" />
+          <item value="9" name="unused9" />
+          <item value="10" name="unused10" />
+          <item value="11" name="unused11" />
+          <item value="12" name="unused12" />
+          <item value="13" name="unused13" />
+          <item value="14" name="unused14" />
+          <item value="15" name="unused15" />
+        </value>
+        <value type="ShortBlockIndex" name="parent" disabled="false" block="SquadGroupsBlock" />
+        <value type="Real" name="squad delay time" disabled="false" unit="seconds" />
+        <value type="ShortInteger" name="normal diff count" disabled="false">
+          <tooltip>initial number of actors on normal difficulty</tooltip>
+        </value>
+        <value type="ShortInteger" name="insane diff count" disabled="false">
+          <tooltip>initial number of actors on insane difficulty (hard difficulty is midway between normal and insane)</tooltip>
+        </value>
+        <value type="Enum" name="major upgrade" length="2" disabled="false">
+          <item value="0" name="normal" />
+          <item value="1" name="few" />
+          <item value="2" name="many" />
+          <item value="3" name="none" />
+          <item value="4" name="all" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="ShortBlockIndex" name="vehicle type" disabled="false" block="ScenarioVehiclePaletteBlock" />
+        <value type="ShortBlockIndex" name="character type" disabled="false" block="CharacterPaletteBlock" />
+        <value type="ShortBlockIndex" name="initial zone" disabled="false" block="ZoneBlock" />
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="ShortBlockIndex" name="initial weapon" disabled="false" block="ScenarioWeaponPaletteBlock" />
+        <value type="ShortBlockIndex" name="initial secondary weapon" disabled="false" block="ScenarioWeaponPaletteBlock" />
+        <value type="Enum" name="grenade type" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="Human grenade" />
+          <item value="2" name="Covenant Plasma" />
+        </value>
+        <value type="ShortBlockIndex" name="initial order" disabled="false" block="OrdersBlock" />
+        <value type="StringId" name="vehicle variant" disabled="false" />
+        <struct name="ActorStartingLocationsBlock">
+          <value type="StringId" name="name" disabled="false" blockname="true" />
+          <value type="RealPoint3d" name="position" disabled="false" />
+          <value type="ShortInteger" name="reference frame" disabled="true" />
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="RealEulerAngles2d" name="facing yaw pitch" disabled="false" unit="degrees" />
+          <value type="Flags" name="flags" length="4" disabled="false">
+            <bit index="0" name="initially asleep" />
+            <bit index="1" name="infection form explode" />
+            <bit index="2" name="n/a" />
+            <bit index="3" name="always place" />
+            <bit index="4" name="initially hidden" />
+          </value>
+          <value type="ShortBlockIndex" name="character type" disabled="false" block="CharacterPaletteBlock" />
+          <value type="ShortBlockIndex" name="initial weapon" disabled="false" block="ScenarioWeaponPaletteBlock" />
+          <value type="ShortBlockIndex" name="initial secondary weapon" disabled="false" block="ScenarioWeaponPaletteBlock" />
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="ShortBlockIndex" name="vehicle type" disabled="false" block="ScenarioVehiclePaletteBlock" />
+          <value type="Enum" name="seat type" length="2" disabled="false">
+            <item value="0" name="DEFAULT" />
+            <item value="1" name="passenger" />
+            <item value="2" name="gunner" />
+            <item value="3" name="driver" />
+            <item value="4" name="small cargo" />
+            <item value="5" name="large cargo" />
+            <item value="6" name="NO driver" />
+            <item value="7" name="NO vehicle" />
+          </value>
+          <value type="Enum" name="grenade type" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="Human grenade" />
+            <item value="2" name="Covenant Plasma" />
+          </value>
+          <value type="ShortInteger" name="swarm count" disabled="false">
+            <tooltip>number of cretures in swarm if a swarm is spawned at this location</tooltip>
+          </value>
+          <value type="StringId" name="actor variant name" disabled="false" />
+          <value type="StringId" name="vehicle variant name" disabled="false" />
+          <value type="Real" name="initial movement distance" disabled="false">
+            <tooltip>before doing anything else, the actor will travel the given distance in its forward direction</tooltip>
+          </value>
+          <value type="ShortBlockIndex" name="emitter vehicle" disabled="false" block="ScenarioVehicleBlock" />
+          <value type="Enum" name="initial movement mode" length="2" disabled="false">
+            <item value="0" name="default" />
+            <item value="1" name="climbing" />
+            <item value="2" name="flying" />
+          </value>
+          <value type="FixedLengthString" name="Placement script" disabled="false" />
+          <value type="Skip" name="_unnamed2" length="2" />
+          <value type="Pad" name="_unnamed3" length="2" />
+        </struct>
+        <value type="Block" name="starting locations" disabled="false" struct="ActorStartingLocationsBlock" maxelements="32" />
+        <value type="FixedLengthString" name="Placement script" disabled="false" />
+        <value type="Skip" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="2" />
+      </struct>
+      <value type="Block" name="Squads" disabled="false" struct="SquadsBlock" maxelements="335" />
+      <struct name="ZoneBlock">
+        <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="manual bsp index" />
+        </value>
+        <value type="ShortBlockIndex" name="manual bsp" disabled="false" block="ScenarioStructureBspReferenceBlock" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <struct name="FiringPositionsBlock">
+          <value type="RealPoint3d" name="position local" disabled="false" />
+          <value type="ShortInteger" name="reference frame" disabled="false" />
+          <value type="Flags" name="flags" length="2" disabled="true">
+            <bit index="0" name="open" />
+            <bit index="1" name="partial" />
+            <bit index="2" name="closed" />
+            <bit index="3" name="mobile" />
+            <bit index="4" name="wall lean" />
+            <bit index="5" name="perch" />
+            <bit index="6" name="ground point" />
+            <bit index="7" name="dynamic cover point" />
+          </value>
+          <value type="ShortBlockIndex" name="area" disabled="false" block="AreasBlock" blockname="true" />
+          <value type="ShortInteger" name="cluster index" disabled="true" />
+          <value type="Skip" name="_unnamed0" length="4" />
+          <value type="RealEulerAngles2d" name="normal" disabled="false" />
+        </struct>
+        <value type="Block" name="firing positions" disabled="false" struct="FiringPositionsBlock" maxelements="512" />
+        <struct name="AreasBlock">
+          <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+          <value type="Flags" name="area flags" length="4" disabled="false">
+            <bit index="0" name="vehicle area" />
+            <bit index="1" name="perch" />
+            <bit index="2" name="manual reference frame" />
+          </value>
+          <value type="Skip" name="_unnamed0" length="20" />
+          <value type="Skip" name="_unnamed1" length="4" />
+          <value type="Pad" name="_unnamed2" length="64" />
+          <value type="ShortInteger" name="manual reference frame" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="2" />
+          <struct name="FlightReferenceBlock">
+            <value type="ShortInteger" name="flight hint index" disabled="false" />
+            <value type="ShortInteger" name="poit index" disabled="false" />
+          </struct>
+          <value type="Block" name="flight_hints" disabled="false" struct="FlightReferenceBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="areas" disabled="false" struct="AreasBlock" maxelements="64" />
+      </struct>
+      <value type="Block" name="Zones" disabled="false" struct="ZoneBlock" maxelements="128" />
+      <struct name="AiSceneBlock">
+        <value type="StringId" name="name" disabled="false" blockname="true" />
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="scene can play multiple times" />
+          <bit index="1" name="enable combat dialogue" />
+        </value>
+        <struct name="AiSceneTriggerBlock">
+          <value type="Enum" name="combination rule" length="2" disabled="false">
+            <item value="0" name="OR" />
+            <item value="1" name="AND" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <struct name="TriggerReferences">
+            <value type="Flags" name="Trigger flags" length="4" disabled="false">
+              <bit index="0" name="not" />
+            </value>
+            <value type="ShortBlockIndex" name="trigger" disabled="false" block="TriggersBlock" blockname="true" />
+            <value type="Pad" name="_unnamed0" length="2" />
+          </struct>
+          <value type="Block" name="triggers" disabled="false" struct="TriggerReferences" maxelements="10" />
+        </struct>
+        <value type="Block" name="trigger conditions" disabled="false" struct="AiSceneTriggerBlock" maxelements="1" />
+        <struct name="AiSceneRoleBlock">
+          <value type="StringId" name="name" disabled="false" blockname="true" />
+          <value type="Enum" name="group" length="2" disabled="false">
+            <item value="0" name="group 1" />
+            <item value="1" name="group 2" />
+            <item value="2" name="group 3" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <struct name="AiSceneRoleVariantsBlock">
+            <value type="StringId" name="variant designation" disabled="false" blockname="true" />
+          </struct>
+          <value type="Block" name="role variants" disabled="false" struct="AiSceneRoleVariantsBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="roles" disabled="false" struct="AiSceneRoleBlock" maxelements="10" />
+      </struct>
+      <value type="Block" name="Mission Scenes" disabled="false" struct="AiSceneBlock" maxelements="100" />
+      <struct name="CharacterPaletteBlock">
+        <value type="TagReference" name="reference" disabled="false" extensions="char" blockname="true" />
+      </struct>
+      <value type="Block" name="Character Palette" disabled="false" struct="CharacterPaletteBlock" maxelements="64" />
+      <struct name="PathfindingDataBlock">
+        <struct name="SectorBlock">
+          <value type="Flags" name="Path-finding sector flags" length="2" disabled="false">
+            <bit index="0" name="sector walkable" />
+            <bit index="1" name="sector breakable" />
+            <bit index="2" name="sector mobile" />
+            <bit index="3" name="sector bsp source" />
+            <bit index="4" name="floor" />
+            <bit index="5" name="ceiling" />
+            <bit index="6" name="wall north" />
+            <bit index="7" name="wall south" />
+            <bit index="8" name="wall east" />
+            <bit index="9" name="wall west" />
+            <bit index="10" name="crouchable" />
+            <bit index="11" name="aligned" />
+            <bit index="12" name="sector step" />
+            <bit index="13" name="sector interior" />
+          </value>
+          <value type="ShortInteger" name="hint index" disabled="false" />
+          <value type="LongInteger" name="first link do not set manually" disabled="false" />
+        </struct>
+        <value type="Block" name="sectors" disabled="false" struct="SectorBlock" maxelements="65534" />
+        <struct name="SectorLinkBlock">
+          <value type="ShortInteger" name="vertex 1" disabled="false" />
+          <value type="ShortInteger" name="vertex 2" disabled="false" />
+          <value type="Flags" name="link flags" length="2" disabled="false">
+            <bit index="0" name="sector link from collision edge" />
+            <bit index="1" name="sector intersection link" />
+            <bit index="2" name="sector link bsp2d creation error" />
+            <bit index="3" name="sector link topology error" />
+            <bit index="4" name="sector link chain error" />
+            <bit index="5" name="sector link both sectors walkable" />
+            <bit index="6" name="sector link magic hanging link" />
+            <bit index="7" name="sector link threshold" />
+            <bit index="8" name="sector link crouchable" />
+            <bit index="9" name="sector link wall base" />
+            <bit index="10" name="sector link ledge" />
+            <bit index="11" name="sector link leanable" />
+            <bit index="12" name="sector link start corner" />
+            <bit index="13" name="sector link end corner" />
+          </value>
+          <value type="ShortInteger" name="hint index" disabled="false" />
+          <value type="ShortInteger" name="forward link" disabled="false" />
+          <value type="ShortInteger" name="reverse link" disabled="false" />
+          <value type="ShortInteger" name="left sector" disabled="false" />
+          <value type="ShortInteger" name="right sector" disabled="false" />
+        </struct>
+        <value type="Block" name="links" disabled="false" struct="SectorLinkBlock" maxelements="262144" />
+        <struct name="RefBlock">
+          <value type="LongInteger" name="node ref or sector ref" disabled="false" />
+        </struct>
+        <value type="Block" name="refs" disabled="false" struct="RefBlock" maxelements="131072" />
+        <struct name="SectorBsp2dNodesBlock">
+          <value type="RealPlane2d" name="plane" disabled="true" />
+          <value type="LongInteger" name="left child" disabled="true" />
+          <value type="LongInteger" name="right child" disabled="true" />
+        </struct>
+        <value type="Block" name="bsp2d nodes" disabled="false" struct="SectorBsp2dNodesBlock" maxelements="131072" />
+        <struct name="SurfaceFlagsBlock">
+          <value type="LongInteger" name="flags" disabled="true" />
+        </struct>
+        <value type="Block" name="surface flags" disabled="false" struct="SurfaceFlagsBlock" maxelements="4096" />
+        <struct name="SectorVertexBlock">
+          <value type="RealPoint3d" name="point" disabled="true" />
+        </struct>
+        <value type="Block" name="vertices" disabled="false" struct="SectorVertexBlock" maxelements="65535" />
+        <struct name="EnvironmentObjectRefs">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="mobile" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="LongInteger" name="first sector" disabled="true" />
+          <value type="LongInteger" name="last sector" disabled="true" />
+          <struct name="EnvironmentObjectBspRefs">
+            <value type="LongInteger" name="bsp reference" disabled="true" />
+            <value type="LongInteger" name="first sector" disabled="true" />
+            <value type="LongInteger" name="last sector" disabled="true" />
+            <value type="ShortInteger" name="node_index" disabled="true" />
+            <value type="Pad" name="_unnamed0" length="2" />
+          </struct>
+          <value type="Block" name="bsps" disabled="true" struct="EnvironmentObjectBspRefs" maxelements="1024" />
+          <struct name="EnvironmentObjectNodes">
+            <value type="ShortInteger" name="reference frame index" disabled="false" />
+            <value type="CharInteger" name="projection axis" disabled="false" />
+            <value type="Flags" name="projection sign" length="1" disabled="false">
+              <bit index="0" name="projection sign" />
+            </value>
+          </struct>
+          <value type="Block" name="nodes" disabled="true" struct="EnvironmentObjectNodes" maxelements="255" />
+        </struct>
+        <value type="Block" name="object refs" disabled="false" struct="EnvironmentObjectRefs" maxelements="2000" />
+        <struct name="PathfindingHintsBlock">
+          <value type="Enum" name="hint type" length="2" disabled="false">
+            <item value="0" name="intersection link" />
+            <item value="1" name="jump link" />
+            <item value="2" name="climb link" />
+            <item value="3" name="vault link" />
+            <item value="4" name="mount link" />
+            <item value="5" name="hoist link" />
+            <item value="6" name="wall jump link" />
+            <item value="7" name="breakable floor" />
+          </value>
+          <value type="ShortInteger" name="Next hint index" disabled="false" />
+          <value type="ShortInteger" name="hint data 0" disabled="true" />
+          <value type="ShortInteger" name="hint data 1" disabled="true" />
+          <value type="ShortInteger" name="hint data 2" disabled="true" />
+          <value type="ShortInteger" name="hint data 3" disabled="true" />
+          <value type="ShortInteger" name="hint data 4" disabled="true" />
+          <value type="ShortInteger" name="hint data 5" disabled="true" />
+          <value type="ShortInteger" name="hint data 6" disabled="true" />
+          <value type="ShortInteger" name="hint data 7" disabled="true" />
+        </struct>
+        <value type="Block" name="pathfinding hints" disabled="false" struct="PathfindingHintsBlock" maxelements="32767" />
+        <struct name="InstancedGeometryReferenceBlock">
+          <value type="ShortInteger" name="pathfinding object_index" disabled="false" />
+          <value type="Pad" name="_unnamed0" length="2" />
+        </struct>
+        <value type="Block" name="instanced geometry refs" disabled="false" struct="InstancedGeometryReferenceBlock" maxelements="1024" />
+        <value type="LongInteger" name="structure checksum" disabled="true" />
+        <value type="Pad" name="_unnamed0" length="32" />
+        <struct name="UserHintBlock">
+          <struct name="UserHintPointBlock">
+            <value type="RealPoint3d" name="Point" disabled="false" />
+            <value type="ShortInteger" name="reference frame" disabled="true" />
+            <value type="Pad" name="_unnamed0" length="2" />
+          </struct>
+          <value type="Block" name="point geometry" disabled="false" struct="UserHintPointBlock" maxelements="200" />
+          <struct name="UserHintRayBlock">
+            <value type="RealPoint3d" name="Point" disabled="false" />
+            <value type="ShortInteger" name="reference frame" disabled="true" />
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="RealVector3d" name="Vector" disabled="false" />
+          </struct>
+          <value type="Block" name="ray geometry" disabled="false" struct="UserHintRayBlock" maxelements="200" />
+          <struct name="UserHintLineSegmentBlock">
+            <value type="Flags" name="Flags" length="4" disabled="false">
+              <bit index="0" name="bidirectional" />
+              <bit index="1" name="closed" />
+            </value>
+            <value type="RealPoint3d" name="Point 0" disabled="false" />
+            <value type="ShortInteger" name="reference frame" disabled="true" />
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="RealPoint3d" name="Point 1" disabled="false" />
+            <value type="ShortInteger" name="reference frame2" disabled="true" />
+            <value type="Pad" name="_unnamed1" length="2" />
+          </struct>
+          <value type="Block" name="line segment geometry" disabled="false" struct="UserHintLineSegmentBlock" maxelements="200" />
+          <struct name="UserHintParallelogramBlock">
+            <value type="Flags" name="Flags" length="4" disabled="false">
+              <bit index="0" name="bidirectional" />
+              <bit index="1" name="closed" />
+            </value>
+            <value type="RealPoint3d" name="Point 0" disabled="false" />
+            <value type="ShortInteger" name="reference frame" disabled="true" />
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="RealPoint3d" name="Point 1" disabled="false" />
+            <value type="ShortInteger" name="reference frame2" disabled="true" />
+            <value type="Pad" name="_unnamed1" length="2" />
+            <value type="RealPoint3d" name="Point 2" disabled="false" />
+            <value type="ShortInteger" name="reference frame3" disabled="true" />
+            <value type="Pad" name="_unnamed2" length="2" />
+            <value type="RealPoint3d" name="Point 3" disabled="false" />
+            <value type="ShortInteger" name="reference frame4" disabled="true" />
+            <value type="Pad" name="_unnamed3" length="2" />
+          </struct>
+          <value type="Block" name="parallelogram geometry" disabled="false" struct="UserHintParallelogramBlock" maxelements="200" />
+          <struct name="UserHintPolygonBlock">
+            <value type="Flags" name="Flags" length="4" disabled="false">
+              <bit index="0" name="bidirectional" />
+              <bit index="1" name="closed" />
+            </value>
+            <struct name="UserHintPointBlock">
+              <value type="RealPoint3d" name="Point" disabled="false" />
+              <value type="ShortInteger" name="reference frame" disabled="true" />
+              <value type="Pad" name="_unnamed0" length="2" />
+            </struct>
+            <value type="Block" name="Points" disabled="false" struct="UserHintPointBlock" maxelements="200" />
+          </struct>
+          <value type="Block" name="polygon geometry" disabled="false" struct="UserHintPolygonBlock" maxelements="200" />
+          <struct name="UserHintJumpBlock">
+            <value type="Flags" name="Flags" length="2" disabled="false">
+              <bit index="0" name="bidirectional" />
+              <bit index="1" name="closed" />
+            </value>
+            <value type="ShortBlockIndex" name="geometry index" disabled="true" block="UserHintParallelogramBlock" />
+            <value type="Enum" name="force jump height" length="2" disabled="false">
+              <item value="0" name="NONE" />
+              <item value="1" name="down" />
+              <item value="2" name="step" />
+              <item value="3" name="crouch" />
+              <item value="4" name="stand" />
+              <item value="5" name="storey" />
+              <item value="6" name="tower" />
+              <item value="7" name="infinite" />
+            </value>
+            <value type="Flags" name="control flags" length="2" disabled="false">
+              <bit index="0" name="magic lift" />
+            </value>
+          </struct>
+          <value type="Block" name="jump hints" disabled="false" struct="UserHintJumpBlock" maxelements="200" />
+          <struct name="UserHintClimbBlock">
+            <value type="Flags" name="Flags" length="2" disabled="false">
+              <bit index="0" name="bidirectional" />
+              <bit index="1" name="closed" />
+            </value>
+            <value type="ShortBlockIndex" name="geometry index" disabled="true" block="UserHintLineSegmentBlock" />
+          </struct>
+          <value type="Block" name="climb hints" disabled="false" struct="UserHintClimbBlock" maxelements="200" />
+          <struct name="UserHintWellBlock">
+            <value type="Flags" name="flags" length="4" disabled="false">
+              <bit index="0" name="bidirectional" />
+            </value>
+            <struct name="UserHintWellPointBlock">
+              <value type="Enum" name="type" length="2" disabled="false">
+                <item value="0" name="jump" />
+                <item value="1" name="climb" />
+                <item value="2" name="hoist" />
+              </value>
+              <value type="Pad" name="_unnamed0" length="2" />
+              <value type="RealVector3d" name="point" disabled="false" />
+              <value type="ShortInteger" name="reference frame" disabled="false" />
+              <value type="Pad" name="_unnamed1" length="2" />
+              <value type="LongInteger" name="sector index" disabled="false" />
+              <value type="RealEulerAngles2d" name="normal" disabled="false" />
+            </struct>
+            <value type="Block" name="points" disabled="false" struct="UserHintWellPointBlock" maxelements="200" />
+          </struct>
+          <value type="Block" name="well hints" disabled="false" struct="UserHintWellBlock" maxelements="200" />
+          <struct name="UserHintFlightBlock">
+            <struct name="UserHintFlightPointBlock">
+              <value type="RealVector3d" name="point" disabled="false" />
+            </struct>
+            <value type="Block" name="points" disabled="false" struct="UserHintFlightPointBlock" maxelements="10" />
+          </struct>
+          <value type="Block" name="flight hints" disabled="false" struct="UserHintFlightBlock" maxelements="50" />
+        </struct>
+        <value type="Block" name="user-placed hints" disabled="false" struct="UserHintBlock" maxelements="1" />
+      </struct>
+      <value type="Block" name="AI Pathfinding Data" disabled="false" struct="PathfindingDataBlock" maxelements="16" />
+      <struct name="AiAnimationReferenceBlock">
+        <value type="FixedLengthString" name="animation name" disabled="false" blockname="true" />
+        <value type="TagReference" name="animation graph" disabled="false" extensions="jmad">
+          <tooltip>leave this blank to use the unit's normal animation graph</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="12" />
+      </struct>
+      <value type="Block" name="AI Animation References" disabled="false" struct="AiAnimationReferenceBlock" maxelements="128" />
+      <struct name="AiScriptReferenceBlock">
+        <value type="FixedLengthString" name="script name" disabled="false" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="8" />
+      </struct>
+      <value type="Block" name="AI Script References" disabled="false" struct="AiScriptReferenceBlock" maxelements="128" />
+      <struct name="AiRecordingReferenceBlock">
+        <value type="FixedLengthString" name="recording name" disabled="false" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="8" />
+      </struct>
+      <value type="Block" name="AI Recording References" disabled="false" struct="AiRecordingReferenceBlock" maxelements="128" />
+      <struct name="AiConversationBlock">
+        <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="stop if death">
+            <tooltip>this conversation will be aborted if any participant dies</tooltip>
+          </bit>
+          <bit index="1" name="stop if damaged">
+            <tooltip>an actor will abort this conversation if they are damaged</tooltip>
+          </bit>
+          <bit index="2" name="stop if visible enemy">
+            <tooltip>an actor will abort this conversation if they see an enemy</tooltip>
+          </bit>
+          <bit index="3" name="stop if alerted to enemy">
+            <tooltip>an actor will abort this conversation if they suspect an enemy</tooltip>
+          </bit>
+          <bit index="4" name="player must be visible">
+            <tooltip>this conversation cannot take place unless the participants can _see_ a nearby player</tooltip>
+          </bit>
+          <bit index="5" name="stop other actions">
+            <tooltip>participants stop doing whatever they were doing in order to perform this conversation</tooltip>
+          </bit>
+          <bit index="6" name="keep trying to play">
+            <tooltip>if this conversation fails initially, it will keep testing to see when it can play</tooltip>
+          </bit>
+          <bit index="7" name="player must be looking">
+            <tooltip>this conversation will not start until the player is looking at one of the participants</tooltip>
+          </bit>
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Real" name="trigger distance" disabled="false" unit="world units">
+          <tooltip>distance the player must enter before the conversation can trigger</tooltip>
+        </value>
+        <value type="Real" name="run-to-player dist" disabled="false" unit="world units">
+          <tooltip>if the 'involves player' flag is set, when triggered the conversation's participant(s) will run to within this distance of the player</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed1" length="36" />
+        <struct name="AiConversationParticipantBlock">
+          <value type="Pad" name="_unnamed0" length="8" />
+          <value type="ShortBlockIndex" name="use this object" disabled="false" block="ScenarioObjectNamesBlock">
+            <tooltip>if a unit with this name exists, we try to pick them to start the conversation</tooltip>
+          </value>
+          <value type="ShortBlockIndex" name="set new name" disabled="false" block="ScenarioObjectNamesBlock">
+            <tooltip>once we pick a unit, we name it this</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed1" length="12" />
+          <value type="Pad" name="_unnamed2" length="12" />
+          <value type="FixedLengthString" name="encounter name" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="4" />
+          <value type="Pad" name="_unnamed4" length="12" />
+        </struct>
+        <value type="Block" name="participants" disabled="false" struct="AiConversationParticipantBlock" maxelements="8" />
+        <struct name="AiConversationLineBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="addressee look at speaker" />
+            <bit index="1" name="everyone look at speaker" />
+            <bit index="2" name="everyone look at addressee" />
+            <bit index="3" name="wait after until told to advance" />
+            <bit index="4" name="wait until speaker nearby" />
+            <bit index="5" name="wait until everyone nearby" />
+          </value>
+          <value type="ShortBlockIndex" name="participant" disabled="false" block="AiConversationParticipantBlock" />
+          <value type="Enum" name="addressee" length="2" disabled="false">
+            <item value="0" name="none" />
+            <item value="1" name="player" />
+            <item value="2" name="participant" />
+          </value>
+          <value type="ShortBlockIndex" name="addressee participant" disabled="false" block="AiConversationParticipantBlock">
+            <tooltip>this field is only used if the addressee type is 'participant'</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed0" length="4" />
+          <value type="Real" name="line delay time" disabled="false" />
+          <value type="Pad" name="_unnamed1" length="12" />
+          <value type="TagReference" name="variant 1" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="variant 2" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="variant 3" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="variant 4" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="variant 5" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="variant 6" disabled="false" extensions="snd!" />
+        </struct>
+        <value type="Block" name="lines" disabled="false" struct="AiConversationLineBlock" maxelements="32" />
+        <struct name="GNullBlock" />
+        <value type="Block" name="_unnamed2" struct="GNullBlock" maxelements="0" />
+      </struct>
+      <value type="Block" name="AI Conversations" disabled="false" struct="AiConversationBlock" maxelements="128" />
+      <value type="Data" name="Script Syntax Data" disabled="false" />
+      <value type="Data" name="Script String Data" disabled="false" />
+      <struct name="HsScriptsBlock">
+        <value type="FixedLengthString" name="name" disabled="true" blockname="true" />
+        <value type="Enum" name="script type" length="2" disabled="true">
+          <item value="0" name="startup" />
+          <item value="1" name="dormant" />
+          <item value="2" name="continuous" />
+          <item value="3" name="static" />
+          <item value="4" name="stub" />
+          <item value="5" name="command_script" />
+        </value>
+        <value type="Enum" name="return type" length="2" disabled="true">
+          <item value="0" name="unparsed" />
+          <item value="1" name="special form" />
+          <item value="2" name="function name" />
+          <item value="3" name="passthrough" />
+          <item value="4" name="void" />
+          <item value="5" name="boolean" />
+          <item value="6" name="real" />
+          <item value="7" name="short" />
+          <item value="8" name="long" />
+          <item value="9" name="string" />
+          <item value="10" name="script" />
+          <item value="11" name="string_id" />
+          <item value="12" name="unit_seat_mapping" />
+          <item value="13" name="trigger_volume" />
+          <item value="14" name="cutscene_flag" />
+          <item value="15" name="cutscene_camera_point" />
+          <item value="16" name="cutscene_title" />
+          <item value="17" name="cutscene_recording" />
+          <item value="18" name="device_group" />
+          <item value="19" name="ai" />
+          <item value="20" name="ai_command_list" />
+          <item value="21" name="ai_command_script" />
+          <item value="22" name="ai_behavior" />
+          <item value="23" name="ai_orders" />
+          <item value="24" name="starting_profile" />
+          <item value="25" name="conversation" />
+          <item value="26" name="structure_bsp" />
+          <item value="27" name="navpoint" />
+          <item value="28" name="point reference" />
+          <item value="29" name="style" />
+          <item value="30" name="hud_message" />
+          <item value="31" name="object_list" />
+          <item value="32" name="sound" />
+          <item value="33" name="effect" />
+          <item value="34" name="damage" />
+          <item value="35" name="looping_sound" />
+          <item value="36" name="animation_graph" />
+          <item value="37" name="damage_effect" />
+          <item value="38" name="object_definition" />
+          <item value="39" name="bitmap" />
+          <item value="40" name="shader" />
+          <item value="41" name="render model" />
+          <item value="42" name="structure definition" />
+          <item value="43" name="lightmap definition" />
+          <item value="44" name="game_difficulty" />
+          <item value="45" name="team" />
+          <item value="46" name="actor_type" />
+          <item value="47" name="hud_corner" />
+          <item value="48" name="model_state" />
+          <item value="49" name="network_event" />
+          <item value="50" name="object" />
+          <item value="51" name="unit" />
+          <item value="52" name="vehicle" />
+          <item value="53" name="weapon" />
+          <item value="54" name="device" />
+          <item value="55" name="scenery" />
+          <item value="56" name="object_name" />
+          <item value="57" name="unit_name" />
+          <item value="58" name="vehicle_name" />
+          <item value="59" name="weapon_name" />
+          <item value="60" name="device_name" />
+          <item value="61" name="scenery_name" />
+        </value>
+        <value type="LongInteger" name="root expression index" disabled="true" />
+      </struct>
+      <value type="Block" name="Scripts" disabled="true" struct="HsScriptsBlock" maxelements="1024" />
+      <struct name="HsGlobalsBlock">
+        <value type="FixedLengthString" name="name" disabled="true" />
+        <value type="Enum" name="type" length="2" disabled="true">
+          <item value="0" name="unparsed" />
+          <item value="1" name="special form" />
+          <item value="2" name="function name" />
+          <item value="3" name="passthrough" />
+          <item value="4" name="void" />
+          <item value="5" name="boolean" />
+          <item value="6" name="real" />
+          <item value="7" name="short" />
+          <item value="8" name="long" />
+          <item value="9" name="string" />
+          <item value="10" name="script" />
+          <item value="11" name="string_id" />
+          <item value="12" name="unit_seat_mapping" />
+          <item value="13" name="trigger_volume" />
+          <item value="14" name="cutscene_flag" />
+          <item value="15" name="cutscene_camera_point" />
+          <item value="16" name="cutscene_title" />
+          <item value="17" name="cutscene_recording" />
+          <item value="18" name="device_group" />
+          <item value="19" name="ai" />
+          <item value="20" name="ai_command_list" />
+          <item value="21" name="ai_command_script" />
+          <item value="22" name="ai_behavior" />
+          <item value="23" name="ai_orders" />
+          <item value="24" name="starting_profile" />
+          <item value="25" name="conversation" />
+          <item value="26" name="structure_bsp" />
+          <item value="27" name="navpoint" />
+          <item value="28" name="point reference" />
+          <item value="29" name="style" />
+          <item value="30" name="hud_message" />
+          <item value="31" name="object_list" />
+          <item value="32" name="sound" />
+          <item value="33" name="effect" />
+          <item value="34" name="damage" />
+          <item value="35" name="looping_sound" />
+          <item value="36" name="animation_graph" />
+          <item value="37" name="damage_effect" />
+          <item value="38" name="object_definition" />
+          <item value="39" name="bitmap" />
+          <item value="40" name="shader" />
+          <item value="41" name="render model" />
+          <item value="42" name="structure definition" />
+          <item value="43" name="lightmap definition" />
+          <item value="44" name="game_difficulty" />
+          <item value="45" name="team" />
+          <item value="46" name="actor_type" />
+          <item value="47" name="hud_corner" />
+          <item value="48" name="model_state" />
+          <item value="49" name="network_event" />
+          <item value="50" name="object" />
+          <item value="51" name="unit" />
+          <item value="52" name="vehicle" />
+          <item value="53" name="weapon" />
+          <item value="54" name="device" />
+          <item value="55" name="scenery" />
+          <item value="56" name="object_name" />
+          <item value="57" name="unit_name" />
+          <item value="58" name="vehicle_name" />
+          <item value="59" name="weapon_name" />
+          <item value="60" name="device_name" />
+          <item value="61" name="scenery_name" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="LongInteger" name="initialization expression index" disabled="true" />
+      </struct>
+      <value type="Block" name="Globals" disabled="true" struct="HsGlobalsBlock" maxelements="256" />
+      <struct name="HsReferencesBlock">
+        <value type="TagReference" name="reference" disabled="true" extensions="????" blockname="true" />
+      </struct>
+      <value type="Block" name="References" disabled="true" struct="HsReferencesBlock" maxelements="512" />
+      <struct name="HsSourceFilesBlock">
+        <value type="FixedLengthString" name="name" disabled="true" />
+        <value type="Data" name="source" disabled="true" />
+      </struct>
+      <value type="Block" name="Source Files" disabled="true" struct="HsSourceFilesBlock" maxelements="8" />
+      <struct name="CsScriptDataBlock">
+        <struct name="CsPointSetBlock">
+          <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+          <struct name="CsPointBlock">
+            <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+            <value type="RealPoint3d" name="position" disabled="false" />
+            <value type="ShortInteger" name="reference frame" disabled="true" />
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="LongInteger" name="surface index" disabled="false" />
+            <value type="RealEulerAngles2d" name="facing direction" disabled="false" />
+          </struct>
+          <value type="Block" name="points" disabled="false" struct="CsPointBlock" maxelements="20" />
+          <value type="ShortBlockIndex" name="bsp index" disabled="false" block="ScenarioStructureBspReferenceBlock" />
+          <value type="ShortInteger" name="manual reference frame" disabled="false" />
+          <value type="Flags" name="flags" length="4" disabled="false">
+            <bit index="0" name="manual reference frame" />
+            <bit index="1" name="turret deployment" />
+          </value>
+        </struct>
+        <value type="Block" name="point sets" disabled="false" struct="CsPointSetBlock" maxelements="200" />
+        <value type="Pad" name="_unnamed0" length="120" />
+      </struct>
+      <value type="Block" name="Scripting Data" disabled="false" struct="CsScriptDataBlock" maxelements="1" />
+      <struct name="ScenarioCutsceneFlagBlock">
+        <value type="Pad" name="_unnamed0" length="4" />
+        <value type="FixedLengthString" name="Name" disabled="false" blockname="true" />
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles2d" name="Facing" disabled="false" />
+      </struct>
+      <value type="Block" name="Cutscene Flags" disabled="false" struct="ScenarioCutsceneFlagBlock" maxelements="512" />
+      <struct name="ScenarioCutsceneCameraPointBlock">
+        <value type="Flags" name="Flags" length="2" disabled="false">
+          <bit index="0" name="edit as relative" />
+        </value>
+        <value type="Enum" name="Type" length="2" disabled="false">
+          <item value="0" name="normal" />
+          <item value="1" name="ignore target orientation" />
+          <item value="2" name="dolly" />
+          <item value="3" name="ignore target updates" />
+        </value>
+        <value type="FixedLengthString" name="Name" disabled="false" blockname="true" />
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles3d" name="Orientation" disabled="false" />
+        <value type="Angle" name="Unused" disabled="false" />
+      </struct>
+      <value type="Block" name="Cutscene Camera Points" disabled="false" struct="ScenarioCutsceneCameraPointBlock" maxelements="512" />
+      <struct name="ScenarioCutsceneTitleBlock">
+        <value type="StringId" name="name" disabled="false" blockname="true" />
+        <value type="Rectangle2D" name="text bounds on screen" disabled="false" />
+        <value type="Enum" name="justification" length="2" disabled="false">
+          <item value="0" name="left" />
+          <item value="1" name="right" />
+          <item value="2" name="center" />
+          <item value="3" name="custom_text_entry" />
+        </value>
+        <value type="Enum" name="font" length="2" disabled="false">
+          <item value="0" name="terminal font" />
+          <item value="1" name="body text font" />
+          <item value="2" name="title font" />
+          <item value="3" name="super large font" />
+          <item value="4" name="large body text font" />
+          <item value="5" name="split screen hud message font" />
+          <item value="6" name="full screen hud message font" />
+          <item value="7" name="english body text font" />
+          <item value="8" name="hud number font" />
+          <item value="9" name="subtitle font" />
+          <item value="10" name="main menu font" />
+          <item value="11" name="text chat font" />
+        </value>
+        <value type="RgbColor" name="text color" disabled="false" />
+        <value type="RgbColor" name="shadow color" disabled="false" />
+        <value type="Real" name="fade in time seconds" disabled="false" />
+        <value type="Real" name="up time seconds" disabled="false" />
+        <value type="Real" name="fade out time seconds" disabled="false" />
+      </struct>
+      <value type="Block" name="Cutscene Titles" disabled="false" struct="ScenarioCutsceneTitleBlock" maxelements="128" />
+      <value type="TagReference" name="Custom Object Names" disabled="false" extensions="unic" />
+      <value type="TagReference" name="Chapter Title Text" disabled="false" extensions="unic" />
+      <value type="TagReference" name="HUD Messages" disabled="false" extensions="hmt " />
+      <struct name="ScenarioStructureBspReferenceBlock">
+        <value type="Pad" name="_unnamed0" length="16" />
+        <value type="TagReference" name="Structure BSP" disabled="false" extensions="sbsp" blockname="true" />
+        <value type="TagReference" name="Structure Lightmap" disabled="false" extensions="ltmp" blockname="true" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <value type="Real" name="UNUSED radiance est search distance" disabled="false" />
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="Real" name="UNUSED luminels per world unit" disabled="false" />
+        <value type="Real" name="UNUSED output white reference" disabled="false" />
+        <value type="Pad" name="_unnamed3" length="8" />
+        <value type="Flags" name="Flags" length="2" disabled="false">
+          <bit index="0" name="Default Sky Enabled" />
+        </value>
+        <value type="Pad" name="_unnamed4" length="2" />
+        <value type="ShortBlockIndex" name="Default Sky" disabled="false" block="ScenarioSkyReferenceBlock" />
+        <value type="Pad" name="_unnamed5" length="2" />
+      </struct>
+      <value type="Block" name="Structure BSPs" disabled="false" struct="ScenarioStructureBspReferenceBlock" maxelements="16" />
+      <struct name="ScenarioResourcesBlock">
+        <struct name="ScenarioResourceReferenceBlock">
+          <value type="TagReference" name="Reference" disabled="true" extensions="????" />
+        </struct>
+        <value type="Block" name="References" disabled="true" struct="ScenarioResourceReferenceBlock" maxelements="16" />
+        <struct name="ScenarioHsSourceReferenceBlock">
+          <value type="TagReference" name="Reference" disabled="true" extensions="hsc*" />
+        </struct>
+        <value type="Block" name="Script Source" disabled="true" struct="ScenarioHsSourceReferenceBlock" maxelements="8" />
+        <struct name="ScenarioAiResourceReferenceBlock">
+          <value type="TagReference" name="Reference" disabled="true" extensions="ai**" />
+        </struct>
+        <value type="Block" name="AI Resources" disabled="true" struct="ScenarioAiResourceReferenceBlock" maxelements="2" />
+      </struct>
+      <value type="Block" name="Scenario Resources" disabled="false" struct="ScenarioResourcesBlock" maxelements="1" />
+      <struct name="OldUnusedStrucurePhysicsBlock">
+        <value type="Data" name="mopp code" disabled="true" />
+        <struct name="OldUnusedObjectIdentifiersBlock">
+          <value type="LongInteger" name="Unique ID" disabled="true" />
+          <value type="ShortBlockIndex" name="Origin BSP Index" disabled="true" block="ScenarioStructureBspReferenceBlock" />
+          <value type="Enum" name="Type" length="1" disabled="true">
+            <item value="0" name="Biped" />
+            <item value="1" name="Vehicle" />
+            <item value="2" name="Weapon" />
+            <item value="3" name="Equipment" />
+            <item value="4" name="Garbage" />
+            <item value="5" name="Projectile" />
+            <item value="6" name="Scenery" />
+            <item value="7" name="Machine" />
+            <item value="8" name="Control" />
+            <item value="9" name="light_fixture" />
+            <item value="10" name="sound_scenery" />
+            <item value="11" name="Crate" />
+            <item value="12" name="Creature" />
+          </value>
+          <value type="Enum" name="Source" length="1" disabled="true">
+            <item value="0" name="Structure" />
+            <item value="1" name="Editor" />
+            <item value="2" name="Dynamic" />
+            <item value="3" name="Legacy" />
+          </value>
+        </struct>
+        <value type="Block" name="Evironment Object Identifiers" disabled="true" struct="OldUnusedObjectIdentifiersBlock" maxelements="2048" />
+        <value type="Pad" name="_unnamed0" length="4" />
+        <value type="RealPoint3d" name="mopp Bounds Min" disabled="true" />
+        <value type="RealPoint3d" name="mopp Bounds Max" disabled="true" />
+      </struct>
+      <value type="Block" name="Scenario Resources2" disabled="false" struct="OldUnusedStrucurePhysicsBlock" maxelements="16" />
+      <struct name="HsUnitSeatBlock">
+        <value type="LongInteger" name="_unnamed0" />
+        <value type="LongInteger" name="_unnamed1" />
+      </struct>
+      <value type="Block" name="hs Unit Seats" disabled="false" struct="HsUnitSeatBlock" maxelements="65536" />
+      <struct name="ScenarioKillTriggerVolumesBlock">
+        <value type="ShortBlockIndex" name="Trigger Volume" disabled="false" block="ScenarioTriggerVolumeBlock" />
+      </struct>
+      <value type="Block" name="Scenario Kill Triggers" disabled="false" struct="ScenarioKillTriggerVolumesBlock" maxelements="256" />
+      <struct name="SyntaxDatumBlock">
+        <value type="ShortInteger" name="Datum Header" disabled="false" />
+        <value type="ShortInteger" name="Script IndexFunction IndexConstant Type Union" disabled="false" />
+        <value type="ShortInteger" name="Type" disabled="false" />
+        <value type="ShortInteger" name="Flags" disabled="false" />
+        <value type="LongInteger" name="Next Node Index" disabled="false" />
+        <value type="LongInteger" name="Data" disabled="false" />
+        <value type="LongInteger" name="source_offset" disabled="false" />
+      </struct>
+      <value type="Block" name="hs Syntax Datums" disabled="true" struct="SyntaxDatumBlock" maxelements="36864" />
+      <struct name="OrdersBlock">
+        <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+        <value type="ShortBlockIndex" name="Style" disabled="false" block="StylePaletteBlock" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="locked" />
+          <bit index="1" name="always active" />
+          <bit index="2" name="debug on" />
+          <bit index="3" name="strict area def" />
+          <bit index="4" name="follow closest player" />
+          <bit index="5" name="follow squad" />
+          <bit index="6" name="active camo" />
+          <bit index="7" name="suppress combat until engaged" />
+          <bit index="8" name="inhibit vehicle use" />
+        </value>
+        <value type="Enum" name="Force combat status" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="Asleep" />
+          <item value="2" name="Idle" />
+          <item value="3" name="Alert" />
+          <item value="4" name="Combat" />
+        </value>
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="FixedLengthString" name="Entry Script" disabled="false" />
+        <value type="Skip" name="_unnamed2" length="2" />
+        <value type="ShortBlockIndex" name="Follow squad" disabled="false" block="SquadsBlock" />
+        <value type="Real" name="follow radius" disabled="false" />
+        <struct name="ZoneSetBlock">
+          <value type="Enum" name="area type" length="2" disabled="false">
+            <item value="0" name="deault" />
+            <item value="1" name="search" />
+            <item value="2" name="goal" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="ShortBlockIndex" name="zone" disabled="false" block="ZoneBlock" blockname="true" />
+          <value type="ShortInteger" name="area" disabled="false" blockname="true" />
+        </struct>
+        <value type="Block" name="Primary area set" disabled="false" struct="ZoneSetBlock" maxelements="32" />
+        <struct name="SecondaryZoneSetBlock">
+          <value type="Enum" name="area type" length="2" disabled="false">
+            <item value="0" name="deault" />
+            <item value="1" name="search" />
+            <item value="2" name="goal" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="ShortBlockIndex" name="zone" disabled="false" block="ZoneBlock" blockname="true" />
+          <value type="ShortInteger" name="area" disabled="false" blockname="true" />
+        </struct>
+        <value type="Block" name="Secondary area set" disabled="false" struct="SecondaryZoneSetBlock" maxelements="32" />
+        <struct name="SecondarySetTriggerBlock">
+          <value type="Enum" name="combination rule" length="2" disabled="false">
+            <item value="0" name="OR" />
+            <item value="1" name="AND" />
+          </value>
+          <value type="Enum" name="dialogue type" length="2" disabled="false">
+            <item value="0" name="none" />
+            <item value="1" name="advance" />
+            <item value="2" name="charge" />
+            <item value="3" name="fall_back" />
+            <item value="4" name="retreat" />
+            <item value="5" name="moveone" />
+            <item value="6" name="arrival" />
+            <item value="7" name="enter_vehicle" />
+            <item value="8" name="exit_vehicle" />
+            <item value="9" name="follow_player" />
+            <item value="10" name="leave_player" />
+            <item value="11" name="support" />
+            <tooltip>when this ending is triggered, launch a dialogue event of the given type</tooltip>
+          </value>
+          <struct name="TriggerReferences">
+            <value type="Flags" name="Trigger flags" length="4" disabled="false">
+              <bit index="0" name="not" />
+            </value>
+            <value type="ShortBlockIndex" name="trigger" disabled="false" block="TriggersBlock" blockname="true" />
+            <value type="Pad" name="_unnamed0" length="2" />
+          </struct>
+          <value type="Block" name="triggers" disabled="false" struct="TriggerReferences" maxelements="10" />
+        </struct>
+        <value type="Block" name="Secondary set trigger" disabled="false" struct="SecondarySetTriggerBlock" maxelements="1" />
+        <struct name="SpecialMovementBlock">
+          <value type="Flags" name="Special movement 1" length="4" disabled="false">
+            <bit index="0" name="jump" />
+            <bit index="1" name="climb" />
+            <bit index="2" name="vault" />
+            <bit index="3" name="mount" />
+            <bit index="4" name="hoist" />
+            <bit index="5" name="wall jump" />
+            <bit index="6" name="n/a" />
+          </value>
+        </struct>
+        <value type="Block" name="Special movement" disabled="false" struct="SpecialMovementBlock" maxelements="1" />
+        <struct name="OrderEndingBlock">
+          <value type="ShortBlockIndex" name="next order" disabled="false" block="OrdersBlock" blockname="true" />
+          <value type="Enum" name="combination rule" length="2" disabled="false">
+            <item value="0" name="OR" />
+            <item value="1" name="AND" />
+          </value>
+          <value type="Real" name="delay time" disabled="false" />
+          <value type="Enum" name="dialogue type" length="2" disabled="false">
+            <item value="0" name="none" />
+            <item value="1" name="advance" />
+            <item value="2" name="charge" />
+            <item value="3" name="fall_back" />
+            <item value="4" name="retreat" />
+            <item value="5" name="moveone" />
+            <item value="6" name="arrival" />
+            <item value="7" name="enter_vehicle" />
+            <item value="8" name="exit_vehicle" />
+            <item value="9" name="follow_player" />
+            <item value="10" name="leave_player" />
+            <item value="11" name="support" />
+            <tooltip>when this ending is triggered, launch a dialogue event of the given type</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <struct name="TriggerReferences">
+            <value type="Flags" name="Trigger flags" length="4" disabled="false">
+              <bit index="0" name="not" />
+            </value>
+            <value type="ShortBlockIndex" name="trigger" disabled="false" block="TriggersBlock" blockname="true" />
+            <value type="Pad" name="_unnamed0" length="2" />
+          </struct>
+          <value type="Block" name="triggers" disabled="false" struct="TriggerReferences" maxelements="10" />
+        </struct>
+        <value type="Block" name="Order endings" disabled="false" struct="OrderEndingBlock" maxelements="12" />
+      </struct>
+      <value type="Block" name="Orders" disabled="false" struct="OrdersBlock" maxelements="300" />
+      <struct name="TriggersBlock">
+        <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+        <value type="Flags" name="trigger flags" length="4" disabled="false">
+          <bit index="0" name="Latch ON when triggered" />
+        </value>
+        <value type="Enum" name="combination rule" length="2" disabled="false">
+          <item value="0" name="OR" />
+          <item value="1" name="AND" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <struct name="OrderCompletionCondition">
+          <value type="Enum" name="rule type" length="2" disabled="false" blockname="true">
+            <item value="0" name="A or greater alive" />
+            <item value="1" name="A or fewer alive" />
+            <item value="2" name="X or greater strength" />
+            <item value="3" name="X or less strength" />
+            <item value="4" name="If enemy sighted" />
+            <item value="5" name="After A ticks" />
+            <item value="6" name="If alerted by squad A" />
+            <item value="7" name="Script ref TRUE" />
+            <item value="8" name="Script ref FALSE" />
+            <item value="9" name="If player in trigger volume" />
+            <item value="10" name="If ALL players in trigger volume" />
+            <item value="11" name="Combat status A or more" />
+            <item value="12" name="Combat status A or less" />
+            <item value="13" name="Arrived" />
+            <item value="14" name="In vehicle" />
+            <item value="15" name="Sighted player" />
+            <item value="16" name="A or greater fighting" />
+            <item value="17" name="A or fewer fighting" />
+            <item value="18" name="Player within X world units" />
+            <item value="19" name="Player shot more than X seconds ago" />
+            <item value="20" name="Game safe to save" />
+          </value>
+          <value type="ShortBlockIndex" name="squad" disabled="false" block="SquadsBlock" />
+          <value type="ShortBlockIndex" name="squad group" disabled="false" block="SquadGroupsBlock" />
+          <value type="ShortInteger" name="a" disabled="false" />
+          <value type="Real" name="x" disabled="false" />
+          <value type="ShortBlockIndex" name="trigger volume" disabled="false" block="ScenarioTriggerVolumeBlock" />
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="FixedLengthString" name="Exit condition script" disabled="false" />
+          <value type="ShortInteger" name="_unnamed1" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="Flags" name="flags" length="4" disabled="false">
+            <bit index="0" name="NOT!" />
+          </value>
+        </struct>
+        <value type="Block" name="conditions" disabled="false" struct="OrderCompletionCondition" maxelements="5" />
+      </struct>
+      <value type="Block" name="Triggers" disabled="false" struct="TriggersBlock" maxelements="256" />
+      <struct name="StructureBspBackgroundSoundPaletteBlock">
+        <value type="FixedLengthString" name="Name" disabled="false" blockname="true" />
+        <value type="TagReference" name="Background Sound" disabled="false" extensions="lsnd" />
+        <value type="TagReference" name="Inside Cluster Sound" disabled="false" extensions="lsnd">
+          <tooltip>Play only when player is inside cluster.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="20" />
+        <value type="Real" name="Cutoff Distance" disabled="false" />
+        <value type="Flags" name="Scale Flags" length="4" disabled="false">
+          <bit index="0" name="Override Default Scale" />
+          <bit index="1" name="Use Adjacent Cluster as Portal Scale" />
+          <bit index="2" name="Use Adjacent Cluster as Exterior Scale" />
+          <bit index="3" name="Scale with Weather Intensity" />
+        </value>
+        <value type="RealFraction" name="Interior Scale" disabled="false" />
+        <value type="RealFraction" name="Portal Scale" disabled="false" />
+        <value type="RealFraction" name="Exterior Scale" disabled="false" />
+        <value type="Real" name="Interpolation Speed" disabled="false" unit="1/sec" />
+        <value type="Pad" name="_unnamed1" length="8" />
+      </struct>
+      <value type="Block" name="Background Sound Palette" disabled="false" struct="StructureBspBackgroundSoundPaletteBlock" maxelements="64" />
+      <struct name="StructureBspSoundEnvironmentPaletteBlock">
+        <value type="FixedLengthString" name="Name" disabled="false" blockname="true" />
+        <value type="TagReference" name="Sound Environment" disabled="false" extensions="snde" />
+        <value type="Real" name="Cutoff Distance" disabled="false" />
+        <value type="Real" name="Interpolation Speed" disabled="false" unit="1/sec" />
+        <value type="Pad" name="_unnamed0" length="24" />
+      </struct>
+      <value type="Block" name="Sound Environment Palette" disabled="false" struct="StructureBspSoundEnvironmentPaletteBlock" maxelements="64" />
+      <struct name="StructureBspWeatherPaletteBlock">
+        <value type="FixedLengthString" name="Name" disabled="false" blockname="true" />
+        <value type="TagReference" name="Weather System" disabled="false" extensions="weat" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Pad" name="_unnamed2" length="32" />
+        <value type="TagReference" name="Wind" disabled="false" extensions="wind" />
+        <value type="RealVector3d" name="Wind Direction" disabled="false" />
+        <value type="Real" name="Wind Magnitude" disabled="false" />
+        <value type="Pad" name="_unnamed3" length="4" />
+        <value type="FixedLengthString" name="Wind Scale Function" disabled="false" />
+      </struct>
+      <value type="Block" name="Weather Palette" disabled="false" struct="StructureBspWeatherPaletteBlock" maxelements="32" />
+      <struct name="GNullBlock" />
+      <value type="Block" name="_unnamed0" struct="GNullBlock" maxelements="0" />
+      <value type="Block" name="_unnamed1" struct="GNullBlock" maxelements="0" />
+      <value type="Block" name="_unnamed2" struct="GNullBlock" maxelements="0" />
+      <value type="Block" name="_unnamed3" struct="GNullBlock" maxelements="0" />
+      <value type="Block" name="_unnamed4" struct="GNullBlock" maxelements="0" />
+      <struct name="ScenarioClusterDataBlock">
+        <value type="TagReference" name="BSP" disabled="true" extensions="sbsp" />
+        <struct name="ScenarioClusterBackgroundSoundsBlock">
+          <value type="ShortBlockIndex" name="Type" disabled="false" block="StructureBspBackgroundSoundPaletteBlock" blockname="true" />
+          <value type="Pad" name="_unnamed0" length="2" />
+        </struct>
+        <value type="Block" name="Background Sounds" disabled="true" struct="ScenarioClusterBackgroundSoundsBlock" maxelements="512" />
+        <struct name="ScenarioClusterSoundEnvironmentsBlock">
+          <value type="ShortBlockIndex" name="Type" disabled="false" block="StructureBspSoundEnvironmentPaletteBlock" blockname="true" />
+          <value type="Pad" name="_unnamed0" length="2" />
+        </struct>
+        <value type="Block" name="Sound Environments" disabled="true" struct="ScenarioClusterSoundEnvironmentsBlock" maxelements="512" />
+        <value type="LongInteger" name="BSP Checksum" disabled="true" />
+        <struct name="ScenarioClusterPointsBlock">
+          <value type="RealPoint3d" name="Centroid" disabled="true" />
+        </struct>
+        <value type="Block" name="Cluster Centroids" disabled="true" struct="ScenarioClusterPointsBlock" maxelements="512" />
+        <struct name="ScenarioClusterWeatherPropertiesBlock">
+          <value type="ShortBlockIndex" name="Type" disabled="false" block="StructureBspWeatherPaletteBlock" blockname="true" />
+          <value type="Pad" name="_unnamed0" length="2" />
+        </struct>
+        <value type="Block" name="Weather Properties" disabled="true" struct="ScenarioClusterWeatherPropertiesBlock" maxelements="512" />
+        <struct name="ScenarioClusterAtmosphericFogPropertiesBlock">
+          <value type="ShortBlockIndex" name="Type" disabled="false" block="ScenarioAtmosphericFogPalette" blockname="true" />
+          <value type="Pad" name="_unnamed0" length="2" />
+        </struct>
+        <value type="Block" name="Atmospheric Fog Properties" disabled="true" struct="ScenarioClusterAtmosphericFogPropertiesBlock" maxelements="512" />
+      </struct>
+      <value type="Block" name="Scenario Cluster Data" disabled="false" struct="ScenarioClusterDataBlock" maxelements="16" />
+      <value type="LongInteger" name="_unnamed5" />
+      <value type="LongInteger" name="_unnamed6" />
+      <value type="LongInteger" name="_unnamed7" />
+      <value type="LongInteger" name="_unnamed8" />
+      <value type="LongInteger" name="_unnamed9" />
+      <value type="LongInteger" name="_unnamed10" />
+      <value type="LongInteger" name="_unnamed11" />
+      <value type="LongInteger" name="_unnamed12" />
+      <value type="LongInteger" name="_unnamed13" />
+      <value type="LongInteger" name="_unnamed14" />
+      <value type="LongInteger" name="_unnamed15" />
+      <value type="LongInteger" name="_unnamed16" />
+      <value type="LongInteger" name="_unnamed17" />
+      <value type="LongInteger" name="_unnamed18" />
+      <value type="LongInteger" name="_unnamed19" />
+      <value type="LongInteger" name="_unnamed20" />
+      <value type="LongInteger" name="_unnamed21" />
+      <value type="LongInteger" name="_unnamed22" />
+      <value type="LongInteger" name="_unnamed23" />
+      <value type="LongInteger" name="_unnamed24" />
+      <value type="LongInteger" name="_unnamed25" />
+      <value type="LongInteger" name="_unnamed26" />
+      <value type="LongInteger" name="_unnamed27" />
+      <value type="LongInteger" name="_unnamed28" />
+      <value type="LongInteger" name="_unnamed29" />
+      <value type="LongInteger" name="_unnamed30" />
+      <value type="LongInteger" name="_unnamed31" />
+      <value type="LongInteger" name="_unnamed32" />
+      <value type="LongInteger" name="_unnamed33" />
+      <value type="LongInteger" name="_unnamed34" />
+      <value type="LongInteger" name="_unnamed35" />
+      <value type="LongInteger" name="_unnamed36" />
+      <struct name="ScenarioSpawnDataBlock">
+        <value type="Real" name="Dynamic Spawn Lower Height" disabled="false" />
+        <value type="Real" name="Dynamic Spawn Upper Height" disabled="false" />
+        <value type="Real" name="Game Object Reset Height" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="60" />
+        <struct name="DynamicSpawnZoneOverloadBlock">
+          <value type="Enum" name="Overload Type" length="2" disabled="false">
+            <item value="0" name="Enemy" />
+            <item value="1" name="Friend" />
+            <item value="2" name="Enemy Vehicle" />
+            <item value="3" name="Friendly Vehicle" />
+            <item value="4" name="Empty Vehicle" />
+            <item value="5" name="Oddball Inclusion" />
+            <item value="6" name="Oddball Exclusion" />
+            <item value="7" name="Hill Inclusion" />
+            <item value="8" name="Hill Exclusion" />
+            <item value="9" name="Last Race Flag" />
+            <item value="10" name="Dead Ally" />
+            <item value="11" name="Controlled Territory" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Real" name="Inner Radius" disabled="false" />
+          <value type="Real" name="Outer Radius" disabled="false" />
+          <value type="Real" name="Weight" disabled="false" />
+        </struct>
+        <value type="Block" name="Dynamic Spawn Overloads" disabled="false" struct="DynamicSpawnZoneOverloadBlock" maxelements="32" />
+        <struct name="StaticSpawnZoneBlock">
+          <value type="StringId" name="Name" disabled="false" />
+          <value type="Flags" name="Relevant Team" length="4" disabled="false">
+            <bit index="0" name="Red (Alpha)" />
+            <bit index="1" name="Blue (Bravo)" />
+            <bit index="2" name="Yellow (Charlie)" />
+            <bit index="3" name="Green (Delta)" />
+            <bit index="4" name="Purple (Echo)" />
+            <bit index="5" name="Orange (Foxtrot)" />
+            <bit index="6" name="Brown (Golf)" />
+            <bit index="7" name="Pink (Hotel)" />
+            <bit index="8" name="NEUTRAL" />
+          </value>
+          <value type="Flags" name="Relevant Games" length="4" disabled="false">
+            <bit index="0" name="Slayer" />
+            <bit index="1" name="Oddball" />
+            <bit index="2" name="King of the Hill" />
+            <bit index="3" name="Capture the Flag" />
+            <bit index="4" name="Race" />
+            <bit index="5" name="Headhunter" />
+            <bit index="6" name="Juggernaut" />
+            <bit index="7" name="Territories" />
+          </value>
+          <value type="Flags" name="Flags" length="4" disabled="false">
+            <bit index="0" name="Disabled If Flag Home" />
+            <bit index="1" name="Disabled If Flag Away" />
+            <bit index="2" name="Disabled If Bomb Home" />
+            <bit index="3" name="Disabled If Bomb Away" />
+          </value>
+          <value type="RealPoint3d" name="Position" disabled="false" />
+          <value type="Real" name="Lower Height" disabled="false" />
+          <value type="Real" name="Upper Height" disabled="false" />
+          <value type="Real" name="Inner Radius" disabled="false" />
+          <value type="Real" name="Outer Radius" disabled="false" />
+          <value type="Real" name="Weight" disabled="false" />
+        </struct>
+        <value type="Block" name="Static Respawn Zones" disabled="false" struct="StaticSpawnZoneBlock" maxelements="128" />
+        <value type="Block" name="Static Initial Spawn Zones" disabled="false" struct="StaticSpawnZoneBlock" maxelements="128" />
+      </struct>
+      <value type="Block" name="Spawn Data" disabled="false" struct="ScenarioSpawnDataBlock" maxelements="1" />
+      <value type="TagReference" name="Sound Effect Collection" disabled="false" extensions="sfx+" />
+      <struct name="ScenarioCrateBlock">
+        <value type="ShortBlockIndex" name="Type" disabled="false" block="ScenarioCratePaletteBlock" />
+        <value type="ShortBlockIndex" name="Name" disabled="false" block="ScenarioObjectNamesBlock" blockname="true" />
+        <value type="Flags" name="Placement Flags" length="4" disabled="false">
+          <bit index="0" name="Not Automatically" />
+          <bit index="1" name="Unused" />
+          <bit index="2" name="Unused" />
+          <bit index="3" name="Unused" />
+          <bit index="4" name="Lock Type to Env. Object" />
+          <bit index="5" name="Lock Transform to Env. Object" />
+          <bit index="6" name="Never Placed" />
+          <bit index="7" name="Lock Name to Env. Object" />
+          <bit index="8" name="Create at Rest" />
+        </value>
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles3d" name="Rotation" disabled="false" />
+        <value type="Real" name="Scale" disabled="false" />
+        <value type="Flags" name="Transform Flags" length="2" disabled="false">
+          <bit index="0" name="Mirrored" />
+        </value>
+        <value type="ShortInteger" name="Manual BSP Flags" disabled="true" />
+        <value type="LongInteger" name="Unique ID" disabled="true" />
+        <value type="ShortBlockIndex" name="Origin BSP Index" disabled="true" block="ScenarioStructureBspReferenceBlock" />
+        <value type="Enum" name="Type2" length="1" disabled="true">
+          <item value="0" name="Biped" />
+          <item value="1" name="Vehicle" />
+          <item value="2" name="Weapon" />
+          <item value="3" name="Equipment" />
+          <item value="4" name="Garbage" />
+          <item value="5" name="Projectile" />
+          <item value="6" name="Scenery" />
+          <item value="7" name="Machine" />
+          <item value="8" name="Control" />
+          <item value="9" name="light_fixture" />
+          <item value="10" name="sound_scenery" />
+          <item value="11" name="Crate" />
+          <item value="12" name="Creature" />
+        </value>
+        <value type="Enum" name="Source" length="1" disabled="true">
+          <item value="0" name="Structure" />
+          <item value="1" name="Editor" />
+          <item value="2" name="Dynamic" />
+          <item value="3" name="Legacy" />
+        </value>
+        <value type="Enum" name="BSP Policy" length="1" disabled="false">
+          <item value="0" name="Default" />
+          <item value="1" name="Always Placed" />
+          <item value="2" name="Manual BSP Placement" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="ShortBlockIndex" name="Editor Folder" disabled="false" block="GScenarioEditorFolderBlock" />
+        <value type="StringId" name="Variant Name" disabled="false" />
+        <value type="Flags" name="Active Change Colors" length="4" disabled="false">
+          <bit index="0" name="Primary" />
+          <bit index="1" name="Secondary" />
+          <bit index="2" name="Tertiary" />
+          <bit index="3" name="Quaternary" />
+        </value>
+        <value type="RgbColor" name="Primary Color" disabled="false" />
+        <value type="RgbColor" name="Secondary Color" disabled="false" />
+        <value type="RgbColor" name="Tertiary Color" disabled="false" />
+        <value type="RgbColor" name="Quaternary Color" disabled="false" />
+      </struct>
+      <value type="Block" name="Crates" disabled="false" struct="ScenarioCrateBlock" maxelements="1024" />
+      <struct name="ScenarioCratePaletteBlock">
+        <value type="TagReference" name="Name" disabled="false" extensions="bloc" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="Crates Palette" disabled="false" struct="ScenarioCratePaletteBlock" maxelements="256" />
+      <value type="TagReference" name="Global Lighting" disabled="false" extensions="gldf" />
+      <struct name="ScenarioAtmosphericFogPalette">
+        <value type="StringId" name="Name" disabled="false" blockname="true" />
+        <value type="RealRgbColor" name="Color" disabled="false" />
+        <value type="Real" name="Spread Distance" disabled="false" unit="World Units">
+          <tooltip>How far fog spreads into adjacent clusters: 0 defaults to 1.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="4" />
+        <value type="RealFraction" name="Maximum Density" disabled="false" unit="[0,1]">
+          <tooltip>Fog density clamps to this value.</tooltip>
+        </value>
+        <value type="Real" name="Start Distance" disabled="false" unit="World Units">
+          <tooltip>Before this distance, there is no fog.</tooltip>
+        </value>
+        <value type="Real" name="Opaque Distance" disabled="false" unit="World Units">
+          <tooltip>Fog becomes opaque (maximum density) at this distance from viewer.</tooltip>
+        </value>
+        <value type="RealRgbColor" name="Color2" disabled="false" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <value type="RealFraction" name="Maximum Density2" disabled="false" unit="[0,1]">
+          <tooltip>Fog density clamps to this value.</tooltip>
+        </value>
+        <value type="Real" name="Start Distance2" disabled="false" unit="World Units">
+          <tooltip>Before this distance, there is no fog.</tooltip>
+        </value>
+        <value type="Real" name="Opaque Distance2" disabled="false" unit="World Units">
+          <tooltip>Fog becomes opaque (maximum density) at this distance from viewer.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="RealRgbColor" name="Planar Color" disabled="false" />
+        <value type="RealFraction" name="Planar Max Density" disabled="false" unit="[0,1]" />
+        <value type="RealFraction" name="Planar Override Amount" disabled="false" unit="[0,1]" />
+        <value type="Real" name="Planar Min Distance Bias" disabled="false" unit="World Units">
+          <tooltip>Don't ask.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed3" length="44" />
+        <value type="RealRgbColor" name="Patchy Color" disabled="false" />
+        <value type="Pad" name="_unnamed4" length="12" />
+        <value type="FractionBounds" name="Patchy Density" disabled="false" unit="[0,1]" />
+        <value type="RealBounds" name="Patchy Distance" disabled="false" unit="World Units" />
+        <value type="Pad" name="_unnamed5" length="32" />
+        <value type="TagReference" name="Patchy Fog" disabled="false" extensions="fpch" />
+        <struct name="ScenarioAtmosphericFogMixerBlock">
+          <value type="Pad" name="_unnamed0" length="4" />
+          <value type="StringId" name="Atmospheric Fog Source" disabled="false" unit="From Scenario Atmospheric Fog Palette" />
+          <value type="StringId" name="Interpolator" disabled="false" unit="From Scenario Interpolators" />
+          <value type="Skip" name="_unnamed1" length="2" />
+          <value type="Skip" name="_unnamed2" length="2" />
+        </struct>
+        <value type="Block" name="Mixers" disabled="false" struct="ScenarioAtmosphericFogMixerBlock" maxelements="2" />
+        <value type="RealFraction" name="Amount" disabled="false" unit="[0,1]" />
+        <value type="RealFraction" name="Threshold" disabled="false" unit="[0,1]" />
+        <value type="RealFraction" name="Brightness" disabled="false" unit="[0,1]" />
+        <value type="Real" name="Gamma Power" disabled="false" />
+        <value type="Flags" name="Camera Immersion Flags" length="2" disabled="false">
+          <bit index="0" name="Disable Atmospheric Fog" />
+          <bit index="1" name="Disable Secondary Fog" />
+          <bit index="2" name="Disable Planar Fog" />
+          <bit index="3" name="Invert Planar Fog Priorities" />
+          <bit index="4" name="Disable Water" />
+        </value>
+        <value type="Pad" name="_unnamed6" length="2" />
+      </struct>
+      <value type="Block" name="Atmospheric Fog Palette" disabled="false" struct="ScenarioAtmosphericFogPalette" maxelements="127" />
+      <struct name="ScenarioPlanarFogPalette">
+        <value type="StringId" name="Name" disabled="false" blockname="true" />
+        <value type="TagReference" name="Planar Fog" disabled="false" extensions="fog " />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="2" />
+      </struct>
+      <value type="Block" name="Planar Fog Palette" disabled="false" struct="ScenarioPlanarFogPalette" maxelements="127" />
+      <struct name="FlockDefinitionBlock">
+        <value type="ShortBlockIndex" name="bsp" disabled="false" block="ScenarioStructureBspReferenceBlock" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="ShortBlockIndex" name="bounding volume" disabled="false" block="ScenarioTriggerVolumeBlock" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="hard boundaries on volume" />
+          <bit index="1" name="flock initially stopped" />
+        </value>
+        <value type="Real" name="ecology margin" disabled="false" unit="wus">
+          <tooltip>distance from ecology boundary that creature begins to be repulsed</tooltip>
+        </value>
+        <struct name="FlockSourceBlock">
+          <value type="RealVector3d" name="position" disabled="false" />
+          <value type="RealEulerAngles2d" name="starting yaw pitch" disabled="false" unit="degrees" />
+          <value type="Real" name="radius" disabled="false" />
+          <value type="Real" name="weight" disabled="false">
+            <tooltip>probability of producing at this source</tooltip>
+          </value>
+        </struct>
+        <value type="Block" name="sources" disabled="false" struct="FlockSourceBlock" maxelements="10" />
+        <struct name="FlockSinkBlock">
+          <value type="RealVector3d" name="position" disabled="false" />
+          <value type="Real" name="radius" disabled="false" />
+        </struct>
+        <value type="Block" name="sinks" disabled="false" struct="FlockSinkBlock" maxelements="10" />
+        <value type="Real" name="production frequency" disabled="false" unit="boids/sec">
+          <tooltip>How frequently boids are produced at one of the sources (limited by the max boid count)</tooltip>
+        </value>
+        <value type="RealBounds" name="scale" disabled="false" />
+        <value type="TagReference" name="creature" disabled="false" extensions="crea" blockname="true" />
+        <value type="ShortIntegerBounds" name="boid count" disabled="false" />
+        <value type="Real" name="neighborhood radius" disabled="false" unit="world units">
+          <tooltip>distance within which one boid is affected by another</tooltip>
+        </value>
+        <value type="Real" name="avoidance radius" disabled="false" unit="world units">
+          <tooltip>distance that a boid tries to maintain from another</tooltip>
+        </value>
+        <value type="Real" name="forward scale" disabled="false" unit="[0..1]">
+          <tooltip>weight given to boid's desire to fly straight ahead</tooltip>
+        </value>
+        <value type="Real" name="alignment scale" disabled="false" unit="[0..1]">
+          <tooltip>weight given to boid's desire to align itself with neighboring boids</tooltip>
+        </value>
+        <value type="Real" name="avoidance scale" disabled="false" unit="[0..1]">
+          <tooltip>weight given to boid's desire to avoid collisions with other boids, when within the avoidance radius</tooltip>
+        </value>
+        <value type="Real" name="leveling force scale" disabled="false" unit="[0..1]">
+          <tooltip>weight given to boids desire to fly level</tooltip>
+        </value>
+        <value type="Real" name="sink scale" disabled="false" unit="[0..1]">
+          <tooltip>weight given to boid's desire to fly towards its sinks</tooltip>
+        </value>
+        <value type="Angle" name="perception angle" disabled="false" unit="degrees">
+          <tooltip>angle-from-forward within which one boid can perceive and react to another</tooltip>
+        </value>
+        <value type="Real" name="average throttle" disabled="false" unit="[0..1]">
+          <tooltip>throttle at which boids will naturally fly</tooltip>
+        </value>
+        <value type="Real" name="maximum throttle" disabled="false" unit="[0..1]">
+          <tooltip>maximum throttle applicable</tooltip>
+        </value>
+        <value type="Real" name="position scale" disabled="false" unit="[0..1]">
+          <tooltip>weight given to boid's desire to be near flock center</tooltip>
+        </value>
+        <value type="Real" name="position min radius" disabled="false" unit="wus">
+          <tooltip>distance to flock center beyond which an attracting force is applied</tooltip>
+        </value>
+        <value type="Real" name="position max radius" disabled="false" unit="wus">
+          <tooltip>distance to flock center at which the maximum attracting force is applied</tooltip>
+        </value>
+        <value type="Real" name="movement weight threshold" disabled="false">
+          <tooltip>The threshold of accumulated weight over which movement occurs</tooltip>
+        </value>
+        <value type="Real" name="danger radius" disabled="false" unit="wus">
+          <tooltip>distance within which boids will avoid a dangerous object (e.g. the player)</tooltip>
+        </value>
+        <value type="Real" name="danger scale" disabled="false">
+          <tooltip>weight given to boid's desire to avoid danger</tooltip>
+        </value>
+        <value type="Real" name="random offset scale" disabled="false" unit="[0..1]">
+          <tooltip>weight given to boid's random heading offset</tooltip>
+        </value>
+        <value type="RealBounds" name="random offset period" disabled="false" unit="seconds" />
+        <value type="StringId" name="flock name" disabled="false" />
+      </struct>
+      <value type="Block" name="Flocks" disabled="false" struct="FlockDefinitionBlock" maxelements="20" />
+      <value type="TagReference" name="Subtitles" disabled="false" extensions="unic" />
+      <struct name="DecoratorPlacementDefinitionBlock">
+        <value type="RealPoint3d" name="Grid Origin" disabled="false" />
+        <value type="LongInteger" name="Cell Count per Dimension" disabled="false" />
+        <struct name="DecoratorCacheBlockBlock">
+          <value type="LongInteger" name="Block Offset" disabled="true" />
+          <value type="LongInteger" name="Block Size" disabled="true" />
+          <value type="LongInteger" name="Section Data Size" disabled="true" />
+          <value type="LongInteger" name="Resource Data Size" disabled="true" />
+          <struct name="GlobalGeometryBlockResourceBlock">
+            <value type="Enum" name="Type" length="1" disabled="true">
+              <item value="0" name="Tag Block" />
+              <item value="1" name="Tag Data" />
+              <item value="2" name="Vertex Buffer" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="3" />
+            <value type="ShortInteger" name="Primary Locator" disabled="true" />
+            <value type="ShortInteger" name="Secondary Locator" disabled="true" />
+            <value type="LongInteger" name="Resource Data Size" disabled="true" />
+            <value type="LongInteger" name="Resource Data Offset" disabled="true" />
+          </struct>
+          <value type="Block" name="Resources" disabled="true" struct="GlobalGeometryBlockResourceBlock" maxelements="1024" />
+          <value type="Pad" name="_unnamed0" length="4" />
+          <value type="ShortInteger" name="Owner Tag Section Offset" disabled="true" />
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="4" />
+          <struct name="DecoratorCacheBlockDataBlock">
+            <struct name="DecoratorPlacementBlock">
+              <value type="LongInteger" name="Internal Data 1" disabled="false" />
+              <value type="LongInteger" name="Compressed Position" disabled="false" />
+              <value type="RgbColor" name="Tint Color" disabled="false" />
+              <value type="RgbColor" name="Lightmap Color" disabled="false" />
+              <value type="LongInteger" name="Compressed Light Direction" disabled="false" />
+              <value type="LongInteger" name="Compressed Light 2 Direction" disabled="false" />
+            </struct>
+            <value type="Block" name="Placements" disabled="true" struct="DecoratorPlacementBlock" maxelements="32768" />
+            <struct name="DecalVerticesBlock">
+              <value type="RealPoint3d" name="Position" disabled="true" />
+              <value type="RealPoint2d" name="texcoord 0" disabled="true" />
+              <value type="RealPoint2d" name="texcoord 1" disabled="true" />
+              <value type="RgbColor" name="Color" disabled="true" />
+            </struct>
+            <value type="Block" name="Decal Vertices" disabled="true" struct="DecalVerticesBlock" maxelements="65536" />
+            <struct name="IndicesBlock">
+              <value type="ShortInteger" name="Index" disabled="true" />
+            </struct>
+            <value type="Block" name="Decal Indices" disabled="true" struct="IndicesBlock" maxelements="65536" />
+            <value type="Skip" name="decal vertex buffer" length="32" disabled="true" />
+            <value type="Pad" name="_unnamed0" length="16" />
+            <struct name="SpriteVerticesBlock">
+              <value type="RealPoint3d" name="Position" disabled="true" />
+              <value type="RealVector3d" name="Offset" disabled="true" />
+              <value type="RealVector3d" name="Axis" disabled="true" />
+              <value type="RealPoint2d" name="texcoord" disabled="true" />
+              <value type="RgbColor" name="Color" disabled="true" />
+            </struct>
+            <value type="Block" name="Sprite Vertices" disabled="true" struct="SpriteVerticesBlock" maxelements="65536" />
+            <value type="Block" name="Sprite Indices" disabled="true" struct="IndicesBlock" maxelements="65536" />
+            <value type="Skip" name="sprite vertex buffer" length="32" disabled="true" />
+            <value type="Pad" name="_unnamed1" length="16" />
+          </struct>
+          <value type="Block" name="Cache Block Data" disabled="true" struct="DecoratorCacheBlockDataBlock" maxelements="1" />
+          <value type="Pad" name="_unnamed3" length="4" />
+          <value type="Pad" name="_unnamed4" length="4" />
+        </struct>
+        <value type="Block" name="Cache Blocks" disabled="false" struct="DecoratorCacheBlockBlock" maxelements="4096" />
+        <struct name="DecoratorGroupBlock">
+          <value type="CharBlockIndex" name="Decorator Set" disabled="true" />
+          <value type="Enum" name="Decorator Type" length="1" disabled="false">
+            <item value="0" name="model" />
+            <item value="1" name="floating decal" />
+            <item value="2" name="projected decal" />
+            <item value="3" name="screen facing quad" />
+            <item value="4" name="axis rotating quad" />
+            <item value="5" name="cross quad" />
+          </value>
+          <value type="CharInteger" name="Shader Index" disabled="true" />
+          <value type="CharInteger" name="Compressed Radius" disabled="true" />
+          <value type="ShortInteger" name="Cluster" disabled="true" />
+          <value type="ShortBlockIndex" name="Cache Block" disabled="true" block="DecoratorCacheBlockBlock" />
+          <value type="ShortInteger" name="Decorator Start Index" disabled="true" />
+          <value type="ShortInteger" name="Decorator Count" disabled="true" />
+          <value type="ShortInteger" name="Vertex Start Offset" disabled="true" />
+          <value type="ShortInteger" name="Vertex Count" disabled="true" />
+          <value type="ShortInteger" name="Index Start Offset" disabled="true" />
+          <value type="ShortInteger" name="Index Count" disabled="true" />
+          <value type="LongInteger" name="Compressed Bounding Center" disabled="true" />
+        </struct>
+        <value type="Block" name="Groups" disabled="false" struct="DecoratorGroupBlock" maxelements="131072" />
+        <struct name="DecoratorCellCollectionBlock">
+          <value type="ShortInteger" name="Child Index" disabled="false" />
+          <value type="ShortInteger" name="Child Index2" disabled="false" />
+          <value type="ShortInteger" name="Child Index3" disabled="false" />
+          <value type="ShortInteger" name="Child Index4" disabled="false" />
+          <value type="ShortInteger" name="Child Index5" disabled="false" />
+          <value type="ShortInteger" name="Child Index6" disabled="false" />
+          <value type="ShortInteger" name="Child Index7" disabled="false" />
+          <value type="ShortInteger" name="Child Index8" disabled="false" />
+          <value type="ShortBlockIndex" name="Cache Block Index" disabled="false" block="DecoratorCacheBlockBlock" />
+          <value type="ShortInteger" name="Group Count" disabled="false" />
+          <value type="LongInteger" name="Group Start Index" disabled="false" />
+        </struct>
+        <value type="Block" name="Cells" disabled="false" struct="DecoratorCellCollectionBlock" maxelements="65535" />
+        <struct name="DecoratorProjectedDecalBlock">
+          <value type="CharBlockIndex" name="Decorator Set" disabled="false" />
+          <value type="CharInteger" name="Decorator Class" disabled="false" />
+          <value type="CharInteger" name="Decorator Permutation" disabled="false" />
+          <value type="CharInteger" name="Sprite Index" disabled="false" />
+          <value type="RealPoint3d" name="Position" disabled="false" />
+          <value type="RealVector3d" name="Left" disabled="false" />
+          <value type="RealVector3d" name="Up" disabled="false" />
+          <value type="RealVector3d" name="Extents" disabled="false" />
+          <value type="RealPoint3d" name="Previous Position" disabled="false" />
+        </struct>
+        <value type="Block" name="Decals" disabled="false" struct="DecoratorProjectedDecalBlock" maxelements="32768" />
+      </struct>
+      <value type="Block" name="Decorators" disabled="false" struct="DecoratorPlacementDefinitionBlock" maxelements="1" />
+      <struct name="ScenarioCreatureBlock">
+        <value type="ShortBlockIndex" name="Type" disabled="false" block="ScenarioCreaturePaletteBlock" />
+        <value type="ShortBlockIndex" name="Name" disabled="false" block="ScenarioObjectNamesBlock" blockname="true" />
+        <value type="Flags" name="Placement Flags" length="4" disabled="false">
+          <bit index="0" name="Not Automatically" />
+          <bit index="1" name="Unused" />
+          <bit index="2" name="Unused" />
+          <bit index="3" name="Unused" />
+          <bit index="4" name="Lock Type to Env. Object" />
+          <bit index="5" name="Lock Transform to Env. Object" />
+          <bit index="6" name="Never Placed" />
+          <bit index="7" name="Lock Name to Env. Object" />
+          <bit index="8" name="Create at Rest" />
+        </value>
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealEulerAngles3d" name="Rotation" disabled="false" />
+        <value type="Real" name="Scale" disabled="false" />
+        <value type="Flags" name="Transform Flags" length="2" disabled="false">
+          <bit index="0" name="Mirrored" />
+        </value>
+        <value type="ShortInteger" name="Manual BSP Flags" disabled="true" />
+        <value type="LongInteger" name="Unique ID" disabled="true" />
+        <value type="ShortBlockIndex" name="Origin BSP Index" disabled="true" block="ScenarioStructureBspReferenceBlock" />
+        <value type="Enum" name="Type2" length="1" disabled="true">
+          <item value="0" name="Biped" />
+          <item value="1" name="Vehicle" />
+          <item value="2" name="Weapon" />
+          <item value="3" name="Equipment" />
+          <item value="4" name="Garbage" />
+          <item value="5" name="Projectile" />
+          <item value="6" name="Scenery" />
+          <item value="7" name="Machine" />
+          <item value="8" name="Control" />
+          <item value="9" name="light_fixture" />
+          <item value="10" name="sound_scenery" />
+          <item value="11" name="Crate" />
+          <item value="12" name="Creature" />
+        </value>
+        <value type="Enum" name="Source" length="1" disabled="true">
+          <item value="0" name="Structure" />
+          <item value="1" name="Editor" />
+          <item value="2" name="Dynamic" />
+          <item value="3" name="Legacy" />
+        </value>
+        <value type="Enum" name="BSP Policy" length="1" disabled="false">
+          <item value="0" name="Default" />
+          <item value="1" name="Always Placed" />
+          <item value="2" name="Manual BSP Placement" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="ShortBlockIndex" name="Editor Folder" disabled="false" block="GScenarioEditorFolderBlock" />
+      </struct>
+      <value type="Block" name="Creatures" disabled="false" struct="ScenarioCreatureBlock" maxelements="128" />
+      <struct name="ScenarioCreaturePaletteBlock">
+        <value type="TagReference" name="Name" disabled="false" extensions="crea" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="Creatures Palette" disabled="false" struct="ScenarioCreaturePaletteBlock" maxelements="256" />
+      <struct name="ScenarioDecoratorSetPaletteEntryBlock">
+        <value type="TagReference" name="Decorator Set" disabled="false" extensions="DECR" blockname="true" />
+      </struct>
+      <value type="Block" name="Decorators Palette" disabled="false" struct="ScenarioDecoratorSetPaletteEntryBlock" maxelements="32" />
+      <struct name="ScenarioBspSwitchTransitionVolumeBlock">
+        <value type="LongInteger" name="BSP Index Key" disabled="false" />
+        <value type="ShortBlockIndex" name="Trigger Volume" disabled="false" block="ScenarioTriggerVolumeBlock" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="2" />
+      </struct>
+      <value type="Block" name="BSP Transition Volumes" disabled="false" struct="ScenarioBspSwitchTransitionVolumeBlock" maxelements="256" />
+      <struct name="ScenarioStructureBspSphericalHarmonicLightingBlock">
+        <value type="TagReference" name="BSP" disabled="true" extensions="sbsp" />
+        <struct name="ScenarioSphericalHarmonicLightingPoint">
+          <value type="RealPoint3d" name="Position" disabled="false" />
+        </struct>
+        <value type="Block" name="Lighting Points" disabled="false" struct="ScenarioSphericalHarmonicLightingPoint" maxelements="32768" />
+      </struct>
+      <value type="Block" name="Structure BSP Lighting" disabled="false" struct="ScenarioStructureBspSphericalHarmonicLightingBlock" maxelements="16" />
+      <struct name="GScenarioEditorFolderBlock">
+        <value type="LongBlockIndex" name="parent folder" disabled="false" />
+        <value type="LongerFixedLengthString" name="name" disabled="false" blockname="true" />
+      </struct>
+      <value type="Block" name="Editor Folders" disabled="false" struct="GScenarioEditorFolderBlock" maxelements="32767" />
+      <struct name="ScenarioLevelDataBlock">
+        <value type="TagReference" name="Level Description" disabled="false" extensions="unic" />
+        <struct name="GlobalUiCampaignLevelBlock">
+          <value type="LongInteger" name="Campaign ID" disabled="false" />
+          <value type="LongInteger" name="Map ID" disabled="false" />
+          <value type="TagReference" name="Bitmap" disabled="false" extensions="bitm" />
+          <value type="Skip" name="_unnamed0" length="576" />
+          <value type="Skip" name="_unnamed1" length="2304" />
+        </struct>
+        <value type="Block" name="Campaign Level Data" disabled="false" struct="GlobalUiCampaignLevelBlock" maxelements="20" />
+        <struct name="GlobalUiMultiplayerLevelBlock">
+          <value type="LongInteger" name="Map ID" disabled="false" />
+          <value type="TagReference" name="Bitmap" disabled="false" extensions="bitm" />
+          <value type="Skip" name="_unnamed0" length="576" />
+          <value type="Skip" name="_unnamed1" length="2304" />
+          <value type="LongerFixedLengthString" name="Path" disabled="false" />
+          <value type="LongInteger" name="Sort Order" disabled="false" />
+          <value type="Flags" name="Flags" length="1" disabled="false">
+            <bit index="0" name="Unlockable" />
+          </value>
+          <value type="Pad" name="_unnamed2" length="3" />
+          <value type="CharInteger" name="Max Teams None" disabled="false" />
+          <value type="CharInteger" name="Max Teams CTF" disabled="false" />
+          <value type="CharInteger" name="Max Teams Slayer" disabled="false" />
+          <value type="CharInteger" name="Max Teams Oddball" disabled="false" />
+          <value type="CharInteger" name="Max Teams KOTH" disabled="false" />
+          <value type="CharInteger" name="Max Teams Race" disabled="false" />
+          <value type="CharInteger" name="Max Teams Headhunter" disabled="false" />
+          <value type="CharInteger" name="Max Teams Juggernaut" disabled="false" />
+          <value type="CharInteger" name="Max Teams Territories" disabled="false" />
+          <value type="CharInteger" name="Max Teams Assault" disabled="false" />
+          <value type="CharInteger" name="Max Teams Stub 10" disabled="false" />
+          <value type="CharInteger" name="Max Teams Stub 11" disabled="false" />
+          <value type="CharInteger" name="Max Teams Stub 12" disabled="false" />
+          <value type="CharInteger" name="Max Teams Stub 13" disabled="false" />
+          <value type="CharInteger" name="Max Teams Stub 14" disabled="false" />
+          <value type="CharInteger" name="Max Teams Stub 15" disabled="false" />
+        </struct>
+        <value type="Block" name="Multiplayer" disabled="false" struct="GlobalUiMultiplayerLevelBlock" maxelements="50" />
+      </struct>
+      <value type="Block" name="Level Data" disabled="false" struct="ScenarioLevelDataBlock" maxelements="1" />
+      <value type="TagReference" name="Territory Location Names" disabled="false" extensions="unic" />
+      <value type="Pad" name="_unnamed37" length="8" />
+      <struct name="AiScenarioMissionDialogueBlock">
+        <value type="TagReference" name="mission dialogue" disabled="false" extensions="mdlg" />
+      </struct>
+      <value type="Block" name="Mission Dialogue" disabled="false" struct="AiScenarioMissionDialogueBlock" maxelements="1" />
+      <value type="TagReference" name="Objectives" disabled="false" extensions="unic" />
+      <struct name="ScenarioInterpolatorBlock">
+        <value type="StringId" name="Name" disabled="false" blockname="true" />
+        <value type="StringId" name="Accelerator Name" disabled="false" unit="Interpolator" />
+        <value type="StringId" name="Multiplier Name" disabled="false" unit="Interpolator" />
+        <struct name="ByteBlock">
+          <value type="CharInteger" name="Value" disabled="false" />
+        </struct>
+        <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="Skip" name="_unnamed0" length="2" />
+        <value type="Skip" name="_unnamed1" length="2" />
+      </struct>
+      <value type="Block" name="Interpolators" disabled="false" struct="ScenarioInterpolatorBlock" maxelements="16" />
+      <value type="Block" name="Shared References" disabled="false" struct="HsReferencesBlock" maxelements="512" />
+      <struct name="ScenarioScreenEffectReferenceBlock">
+        <value type="Pad" name="_unnamed0" length="16" />
+        <value type="TagReference" name="Screen Effect" disabled="false" extensions="egor" />
+        <value type="StringId" name="Primary Input" disabled="false" unit="Interpolator" />
+        <value type="StringId" name="Secondary Input" disabled="false" unit="Interpolator" />
+        <value type="Skip" name="_unnamed1" length="2" />
+        <value type="Skip" name="_unnamed2" length="2" />
+      </struct>
+      <value type="Block" name="Screen Effect References" disabled="false" struct="ScenarioScreenEffectReferenceBlock" maxelements="16" />
+      <struct name="ScenarioSimulationDefinitionTableBlock">
+        <value type="Skip" name="Object" length="4" disabled="false" />
+      </struct>
+      <value type="Block" name="Simulation Definition Table" disabled="false" struct="ScenarioSimulationDefinitionTableBlock" maxelements="512" />
+    </struct>
+  </plugin>
+</xml>

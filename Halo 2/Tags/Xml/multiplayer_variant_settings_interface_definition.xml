@@ -1,0 +1,522 @@
+<xml>
+  <name type="goof" parenttype="????">MultiplayerVariantSettingsInterfaceDefinition</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="CreateNewVariantStructBlock">
+      <value type="TagReference" name="_unnamed0" extensions="wgit" />
+      <value type="TagReference" name="_unnamed1" extensions="wgit" />
+      <value type="TagReference" name="_unnamed2" extensions="wgit" />
+      <struct name="VariantSettingEditReferenceBlock">
+        <value type="Enum" name="setting category" length="4" disabled="false" blockname="true">
+          <item value="0" name="match-ctf" />
+          <item value="1" name="match-slayer" />
+          <item value="2" name="match-oddball" />
+          <item value="3" name="match-king" />
+          <item value="4" name="match-race" />
+          <item value="5" name="match-headhunter" />
+          <item value="6" name="match-juggernaut" />
+          <item value="7" name="match-territories" />
+          <item value="8" name="match-assault" />
+          <item value="9" name="players" />
+          <item value="10" name="OBSOLETE" />
+          <item value="11" name="vehicles" />
+          <item value="12" name="equipment" />
+          <item value="13" name="game-ctf" />
+          <item value="14" name="game-slayer" />
+          <item value="15" name="game-oddball" />
+          <item value="16" name="game-king" />
+          <item value="17" name="game-race" />
+          <item value="18" name="game-headhunter" />
+          <item value="19" name="game-juggernaut" />
+          <item value="20" name="game-territories" />
+          <item value="21" name="game-assault" />
+          <item value="22" name="quick options-ctf" />
+          <item value="23" name="quick options-slayer" />
+          <item value="24" name="quick options-oddball" />
+          <item value="25" name="quick options-king" />
+          <item value="26" name="quick options-race" />
+          <item value="27" name="quick options-headhunter" />
+          <item value="28" name="quick options-juggernaut" />
+          <item value="29" name="quick options-territories" />
+          <item value="30" name="quick options-assault" />
+          <item value="31" name="team-ctf" />
+          <item value="32" name="team-slayer" />
+          <item value="33" name="team-oddball" />
+          <item value="34" name="team-king" />
+          <item value="35" name="team-race" />
+          <item value="36" name="team-headhunter" />
+          <item value="37" name="team-juggernaut" />
+          <item value="38" name="team-territories" />
+          <item value="39" name="team-assault" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="4" />
+        <struct name="TextValuePairBlock">
+          <value type="TagReference" name="value pairs" disabled="false" extensions="sily" blockname="true" />
+        </struct>
+        <value type="Block" name="options" disabled="false" struct="TextValuePairBlock" maxelements="32" />
+        <struct name="NullBlock" />
+        <value type="Block" name="_unnamed1" struct="NullBlock" maxelements="0" />
+      </struct>
+      <value type="Block" name="game engine settings" disabled="false" struct="VariantSettingEditReferenceBlock" maxelements="40" />
+      <value type="TagReference" name="default variant strings" disabled="false" extensions="unic" />
+      <struct name="GDefaultVariantsBlock">
+        <value type="StringId" name="variant name" disabled="false" blockname="true" />
+        <value type="Enum" name="variant type" length="4" disabled="false">
+          <item value="0" name="slayer" />
+          <item value="1" name="oddball" />
+          <item value="2" name="juggernaut" />
+          <item value="3" name="king" />
+          <item value="4" name="ctf" />
+          <item value="5" name="invasion" />
+          <item value="6" name="territories" />
+        </value>
+        <struct name="GDefaultVariantSettingsBlock">
+          <value type="Enum" name="setting category" length="4" disabled="false" blockname="true">
+            <item value="0" name="match round setting" />
+            <item value="1" name="match ctf score to win" />
+            <item value="2" name="match slayer score to win round" />
+            <item value="3" name="match oddball score to win round" />
+            <item value="4" name="match king score to win round" />
+            <item value="5" name="match race score to win round" />
+            <item value="6" name="match headhunter score to win round" />
+            <item value="7" name="match juggernaut score to win round" />
+            <item value="8" name="match territories score to win round" />
+            <item value="9" name="match assault score to win round" />
+            <item value="10" name="match round time limit" />
+            <item value="11" name="match rounds reset map" />
+            <item value="12" name="match tie resolution" />
+            <item value="13" name="match observers" />
+            <item value="14" name="match join in progress" />
+            <item value="15" name="maximum players" />
+            <item value="16" name="lives per round" />
+            <item value="17" name="respawn time" />
+            <item value="18" name="suicide penalty" />
+            <item value="19" name="shields" />
+            <item value="20" name="motion sensor" />
+            <item value="21" name="invisibility" />
+            <item value="22" name="team changing" />
+            <item value="23" name="team scoring" />
+            <item value="24" name="friendly fire" />
+            <item value="25" name="team respawn setting" />
+            <item value="26" name="betrayal respawn penalty" />
+            <item value="27" name="team killer management" />
+            <item value="28" name="slayer bonus points" />
+            <item value="29" name="slayer suicide point loss" />
+            <item value="30" name="slayer death point loss" />
+            <item value="31" name="headhunter moving head bin" />
+            <item value="32" name="headhunter point multiplier" />
+            <item value="33" name="headhunter suicide point loss" />
+            <item value="34" name="headhunter death point loss" />
+            <item value="35" name="headhunter uncontested bin" />
+            <item value="36" name="headhunter speed with heads" />
+            <item value="37" name="headhunter max heads carried" />
+            <item value="38" name="king uncontested hill" />
+            <item value="39" name="king team time multiplier" />
+            <item value="40" name="king moving hill" />
+            <item value="41" name="king extra damage on hill" />
+            <item value="42" name="king dmg resistance on hill" />
+            <item value="43" name="oddball ball spawn count" />
+            <item value="44" name="oddball ball hit damage" />
+            <item value="45" name="oddball speed with ball" />
+            <item value="46" name="oddball driving gunning with ball" />
+            <item value="47" name="oddball waypoint to ball" />
+            <item value="48" name="race random track" />
+            <item value="49" name="race uncontested flag" />
+            <item value="50" name="ctf game type" />
+            <item value="51" name="ctf sudden death" />
+            <item value="52" name="ctf flag may be returned" />
+            <item value="53" name="ctf flag at home to score" />
+            <item value="54" name="ctf flag reset time" />
+            <item value="55" name="ctf speed with flag" />
+            <item value="56" name="ctf flag hit damage" />
+            <item value="57" name="ctf driving gunning with flag" />
+            <item value="58" name="ctf waypoint to own flag" />
+            <item value="59" name="assault game type" />
+            <item value="60" name="assault sudden death" />
+            <item value="61" name="assault detonation time" />
+            <item value="62" name="assault bomb at home to score" />
+            <item value="63" name="assault arming time" />
+            <item value="64" name="assault speed with bomb" />
+            <item value="65" name="assault bomb hit damage" />
+            <item value="66" name="assault driving gunning with bomb" />
+            <item value="67" name="assault waypoint to own bomb" />
+            <item value="68" name="juggernaut betrayal point loss" />
+            <item value="69" name="juggernaut juggy extra damage" />
+            <item value="70" name="juggernaut juggy infinite ammo" />
+            <item value="71" name="juggernaut juggy overshields" />
+            <item value="72" name="juggernaut juggy active camo" />
+            <item value="73" name="juggernaut juggy motion sensor" />
+            <item value="74" name="territories territory count" />
+            <item value="75" name="veh. respawn" />
+            <item value="76" name="veh. primary light land" />
+            <item value="77" name="veh. secondary light land" />
+            <item value="78" name="veh. primary heavy land" />
+            <item value="79" name="veh. primary flying" />
+            <item value="80" name="veh. secondary heavy land" />
+            <item value="81" name="veh. primary turret" />
+            <item value="82" name="veh. secondary turret" />
+            <item value="83" name="equip. weapons on map" />
+            <item value="84" name="equip. overshields on map" />
+            <item value="85" name="equip. active camo on map" />
+            <item value="86" name="equip. grenades on map" />
+            <item value="87" name="equip. weapon respawn times" />
+            <item value="88" name="equip. starting grenades" />
+            <item value="89" name="equip. primary starting equipment" />
+            <item value="90" name="UNS. max. living players" />
+            <item value="91" name="UNS. teams enabled" />
+            <item value="92" name="UNS. assault bomb may be returned" />
+            <item value="93" name="UNS. max. teams" />
+            <item value="94" name="UNS. equip. secondary starting equipment" />
+            <item value="95" name="UNS. assault fuse time" />
+            <item value="96" name="UNS. juggy movement" />
+            <item value="97" name="UNS. sticky fuse" />
+            <item value="98" name="UNS. terr. contest time" />
+            <item value="99" name="UNS. terr. control time" />
+            <item value="100" name="UNS. oddb. carr. invis" />
+            <item value="101" name="UNS. king invis in hill" />
+            <item value="102" name="UNS. ball carr. dmg. resis." />
+            <item value="103" name="UNS. king dmg. res. in hill" />
+            <item value="104" name="UNS. players ex. dmg" />
+            <item value="105" name="UNS. players dmg. resis." />
+            <item value="106" name="UNS. ctf carr. dmg. resis." />
+            <item value="107" name="UNS. ctf carr. invis." />
+            <item value="108" name="UNS. juggy dmg. resis." />
+            <item value="109" name="UNS. bomb carr. dmg. resis." />
+            <item value="110" name="UNS. bomb carr. invis." />
+            <item value="111" name="UNS. force even teams" />
+          </value>
+          <value type="LongInteger" name="value" disabled="false" />
+        </struct>
+        <value type="Block" name="settings" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+        <value type="CharInteger" name="description index" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="3" />
+      </struct>
+      <value type="Block" name="default variants" disabled="false" struct="GDefaultVariantsBlock" maxelements="100" />
+      <value type="StringId" name="_unnamed3" />
+      <value type="Enum" name="_unnamed4" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <struct name="GDefaultVariantSettingsBlock">
+        <value type="Enum" name="setting category" length="4" disabled="false" blockname="true">
+          <item value="0" name="match round setting" />
+          <item value="1" name="match ctf score to win" />
+          <item value="2" name="match slayer score to win round" />
+          <item value="3" name="match oddball score to win round" />
+          <item value="4" name="match king score to win round" />
+          <item value="5" name="match race score to win round" />
+          <item value="6" name="match headhunter score to win round" />
+          <item value="7" name="match juggernaut score to win round" />
+          <item value="8" name="match territories score to win round" />
+          <item value="9" name="match assault score to win round" />
+          <item value="10" name="match round time limit" />
+          <item value="11" name="match rounds reset map" />
+          <item value="12" name="match tie resolution" />
+          <item value="13" name="match observers" />
+          <item value="14" name="match join in progress" />
+          <item value="15" name="maximum players" />
+          <item value="16" name="lives per round" />
+          <item value="17" name="respawn time" />
+          <item value="18" name="suicide penalty" />
+          <item value="19" name="shields" />
+          <item value="20" name="motion sensor" />
+          <item value="21" name="invisibility" />
+          <item value="22" name="team changing" />
+          <item value="23" name="team scoring" />
+          <item value="24" name="friendly fire" />
+          <item value="25" name="team respawn setting" />
+          <item value="26" name="betrayal respawn penalty" />
+          <item value="27" name="team killer management" />
+          <item value="28" name="slayer bonus points" />
+          <item value="29" name="slayer suicide point loss" />
+          <item value="30" name="slayer death point loss" />
+          <item value="31" name="headhunter moving head bin" />
+          <item value="32" name="headhunter point multiplier" />
+          <item value="33" name="headhunter suicide point loss" />
+          <item value="34" name="headhunter death point loss" />
+          <item value="35" name="headhunter uncontested bin" />
+          <item value="36" name="headhunter speed with heads" />
+          <item value="37" name="headhunter max heads carried" />
+          <item value="38" name="king uncontested hill" />
+          <item value="39" name="king team time multiplier" />
+          <item value="40" name="king moving hill" />
+          <item value="41" name="king extra damage on hill" />
+          <item value="42" name="king dmg resistance on hill" />
+          <item value="43" name="oddball ball spawn count" />
+          <item value="44" name="oddball ball hit damage" />
+          <item value="45" name="oddball speed with ball" />
+          <item value="46" name="oddball driving gunning with ball" />
+          <item value="47" name="oddball waypoint to ball" />
+          <item value="48" name="race random track" />
+          <item value="49" name="race uncontested flag" />
+          <item value="50" name="ctf game type" />
+          <item value="51" name="ctf sudden death" />
+          <item value="52" name="ctf flag may be returned" />
+          <item value="53" name="ctf flag at home to score" />
+          <item value="54" name="ctf flag reset time" />
+          <item value="55" name="ctf speed with flag" />
+          <item value="56" name="ctf flag hit damage" />
+          <item value="57" name="ctf driving gunning with flag" />
+          <item value="58" name="ctf waypoint to own flag" />
+          <item value="59" name="assault game type" />
+          <item value="60" name="assault sudden death" />
+          <item value="61" name="assault detonation time" />
+          <item value="62" name="assault bomb at home to score" />
+          <item value="63" name="assault arming time" />
+          <item value="64" name="assault speed with bomb" />
+          <item value="65" name="assault bomb hit damage" />
+          <item value="66" name="assault driving gunning with bomb" />
+          <item value="67" name="assault waypoint to own bomb" />
+          <item value="68" name="juggernaut betrayal point loss" />
+          <item value="69" name="juggernaut juggy extra damage" />
+          <item value="70" name="juggernaut juggy infinite ammo" />
+          <item value="71" name="juggernaut juggy overshields" />
+          <item value="72" name="juggernaut juggy active camo" />
+          <item value="73" name="juggernaut juggy motion sensor" />
+          <item value="74" name="territories territory count" />
+          <item value="75" name="veh. respawn" />
+          <item value="76" name="veh. primary light land" />
+          <item value="77" name="veh. secondary light land" />
+          <item value="78" name="veh. primary heavy land" />
+          <item value="79" name="veh. primary flying" />
+          <item value="80" name="veh. secondary heavy land" />
+          <item value="81" name="veh. primary turret" />
+          <item value="82" name="veh. secondary turret" />
+          <item value="83" name="equip. weapons on map" />
+          <item value="84" name="equip. overshields on map" />
+          <item value="85" name="equip. active camo on map" />
+          <item value="86" name="equip. grenades on map" />
+          <item value="87" name="equip. weapon respawn times" />
+          <item value="88" name="equip. starting grenades" />
+          <item value="89" name="equip. primary starting equipment" />
+          <item value="90" name="UNS. max. living players" />
+          <item value="91" name="UNS. teams enabled" />
+          <item value="92" name="UNS. assault bomb may be returned" />
+          <item value="93" name="UNS. max. teams" />
+          <item value="94" name="UNS. equip. secondary starting equipment" />
+          <item value="95" name="UNS. assault fuse time" />
+          <item value="96" name="UNS. juggy movement" />
+          <item value="97" name="UNS. sticky fuse" />
+          <item value="98" name="UNS. terr. contest time" />
+          <item value="99" name="UNS. terr. control time" />
+          <item value="100" name="UNS. oddb. carr. invis" />
+          <item value="101" name="UNS. king invis in hill" />
+          <item value="102" name="UNS. ball carr. dmg. resis." />
+          <item value="103" name="UNS. king dmg. res. in hill" />
+          <item value="104" name="UNS. players ex. dmg" />
+          <item value="105" name="UNS. players dmg. resis." />
+          <item value="106" name="UNS. ctf carr. dmg. resis." />
+          <item value="107" name="UNS. ctf carr. invis." />
+          <item value="108" name="UNS. juggy dmg. resis." />
+          <item value="109" name="UNS. bomb carr. dmg. resis." />
+          <item value="110" name="UNS. bomb carr. invis." />
+          <item value="111" name="UNS. force even teams" />
+        </value>
+        <value type="LongInteger" name="value" disabled="false" />
+      </struct>
+      <value type="Block" name="settings" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed5" />
+      <value type="Pad" name="_unnamed6" length="3" />
+      <value type="StringId" name="_unnamed7" />
+      <value type="Enum" name="_unnamed8" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings2" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed9" />
+      <value type="Pad" name="_unnamed10" length="3" />
+      <value type="StringId" name="_unnamed11" />
+      <value type="Enum" name="_unnamed12" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings3" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed13" />
+      <value type="Pad" name="_unnamed14" length="3" />
+      <value type="StringId" name="_unnamed15" />
+      <value type="Enum" name="_unnamed16" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings4" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed17" />
+      <value type="Pad" name="_unnamed18" length="3" />
+      <value type="StringId" name="_unnamed19" />
+      <value type="Enum" name="_unnamed20" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings5" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed21" />
+      <value type="Pad" name="_unnamed22" length="3" />
+      <value type="StringId" name="_unnamed23" />
+      <value type="Enum" name="_unnamed24" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings6" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed25" />
+      <value type="Pad" name="_unnamed26" length="3" />
+      <value type="StringId" name="_unnamed27" />
+      <value type="Enum" name="_unnamed28" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings7" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed29" />
+      <value type="Pad" name="_unnamed30" length="3" />
+      <value type="StringId" name="_unnamed31" />
+      <value type="Enum" name="_unnamed32" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings8" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed33" />
+      <value type="Pad" name="_unnamed34" length="3" />
+      <value type="StringId" name="_unnamed35" />
+      <value type="Enum" name="_unnamed36" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings9" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed37" />
+      <value type="Pad" name="_unnamed38" length="3" />
+      <value type="StringId" name="_unnamed39" />
+      <value type="Enum" name="_unnamed40" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings10" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed41" />
+      <value type="Pad" name="_unnamed42" length="3" />
+      <value type="StringId" name="_unnamed43" />
+      <value type="Enum" name="_unnamed44" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings11" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed45" />
+      <value type="Pad" name="_unnamed46" length="3" />
+      <value type="StringId" name="_unnamed47" />
+      <value type="Enum" name="_unnamed48" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings12" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed49" />
+      <value type="Pad" name="_unnamed50" length="3" />
+      <value type="StringId" name="_unnamed51" />
+      <value type="Enum" name="_unnamed52" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings13" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed53" />
+      <value type="Pad" name="_unnamed54" length="3" />
+      <value type="StringId" name="_unnamed55" />
+      <value type="Enum" name="_unnamed56" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings14" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed57" />
+      <value type="Pad" name="_unnamed58" length="3" />
+      <value type="StringId" name="_unnamed59" />
+      <value type="Enum" name="_unnamed60" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings15" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed61" />
+      <value type="Pad" name="_unnamed62" length="3" />
+      <value type="StringId" name="_unnamed63" />
+      <value type="Enum" name="_unnamed64" length="4">
+        <item value="0" name="slayer" />
+        <item value="1" name="oddball" />
+        <item value="2" name="juggernaut" />
+        <item value="3" name="king" />
+        <item value="4" name="ctf" />
+        <item value="5" name="invasion" />
+        <item value="6" name="territories" />
+      </value>
+      <value type="Block" name="settings16" disabled="false" struct="GDefaultVariantSettingsBlock" maxelements="112" />
+      <value type="CharInteger" name="_unnamed65" />
+      <value type="Pad" name="_unnamed66" length="3" />
+    </struct>
+  </plugin>
+</xml>

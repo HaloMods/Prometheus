@@ -1,0 +1,224 @@
+<xml>
+  <name type="ligh" parenttype="????">Light</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="LightBlock">
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="no illumination">
+          <tooltip>don't cast any per-pixel dynamic light</tooltip>
+        </bit>
+        <bit index="1" name="no specular">
+          <tooltip>don't cast any specular highlights</tooltip>
+        </bit>
+        <bit index="2" name="force cast environment shadows through portals" />
+        <bit index="3" name="no shadow">
+          <tooltip>don't cast any stencil shadows</tooltip>
+        </bit>
+        <bit index="4" name="force frustum visibility on small light" />
+        <bit index="5" name="only render in first person" />
+        <bit index="6" name="only render in third person" />
+        <bit index="7" name="don't fade when invisible?">
+          <tooltip>don't fade out this light when under active-camouflage</tooltip>
+        </bit>
+        <bit index="8" name="multiplayer override">
+          <tooltip>don't turn off in multiplayer</tooltip>
+        </bit>
+        <bit index="9" name="animated gel" />
+        <bit index="10" name="only in dynamic envmap?">
+          <tooltip>only draw this light in dynamic reflection maps</tooltip>
+        </bit>
+        <bit index="11" name="ignore parent object">
+          <tooltip>don't illuminate or shadow the single object we are attached to</tooltip>
+        </bit>
+        <bit index="12" name="don't shadow parent">
+          <tooltip>don't shadow the object we are attached to</tooltip>
+        </bit>
+        <bit index="13" name="ignore all parents">
+          <tooltip>don't illuminate or shadow all the way up to our parent object</tooltip>
+        </bit>
+        <bit index="14" name="march milestone hack">
+          <tooltip>don't click this unless you know what you're doing</tooltip>
+        </bit>
+        <bit index="15" name="force light inside world">
+          <tooltip>every update will push light back inside the world</tooltip>
+        </bit>
+        <bit index="16" name="environment doesnt cast stencil shadows">
+          <tooltip>environment in this light will not cast stencil shadows</tooltip>
+        </bit>
+        <bit index="17" name="objects don't cast stencil shadows">
+          <tooltip>objects in this light will not cast stencil shadows</tooltip>
+        </bit>
+        <bit index="18" name="first person from camera" />
+        <bit index="19" name="texture camera gel" />
+        <bit index="20" name="light framerate killer" />
+        <bit index="21" name="allowed in split screen" />
+        <bit index="22" name="only on parent bipeds" />
+      </value>
+      <value type="Enum" name="type" length="2" disabled="false">
+        <item value="0" name="sphere" />
+        <item value="1" name="orthogonal" />
+        <item value="2" name="projective" />
+        <item value="3" name="pyramid" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="RealBounds" name="size modifer" disabled="false">
+        <tooltip>how the light's size changes with external scale</tooltip>
+      </value>
+      <value type="Real" name="shadow quality bias" disabled="false">
+        <tooltip>larger positive numbers improve quality, larger negative numbers improve speed</tooltip>
+      </value>
+      <value type="Enum" name="shadow tap bias" length="2" disabled="false">
+        <item value="0" name="3 tap" />
+        <item value="1" name="UNUSED" />
+        <item value="2" name="1 tap" />
+        <tooltip>the less taps you use, the faster the light (but edges can look worse)</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed1" length="2" />
+      <value type="Real" name="radius" disabled="false" unit="world units">
+        <tooltip>the radius at which illumination falls off to zero</tooltip>
+      </value>
+      <value type="Real" name="specular radius" disabled="false" unit="world units">
+        <tooltip>the radius at which specular highlights fall off to zero (if zero, same as maximum radius)</tooltip>
+      </value>
+      <value type="Real" name="near width" disabled="false" unit="world units">
+        <tooltip>width of the frustum light at its near plane</tooltip>
+      </value>
+      <value type="Real" name="height stretch" disabled="false">
+        <tooltip>how much the gel is stretched vertically (0.0 or 1.0 = aspect ratio same as gel)</tooltip>
+      </value>
+      <value type="Real" name="field of view" disabled="false" unit="degrees">
+        <tooltip>horizontal angle that the frustum light covers (0.0 = no spread, a parallel beam)</tooltip>
+      </value>
+      <value type="Real" name="falloff distance" disabled="false">
+        <tooltip>distance from near plane to where the light falloff starts</tooltip>
+      </value>
+      <value type="Real" name="cutoff distance" disabled="false">
+        <tooltip>distance from near plane to where illumination falls off to zero</tooltip>
+      </value>
+      <value type="Flags" name="interpolation flags" length="4" disabled="false">
+        <bit index="0" name="blend in hsv">
+          <tooltip>blends colors in hsv rather than rgb space</tooltip>
+        </bit>
+        <bit index="1" name="...more colors">
+          <tooltip>blends colors through more hues (goes the long way around the color wheel)</tooltip>
+        </bit>
+      </value>
+      <value type="RealBounds" name="bloom bounds" disabled="false" unit="[0..2]" />
+      <value type="RealRgbColor" name="specular lower bound" disabled="false" />
+      <value type="RealRgbColor" name="specular upper bound" disabled="false" />
+      <value type="RealRgbColor" name="diffuse lower bound" disabled="false" />
+      <value type="RealRgbColor" name="diffuse upper bound" disabled="false" />
+      <value type="RealBounds" name="brightness bounds" disabled="false" unit="[0..2]" />
+      <value type="TagReference" name="gel map" disabled="false" extensions="bitm">
+        <tooltip>must be a cubemap for spherical light and a 2d texture for frustum light</tooltip>
+      </value>
+      <value type="Enum" name="specular mask" length="2" disabled="false">
+        <item value="0" name="default" />
+        <item value="1" name="none (no mask)" />
+        <item value="2" name="gel alpha" />
+        <item value="3" name="gel color" />
+      </value>
+      <value type="Pad" name="_unnamed2" length="2" />
+      <value type="Pad" name="_unnamed3" length="4" />
+      <value type="Enum" name="falloff function" length="2" disabled="false">
+        <item value="0" name="default" />
+        <item value="1" name="narrow" />
+        <item value="2" name="broad" />
+        <item value="3" name="very broad" />
+      </value>
+      <value type="Enum" name="diffuse contrast" length="2" disabled="false">
+        <item value="0" name="default (linear)" />
+        <item value="1" name="high" />
+        <item value="2" name="low" />
+        <item value="3" name="very low" />
+      </value>
+      <value type="Enum" name="specular contrast" length="2" disabled="false">
+        <item value="0" name="default (one)" />
+        <item value="1" name="high (linear)" />
+        <item value="2" name="low" />
+        <item value="3" name="very low" />
+      </value>
+      <value type="Enum" name="falloff geometry" length="2" disabled="false">
+        <item value="0" name="default" />
+        <item value="1" name="directional" />
+        <item value="2" name="spherical" />
+      </value>
+      <value type="TagReference" name="lens flare" disabled="false" extensions="lens" />
+      <value type="Real" name="bounding radius" disabled="false" unit="world units">
+        <tooltip>used to generate a bounding radius for lensflare-only lights</tooltip>
+      </value>
+      <value type="TagReference" name="light volume" disabled="false" extensions="MGS2" />
+      <value type="Enum" name="default lightmap setting" length="2" disabled="false">
+        <item value="0" name="dynamic only" />
+        <item value="1" name="dynamic with lightmaps" />
+        <item value="2" name="lightmaps only" />
+      </value>
+      <value type="Pad" name="_unnamed4" length="2" />
+      <value type="Real" name="lightmap half life" disabled="false" />
+      <value type="Real" name="lightmap light scale" disabled="false" />
+      <value type="Real" name="duration" disabled="false" unit="seconds">
+        <tooltip>the light will last this long when created by an effect</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed5" length="2" />
+      <value type="Enum" name="falloff function2" length="2" disabled="false">
+        <item value="0" name="linear" />
+        <item value="1" name="late" />
+        <item value="2" name="very late" />
+        <item value="3" name="early" />
+        <item value="4" name="very early" />
+        <item value="5" name="cosine" />
+        <item value="6" name="zero" />
+        <item value="7" name="one" />
+        <tooltip>the scale of the light will diminish over time according to this function</tooltip>
+      </value>
+      <value type="Enum" name="illumination fade" length="2" disabled="false">
+        <item value="0" name="fade very far" />
+        <item value="1" name="fade far" />
+        <item value="2" name="fade medium" />
+        <item value="3" name="fade close" />
+        <item value="4" name="fade very close" />
+      </value>
+      <value type="Enum" name="shadow fade" length="2" disabled="false">
+        <item value="0" name="fade very far" />
+        <item value="1" name="fade far" />
+        <item value="2" name="fade medium" />
+        <item value="3" name="fade close" />
+        <item value="4" name="fade very close" />
+      </value>
+      <value type="Enum" name="specular fade" length="2" disabled="false">
+        <item value="0" name="fade very far" />
+        <item value="1" name="fade far" />
+        <item value="2" name="fade medium" />
+        <item value="3" name="fade close" />
+        <item value="4" name="fade very close" />
+      </value>
+      <value type="Pad" name="_unnamed6" length="2" />
+      <value type="Flags" name="flags2" length="4" disabled="false">
+        <bit index="0" name="synchronized" />
+      </value>
+      <struct name="LightBrightnessAnimationBlock">
+        <struct name="ByteBlock">
+          <value type="CharInteger" name="Value" disabled="false" />
+        </struct>
+        <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+      </struct>
+      <value type="Block" name="brightness animation" disabled="false" struct="LightBrightnessAnimationBlock" maxelements="1" />
+      <struct name="LightColorAnimationBlock">
+        <struct name="ByteBlock">
+          <value type="CharInteger" name="Value" disabled="false" />
+        </struct>
+        <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+      </struct>
+      <value type="Block" name="color animation" disabled="false" struct="LightColorAnimationBlock" maxelements="1" />
+      <struct name="LightGelAnimationBlock">
+        <struct name="ByteBlock">
+          <value type="CharInteger" name="Value" disabled="false" />
+        </struct>
+        <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="Block" name="data2" disabled="false" struct="ByteBlock" maxelements="1024" />
+      </struct>
+      <value type="Block" name="gel animation" disabled="false" struct="LightGelAnimationBlock" maxelements="1" />
+      <value type="TagReference" name="shader" disabled="false" extensions="shad" />
+    </struct>
+  </plugin>
+</xml>

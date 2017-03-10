@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="phys" parenttype="????">Physics</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Physics">
+      <value type="Real" name="radius">
+        <tooltip>Positive uses old inferior physics, negative uses new improved physics.</tooltip>
+      </value>
+      <value type="RealFraction" name="moment scale" />
+      <value type="Real" name="mass" />
+      <value type="RealPoint3D" name="center of mass" />
+      <value type="Real" name="density" />
+      <value type="Real" name="gravity scale" />
+      <value type="Real" name="ground friction" />
+      <value type="Real" name="ground depth" />
+      <value type="RealFraction" name="ground damp fraction" />
+      <value type="Real" name="ground normal k1" />
+      <value type="Real" name="ground normal k0" />
+      <value type="Pad" name="_unnamed" length="4" />
+      <value type="Real" name="water friction" />
+      <value type="Real" name="water depth" />
+      <value type="Real" name="water density" />
+      <value type="Pad" name="_unnamed2" length="4" />
+      <value type="RealFraction" name="air friction" />
+      <value type="Pad" name="_unnamed3" length="4" />
+      <value type="Real" name="xx moment" />
+      <value type="Real" name="yy moment" />
+      <value type="Real" name="zz moment" />
+      <struct name="InertialMatrix">
+        <value type="RealVector3D" name="yy+zz" />
+        <value type="RealVector3D" name="_unnamed" />
+        <value type="RealVector3D" name="_unnamed2" />
+      </struct>
+      <value type="Block" name="inertial matrix and inverse" struct="InertialMatrix" maxelements="2" />
+      <struct name="PoweredMassPoint">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="ground friction" />
+          <bit index="1" name="water friction" />
+          <bit index="2" name="air friction" />
+          <bit index="3" name="water lift" />
+          <bit index="4" name="air lift" />
+          <bit index="5" name="thrust" />
+          <bit index="6" name="antigrav" />
+        </value>
+        <value type="Real" name="antigrav strength" />
+        <value type="Real" name="antigrav offset" />
+        <value type="Real" name="antigrav height" />
+        <value type="Real" name="antigrav damp fraction" />
+        <value type="Real" name="antigrav normal k1" />
+        <value type="Real" name="antigrav normal k0" />
+        <value type="Pad" name="_unnamed" length="68" />
+      </struct>
+      <value type="Block" name="powered mass points" struct="PoweredMassPoint" maxelements="32" />
+      <struct name="MassPoint">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="ShortBlockIndex" name="powered mass point" block="PoweredMassPoint" />
+        <value type="ShortInteger" name="model node" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="metallic" />
+        </value>
+        <value type="Real" name="relative mass" />
+        <value type="Real" name="mass" />
+        <value type="Real" name="relative density" />
+        <value type="Real" name="density" />
+        <value type="RealPoint3D" name="position" />
+        <value type="RealVector3D" name="forward" />
+        <value type="RealVector3D" name="up" />
+        <value type="Enum" name="friction type">
+          <item value="0" name="point" />
+          <item value="1" name="forward" />
+          <item value="2" name="left" />
+          <item value="3" name="up" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Real" name="friction parallel scale" />
+        <value type="Real" name="friction perpendicular scale" />
+        <value type="Real" name="radius" />
+        <value type="Pad" name="_unnamed2" length="20" />
+      </struct>
+      <value type="Block" name="mass points" struct="MassPoint" maxelements="32" />
+    </struct>
+  </plugin>
+</xml>

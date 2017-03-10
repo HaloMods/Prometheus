@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="shdr" parenttype="????">Shader</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Shader">
+      <value type="Flags" name="flags" length="2">
+        <bit index="0" name="simple parameterization">
+          <tooltip>Lightmap texture parametrization should correspond to diffuse texture parametrization.</tooltip>
+        </bit>
+        <bit index="1" name="ignore normals">
+          <tooltip>Light independent of normals (trees).</tooltip>
+        </bit>
+        <bit index="2" name="transparent lit" />
+      </value>
+      <value type="Enum" name="detail level">
+        <tooltip>Affects the density of tesselation (high means slow)..</tooltip>
+        <item value="0" name="high" />
+        <item value="1" name="medium" />
+        <item value="2" name="low" />
+        <item value="3" name="turd" />
+      </value>
+      <value type="Real" name="power">
+        <tooltip>Power of emitted light from 0 to infinity.</tooltip>
+      </value>
+      <value type="RealRGBColor" name="color of emitted light" />
+      <value type="RealRGBColor" name="tint color">
+        <tooltip>Light passing through this surface (if it's transparent) will be tinted this color..</tooltip>
+      </value>
+      <value type="Flags" name="flags2" length="2" />
+      <value type="Enum" name="material type">
+        <item value="0" name="dirt" />
+        <item value="1" name="sand" />
+        <item value="2" name="stone" />
+        <item value="3" name="snow" />
+        <item value="4" name="wood" />
+        <item value="5" name="metal hollow" />
+        <item value="6" name="metal thin" />
+        <item value="7" name="metal thick" />
+        <item value="8" name="rubber" />
+        <item value="9" name="glass" />
+        <item value="10" name="force field" />
+        <item value="11" name="grunt" />
+        <item value="12" name="hunter armor" />
+        <item value="13" name="hunter skin" />
+        <item value="14" name="elite" />
+        <item value="15" name="jackal" />
+        <item value="16" name="jackal energy shield" />
+        <item value="17" name="engineer skin" />
+        <item value="18" name="engineer force field" />
+        <item value="19" name="flood combat form" />
+        <item value="20" name="flood carrier form" />
+        <item value="21" name="cyborg armor" />
+        <item value="22" name="cyborg energy shield" />
+        <item value="23" name="human armor" />
+        <item value="24" name="human skin" />
+        <item value="25" name="sentinel" />
+        <item value="26" name="monitor" />
+        <item value="27" name="plastic" />
+        <item value="28" name="water" />
+        <item value="29" name="leaves" />
+        <item value="30" name="elite energy shield" />
+        <item value="31" name="ice" />
+        <item value="32" name="hunter shield" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Pad" name="_unnamed2" length="2" />
+    </struct>
+  </plugin>
+</xml>

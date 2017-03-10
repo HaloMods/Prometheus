@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="cont" parenttype="????">Contrail</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Contrail">
+      <value type="Flags" name="flags" length="2">
+        <bit index="0" name="first point unfaded" />
+        <bit index="1" name="last point unfaded" />
+        <bit index="2" name="points start pinned to media" />
+        <bit index="3" name="points start pinned to ground" />
+        <bit index="4" name="points always pinned to media" />
+        <bit index="5" name="points always pinned to ground" />
+        <bit index="6" name="edge effect fades slowly" />
+      </value>
+      <value type="Flags" name="scale flags" length="2">
+        <tooltip>These flags determine which fields are scaled by the contrail density.</tooltip>
+        <bit index="0" name="point generation rate" />
+        <bit index="1" name="point velocity" />
+        <bit index="2" name="point velocity delta" />
+        <bit index="3" name="point velocity cone angle" />
+        <bit index="4" name="inherited velocity fraction" />
+        <bit index="5" name="sequence animation rate" />
+        <bit index="6" name="texture scale u" />
+        <bit index="7" name="texture scale v" />
+        <bit index="8" name="texture animation u" />
+        <bit index="9" name="texture animation v" />
+      </value>
+      <value type="Real" name="point generation rate">
+        <tooltip>This many points are generated per second.</tooltip>
+      </value>
+      <value type="RealBounds" name="point velocity">
+        <tooltip>Velocity added to each point's initial velocity.</tooltip>
+      </value>
+      <value type="Angle" name="point velocity cone angle">
+        <tooltip>Initial velocity is inside the cone defined by the marker's forward vector and this angle.</tooltip>
+      </value>
+      <value type="RealFraction" name="inherited velocity fraction">
+        <tooltip>Fraction of parent object's velocity that is inherited by contrail points..</tooltip>
+      </value>
+      <value type="Enum" name="render type">
+        <tooltip>This specifies how the contrail is oriented in space.</tooltip>
+        <item value="0" name="vertical orientation" />
+        <item value="1" name="horizontal orientation" />
+        <item value="2" name="media mapped" />
+        <item value="3" name="ground mapped" />
+        <item value="4" name="viewer facing" />
+        <item value="5" name="doubl" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Real" name="texture repeats u">
+        <tooltip>Texture repeats per contrail segment.</tooltip>
+      </value>
+      <value type="Real" name="texture repeats v">
+        <tooltip>Texture repeats across contrail width.</tooltip>
+      </value>
+      <value type="Real" name="texture animation u">
+        <tooltip>The texture along the contrail is animated by this value.</tooltip>
+      </value>
+      <value type="Real" name="texture animation v">
+        <tooltip>The texture across the contrail is animated by this value.</tooltip>
+      </value>
+      <value type="Real" name="animation rate" />
+      <value type="TagReference" name="bitmap" extensions="bitm" />
+      <value type="ShortInteger" name="first sequence index" />
+      <value type="ShortInteger" name="sequence count" />
+      <value type="Pad" name="_unnamed2" length="64" />
+      <value type="Pad" name="_unnamed3" length="40" />
+      <value type="Flags" name="shader flags" length="2">
+        <bit index="0" name="sort bias" />
+        <bit index="1" name="nonlinear tint" />
+        <bit index="2" name="dont overdraw fp weapon" />
+      </value>
+      <value type="Enum" name="framebuffer blend function">
+        <item value="0" name="alpha blend" />
+        <item value="1" name="multiply" />
+        <item value="2" name="double multiply" />
+        <item value="3" name="add" />
+        <item value="4" name="subtract" />
+        <item value="5" name="component min" />
+        <item value="6" name="component max" />
+        <item value="7" name="alph" />
+      </value>
+      <value type="Enum" name="framebuffer fade mode">
+        <item value="0" name="none" />
+        <item value="1" name="fade when perpendicular" />
+        <item value="2" name="fade when parallel" />
+      </value>
+      <value type="Flags" name="map flags" length="2">
+        <bit index="0" name="unfiltered" />
+      </value>
+      <value type="Pad" name="_unnamed4" length="28" />
+      <value type="TagReference" name="bitmap2" extensions="bitm" />
+      <value type="Enum" name="anchor">
+        <item value="0" name="with primary" />
+        <item value="1" name="with screen space" />
+        <item value="2" name="zsprite" />
+      </value>
+      <value type="Flags" name="flags2" length="2">
+        <bit index="0" name="unfiltered" />
+      </value>
+      <value type="Enum" name="_unnamed5">
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="_unnamed6">
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Real" name="_unnamed7">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Real" name="_unnamed8" />
+      <value type="Real" name="_unnamed9">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Enum" name="_unnamed10">
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="_unnamed11">
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Real" name="_unnamed12">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Real" name="_unnamed13" />
+      <value type="Real" name="_unnamed14">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Enum" name="rotatio">
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="rotatio2">
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Real" name="rotatio3">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Real" name="rotatio4" />
+      <value type="Real" name="rotatio5">
+        <tooltip>0 defaults to 360.</tooltip>
+      </value>
+      <value type="RealPoint2D" name="rotatio6" />
+      <value type="Pad" name="_unnamed15" length="4" />
+      <value type="Real" name="zsprite radius scale" />
+      <value type="Pad" name="_unnamed16" length="20" />
+      <struct name="ContrailPointStates">
+        <value type="RealBounds" name="duration">
+          <tooltip>The time a point spends in this state.</tooltip>
+        </value>
+        <value type="RealBounds" name="transition duration">
+          <tooltip>The time a point takes to transition to the next state.</tooltip>
+        </value>
+        <value type="TagReference" name="physics" extensions="pphy" />
+        <value type="Pad" name="_unnamed" length="32" />
+        <value type="Real" name="width">
+          <tooltip>Contrail width at this point.</tooltip>
+        </value>
+        <value type="RealARGBColor" name="color lower bound">
+          <tooltip>Contrail color at this point.</tooltip>
+        </value>
+        <value type="RealARGBColor" name="color upper bound">
+          <tooltip>Contrail color at this point.</tooltip>
+        </value>
+        <value type="Flags" name="scale flags" length="4">
+          <tooltip>These flags determine which fields are scaled by the contrail density.</tooltip>
+          <bit index="0" name="duration" />
+          <bit index="1" name="duration delta" />
+          <bit index="2" name="transition duration" />
+          <bit index="3" name="transition duration delta" />
+          <bit index="4" name="width" />
+          <bit index="5" name="color" />
+        </value>
+      </struct>
+      <value type="Block" name="point states" struct="ContrailPointStates" maxelements="16" />
+    </struct>
+  </plugin>
+</xml>

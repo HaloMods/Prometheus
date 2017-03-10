@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="actv" parenttype="????">ActorVariant</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="ActorVariant">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="can shoot while flying" />
+        <bit index="1" name="interpolate color in HSV" />
+        <bit index="2" name="has unlimited grenades" />
+        <bit index="3" name="moveswitch stay w friends" />
+        <bit index="4" name="active camouflage" />
+        <bit index="5" name="super active camouflage" />
+        <bit index="6" name="cannot use ranged weapons" />
+        <bit index="7" name="prefer passenger seat" />
+      </value>
+      <value type="TagReference" name="actor definition" extensions="actr" />
+      <value type="TagReference" name="unit" extensions="unit" />
+      <value type="TagReference" name="major variant" extensions="actv" />
+      <value type="Pad" name="_unnamed" length="24" />
+      <value type="Enum" name="movement type">
+        <tooltip>When we have a choice of movement types, which type we will use.</tooltip>
+        <item value="0" name="always run" />
+        <item value="1" name="always crouch" />
+        <item value="2" name="switch types" />
+      </value>
+      <value type="Pad" name="_unnamed2" length="2" />
+      <value type="Real" name="initial crouch chance">
+        <tooltip>Actors that start their movement try to maintain this fraction of crouched actors.</tooltip>
+      </value>
+      <value type="RealBounds" name="crouch time">
+        <tooltip>When switching movement types, how long we will stay crouched for before running.</tooltip>
+      </value>
+      <value type="RealBounds" name="run time">
+        <tooltip>When switching movement types, how long we will run for before slowing to a crouch.</tooltip>
+      </value>
+      <value type="TagReference" name="weapon" extensions="weap" />
+      <value type="Real" name="maximum firing distance">
+        <tooltip>We can only fire our weapon at targets within this distance.</tooltip>
+      </value>
+      <value type="Real" name="rate of fire">
+        <tooltip>How many times per second we pull the trigger (zero = continuously held down).</tooltip>
+      </value>
+      <value type="Angle" name="projectile error">
+        <tooltip>Error added to every projectile we fire.</tooltip>
+      </value>
+      <value type="RealBounds" name="first burst delay time" />
+      <value type="Real" name="ne" />
+      <value type="Real" name="surprise delay time" />
+      <value type="Real" name="surprise fir" />
+      <value type="Real" name="death fir" />
+      <value type="Real" name="death fir2" />
+      <value type="RealBounds" name="desired combat range" />
+      <value type="RealVector3D" name="custom stand gun offset">
+        <tooltip>Custom standing gun offset for overriding the default in the base actor.</tooltip>
+      </value>
+      <value type="RealVector3D" name="custom crouch gun offset">
+        <tooltip>Custom crouching gun offset for overriding the default in the base actor.</tooltip>
+      </value>
+      <value type="Real" name="target tracking">
+        <tooltip>How well our bursts track moving targets. 0.0= fire at the position they were standing when we started the burst. 1.0= fire at current position.</tooltip>
+      </value>
+      <value type="Real" name="target leading">
+        <tooltip>How much we lead moving targets. 0.0= no prediction. 1.0= predict completely..</tooltip>
+      </value>
+      <value type="Real" name="weapon damage modifier">
+        <tooltip>What fraction of its normal damage our weapon inflicts (zero = no modifier).</tooltip>
+      </value>
+      <value type="Real" name="damage per second">
+        <tooltip>Only used if weapon damage modifier is zero... how much damage we should deliver to the target per second while firing a burst at them (zero = use weapon default).</tooltip>
+      </value>
+      <value type="Real" name="burst origin radius">
+        <tooltip>How far away from the target the starting point is.</tooltip>
+      </value>
+      <value type="Angle" name="burst origin angle">
+        <tooltip>The range from the horizontal that our starting error can be.</tooltip>
+      </value>
+      <value type="RealBounds" name="burst return length">
+        <tooltip>How far the burst point moves back towards the target (could be negative).</tooltip>
+      </value>
+      <value type="Angle" name="burst return angle">
+        <tooltip>The range from the horizontal that the return direction can be.</tooltip>
+      </value>
+      <value type="RealBounds" name="burst duration">
+        <tooltip>How long each burst we fire is.</tooltip>
+      </value>
+      <value type="RealBounds" name="burst separation">
+        <tooltip>How long we wait between bursts.</tooltip>
+      </value>
+      <value type="Angle" name="burst angular velocity">
+        <tooltip>The maximum rate at which we can sweep our fire (zero = unlimited).</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed3" length="4" />
+      <value type="Real" name="special damage modifier">
+        <tooltip>Damage modifier for special weapon fire (applied in addition to the normal damage modifier. zero = no change).</tooltip>
+      </value>
+      <value type="Angle" name="special projectile error">
+        <tooltip>Projectile error angle for special weapon fire (applied in addition to the normal error).</tooltip>
+      </value>
+      <value type="Real" name="ne2">
+        <tooltip>Burst duration multiplier for newly appeared targets (zero = unchanged).</tooltip>
+      </value>
+      <value type="Real" name="ne3">
+        <tooltip>Burst separation multiplier for newly appeared targets (zero = unchanged).</tooltip>
+      </value>
+      <value type="Real" name="ne4">
+        <tooltip>Rate-of-fire multiplier for newly appeared targets (zero = unchanged).</tooltip>
+      </value>
+      <value type="Real" name="ne5">
+        <tooltip>Error multiplier for newly appeared targets (zero = unchanged).</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed4" length="8" />
+      <value type="Real" name="moving burst duration">
+        <tooltip>Burst duration multiplier when the actor is moving (zero = unchanged).</tooltip>
+      </value>
+      <value type="Real" name="moving burst separation">
+        <tooltip>Burst separation multiplier when the actor is moving (zero = unchanged).</tooltip>
+      </value>
+      <value type="Real" name="moving rate of fire">
+        <tooltip>Rate-of-fire multiplier when the actor is moving (zero = unchanged).</tooltip>
+      </value>
+      <value type="Real" name="moving projectile error">
+        <tooltip>Error multiplier when the actor is moving (zero = unchanged).</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed5" length="8" />
+      <value type="Real" name="berserk burst duration">
+        <tooltip>Burst duration multiplier when the actor is berserk (zero = unchanged).</tooltip>
+      </value>
+      <value type="Real" name="berserk burst separation">
+        <tooltip>Burst separation multiplier when the actor is berserk (zero = unchanged).</tooltip>
+      </value>
+      <value type="Real" name="berserk rate of fire">
+        <tooltip>Rate-of-fire multiplier when the actor is berserk (zero = unchanged).</tooltip>
+      </value>
+      <value type="Real" name="berserk projectile error">
+        <tooltip>Error multiplier when the actor is berserk (zero = unchanged).</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed6" length="8" />
+      <value type="Real" name="supe">
+        <tooltip>We try to aim our shots super-ballistically if target is outside this range (zero = never).</tooltip>
+      </value>
+      <value type="Real" name="bombardment range">
+        <tooltip>We offset our burst targets randomly by this range when firing at non-visible enemies (zero = never).</tooltip>
+      </value>
+      <value type="Real" name="modified vision range">
+        <tooltip>Any custom vision range that this actor variant has (zero = normal).</tooltip>
+      </value>
+      <value type="Enum" name="specia">
+        <tooltip>The type of special weapon fire that we can use.</tooltip>
+        <item value="0" name="none" />
+        <item value="1" name="overcharge" />
+        <item value="2" name="secondary trigger" />
+      </value>
+      <value type="Enum" name="specia2">
+        <tooltip>When we will decide to use our special weapon fire mode.</tooltip>
+        <item value="0" name="never" />
+        <item value="1" name="enemy visible" />
+        <item value="2" name="enemy out of sight" />
+        <item value="3" name="strafing" />
+      </value>
+      <value type="Real" name="specia3">
+        <tooltip>How likely we are to use our special weapon fire mode.</tooltip>
+      </value>
+      <value type="Real" name="specia4">
+        <tooltip>How long we must wait between uses of our special weapon fire mode.</tooltip>
+      </value>
+      <value type="Real" name="melee range">
+        <tooltip>How close an enemy target must get before triggering a melee charge.</tooltip>
+      </value>
+      <value type="Real" name="melee abort range">
+        <tooltip>If our target gets this far away from us, we stop trying to melee them.</tooltip>
+      </value>
+      <value type="RealBounds" name="berserk firing ranges">
+        <tooltip>If we are outside maximum range, we advance towards target, stopping when we reach minimum range.</tooltip>
+      </value>
+      <value type="Real" name="berserk melee range">
+        <tooltip>While berserking, how close an enemy target must get before triggering a melee charge.</tooltip>
+      </value>
+      <value type="Real" name="berserk melee abort range">
+        <tooltip>While berserking, if our target gets this far away from us, we stop trying to melee them.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed7" length="8" />
+      <value type="Enum" name="grenade type">
+        <tooltip>Type of grenades that we throw.</tooltip>
+        <item value="0" name="human fragmentation" />
+        <item value="1" name="covenant plasma" />
+      </value>
+      <value type="Enum" name="trajectory type">
+        <tooltip>How we throw our grenades.</tooltip>
+        <item value="0" name="toss" />
+        <item value="1" name="lob" />
+        <item value="2" name="bounce" />
+      </value>
+      <value type="Enum" name="grenade stimulus">
+        <tooltip>What causes us to consider throwing a grenade.</tooltip>
+        <item value="0" name="never" />
+        <item value="1" name="visible target" />
+        <item value="2" name="seek cover" />
+      </value>
+      <value type="ShortInteger" name="minimum enemy count">
+        <tooltip>How many enemies must be within the radius of the grenade before we will consider throwing there.</tooltip>
+      </value>
+      <value type="Real" name="enemy radius">
+        <tooltip>We consider enemies within this radius when determining where to throw.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed8" length="4" />
+      <value type="Real" name="grenade velocity">
+        <tooltip>How fast we can throw our grenades.</tooltip>
+      </value>
+      <value type="RealBounds" name="grenade ranges">
+        <tooltip>Ranges within which we will consider throwing a grenade.</tooltip>
+      </value>
+      <value type="Real" name="collateral damage radius">
+        <tooltip>We won't throw if there are friendlies around our target within this range.</tooltip>
+      </value>
+      <value type="RealFraction" name="grenade chance">
+        <tooltip>How likely we are to throw a grenade.</tooltip>
+      </value>
+      <value type="Real" name="grenade check time">
+        <tooltip>For continuous stimuli (e.g. visible target), how often we check to see if we want to throw a grenade.</tooltip>
+      </value>
+      <value type="Real" name="encounter grenade timeout">
+        <tooltip>We cannot throw grenades if someone else in our encounter threw one this recently.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed9" length="20" />
+      <value type="TagReference" name="equipment" extensions="eqip">
+        <tooltip>Equipment item to drop when we die.</tooltip>
+      </value>
+      <value type="ShortBounds" name="grenade count">
+        <tooltip>Number of grenades that we start with.</tooltip>
+      </value>
+      <value type="Real" name="dont drop grenades chance">
+        <tooltip>How likely we are not to drop any grenades when we die, even if we still have some.</tooltip>
+      </value>
+      <value type="RealBounds" name="drop weapon loaded">
+        <tooltip>Amount of ammo loaded into the weapon that we drop (in fractions of a clip, e.g. 0.3 to 0.5).</tooltip>
+      </value>
+      <value type="ShortBounds" name="drop weapon ammo">
+        <tooltip>Total number of rounds in the weapon that we drop (ignored for energy weapons).</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed10" length="12" />
+      <value type="Pad" name="_unnamed11" length="16" />
+      <value type="Real" name="body vitality">
+        <tooltip>Maximum body vitality of our unit.</tooltip>
+      </value>
+      <value type="Real" name="shield vitality">
+        <tooltip>Maximum shield vitality of our unit.</tooltip>
+      </value>
+      <value type="Real" name="shield sapping radius">
+        <tooltip>How far away we can drain the player's shields.</tooltip>
+      </value>
+      <value type="ShortInteger" name="forced shader permutation">
+        <tooltip>If nonzero, overrides the unit's shader permutation.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed12" length="2" />
+      <value type="Pad" name="_unnamed13" length="16" />
+      <value type="Pad" name="_unnamed14" length="12" />
+      <struct name="ActorVariantChangeColors">
+        <value type="RealRGBColor" name="color lower bound" />
+        <value type="RealRGBColor" name="color upper bound" />
+        <value type="Pad" name="_unnamed" length="8" />
+      </struct>
+      <value type="Block" name="change colors" struct="ActorVariantChangeColors" maxelements="4" />
+    </struct>
+  </plugin>
+</xml>

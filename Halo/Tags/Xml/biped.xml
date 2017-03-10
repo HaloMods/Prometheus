@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="bipd" parenttype="unit">Biped</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Biped">
+      <value type="Angle" name="moving turning speed" />
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="turns without animating" />
+        <bit index="1" name="uses player physics" />
+        <bit index="2" name="flying" />
+        <bit index="3" name="physics pill centered at origin" />
+        <bit index="4" name="spherical" />
+        <bit index="5" name="passes through other bipeds" />
+        <bit index="6" name="can climb any surface" />
+        <bit index="7" name="immune to falling damage" />
+        <bit index="8" name="rotate while airborne" />
+        <bit index="9" name="uses limp body physics" />
+        <bit index="10" name="has no dying airborne" />
+        <bit index="11" name="random speed increase" />
+        <bit index="12" name="unit uses old NTSC player physics" />
+      </value>
+      <value type="Angle" name="stationary turning threshold" />
+      <value type="Pad" name="_unnamed" length="16" />
+      <value type="Enum" name="A in">
+        <item value="0" name="none" />
+        <item value="1" name="flying velocity" />
+      </value>
+      <value type="Enum" name="B in">
+        <item value="0" name="none" />
+        <item value="1" name="flying velocity" />
+      </value>
+      <value type="Enum" name="C in">
+        <item value="0" name="none" />
+        <item value="1" name="flying velocity" />
+      </value>
+      <value type="Enum" name="D in">
+        <item value="0" name="none" />
+        <item value="1" name="flying velocity" />
+      </value>
+      <value type="TagReference" name="DONT USE" extensions="jpt!" />
+      <value type="Angle" name="bank angle">
+        <tooltip>Angle at which we bank left/right when sidestepping or turning while moving forwards.</tooltip>
+      </value>
+      <value type="Real" name="bank apply time">
+        <tooltip>Time it takes us to apply a bank.</tooltip>
+      </value>
+      <value type="Real" name="bank decay time">
+        <tooltip>Time it takes us to recover from a bank.</tooltip>
+      </value>
+      <value type="Real" name="pitch ratio">
+        <tooltip>Amount that we pitch up/down when moving up or down.</tooltip>
+      </value>
+      <value type="Real" name="max velocity">
+        <tooltip>Max velocity when not crouching.</tooltip>
+      </value>
+      <value type="Real" name="max sidestep velocity">
+        <tooltip>Max sideways or up/down velocity when not crouching.</tooltip>
+      </value>
+      <value type="Real" name="acceleration" />
+      <value type="Real" name="deceleration" />
+      <value type="Angle" name="angular velocity maximum">
+        <tooltip>Turn rate.</tooltip>
+      </value>
+      <value type="Angle" name="angular acceleration maximum">
+        <tooltip>Turn acceleration rate.</tooltip>
+      </value>
+      <value type="Real" name="crouch velocity modifier">
+        <tooltip>How much slower we fly if crouching (zero = same speed).</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed2" length="8" />
+      <value type="Angle" name="maximum slope angle" />
+      <value type="Angle" name="downhill falloff angle" />
+      <value type="Angle" name="downhill cutoff angle" />
+      <value type="Real" name="downhill velocity scale" />
+      <value type="Angle" name="uphill falloff angle" />
+      <value type="Angle" name="uphill cutoff angle" />
+      <value type="Real" name="uphill velocity scale" />
+      <value type="Pad" name="_unnamed3" length="24" />
+      <value type="TagReference" name="footsteps" extensions="foot" />
+      <value type="Pad" name="_unnamed4" length="24" />
+      <value type="Real" name="jump velocity" />
+      <value type="Pad" name="_unnamed5" length="28" />
+      <value type="Real" name="maximum soft landing time">
+        <tooltip>The longest amount of time the biped can take to recover from a soft landing.</tooltip>
+      </value>
+      <value type="Real" name="maximum hard landing time">
+        <tooltip>The longest amount of time the biped can take to recover from a hard landing.</tooltip>
+      </value>
+      <value type="Real" name="minimum soft landing velocity">
+        <tooltip>Below this velocity the biped does not react when landing.</tooltip>
+      </value>
+      <value type="Real" name="minimum hard landing velocity">
+        <tooltip>Below this velocity the biped will not do a soft landing when returning to the ground.</tooltip>
+      </value>
+      <value type="Real" name="maximum hard landing velocity">
+        <tooltip>The velocity corresponding to the maximum landing time.</tooltip>
+      </value>
+      <value type="Real" name="death hard landing velocity">
+        <tooltip>The maximum velocity with which a character can strike the ground and live.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed6" length="20" />
+      <value type="Real" name="standing camera height" />
+      <value type="Real" name="crouching camera height" />
+      <value type="Real" name="crouch transition time" />
+      <value type="Pad" name="_unnamed7" length="24" />
+      <value type="Real" name="standing collision height" />
+      <value type="Real" name="crouching collision height" />
+      <value type="Real" name="collision radius" />
+      <value type="Pad" name="_unnamed8" length="40" />
+      <value type="Real" name="autoaim width" />
+      <value type="Pad" name="_unnamed9" length="140" />
+      <struct name="ContactPoint">
+        <value type="Pad" name="_unnamed" length="32" />
+        <value type="FixedLengthString" name="marker name" blockname="true" />
+      </struct>
+      <value type="Block" name="contact points" struct="ContactPoint" maxelements="2">
+        <tooltip>These are the points where the biped touches the ground.</tooltip>
+      </value>
+    </struct>
+  </plugin>
+</xml>

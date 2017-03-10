@@ -1,0 +1,114 @@
+<xml>
+  <name type="lens" parenttype="????">LensFlare</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="LensFlareBlock">
+      <value type="Angle" name="falloff angle" disabled="false" unit="degrees" />
+      <value type="Angle" name="cutoff angle" disabled="false" unit="degrees" />
+      <value type="Skip" name="_unnamed0" length="4" />
+      <value type="Skip" name="_unnamed1" length="4" />
+      <value type="Real" name="occlusion radius" disabled="false" unit="world units">
+        <tooltip>radius of the square used to test occlusion</tooltip>
+      </value>
+      <value type="Enum" name="occlusion offset direction" length="2" disabled="false">
+        <item value="0" name="toward viewer" />
+        <item value="1" name="marker forward" />
+        <item value="2" name="none" />
+      </value>
+      <value type="Enum" name="occlusion inner radius scale" length="2" disabled="false">
+        <item value="0" name="none" />
+        <item value="1" name="1/2" />
+        <item value="2" name="1/4" />
+        <item value="3" name="1/8" />
+        <item value="4" name="1/16" />
+        <item value="5" name="1/32" />
+        <item value="6" name="1/64" />
+      </value>
+      <value type="Real" name="near fade distance" disabled="false" unit="world units">
+        <tooltip>distance at which the lens flare brightness is maximum</tooltip>
+      </value>
+      <value type="Real" name="far fade distance" disabled="false" unit="world units">
+        <tooltip>distance at which the lens flare brightness is minimum; set to zero to disable distance fading</tooltip>
+      </value>
+      <value type="TagReference" name="bitmap" disabled="false" extensions="bitm" />
+      <value type="Flags" name="flags" length="2" disabled="false">
+        <bit index="0" name="sun" />
+        <bit index="1" name="no occlusion test" />
+        <bit index="2" name="only render in first person" />
+        <bit index="3" name="only render in third person" />
+        <bit index="4" name="fade in more quickly" />
+        <bit index="5" name="fade out more quickly" />
+        <bit index="6" name="scale by marker" />
+      </value>
+      <value type="Skip" name="_unnamed2" length="2" />
+      <value type="Enum" name="rotation function" length="2" disabled="false">
+        <item value="0" name="none" />
+        <item value="1" name="rotation A" />
+        <item value="2" name="rotation B" />
+        <item value="3" name="rotation-translation" />
+        <item value="4" name="translation" />
+      </value>
+      <value type="Pad" name="_unnamed3" length="2" />
+      <value type="Angle" name="rotation function scale" disabled="false" unit="degrees" />
+      <value type="RealVector2d" name="corona scale" disabled="false">
+        <tooltip>amount to stretch the corona</tooltip>
+      </value>
+      <value type="Enum" name="falloff function" length="2" disabled="false">
+        <item value="0" name="linear" />
+        <item value="1" name="late" />
+        <item value="2" name="very late" />
+        <item value="3" name="early" />
+        <item value="4" name="very early" />
+        <item value="5" name="cosine" />
+        <item value="6" name="zero" />
+        <item value="7" name="one" />
+      </value>
+      <value type="Pad" name="_unnamed4" length="2" />
+      <struct name="LensFlareReflectionBlock">
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="align rotation with screen center" />
+          <bit index="1" name="radius NOT scaled by distance" />
+          <bit index="2" name="radius scaled by occlusion factor" />
+          <bit index="3" name="occluded by solid objects" />
+          <bit index="4" name="ignore light color" />
+          <bit index="5" name="not affected by inner occlusion" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="ShortInteger" name="bitmap index" disabled="false" />
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Real" name="position" disabled="false" unit="along flare axis">
+          <tooltip>0 is on top of light, 1 is opposite light, 0.5 is the center of the screen, etc.</tooltip>
+        </value>
+        <value type="Real" name="rotation offset" disabled="false" unit="degrees" />
+        <value type="RealBounds" name="radius" disabled="false" unit="world units">
+          <tooltip>interpolated by external input</tooltip>
+        </value>
+        <value type="FractionBounds" name="brightness" disabled="false" unit="[0,1]">
+          <tooltip>interpolated by external input</tooltip>
+        </value>
+        <value type="RealFraction" name="modulation factor" disabled="false" unit="[0,1]" />
+        <value type="RealRgbColor" name="color" disabled="false" />
+      </struct>
+      <value type="Block" name="reflections" disabled="false" struct="LensFlareReflectionBlock" maxelements="32" />
+      <value type="Flags" name="flags2" length="2" disabled="false">
+        <bit index="0" name="synchronized" />
+      </value>
+      <value type="Pad" name="_unnamed5" length="2" />
+      <struct name="LensFlareScalarAnimationBlock">
+        <struct name="ByteBlock">
+          <value type="CharInteger" name="Value" disabled="false" />
+        </struct>
+        <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+      </struct>
+      <value type="Block" name="brightness" disabled="false" struct="LensFlareScalarAnimationBlock" maxelements="1" />
+      <struct name="LensFlareColorAnimationBlock">
+        <struct name="ByteBlock">
+          <value type="CharInteger" name="Value" disabled="false" />
+        </struct>
+        <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+      </struct>
+      <value type="Block" name="color" disabled="false" struct="LensFlareColorAnimationBlock" maxelements="1" />
+      <value type="Block" name="rotation" disabled="false" struct="LensFlareScalarAnimationBlock" maxelements="1" />
+    </struct>
+  </plugin>
+</xml>

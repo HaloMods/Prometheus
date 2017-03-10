@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="dobc" parenttype="????">DetailObjectCollection</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="DetailObjectCollection">
+      <value type="Enum" name="collection type">
+        <item value="0" name="scree" />
+        <item value="1" name="viewe" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Real" name="global z offset" />
+      <value type="Pad" name="_unnamed2" length="44" />
+      <value type="TagReference" name="sprite plate" extensions="bitm" />
+      <struct name="DetailObjectType">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="CharInteger" name="sequence index" />
+        <value type="Flags" name="type flags" length="1">
+          <bit index="0" name="unused" />
+          <bit index="1" name="unused" />
+          <bit index="2" name="interpolate color in hsv" />
+          <bit index="3" name="...more colors" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="RealFraction" name="color override factor">
+          <tooltip>Fraction of detail object color to use instead of the base map color in the environment.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="8" />
+        <value type="Real" name="near fade distance" />
+        <value type="Real" name="far fade distance" />
+        <value type="Real" name="size" />
+        <value type="Pad" name="_unnamed3" length="4" />
+        <value type="RealRGBColor" name="minimum color" />
+        <value type="RealRGBColor" name="maximum color" />
+        <value type="ARGBColor" name="ambient color" />
+        <value type="Pad" name="_unnamed4" length="4" />
+      </struct>
+      <value type="Block" name="types" struct="DetailObjectType" maxelements="16" />
+      <value type="Pad" name="_unnamed3" length="48" />
+    </struct>
+  </plugin>
+</xml>

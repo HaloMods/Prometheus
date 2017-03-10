@@ -1,0 +1,1503 @@
+<xml>
+  <name type="nhdt" parenttype="????">NewHudDefinition</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="NewHudDashlightDataStructBlock">
+      <value type="TagReference" name="DO NOT USE" disabled="false" extensions="nhdt" />
+      <struct name="HudBitmapWidgets">
+        <value type="StringId" name="name" disabled="false" />
+        <value type="Enum" name="input 1" length="1" disabled="false">
+          <item value="0" name="BASIC zero" />
+          <item value="1" name="BASIC one" />
+          <item value="2" name="BASIC time" />
+          <item value="3" name="BASIC global hud fade" />
+          <item value="4" name="..." />
+          <item value="5" name="..." />
+          <item value="6" name="..." />
+          <item value="7" name="..." />
+          <item value="8" name="..." />
+          <item value="9" name="..." />
+          <item value="10" name="..." />
+          <item value="11" name="..." />
+          <item value="12" name="..." />
+          <item value="13" name="..." />
+          <item value="14" name="..." />
+          <item value="15" name="..." />
+          <item value="16" name="UNIT shield" />
+          <item value="17" name="UNIT body" />
+          <item value="18" name="UNIT autoaimed" />
+          <item value="19" name="UNIT has no grenades" />
+          <item value="20" name="UNIT frag gren cnt" />
+          <item value="21" name="UNIT plasma gren cnt" />
+          <item value="22" name="UNIT time on dpl shld" />
+          <item value="23" name="UNIT zoom fraction" />
+          <item value="24" name="UNIT camo value" />
+          <item value="25" name="..." />
+          <item value="26" name="..." />
+          <item value="27" name="..." />
+          <item value="28" name="..." />
+          <item value="29" name="..." />
+          <item value="30" name="..." />
+          <item value="31" name="..." />
+          <item value="32" name="PARENT shield" />
+          <item value="33" name="PARENT body" />
+          <item value="34" name="..." />
+          <item value="35" name="..." />
+          <item value="36" name="..." />
+          <item value="37" name="..." />
+          <item value="38" name="..." />
+          <item value="39" name="..." />
+          <item value="40" name="..." />
+          <item value="41" name="..." />
+          <item value="42" name="..." />
+          <item value="43" name="..." />
+          <item value="44" name="..." />
+          <item value="45" name="..." />
+          <item value="46" name="..." />
+          <item value="47" name="..." />
+          <item value="48" name="WEAPON clip ammo" />
+          <item value="49" name="WEAPON heat" />
+          <item value="50" name="WEAPON battery" />
+          <item value="51" name="WEAPON total_ammo" />
+          <item value="52" name="WEAPON barrel spin" />
+          <item value="53" name="WEAPON overheated" />
+          <item value="54" name="WEAPON clip ammo fraction" />
+          <item value="55" name="WEAPON time on overheat" />
+          <item value="56" name="WEAPON battery fraction" />
+          <item value="57" name="WEAPON locking fraction" />
+          <item value="58" name="..." />
+          <item value="59" name="..." />
+          <item value="60" name="..." />
+          <item value="61" name="..." />
+          <item value="62" name="..." />
+          <item value="63" name="..." />
+          <item value="64" name="..." />
+          <item value="65" name="user score fraction" />
+          <item value="66" name="other user score fraction" />
+          <item value="67" name="user winning" />
+          <item value="68" name="bomb arming amount" />
+          <item value="69" name="..." />
+          <item value="70" name="..." />
+          <item value="71" name="..." />
+          <item value="72" name="..." />
+          <item value="73" name="..." />
+          <item value="74" name="..." />
+          <item value="75" name="..." />
+          <item value="76" name="..." />
+          <item value="77" name="..." />
+          <item value="78" name="..." />
+          <item value="79" name="..." />
+          <item value="80" name="..." />
+        </value>
+        <value type="Enum" name="input 2" length="1" disabled="false">
+          <item value="0" name="BASIC zero" />
+          <item value="1" name="BASIC one" />
+          <item value="2" name="BASIC time" />
+          <item value="3" name="BASIC global hud fade" />
+          <item value="4" name="..." />
+          <item value="5" name="..." />
+          <item value="6" name="..." />
+          <item value="7" name="..." />
+          <item value="8" name="..." />
+          <item value="9" name="..." />
+          <item value="10" name="..." />
+          <item value="11" name="..." />
+          <item value="12" name="..." />
+          <item value="13" name="..." />
+          <item value="14" name="..." />
+          <item value="15" name="..." />
+          <item value="16" name="UNIT shield" />
+          <item value="17" name="UNIT body" />
+          <item value="18" name="UNIT autoaimed" />
+          <item value="19" name="UNIT has no grenades" />
+          <item value="20" name="UNIT frag gren cnt" />
+          <item value="21" name="UNIT plasma gren cnt" />
+          <item value="22" name="UNIT time on dpl shld" />
+          <item value="23" name="UNIT zoom fraction" />
+          <item value="24" name="UNIT camo value" />
+          <item value="25" name="..." />
+          <item value="26" name="..." />
+          <item value="27" name="..." />
+          <item value="28" name="..." />
+          <item value="29" name="..." />
+          <item value="30" name="..." />
+          <item value="31" name="..." />
+          <item value="32" name="PARENT shield" />
+          <item value="33" name="PARENT body" />
+          <item value="34" name="..." />
+          <item value="35" name="..." />
+          <item value="36" name="..." />
+          <item value="37" name="..." />
+          <item value="38" name="..." />
+          <item value="39" name="..." />
+          <item value="40" name="..." />
+          <item value="41" name="..." />
+          <item value="42" name="..." />
+          <item value="43" name="..." />
+          <item value="44" name="..." />
+          <item value="45" name="..." />
+          <item value="46" name="..." />
+          <item value="47" name="..." />
+          <item value="48" name="WEAPON clip ammo" />
+          <item value="49" name="WEAPON heat" />
+          <item value="50" name="WEAPON battery" />
+          <item value="51" name="WEAPON total_ammo" />
+          <item value="52" name="WEAPON barrel spin" />
+          <item value="53" name="WEAPON overheated" />
+          <item value="54" name="WEAPON clip ammo fraction" />
+          <item value="55" name="WEAPON time on overheat" />
+          <item value="56" name="WEAPON battery fraction" />
+          <item value="57" name="WEAPON locking fraction" />
+          <item value="58" name="..." />
+          <item value="59" name="..." />
+          <item value="60" name="..." />
+          <item value="61" name="..." />
+          <item value="62" name="..." />
+          <item value="63" name="..." />
+          <item value="64" name="..." />
+          <item value="65" name="user score fraction" />
+          <item value="66" name="other user score fraction" />
+          <item value="67" name="user winning" />
+          <item value="68" name="bomb arming amount" />
+          <item value="69" name="..." />
+          <item value="70" name="..." />
+          <item value="71" name="..." />
+          <item value="72" name="..." />
+          <item value="73" name="..." />
+          <item value="74" name="..." />
+          <item value="75" name="..." />
+          <item value="76" name="..." />
+          <item value="77" name="..." />
+          <item value="78" name="..." />
+          <item value="79" name="..." />
+          <item value="80" name="..." />
+        </value>
+        <value type="Enum" name="input 3" length="1" disabled="false">
+          <item value="0" name="BASIC zero" />
+          <item value="1" name="BASIC one" />
+          <item value="2" name="BASIC time" />
+          <item value="3" name="BASIC global hud fade" />
+          <item value="4" name="..." />
+          <item value="5" name="..." />
+          <item value="6" name="..." />
+          <item value="7" name="..." />
+          <item value="8" name="..." />
+          <item value="9" name="..." />
+          <item value="10" name="..." />
+          <item value="11" name="..." />
+          <item value="12" name="..." />
+          <item value="13" name="..." />
+          <item value="14" name="..." />
+          <item value="15" name="..." />
+          <item value="16" name="UNIT shield" />
+          <item value="17" name="UNIT body" />
+          <item value="18" name="UNIT autoaimed" />
+          <item value="19" name="UNIT has no grenades" />
+          <item value="20" name="UNIT frag gren cnt" />
+          <item value="21" name="UNIT plasma gren cnt" />
+          <item value="22" name="UNIT time on dpl shld" />
+          <item value="23" name="UNIT zoom fraction" />
+          <item value="24" name="UNIT camo value" />
+          <item value="25" name="..." />
+          <item value="26" name="..." />
+          <item value="27" name="..." />
+          <item value="28" name="..." />
+          <item value="29" name="..." />
+          <item value="30" name="..." />
+          <item value="31" name="..." />
+          <item value="32" name="PARENT shield" />
+          <item value="33" name="PARENT body" />
+          <item value="34" name="..." />
+          <item value="35" name="..." />
+          <item value="36" name="..." />
+          <item value="37" name="..." />
+          <item value="38" name="..." />
+          <item value="39" name="..." />
+          <item value="40" name="..." />
+          <item value="41" name="..." />
+          <item value="42" name="..." />
+          <item value="43" name="..." />
+          <item value="44" name="..." />
+          <item value="45" name="..." />
+          <item value="46" name="..." />
+          <item value="47" name="..." />
+          <item value="48" name="WEAPON clip ammo" />
+          <item value="49" name="WEAPON heat" />
+          <item value="50" name="WEAPON battery" />
+          <item value="51" name="WEAPON total_ammo" />
+          <item value="52" name="WEAPON barrel spin" />
+          <item value="53" name="WEAPON overheated" />
+          <item value="54" name="WEAPON clip ammo fraction" />
+          <item value="55" name="WEAPON time on overheat" />
+          <item value="56" name="WEAPON battery fraction" />
+          <item value="57" name="WEAPON locking fraction" />
+          <item value="58" name="..." />
+          <item value="59" name="..." />
+          <item value="60" name="..." />
+          <item value="61" name="..." />
+          <item value="62" name="..." />
+          <item value="63" name="..." />
+          <item value="64" name="..." />
+          <item value="65" name="user score fraction" />
+          <item value="66" name="other user score fraction" />
+          <item value="67" name="user winning" />
+          <item value="68" name="bomb arming amount" />
+          <item value="69" name="..." />
+          <item value="70" name="..." />
+          <item value="71" name="..." />
+          <item value="72" name="..." />
+          <item value="73" name="..." />
+          <item value="74" name="..." />
+          <item value="75" name="..." />
+          <item value="76" name="..." />
+          <item value="77" name="..." />
+          <item value="78" name="..." />
+          <item value="79" name="..." />
+          <item value="80" name="..." />
+        </value>
+        <value type="Enum" name="input 4" length="1" disabled="false">
+          <item value="0" name="BASIC zero" />
+          <item value="1" name="BASIC one" />
+          <item value="2" name="BASIC time" />
+          <item value="3" name="BASIC global hud fade" />
+          <item value="4" name="..." />
+          <item value="5" name="..." />
+          <item value="6" name="..." />
+          <item value="7" name="..." />
+          <item value="8" name="..." />
+          <item value="9" name="..." />
+          <item value="10" name="..." />
+          <item value="11" name="..." />
+          <item value="12" name="..." />
+          <item value="13" name="..." />
+          <item value="14" name="..." />
+          <item value="15" name="..." />
+          <item value="16" name="UNIT shield" />
+          <item value="17" name="UNIT body" />
+          <item value="18" name="UNIT autoaimed" />
+          <item value="19" name="UNIT has no grenades" />
+          <item value="20" name="UNIT frag gren cnt" />
+          <item value="21" name="UNIT plasma gren cnt" />
+          <item value="22" name="UNIT time on dpl shld" />
+          <item value="23" name="UNIT zoom fraction" />
+          <item value="24" name="UNIT camo value" />
+          <item value="25" name="..." />
+          <item value="26" name="..." />
+          <item value="27" name="..." />
+          <item value="28" name="..." />
+          <item value="29" name="..." />
+          <item value="30" name="..." />
+          <item value="31" name="..." />
+          <item value="32" name="PARENT shield" />
+          <item value="33" name="PARENT body" />
+          <item value="34" name="..." />
+          <item value="35" name="..." />
+          <item value="36" name="..." />
+          <item value="37" name="..." />
+          <item value="38" name="..." />
+          <item value="39" name="..." />
+          <item value="40" name="..." />
+          <item value="41" name="..." />
+          <item value="42" name="..." />
+          <item value="43" name="..." />
+          <item value="44" name="..." />
+          <item value="45" name="..." />
+          <item value="46" name="..." />
+          <item value="47" name="..." />
+          <item value="48" name="WEAPON clip ammo" />
+          <item value="49" name="WEAPON heat" />
+          <item value="50" name="WEAPON battery" />
+          <item value="51" name="WEAPON total_ammo" />
+          <item value="52" name="WEAPON barrel spin" />
+          <item value="53" name="WEAPON overheated" />
+          <item value="54" name="WEAPON clip ammo fraction" />
+          <item value="55" name="WEAPON time on overheat" />
+          <item value="56" name="WEAPON battery fraction" />
+          <item value="57" name="WEAPON locking fraction" />
+          <item value="58" name="..." />
+          <item value="59" name="..." />
+          <item value="60" name="..." />
+          <item value="61" name="..." />
+          <item value="62" name="..." />
+          <item value="63" name="..." />
+          <item value="64" name="..." />
+          <item value="65" name="user score fraction" />
+          <item value="66" name="other user score fraction" />
+          <item value="67" name="user winning" />
+          <item value="68" name="bomb arming amount" />
+          <item value="69" name="..." />
+          <item value="70" name="..." />
+          <item value="71" name="..." />
+          <item value="72" name="..." />
+          <item value="73" name="..." />
+          <item value="74" name="..." />
+          <item value="75" name="..." />
+          <item value="76" name="..." />
+          <item value="77" name="..." />
+          <item value="78" name="..." />
+          <item value="79" name="..." />
+          <item value="80" name="..." />
+        </value>
+        <value type="Flags" name="Y unit flags" length="2" disabled="false">
+          <bit index="0" name="default" />
+          <bit index="1" name="grenade type is NONE" />
+          <bit index="2" name="grenade type is frag" />
+          <bit index="3" name="grenade type is plasma" />
+          <bit index="4" name="unit is single wielding" />
+          <bit index="5" name="unit is dual wielding" />
+          <bit index="6" name="unit is unzoomed" />
+          <bit index="7" name="unit is zoomed (level 1)" />
+          <bit index="8" name="unit is zoomed (level 2)" />
+          <bit index="9" name="grenades disabled" />
+          <bit index="10" name="binoculars enabled" />
+          <bit index="11" name="motion sensor enabled" />
+          <bit index="12" name="shield enabled" />
+          <bit index="13" name="dervish" />
+        </value>
+        <value type="Flags" name="Y extra flags" length="2" disabled="false">
+          <bit index="0" name="autoaim-friendly" />
+          <bit index="1" name="autoaim-plasma" />
+          <bit index="2" name="autoaim-headshot" />
+          <bit index="3" name="autoaim-vulnerable" />
+          <bit index="4" name="autoaim-invincible" />
+        </value>
+        <value type="Flags" name="Y weapon flags" length="2" disabled="false">
+          <bit index="0" name="primary weapon" />
+          <bit index="1" name="secondary weapon" />
+          <bit index="2" name="backpack weapon" />
+          <bit index="3" name="age below cutoff" />
+          <bit index="4" name="clip below cutoff" />
+          <bit index="5" name="total below cutoff" />
+          <bit index="6" name="overheated" />
+          <bit index="7" name="out of ammo" />
+          <bit index="8" name="lock target available" />
+          <bit index="9" name="locking" />
+          <bit index="10" name="locked" />
+        </value>
+        <value type="Flags" name="Y game engine state flags" length="2" disabled="false">
+          <bit index="0" name="campaign solo" />
+          <bit index="1" name="campaign coop" />
+          <bit index="2" name="free-for-all" />
+          <bit index="3" name="team game" />
+          <bit index="4" name="user leading" />
+          <bit index="5" name="user not leading" />
+          <bit index="6" name="timed game" />
+          <bit index="7" name="untimed game" />
+          <bit index="8" name="other score valid" />
+          <bit index="9" name="other score invalid" />
+          <bit index="10" name="player is arming bomb" />
+          <bit index="11" name="player talking" />
+        </value>
+        <value type="Flags" name="N unit flags" length="2" disabled="false">
+          <bit index="0" name="default" />
+          <bit index="1" name="grenade type is NONE" />
+          <bit index="2" name="grenade type is frag" />
+          <bit index="3" name="grenade type is plasma" />
+          <bit index="4" name="unit is single wielding" />
+          <bit index="5" name="unit is dual wielding" />
+          <bit index="6" name="unit is unzoomed" />
+          <bit index="7" name="unit is zoomed (level 1)" />
+          <bit index="8" name="unit is zoomed (level 2)" />
+          <bit index="9" name="grenades disabled" />
+          <bit index="10" name="binoculars enabled" />
+          <bit index="11" name="motion sensor enabled" />
+          <bit index="12" name="shield enabled" />
+          <bit index="13" name="dervish" />
+        </value>
+        <value type="Flags" name="N extra flags" length="2" disabled="false">
+          <bit index="0" name="autoaim-friendly" />
+          <bit index="1" name="autoaim-plasma" />
+          <bit index="2" name="autoaim-headshot" />
+          <bit index="3" name="autoaim-vulnerable" />
+          <bit index="4" name="autoaim-invincible" />
+        </value>
+        <value type="Flags" name="N weapon flags" length="2" disabled="false">
+          <bit index="0" name="primary weapon" />
+          <bit index="1" name="secondary weapon" />
+          <bit index="2" name="backpack weapon" />
+          <bit index="3" name="age below cutoff" />
+          <bit index="4" name="clip below cutoff" />
+          <bit index="5" name="total below cutoff" />
+          <bit index="6" name="overheated" />
+          <bit index="7" name="out of ammo" />
+          <bit index="8" name="lock target available" />
+          <bit index="9" name="locking" />
+          <bit index="10" name="locked" />
+        </value>
+        <value type="Flags" name="N game engine state flags" length="2" disabled="false">
+          <bit index="0" name="campaign solo" />
+          <bit index="1" name="campaign coop" />
+          <bit index="2" name="free-for-all" />
+          <bit index="3" name="team game" />
+          <bit index="4" name="user leading" />
+          <bit index="5" name="user not leading" />
+          <bit index="6" name="timed game" />
+          <bit index="7" name="untimed game" />
+          <bit index="8" name="other score valid" />
+          <bit index="9" name="other score invalid" />
+          <bit index="10" name="player is arming bomb" />
+          <bit index="11" name="player talking" />
+        </value>
+        <value type="CharInteger" name="age cutoff" disabled="false" />
+        <value type="CharInteger" name="clip cutoff" disabled="false" />
+        <value type="CharInteger" name="total cutoff" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="Enum" name="anchor" length="2" disabled="false">
+          <item value="0" name="health and shield" />
+          <item value="1" name="weapon hud" />
+          <item value="2" name="motion sensor" />
+          <item value="3" name="scoreboard" />
+          <item value="4" name="crosshair" />
+          <item value="5" name="lock-on target" />
+        </value>
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="flip horizontally" />
+          <bit index="1" name="flip vertically" />
+          <bit index="2" name="(scope) mirror horizontally" />
+          <bit index="3" name="(scope) mirror vertically" />
+          <bit index="4" name="(scope) stretch" />
+        </value>
+        <value type="TagReference" name="bitmap" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="shader" disabled="false" extensions="shad" />
+        <value type="CharInteger" name="fullscreen sequence index" disabled="false" />
+        <value type="CharInteger" name="halfscreen sequence index" disabled="false" />
+        <value type="CharInteger" name="quarterscreen sequence index" disabled="false" />
+        <value type="Pad" name="_unnamed1" length="1" />
+        <value type="Point2d" name="fullscreen offset" disabled="false" />
+        <value type="Point2d" name="halfscreen offset" disabled="false" />
+        <value type="Point2d" name="quarterscreen offset" disabled="false" />
+        <value type="RealPoint2d" name="fullscreen registration point" disabled="false" />
+        <value type="RealPoint2d" name="halfscreen registration point" disabled="false" />
+        <value type="RealPoint2d" name="quarterscreen registration point" disabled="false" />
+        <struct name="HudWidgetEffectBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="apply scale" />
+            <bit index="1" name="apply theta" />
+            <bit index="2" name="apply offset" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="StringId" name="input name" disabled="false" />
+          <value type="StringId" name="range name" disabled="false" />
+          <value type="Real" name="time period in seconds" disabled="false" />
+          <struct name="ByteBlock">
+            <value type="CharInteger" name="Value" disabled="false" />
+          </struct>
+          <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="StringId" name="input name2" disabled="false" />
+          <value type="StringId" name="range name2" disabled="false" />
+          <value type="Real" name="time period in seconds2" disabled="false" />
+          <value type="Block" name="data2" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="StringId" name="input name3" disabled="false" />
+          <value type="StringId" name="range name3" disabled="false" />
+          <value type="Real" name="time period in seconds3" disabled="false" />
+          <value type="Block" name="data3" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="StringId" name="input name4" disabled="false" />
+          <value type="StringId" name="range name4" disabled="false" />
+          <value type="Real" name="time period in seconds4" disabled="false" />
+          <value type="Block" name="data4" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="StringId" name="input name5" disabled="false" />
+          <value type="StringId" name="range name5" disabled="false" />
+          <value type="Real" name="time period in seconds5" disabled="false" />
+          <value type="Block" name="data5" disabled="false" struct="ByteBlock" maxelements="1024" />
+        </struct>
+        <value type="Block" name="effect" disabled="false" struct="HudWidgetEffectBlock" maxelements="1" />
+        <value type="Enum" name="special hud type" length="2" disabled="false">
+          <item value="0" name="unspecial" />
+          <item value="1" name="s.b. player emblem" />
+          <item value="2" name="s.b. other player emblem" />
+          <item value="3" name="s.b. player score meter" />
+          <item value="4" name="s.b. other player score meter" />
+          <item value="5" name="unit shield meter" />
+          <item value="6" name="motion sensor" />
+          <item value="7" name="territory meter" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+      </struct>
+      <value type="Block" name="bitmap widgets" disabled="false" struct="HudBitmapWidgets" maxelements="256" />
+      <struct name="HudTextWidgets">
+        <value type="StringId" name="name" disabled="false" />
+        <value type="Enum" name="input 1" length="1" disabled="false">
+          <item value="0" name="BASIC zero" />
+          <item value="1" name="BASIC one" />
+          <item value="2" name="BASIC time" />
+          <item value="3" name="BASIC global hud fade" />
+          <item value="4" name="..." />
+          <item value="5" name="..." />
+          <item value="6" name="..." />
+          <item value="7" name="..." />
+          <item value="8" name="..." />
+          <item value="9" name="..." />
+          <item value="10" name="..." />
+          <item value="11" name="..." />
+          <item value="12" name="..." />
+          <item value="13" name="..." />
+          <item value="14" name="..." />
+          <item value="15" name="..." />
+          <item value="16" name="UNIT shield" />
+          <item value="17" name="UNIT body" />
+          <item value="18" name="UNIT autoaimed" />
+          <item value="19" name="UNIT has no grenades" />
+          <item value="20" name="UNIT frag gren cnt" />
+          <item value="21" name="UNIT plasma gren cnt" />
+          <item value="22" name="UNIT time on dpl shld" />
+          <item value="23" name="UNIT zoom fraction" />
+          <item value="24" name="UNIT camo value" />
+          <item value="25" name="..." />
+          <item value="26" name="..." />
+          <item value="27" name="..." />
+          <item value="28" name="..." />
+          <item value="29" name="..." />
+          <item value="30" name="..." />
+          <item value="31" name="..." />
+          <item value="32" name="PARENT shield" />
+          <item value="33" name="PARENT body" />
+          <item value="34" name="..." />
+          <item value="35" name="..." />
+          <item value="36" name="..." />
+          <item value="37" name="..." />
+          <item value="38" name="..." />
+          <item value="39" name="..." />
+          <item value="40" name="..." />
+          <item value="41" name="..." />
+          <item value="42" name="..." />
+          <item value="43" name="..." />
+          <item value="44" name="..." />
+          <item value="45" name="..." />
+          <item value="46" name="..." />
+          <item value="47" name="..." />
+          <item value="48" name="WEAPON clip ammo" />
+          <item value="49" name="WEAPON heat" />
+          <item value="50" name="WEAPON battery" />
+          <item value="51" name="WEAPON total_ammo" />
+          <item value="52" name="WEAPON barrel spin" />
+          <item value="53" name="WEAPON overheated" />
+          <item value="54" name="WEAPON clip ammo fraction" />
+          <item value="55" name="WEAPON time on overheat" />
+          <item value="56" name="WEAPON battery fraction" />
+          <item value="57" name="WEAPON locking fraction" />
+          <item value="58" name="..." />
+          <item value="59" name="..." />
+          <item value="60" name="..." />
+          <item value="61" name="..." />
+          <item value="62" name="..." />
+          <item value="63" name="..." />
+          <item value="64" name="..." />
+          <item value="65" name="user score fraction" />
+          <item value="66" name="other user score fraction" />
+          <item value="67" name="user winning" />
+          <item value="68" name="bomb arming amount" />
+          <item value="69" name="..." />
+          <item value="70" name="..." />
+          <item value="71" name="..." />
+          <item value="72" name="..." />
+          <item value="73" name="..." />
+          <item value="74" name="..." />
+          <item value="75" name="..." />
+          <item value="76" name="..." />
+          <item value="77" name="..." />
+          <item value="78" name="..." />
+          <item value="79" name="..." />
+          <item value="80" name="..." />
+        </value>
+        <value type="Enum" name="input 2" length="1" disabled="false">
+          <item value="0" name="BASIC zero" />
+          <item value="1" name="BASIC one" />
+          <item value="2" name="BASIC time" />
+          <item value="3" name="BASIC global hud fade" />
+          <item value="4" name="..." />
+          <item value="5" name="..." />
+          <item value="6" name="..." />
+          <item value="7" name="..." />
+          <item value="8" name="..." />
+          <item value="9" name="..." />
+          <item value="10" name="..." />
+          <item value="11" name="..." />
+          <item value="12" name="..." />
+          <item value="13" name="..." />
+          <item value="14" name="..." />
+          <item value="15" name="..." />
+          <item value="16" name="UNIT shield" />
+          <item value="17" name="UNIT body" />
+          <item value="18" name="UNIT autoaimed" />
+          <item value="19" name="UNIT has no grenades" />
+          <item value="20" name="UNIT frag gren cnt" />
+          <item value="21" name="UNIT plasma gren cnt" />
+          <item value="22" name="UNIT time on dpl shld" />
+          <item value="23" name="UNIT zoom fraction" />
+          <item value="24" name="UNIT camo value" />
+          <item value="25" name="..." />
+          <item value="26" name="..." />
+          <item value="27" name="..." />
+          <item value="28" name="..." />
+          <item value="29" name="..." />
+          <item value="30" name="..." />
+          <item value="31" name="..." />
+          <item value="32" name="PARENT shield" />
+          <item value="33" name="PARENT body" />
+          <item value="34" name="..." />
+          <item value="35" name="..." />
+          <item value="36" name="..." />
+          <item value="37" name="..." />
+          <item value="38" name="..." />
+          <item value="39" name="..." />
+          <item value="40" name="..." />
+          <item value="41" name="..." />
+          <item value="42" name="..." />
+          <item value="43" name="..." />
+          <item value="44" name="..." />
+          <item value="45" name="..." />
+          <item value="46" name="..." />
+          <item value="47" name="..." />
+          <item value="48" name="WEAPON clip ammo" />
+          <item value="49" name="WEAPON heat" />
+          <item value="50" name="WEAPON battery" />
+          <item value="51" name="WEAPON total_ammo" />
+          <item value="52" name="WEAPON barrel spin" />
+          <item value="53" name="WEAPON overheated" />
+          <item value="54" name="WEAPON clip ammo fraction" />
+          <item value="55" name="WEAPON time on overheat" />
+          <item value="56" name="WEAPON battery fraction" />
+          <item value="57" name="WEAPON locking fraction" />
+          <item value="58" name="..." />
+          <item value="59" name="..." />
+          <item value="60" name="..." />
+          <item value="61" name="..." />
+          <item value="62" name="..." />
+          <item value="63" name="..." />
+          <item value="64" name="..." />
+          <item value="65" name="user score fraction" />
+          <item value="66" name="other user score fraction" />
+          <item value="67" name="user winning" />
+          <item value="68" name="bomb arming amount" />
+          <item value="69" name="..." />
+          <item value="70" name="..." />
+          <item value="71" name="..." />
+          <item value="72" name="..." />
+          <item value="73" name="..." />
+          <item value="74" name="..." />
+          <item value="75" name="..." />
+          <item value="76" name="..." />
+          <item value="77" name="..." />
+          <item value="78" name="..." />
+          <item value="79" name="..." />
+          <item value="80" name="..." />
+        </value>
+        <value type="Enum" name="input 3" length="1" disabled="false">
+          <item value="0" name="BASIC zero" />
+          <item value="1" name="BASIC one" />
+          <item value="2" name="BASIC time" />
+          <item value="3" name="BASIC global hud fade" />
+          <item value="4" name="..." />
+          <item value="5" name="..." />
+          <item value="6" name="..." />
+          <item value="7" name="..." />
+          <item value="8" name="..." />
+          <item value="9" name="..." />
+          <item value="10" name="..." />
+          <item value="11" name="..." />
+          <item value="12" name="..." />
+          <item value="13" name="..." />
+          <item value="14" name="..." />
+          <item value="15" name="..." />
+          <item value="16" name="UNIT shield" />
+          <item value="17" name="UNIT body" />
+          <item value="18" name="UNIT autoaimed" />
+          <item value="19" name="UNIT has no grenades" />
+          <item value="20" name="UNIT frag gren cnt" />
+          <item value="21" name="UNIT plasma gren cnt" />
+          <item value="22" name="UNIT time on dpl shld" />
+          <item value="23" name="UNIT zoom fraction" />
+          <item value="24" name="UNIT camo value" />
+          <item value="25" name="..." />
+          <item value="26" name="..." />
+          <item value="27" name="..." />
+          <item value="28" name="..." />
+          <item value="29" name="..." />
+          <item value="30" name="..." />
+          <item value="31" name="..." />
+          <item value="32" name="PARENT shield" />
+          <item value="33" name="PARENT body" />
+          <item value="34" name="..." />
+          <item value="35" name="..." />
+          <item value="36" name="..." />
+          <item value="37" name="..." />
+          <item value="38" name="..." />
+          <item value="39" name="..." />
+          <item value="40" name="..." />
+          <item value="41" name="..." />
+          <item value="42" name="..." />
+          <item value="43" name="..." />
+          <item value="44" name="..." />
+          <item value="45" name="..." />
+          <item value="46" name="..." />
+          <item value="47" name="..." />
+          <item value="48" name="WEAPON clip ammo" />
+          <item value="49" name="WEAPON heat" />
+          <item value="50" name="WEAPON battery" />
+          <item value="51" name="WEAPON total_ammo" />
+          <item value="52" name="WEAPON barrel spin" />
+          <item value="53" name="WEAPON overheated" />
+          <item value="54" name="WEAPON clip ammo fraction" />
+          <item value="55" name="WEAPON time on overheat" />
+          <item value="56" name="WEAPON battery fraction" />
+          <item value="57" name="WEAPON locking fraction" />
+          <item value="58" name="..." />
+          <item value="59" name="..." />
+          <item value="60" name="..." />
+          <item value="61" name="..." />
+          <item value="62" name="..." />
+          <item value="63" name="..." />
+          <item value="64" name="..." />
+          <item value="65" name="user score fraction" />
+          <item value="66" name="other user score fraction" />
+          <item value="67" name="user winning" />
+          <item value="68" name="bomb arming amount" />
+          <item value="69" name="..." />
+          <item value="70" name="..." />
+          <item value="71" name="..." />
+          <item value="72" name="..." />
+          <item value="73" name="..." />
+          <item value="74" name="..." />
+          <item value="75" name="..." />
+          <item value="76" name="..." />
+          <item value="77" name="..." />
+          <item value="78" name="..." />
+          <item value="79" name="..." />
+          <item value="80" name="..." />
+        </value>
+        <value type="Enum" name="input 4" length="1" disabled="false">
+          <item value="0" name="BASIC zero" />
+          <item value="1" name="BASIC one" />
+          <item value="2" name="BASIC time" />
+          <item value="3" name="BASIC global hud fade" />
+          <item value="4" name="..." />
+          <item value="5" name="..." />
+          <item value="6" name="..." />
+          <item value="7" name="..." />
+          <item value="8" name="..." />
+          <item value="9" name="..." />
+          <item value="10" name="..." />
+          <item value="11" name="..." />
+          <item value="12" name="..." />
+          <item value="13" name="..." />
+          <item value="14" name="..." />
+          <item value="15" name="..." />
+          <item value="16" name="UNIT shield" />
+          <item value="17" name="UNIT body" />
+          <item value="18" name="UNIT autoaimed" />
+          <item value="19" name="UNIT has no grenades" />
+          <item value="20" name="UNIT frag gren cnt" />
+          <item value="21" name="UNIT plasma gren cnt" />
+          <item value="22" name="UNIT time on dpl shld" />
+          <item value="23" name="UNIT zoom fraction" />
+          <item value="24" name="UNIT camo value" />
+          <item value="25" name="..." />
+          <item value="26" name="..." />
+          <item value="27" name="..." />
+          <item value="28" name="..." />
+          <item value="29" name="..." />
+          <item value="30" name="..." />
+          <item value="31" name="..." />
+          <item value="32" name="PARENT shield" />
+          <item value="33" name="PARENT body" />
+          <item value="34" name="..." />
+          <item value="35" name="..." />
+          <item value="36" name="..." />
+          <item value="37" name="..." />
+          <item value="38" name="..." />
+          <item value="39" name="..." />
+          <item value="40" name="..." />
+          <item value="41" name="..." />
+          <item value="42" name="..." />
+          <item value="43" name="..." />
+          <item value="44" name="..." />
+          <item value="45" name="..." />
+          <item value="46" name="..." />
+          <item value="47" name="..." />
+          <item value="48" name="WEAPON clip ammo" />
+          <item value="49" name="WEAPON heat" />
+          <item value="50" name="WEAPON battery" />
+          <item value="51" name="WEAPON total_ammo" />
+          <item value="52" name="WEAPON barrel spin" />
+          <item value="53" name="WEAPON overheated" />
+          <item value="54" name="WEAPON clip ammo fraction" />
+          <item value="55" name="WEAPON time on overheat" />
+          <item value="56" name="WEAPON battery fraction" />
+          <item value="57" name="WEAPON locking fraction" />
+          <item value="58" name="..." />
+          <item value="59" name="..." />
+          <item value="60" name="..." />
+          <item value="61" name="..." />
+          <item value="62" name="..." />
+          <item value="63" name="..." />
+          <item value="64" name="..." />
+          <item value="65" name="user score fraction" />
+          <item value="66" name="other user score fraction" />
+          <item value="67" name="user winning" />
+          <item value="68" name="bomb arming amount" />
+          <item value="69" name="..." />
+          <item value="70" name="..." />
+          <item value="71" name="..." />
+          <item value="72" name="..." />
+          <item value="73" name="..." />
+          <item value="74" name="..." />
+          <item value="75" name="..." />
+          <item value="76" name="..." />
+          <item value="77" name="..." />
+          <item value="78" name="..." />
+          <item value="79" name="..." />
+          <item value="80" name="..." />
+        </value>
+        <value type="Flags" name="Y unit flags" length="2" disabled="false">
+          <bit index="0" name="default" />
+          <bit index="1" name="grenade type is NONE" />
+          <bit index="2" name="grenade type is frag" />
+          <bit index="3" name="grenade type is plasma" />
+          <bit index="4" name="unit is single wielding" />
+          <bit index="5" name="unit is dual wielding" />
+          <bit index="6" name="unit is unzoomed" />
+          <bit index="7" name="unit is zoomed (level 1)" />
+          <bit index="8" name="unit is zoomed (level 2)" />
+          <bit index="9" name="grenades disabled" />
+          <bit index="10" name="binoculars enabled" />
+          <bit index="11" name="motion sensor enabled" />
+          <bit index="12" name="shield enabled" />
+          <bit index="13" name="dervish" />
+        </value>
+        <value type="Flags" name="Y extra flags" length="2" disabled="false">
+          <bit index="0" name="autoaim-friendly" />
+          <bit index="1" name="autoaim-plasma" />
+          <bit index="2" name="autoaim-headshot" />
+          <bit index="3" name="autoaim-vulnerable" />
+          <bit index="4" name="autoaim-invincible" />
+        </value>
+        <value type="Flags" name="Y weapon flags" length="2" disabled="false">
+          <bit index="0" name="primary weapon" />
+          <bit index="1" name="secondary weapon" />
+          <bit index="2" name="backpack weapon" />
+          <bit index="3" name="age below cutoff" />
+          <bit index="4" name="clip below cutoff" />
+          <bit index="5" name="total below cutoff" />
+          <bit index="6" name="overheated" />
+          <bit index="7" name="out of ammo" />
+          <bit index="8" name="lock target available" />
+          <bit index="9" name="locking" />
+          <bit index="10" name="locked" />
+        </value>
+        <value type="Flags" name="Y game engine state flags" length="2" disabled="false">
+          <bit index="0" name="campaign solo" />
+          <bit index="1" name="campaign coop" />
+          <bit index="2" name="free-for-all" />
+          <bit index="3" name="team game" />
+          <bit index="4" name="user leading" />
+          <bit index="5" name="user not leading" />
+          <bit index="6" name="timed game" />
+          <bit index="7" name="untimed game" />
+          <bit index="8" name="other score valid" />
+          <bit index="9" name="other score invalid" />
+          <bit index="10" name="player is arming bomb" />
+          <bit index="11" name="player talking" />
+        </value>
+        <value type="Flags" name="N unit flags" length="2" disabled="false">
+          <bit index="0" name="default" />
+          <bit index="1" name="grenade type is NONE" />
+          <bit index="2" name="grenade type is frag" />
+          <bit index="3" name="grenade type is plasma" />
+          <bit index="4" name="unit is single wielding" />
+          <bit index="5" name="unit is dual wielding" />
+          <bit index="6" name="unit is unzoomed" />
+          <bit index="7" name="unit is zoomed (level 1)" />
+          <bit index="8" name="unit is zoomed (level 2)" />
+          <bit index="9" name="grenades disabled" />
+          <bit index="10" name="binoculars enabled" />
+          <bit index="11" name="motion sensor enabled" />
+          <bit index="12" name="shield enabled" />
+          <bit index="13" name="dervish" />
+        </value>
+        <value type="Flags" name="N extra flags" length="2" disabled="false">
+          <bit index="0" name="autoaim-friendly" />
+          <bit index="1" name="autoaim-plasma" />
+          <bit index="2" name="autoaim-headshot" />
+          <bit index="3" name="autoaim-vulnerable" />
+          <bit index="4" name="autoaim-invincible" />
+        </value>
+        <value type="Flags" name="N weapon flags" length="2" disabled="false">
+          <bit index="0" name="primary weapon" />
+          <bit index="1" name="secondary weapon" />
+          <bit index="2" name="backpack weapon" />
+          <bit index="3" name="age below cutoff" />
+          <bit index="4" name="clip below cutoff" />
+          <bit index="5" name="total below cutoff" />
+          <bit index="6" name="overheated" />
+          <bit index="7" name="out of ammo" />
+          <bit index="8" name="lock target available" />
+          <bit index="9" name="locking" />
+          <bit index="10" name="locked" />
+        </value>
+        <value type="Flags" name="N game engine state flags" length="2" disabled="false">
+          <bit index="0" name="campaign solo" />
+          <bit index="1" name="campaign coop" />
+          <bit index="2" name="free-for-all" />
+          <bit index="3" name="team game" />
+          <bit index="4" name="user leading" />
+          <bit index="5" name="user not leading" />
+          <bit index="6" name="timed game" />
+          <bit index="7" name="untimed game" />
+          <bit index="8" name="other score valid" />
+          <bit index="9" name="other score invalid" />
+          <bit index="10" name="player is arming bomb" />
+          <bit index="11" name="player talking" />
+        </value>
+        <value type="CharInteger" name="age cutoff" disabled="false" />
+        <value type="CharInteger" name="clip cutoff" disabled="false" />
+        <value type="CharInteger" name="total cutoff" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="Enum" name="anchor" length="2" disabled="false">
+          <item value="0" name="health and shield" />
+          <item value="1" name="weapon hud" />
+          <item value="2" name="motion sensor" />
+          <item value="3" name="scoreboard" />
+          <item value="4" name="crosshair" />
+          <item value="5" name="lock-on target" />
+        </value>
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="string is a number" />
+          <bit index="1" name="force 2-digit number" />
+          <bit index="2" name="force 3-digit number" />
+          <bit index="3" name="talking player hack" />
+        </value>
+        <value type="TagReference" name="shader" disabled="false" extensions="shad" />
+        <value type="StringId" name="string" disabled="false" />
+        <value type="Enum" name="justification" length="2" disabled="false">
+          <item value="0" name="left" />
+          <item value="1" name="center" />
+          <item value="2" name="right" />
+        </value>
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Enum" name="fullscreen font index" length="1" disabled="false">
+          <item value="0" name="defualt" />
+          <item value="1" name="number font" />
+        </value>
+        <value type="Enum" name="halfscreen font index" length="1" disabled="false">
+          <item value="0" name="defualt" />
+          <item value="1" name="number font" />
+        </value>
+        <value type="Enum" name="quarterscreen font index" length="1" disabled="false">
+          <item value="0" name="defualt" />
+          <item value="1" name="number font" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="1" />
+        <value type="Real" name="fullscreen scale" disabled="false" />
+        <value type="Real" name="halfscreen scale" disabled="false" />
+        <value type="Real" name="quarterscreen scale" disabled="false" />
+        <value type="Point2d" name="fullscreen offset" disabled="false" />
+        <value type="Point2d" name="halfscreen offset" disabled="false" />
+        <value type="Point2d" name="quarterscreen offset" disabled="false" />
+        <struct name="HudWidgetEffectBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="apply scale" />
+            <bit index="1" name="apply theta" />
+            <bit index="2" name="apply offset" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="StringId" name="input name" disabled="false" />
+          <value type="StringId" name="range name" disabled="false" />
+          <value type="Real" name="time period in seconds" disabled="false" />
+          <struct name="ByteBlock">
+            <value type="CharInteger" name="Value" disabled="false" />
+          </struct>
+          <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="StringId" name="input name2" disabled="false" />
+          <value type="StringId" name="range name2" disabled="false" />
+          <value type="Real" name="time period in seconds2" disabled="false" />
+          <value type="Block" name="data2" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="StringId" name="input name3" disabled="false" />
+          <value type="StringId" name="range name3" disabled="false" />
+          <value type="Real" name="time period in seconds3" disabled="false" />
+          <value type="Block" name="data3" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="StringId" name="input name4" disabled="false" />
+          <value type="StringId" name="range name4" disabled="false" />
+          <value type="Real" name="time period in seconds4" disabled="false" />
+          <value type="Block" name="data4" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="StringId" name="input name5" disabled="false" />
+          <value type="StringId" name="range name5" disabled="false" />
+          <value type="Real" name="time period in seconds5" disabled="false" />
+          <value type="Block" name="data5" disabled="false" struct="ByteBlock" maxelements="1024" />
+        </struct>
+        <value type="Block" name="effect" disabled="false" struct="HudWidgetEffectBlock" maxelements="1" />
+      </struct>
+      <value type="Block" name="text widgets" disabled="false" struct="HudTextWidgets" maxelements="256" />
+      <value type="ShortInteger" name="low clip cutoff" disabled="false">
+        <tooltip>the cutoff for showing the reload dashlight</tooltip>
+      </value>
+      <value type="ShortInteger" name="low ammo cutoff" disabled="false">
+        <tooltip>the cutoff for showing the low ammo dashlight</tooltip>
+      </value>
+      <value type="Real" name="age cutoff" disabled="false">
+        <tooltip>the age cutoff for showing the low battery dashlight</tooltip>
+      </value>
+      <struct name="HudScreenEffectWidgets">
+        <value type="StringId" name="name" disabled="false" />
+        <value type="Enum" name="input 1" length="1" disabled="false">
+          <item value="0" name="BASIC zero" />
+          <item value="1" name="BASIC one" />
+          <item value="2" name="BASIC time" />
+          <item value="3" name="BASIC global hud fade" />
+          <item value="4" name="..." />
+          <item value="5" name="..." />
+          <item value="6" name="..." />
+          <item value="7" name="..." />
+          <item value="8" name="..." />
+          <item value="9" name="..." />
+          <item value="10" name="..." />
+          <item value="11" name="..." />
+          <item value="12" name="..." />
+          <item value="13" name="..." />
+          <item value="14" name="..." />
+          <item value="15" name="..." />
+          <item value="16" name="UNIT shield" />
+          <item value="17" name="UNIT body" />
+          <item value="18" name="UNIT autoaimed" />
+          <item value="19" name="UNIT has no grenades" />
+          <item value="20" name="UNIT frag gren cnt" />
+          <item value="21" name="UNIT plasma gren cnt" />
+          <item value="22" name="UNIT time on dpl shld" />
+          <item value="23" name="UNIT zoom fraction" />
+          <item value="24" name="UNIT camo value" />
+          <item value="25" name="..." />
+          <item value="26" name="..." />
+          <item value="27" name="..." />
+          <item value="28" name="..." />
+          <item value="29" name="..." />
+          <item value="30" name="..." />
+          <item value="31" name="..." />
+          <item value="32" name="PARENT shield" />
+          <item value="33" name="PARENT body" />
+          <item value="34" name="..." />
+          <item value="35" name="..." />
+          <item value="36" name="..." />
+          <item value="37" name="..." />
+          <item value="38" name="..." />
+          <item value="39" name="..." />
+          <item value="40" name="..." />
+          <item value="41" name="..." />
+          <item value="42" name="..." />
+          <item value="43" name="..." />
+          <item value="44" name="..." />
+          <item value="45" name="..." />
+          <item value="46" name="..." />
+          <item value="47" name="..." />
+          <item value="48" name="WEAPON clip ammo" />
+          <item value="49" name="WEAPON heat" />
+          <item value="50" name="WEAPON battery" />
+          <item value="51" name="WEAPON total_ammo" />
+          <item value="52" name="WEAPON barrel spin" />
+          <item value="53" name="WEAPON overheated" />
+          <item value="54" name="WEAPON clip ammo fraction" />
+          <item value="55" name="WEAPON time on overheat" />
+          <item value="56" name="WEAPON battery fraction" />
+          <item value="57" name="WEAPON locking fraction" />
+          <item value="58" name="..." />
+          <item value="59" name="..." />
+          <item value="60" name="..." />
+          <item value="61" name="..." />
+          <item value="62" name="..." />
+          <item value="63" name="..." />
+          <item value="64" name="..." />
+          <item value="65" name="user score fraction" />
+          <item value="66" name="other user score fraction" />
+          <item value="67" name="user winning" />
+          <item value="68" name="bomb arming amount" />
+          <item value="69" name="..." />
+          <item value="70" name="..." />
+          <item value="71" name="..." />
+          <item value="72" name="..." />
+          <item value="73" name="..." />
+          <item value="74" name="..." />
+          <item value="75" name="..." />
+          <item value="76" name="..." />
+          <item value="77" name="..." />
+          <item value="78" name="..." />
+          <item value="79" name="..." />
+          <item value="80" name="..." />
+        </value>
+        <value type="Enum" name="input 2" length="1" disabled="false">
+          <item value="0" name="BASIC zero" />
+          <item value="1" name="BASIC one" />
+          <item value="2" name="BASIC time" />
+          <item value="3" name="BASIC global hud fade" />
+          <item value="4" name="..." />
+          <item value="5" name="..." />
+          <item value="6" name="..." />
+          <item value="7" name="..." />
+          <item value="8" name="..." />
+          <item value="9" name="..." />
+          <item value="10" name="..." />
+          <item value="11" name="..." />
+          <item value="12" name="..." />
+          <item value="13" name="..." />
+          <item value="14" name="..." />
+          <item value="15" name="..." />
+          <item value="16" name="UNIT shield" />
+          <item value="17" name="UNIT body" />
+          <item value="18" name="UNIT autoaimed" />
+          <item value="19" name="UNIT has no grenades" />
+          <item value="20" name="UNIT frag gren cnt" />
+          <item value="21" name="UNIT plasma gren cnt" />
+          <item value="22" name="UNIT time on dpl shld" />
+          <item value="23" name="UNIT zoom fraction" />
+          <item value="24" name="UNIT camo value" />
+          <item value="25" name="..." />
+          <item value="26" name="..." />
+          <item value="27" name="..." />
+          <item value="28" name="..." />
+          <item value="29" name="..." />
+          <item value="30" name="..." />
+          <item value="31" name="..." />
+          <item value="32" name="PARENT shield" />
+          <item value="33" name="PARENT body" />
+          <item value="34" name="..." />
+          <item value="35" name="..." />
+          <item value="36" name="..." />
+          <item value="37" name="..." />
+          <item value="38" name="..." />
+          <item value="39" name="..." />
+          <item value="40" name="..." />
+          <item value="41" name="..." />
+          <item value="42" name="..." />
+          <item value="43" name="..." />
+          <item value="44" name="..." />
+          <item value="45" name="..." />
+          <item value="46" name="..." />
+          <item value="47" name="..." />
+          <item value="48" name="WEAPON clip ammo" />
+          <item value="49" name="WEAPON heat" />
+          <item value="50" name="WEAPON battery" />
+          <item value="51" name="WEAPON total_ammo" />
+          <item value="52" name="WEAPON barrel spin" />
+          <item value="53" name="WEAPON overheated" />
+          <item value="54" name="WEAPON clip ammo fraction" />
+          <item value="55" name="WEAPON time on overheat" />
+          <item value="56" name="WEAPON battery fraction" />
+          <item value="57" name="WEAPON locking fraction" />
+          <item value="58" name="..." />
+          <item value="59" name="..." />
+          <item value="60" name="..." />
+          <item value="61" name="..." />
+          <item value="62" name="..." />
+          <item value="63" name="..." />
+          <item value="64" name="..." />
+          <item value="65" name="user score fraction" />
+          <item value="66" name="other user score fraction" />
+          <item value="67" name="user winning" />
+          <item value="68" name="bomb arming amount" />
+          <item value="69" name="..." />
+          <item value="70" name="..." />
+          <item value="71" name="..." />
+          <item value="72" name="..." />
+          <item value="73" name="..." />
+          <item value="74" name="..." />
+          <item value="75" name="..." />
+          <item value="76" name="..." />
+          <item value="77" name="..." />
+          <item value="78" name="..." />
+          <item value="79" name="..." />
+          <item value="80" name="..." />
+        </value>
+        <value type="Enum" name="input 3" length="1" disabled="false">
+          <item value="0" name="BASIC zero" />
+          <item value="1" name="BASIC one" />
+          <item value="2" name="BASIC time" />
+          <item value="3" name="BASIC global hud fade" />
+          <item value="4" name="..." />
+          <item value="5" name="..." />
+          <item value="6" name="..." />
+          <item value="7" name="..." />
+          <item value="8" name="..." />
+          <item value="9" name="..." />
+          <item value="10" name="..." />
+          <item value="11" name="..." />
+          <item value="12" name="..." />
+          <item value="13" name="..." />
+          <item value="14" name="..." />
+          <item value="15" name="..." />
+          <item value="16" name="UNIT shield" />
+          <item value="17" name="UNIT body" />
+          <item value="18" name="UNIT autoaimed" />
+          <item value="19" name="UNIT has no grenades" />
+          <item value="20" name="UNIT frag gren cnt" />
+          <item value="21" name="UNIT plasma gren cnt" />
+          <item value="22" name="UNIT time on dpl shld" />
+          <item value="23" name="UNIT zoom fraction" />
+          <item value="24" name="UNIT camo value" />
+          <item value="25" name="..." />
+          <item value="26" name="..." />
+          <item value="27" name="..." />
+          <item value="28" name="..." />
+          <item value="29" name="..." />
+          <item value="30" name="..." />
+          <item value="31" name="..." />
+          <item value="32" name="PARENT shield" />
+          <item value="33" name="PARENT body" />
+          <item value="34" name="..." />
+          <item value="35" name="..." />
+          <item value="36" name="..." />
+          <item value="37" name="..." />
+          <item value="38" name="..." />
+          <item value="39" name="..." />
+          <item value="40" name="..." />
+          <item value="41" name="..." />
+          <item value="42" name="..." />
+          <item value="43" name="..." />
+          <item value="44" name="..." />
+          <item value="45" name="..." />
+          <item value="46" name="..." />
+          <item value="47" name="..." />
+          <item value="48" name="WEAPON clip ammo" />
+          <item value="49" name="WEAPON heat" />
+          <item value="50" name="WEAPON battery" />
+          <item value="51" name="WEAPON total_ammo" />
+          <item value="52" name="WEAPON barrel spin" />
+          <item value="53" name="WEAPON overheated" />
+          <item value="54" name="WEAPON clip ammo fraction" />
+          <item value="55" name="WEAPON time on overheat" />
+          <item value="56" name="WEAPON battery fraction" />
+          <item value="57" name="WEAPON locking fraction" />
+          <item value="58" name="..." />
+          <item value="59" name="..." />
+          <item value="60" name="..." />
+          <item value="61" name="..." />
+          <item value="62" name="..." />
+          <item value="63" name="..." />
+          <item value="64" name="..." />
+          <item value="65" name="user score fraction" />
+          <item value="66" name="other user score fraction" />
+          <item value="67" name="user winning" />
+          <item value="68" name="bomb arming amount" />
+          <item value="69" name="..." />
+          <item value="70" name="..." />
+          <item value="71" name="..." />
+          <item value="72" name="..." />
+          <item value="73" name="..." />
+          <item value="74" name="..." />
+          <item value="75" name="..." />
+          <item value="76" name="..." />
+          <item value="77" name="..." />
+          <item value="78" name="..." />
+          <item value="79" name="..." />
+          <item value="80" name="..." />
+        </value>
+        <value type="Enum" name="input 4" length="1" disabled="false">
+          <item value="0" name="BASIC zero" />
+          <item value="1" name="BASIC one" />
+          <item value="2" name="BASIC time" />
+          <item value="3" name="BASIC global hud fade" />
+          <item value="4" name="..." />
+          <item value="5" name="..." />
+          <item value="6" name="..." />
+          <item value="7" name="..." />
+          <item value="8" name="..." />
+          <item value="9" name="..." />
+          <item value="10" name="..." />
+          <item value="11" name="..." />
+          <item value="12" name="..." />
+          <item value="13" name="..." />
+          <item value="14" name="..." />
+          <item value="15" name="..." />
+          <item value="16" name="UNIT shield" />
+          <item value="17" name="UNIT body" />
+          <item value="18" name="UNIT autoaimed" />
+          <item value="19" name="UNIT has no grenades" />
+          <item value="20" name="UNIT frag gren cnt" />
+          <item value="21" name="UNIT plasma gren cnt" />
+          <item value="22" name="UNIT time on dpl shld" />
+          <item value="23" name="UNIT zoom fraction" />
+          <item value="24" name="UNIT camo value" />
+          <item value="25" name="..." />
+          <item value="26" name="..." />
+          <item value="27" name="..." />
+          <item value="28" name="..." />
+          <item value="29" name="..." />
+          <item value="30" name="..." />
+          <item value="31" name="..." />
+          <item value="32" name="PARENT shield" />
+          <item value="33" name="PARENT body" />
+          <item value="34" name="..." />
+          <item value="35" name="..." />
+          <item value="36" name="..." />
+          <item value="37" name="..." />
+          <item value="38" name="..." />
+          <item value="39" name="..." />
+          <item value="40" name="..." />
+          <item value="41" name="..." />
+          <item value="42" name="..." />
+          <item value="43" name="..." />
+          <item value="44" name="..." />
+          <item value="45" name="..." />
+          <item value="46" name="..." />
+          <item value="47" name="..." />
+          <item value="48" name="WEAPON clip ammo" />
+          <item value="49" name="WEAPON heat" />
+          <item value="50" name="WEAPON battery" />
+          <item value="51" name="WEAPON total_ammo" />
+          <item value="52" name="WEAPON barrel spin" />
+          <item value="53" name="WEAPON overheated" />
+          <item value="54" name="WEAPON clip ammo fraction" />
+          <item value="55" name="WEAPON time on overheat" />
+          <item value="56" name="WEAPON battery fraction" />
+          <item value="57" name="WEAPON locking fraction" />
+          <item value="58" name="..." />
+          <item value="59" name="..." />
+          <item value="60" name="..." />
+          <item value="61" name="..." />
+          <item value="62" name="..." />
+          <item value="63" name="..." />
+          <item value="64" name="..." />
+          <item value="65" name="user score fraction" />
+          <item value="66" name="other user score fraction" />
+          <item value="67" name="user winning" />
+          <item value="68" name="bomb arming amount" />
+          <item value="69" name="..." />
+          <item value="70" name="..." />
+          <item value="71" name="..." />
+          <item value="72" name="..." />
+          <item value="73" name="..." />
+          <item value="74" name="..." />
+          <item value="75" name="..." />
+          <item value="76" name="..." />
+          <item value="77" name="..." />
+          <item value="78" name="..." />
+          <item value="79" name="..." />
+          <item value="80" name="..." />
+        </value>
+        <value type="Flags" name="Y unit flags" length="2" disabled="false">
+          <bit index="0" name="default" />
+          <bit index="1" name="grenade type is NONE" />
+          <bit index="2" name="grenade type is frag" />
+          <bit index="3" name="grenade type is plasma" />
+          <bit index="4" name="unit is single wielding" />
+          <bit index="5" name="unit is dual wielding" />
+          <bit index="6" name="unit is unzoomed" />
+          <bit index="7" name="unit is zoomed (level 1)" />
+          <bit index="8" name="unit is zoomed (level 2)" />
+          <bit index="9" name="grenades disabled" />
+          <bit index="10" name="binoculars enabled" />
+          <bit index="11" name="motion sensor enabled" />
+          <bit index="12" name="shield enabled" />
+          <bit index="13" name="dervish" />
+        </value>
+        <value type="Flags" name="Y extra flags" length="2" disabled="false">
+          <bit index="0" name="autoaim-friendly" />
+          <bit index="1" name="autoaim-plasma" />
+          <bit index="2" name="autoaim-headshot" />
+          <bit index="3" name="autoaim-vulnerable" />
+          <bit index="4" name="autoaim-invincible" />
+        </value>
+        <value type="Flags" name="Y weapon flags" length="2" disabled="false">
+          <bit index="0" name="primary weapon" />
+          <bit index="1" name="secondary weapon" />
+          <bit index="2" name="backpack weapon" />
+          <bit index="3" name="age below cutoff" />
+          <bit index="4" name="clip below cutoff" />
+          <bit index="5" name="total below cutoff" />
+          <bit index="6" name="overheated" />
+          <bit index="7" name="out of ammo" />
+          <bit index="8" name="lock target available" />
+          <bit index="9" name="locking" />
+          <bit index="10" name="locked" />
+        </value>
+        <value type="Flags" name="Y game engine state flags" length="2" disabled="false">
+          <bit index="0" name="campaign solo" />
+          <bit index="1" name="campaign coop" />
+          <bit index="2" name="free-for-all" />
+          <bit index="3" name="team game" />
+          <bit index="4" name="user leading" />
+          <bit index="5" name="user not leading" />
+          <bit index="6" name="timed game" />
+          <bit index="7" name="untimed game" />
+          <bit index="8" name="other score valid" />
+          <bit index="9" name="other score invalid" />
+          <bit index="10" name="player is arming bomb" />
+          <bit index="11" name="player talking" />
+        </value>
+        <value type="Flags" name="N unit flags" length="2" disabled="false">
+          <bit index="0" name="default" />
+          <bit index="1" name="grenade type is NONE" />
+          <bit index="2" name="grenade type is frag" />
+          <bit index="3" name="grenade type is plasma" />
+          <bit index="4" name="unit is single wielding" />
+          <bit index="5" name="unit is dual wielding" />
+          <bit index="6" name="unit is unzoomed" />
+          <bit index="7" name="unit is zoomed (level 1)" />
+          <bit index="8" name="unit is zoomed (level 2)" />
+          <bit index="9" name="grenades disabled" />
+          <bit index="10" name="binoculars enabled" />
+          <bit index="11" name="motion sensor enabled" />
+          <bit index="12" name="shield enabled" />
+          <bit index="13" name="dervish" />
+        </value>
+        <value type="Flags" name="N extra flags" length="2" disabled="false">
+          <bit index="0" name="autoaim-friendly" />
+          <bit index="1" name="autoaim-plasma" />
+          <bit index="2" name="autoaim-headshot" />
+          <bit index="3" name="autoaim-vulnerable" />
+          <bit index="4" name="autoaim-invincible" />
+        </value>
+        <value type="Flags" name="N weapon flags" length="2" disabled="false">
+          <bit index="0" name="primary weapon" />
+          <bit index="1" name="secondary weapon" />
+          <bit index="2" name="backpack weapon" />
+          <bit index="3" name="age below cutoff" />
+          <bit index="4" name="clip below cutoff" />
+          <bit index="5" name="total below cutoff" />
+          <bit index="6" name="overheated" />
+          <bit index="7" name="out of ammo" />
+          <bit index="8" name="lock target available" />
+          <bit index="9" name="locking" />
+          <bit index="10" name="locked" />
+        </value>
+        <value type="Flags" name="N game engine state flags" length="2" disabled="false">
+          <bit index="0" name="campaign solo" />
+          <bit index="1" name="campaign coop" />
+          <bit index="2" name="free-for-all" />
+          <bit index="3" name="team game" />
+          <bit index="4" name="user leading" />
+          <bit index="5" name="user not leading" />
+          <bit index="6" name="timed game" />
+          <bit index="7" name="untimed game" />
+          <bit index="8" name="other score valid" />
+          <bit index="9" name="other score invalid" />
+          <bit index="10" name="player is arming bomb" />
+          <bit index="11" name="player talking" />
+        </value>
+        <value type="CharInteger" name="age cutoff" disabled="false" />
+        <value type="CharInteger" name="clip cutoff" disabled="false" />
+        <value type="CharInteger" name="total cutoff" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="Enum" name="anchor" length="2" disabled="false">
+          <item value="0" name="health and shield" />
+          <item value="1" name="weapon hud" />
+          <item value="2" name="motion sensor" />
+          <item value="3" name="scoreboard" />
+          <item value="4" name="crosshair" />
+          <item value="5" name="lock-on target" />
+        </value>
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="unused" />
+        </value>
+        <value type="TagReference" name="bitmap" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="fullscreen screen effect" disabled="false" extensions="egor" />
+        <value type="TagReference" name="halfscreen screen effect" disabled="false" extensions="egor" />
+        <value type="TagReference" name="quarterscreen screen effect" disabled="false" extensions="egor" />
+        <value type="CharInteger" name="fullscreen sequence index" disabled="false" />
+        <value type="CharInteger" name="halfscreen sequence index" disabled="false" />
+        <value type="CharInteger" name="quarterscreen sequence index" disabled="false" />
+        <value type="Pad" name="_unnamed1" length="1" />
+        <value type="Point2d" name="fullscreen offset" disabled="false" />
+        <value type="Point2d" name="halfscreen offset" disabled="false" />
+        <value type="Point2d" name="quarterscreen offset" disabled="false" />
+      </struct>
+      <value type="Block" name="screen effect widgets" disabled="false" struct="HudScreenEffectWidgets" maxelements="4" />
+    </struct>
+  </plugin>
+</xml>

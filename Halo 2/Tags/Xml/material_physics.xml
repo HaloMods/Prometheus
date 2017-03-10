@@ -1,0 +1,23 @@
+<xml>
+  <name type="mpdt" parenttype="????">MaterialPhysics</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="MaterialPhysicsBlock">
+      <value type="Real" name="ground friction scale" disabled="false">
+        <tooltip>fraction of original velocity parallel to the ground after one tick</tooltip>
+      </value>
+      <value type="Real" name="ground friction normal k1 scale" disabled="false">
+        <tooltip>cosine of angle at which friction falls off</tooltip>
+      </value>
+      <value type="Real" name="ground friction normal k0 scale" disabled="false">
+        <tooltip>cosine of angle at which friction is zero</tooltip>
+      </value>
+      <value type="Real" name="ground depth scale" disabled="false">
+        <tooltip>depth a point mass rests in the ground</tooltip>
+      </value>
+      <value type="Real" name="ground damp fraction scale" disabled="false">
+        <tooltip>fraction of original velocity perpendicular to the ground after one tick</tooltip>
+      </value>
+    </struct>
+  </plugin>
+</xml>

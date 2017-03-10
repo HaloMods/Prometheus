@@ -1,0 +1,59 @@
+<dotnetbarlayout version="6" zorder="4,5,2,3">
+  <docksite size="0" dockingside="Top" />
+  <docksite size="158" dockingside="Bottom">
+    <dockcontainer orientation="1" w="0" h="0">
+      <barcontainer w="952" h="155">
+        <bar name="barOutput" dockline="0" layout="2" dockoffset="0" state="2" dockside="4" visible="true" seldocktab="0">
+          <items>
+            <item name="dciOutput" origBar="" origPos="-1" pos="0" />
+            <item name="dciTaskList" origBar="" origPos="-1" pos="1" />
+            <item name="dciHelp" origBar="" origPos="-1" pos="2" />
+          </items>
+        </bar>
+      </barcontainer>
+    </dockcontainer>
+  </docksite>
+  <docksite size="388" dockingside="Left">
+    <dockcontainer orientation="0" w="0" h="0">
+      <barcontainer w="385" h="560">
+        <bar name="barViewport" dockline="0" layout="2" dockoffset="0" state="2" dockside="1" visible="true">
+          <items>
+            <item name="dciViewport" origBar="" origPos="-1" pos="0" />
+          </items>
+        </bar>
+      </barcontainer>
+    </dockcontainer>
+  </docksite>
+  <docksite size="201" dockingside="Right">
+    <dockcontainer orientation="0" w="0" h="0">
+      <barcontainer w="198" h="560">
+        <bar name="barTaskPane" dockline="0" layout="2" dockoffset="0" state="2" dockside="2" visible="true" seldocktab="2">
+          <items>
+            <item name="dciTaskPaneGettingStarted" origBar="" origPos="-1" pos="0" />
+            <item name="dciTaskPaneHelp" origBar="" origPos="-1" pos="1" />
+            <item name="dciTaskPaneLibraryExplorer" origBar="" origPos="-1" pos="2" />
+            <item name="dciTaskPaneProjectExplorer" origBar="" origPos="-1" pos="3" />
+            <item name="dciTaskPaneScenarioExplorer" origBar="" origPos="-1" pos="4" />
+            <item name="dciTaskPaneVersionManager" origBar="" origPos="-1" pos="5" />
+            <item name="dciTaskPaneBookmarkManager" origBar="" origPos="-1" pos="6" />
+            <item name="dciTaskPaneXboxBrowser" origBar="" origPos="-1" pos="7" />
+            <item name="dciTaskPaneProjectProperties" origBar="" origPos="-1" pos="8" />
+            <item name="dciTaskPaneDocumentProperties" origBar="" origPos="-1" pos="9" />
+          </items>
+        </bar>
+      </barcontainer>
+    </dockcontainer>
+  </docksite>
+  <documents>
+    <dockcontainer orientation="0" w="0" h="0">
+      <barcontainer w="363" h="560">
+        <bar name="barFileViewer" dockline="0" layout="2" dockoffset="0" state="2" dockside="5" visible="true" seldocktab="0">
+          <items>
+            <item name="dciStartTab" origBar="" origPos="-1" pos="0" />
+          </items>
+        </bar>
+      </barcontainer>
+    </dockcontainer>
+  </documents>
+  <bars />
+</dotnetbarlayout>

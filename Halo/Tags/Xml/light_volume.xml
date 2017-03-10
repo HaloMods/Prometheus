@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="mgs2" parenttype="????">LightVolume</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="LightVolume">
+      <value type="FixedLengthString" name="attachment marker">
+        <tooltip>The marker name that the light volume should be attached to.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Flags" name="flags" length="2">
+        <bit index="0" name="interpolate color in hsv" />
+        <bit index="1" name="...more colors" />
+      </value>
+      <value type="Pad" name="_unnamed2" length="16" />
+      <value type="Real" name="near fade distance">
+        <tooltip>Distance at which light volume is full brightness.</tooltip>
+      </value>
+      <value type="Real" name="far fade distance">
+        <tooltip>Distance at which light volume is zero brightness.</tooltip>
+      </value>
+      <value type="RealFraction" name="perpendicular brightness scale">
+        <tooltip>Brightness scale when viewed at a 90-degree angle.</tooltip>
+      </value>
+      <value type="RealFraction" name="parallel brightness scale">
+        <tooltip>Brightness scale when viewed directly.</tooltip>
+      </value>
+      <value type="Enum" name="brightness scale source">
+        <tooltip>Scales brightness based on external value.</tooltip>
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Pad" name="_unnamed3" length="2" />
+      <value type="Pad" name="_unnamed4" length="20" />
+      <value type="TagReference" name="map" extensions="bitm">
+        <tooltip>NOT A SPRITE PLATE.</tooltip>
+      </value>
+      <value type="ShortInteger" name="sequence index" />
+      <value type="ShortInteger" name="count">
+        <tooltip>Number of bitmaps to draw (0 causes light volume not to render).</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed5" length="72" />
+      <value type="Enum" name="frame animation source">
+        <tooltip>Interpolates between frames based on external value.</tooltip>
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Pad" name="_unnamed6" length="2" />
+      <value type="Pad" name="_unnamed7" length="36" />
+      <value type="Pad" name="_unnamed8" length="64" />
+      <struct name="LightVolumeFrame">
+        <value type="Pad" name="_unnamed" length="16" />
+        <value type="Real" name="offset from marker" />
+        <value type="Real" name="offset exponent">
+          <tooltip>0 defaults to 1; &gt;1 compresses light near marker, &lt;1 compresses light near far end.</tooltip>
+        </value>
+        <value type="Real" name="length">
+          <tooltip>0 causes light volume not to render.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="32" />
+        <value type="Real" name="radius hither">
+          <tooltip>Radius near the marker.</tooltip>
+        </value>
+        <value type="Real" name="radius yon">
+          <tooltip>Radius at far end of light volume.</tooltip>
+        </value>
+        <value type="Real" name="radius exponent">
+          <tooltip>0 defaults to 1; &gt;1 values are more teardrop-shaped, &lt;1 values are more pill-shaped.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed3" length="32" />
+        <value type="RealARGBColor" name="tint color hither">
+          <tooltip>Tint color near the marker (alpha is brightness).</tooltip>
+        </value>
+        <value type="RealARGBColor" name="tint color yon">
+          <tooltip>Tint color at far end of light volume (alpha is brightness).</tooltip>
+        </value>
+        <value type="Real" name="tint color exponent">
+          <tooltip>0 defaults to 1; affects tint color only, not brightness.</tooltip>
+        </value>
+        <value type="Real" name="brightness exponent">
+          <tooltip>0 defaults to 1.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed4" length="32" />
+      </struct>
+      <value type="Block" name="frames" struct="LightVolumeFrame" maxelements="2" />
+      <value type="Pad" name="_unnamed9" length="32" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,9 @@
+<xml>
+  <name type="BooM" parenttype="????">StereoSystem</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="StereoSystemBlock">
+      <value type="LongInteger" name="unused" disabled="false" />
+    </struct>
+  </plugin>
+</xml>

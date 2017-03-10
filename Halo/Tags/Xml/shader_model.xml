@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="soso" parenttype="shdr">ShaderModel</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="ShaderModel">
+      <value type="Flags" name="flags" length="2">
+        <bit index="0" name="detail after reflection" />
+        <bit index="1" name="tw" />
+        <bit index="2" name="not alph" />
+        <bit index="3" name="alph" />
+        <bit index="4" name="true atmospheric fog" />
+        <bit index="5" name="disable tw" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Pad" name="_unnamed2" length="12" />
+      <value type="RealFraction" name="translucency">
+        <tooltip>Amount of light that can illuminate the shader from behind.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed3" length="16" />
+      <value type="Enum" name="change color source">
+        <item value="0" name="none" />
+        <item value="1" name="A" />
+        <item value="2" name="B" />
+        <item value="3" name="C" />
+        <item value="4" name="D" />
+      </value>
+      <value type="Pad" name="_unnamed4" length="2" />
+      <value type="Pad" name="_unnamed5" length="28" />
+      <value type="Flags" name="flags2" length="2">
+        <bit index="0" name="no random phase" />
+      </value>
+      <value type="Pad" name="_unnamed6" length="2" />
+      <value type="Enum" name="color source">
+        <item value="0" name="none" />
+        <item value="1" name="A" />
+        <item value="2" name="B" />
+        <item value="3" name="C" />
+        <item value="4" name="D" />
+      </value>
+      <value type="Enum" name="animation function">
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Real" name="animation period" />
+      <value type="RealRGBColor" name="animation color lower bound" />
+      <value type="RealRGBColor" name="animation color upper bound" />
+      <value type="Pad" name="_unnamed7" length="12" />
+      <value type="Real" name="map">
+        <tooltip>0 defaults to 1; scales all 2D maps simultaneously.</tooltip>
+      </value>
+      <value type="Real" name="map2">
+        <tooltip>0 defaults to 1; scales all 2D maps simultaneously.</tooltip>
+      </value>
+      <value type="TagReference" name="base map" extensions="bitm" />
+      <value type="Pad" name="_unnamed8" length="8" />
+      <value type="TagReference" name="multipurpose map" extensions="bitm" />
+      <value type="Pad" name="_unnamed9" length="8" />
+      <value type="Enum" name="detail function">
+        <tooltip>Controls how detail map is applied to diffuse map.</tooltip>
+        <item value="0" name="doublebiased multiply" />
+        <item value="1" name="multiply" />
+        <item value="2" name="doublebiased add" />
+      </value>
+      <value type="Enum" name="detail mask">
+        <tooltip>Controls how detail map is masked.</tooltip>
+        <item value="0" name="none" />
+        <item value="1" name="reflection mask inverse" />
+        <item value="2" name="reflection mask" />
+        <item value="3" name="sel" />
+        <item value="4" name="sel" />
+        <item value="5" name="chang" />
+        <item value="6" name="chang" />
+        <item value="7" name="multipurpose map alpha inverse" />
+        <item value="8" name="multipurpose map alpha" />
+      </value>
+      <value type="Real" name="detail map scale">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="TagReference" name="detail map" extensions="bitm" />
+      <value type="Real" name="detail map2">
+        <tooltip>0 defaults to 1 (applied on top of detail map scale above).</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed10" length="12" />
+      <value type="Enum" name="_unnamed11">
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="_unnamed12">
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Real" name="_unnamed13">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Real" name="_unnamed14" />
+      <value type="Real" name="_unnamed15">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Enum" name="_unnamed16">
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="_unnamed17">
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Real" name="_unnamed18">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Real" name="_unnamed19" />
+      <value type="Real" name="_unnamed20">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Enum" name="rotatio">
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="rotatio2">
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Real" name="rotatio3">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Real" name="rotatio4" />
+      <value type="Real" name="rotatio5">
+        <tooltip>0 defaults to 360.</tooltip>
+      </value>
+      <value type="RealPoint2D" name="rotatio6" />
+      <value type="Pad" name="_unnamed21" length="8" />
+      <value type="Real" name="reflection falloff distance">
+        <tooltip>Distance at which the reflection begins to fade out.</tooltip>
+      </value>
+      <value type="Real" name="reflection cutoff distance">
+        <tooltip>Distance at which the reflection fades out entirely (0 means no cutoff).</tooltip>
+      </value>
+      <value type="RealFraction" name="perpendicular brightness">
+        <tooltip>Reflection brightness when viewed perpendicularly.</tooltip>
+      </value>
+      <value type="RealRGBColor" name="perpendicular tint color">
+        <tooltip>Reflection tint color when viewed perpendicularly.</tooltip>
+      </value>
+      <value type="RealFraction" name="parallel brightness">
+        <tooltip>Reflection brightness when viewed at a glancing angle.</tooltip>
+      </value>
+      <value type="RealRGBColor" name="parallel tint color">
+        <tooltip>Reflection tint color when viewed at a glancing angle.</tooltip>
+      </value>
+      <value type="TagReference" name="reflection cube map" extensions="bitm" />
+      <value type="Pad" name="_unnamed22" length="16" />
+      <value type="Pad" name="_unnamed23" length="4" />
+      <value type="Pad" name="_unnamed24" length="16" />
+      <value type="Pad" name="_unnamed25" length="32" />
+    </struct>
+  </plugin>
+</xml>

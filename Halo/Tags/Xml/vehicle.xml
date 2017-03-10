@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="vehi" parenttype="unit">Vehicle</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Vehicle">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="speed wakes physics" />
+        <bit index="1" name="turn wakes physics" />
+        <bit index="2" name="driver power wakes physics" />
+        <bit index="3" name="gunner power wakes physics" />
+        <bit index="4" name="control opposite speed sets brake" />
+        <bit index="5" name="slide wakes physics" />
+        <bit index="6" name="kills riders at terminal velocity" />
+        <bit index="7" name="causes collision damage" />
+        <bit index="8" name="ai weapon cannot rotate" />
+        <bit index="9" name="ai does not require driver" />
+        <bit index="10" name="ai unused" />
+        <bit index="11" name="ai driver enable" />
+        <bit index="12" name="ai driver flying" />
+        <bit index="13" name="ai driver ca" />
+        <bit index="14" name="ai driver hovering" />
+      </value>
+      <value type="Enum" name="type">
+        <item value="0" name="human tank" />
+        <item value="1" name="human jeep" />
+        <item value="2" name="human boat" />
+        <item value="3" name="human plane" />
+        <item value="4" name="alien scout" />
+        <item value="5" name="alien fighter" />
+        <item value="6" name="turret" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Real" name="maximum forward speed" />
+      <value type="Real" name="maximum reverse speed" />
+      <value type="Real" name="speed acceleration" />
+      <value type="Real" name="speed deceleration" />
+      <value type="Real" name="maximum left turn" />
+      <value type="Real" name="maximum right turn negative" />
+      <value type="Real" name="wheel circumference" />
+      <value type="Real" name="turn rate" />
+      <value type="Real" name="blur speed" />
+      <value type="Enum" name="A in">
+        <item value="0" name="none" />
+        <item value="1" name="speed absolute" />
+        <item value="2" name="speed forward" />
+        <item value="3" name="speed backward" />
+        <item value="4" name="slide absolute" />
+        <item value="5" name="slide left" />
+        <item value="6" name="slide right" />
+        <item value="7" name="speed slide maximum" />
+        <item value="8" name="turn absolute" />
+        <item value="9" name="turn left" />
+        <item value="10" name="turn right" />
+        <item value="11" name="crouch" />
+        <item value="12" name="jump" />
+        <item value="13" name="walk" />
+        <item value="14" name="velocity air" />
+        <item value="15" name="velocity water" />
+        <item value="16" name="velocity ground" />
+        <item value="17" name="velocity forward" />
+        <item value="18" name="velocity left" />
+        <item value="19" name="velocity up" />
+        <item value="20" name="left tread position" />
+        <item value="21" name="right tread position" />
+        <item value="22" name="left tread velocity" />
+        <item value="23" name="right tread velocity" />
+        <item value="24" name="front left tire position" />
+        <item value="25" name="front right tire position" />
+        <item value="26" name="back left tire position" />
+        <item value="27" name="back right tire position" />
+        <item value="28" name="front left tire velocity" />
+        <item value="29" name="front right tire velocity" />
+        <item value="30" name="back left tire velocity" />
+        <item value="31" name="back right tire velocity" />
+        <item value="32" name="wingtip contrail" />
+        <item value="33" name="hover" />
+        <item value="34" name="thrust" />
+        <item value="35" name="engine hack" />
+        <item value="36" name="wingtip contrail new" />
+      </value>
+      <value type="Enum" name="B in">
+        <item value="0" name="none" />
+        <item value="1" name="speed absolute" />
+        <item value="2" name="speed forward" />
+        <item value="3" name="speed backward" />
+        <item value="4" name="slide absolute" />
+        <item value="5" name="slide left" />
+        <item value="6" name="slide right" />
+        <item value="7" name="speed slide maximum" />
+        <item value="8" name="turn absolute" />
+        <item value="9" name="turn left" />
+        <item value="10" name="turn right" />
+        <item value="11" name="crouch" />
+        <item value="12" name="jump" />
+        <item value="13" name="walk" />
+        <item value="14" name="velocity air" />
+        <item value="15" name="velocity water" />
+        <item value="16" name="velocity ground" />
+        <item value="17" name="velocity forward" />
+        <item value="18" name="velocity left" />
+        <item value="19" name="velocity up" />
+        <item value="20" name="left tread position" />
+        <item value="21" name="right tread position" />
+        <item value="22" name="left tread velocity" />
+        <item value="23" name="right tread velocity" />
+        <item value="24" name="front left tire position" />
+        <item value="25" name="front right tire position" />
+        <item value="26" name="back left tire position" />
+        <item value="27" name="back right tire position" />
+        <item value="28" name="front left tire velocity" />
+        <item value="29" name="front right tire velocity" />
+        <item value="30" name="back left tire velocity" />
+        <item value="31" name="back right tire velocity" />
+        <item value="32" name="wingtip contrail" />
+        <item value="33" name="hover" />
+        <item value="34" name="thrust" />
+        <item value="35" name="engine hack" />
+        <item value="36" name="wingtip contrail new" />
+      </value>
+      <value type="Enum" name="C in">
+        <item value="0" name="none" />
+        <item value="1" name="speed absolute" />
+        <item value="2" name="speed forward" />
+        <item value="3" name="speed backward" />
+        <item value="4" name="slide absolute" />
+        <item value="5" name="slide left" />
+        <item value="6" name="slide right" />
+        <item value="7" name="speed slide maximum" />
+        <item value="8" name="turn absolute" />
+        <item value="9" name="turn left" />
+        <item value="10" name="turn right" />
+        <item value="11" name="crouch" />
+        <item value="12" name="jump" />
+        <item value="13" name="walk" />
+        <item value="14" name="velocity air" />
+        <item value="15" name="velocity water" />
+        <item value="16" name="velocity ground" />
+        <item value="17" name="velocity forward" />
+        <item value="18" name="velocity left" />
+        <item value="19" name="velocity up" />
+        <item value="20" name="left tread position" />
+        <item value="21" name="right tread position" />
+        <item value="22" name="left tread velocity" />
+        <item value="23" name="right tread velocity" />
+        <item value="24" name="front left tire position" />
+        <item value="25" name="front right tire position" />
+        <item value="26" name="back left tire position" />
+        <item value="27" name="back right tire position" />
+        <item value="28" name="front left tire velocity" />
+        <item value="29" name="front right tire velocity" />
+        <item value="30" name="back left tire velocity" />
+        <item value="31" name="back right tire velocity" />
+        <item value="32" name="wingtip contrail" />
+        <item value="33" name="hover" />
+        <item value="34" name="thrust" />
+        <item value="35" name="engine hack" />
+        <item value="36" name="wingtip contrail new" />
+      </value>
+      <value type="Enum" name="D in">
+        <item value="0" name="none" />
+        <item value="1" name="speed absolute" />
+        <item value="2" name="speed forward" />
+        <item value="3" name="speed backward" />
+        <item value="4" name="slide absolute" />
+        <item value="5" name="slide left" />
+        <item value="6" name="slide right" />
+        <item value="7" name="speed slide maximum" />
+        <item value="8" name="turn absolute" />
+        <item value="9" name="turn left" />
+        <item value="10" name="turn right" />
+        <item value="11" name="crouch" />
+        <item value="12" name="jump" />
+        <item value="13" name="walk" />
+        <item value="14" name="velocity air" />
+        <item value="15" name="velocity water" />
+        <item value="16" name="velocity ground" />
+        <item value="17" name="velocity forward" />
+        <item value="18" name="velocity left" />
+        <item value="19" name="velocity up" />
+        <item value="20" name="left tread position" />
+        <item value="21" name="right tread position" />
+        <item value="22" name="left tread velocity" />
+        <item value="23" name="right tread velocity" />
+        <item value="24" name="front left tire position" />
+        <item value="25" name="front right tire position" />
+        <item value="26" name="back left tire position" />
+        <item value="27" name="back right tire position" />
+        <item value="28" name="front left tire velocity" />
+        <item value="29" name="front right tire velocity" />
+        <item value="30" name="back left tire velocity" />
+        <item value="31" name="back right tire velocity" />
+        <item value="32" name="wingtip contrail" />
+        <item value="33" name="hover" />
+        <item value="34" name="thrust" />
+        <item value="35" name="engine hack" />
+        <item value="36" name="wingtip contrail new" />
+      </value>
+      <value type="Pad" name="_unnamed2" length="12" />
+      <value type="Real" name="maximum left slide" />
+      <value type="Real" name="maximum right slide" />
+      <value type="Real" name="slide acceleration" />
+      <value type="Real" name="slide deceleration" />
+      <value type="Real" name="minimum flipping angular velocity" />
+      <value type="Real" name="maximum flipping angular velocity" />
+      <value type="Pad" name="_unnamed3" length="24" />
+      <value type="Real" name="fixed gun yaw" />
+      <value type="Real" name="fixed gun pitch" />
+      <value type="Pad" name="_unnamed4" length="24" />
+      <value type="Real" name="ai sideslip distance" />
+      <value type="Real" name="ai destination radius" />
+      <value type="Real" name="ai avoidance distance" />
+      <value type="Real" name="ai pathfinding radius" />
+      <value type="Real" name="ai charge repeat timeout" />
+      <value type="Real" name="ai strafing abort range" />
+      <value type="AngleBounds" name="ai oversteering bounds" />
+      <value type="Angle" name="ai steering maximum" />
+      <value type="Real" name="ai throttle maximum" />
+      <value type="Real" name="ai mov" />
+      <value type="Pad" name="_unnamed5" length="4" />
+      <value type="TagReference" name="suspension sound" extensions="snd!" />
+      <value type="TagReference" name="crash sound" extensions="snd!" />
+      <value type="TagReference" name="material effects" extensions="foot" />
+      <value type="TagReference" name="effect" extensions="effe" />
+    </struct>
+  </plugin>
+</xml>

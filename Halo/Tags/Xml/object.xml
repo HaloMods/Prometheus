@@ -1,0 +1,451 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="obje" parenttype="????">Object</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Object">
+      <value type="Pad" name="_unnamed" length="2" />
+      <region name="Fields">
+        <value type="Flags" name="flags" length="2">
+        <bit index="0" name="does not cast shadow" />
+        <bit index="1" name="transparent sel" />
+        <bit index="2" name="brighter than it should be" />
+        <bit index="3" name="not a pathfinding obstacle" />
+      </value>
+        <value type="Real" name="bounding radius" />
+        <value type="RealPoint3D" name="bounding offset" />
+        <value type="RealPoint3D" name="origin offset" />
+        <value type="Real" name="acceleration scale">
+        <tooltip>Marine 1.0, grunt 1.4, elite 0.9, hunter 0.5, etc..</tooltip>
+      </value>
+        <value type="Pad" name="_unnamed2" length="4" />
+      </region>
+      <group name="References">
+        <value type="TagReference" name="model" extensions="mod2" />
+        <value type="TagReference" name="animation graph" extensions="antr" />
+        <value type="Pad" name="_unnamed3" length="40" />
+        <value type="TagReference" name="collision model" extensions="coll" />
+        <value type="TagReference" name="physics" extensions="phys" />
+        <value type="TagReference" name="modifier shader" extensions="shdr" />
+        <value type="TagReference" name="creation effect" extensions="effe" />
+      </group>
+      <value type="Pad" name="_unnamed4" length="84" />
+      <value type="Real" name="render bounding radius">
+        <tooltip>If set, this radius is used to determine if the object is visible. set it for the pelican..</tooltip>
+      </value>
+      <value type="Enum" name="A in">
+        <item value="0" name="none" />
+        <item value="1" name="body vitality" />
+        <item value="2" name="shield vitality" />
+        <item value="3" name="recent body damage" />
+        <item value="4" name="recent shield damage" />
+        <item value="5" name="random constant" />
+        <item value="6" name="umbrella shield vitality" />
+        <item value="7" name="shield stun" />
+        <item value="8" name="recent umbrella shield vitality" />
+        <item value="9" name="umbrella shield stun" />
+        <item value="10" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="11" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="12" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="13" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="14" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="15" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="16" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="17" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="18" name="alive" />
+        <item value="19" name="compass" />
+      </value>
+      <value type="Enum" name="B in">
+        <item value="0" name="none" />
+        <item value="1" name="body vitality" />
+        <item value="2" name="shield vitality" />
+        <item value="3" name="recent body damage" />
+        <item value="4" name="recent shield damage" />
+        <item value="5" name="random constant" />
+        <item value="6" name="umbrella shield vitality" />
+        <item value="7" name="shield stun" />
+        <item value="8" name="recent umbrella shield vitality" />
+        <item value="9" name="umbrella shield stun" />
+        <item value="10" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="11" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="12" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="13" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="14" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="15" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="16" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="17" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="18" name="alive" />
+        <item value="19" name="compass" />
+      </value>
+      <value type="Enum" name="C in">
+        <item value="0" name="none" />
+        <item value="1" name="body vitality" />
+        <item value="2" name="shield vitality" />
+        <item value="3" name="recent body damage" />
+        <item value="4" name="recent shield damage" />
+        <item value="5" name="random constant" />
+        <item value="6" name="umbrella shield vitality" />
+        <item value="7" name="shield stun" />
+        <item value="8" name="recent umbrella shield vitality" />
+        <item value="9" name="umbrella shield stun" />
+        <item value="10" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="11" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="12" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="13" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="14" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="15" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="16" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="17" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="18" name="alive" />
+        <item value="19" name="compass" />
+      </value>
+      <value type="Enum" name="D in">
+        <item value="0" name="none" />
+        <item value="1" name="body vitality" />
+        <item value="2" name="shield vitality" />
+        <item value="3" name="recent body damage" />
+        <item value="4" name="recent shield damage" />
+        <item value="5" name="random constant" />
+        <item value="6" name="umbrella shield vitality" />
+        <item value="7" name="shield stun" />
+        <item value="8" name="recent umbrella shield vitality" />
+        <item value="9" name="umbrella shield stun" />
+        <item value="10" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="11" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="12" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="13" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="14" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="15" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="16" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="17" name="region">
+          <tooltip>
+          </tooltip>
+        </item>
+        <item value="18" name="alive" />
+        <item value="19" name="compass" />
+      </value>
+      <value type="Pad" name="_unnamed5" length="44" />
+      <value type="ShortInteger" name="hud text message index" />
+      <value type="ShortInteger" name="forced shader permuation index" />
+      <struct name="ObjectAttachment">
+        <shortdesc>This is a short description of the block.</shortdesc>
+        <longdesc>This an unnecessarily long and bloated description of the block, giving no useful information or even a laugh.</longdesc>
+        <warning>This is a warning telling you that if you touch anything in this block it is very likely your computer will crash.</warning>
+        <value type="TagReference" name="type" blockname="true" extensions="ligh|mgs2|cont|pctl|effe" />
+        <value type="FixedLengthString" name="marker" />
+        <value type="Enum" name="primary scale">
+          <item value="0" name="none" />
+          <item value="1" name="A out" />
+          <item value="2" name="B out" />
+          <item value="3" name="C out" />
+          <item value="4" name="D out" />
+        </value>
+        <value type="Enum" name="secondary scale">
+          <item value="0" name="none" />
+          <item value="1" name="A out" />
+          <item value="2" name="B out" />
+          <item value="3" name="C out" />
+          <item value="4" name="D out" />
+        </value>
+        <value type="Enum" name="change color">
+          <item value="0" name="none" />
+          <item value="1" name="A" />
+          <item value="2" name="B" />
+          <item value="3" name="C" />
+          <item value="4" name="D" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Pad" name="_unnamed2" length="16" />
+      </struct>
+      <struct name="ObjectWidget">
+        <warning>WARNING: There is only a warning for this block.</warning>
+        <value type="TagReference" name="reference" blockname="true" extensions="flag|ant!|glw!|mgs2" />
+        <value type="Pad" name="_unnamed" length="16" />
+      </struct>
+      <struct name="ObjectFunction">
+        <longdesc>This block contains only a long description.</longdesc>
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="invert">
+            <tooltip>Result of function is one minus actual result.</tooltip>
+          </bit>
+          <bit index="1" name="additive" />
+          <bit index="2" name="always active">
+            <tooltip>Function does not deactivate when at or below lower bound.</tooltip>
+          </bit>
+        </value>
+        <value type="Real" name="period">
+          <tooltip>This is the period for the above function (lower values make the function oscillate quickly, higher values make it oscillate slowly).</tooltip>
+        </value>
+        <value type="Enum" name="scale period by">
+          <tooltip>Multiply this function by the above period.</tooltip>
+          <item value="0" name="none" />
+          <item value="1" name="A in" />
+          <item value="2" name="B in" />
+          <item value="3" name="C in" />
+          <item value="4" name="D in" />
+          <item value="5" name="A out" />
+          <item value="6" name="B out" />
+          <item value="7" name="C out" />
+          <item value="8" name="D out" />
+        </value>
+        <value type="Enum" name="function">
+          <item value="0" name="one" />
+          <item value="1" name="zero" />
+          <item value="2" name="cosine" />
+          <item value="3" name="cosine variable period" />
+          <item value="4" name="diagonal wave" />
+          <item value="5" name="diagonal wave variable period" />
+          <item value="6" name="slide" />
+          <item value="7" name="slide variable period" />
+          <item value="8" name="noise" />
+          <item value="9" name="jitter" />
+          <item value="10" name="wander" />
+          <item value="11" name="spark" />
+        </value>
+        <value type="Enum" name="scale function by">
+          <tooltip>Multiply this function by the result of the above function.</tooltip>
+          <item value="0" name="none" />
+          <item value="1" name="A in" />
+          <item value="2" name="B in" />
+          <item value="3" name="C in" />
+          <item value="4" name="D in" />
+          <item value="5" name="A out" />
+          <item value="6" name="B out" />
+          <item value="7" name="C out" />
+          <item value="8" name="D out" />
+        </value>
+        <value type="Enum" name="wobble function">
+          <tooltip>The curve used for the wobble.</tooltip>
+          <item value="0" name="one" />
+          <item value="1" name="zero" />
+          <item value="2" name="cosine" />
+          <item value="3" name="cosine variable period" />
+          <item value="4" name="diagonal wave" />
+          <item value="5" name="diagonal wave variable period" />
+          <item value="6" name="slide" />
+          <item value="7" name="slide variable period" />
+          <item value="8" name="noise" />
+          <item value="9" name="jitter" />
+          <item value="10" name="wander" />
+          <item value="11" name="spark" />
+        </value>
+        <value type="Real" name="wobble period">
+          <tooltip>The length of time it takes for the magnitude of this function to complete a wobble.</tooltip>
+        </value>
+        <value type="Real" name="wobble magnitude">
+          <tooltip>The amount of random wobble in the magnitude.</tooltip>
+        </value>
+        <value type="RealFraction" name="square wave threshold">
+          <tooltip>If non-zero, all values above the square wave threshold are snapped to 1.0, and all values below it are snapped to 0.0 to create a square wave..</tooltip>
+        </value>
+        <value type="ShortInteger" name="step count">
+          <tooltip>The number of discrete values to snap to (e.g., a step count of 5 would snap the function to 0.00,0.25,0.50,0.75 or 1.00).</tooltip>
+        </value>
+        <value type="Enum" name="map to">
+          <item value="0" name="linear" />
+          <item value="1" name="early" />
+          <item value="2" name="very early" />
+          <item value="3" name="late" />
+          <item value="4" name="very late" />
+          <item value="5" name="cosine" />
+        </value>
+        <value type="ShortInteger" name="sawtooth count">
+          <tooltip>The number of times this function should repeat (e.g., a sawtooth count of 5 would give the function a value of 1.0 at each of 0.25,0.50,0.75 as well as at 1.0.</tooltip>
+        </value>
+        <value type="Enum" name="add">
+          <tooltip>Add this function to the final result of all of the above math.</tooltip>
+          <item value="0" name="none" />
+          <item value="1" name="A in" />
+          <item value="2" name="B in" />
+          <item value="3" name="C in" />
+          <item value="4" name="D in" />
+          <item value="5" name="A out" />
+          <item value="6" name="B out" />
+          <item value="7" name="C out" />
+          <item value="8" name="D out" />
+        </value>
+        <value type="Enum" name="scale result by">
+          <tooltip>Multiply this function (from a weapon, vehicle, etc.) final result of all of the above math.</tooltip>
+          <item value="0" name="none" />
+          <item value="1" name="A in" />
+          <item value="2" name="B in" />
+          <item value="3" name="C in" />
+          <item value="4" name="D in" />
+          <item value="5" name="A out" />
+          <item value="6" name="B out" />
+          <item value="7" name="C out" />
+          <item value="8" name="D out" />
+        </value>
+        <value type="Enum" name="bounds mode">
+          <tooltip>Controls how the bounds, below, are used.</tooltip>
+          <item value="0" name="clip" />
+          <item value="1" name="clip and normalize" />
+          <item value="2" name="scale to fit" />
+        </value>
+        <value type="RealFractionBounds" name="bounds" />
+        <value type="Pad" name="_unnamed" length="4" />
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="ShortBlockIndex" name="turn off with" block="ObjectFunction">
+          <tooltip>If the specified function is off, so is this function.</tooltip>
+        </value>
+        <value type="Real" name="scale by">
+          <tooltip>Applied before clip, ignored if zero.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed3" length="252" />
+        <value type="Pad" name="_unnamed4" length="16" />
+        <value type="FixedLengthString" name="usage" />
+      </struct>
+      <struct name="ObjectChangeColors">
+        <shortdesc>This block has only a short description.</shortdesc>
+        <value type="Enum" name="darken by">
+          <item value="0" name="none" />
+          <item value="1" name="A in" />
+          <item value="2" name="B in" />
+          <item value="3" name="C in" />
+          <item value="4" name="D in" />
+          <item value="5" name="A out" />
+          <item value="6" name="B out" />
+          <item value="7" name="C out" />
+          <item value="8" name="D out" />
+        </value>
+        <value type="Enum" name="scale by">
+          <item value="0" name="none" />
+          <item value="1" name="A in" />
+          <item value="2" name="B in" />
+          <item value="3" name="C in" />
+          <item value="4" name="D in" />
+          <item value="5" name="A out" />
+          <item value="6" name="B out" />
+          <item value="7" name="C out" />
+          <item value="8" name="D out" />
+        </value>
+        <value type="Flags" name="scale flags" length="4">
+          <bit index="0" name="blend in hsv">
+            <tooltip>Blends colors in hsv rather than rgb space.</tooltip>
+          </bit>
+          <bit index="1" name="...more colors">
+            <tooltip>Blends colors through more hues (goes the long way around the color wheel).</tooltip>
+          </bit>
+        </value>
+        <value type="RealRGBColor" name="color lower bound" />
+        <value type="RealRGBColor" name="color upper bound" />
+        <struct name="ObjectChangeColorPermutations">
+          <value type="Real" name="weight" />
+          <value type="RealRGBColor" name="color lower bound" />
+          <value type="RealRGBColor" name="color upper bound" />
+        </struct>
+        <value type="Block" name="permutations" struct="ObjectChangeColorPermutations" maxelements="8" />
+      </struct>
+      <struct name="PredictedResource">
+        <shortdesc>This block contains a short description.</shortdesc>
+        <longdesc>... as well as a long, overly complicated and explicated description.</longdesc>
+        <value type="Enum" name="type">
+          <item value="0" name="bitmap" />
+          <item value="1" name="sound" />
+        </value>
+        <value type="ShortInteger" name="resource index" />
+        <value type="LongInteger" name="tag index" />
+      </struct>
+      <section caption="Blocks" name="Blocks">
+        <value type="Block" name="attachments" struct="ObjectAttachment" maxelements="8" />
+        <value type="Block" name="widgets" struct="ObjectWidget" maxelements="4" />
+        <value type="Block" name="functions" struct="ObjectFunction" maxelements="4" />
+        <value type="Block" name="change colors" struct="ObjectChangeColors" maxelements="4" />
+        <value type="Block" name="predicted resources" struct="PredictedResource" maxelements="1024" />
+      </section>
+    </struct>
+  </plugin>
+</xml>

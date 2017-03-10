@@ -1,0 +1,694 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20B6BABA-78BC-40E9-8AC5-8300A8FE44FE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Prometheus</RootNamespace>
+    <AssemblyName>Prometheus</AssemblyName>
+    <StartupObject>Prometheus.Program</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.101.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL" />
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.281.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL" />
+    <Reference Include="ActiproSoftware.WinUICore.Net20, Version=1.0.101.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=7.9.0.2, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XPTable, Version=1.0.2.0, Culture=neutral, PublicKeyToken=24950705800d2198">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\XPTable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\BetterTreeView\BetterTreeNode.cs">
+    </Compile>
+    <Compile Include="Controls\BetterTreeView\BetterTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BetterTreeView\DragHelper.cs" />
+    <Compile Include="Controls\BlockContainer.ChildControls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BlockContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BlockContainer.Designer.cs">
+      <DependentUpon>BlockContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BusyIndicator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BusyIndicator.Designer.cs">
+      <DependentUpon>BusyIndicator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CheckList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckList.Designer.cs">
+      <DependentUpon>CheckList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ListEditor.Designer.cs">
+      <DependentUpon>ListEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListOutputListener.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ListOutputListener.Designer.cs">
+      <DependentUpon>ListOutputListener.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MultiSourceTreeView\AlphabeticNodeSorter.cs" />
+    <Compile Include="Controls\MultiSourceTreeView\DefaultState.cs" />
+    <Compile Include="Controls\MultiSourceTreeView\MenuGroup.cs" />
+    <Compile Include="Controls\MultiSourceTreeView\NodeState.cs" />
+    <Compile Include="Controls\MultiSourceTreeView\NodeStateSubscriber.cs" />
+    <Compile Include="Controls\NicktureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PerformanceChart\PerfChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PerformanceChart\PerfChart.Designer.cs">
+      <DependentUpon>PerfChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PerformanceChart\PerfChartStyle.cs" />
+    <Compile Include="Controls\RecycleBinBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RecycleBinBrowser.Designer.cs">
+      <DependentUpon>RecycleBinBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ScriptEditor\PslDynamicSyntaxLanguage.cs" />
+    <Compile Include="Controls\ScriptEditor\ScriptEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ScriptEditor\ScriptEditorControl.Designer.cs">
+      <DependentUpon>ScriptEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagEditor\BlockContainerPanel.Designer.cs" />
+    <Compile Include="Controls\TagEditor\BlockContainerPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TagEditor\FieldContainerBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TagEditor\IDynamicContainer.cs" />
+    <Compile Include="Controls\TagEditor\UndoableFieldEditAction.cs" />
+    <Compile Include="Controls\TagEditor\UndoManager.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\Menus\AddTagToProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\Menus\AddFolderToProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\Menus\ReplaceInProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\Menus\ViewTagInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\Menus\DebugInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\Menus\ViewScript.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\Menus\ViewTag.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\Menus\PreviewTag.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\LibraryExplorer.Menus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\ExtractionProgressPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\ExtractionProgressPanel.Designer.cs">
+      <DependentUpon>ExtractionProgressPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\LibraryExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\LibraryExplorer.Designer.cs">
+      <DependentUpon>LibraryExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\LibraryExplorer.Extraction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeStates\DocumentOpenState.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\ObjectView\UnextractedHLTGroupNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\ObjectView\UnextractedHLTNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\ObjectView\UnextractedObjectViewRootNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\ObjectView\HLTNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\ObjectView\HLTGroupNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\ObjectView\ObjectViewRootNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\ObjectView\TagNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\TagView\AttachedScriptNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\TagView\FileNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\TagView\FolderNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\TagView\ModelFileNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\TagView\ObjectFileNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\TagView\RootNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\TagView\SbspFileNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\TagView\ScenarioFileNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\TagView\UnextractedFileNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\TagView\UnextractedFolderNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\NodeTypes\TagView\UnextractedRootNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\OpenTagEventHandler.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\TagArchiveNodeSource.cs" />
+    <Compile Include="Controls\TagExplorers\LibraryExplorer\TagArchiveObjectViewNodeSource.cs" />
+    <Compile Include="Controls\MultiSourceTreeView\MenuDefinition.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MultiSourceTreeView\MultiSourceTreeNode.cs" />
+    <Compile Include="Controls\MultiSourceTreeView\MultiSourceTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MultiSourceTreeView\NodeHierarchy.cs" />
+    <Compile Include="Controls\MultiSourceTreeView\NodeInfo.cs" />
+    <Compile Include="Controls\MultiSourceTreeView\NodeSource.cs" />
+    <Compile Include="Controls\MultiSourceTreeView\NodeType.cs" />
+    <Compile Include="Controls\ReferenceAnalyzer\ReferenceContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ReferenceAnalyzer\ReferenceContainer.Designer.cs">
+      <DependentUpon>ReferenceContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagEditor\FieldContainerLayout.cs" />
+    <Compile Include="Controls\TagEditor\FieldContainerPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TagEditor\RegionContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TagEditor\RegionContainer.Designer.cs">
+      <DependentUpon>RegionContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagEditor\SectionContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TagEditor\TagEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\DifferentialLibrary.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\Menus\BrowseRecycleBin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\Menus\EmptyRecyleBin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\Menus\RemoveFolder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\Menus\SelectProjectTag.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\Menus\Remove.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\Menus\Include.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\Menus\Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\Menus\CopyFromGameArchive.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\Menus\PreviewTag.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\Menus\RevertEssentalTag.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\Menus\EditGlobal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\Menus\DebugInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\MutuallyInclusiveLibrary.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\NodeStates\RecycleBinContainsFilesState.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\NodeStates\ValidReferencedState.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\NodeTypes\RecycleBinRootNode.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\NodeTypes\GlobalTemplateTag.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\NodeTypes\ProjectTemplateTag.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\NodeTypes\EssentialTagsRoot.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\NodeTypes\PropertiesRootNode.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\NodeTypes\ModelTag.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\NodeTypes\SbspTag.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\NodeTypes\ObjectTag.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\NodeTypes\ScenarioTag.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\NodeTypes\ValidReferencedTag.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\NodeTypes\FolderNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\NodeTypes\RootNodeType.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\ProjectExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\ProjectExplorer.Designer.cs">
+      <DependentUpon>ProjectExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\ProjectExplorer.Menus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\ProjectNodeSource.cs" />
+    <Compile Include="Controls\TagExplorers\ProjectExplorer\ProjectReferencesLibrary.cs" />
+    <Compile Include="Controls\TransparentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\UIHelpers.cs" />
+    <Compile Include="Dialogs\BugReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BugReport.Designer.cs">
+      <DependentUpon>BugReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FloatingPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FloatingPanel.Designer.cs">
+      <DependentUpon>FloatingPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\CrashDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CrashDialogForm.Designer.cs">
+      <DependentUpon>CrashDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\OpenProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\OpenProjectDialog.Designer.cs">
+      <DependentUpon>OpenProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PrefabPackagerReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PrefabPackagerReview.Designer.cs">
+      <DependentUpon>PrefabPackagerReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PrometheusGUI.Radiosity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TagBrowserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TagBrowserDialog.Designer.cs">
+      <DependentUpon>TagBrowserDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Testing\ConvertHalo2Xmls.cs" />
+    <Compile Include="Testing\GenerateHalo2TagClasses.cs" />
+    <Compile Include="Testing\DynamicMenuTest.cs" />
+    <Compile Include="Testing\ScriptingDefinitionTools\DefinitionReader.cs" />
+    <Compile Include="Testing\ScriptingDefinitionTools\GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing\ScriptingDefinitionTools\GUI.Designer.cs">
+      <DependentUpon>GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Testing\HPCCompilerTest.cs" />
+    <Compile Include="Testing\OpenTestTag.cs" />
+    <Compile Include="Testing\ProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing\ProgressDialog.Designer.cs">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Testing\ScratchPad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing\ScratchPad.Designer.cs">
+      <DependentUpon>ScratchPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\GuerillaImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\GuerillaImport.Designer.cs">
+      <DependentUpon>GuerillaImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewProjectDialog.Designer.cs">
+      <DependentUpon>NewProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NoteManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NoteManager.Designer.cs">
+      <DependentUpon>NoteManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RadiosityOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\RadiosityOptions.Designer.cs">
+      <DependentUpon>RadiosityOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ReferenceAnalyzer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ReferenceAnalyzer.Designer.cs">
+      <DependentUpon>ReferenceAnalyzer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PrefabExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PrefabExport.Designer.cs">
+      <DependentUpon>PrefabExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReferenceAnalyzer\ReferenceAnalyzerMode.cs" />
+    <Compile Include="Controls\ReferenceAnalyzer\ReferenceChild.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ReferenceAnalyzer\ReferenceChild.Designer.cs">
+      <DependentUpon>ReferenceChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReferenceAnalyzer\ReferenceItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ReferenceAnalyzer\ReferenceItem.Designer.cs">
+      <DependentUpon>ReferenceItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReferenceAnalyzer\ReferenceType.cs" />
+    <Compile Include="Dialogs\PrometheusGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PrometheusGUI.Designer.cs">
+      <DependentUpon>PrometheusGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PrometheusGUI.Testing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\RenderDebug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\RenderDebug.Designer.cs">
+      <DependentUpon>RenderDebug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\PrometheusGUI.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PrometheusGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="Resources\BugWritingTips.rtf" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SingleProcessInstance.cs" />
+    <Compile Include="Testing\ActivateDebugConsole.cs" />
+    <Compile Include="Testing\ClusterTest.cs" />
+    <Compile Include="Testing\CompilerTest.cs" />
+    <Compile Include="Testing\ExportSingleTagTest.cs" />
+    <Compile Include="Testing\CreatePTAFromOldTags.cs" />
+    <Compile Include="Testing\GenerateHaloTagClass.cs" />
+    <Compile Include="Testing\FileTableTest.cs" />
+    <Compile Include="Testing\GenerateTagClasses.cs" />
+    <Compile Include="Testing\GenerateTagList.cs" />
+    <Compile Include="Testing\LoadTagTest.cs" />
+    <Compile Include="Testing\MultiSourceTreeViewTest.cs" />
+    <Compile Include="Testing\OpenMapTest.cs" />
+    <Compile Include="Testing\DecompilerTest.cs">
+    </Compile>
+    <Compile Include="Testing\FakeTest.cs" />
+    <Compile Include="Testing\ITest.cs" />
+    <Compile Include="Testing\PTATest.cs" />
+    <Compile Include="Testing\ScriptEditorTest.cs" />
+    <Compile Include="Testing\AdpcmDecoderTest.cs" />
+    <Compile Include="Testing\TagEditorTest.cs" />
+    <Compile Include="Testing\TagLoadingTest.cs" />
+    <Compile Include="Testing\TestController.cs" />
+    <Compile Include="Testing\TestInfo.cs" />
+    <Compile Include="ThirdParty\CurtainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\CurtainForm.Designer.cs">
+      <DependentUpon>CurtainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThirdParty\ObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\StringHelper.cs" />
+    <Compile Include="ThirdParty\VistaStyledControls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserInterface\DocumentManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{52F190F6-BA19-42DE-8035-F1C4F5EEEA5E}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{ED1C3C5A-392F-4B0A-830F-F33B066440B4}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogs\ReferenceAnalyzer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReferenceAnalyzer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Options.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Options.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PrefabExport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PrefabExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReferenceAnalyzer\ReferenceChild.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReferenceChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReferenceAnalyzer\ReferenceItem.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReferenceItem.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\ReferenceAnalyzer\ReferenceContainer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReferenceContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NoteManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NoteManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RadiosityOptions.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RadiosityOptions.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\TagEditor\FieldContainerPanel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FieldContainerPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\GuerillaImport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GuerillaImport.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\ListOutputListener.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ListOutputListener.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ScriptEditor\ScriptEditorControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ScriptEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TagEditor\RegionContainer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RegionContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TagEditor\TagEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TagEditor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\BlockContainer.resx">
+      <DependentUpon>BlockContainer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Scripting\PSL.Lexer.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogs\BugReport.resx">
+      <DependentUpon>BugReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FloatingPanel.resx">
+      <DependentUpon>FloatingPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CrashDialogForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CrashDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testing\ScratchPad.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ScratchPad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewProjectDialog.resx">
+      <DependentUpon>NewProjectDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RenderDebug.resx">
+      <DependentUpon>RenderDebug.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\defaultlayout.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\CheckList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CheckList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ListEditor.resx">
+      <DependentUpon>ListEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PerformanceChart\PerfChart.resx">
+      <DependentUpon>PerfChart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RecycleBinBrowser.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RecycleBinBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TagEditor\BlockContainerPanel.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TagExplorers\LibraryExplorer\ExtractionProgressPanel.resx">
+      <DependentUpon>ExtractionProgressPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TagExplorers\LibraryExplorer\LibraryExplorer.resx">
+      <DependentUpon>LibraryExplorer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TagExplorers\ProjectExplorer\ProjectExplorer.resx">
+      <DependentUpon>ProjectExplorer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OpenProjectDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OpenProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PrefabPackagerReview.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PrefabPackagerReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TagBrowserDialog.resx">
+      <DependentUpon>TagBrowserDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\BugWritingTips.ico" />
+    <EmbeddedResource Include="Testing\ProgressDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testing\ScriptingDefinitionTools\GUI.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThirdParty\CurtainForm.resx">
+      <DependentUpon>CurtainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Wizards\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

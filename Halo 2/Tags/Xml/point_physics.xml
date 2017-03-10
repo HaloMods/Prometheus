@@ -1,0 +1,33 @@
+<xml>
+  <name type="pphy" parenttype="????">PointPhysics</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="PointPhysicsBlock">
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="UNUSED" />
+        <bit index="1" name="collides with structures" />
+        <bit index="2" name="collides with water surface" />
+        <bit index="3" name="uses simple wind">
+          <tooltip>the wind on this point won't have high-frequency variations</tooltip>
+        </bit>
+        <bit index="4" name="uses damped wind">
+          <tooltip>the wind on this point will be artificially slow</tooltip>
+        </bit>
+        <bit index="5" name="no gravity">
+          <tooltip>the point is not affected by gravity</tooltip>
+        </bit>
+      </value>
+      <value type="Pad" name="_unnamed0" length="28" />
+      <value type="Real" name="density" disabled="false" unit="g/mL" />
+      <value type="Real" name="air friction" disabled="false" />
+      <value type="Real" name="water friction" disabled="false" />
+      <value type="Real" name="surface friction" disabled="false">
+        <tooltip>when hitting the ground or interior, percentage of velocity lost in one collision</tooltip>
+      </value>
+      <value type="Real" name="elasticity" disabled="false">
+        <tooltip>0.0 is inelastic collisions (no bounce) 1.0 is perfectly elastic (reflected velocity equals incoming velocity)</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed1" length="12" />
+    </struct>
+  </plugin>
+</xml>

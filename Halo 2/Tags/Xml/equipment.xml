@@ -1,0 +1,23 @@
+<xml>
+  <name type="eqip" parenttype="item">Equipment</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="EquipmentBlock">
+      <value type="Enum" name="powerup type" length="2" disabled="false">
+        <item value="0" name="none" />
+        <item value="1" name="double speed" />
+        <item value="2" name="over shield" />
+        <item value="3" name="active camouflage" />
+        <item value="4" name="full-spectrum vision" />
+        <item value="5" name="health" />
+        <item value="6" name="grenade" />
+      </value>
+      <value type="Enum" name="grenade type" length="2" disabled="false">
+        <item value="0" name="human fragmentation" />
+        <item value="1" name="covenant plasma" />
+      </value>
+      <value type="Real" name="powerup time" disabled="false" unit="seconds" />
+      <value type="TagReference" name="pickup sound" disabled="false" extensions="snd!" />
+    </struct>
+  </plugin>
+</xml>

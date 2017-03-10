@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="hudg" parenttype="????">HudGlobals</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="HudGlobals">
+      <value type="Enum" name="anchor">
+        <item value="0" name="top left" />
+        <item value="1" name="top right" />
+        <item value="2" name="bottom left" />
+        <item value="3" name="bottom right" />
+        <item value="4" name="center" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Pad" name="_unnamed2" length="32" />
+      <value type="Point2D" name="anchor offset" />
+      <value type="Real" name="width scale" />
+      <value type="Real" name="height scale" />
+      <value type="Flags" name="scaling flags" length="2">
+        <bit index="0" name="dont scale offset" />
+        <bit index="1" name="dont scale size" />
+        <bit index="2" name="use high res scale" />
+      </value>
+      <value type="Pad" name="_unnamed3" length="2" />
+      <value type="Pad" name="_unnamed4" length="20" />
+      <value type="TagReference" name="single player font" extensions="font" />
+      <value type="TagReference" name="multi player font" extensions="font" />
+      <value type="Real" name="up time" />
+      <value type="Real" name="fade time" />
+      <value type="RealARGBColor" name="icon color" />
+      <value type="RealARGBColor" name="text color" />
+      <value type="Real" name="text spacing" />
+      <value type="TagReference" name="item message text" extensions="ustr" />
+      <value type="TagReference" name="icon bitmap" extensions="bitm" />
+      <value type="TagReference" name="alternate icon text" extensions="ustr" />
+      <struct name="HudButtonIcon">
+        <value type="ShortInteger" name="sequence index">
+          <tooltip>Sequence index into the global hud icon bitmap.</tooltip>
+        </value>
+        <value type="ShortInteger" name="width offset">
+          <tooltip>Extra spacing beyond bitmap width for text alignment.</tooltip>
+        </value>
+        <value type="Point2D" name="offset from reference corner" />
+        <value type="ARGBColor" name="override icon color" />
+        <value type="CharInteger" name="frame rate" />
+        <value type="Flags" name="flags" length="1">
+          <bit index="0" name="use text from string_list instead" />
+          <bit index="1" name="override default color" />
+          <bit index="2" name="width offset is absolute icon width" />
+        </value>
+        <value type="ShortInteger" name="text index" />
+      </struct>
+      <value type="Block" name="button icons" struct="HudButtonIcon" maxelements="18" />
+      <value type="ARGBColor" name="default color" />
+      <value type="ARGBColor" name="flashing color" />
+      <value type="Real" name="flash period" />
+      <value type="Real" name="flash delay" />
+      <value type="ShortInteger" name="number of flashes" />
+      <value type="Flags" name="flash flags" length="2">
+        <bit index="0" name="reverse defaultflashing colors" />
+      </value>
+      <value type="Real" name="flash length" />
+      <value type="ARGBColor" name="disabled color" />
+      <value type="Pad" name="_unnamed5" length="4" />
+      <value type="TagReference" name="hud messages" extensions="hmt " />
+      <value type="ARGBColor" name="default color2" />
+      <value type="ARGBColor" name="flashing color2" />
+      <value type="Real" name="flash period2" />
+      <value type="Real" name="flash delay2" />
+      <value type="ShortInteger" name="number of flashes2" />
+      <value type="Flags" name="flash flags2" length="2">
+        <bit index="0" name="reverse defaultflashing colors" />
+      </value>
+      <value type="Real" name="flash length2" />
+      <value type="ARGBColor" name="disabled color2" />
+      <value type="ShortInteger" name="uptime ticks" />
+      <value type="ShortInteger" name="fade ticks" />
+      <value type="Real" name="top offset" />
+      <value type="Real" name="bottom offset" />
+      <value type="Real" name="left offset" />
+      <value type="Real" name="right offset" />
+      <value type="Pad" name="_unnamed6" length="32" />
+      <value type="TagReference" name="arrow bitmap" extensions="bitm" />
+      <struct name="HudWaypointArrow">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="Pad" name="_unnamed" length="8" />
+        <value type="RGBColor" name="color" />
+        <value type="Real" name="opacity" />
+        <value type="Real" name="translucency" />
+        <value type="ShortInteger" name="on screen sequence index" />
+        <value type="ShortInteger" name="off screen sequence index" />
+        <value type="ShortInteger" name="occluded sequence index" />
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="16" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="dont rotate when pointing offscreen" />
+        </value>
+        <value type="Pad" name="_unnamed4" length="24" />
+      </struct>
+      <value type="Block" name="waypoint arrows" struct="HudWaypointArrow" maxelements="16" />
+      <value type="Pad" name="_unnamed7" length="80" />
+      <value type="Real" name="hud scale in multiplayer" />
+      <value type="Pad" name="_unnamed8" length="256" />
+      <value type="TagReference" name="default weapon hud" extensions="wphi" />
+      <value type="Real" name="motion sensor range" />
+      <value type="Real" name="motion sensor velocity sensitivity">
+        <tooltip>How fast something moves to show up on the motion sensor.</tooltip>
+      </value>
+      <value type="Real" name="motion sensor scale DONT TOUCH EVER" />
+      <value type="Rectangle2D" name="default chapter title bounds" />
+      <value type="Pad" name="_unnamed9" length="44" />
+      <value type="ShortInteger" name="top offset2" />
+      <value type="ShortInteger" name="bottom offset2" />
+      <value type="ShortInteger" name="left offset2" />
+      <value type="ShortInteger" name="right offset2" />
+      <value type="Pad" name="_unnamed10" length="32" />
+      <value type="TagReference" name="indicator bitmap" extensions="bitm" />
+      <value type="ShortInteger" name="sequence index" />
+      <value type="ShortInteger" name="multiplayer sequence index" />
+      <value type="ARGBColor" name="color" />
+      <value type="Pad" name="_unnamed11" length="16" />
+      <value type="ARGBColor" name="default color3" />
+      <value type="ARGBColor" name="flashing color3" />
+      <value type="Real" name="flash period3" />
+      <value type="Real" name="flash delay3" />
+      <value type="ShortInteger" name="number of flashes3" />
+      <value type="Flags" name="flash flags3" length="2">
+        <bit index="0" name="reverse defaultflashing colors" />
+      </value>
+      <value type="Real" name="flash length3" />
+      <value type="ARGBColor" name="disabled color3" />
+      <value type="Pad" name="_unnamed12" length="4" />
+      <value type="ARGBColor" name="default color4" />
+      <value type="ARGBColor" name="flashing color4" />
+      <value type="Real" name="flash period4" />
+      <value type="Real" name="flash delay4" />
+      <value type="ShortInteger" name="number of flashes4" />
+      <value type="Flags" name="flash flags4" length="2">
+        <bit index="0" name="reverse defaultflashing colors" />
+      </value>
+      <value type="Real" name="flash length4" />
+      <value type="ARGBColor" name="disabled color4" />
+      <value type="Pad" name="_unnamed13" length="4" />
+      <value type="Pad" name="_unnamed14" length="40" />
+      <value type="TagReference" name="carnage report bitmap" extensions="bitm" />
+      <value type="ShortInteger" name="loading begin text" />
+      <value type="ShortInteger" name="loading end text" />
+      <value type="ShortInteger" name="checkpoint begin text" />
+      <value type="ShortInteger" name="checkpoint end text" />
+      <value type="TagReference" name="checkpoint sound" extensions="snd!" />
+      <value type="Pad" name="_unnamed15" length="96" />
+    </struct>
+  </plugin>
+</xml>

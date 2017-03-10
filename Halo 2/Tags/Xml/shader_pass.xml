@@ -1,0 +1,763 @@
+<xml>
+  <name type="spas" parenttype="????">ShaderPass</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ShaderPassBlock">
+      <value type="Data" name="Documentation" disabled="false" />
+      <struct name="ShaderPassParameterBlock">
+        <value type="StringId" name="Name" disabled="false" blockname="true" />
+        <value type="Data" name="Explanation" disabled="false" />
+        <value type="Enum" name="Type" length="2" disabled="false">
+          <item value="0" name="Bitmap" />
+          <item value="1" name="Value" />
+          <item value="2" name="Color" />
+          <item value="3" name="Switch" />
+        </value>
+        <value type="Flags" name="Flags" length="2" disabled="false">
+          <bit index="0" name="No Bitmap LOD" />
+          <bit index="1" name="Required Parameter" />
+        </value>
+        <value type="TagReference" name="Default Bitmap" disabled="false" extensions="bitm" />
+        <value type="Real" name="Default Const Value" disabled="false" />
+        <value type="RealRgbColor" name="Default Const Color" disabled="false" />
+        <value type="Enum" name="Source Extern" length="2" disabled="false">
+          <item value="0" name="None" />
+          <item value="1" name="GLOBAL: Eye Forward Vector (z)" />
+          <item value="2" name="GLOBAL: Eye Right Vector (x)" />
+          <item value="3" name="GLOBAL: Eye Up Vector (y)" />
+          <item value="4" name="OBJECT: Primary Color" />
+          <item value="5" name="OBJECT: Secondary Color" />
+          <item value="6" name="OBJECT: Function Value" />
+          <item value="7" name="LIGHT: Diffuse Color" />
+          <item value="8" name="LIGHT: Specular Color" />
+          <item value="9" name="LIGHT: Forward Vector (z)" />
+          <item value="10" name="LIGHT: Right Vector (x)" />
+          <item value="11" name="LIGHT: Up Vector (y)" />
+          <item value="12" name="LIGHT: Object-Relative Forward Vector (z)" />
+          <item value="13" name="LIGHT: Object-Relative Right Vector (x)" />
+          <item value="14" name="LIGHT: Object-Relative Up Vector (y)" />
+          <item value="15" name="LIGHT: Object Falloff Value" />
+          <item value="16" name="LIGHT: Object Gel Color" />
+          <item value="17" name="LIGHTMAP: Object Ambient Factor" />
+          <item value="18" name="LIGHTMAP: Object Direct Vector" />
+          <item value="19" name="LIGHTMAP: Object Direct Color" />
+          <item value="20" name="LIGHTMAP: Object Indirect Vector" />
+          <item value="21" name="LIGHTMAP: Object Indirect Color" />
+          <item value="22" name="OLD FOG: Atmospheric Color" />
+          <item value="23" name="OLD FOG: Atmospheric Max Density" />
+          <item value="24" name="OLD FOG: Planar Color" />
+          <item value="25" name="OLD FOG: Planar Max Density" />
+          <item value="26" name="OLD FOG: Atmospheric Planar Blend Value" />
+          <item value="27" name="OLD FOG: Object Atmospheric Density" />
+          <item value="28" name="OLD FOG: Object Planar Density" />
+          <item value="29" name="OLD FOG: Object Color" />
+          <item value="30" name="OLD FOG: Object Density" />
+          <item value="31" name="OBJECT: Model Alpha" />
+          <item value="32" name="OBJECT: Shadow Alpha" />
+          <item value="33" name="LIGHT: Overbrighten Diffuse Shift" />
+          <item value="34" name="LIGHT: Overbrighten Specular Shift" />
+          <item value="35" name="LIGHT: Diffuse Contrast" />
+          <item value="36" name="LIGHT: Specular Gel" />
+          <item value="37" name="SHADER: Specular Type" />
+          <item value="38" name="pad3" />
+          <item value="39" name="pad3-scale" />
+          <item value="40" name="Pad Thai" />
+          <item value="41" name="Taco Salad" />
+          <item value="42" name="Anisotropic Binormal" />
+          <item value="43" name="OBJECT LIGHT: Shadow Fade" />
+          <item value="44" name="LIGHT: Shadow Fade" />
+          <item value="45" name="OLD FOG: Atmospheric Density" />
+          <item value="46" name="OLD FOG: Planar Density" />
+          <item value="47" name="OLD FOG: Planar Density Invert" />
+          <item value="48" name="OBJECT: Change Color Tertiary" />
+          <item value="49" name="OBJECT: Change Color Quaternary" />
+          <item value="50" name="LIGHTMAP: Object Specular Color" />
+          <item value="51" name="SHADER: Lightmap Type" />
+          <item value="52" name="LIGHTMAP: Object Ambient Color" />
+          <item value="53" name="SHADER: Lightmap Specular Brightness" />
+          <item value="54" name="GLOBAL: Lightmap Shadow Darkening" />
+          <item value="55" name="LIGHTMAP: Object Env Brightness" />
+          <item value="56" name="FOG: Atmospheric Max Density" />
+          <item value="57" name="FOG: Atmospheric Color" />
+          <item value="58" name="FOG: Atmospheric Color Adj" />
+          <item value="59" name="FOG: Atmospheric Planar Blend" />
+          <item value="60" name="FOG: Atmospheric Planar Blend Adj Inv" />
+          <item value="61" name="FOG: Atmospheric Planar Blend Adj" />
+          <item value="62" name="FOG: Secondary Max Density" />
+          <item value="63" name="FOG: Secondary Color" />
+          <item value="64" name="FOG: Secondary Color Adj" />
+          <item value="65" name="FOG: Atmospheric Secondary Blend" />
+          <item value="66" name="FOG: Atmospheric Secondary Blend Adj Inv" />
+          <item value="67" name="FOG: Atmospheric Secondary Blend Adj" />
+          <item value="68" name="FOG: Sky Density" />
+          <item value="69" name="FOG: Sky Color" />
+          <item value="70" name="FOG: Sky Color Adj" />
+          <item value="71" name="FOG: Planar Max Density" />
+          <item value="72" name="FOG: Planar Color" />
+          <item value="73" name="FOG: Planar Color Adj" />
+          <item value="74" name="FOG: Planar Eye Density" />
+          <item value="75" name="FOG: Planar Eye Density Adj Inv" />
+          <item value="76" name="FOG: Planar Eye Density Adj" />
+          <item value="77" name="HUD: Waypoint Primary Color" />
+          <item value="78" name="HUD: Waypoint Secondary Color" />
+          <item value="79" name="LIGHTMAP: Object Specular Color Times One Half" />
+          <item value="80" name="LIGHT: Specular Enabled" />
+          <item value="81" name="LIGHT: Definition Specular Enabled" />
+          <item value="82" name="OBJECT: Active Camo Amount" />
+          <item value="83" name="OBJECT: Super Camo Amount" />
+          <item value="84" name="HUD: Custom Color 1" />
+          <item value="85" name="HUD: Custom Color 2" />
+          <item value="86" name="HUD: Custom Color 3" />
+          <item value="87" name="HUD: Custom Color 4" />
+          <item value="88" name="OBJECT: Active Camo RGB" />
+          <item value="89" name="FOG: Patchy Plane n(xyz)" />
+          <item value="90" name="FOG: Patchy Plane d(w)" />
+          <item value="91" name="HUD: Global Fade" />
+          <item value="92" name="SCREEN EFFECT: Primary" />
+          <item value="93" name="SCREEN EFFECT: Secondary" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+      </struct>
+      <value type="Block" name="Parameters" disabled="false" struct="ShaderPassParameterBlock" maxelements="64" />
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Pad" name="_unnamed1" length="2" />
+      <struct name="ShaderPassImplementationBlock">
+        <value type="Flags" name="Flags" length="2" disabled="false">
+          <bit index="0" name="Delete from Cache File" />
+          <bit index="1" name="Critical" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <struct name="ShaderPassTextureBlock">
+          <value type="StringId" name="Source Parameter" disabled="false" />
+          <value type="Enum" name="Source Extern" length="2" disabled="false">
+            <item value="0" name="None" />
+            <item value="1" name="GLOBAL: Vector Normalization" />
+            <item value="2" name="UNUSED" />
+            <item value="3" name="GLOBAL: Target texaccum" />
+            <item value="4" name="UNUSED" />
+            <item value="5" name="GLOBAL: Target Frame Buffer" />
+            <item value="6" name="GLOBA: Target z" />
+            <item value="7" name="UNUSED" />
+            <item value="8" name="GLOBAL: Target Shadow" />
+            <item value="9" name="LIGHT: Falloff" />
+            <item value="10" name="LIGHT: Gel" />
+            <item value="11" name="LIGHTMAP" />
+            <item value="12" name="UNUSED" />
+            <item value="13" name="GLOBAL: Shadow Buffer" />
+            <item value="14" name="GLOBAL: Gradient Separate" />
+            <item value="15" name="GLOBAL: Gradient Product" />
+            <item value="16" name="HUD: Bitmap" />
+            <item value="17" name="GLOBAL: active camo" />
+            <item value="18" name="GLOBAL: Texture Camera" />
+            <item value="19" name="GLOBAL: Water Reflection" />
+            <item value="20" name="GLOBAL: Water Refraction" />
+            <item value="21" name="GLOBAL: Aux 1" />
+            <item value="22" name="GLOBAL: Aux 2" />
+            <item value="23" name="GLOBAL: Particle Distortion" />
+            <item value="24" name="GLOBAL: Convolution 1" />
+            <item value="25" name="GLOBAL: Convolution 2" />
+            <item value="26" name="SHADER: Active Camo Bump" />
+            <item value="27" name="FIRST PERSON: Scope" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Skip" name="_unnamed1" length="2" />
+          <value type="Enum" name="Mode" length="2" disabled="false">
+            <item value="0" name="2D" />
+            <item value="1" name="3D" />
+            <item value="2" name="Cube Map" />
+            <item value="3" name="Passthrough" />
+            <item value="4" name="texkill" />
+            <item value="5" name="2D Dependent AR" />
+            <item value="6" name="2D Dependent GB" />
+            <item value="7" name="2D bumpenv" />
+            <item value="8" name="2D bumpenv Luminance" />
+            <item value="9" name="3D BRDF" />
+            <item value="10" name="Dot Product" />
+            <item value="11" name="Dot Product 2D" />
+            <item value="12" name="Dot Product 3D" />
+            <item value="13" name="Dot Product Cube Map" />
+            <item value="14" name="Dot Product ZW" />
+            <item value="15" name="Dot Reflect Diffuse" />
+            <item value="16" name="Dot Reflect Specular" />
+            <item value="17" name="Dot Reflect Specular Const" />
+            <item value="18" name="None" />
+          </value>
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="Enum" name="Dot Mapping" length="2" disabled="false">
+            <item value="0" name="0 to 1" />
+            <item value="1" name="Signed D3D" />
+            <item value="2" name="Signed GL" />
+            <item value="3" name="Signed NV" />
+            <item value="4" name="HILO: 0 to 1" />
+            <item value="5" name="HILO: Signed Hemisphere D3D" />
+            <item value="6" name="HILO: Signed Hemisphere GL" />
+            <item value="7" name="HILO: Signed Hemisphere NV" />
+          </value>
+          <value type="ShortInteger" name="Input Stage" disabled="false" unit="[0,3]" />
+          <value type="Pad" name="_unnamed3" length="2" />
+          <struct name="ShaderTextureStateAddressStateBlock">
+            <value type="Enum" name="U address mode" length="2" disabled="false">
+              <item value="0" name="wrap" />
+              <item value="1" name="mirror" />
+              <item value="2" name="clamp" />
+              <item value="3" name="border" />
+              <item value="4" name="clamp to edge" />
+            </value>
+            <value type="Enum" name="V address mode" length="2" disabled="false">
+              <item value="0" name="wrap" />
+              <item value="1" name="mirror" />
+              <item value="2" name="clamp" />
+              <item value="3" name="border" />
+              <item value="4" name="clamp to edge" />
+            </value>
+            <value type="Enum" name="W address mode" length="2" disabled="false">
+              <item value="0" name="wrap" />
+              <item value="1" name="mirror" />
+              <item value="2" name="clamp" />
+              <item value="3" name="border" />
+              <item value="4" name="clamp to edge" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+          </struct>
+          <value type="Block" name="address state" disabled="false" struct="ShaderTextureStateAddressStateBlock" maxelements="1" />
+          <struct name="ShaderTextureStateFilterStateBlock">
+            <value type="Enum" name="mag filter" length="2" disabled="false">
+              <item value="0" name="none" />
+              <item value="1" name="point sampled" />
+              <item value="2" name="linear" />
+              <item value="3" name="anisotropic" />
+              <item value="4" name="quincunx" />
+              <item value="5" name="gaussian cubic" />
+            </value>
+            <value type="Enum" name="min filter" length="2" disabled="false">
+              <item value="0" name="none" />
+              <item value="1" name="point sampled" />
+              <item value="2" name="linear" />
+              <item value="3" name="anisotropic" />
+              <item value="4" name="quincunx" />
+              <item value="5" name="gaussian cubic" />
+            </value>
+            <value type="Enum" name="mip filter" length="2" disabled="false">
+              <item value="0" name="none" />
+              <item value="1" name="point sampled" />
+              <item value="2" name="linear" />
+              <item value="3" name="anisotropic" />
+              <item value="4" name="quincunx" />
+              <item value="5" name="gaussian cubic" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="Real" name="mipmap bias" disabled="false" />
+            <value type="ShortInteger" name="max mipmap index" disabled="false">
+              <tooltip>0 means all mipmap levels are used</tooltip>
+            </value>
+            <value type="Enum" name="anisotropy" length="2" disabled="false">
+              <item value="0" name="non anisotropic" />
+              <item value="1" name="2-tap" />
+              <item value="2" name="3-tap" />
+              <item value="3" name="4-tap" />
+            </value>
+          </struct>
+          <value type="Block" name="filter state" disabled="false" struct="ShaderTextureStateFilterStateBlock" maxelements="1" />
+          <struct name="ShaderTextureStateKillStateBlock">
+            <value type="Flags" name="flags" length="2" disabled="false">
+              <bit index="0" name="alpha kill" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="Enum" name="colorkey mode" length="2" disabled="false">
+              <item value="0" name="disabled" />
+              <item value="1" name="zero alpha" />
+              <item value="2" name="zero ARGB" />
+              <item value="3" name="kill" />
+            </value>
+            <value type="Pad" name="_unnamed1" length="2" />
+            <value type="RgbColor" name="colorkey color" disabled="false" />
+          </struct>
+          <value type="Block" name="kill state" disabled="false" struct="ShaderTextureStateKillStateBlock" maxelements="1" />
+          <struct name="ShaderTextureStateMiscStateBlock">
+            <value type="Flags" name="component sign flags" length="2" disabled="false">
+              <bit index="0" name="R signed" />
+              <bit index="1" name="G signed" />
+              <bit index="2" name="B signed" />
+              <bit index="3" name="A signed" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="ArgbColor" name="border color" disabled="false" />
+          </struct>
+          <value type="Block" name="misc state" disabled="false" struct="ShaderTextureStateMiscStateBlock" maxelements="1" />
+          <struct name="ShaderTextureStateConstantBlock">
+            <value type="StringId" name="source parameter" disabled="false" />
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="Enum" name="constant" length="2" disabled="false" blockname="true">
+              <item value="0" name="mipmap bias (value)" />
+              <item value="1" name="colorkey color" />
+              <item value="2" name="border color" />
+              <item value="3" name="border alpha (value)" />
+              <item value="4" name="bumpenv mat[0][0]" />
+              <item value="5" name="bumpenv mat[0][1]" />
+              <item value="6" name="bumpenv mat[1][0]" />
+              <item value="7" name="bumpenv mat[1][1]" />
+              <item value="8" name="bumpenv lum scale (value)" />
+              <item value="9" name="bumpenv lum offset (value)" />
+            </value>
+          </struct>
+          <value type="Block" name="constants" disabled="false" struct="ShaderTextureStateConstantBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="Textures" disabled="false" struct="ShaderPassTextureBlock" maxelements="8" />
+        <value type="TagReference" name="Vertex Shader" disabled="false" extensions="vrtx" />
+        <struct name="ShaderPassVertexShaderConstantBlock">
+          <value type="StringId" name="Source Parameter" disabled="false" />
+          <value type="Enum" name="Scale by Texture Stage" length="2" disabled="false">
+            <item value="0" name="None" />
+            <item value="1" name="Stage 0" />
+            <item value="2" name="Stage 1" />
+            <item value="3" name="Stage 2" />
+            <item value="4" name="Stage 3" />
+          </value>
+          <value type="Enum" name="Register Bank" length="2" disabled="false">
+            <item value="0" name="Vn [0,15]" />
+            <item value="1" name="Cn [0,12]" />
+          </value>
+          <value type="ShortInteger" name="Register Index" disabled="false" />
+          <value type="Enum" name="Component Mask" length="2" disabled="false">
+            <item value="0" name="x (value)" />
+            <item value="1" name="y (value)" />
+            <item value="2" name="z (value)" />
+            <item value="3" name="w (value)" />
+            <item value="4" name="xyz/rgb (color)" />
+            <item value="5" name="x (uniform scale)" />
+            <item value="6" name="y (uniform scale)" />
+            <item value="7" name="z (uniform scale)" />
+            <item value="8" name="w (uniform scale)" />
+            <item value="9" name="xy (2D scale)" />
+            <item value="10" name="zw (2D scale)" />
+            <item value="11" name="xy (2D translation)" />
+            <item value="12" name="zw (2D translation)" />
+            <item value="13" name="xyzw (2D simple xform)" />
+            <item value="14" name="xyw Row 1 (2D affine xform)" />
+            <item value="15" name="xyw Row 2 (2D affine xform)" />
+            <item value="16" name="xyz (3D scale)" />
+            <item value="17" name="xyz (3D translation)" />
+            <item value="18" name="xyzw Row 1 (3D affine xform)" />
+            <item value="19" name="xyzw Row 2 (3D affine xform)" />
+            <item value="20" name="xyzw Row 3 (3D affine xform)" />
+          </value>
+        </struct>
+        <value type="Block" name="vs Constants" disabled="false" struct="ShaderPassVertexShaderConstantBlock" maxelements="32" />
+        <value type="Data" name="Pixel Shader Code NO LONGER USED" disabled="false" />
+        <value type="Enum" name="channels" length="2" disabled="false">
+          <item value="0" name="all" />
+          <item value="1" name="color only" />
+          <item value="2" name="alpha only" />
+          <item value="3" name="custom" />
+        </value>
+        <value type="Enum" name="alpha-blend" length="2" disabled="false">
+          <item value="0" name="disabled" />
+          <item value="1" name="add" />
+          <item value="2" name="multiply" />
+          <item value="3" name="add src times dstalpha" />
+          <item value="4" name="add src times srcalpha" />
+          <item value="5" name="add dst times srcalpha inverse" />
+          <item value="6" name="alpha blend" />
+          <item value="7" name="custom" />
+        </value>
+        <value type="Enum" name="depth" length="2" disabled="false">
+          <item value="0" name="disabled" />
+          <item value="1" name="default opaque" />
+          <item value="2" name="default opaque write" />
+          <item value="3" name="default transparent" />
+          <item value="4" name="custom" />
+        </value>
+        <value type="Pad" name="_unnamed1" length="2" />
+        <struct name="ShaderStateChannelsStateBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="R" />
+            <bit index="1" name="G" />
+            <bit index="2" name="B" />
+            <bit index="3" name="A" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+        </struct>
+        <value type="Block" name="channel state" disabled="false" struct="ShaderStateChannelsStateBlock" maxelements="1" />
+        <struct name="ShaderStateAlphaBlendStateBlock">
+          <value type="Enum" name="blend function" length="2" disabled="false">
+            <item value="0" name="add" />
+            <item value="1" name="subtract" />
+            <item value="2" name="reverse subtract" />
+            <item value="3" name="min" />
+            <item value="4" name="max" />
+            <item value="5" name="add signed" />
+            <item value="6" name="reverse subtract signed" />
+            <item value="7" name="logic-op" />
+          </value>
+          <value type="Enum" name="blend src factor" length="2" disabled="false">
+            <item value="0" name="zero" />
+            <item value="1" name="one" />
+            <item value="2" name="srccolor" />
+            <item value="3" name="srccolor inverse" />
+            <item value="4" name="srcalpha" />
+            <item value="5" name="srcalpha inverse" />
+            <item value="6" name="dstcolor" />
+            <item value="7" name="dstcolor inverse" />
+            <item value="8" name="dstalpha" />
+            <item value="9" name="dstalpha inverse" />
+            <item value="10" name="srcalpha saturate" />
+            <item value="11" name="constant color" />
+            <item value="12" name="constant color inverse" />
+            <item value="13" name="constant alpha" />
+            <item value="14" name="constant alpha inverse" />
+          </value>
+          <value type="Enum" name="blend dst factor" length="2" disabled="false">
+            <item value="0" name="zero" />
+            <item value="1" name="one" />
+            <item value="2" name="srccolor" />
+            <item value="3" name="srccolor inverse" />
+            <item value="4" name="srcalpha" />
+            <item value="5" name="srcalpha inverse" />
+            <item value="6" name="dstcolor" />
+            <item value="7" name="dstcolor inverse" />
+            <item value="8" name="dstalpha" />
+            <item value="9" name="dstalpha inverse" />
+            <item value="10" name="srcalpha saturate" />
+            <item value="11" name="constant color" />
+            <item value="12" name="constant color inverse" />
+            <item value="13" name="constant alpha" />
+            <item value="14" name="constant alpha inverse" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="ArgbColor" name="blend color" disabled="false" />
+          <value type="Flags" name="logic-op flags" length="2" disabled="false">
+            <bit index="0" name="src=0 dst=0" />
+            <bit index="1" name="src=0 dst=1" />
+            <bit index="2" name="src=1 dst=0" />
+            <bit index="3" name="src=1 dst=1" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+        </struct>
+        <value type="Block" name="alpha-blend state" disabled="false" struct="ShaderStateAlphaBlendStateBlock" maxelements="1" />
+        <struct name="ShaderStateAlphaTestStateBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="alpha-test enabled" />
+            <bit index="1" name="sample-alpha to coverage" />
+            <bit index="2" name="sample-alpha to one" />
+          </value>
+          <value type="Enum" name="alpha compare function" length="2" disabled="false">
+            <item value="0" name="never" />
+            <item value="1" name="less" />
+            <item value="2" name="equal" />
+            <item value="3" name="less or equal" />
+            <item value="4" name="greater" />
+            <item value="5" name="not equal" />
+            <item value="6" name="greater or equal" />
+            <item value="7" name="always" />
+          </value>
+          <value type="ShortInteger" name="alpha-test ref" disabled="false" unit="[0,255]" />
+          <value type="Pad" name="_unnamed0" length="2" />
+        </struct>
+        <value type="Block" name="alpha-test state" disabled="false" struct="ShaderStateAlphaTestStateBlock" maxelements="1" />
+        <struct name="ShaderStateDepthStateBlock">
+          <value type="Enum" name="mode" length="2" disabled="false">
+            <item value="0" name="use Z" />
+            <item value="1" name="use W" />
+          </value>
+          <value type="Enum" name="depth compare function" length="2" disabled="false">
+            <item value="0" name="never" />
+            <item value="1" name="less" />
+            <item value="2" name="equal" />
+            <item value="3" name="less or equal" />
+            <item value="4" name="greater" />
+            <item value="5" name="not equal" />
+            <item value="6" name="greater or equal" />
+            <item value="7" name="always" />
+          </value>
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="depth write" />
+            <bit index="1" name="offset points" />
+            <bit index="2" name="offset lines" />
+            <bit index="3" name="offset triangles" />
+            <bit index="4" name="clip control don't cull primitive" />
+            <bit index="5" name="clip control clamp" />
+            <bit index="6" name="clip control ignore W sign" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Real" name="depth bias slope scale" disabled="false" />
+          <value type="Real" name="depth bias" disabled="false" />
+        </struct>
+        <value type="Block" name="depth state" disabled="false" struct="ShaderStateDepthStateBlock" maxelements="1" />
+        <struct name="ShaderStateCullStateBlock">
+          <value type="Enum" name="mode" length="2" disabled="false">
+            <item value="0" name="none" />
+            <item value="1" name="CW" />
+            <item value="2" name="CCW" />
+          </value>
+          <value type="Enum" name="front face" length="2" disabled="false">
+            <item value="0" name="CW" />
+            <item value="1" name="CCW" />
+          </value>
+        </struct>
+        <value type="Block" name="cull state" disabled="false" struct="ShaderStateCullStateBlock" maxelements="1" />
+        <struct name="ShaderStateFillStateBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="flat shading" />
+            <bit index="1" name="edge antialiasing" />
+          </value>
+          <value type="Enum" name="fill mode" length="2" disabled="false">
+            <item value="0" name="solid" />
+            <item value="1" name="wireframe" />
+            <item value="2" name="points" />
+          </value>
+          <value type="Enum" name="back fill mode" length="2" disabled="false">
+            <item value="0" name="solid" />
+            <item value="1" name="wireframe" />
+            <item value="2" name="points" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Real" name="line width" disabled="false" />
+        </struct>
+        <value type="Block" name="fill state" disabled="false" struct="ShaderStateFillStateBlock" maxelements="1" />
+        <struct name="ShaderStateMiscStateBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="YUV to RGB" />
+            <bit index="1" name="16-bit dither" />
+            <bit index="2" name="32-bit DXT1 noise" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="RgbColor" name="fog color" disabled="false" />
+        </struct>
+        <value type="Block" name="misc state" disabled="false" struct="ShaderStateMiscStateBlock" maxelements="1" />
+        <struct name="ShaderStateConstantBlock">
+          <value type="StringId" name="source parameter" disabled="false" />
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="constant" length="2" disabled="false" blockname="true">
+            <item value="0" name="constant blend color" />
+            <item value="1" name="constant blend alpha (value)" />
+            <item value="2" name="alpha-test ref (value)" />
+            <item value="3" name="depth bias slope scale (value)" />
+            <item value="4" name="depth bias (value)" />
+            <item value="5" name="line width (value)" />
+            <item value="6" name="fog color" />
+          </value>
+        </struct>
+        <value type="Block" name="constants" disabled="false" struct="ShaderStateConstantBlock" maxelements="7" />
+        <value type="TagReference" name="Pixel Shader" disabled="false" extensions="pixl" />
+      </struct>
+      <value type="Block" name="Implementations" disabled="false" struct="ShaderPassImplementationBlock" maxelements="32" />
+      <struct name="ShaderPassPostprocessDefinitionNewBlock">
+        <struct name="ShaderPassPostprocessImplementationNewBlock">
+          <value type="ShortInteger" name="block index data" disabled="false" />
+          <value type="ShortInteger" name="block index data2" disabled="false" />
+          <value type="ShortInteger" name="block index data3" disabled="false" />
+          <value type="Skip" name="_unnamed0" length="240" />
+          <value type="ShortInteger" name="block index data4" disabled="false" />
+          <value type="ShortInteger" name="block index data5" disabled="false" />
+          <value type="ShortInteger" name="block index data6" disabled="false" />
+          <value type="TagReference" name="vertex shader" disabled="false" extensions="vrtx" />
+          <value type="Skip" name="_unnamed1" length="8" />
+          <value type="Skip" name="_unnamed2" length="8" />
+          <value type="Skip" name="_unnamed3" length="4" />
+          <value type="Skip" name="_unnamed4" length="4" />
+          <value type="ShortInteger" name="block index data7" disabled="false" />
+          <value type="ShortInteger" name="block index data8" disabled="false" />
+          <value type="ShortInteger" name="block index data9" disabled="false" />
+          <value type="ShortInteger" name="block index data10" disabled="false" />
+          <value type="ShortInteger" name="block index data11" disabled="false" />
+          <value type="ShortInteger" name="block index data12" disabled="false" />
+          <value type="ShortInteger" name="block index data13" disabled="false" />
+          <value type="ShortInteger" name="block index data14" disabled="false" />
+          <value type="ShortInteger" name="block index data15" disabled="false" />
+          <value type="ShortInteger" name="block index data16" disabled="false" />
+          <value type="ShortInteger" name="block index data17" disabled="false" />
+        </struct>
+        <value type="Block" name="implementations" disabled="false" struct="ShaderPassPostprocessImplementationNewBlock" maxelements="1024" />
+        <struct name="ShaderPassPostprocessTextureNewBlock">
+          <value type="CharInteger" name="bitmap parameter index" disabled="false" />
+          <value type="CharInteger" name="bitmap extern index" disabled="false" />
+          <value type="CharInteger" name="texture stage index" disabled="false" />
+          <value type="CharInteger" name="flags" disabled="false" />
+        </struct>
+        <value type="Block" name="textures" disabled="false" struct="ShaderPassPostprocessTextureNewBlock" maxelements="1024" />
+        <struct name="RenderStateBlock">
+          <value type="CharInteger" name="state index" disabled="false" />
+          <value type="LongInteger" name="state value" disabled="false" />
+        </struct>
+        <value type="Block" name="render states" disabled="false" struct="RenderStateBlock" maxelements="1024" />
+        <struct name="ShaderPassPostprocessTextureStateBlock">
+          <value type="Skip" name="_unnamed0" length="24" />
+        </struct>
+        <value type="Block" name="texture states" disabled="false" struct="ShaderPassPostprocessTextureStateBlock" maxelements="1024" />
+        <struct name="PixelShaderFragmentBlock">
+          <value type="CharInteger" name="switch parameter index" disabled="false" />
+          <value type="ShortInteger" name="block index data" disabled="false" />
+        </struct>
+        <value type="Block" name="ps fragments" disabled="false" struct="PixelShaderFragmentBlock" maxelements="1024" />
+        <struct name="PixelShaderPermutationNewBlock">
+          <value type="ShortInteger" name="enum index" disabled="false" />
+          <value type="ShortInteger" name="flags" disabled="false" />
+          <value type="ShortInteger" name="block index data" disabled="false" />
+        </struct>
+        <value type="Block" name="ps permutations" disabled="false" struct="PixelShaderPermutationNewBlock" maxelements="1024" />
+        <struct name="PixelShaderCombinerBlock">
+          <value type="Pad" name="_unnamed0" length="16" />
+          <value type="ArgbColor" name="constant color0" disabled="false" />
+          <value type="ArgbColor" name="constant color1" disabled="false" />
+          <value type="CharInteger" name="color A register ptr index" disabled="false" />
+          <value type="CharInteger" name="color B register ptr index" disabled="false" />
+          <value type="CharInteger" name="color C register ptr index" disabled="false" />
+          <value type="CharInteger" name="color D register ptr index" disabled="false" />
+          <value type="CharInteger" name="alpha A register ptr index" disabled="false" />
+          <value type="CharInteger" name="alpha B register ptr index" disabled="false" />
+          <value type="CharInteger" name="alpha C register ptr index" disabled="false" />
+          <value type="CharInteger" name="alpha D register ptr index" disabled="false" />
+        </struct>
+        <value type="Block" name="ps combiners" disabled="false" struct="PixelShaderCombinerBlock" maxelements="1024" />
+        <struct name="ShaderPassPostprocessExternNewBlock">
+          <value type="Skip" name="_unnamed0" length="3" />
+          <value type="CharInteger" name="extern index" disabled="false" />
+        </struct>
+        <value type="Block" name="externs" disabled="false" struct="ShaderPassPostprocessExternNewBlock" maxelements="1024" />
+        <struct name="ShaderPassPostprocessConstantNewBlock">
+          <value type="StringId" name="parameter name" disabled="false" />
+          <value type="CharInteger" name="component mask" disabled="false" />
+          <value type="CharInteger" name="scale by texture stage" disabled="false" />
+          <value type="CharInteger" name="function index" disabled="false" />
+        </struct>
+        <value type="Block" name="constants" disabled="false" struct="ShaderPassPostprocessConstantNewBlock" maxelements="1024" />
+        <struct name="ShaderPassPostprocessConstantInfoNewBlock">
+          <value type="StringId" name="parameter name" disabled="false" />
+          <value type="Pad" name="_unnamed0" length="3" />
+        </struct>
+        <value type="Block" name="constant info" disabled="false" struct="ShaderPassPostprocessConstantInfoNewBlock" maxelements="1024" />
+        <struct name="ShaderPassPostprocessImplementationBlock">
+          <struct name="RenderStateBlock">
+            <value type="CharInteger" name="state index" disabled="false" />
+            <value type="LongInteger" name="state value" disabled="false" />
+          </struct>
+          <value type="Block" name="render states" disabled="false" struct="RenderStateBlock" maxelements="1024" />
+          <struct name="TextureStageStateBlock">
+            <value type="CharInteger" name="state index" disabled="false" />
+            <value type="CharInteger" name="stage index" disabled="false" />
+            <value type="LongInteger" name="state value" disabled="false" />
+          </struct>
+          <value type="Block" name="texture stage states" disabled="false" struct="TextureStageStateBlock" maxelements="1024" />
+          <struct name="RenderStateParameterBlock">
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="CharInteger" name="parameter type" disabled="false" />
+            <value type="CharInteger" name="state index" disabled="false" />
+          </struct>
+          <value type="Block" name="render state parameters" disabled="false" struct="RenderStateParameterBlock" maxelements="1024" />
+          <struct name="TextureStageStateParameterBlock">
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="CharInteger" name="parameter type" disabled="false" />
+            <value type="CharInteger" name="state index" disabled="false" />
+            <value type="CharInteger" name="stage index" disabled="false" />
+          </struct>
+          <value type="Block" name="texture stage parameters" disabled="false" struct="TextureStageStateParameterBlock" maxelements="1024" />
+          <struct name="TextureBlock">
+            <value type="CharInteger" name="stage index" disabled="false" />
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="CharInteger" name="global texture index" disabled="false" />
+            <value type="CharInteger" name="flags" disabled="false" />
+          </struct>
+          <value type="Block" name="textures" disabled="false" struct="TextureBlock" maxelements="1024" />
+          <struct name="VertexShaderConstantBlock">
+            <value type="CharInteger" name="register index" disabled="false" />
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="CharInteger" name="destination mask" disabled="false" />
+            <value type="CharInteger" name="scale by texture stage" disabled="false" />
+          </struct>
+          <value type="Block" name="Vn Constants" disabled="false" struct="VertexShaderConstantBlock" maxelements="1024" />
+          <value type="Block" name="Cn Constants" disabled="false" struct="VertexShaderConstantBlock" maxelements="1024" />
+          <value type="ShortInteger" name="block index data" disabled="false" />
+          <value type="ShortInteger" name="block index data2" disabled="false" />
+          <value type="ShortInteger" name="block index data3" disabled="false" />
+          <value type="ShortInteger" name="block index data4" disabled="false" />
+          <value type="ShortInteger" name="block index data5" disabled="false" />
+          <value type="ShortInteger" name="block index data6" disabled="false" />
+          <value type="ShortInteger" name="block index data7" disabled="false" />
+          <value type="ShortInteger" name="block index data8" disabled="false" />
+          <value type="ShortInteger" name="block index data9" disabled="false" />
+          <value type="ShortInteger" name="block index data10" disabled="false" />
+          <value type="ShortInteger" name="block index data11" disabled="false" />
+          <value type="ShortInteger" name="block index data12" disabled="false" />
+          <value type="ShortInteger" name="block index data13" disabled="false" />
+          <value type="ShortInteger" name="block index data14" disabled="false" />
+          <value type="ShortInteger" name="block index data15" disabled="false" />
+          <value type="ShortInteger" name="block index data16" disabled="false" />
+          <value type="ShortInteger" name="block index data17" disabled="false" />
+          <value type="ShortInteger" name="block index data18" disabled="false" />
+          <value type="ShortInteger" name="block index data19" disabled="false" />
+          <value type="ShortInteger" name="block index data20" disabled="false" />
+          <value type="ShortInteger" name="block index data21" disabled="false" />
+          <value type="TagReference" name="vertex shader" disabled="false" extensions="vrtx" />
+          <value type="Skip" name="_unnamed0" length="8" />
+          <value type="Skip" name="_unnamed1" length="8" />
+          <value type="Skip" name="_unnamed2" length="4" />
+          <value type="Skip" name="_unnamed3" length="4" />
+          <struct name="ExternReferenceBlock">
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="CharInteger" name="extern index" disabled="false" />
+          </struct>
+          <value type="Block" name="value externs" disabled="false" struct="ExternReferenceBlock" maxelements="1024" />
+          <value type="Block" name="color externs" disabled="false" struct="ExternReferenceBlock" maxelements="1024" />
+          <value type="Block" name="switch externs" disabled="false" struct="ExternReferenceBlock" maxelements="1024" />
+          <value type="ShortInteger" name="bitmap parameter count" disabled="false" />
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="Skip" name="_unnamed5" length="240" />
+          <struct name="PixelShaderFragmentBlock">
+            <value type="CharInteger" name="switch parameter index" disabled="false" />
+            <value type="ShortInteger" name="block index data" disabled="false" />
+          </struct>
+          <value type="Block" name="pixel shader fragments" disabled="false" struct="PixelShaderFragmentBlock" maxelements="1024" />
+          <struct name="PixelShaderPermutationBlock">
+            <value type="ShortInteger" name="enum index" disabled="false" />
+            <value type="Flags" name="flags" length="2" disabled="false">
+              <bit index="0" name="has final combiner" />
+            </value>
+            <value type="ShortInteger" name="block index data" disabled="false" />
+            <value type="ShortInteger" name="block index data2" disabled="false" />
+            <value type="Skip" name="_unnamed0" length="4" />
+            <value type="Skip" name="_unnamed1" length="4" />
+          </struct>
+          <value type="Block" name="pixel shader permutations" disabled="false" struct="PixelShaderPermutationBlock" maxelements="1024" />
+          <struct name="PixelShaderCombinerBlock">
+            <value type="Pad" name="_unnamed0" length="16" />
+            <value type="ArgbColor" name="constant color0" disabled="false" />
+            <value type="ArgbColor" name="constant color1" disabled="false" />
+            <value type="CharInteger" name="color A register ptr index" disabled="false" />
+            <value type="CharInteger" name="color B register ptr index" disabled="false" />
+            <value type="CharInteger" name="color C register ptr index" disabled="false" />
+            <value type="CharInteger" name="color D register ptr index" disabled="false" />
+            <value type="CharInteger" name="alpha A register ptr index" disabled="false" />
+            <value type="CharInteger" name="alpha B register ptr index" disabled="false" />
+            <value type="CharInteger" name="alpha C register ptr index" disabled="false" />
+            <value type="CharInteger" name="alpha D register ptr index" disabled="false" />
+          </struct>
+          <value type="Block" name="pixel shader combiners" disabled="false" struct="PixelShaderCombinerBlock" maxelements="1024" />
+          <struct name="PixelShaderConstantBlock">
+            <value type="Enum" name="parameter type" length="1" disabled="false">
+              <item value="0" name="Bitmap" />
+              <item value="1" name="Value" />
+              <item value="2" name="Color" />
+              <item value="3" name="Switch" />
+            </value>
+            <value type="CharInteger" name="combiner index" disabled="false" />
+            <value type="CharInteger" name="register index" disabled="false" />
+            <value type="Enum" name="component mask" length="1" disabled="false">
+              <item value="0" name="x (value)" />
+              <item value="1" name="y (value)" />
+              <item value="2" name="z (value)" />
+              <item value="3" name="w (value)" />
+              <item value="4" name="xyz/rgb (color)" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="1" />
+            <value type="Pad" name="_unnamed1" length="1" />
+          </struct>
+          <value type="Block" name="pixel shader constants" disabled="false" struct="PixelShaderConstantBlock" maxelements="1024" />
+          <value type="Skip" name="_unnamed6" length="4" />
+          <value type="Skip" name="_unnamed7" length="4" />
+        </struct>
+        <value type="Block" name="old implementations" disabled="false" struct="ShaderPassPostprocessImplementationBlock" maxelements="1024" />
+      </struct>
+      <value type="Block" name="Postprocess Definition" disabled="true" struct="ShaderPassPostprocessDefinitionNewBlock" maxelements="1" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,246 @@
+<xml>
+  <name type="hudg" parenttype="????">HudGlobals</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="GlobalNewHudGlobalsConstantsStructBlock">
+      <value type="Enum" name="anchor" length="2" disabled="false">
+        <item value="0" name="top left" />
+        <item value="1" name="top right" />
+        <item value="2" name="bottom left" />
+        <item value="3" name="bottom right" />
+        <item value="4" name="center" />
+        <item value="5" name="crosshair" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Pad" name="_unnamed1" length="32" />
+      <value type="Point2d" name="anchor offset" disabled="false" />
+      <value type="Real" name="width scale" disabled="false" />
+      <value type="Real" name="height scale" disabled="false" />
+      <value type="Flags" name="scaling flags" length="2" disabled="false">
+        <bit index="0" name="don't scale offset" />
+        <bit index="1" name="don't scale size" />
+      </value>
+      <value type="Pad" name="_unnamed2" length="2" />
+      <value type="Pad" name="_unnamed3" length="20" />
+      <value type="TagReference" name="obsolete1" disabled="false" extensions="bitm" />
+      <value type="TagReference" name="obsolete2" disabled="false" extensions="bitm" />
+      <value type="Real" name="up time" disabled="false" />
+      <value type="Real" name="fade time" disabled="false" />
+      <value type="RealArgbColor" name="icon color" disabled="false" />
+      <value type="RealArgbColor" name="text color" disabled="false" />
+      <value type="Real" name="text spacing" disabled="false" />
+      <value type="TagReference" name="item message text" disabled="false" extensions="unic" />
+      <value type="TagReference" name="icon bitmap" disabled="false" extensions="bitm" />
+      <value type="TagReference" name="alternate icon text" disabled="false" extensions="unic" />
+      <struct name="HudButtonIconBlock">
+        <value type="ShortInteger" name="sequence index" disabled="false">
+          <tooltip>sequence index into the global hud icon bitmap</tooltip>
+        </value>
+        <value type="ShortInteger" name="width offset" disabled="false">
+          <tooltip>extra spacing beyond bitmap width for text alignment</tooltip>
+        </value>
+        <value type="Point2d" name="offset from reference corner" disabled="false" />
+        <value type="ArgbColor" name="override icon color" disabled="false" />
+        <value type="CharInteger" name="frame rate 030" disabled="false" />
+        <value type="Flags" name="flags" length="1" disabled="false">
+          <bit index="0" name="use text from string_list instead" />
+          <bit index="1" name="override default color" />
+          <bit index="2" name="width offset is absolute icon width" />
+        </value>
+        <value type="ShortInteger" name="text index" disabled="false" />
+      </struct>
+      <value type="Block" name="button icons" disabled="false" struct="HudButtonIconBlock" maxelements="18" />
+      <value type="ArgbColor" name="default color" disabled="false" />
+      <value type="ArgbColor" name="flashing color" disabled="false" />
+      <value type="Real" name="flash period" disabled="false" />
+      <value type="Real" name="flash delay" disabled="false">
+        <tooltip>time between flashes</tooltip>
+      </value>
+      <value type="ShortInteger" name="number of flashes" disabled="false" />
+      <value type="Flags" name="flash flags" length="2" disabled="false">
+        <bit index="0" name="reverse default/flashing colors" />
+      </value>
+      <value type="Real" name="flash length" disabled="false">
+        <tooltip>time of each flash</tooltip>
+      </value>
+      <value type="ArgbColor" name="disabled color" disabled="false" />
+      <value type="Pad" name="_unnamed4" length="4" />
+      <value type="TagReference" name="hud messages" disabled="false" extensions="hmt " />
+      <value type="ArgbColor" name="default color2" disabled="false" />
+      <value type="ArgbColor" name="flashing color2" disabled="false" />
+      <value type="Real" name="flash period2" disabled="false" />
+      <value type="Real" name="flash delay2" disabled="false">
+        <tooltip>time between flashes</tooltip>
+      </value>
+      <value type="ShortInteger" name="number of flashes2" disabled="false" />
+      <value type="Flags" name="flash flags2" length="2" disabled="false">
+        <bit index="0" name="reverse default/flashing colors" />
+      </value>
+      <value type="Real" name="flash length2" disabled="false">
+        <tooltip>time of each flash</tooltip>
+      </value>
+      <value type="ArgbColor" name="disabled color2" disabled="false" />
+      <value type="ShortInteger" name="uptime ticks" disabled="false" />
+      <value type="ShortInteger" name="fade ticks" disabled="false" />
+      <value type="Real" name="top offset" disabled="false" />
+      <value type="Real" name="bottom offset" disabled="false" />
+      <value type="Real" name="left offset" disabled="false" />
+      <value type="Real" name="right offset" disabled="false" />
+      <value type="Pad" name="_unnamed5" length="32" />
+      <value type="TagReference" name="arrow bitmap" disabled="false" extensions="bitm" />
+      <struct name="HudWaypointArrowBlock">
+        <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="8" />
+        <value type="RgbColor" name="color" disabled="false" />
+        <value type="Real" name="opacity" disabled="false" />
+        <value type="Real" name="translucency" disabled="false" />
+        <value type="ShortInteger" name="on screen sequence index" disabled="false" />
+        <value type="ShortInteger" name="off screen sequence index" disabled="false" />
+        <value type="ShortInteger" name="occluded sequence index" disabled="false" />
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Pad" name="_unnamed2" length="16" />
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="don't rotate when pointing offscreen" />
+        </value>
+        <value type="Pad" name="_unnamed3" length="24" />
+      </struct>
+      <value type="Block" name="waypoint arrows" disabled="false" struct="HudWaypointArrowBlock" maxelements="16" />
+      <value type="Pad" name="_unnamed6" length="80" />
+      <value type="Real" name="hud scale in multiplayer" disabled="false" />
+      <value type="Pad" name="_unnamed7" length="256" />
+      <value type="Pad" name="_unnamed8" length="16" />
+      <value type="Real" name="motion sensor range" disabled="false" />
+      <value type="Real" name="motion sensor velocity sensitivity" disabled="false">
+        <tooltip>how fast something moves to show up on the motion sensor</tooltip>
+      </value>
+      <value type="Real" name="motion sensor scale DONT TOUCH EVER" disabled="true" />
+      <value type="Rectangle2D" name="default chapter title bounds" disabled="false" />
+      <value type="Pad" name="_unnamed9" length="44" />
+      <value type="ShortInteger" name="top offset2" disabled="false" />
+      <value type="ShortInteger" name="bottom offset2" disabled="false" />
+      <value type="ShortInteger" name="left offset2" disabled="false" />
+      <value type="ShortInteger" name="right offset2" disabled="false" />
+      <value type="Pad" name="_unnamed10" length="32" />
+      <value type="TagReference" name="indicator bitmap" disabled="false" extensions="bitm" />
+      <value type="ShortInteger" name="sequence index" disabled="false" />
+      <value type="ShortInteger" name="multiplayer sequence index" disabled="false" />
+      <value type="ArgbColor" name="color" disabled="false" />
+      <value type="Pad" name="_unnamed11" length="16" />
+      <value type="ArgbColor" name="default color3" disabled="false" />
+      <value type="ArgbColor" name="flashing color3" disabled="false" />
+      <value type="Real" name="flash period3" disabled="false" />
+      <value type="Real" name="flash delay3" disabled="false">
+        <tooltip>time between flashes</tooltip>
+      </value>
+      <value type="ShortInteger" name="number of flashes3" disabled="false" />
+      <value type="Flags" name="flash flags3" length="2" disabled="false">
+        <bit index="0" name="reverse default/flashing colors" />
+      </value>
+      <value type="Real" name="flash length3" disabled="false">
+        <tooltip>time of each flash</tooltip>
+      </value>
+      <value type="ArgbColor" name="disabled color3" disabled="false" />
+      <value type="Pad" name="_unnamed12" length="4" />
+      <value type="ArgbColor" name="default color4" disabled="false" />
+      <value type="ArgbColor" name="flashing color4" disabled="false" />
+      <value type="Real" name="flash period4" disabled="false" />
+      <value type="Real" name="flash delay4" disabled="false">
+        <tooltip>time between flashes</tooltip>
+      </value>
+      <value type="ShortInteger" name="number of flashes4" disabled="false" />
+      <value type="Flags" name="flash flags4" length="2" disabled="false">
+        <bit index="0" name="reverse default/flashing colors" />
+      </value>
+      <value type="Real" name="flash length4" disabled="false">
+        <tooltip>time of each flash</tooltip>
+      </value>
+      <value type="ArgbColor" name="disabled color4" disabled="false" />
+      <value type="Pad" name="_unnamed13" length="4" />
+      <value type="Pad" name="_unnamed14" length="40" />
+      <value type="TagReference" name="carnage report bitmap" disabled="false" extensions="bitm" />
+      <value type="ShortInteger" name="loading begin text" disabled="false" />
+      <value type="ShortInteger" name="loading end text" disabled="false" />
+      <value type="ShortInteger" name="checkpoint begin text" disabled="false" />
+      <value type="ShortInteger" name="checkpoint end text" disabled="false" />
+      <value type="TagReference" name="checkpoint sound" disabled="false" extensions="snd!" />
+      <value type="Pad" name="_unnamed15" length="96" />
+      <value type="TagReference" name="hud text" disabled="false" extensions="unic" />
+      <struct name="HudDashlightsBlock">
+        <value type="TagReference" name="bitmap" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="shader" disabled="false" extensions="shad" />
+        <value type="ShortInteger" name="sequence index" disabled="false" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="don't scale when pulsing" />
+        </value>
+        <value type="TagReference" name="sound" disabled="false" extensions="snd!" />
+      </struct>
+      <value type="Block" name="dashlights" disabled="false" struct="HudDashlightsBlock" maxelements="9" />
+      <value type="Block" name="waypoint arrows2" disabled="false" struct="HudWaypointArrowBlock" maxelements="4" />
+      <struct name="HudWaypointBlock">
+        <value type="TagReference" name="bitmap" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="shader" disabled="false" extensions="shad" />
+        <value type="ShortInteger" name="onscreen sequence index" disabled="false" />
+        <value type="ShortInteger" name="occluded sequence index" disabled="false" />
+        <value type="ShortInteger" name="offscreen sequence index" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="2" />
+      </struct>
+      <value type="Block" name="waypoints" disabled="false" struct="HudWaypointBlock" maxelements="8" />
+      <struct name="NewHudSoundBlock">
+        <value type="TagReference" name="chief sound" disabled="false" extensions="snd!|lsnd" blockname="true" />
+        <value type="Flags" name="latched to" length="4" disabled="false">
+          <bit index="0" name="shield recharging" />
+          <bit index="1" name="shield damaged" />
+          <bit index="2" name="shield low" />
+          <bit index="3" name="shield empty" />
+          <bit index="4" name="health low" />
+          <bit index="5" name="health empty" />
+          <bit index="6" name="health minor damage" />
+          <bit index="7" name="health major damage" />
+          <bit index="8" name="rocket locking" />
+          <bit index="9" name="rocket locked" />
+        </value>
+        <value type="Real" name="scale" disabled="false" />
+        <value type="TagReference" name="dervish sound" disabled="false" extensions="snd!|lsnd" />
+      </struct>
+      <value type="Block" name="hud sounds" disabled="false" struct="NewHudSoundBlock" maxelements="6" />
+      <struct name="PlayerTrainingEntryDataBlock">
+        <value type="StringId" name="display string" disabled="false">
+          <tooltip>comes out of the HUD text globals</tooltip>
+        </value>
+        <value type="ShortInteger" name="max display time" disabled="false">
+          <tooltip>how long the message can be on screen before being hidden</tooltip>
+        </value>
+        <value type="ShortInteger" name="display count" disabled="false">
+          <tooltip>how many times a training message will get displayed (0-3 only!)</tooltip>
+        </value>
+        <value type="ShortInteger" name="dissapear delay" disabled="false">
+          <tooltip>how long a displayed but untriggered message stays up</tooltip>
+        </value>
+        <value type="ShortInteger" name="redisplay delay" disabled="false">
+          <tooltip>how long after display this message will stay hidden</tooltip>
+        </value>
+        <value type="Real" name="display delay s" disabled="false">
+          <tooltip>how long the event can be triggered before it's displayed</tooltip>
+        </value>
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="not in multiplayer" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+      </struct>
+      <value type="Block" name="player training data" disabled="false" struct="PlayerTrainingEntryDataBlock" maxelements="32" />
+      <value type="TagReference" name="primary message sound" disabled="false" extensions="snd!|lsnd" />
+      <value type="TagReference" name="secondary message sound" disabled="false" extensions="snd!|lsnd" />
+      <value type="StringId" name="boot griefer string" disabled="false" />
+      <value type="StringId" name="cannot boot griefer string" disabled="false" />
+      <value type="TagReference" name="training shader" disabled="false" extensions="shad" />
+      <value type="TagReference" name="human training top right" disabled="false" extensions="bitm" />
+      <value type="TagReference" name="human training top center" disabled="false" extensions="bitm" />
+      <value type="TagReference" name="human training top left" disabled="false" extensions="bitm" />
+      <value type="TagReference" name="human training middle" disabled="false" extensions="bitm" />
+      <value type="TagReference" name="elite training top right" disabled="false" extensions="bitm" />
+      <value type="TagReference" name="elite training top center" disabled="false" extensions="bitm" />
+      <value type="TagReference" name="elite training top left" disabled="false" extensions="bitm" />
+      <value type="TagReference" name="elite training middle" disabled="false" extensions="bitm" />
+    </struct>
+  </plugin>
+</xml>

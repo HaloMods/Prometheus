@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="fog " parenttype="????">Fog</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Fog">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="is water" />
+        <bit index="1" name="atmosphere dominant" />
+        <bit index="2" name="fog screen only" />
+      </value>
+      <value type="Pad" name="_unnamed" length="4" />
+      <value type="Pad" name="_unnamed2" length="76" />
+      <value type="Pad" name="_unnamed3" length="4" />
+      <value type="RealFraction" name="maximum density">
+        <tooltip>Planar fog density is clamped to this value.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed4" length="4" />
+      <value type="Real" name="opaque distance">
+        <tooltip>The fog becomes opaque at this distance from the viewer.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed5" length="4" />
+      <value type="Real" name="opaque depth">
+        <tooltip>The fog becomes opaque at this distance from its surface.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed6" length="8" />
+      <value type="Real" name="distance to water plane">
+        <tooltip>The fog becomes water at this distance from its surface.</tooltip>
+      </value>
+      <value type="RealRGBColor" name="color" />
+      <value type="Flags" name="flags2" length="2">
+        <bit index="0" name="no environment multipass" />
+        <bit index="1" name="no model multipass" />
+        <bit index="2" name="no textur" />
+      </value>
+      <value type="ShortInteger" name="layer count">
+        <tooltip>0 layers disables the effect.</tooltip>
+      </value>
+      <value type="RealBounds" name="distance gradient" />
+      <value type="RealFractionBounds" name="density gradient" />
+      <value type="Real" name="start distance from fog plane">
+        <tooltip>Do NOT set this to the same value as maximum_depth.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed7" length="4" />
+      <value type="RGBColor" name="color2">
+        <tooltip>0 defaults to planar fog color.</tooltip>
+      </value>
+      <value type="RealFraction" name="rotation multiplier" />
+      <value type="RealFraction" name="strafing multiplier" />
+      <value type="RealFraction" name="zoom multiplier" />
+      <value type="Pad" name="_unnamed8" length="8" />
+      <value type="Real" name="map scale">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="TagReference" name="map" extensions="bitm" />
+      <value type="Real" name="animation period" />
+      <value type="Pad" name="_unnamed9" length="4" />
+      <value type="RealBounds" name="wind velocity" />
+      <value type="RealBounds" name="wind period">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="RealFraction" name="wind acceleration weight" />
+      <value type="RealFraction" name="wind perpendicular weight" />
+      <value type="Pad" name="_unnamed10" length="8" />
+      <value type="TagReference" name="background sound" extensions="lsnd" />
+      <value type="TagReference" name="sound environment" extensions="snde" />
+      <value type="Pad" name="_unnamed11" length="120" />
+    </struct>
+  </plugin>
+</xml>

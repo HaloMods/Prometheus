@@ -1,0 +1,447 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="weap" parenttype="item">Weapon</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Weapon">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="vertical heat display" />
+        <bit index="1" name="mutually exclusive triggers" />
+        <bit index="2" name="attacks automatically on bump" />
+        <bit index="3" name="must be readied" />
+        <bit index="4" name="doesnt count toward maximum" />
+        <bit index="5" name="aim assists only when zoomed" />
+        <bit index="6" name="prevents grenade throwing" />
+        <bit index="7" name="must be picked up" />
+        <bit index="8" name="holds triggers when dropped" />
+        <bit index="9" name="prevents melee attack" />
+        <bit index="10" name="detonates when dropped" />
+        <bit index="11" name="cannot fire at maximum age" />
+        <bit index="12" name="secondary trigger overrides grenades" />
+        <bit index="13" name="OBSOLETEdoes not depower active camo in multilplayer" />
+        <bit index="14" name="enables integrated night vision" />
+        <bit index="15" name="AIs use weapon melee damage" />
+      </value>
+      <value type="FixedLengthString" name="label">
+        <tooltip>The string used to match this weapon to an animation mode in the unit carrying it.</tooltip>
+      </value>
+      <value type="Enum" name="secondary trigger mode">
+        <item value="0" name="normal" />
+        <item value="1" name="slaved to primary" />
+        <item value="2" name="inhibits primary" />
+        <item value="3" name="loads alterate ammunition" />
+        <item value="4" name="loads multiple primary ammunition" />
+      </value>
+      <value type="ShortInteger" name="maximum alternate shots loaded">
+        <tooltip>If the second trigger loads alternate ammunition, this is the maximum number of shots that can be loaded at a time.</tooltip>
+      </value>
+      <value type="Enum" name="A in">
+        <item value="0" name="none" />
+        <item value="1" name="heat" />
+        <item value="2" name="primary ammunition" />
+        <item value="3" name="secondary ammunition" />
+        <item value="4" name="primary rate of fire" />
+        <item value="5" name="secondary rate of fire" />
+        <item value="6" name="ready" />
+        <item value="7" name="primary ejection port" />
+        <item value="8" name="secondary ejection port" />
+        <item value="9" name="overheated" />
+        <item value="10" name="primary charged" />
+        <item value="11" name="secondary charged" />
+        <item value="12" name="illumination" />
+        <item value="13" name="age" />
+        <item value="14" name="integrated light" />
+        <item value="15" name="primary firing" />
+        <item value="16" name="secondary firing" />
+        <item value="17" name="primary firing on" />
+        <item value="18" name="secondary firing on" />
+      </value>
+      <value type="Enum" name="B in">
+        <item value="0" name="none" />
+        <item value="1" name="heat" />
+        <item value="2" name="primary ammunition" />
+        <item value="3" name="secondary ammunition" />
+        <item value="4" name="primary rate of fire" />
+        <item value="5" name="secondary rate of fire" />
+        <item value="6" name="ready" />
+        <item value="7" name="primary ejection port" />
+        <item value="8" name="secondary ejection port" />
+        <item value="9" name="overheated" />
+        <item value="10" name="primary charged" />
+        <item value="11" name="secondary charged" />
+        <item value="12" name="illumination" />
+        <item value="13" name="age" />
+        <item value="14" name="integrated light" />
+        <item value="15" name="primary firing" />
+        <item value="16" name="secondary firing" />
+        <item value="17" name="primary firing on" />
+        <item value="18" name="secondary firing on" />
+      </value>
+      <value type="Enum" name="C in">
+        <item value="0" name="none" />
+        <item value="1" name="heat" />
+        <item value="2" name="primary ammunition" />
+        <item value="3" name="secondary ammunition" />
+        <item value="4" name="primary rate of fire" />
+        <item value="5" name="secondary rate of fire" />
+        <item value="6" name="ready" />
+        <item value="7" name="primary ejection port" />
+        <item value="8" name="secondary ejection port" />
+        <item value="9" name="overheated" />
+        <item value="10" name="primary charged" />
+        <item value="11" name="secondary charged" />
+        <item value="12" name="illumination" />
+        <item value="13" name="age" />
+        <item value="14" name="integrated light" />
+        <item value="15" name="primary firing" />
+        <item value="16" name="secondary firing" />
+        <item value="17" name="primary firing on" />
+        <item value="18" name="secondary firing on" />
+      </value>
+      <value type="Enum" name="D in">
+        <item value="0" name="none" />
+        <item value="1" name="heat" />
+        <item value="2" name="primary ammunition" />
+        <item value="3" name="secondary ammunition" />
+        <item value="4" name="primary rate of fire" />
+        <item value="5" name="secondary rate of fire" />
+        <item value="6" name="ready" />
+        <item value="7" name="primary ejection port" />
+        <item value="8" name="secondary ejection port" />
+        <item value="9" name="overheated" />
+        <item value="10" name="primary charged" />
+        <item value="11" name="secondary charged" />
+        <item value="12" name="illumination" />
+        <item value="13" name="age" />
+        <item value="14" name="integrated light" />
+        <item value="15" name="primary firing" />
+        <item value="16" name="secondary firing" />
+        <item value="17" name="primary firing on" />
+        <item value="18" name="secondary firing on" />
+      </value>
+      <value type="Real" name="ready time" />
+      <value type="TagReference" name="ready effect" extensions="snd!" />
+      <value type="RealFraction" name="heat recovery threshold">
+        <tooltip>The heat value a weapon must return to before leaving the overheated state, once it has become overheated in the first place.</tooltip>
+      </value>
+      <value type="RealFraction" name="overheated threshold">
+        <tooltip>The heat value over which a weapon first becomes overheated (should be greater than the heat recovery threshold).</tooltip>
+      </value>
+      <value type="RealFraction" name="heat detonation threshold">
+        <tooltip>The heat value above which the weapon has a chance of exploding each time it is fired.</tooltip>
+      </value>
+      <value type="RealFraction" name="heat detonation fraction">
+        <tooltip>The percent chance (between 0.0 and 1.0) the weapon will explode when fired over the heat detonation threshold.</tooltip>
+      </value>
+      <value type="RealFraction" name="heat loss per second">
+        <tooltip>The amount of heat lost each second when the weapon is not being fired.</tooltip>
+      </value>
+      <value type="RealFraction" name="heat illumination">
+        <tooltip>The amount of illumination given off when the weapon is overheated.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed" length="16" />
+      <value type="TagReference" name="overheated" extensions="snd!" />
+      <value type="TagReference" name="detonation" extensions="snd!" />
+      <value type="TagReference" name="player melee damage" extensions="jpt!" />
+      <value type="TagReference" name="player melee response" extensions="jpt!" />
+      <value type="Pad" name="_unnamed2" length="8" />
+      <value type="TagReference" name="actor firing parameters" extensions="actv" />
+      <value type="Real" name="near reticle range">
+        <tooltip>The range at which the closer of the two static target reticles will be drawn.</tooltip>
+      </value>
+      <value type="Real" name="far reticle range">
+        <tooltip>The range at which the farther of the two static target reticles will be drawn.</tooltip>
+      </value>
+      <value type="Real" name="intersection reticle range">
+        <tooltip>The maximum range at which the dynamic target reticle will be drawn.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed3" length="2" />
+      <value type="ShortInteger" name="magnification levels">
+        <tooltip>The number of magnification levels this weapon allows.</tooltip>
+      </value>
+      <value type="RealBounds" name="magnification range" />
+      <value type="Angle" name="autoaim angle">
+        <tooltip>The maximum angle that autoaim works at full strength.</tooltip>
+      </value>
+      <value type="Real" name="autoaim range">
+        <tooltip>The maximum distance that autoaim works at full strength.</tooltip>
+      </value>
+      <value type="Angle" name="magnetism angle">
+        <tooltip>The maximum angle that magnetism works at full strength.</tooltip>
+      </value>
+      <value type="Real" name="magnetism range">
+        <tooltip>The maximum distance that magnetism works at full strength.</tooltip>
+      </value>
+      <value type="Angle" name="deviation angle">
+        <tooltip>The maximum angle that a projectile is allowed to deviate from the gun barrel.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed4" length="4" />
+      <value type="Enum" name="movement penalized">
+        <item value="0" name="always" />
+        <item value="1" name="when zoomed" />
+        <item value="2" name="when zoomed or reloading" />
+      </value>
+      <value type="Pad" name="_unnamed5" length="2" />
+      <value type="RealFraction" name="forward movement penalty">
+        <tooltip>Percent slowdown to forward movement for units carrying this weapon.</tooltip>
+      </value>
+      <value type="RealFraction" name="sideways movement penalty">
+        <tooltip>Percent slowdown to sideways and backward movement for units carrying this weapon.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed6" length="4" />
+      <value type="Real" name="minimum target range">
+        <tooltip>Minimum range that actors using this weapon will try and target stuff at.</tooltip>
+      </value>
+      <value type="Real" name="looking time modifier">
+        <tooltip>How much faster actors look around idly using this weapon (zero is unchanged).</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed7" length="4" />
+      <value type="Real" name="light powe" />
+      <value type="Real" name="light powe2" />
+      <value type="TagReference" name="light powe3" extensions="snd!" />
+      <value type="TagReference" name="light powe4" extensions="snd!" />
+      <value type="Real" name="age heat recovery penalty">
+        <tooltip>How much the weapon's heat recovery is penalized as it ages.</tooltip>
+      </value>
+      <value type="Real" name="age rate of fire penalty">
+        <tooltip>How much the weapon's rate of fire is penalized as it ages.</tooltip>
+      </value>
+      <value type="RealFraction" name="age misfire start">
+        <tooltip>The age threshold when the weapon begins to misfire.</tooltip>
+      </value>
+      <value type="RealFraction" name="age misfire chance">
+        <tooltip>At age 1.0, the misfire chance per shot.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed8" length="12" />
+      <value type="TagReference" name="first person model" extensions="mod2" />
+      <value type="TagReference" name="first person animations" extensions="antr" />
+      <value type="Pad" name="_unnamed9" length="4" />
+      <value type="TagReference" name="hud interface" extensions="wphi" />
+      <value type="TagReference" name="pickup sound" extensions="snd!" />
+      <value type="TagReference" name="zoo" extensions="snd!" />
+      <value type="TagReference" name="zoo2" extensions="snd!" />
+      <value type="Pad" name="_unnamed10" length="12" />
+      <value type="Real" name="active camo ding">
+        <tooltip>How much to decrease active camo when a round is fired.</tooltip>
+      </value>
+      <value type="Real" name="active camo regrowth rate">
+        <tooltip>How fast to increase active camo (per tick) when a round is fired.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed11" length="12" />
+      <value type="Pad" name="_unnamed12" length="2" />
+      <value type="Enum" name="weapon type">
+        <item value="0" name="undefined" />
+        <item value="1" name="shotgun" />
+        <item value="2" name="needler" />
+        <item value="3" name="plasma pistol" />
+        <item value="4" name="plasma rifle" />
+      </value>
+      <struct name="PredictedResource">
+        <value type="Enum" name="type">
+          <item value="0" name="bitmap" />
+          <item value="1" name="sound" />
+        </value>
+        <value type="ShortInteger" name="resource index" />
+        <value type="LongInteger" name="tag index" />
+      </struct>
+      <value type="Block" name="predicted resources" struct="PredictedResource" maxelements="1024" />
+      <struct name="Magazines">
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="wastes rounds when reloaded" />
+          <bit index="1" name="every round must be chambered" />
+        </value>
+        <value type="ShortInteger" name="rounds recharged" />
+        <value type="ShortInteger" name="rounds total initial" />
+        <value type="ShortInteger" name="rounds total maximum" />
+        <value type="ShortInteger" name="rounds loaded maximum" />
+        <value type="Pad" name="_unnamed" length="8" />
+        <value type="Real" name="reload time">
+          <tooltip>The length of time it takes to load a single magazine into the weapon.</tooltip>
+        </value>
+        <value type="ShortInteger" name="rounds reloaded" />
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Real" name="chamber time">
+          <tooltip>The length of time it takes to chamber the next round.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed3" length="8" />
+        <value type="Pad" name="_unnamed4" length="16" />
+        <value type="TagReference" name="reloading effect" extensions="snd!" />
+        <value type="TagReference" name="chambering effect" extensions="snd!" />
+        <value type="Pad" name="_unnamed5" length="12" />
+        <struct name="MagazineObjects">
+          <value type="ShortInteger" name="rounds" />
+          <value type="Pad" name="_unnamed" length="10" />
+          <value type="TagReference" name="equipment" extensions="eqip" />
+        </struct>
+        <value type="Block" name="magazines" struct="MagazineObjects" maxelements="8" />
+      </struct>
+      <value type="Block" name="magazines" struct="Magazines" maxelements="2" />
+      <struct name="Triggers">
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="tracks fired projectile">
+            <tooltip>Poo poo ca ca pee pee.</tooltip>
+          </bit>
+          <bit index="1" name="random firing effects">
+            <tooltip>Rather than being chosen sequentially, firing effects are picked randomly.</tooltip>
+          </bit>
+          <bit index="2" name="can fire with partial ammo">
+            <tooltip>Allows a weapon to be fired as long as there is a non-zero amount of ammunition loaded.</tooltip>
+          </bit>
+          <bit index="3" name="does not repeat automatically">
+            <tooltip>Once fired, this trigger must be released and pressed to fire again.</tooltip>
+          </bit>
+          <bit index="4" name="locks in onoff state">
+            <tooltip>Once depressed, this trigger must be released and pressed again to turn it off (and likewise to turn it back on).</tooltip>
+          </bit>
+          <bit index="5" name="projectiles use weapon origin">
+            <tooltip>Instead of coming out of the magic first person camera origin, the projectiles for this weapon actually come out of the gun.</tooltip>
+          </bit>
+          <bit index="6" name="sticks when dropped">
+            <tooltip>If this trigger is pressed when its owner drops the weapon (for whatever reason) this trigger stays down.</tooltip>
+          </bit>
+          <bit index="7" name="ejects during chamber">
+            <tooltip>This trigger's ejection port is started during the key frame of its chamber animation.</tooltip>
+          </bit>
+          <bit index="8" name="discharging spews" />
+          <bit index="9" name="analog rate of fire" />
+          <bit index="10" name="use error when unzoomed" />
+          <bit index="11" name="projectile vector cannot be adjusted">
+            <tooltip>Projectiles fired by this weapon cannot have their direction adjusted by the AI to hit the target.</tooltip>
+          </bit>
+          <bit index="12" name="projectiles have identical error" />
+          <bit index="13" name="projectile is clien" />
+        </value>
+        <value type="RealBounds" name="rounds per second">
+          <tooltip>The number of firing effects created per second.</tooltip>
+        </value>
+        <value type="Real" name="acceleration time">
+          <tooltip>The continuous firing time it takes for the weapon to achieve its final rounds per second.</tooltip>
+        </value>
+        <value type="Real" name="deceleration time">
+          <tooltip>The continuous idle time it takes for the weapon to return from its final rounds per second to its initial.</tooltip>
+        </value>
+        <value type="RealFraction" name="blurred rate of fire">
+          <tooltip>A percentage between 0 and 1 which controls how soon in its firing animation the weapon blurs.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed" length="8" />
+        <value type="ShortBlockIndex" name="magazine" block="Magazines">
+          <tooltip>The magazine from which this trigger draws its ammunition.</tooltip>
+        </value>
+        <value type="ShortInteger" name="rounds per shot">
+          <tooltip>The number of rounds expended to create a single firing effect.</tooltip>
+        </value>
+        <value type="ShortInteger" name="minimum rounds loaded">
+          <tooltip>The minimum number of rounds necessary to fire the weapon.</tooltip>
+        </value>
+        <value type="ShortInteger" name="rounds between tracers">
+          <tooltip>The number of non-tracer rounds fired between tracers.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="6" />
+        <value type="Enum" name="firing noise">
+          <tooltip>How loud this weapon appears to the AI.</tooltip>
+          <item value="0" name="silent" />
+          <item value="1" name="medium" />
+          <item value="2" name="loud" />
+          <item value="3" name="shout" />
+          <item value="4" name="quiet" />
+        </value>
+        <value type="RealBounds" name="error">
+          <tooltip>The accuracy (between 0.0 and 1.0) of the weapon during firing.</tooltip>
+        </value>
+        <value type="Real" name="acceleration time2">
+          <tooltip>The continuous firing time it takes for the weapon to achieve its final error.</tooltip>
+        </value>
+        <value type="Real" name="deceleration time2">
+          <tooltip>The continuous idle time it takes for the weapon to return to its initial error.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed3" length="8" />
+        <value type="Real" name="charging time">
+          <tooltip>The amount of time it takes for this trigger to become fully charged.</tooltip>
+        </value>
+        <value type="Real" name="charged time">
+          <tooltip>The amount of time this trigger can be charged before becoming overcharged.</tooltip>
+        </value>
+        <value type="Enum" name="overcharged action">
+          <item value="0" name="none" />
+          <item value="1" name="explode" />
+          <item value="2" name="discharge" />
+        </value>
+        <value type="Pad" name="_unnamed4" length="2" />
+        <value type="Real" name="charged illumination">
+          <tooltip>The amount of illumination given off when the weapon is fully charged.</tooltip>
+        </value>
+        <value type="Real" name="spew time">
+          <tooltip>Length of time the weapon will spew (fire continuously) while discharging.</tooltip>
+        </value>
+        <value type="TagReference" name="charging effect" extensions="snd!">
+          <tooltip>The charging effect is created once when the trigger begins to charge.</tooltip>
+        </value>
+        <value type="Enum" name="distribution function">
+          <item value="0" name="point" />
+          <item value="1" name="horizontal fan" />
+        </value>
+        <value type="ShortInteger" name="projectiles per shot" />
+        <value type="Real" name="distribution angle" />
+        <value type="Pad" name="_unnamed5" length="4" />
+        <value type="Angle" name="minimum error" />
+        <value type="AngleBounds" name="error angle" />
+        <value type="RealPoint3D" name="first person offset">
+          <tooltip>+x is forward, +z is up, +y is left.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed6" length="4" />
+        <value type="TagReference" name="projectile" extensions="proj" />
+        <value type="Real" name="ejection port recovery time">
+          <tooltip>The amount of time (in seconds) it takes for the ejection port to transition from 1.0 (open) to 0.0 (closed) after a shot has been fired.</tooltip>
+        </value>
+        <value type="Real" name="illumination recovery time">
+          <tooltip>The amount of time (in seconds) it takes the illumination function to transition from 1.0 (bright) to 0.0 (dark) after a shot has been fired.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed7" length="12" />
+        <value type="RealFraction" name="heat generated per round">
+          <tooltip>The amount of heat generated each time the trigger is fired.</tooltip>
+        </value>
+        <value type="RealFraction" name="age generated per round">
+          <tooltip>The amount the weapon ages each time the trigger is fired.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed8" length="4" />
+        <value type="Real" name="overload time">
+          <tooltip>The next trigger fires this often while holding down this trigger.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed9" length="8" />
+        <value type="Pad" name="_unnamed10" length="32" />
+        <value type="Pad" name="_unnamed11" length="24" />
+        <struct name="TriggerFiringEffect">
+          <value type="ShortInteger" name="shot count lower bound">
+            <tooltip>The minimum number of times this firing effect will be used, once it has been chosen.</tooltip>
+          </value>
+          <value type="ShortInteger" name="shot count upper bound">
+            <tooltip>The maximum number of times this firing effect will be used, once it has been chosen.</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed" length="32" />
+          <value type="TagReference" name="firing effect" blockname="true" extensions="snd!">
+            <tooltip>This effect is used when the weapon is loaded and fired normally.</tooltip>
+          </value>
+          <value type="TagReference" name="misfire effect" extensions="snd!">
+            <tooltip>This effect is used when the weapon is loaded but fired while overheated.</tooltip>
+          </value>
+          <value type="TagReference" name="empty effect" extensions="snd!">
+            <tooltip>This effect is used when the weapon is not loaded.</tooltip>
+          </value>
+          <value type="TagReference" name="firing damage" extensions="jpt!">
+            <tooltip>This effect is used when the weapon is loaded and fired normally.</tooltip>
+          </value>
+          <value type="TagReference" name="misfire damage" extensions="jpt!">
+            <tooltip>This effect is used when the weapon is loaded but fired while overheated.</tooltip>
+          </value>
+          <value type="TagReference" name="empty damage" extensions="jpt!">
+            <tooltip>This effect is used when the weapon is not loaded.</tooltip>
+          </value>
+        </struct>
+        <value type="Block" name="firing effects" struct="TriggerFiringEffect" maxelements="8">
+          <tooltip>Firing effects determine what happens when this trigger is fired.</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="triggers" struct="Triggers" maxelements="2" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,49 @@
+<xml>
+  <name type="gldf" parenttype="????">ChocolateMountain</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ChocolateMountainBlock">
+      <struct name="LightingVariablesBlock">
+        <value type="Flags" name="object affected" length="4" disabled="false">
+          <bit index="0" name="all" />
+          <bit index="1" name="biped" />
+          <bit index="2" name="vehicle" />
+          <bit index="3" name="weapon" />
+          <bit index="4" name="equipment" />
+          <bit index="5" name="garbage" />
+          <bit index="6" name="projectile" />
+          <bit index="7" name="scenery" />
+          <bit index="8" name="machine" />
+          <bit index="9" name="control" />
+          <bit index="10" name="light fixture" />
+          <bit index="11" name="sound scenery" />
+          <bit index="12" name="crate" />
+          <bit index="13" name="creature" />
+        </value>
+        <value type="Real" name="Lightmap brightness offset" disabled="false" />
+        <value type="RealRgbColor" name="Min lightmap color" disabled="false" />
+        <value type="RealRgbColor" name="Max lightmap color" disabled="false" />
+        <value type="Real" name="exclusion angle from up" disabled="false">
+          <tooltip>degrees from up the direct light cannot be</tooltip>
+        </value>
+        <struct name="ByteBlock">
+          <value type="CharInteger" name="Value" disabled="false" />
+        </struct>
+        <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="RealRgbColor" name="Min lightmap color2" disabled="false" />
+        <value type="RealRgbColor" name="Max lightmap color2" disabled="false" />
+        <value type="RealRgbColor" name="Min diffuse sample" disabled="false" />
+        <value type="RealRgbColor" name="Max diffuse sample" disabled="false" />
+        <value type="Real" name="z axis rotation" disabled="false">
+          <tooltip>degrees</tooltip>
+        </value>
+        <value type="Block" name="data2" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="RealRgbColor" name="Min lightmap sample" disabled="false" />
+        <value type="RealRgbColor" name="Max lightmap sample" disabled="false" />
+        <value type="Block" name="data3" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="Block" name="data4" disabled="false" struct="ByteBlock" maxelements="1024" />
+      </struct>
+      <value type="Block" name="lighting variables" disabled="false" struct="LightingVariablesBlock" maxelements="13" />
+    </struct>
+  </plugin>
+</xml>

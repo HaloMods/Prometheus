@@ -1,0 +1,9 @@
+<xml>
+  <name type="snd!" parenttype="????">Sound</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="SoundBlock">
+      <value type="Skip" name="_unnamed0" length="20" />
+    </struct>
+  </plugin>
+</xml>

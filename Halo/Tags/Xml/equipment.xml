@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="eqip" parenttype="item">Equipment</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Equipment">
+      <value type="Enum" name="powerup type">
+        <item value="0" name="none" />
+        <item value="1" name="double speed" />
+        <item value="2" name="over shield" />
+        <item value="3" name="active camouflage" />
+        <item value="4" name="ful" />
+        <item value="5" name="health" />
+        <item value="6" name="grenade" />
+      </value>
+      <value type="Enum" name="grenade type">
+        <item value="0" name="human fragmentation" />
+        <item value="1" name="covenant plasma" />
+      </value>
+      <value type="Real" name="powerup time" />
+      <value type="TagReference" name="pickup sound" extensions="snd!" />
+      <value type="Pad" name="_unnamed" length="144" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,933 @@
+<xml>
+  <name type="phmo" parenttype="????">PhysicsModel</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="PhysicsModelBlock">
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="unused" />
+      </value>
+      <value type="Real" name="mass" disabled="false" />
+      <value type="Real" name="low freq deactivation scale" disabled="false">
+        <tooltip>0 is default (1). LESS than 1 deactivates less aggressively. GREATER than 1 is more agressive.</tooltip>
+      </value>
+      <value type="Real" name="high freq deactivation scale" disabled="false">
+        <tooltip>0 is default (1). LESS than 1 deactivates less aggressively. GREATER than 1 is more agressive.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed0" length="24" />
+      <struct name="PhantomTypesBlock">
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="generates effects" />
+          <bit index="1" name="use acc as force" />
+          <bit index="2" name="negates gravity" />
+          <bit index="3" name="ignores players" />
+          <bit index="4" name="ignores nonplayers" />
+          <bit index="5" name="ignores bipeds" />
+          <bit index="6" name="ignores vehicles" />
+          <bit index="7" name="ignores weapons" />
+          <bit index="8" name="ignores equipment" />
+          <bit index="9" name="ignores garbage" />
+          <bit index="10" name="ignores projectiles" />
+          <bit index="11" name="ignores scenery" />
+          <bit index="12" name="ignores machines" />
+          <bit index="13" name="ignores controls" />
+          <bit index="14" name="ignores light fixtures" />
+          <bit index="15" name="ignores sound scenery" />
+          <bit index="16" name="ignores crates" />
+          <bit index="17" name="ignores creatures" />
+          <bit index="18" name="" />
+          <bit index="19" name="" />
+          <bit index="20" name="" />
+          <bit index="21" name="" />
+          <bit index="22" name="" />
+          <bit index="23" name="" />
+          <bit index="24" name="localizes physics" />
+          <bit index="25" name="disable linear damping" />
+          <bit index="26" name="disable angular damping" />
+          <bit index="27" name="ignores dead bipeds" />
+        </value>
+        <value type="Enum" name="minimum size" length="1" disabled="false">
+          <item value="0" name="default" />
+          <item value="1" name="tiny" />
+          <item value="2" name="small" />
+          <item value="3" name="medium" />
+          <item value="4" name="large" />
+          <item value="5" name="huge" />
+          <item value="6" name="extra huge" />
+        </value>
+        <value type="Enum" name="maximum size" length="1" disabled="false">
+          <item value="0" name="default" />
+          <item value="1" name="tiny" />
+          <item value="2" name="small" />
+          <item value="3" name="medium" />
+          <item value="4" name="large" />
+          <item value="5" name="huge" />
+          <item value="6" name="extra huge" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="StringId" name="marker name" disabled="false">
+          <tooltip>you don't need this if you're just generating effects.  If empty it defaults to the up of the object</tooltip>
+        </value>
+        <value type="StringId" name="alignment marker name" disabled="false">
+          <tooltip>you don't need this if you're just generating effects.  If empty it defaults to "marker name"</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed1" length="8" />
+        <value type="Real" name="hookes law e" disabled="false">
+          <tooltip>0 if you don't want this to behave like spring.  1 is a good starting point if you do.</tooltip>
+        </value>
+        <value type="Real" name="linear dead radius" disabled="false">
+          <tooltip>radius from linear motion origin in which acceleration is dead.</tooltip>
+        </value>
+        <value type="Real" name="center acc" disabled="false" />
+        <value type="Real" name="center max vel" disabled="false" />
+        <value type="Real" name="axis acc" disabled="false" />
+        <value type="Real" name="axis max vel" disabled="false" />
+        <value type="Real" name="direction acc" disabled="false" />
+        <value type="Real" name="direction max vel" disabled="false" />
+        <value type="Pad" name="_unnamed2" length="28" />
+        <value type="Real" name="alignment hookes law e" disabled="false">
+          <tooltip>0 if you don't want this to behave like spring.  1 is a good starting point if you do.</tooltip>
+        </value>
+        <value type="Real" name="alignment acc" disabled="false" />
+        <value type="Real" name="alignment max vel" disabled="false" />
+        <value type="Pad" name="_unnamed3" length="8" />
+      </struct>
+      <value type="Block" name="phantom types" disabled="false" struct="PhantomTypesBlock" maxelements="16" />
+      <struct name="PhysicsModelNodeConstraintEdgeBlock">
+        <value type="Pad" name="_unnamed0" length="4" />
+        <value type="ShortBlockIndex" name="node a" disabled="true" block="NodesBlock" />
+        <value type="ShortBlockIndex" name="node b" disabled="true" block="NodesBlock" />
+        <struct name="PhysicsModelConstraintEdgeConstraintBlock">
+          <value type="Enum" name="type" length="2" disabled="true">
+            <item value="0" name="hinge" />
+            <item value="1" name="limited hinge" />
+            <item value="2" name="ragdoll" />
+            <item value="3" name="stiff spring" />
+            <item value="4" name="ball and socket" />
+            <item value="5" name="prismatic" />
+          </value>
+          <value type="ShortInteger" name="index" disabled="true" />
+          <value type="Flags" name="flags" length="4" disabled="false">
+            <bit index="0" name="is rigid">
+              <tooltip>this constraint makes the edge rigid until it is loosened by damage</tooltip>
+            </bit>
+            <bit index="1" name="disable effects">
+              <tooltip>this constraint will not generate impact effects</tooltip>
+            </bit>
+          </value>
+          <value type="Real" name="friction" disabled="false">
+            <tooltip>0 is the default (takes what it was set in max) anything else overrides that value</tooltip>
+          </value>
+        </struct>
+        <value type="Block" name="constraints" disabled="true" struct="PhysicsModelConstraintEdgeConstraintBlock" maxelements="64" />
+        <value type="StringId" name="node a material" disabled="false">
+          <tooltip>if you don't fill this out we will pluck the material from the first primitive, of the first rigid body attached to node a</tooltip>
+        </value>
+        <value type="StringId" name="node b material" disabled="false">
+          <tooltip>if you don't fill this out we will pluck the material from the first primitive, of the first rigid body attached to node b, if node b is none we use whatever material a has</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="node edges" disabled="true" struct="PhysicsModelNodeConstraintEdgeBlock" maxelements="4096" />
+      <struct name="RigidBodiesBlock">
+        <value type="ShortBlockIndex" name="node" disabled="true" block="NodesBlock" />
+        <value type="ShortBlockIndex" name="region" disabled="true" block="RegionsBlock" />
+        <value type="ShortInteger" name="permutattion" disabled="true" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="RealPoint3d" name="bouding sphere offset" disabled="true" />
+        <value type="Real" name="bounding sphere radius" disabled="true" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="no collisions w/self" />
+          <bit index="1" name="only collide w/env" />
+          <bit index="2" name="disable effects">
+            <tooltip>this rigid body will not generate impact effects unless it hits another dynamic rigid body that does</tooltip>
+          </bit>
+          <bit index="3" name="does not interact w/environment">
+            <tooltip>set this flag if this rigid bodies won't touch the environment, this allows us to open up some optimizations</tooltip>
+          </bit>
+          <bit index="4" name="best early mover body">
+            <tooltip> if you have either of the early mover flags set in the object definitoin this body will be choosen as the one to make every thing local to, otherwise I pick :-)</tooltip>
+          </bit>
+          <bit index="5" name="has no phantom power version">
+            <tooltip>don't check this flag without talking to eamon</tooltip>
+          </bit>
+        </value>
+        <value type="Enum" name="motion type" length="2" disabled="false">
+          <item value="0" name="sphere" />
+          <item value="1" name="stabilized sphere" />
+          <item value="2" name="box" />
+          <item value="3" name="stabilized box" />
+          <item value="4" name="keyframed" />
+          <item value="5" name="fixed" />
+        </value>
+        <value type="ShortBlockIndex" name="no phantom power alt" disabled="false" block="RigidBodiesBlock" />
+        <value type="Enum" name="size" length="2" disabled="false">
+          <item value="0" name="default" />
+          <item value="1" name="tiny" />
+          <item value="2" name="small" />
+          <item value="3" name="medium" />
+          <item value="4" name="large" />
+          <item value="5" name="huge" />
+          <item value="6" name="extra huge" />
+        </value>
+        <value type="Real" name="inertia tensor scale" disabled="false">
+          <tooltip>0.0 defaults to 1.0</tooltip>
+        </value>
+        <value type="Real" name="linear damping" disabled="false">
+          <tooltip>this goes from 0-10 (10 is really, really high)</tooltip>
+        </value>
+        <value type="Real" name="angular damping" disabled="false">
+          <tooltip>this goes from 0-10 (10 is really, really high)</tooltip>
+        </value>
+        <value type="RealVector3d" name="center off mass offset" disabled="false" />
+        <value type="Enum" name="shape type" length="2" disabled="true">
+          <item value="0" name="sphere" />
+          <item value="1" name="pill" />
+          <item value="2" name="box" />
+          <item value="3" name="triangle" />
+          <item value="4" name="polyhedron" />
+          <item value="5" name="multi sphere" />
+          <item value="6" name="unused 0" />
+          <item value="7" name="unused 1" />
+          <item value="8" name="unused 2" />
+          <item value="9" name="unused 3" />
+          <item value="10" name="unused 4" />
+          <item value="11" name="unused 5" />
+          <item value="12" name="unused 6" />
+          <item value="13" name="unused 7" />
+          <item value="14" name="list" />
+          <item value="15" name="mopp" />
+        </value>
+        <value type="ShortInteger" name="shape" disabled="true" />
+        <value type="Real" name="mass" disabled="true" unit="kg" />
+        <value type="RealVector3d" name="center of mass" disabled="true" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="RealVector3d" name="intertia tensor x" disabled="true" />
+        <value type="Skip" name="_unnamed2" length="4" />
+        <value type="RealVector3d" name="intertia tensor y" disabled="true" />
+        <value type="Skip" name="_unnamed3" length="4" />
+        <value type="RealVector3d" name="intertia tensor z" disabled="true" />
+        <value type="Skip" name="_unnamed4" length="4" />
+        <value type="Real" name="bounding sphere pad" disabled="false">
+          <tooltip>the bounding sphere for this rigid body will be outset by this much</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed5" length="12" />
+      </struct>
+      <value type="Block" name="rigid bodies" disabled="true" struct="RigidBodiesBlock" maxelements="64" />
+      <struct name="MaterialsBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="StringId" name="global material name" disabled="false" />
+        <value type="ShortBlockIndex" name="phantom type" disabled="false" block="PhantomTypesBlock" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="does not collide with fixed bodies" />
+        </value>
+      </struct>
+      <value type="Block" name="materials" disabled="true" struct="MaterialsBlock" maxelements="64" />
+      <struct name="SpheresBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="material" disabled="true" block="MaterialsBlock" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="unused" />
+        </value>
+        <value type="Real" name="relative mass scale" disabled="false" />
+        <value type="RealFraction" name="friction" disabled="false" />
+        <value type="RealFraction" name="restitution" disabled="false" />
+        <value type="Real" name="volume " disabled="true" />
+        <value type="Real" name="mass" disabled="true" />
+        <value type="Skip" name="_unnamed0" length="2" />
+        <value type="ShortBlockIndex" name="phantom" disabled="true" block="PhantomsBlock" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="ShortInteger" name="size" disabled="true" />
+        <value type="ShortInteger" name="count" disabled="true" />
+        <value type="Skip" name="_unnamed2" length="4" />
+        <value type="Real" name="radius" disabled="true" />
+        <value type="Skip" name="_unnamed3" length="4" />
+        <value type="ShortInteger" name="size2" disabled="true" />
+        <value type="ShortInteger" name="count2" disabled="true" />
+        <value type="Skip" name="_unnamed4" length="4" />
+        <value type="Skip" name="_unnamed5" length="4" />
+        <value type="RealVector3d" name="rotation i" disabled="true" />
+        <value type="Skip" name="_unnamed6" length="4" />
+        <value type="RealVector3d" name="rotation j" disabled="true" />
+        <value type="Skip" name="_unnamed7" length="4" />
+        <value type="RealVector3d" name="rotation k" disabled="true" />
+        <value type="Skip" name="_unnamed8" length="4" />
+        <value type="RealVector3d" name="translation" disabled="true" />
+        <value type="Skip" name="_unnamed9" length="4" />
+      </struct>
+      <value type="Block" name="spheres" disabled="true" struct="SpheresBlock" maxelements="1024" />
+      <struct name="MultiSpheresBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="material" disabled="true" block="MaterialsBlock" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="unused" />
+        </value>
+        <value type="Real" name="relative mass scale" disabled="false" />
+        <value type="RealFraction" name="friction" disabled="false" />
+        <value type="RealFraction" name="restitution" disabled="false" />
+        <value type="Real" name="volume " disabled="true" />
+        <value type="Real" name="mass" disabled="true" />
+        <value type="Skip" name="_unnamed0" length="2" />
+        <value type="ShortBlockIndex" name="phantom" disabled="true" block="PhantomsBlock" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="ShortInteger" name="size" disabled="true" />
+        <value type="ShortInteger" name="count" disabled="true" />
+        <value type="Skip" name="_unnamed2" length="4" />
+        <value type="LongInteger" name="num spheres" disabled="true" />
+        <value type="RealVector3d" name="sphere" disabled="true" />
+        <value type="Skip" name="_unnamed3" length="4" />
+        <value type="RealVector3d" name="sphere2" disabled="true" />
+        <value type="Skip" name="_unnamed4" length="4" />
+        <value type="RealVector3d" name="sphere3" disabled="true" />
+        <value type="Skip" name="_unnamed5" length="4" />
+        <value type="RealVector3d" name="sphere4" disabled="true" />
+        <value type="Skip" name="_unnamed6" length="4" />
+        <value type="RealVector3d" name="sphere5" disabled="true" />
+        <value type="Skip" name="_unnamed7" length="4" />
+        <value type="RealVector3d" name="sphere6" disabled="true" />
+        <value type="Skip" name="_unnamed8" length="4" />
+        <value type="RealVector3d" name="sphere7" disabled="true" />
+        <value type="Skip" name="_unnamed9" length="4" />
+        <value type="RealVector3d" name="sphere8" disabled="true" />
+        <value type="Skip" name="_unnamed10" length="4" />
+      </struct>
+      <value type="Block" name="multi spheres" disabled="true" struct="MultiSpheresBlock" maxelements="1024" />
+      <struct name="PillsBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="material" disabled="true" block="MaterialsBlock" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="unused" />
+        </value>
+        <value type="Real" name="relative mass scale" disabled="false" />
+        <value type="RealFraction" name="friction" disabled="false" />
+        <value type="RealFraction" name="restitution" disabled="false" />
+        <value type="Real" name="volume " disabled="true" />
+        <value type="Real" name="mass" disabled="true" />
+        <value type="Skip" name="_unnamed0" length="2" />
+        <value type="ShortBlockIndex" name="phantom" disabled="true" block="PhantomsBlock" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="ShortInteger" name="size" disabled="true" />
+        <value type="ShortInteger" name="count" disabled="true" />
+        <value type="Skip" name="_unnamed2" length="4" />
+        <value type="Real" name="radius" disabled="true" />
+        <value type="RealVector3d" name="bottom" disabled="true" />
+        <value type="Skip" name="_unnamed3" length="4" />
+        <value type="RealVector3d" name="top" disabled="true" />
+        <value type="Skip" name="_unnamed4" length="4" />
+      </struct>
+      <value type="Block" name="pills" disabled="true" struct="PillsBlock" maxelements="1024" />
+      <struct name="BoxesBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="material" disabled="true" block="MaterialsBlock" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="unused" />
+        </value>
+        <value type="Real" name="relative mass scale" disabled="false" />
+        <value type="RealFraction" name="friction" disabled="false" />
+        <value type="RealFraction" name="restitution" disabled="false" />
+        <value type="Real" name="volume " disabled="true" />
+        <value type="Real" name="mass" disabled="true" />
+        <value type="Skip" name="_unnamed0" length="2" />
+        <value type="ShortBlockIndex" name="phantom" disabled="true" block="PhantomsBlock" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="ShortInteger" name="size" disabled="true" />
+        <value type="ShortInteger" name="count" disabled="true" />
+        <value type="Skip" name="_unnamed2" length="4" />
+        <value type="Real" name="radius" disabled="true" />
+        <value type="RealVector3d" name="half extents" disabled="true" />
+        <value type="Skip" name="_unnamed3" length="4" />
+        <value type="Skip" name="_unnamed4" length="4" />
+        <value type="ShortInteger" name="size2" disabled="true" />
+        <value type="ShortInteger" name="count2" disabled="true" />
+        <value type="Skip" name="_unnamed5" length="4" />
+        <value type="Skip" name="_unnamed6" length="4" />
+        <value type="RealVector3d" name="rotation i" disabled="true" />
+        <value type="Skip" name="_unnamed7" length="4" />
+        <value type="RealVector3d" name="rotation j" disabled="true" />
+        <value type="Skip" name="_unnamed8" length="4" />
+        <value type="RealVector3d" name="rotation k" disabled="true" />
+        <value type="Skip" name="_unnamed9" length="4" />
+        <value type="RealVector3d" name="translation" disabled="true" />
+        <value type="Skip" name="_unnamed10" length="4" />
+      </struct>
+      <value type="Block" name="boxes" disabled="true" struct="BoxesBlock" maxelements="1024" />
+      <struct name="TrianglesBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="material" disabled="true" block="MaterialsBlock" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="unused" />
+        </value>
+        <value type="Real" name="relative mass scale" disabled="false" />
+        <value type="RealFraction" name="friction" disabled="false" />
+        <value type="RealFraction" name="restitution" disabled="false" />
+        <value type="Real" name="volume " disabled="true" />
+        <value type="Real" name="mass" disabled="true" />
+        <value type="Skip" name="_unnamed0" length="2" />
+        <value type="ShortBlockIndex" name="phantom" disabled="true" block="PhantomsBlock" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="ShortInteger" name="size" disabled="true" />
+        <value type="ShortInteger" name="count" disabled="true" />
+        <value type="Skip" name="_unnamed2" length="4" />
+        <value type="Real" name="radius" disabled="true" />
+        <value type="RealVector3d" name="point a" disabled="true" />
+        <value type="Skip" name="_unnamed3" length="4" />
+        <value type="RealVector3d" name="point b" disabled="true" />
+        <value type="Skip" name="_unnamed4" length="4" />
+        <value type="RealVector3d" name="point c" disabled="true" />
+        <value type="Skip" name="_unnamed5" length="4" />
+      </struct>
+      <value type="Block" name="triangles" disabled="true" struct="TrianglesBlock" maxelements="1024" />
+      <struct name="PolyhedraBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="material" disabled="true" block="MaterialsBlock" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="unused" />
+        </value>
+        <value type="Real" name="relative mass scale" disabled="false" />
+        <value type="RealFraction" name="friction" disabled="false" />
+        <value type="RealFraction" name="restitution" disabled="false" />
+        <value type="Real" name="volume " disabled="true" />
+        <value type="Real" name="mass" disabled="true" />
+        <value type="Skip" name="_unnamed0" length="2" />
+        <value type="ShortBlockIndex" name="phantom" disabled="true" block="PhantomsBlock" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="ShortInteger" name="size" disabled="true" />
+        <value type="ShortInteger" name="count" disabled="true" />
+        <value type="Skip" name="_unnamed2" length="4" />
+        <value type="Real" name="radius" disabled="true" />
+        <value type="RealVector3d" name="aabb half extents" disabled="true" />
+        <value type="Skip" name="_unnamed3" length="4" />
+        <value type="RealVector3d" name="aabb center" disabled="true" />
+        <value type="Skip" name="_unnamed4" length="4" />
+        <value type="Skip" name="_unnamed5" length="4" />
+        <value type="LongInteger" name="four vectors size" disabled="true" />
+        <value type="LongInteger" name="four vectors capacity" disabled="true" />
+        <value type="LongInteger" name="num vertices" disabled="true" />
+        <value type="RealVector3d" name="four vectors x" disabled="true" />
+        <value type="Skip" name="_unnamed6" length="4" />
+        <value type="RealVector3d" name="four vectors y" disabled="true" />
+        <value type="Skip" name="_unnamed7" length="4" />
+        <value type="RealVector3d" name="four vectors z" disabled="true" />
+        <value type="Skip" name="_unnamed8" length="4" />
+        <value type="RealVector3d" name="four vectors x2" disabled="true" />
+        <value type="Skip" name="_unnamed9" length="4" />
+        <value type="RealVector3d" name="four vectors y2" disabled="true" />
+        <value type="Skip" name="_unnamed10" length="4" />
+        <value type="RealVector3d" name="four vectors z2" disabled="true" />
+        <value type="Skip" name="_unnamed11" length="4" />
+        <value type="RealVector3d" name="four vectors x3" disabled="true" />
+        <value type="Skip" name="_unnamed12" length="4" />
+        <value type="RealVector3d" name="four vectors y3" disabled="true" />
+        <value type="Skip" name="_unnamed13" length="4" />
+        <value type="RealVector3d" name="four vectors z3" disabled="true" />
+        <value type="Skip" name="_unnamed14" length="4" />
+        <value type="Skip" name="_unnamed15" length="4" />
+        <value type="LongInteger" name="plane equations size" disabled="true" />
+        <value type="LongInteger" name="plane equations capacity" disabled="true" />
+        <value type="Skip" name="_unnamed16" length="4" />
+      </struct>
+      <value type="Block" name="polyhedra" disabled="true" struct="PolyhedraBlock" maxelements="1024" />
+      <struct name="PolyhedronFourVectorsBlock">
+        <value type="RealVector3d" name="four vectors x" disabled="true" />
+        <value type="Skip" name="_unnamed0" length="4" />
+        <value type="RealVector3d" name="four vectors y" disabled="true" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="RealVector3d" name="four vectors z" disabled="true" />
+        <value type="Skip" name="_unnamed2" length="4" />
+      </struct>
+      <value type="Block" name="polyhedron four vectors" disabled="true" struct="PolyhedronFourVectorsBlock" maxelements="4096" />
+      <struct name="PolyhedronPlaneEquationsBlock">
+        <value type="Skip" name="_unnamed0" length="16" />
+      </struct>
+      <value type="Block" name="polyhedron plane equations" disabled="true" struct="PolyhedronPlaneEquationsBlock" maxelements="1024" />
+      <struct name="MassDistributionsBlock">
+        <value type="RealVector3d" name="center of mass" disabled="true" />
+        <value type="Skip" name="_unnamed0" length="4" />
+        <value type="RealVector3d" name="inertia tensor i" disabled="true" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="RealVector3d" name="inertia tensor j" disabled="true" />
+        <value type="Skip" name="_unnamed2" length="4" />
+        <value type="RealVector3d" name="inertia tensor k" disabled="true" />
+        <value type="Skip" name="_unnamed3" length="4" />
+      </struct>
+      <value type="Block" name="mass distributions" disabled="true" struct="MassDistributionsBlock" maxelements="256" />
+      <struct name="ListsBlock">
+        <value type="Skip" name="_unnamed0" length="4" />
+        <value type="ShortInteger" name="size" disabled="true" />
+        <value type="ShortInteger" name="count" disabled="true" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="Skip" name="_unnamed2" length="4" />
+        <value type="LongInteger" name="child shapes size" disabled="true" />
+        <value type="LongInteger" name="child shapes capacity" disabled="true" />
+        <value type="Enum" name="shape type" length="2" disabled="true">
+          <item value="0" name="sphere" />
+          <item value="1" name="pill" />
+          <item value="2" name="box" />
+          <item value="3" name="triangle" />
+          <item value="4" name="polyhedron" />
+          <item value="5" name="multi sphere" />
+          <item value="6" name="unused 0" />
+          <item value="7" name="unused 1" />
+          <item value="8" name="unused 2" />
+          <item value="9" name="unused 3" />
+          <item value="10" name="unused 4" />
+          <item value="11" name="unused 5" />
+          <item value="12" name="unused 6" />
+          <item value="13" name="unused 7" />
+          <item value="14" name="list" />
+          <item value="15" name="mopp" />
+        </value>
+        <value type="ShortInteger" name="shape" disabled="true" />
+        <value type="LongInteger" name="collision filter" disabled="true" />
+        <value type="Enum" name="shape type2" length="2" disabled="true">
+          <item value="0" name="sphere" />
+          <item value="1" name="pill" />
+          <item value="2" name="box" />
+          <item value="3" name="triangle" />
+          <item value="4" name="polyhedron" />
+          <item value="5" name="multi sphere" />
+          <item value="6" name="unused 0" />
+          <item value="7" name="unused 1" />
+          <item value="8" name="unused 2" />
+          <item value="9" name="unused 3" />
+          <item value="10" name="unused 4" />
+          <item value="11" name="unused 5" />
+          <item value="12" name="unused 6" />
+          <item value="13" name="unused 7" />
+          <item value="14" name="list" />
+          <item value="15" name="mopp" />
+        </value>
+        <value type="ShortInteger" name="shape2" disabled="true" />
+        <value type="LongInteger" name="collision filter2" disabled="true" />
+        <value type="Enum" name="shape type3" length="2" disabled="true">
+          <item value="0" name="sphere" />
+          <item value="1" name="pill" />
+          <item value="2" name="box" />
+          <item value="3" name="triangle" />
+          <item value="4" name="polyhedron" />
+          <item value="5" name="multi sphere" />
+          <item value="6" name="unused 0" />
+          <item value="7" name="unused 1" />
+          <item value="8" name="unused 2" />
+          <item value="9" name="unused 3" />
+          <item value="10" name="unused 4" />
+          <item value="11" name="unused 5" />
+          <item value="12" name="unused 6" />
+          <item value="13" name="unused 7" />
+          <item value="14" name="list" />
+          <item value="15" name="mopp" />
+        </value>
+        <value type="ShortInteger" name="shape3" disabled="true" />
+        <value type="LongInteger" name="collision filter3" disabled="true" />
+        <value type="Enum" name="shape type4" length="2" disabled="true">
+          <item value="0" name="sphere" />
+          <item value="1" name="pill" />
+          <item value="2" name="box" />
+          <item value="3" name="triangle" />
+          <item value="4" name="polyhedron" />
+          <item value="5" name="multi sphere" />
+          <item value="6" name="unused 0" />
+          <item value="7" name="unused 1" />
+          <item value="8" name="unused 2" />
+          <item value="9" name="unused 3" />
+          <item value="10" name="unused 4" />
+          <item value="11" name="unused 5" />
+          <item value="12" name="unused 6" />
+          <item value="13" name="unused 7" />
+          <item value="14" name="list" />
+          <item value="15" name="mopp" />
+        </value>
+        <value type="ShortInteger" name="shape4" disabled="true" />
+        <value type="LongInteger" name="collision filter4" disabled="true" />
+      </struct>
+      <value type="Block" name="lists" disabled="true" struct="ListsBlock" maxelements="64" />
+      <struct name="ListShapesBlock">
+        <value type="Enum" name="shape type" length="2" disabled="true">
+          <item value="0" name="sphere" />
+          <item value="1" name="pill" />
+          <item value="2" name="box" />
+          <item value="3" name="triangle" />
+          <item value="4" name="polyhedron" />
+          <item value="5" name="multi sphere" />
+          <item value="6" name="unused 0" />
+          <item value="7" name="unused 1" />
+          <item value="8" name="unused 2" />
+          <item value="9" name="unused 3" />
+          <item value="10" name="unused 4" />
+          <item value="11" name="unused 5" />
+          <item value="12" name="unused 6" />
+          <item value="13" name="unused 7" />
+          <item value="14" name="list" />
+          <item value="15" name="mopp" />
+        </value>
+        <value type="ShortInteger" name="shape" disabled="true" />
+        <value type="LongInteger" name="collision filter" disabled="true" />
+      </struct>
+      <value type="Block" name="list shapes" disabled="true" struct="ListShapesBlock" maxelements="256" />
+      <struct name="MoppsBlock">
+        <value type="Skip" name="_unnamed0" length="4" />
+        <value type="ShortInteger" name="size" disabled="true" />
+        <value type="ShortInteger" name="count" disabled="true" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="ShortBlockIndex" name="list" disabled="true" block="ListsBlock" />
+        <value type="LongInteger" name="code offset" disabled="false" />
+      </struct>
+      <value type="Block" name="mopps" disabled="true" struct="MoppsBlock" maxelements="64" />
+      <value type="Data" name="mopp codes" disabled="true" />
+      <struct name="HingeConstraintsBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="node a" disabled="true" block="NodesBlock" />
+        <value type="ShortBlockIndex" name="node b" disabled="true" block="NodesBlock" />
+        <value type="Real" name="a scale" disabled="true" />
+        <value type="RealVector3d" name="a forward" disabled="true" />
+        <value type="RealVector3d" name="a left" disabled="true" />
+        <value type="RealVector3d" name="a up" disabled="true" />
+        <value type="RealPoint3d" name="a position" disabled="true" />
+        <value type="Real" name="b scale" disabled="true" />
+        <value type="RealVector3d" name="b forward" disabled="true" />
+        <value type="RealVector3d" name="b left" disabled="true" />
+        <value type="RealVector3d" name="b up" disabled="true" />
+        <value type="RealPoint3d" name="b position" disabled="true" />
+        <value type="ShortBlockIndex" name="edge index" disabled="true" block="PhysicsModelNodeConstraintEdgeBlock" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="4" />
+      </struct>
+      <value type="Block" name="hinge constraints" disabled="true" struct="HingeConstraintsBlock" maxelements="64" />
+      <struct name="RagdollConstraintsBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="node a" disabled="true" block="NodesBlock" />
+        <value type="ShortBlockIndex" name="node b" disabled="true" block="NodesBlock" />
+        <value type="Real" name="a scale" disabled="true" />
+        <value type="RealVector3d" name="a forward" disabled="true" />
+        <value type="RealVector3d" name="a left" disabled="true" />
+        <value type="RealVector3d" name="a up" disabled="true" />
+        <value type="RealPoint3d" name="a position" disabled="true" />
+        <value type="Real" name="b scale" disabled="true" />
+        <value type="RealVector3d" name="b forward" disabled="true" />
+        <value type="RealVector3d" name="b left" disabled="true" />
+        <value type="RealVector3d" name="b up" disabled="true" />
+        <value type="RealPoint3d" name="b position" disabled="true" />
+        <value type="ShortBlockIndex" name="edge index" disabled="true" block="PhysicsModelNodeConstraintEdgeBlock" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <value type="Real" name="min twist" disabled="true" />
+        <value type="Real" name="max twist" disabled="true" />
+        <value type="Real" name="min cone" disabled="true" />
+        <value type="Real" name="max cone" disabled="true" />
+        <value type="Real" name="min plane" disabled="true" />
+        <value type="Real" name="max plane" disabled="true" />
+        <value type="Real" name="max friciton torque" disabled="true" />
+      </struct>
+      <value type="Block" name="ragdoll constraints" disabled="true" struct="RagdollConstraintsBlock" maxelements="64" />
+      <struct name="RegionsBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <struct name="PermutationsBlock">
+          <value type="StringId" name="name" disabled="true" blockname="true" />
+          <struct name="RigidBodyIndicesBlock">
+            <value type="ShortBlockIndex" name="rigid body" disabled="true" block="RigidBodiesBlock" blockname="true" />
+          </struct>
+          <value type="Block" name="rigid bodies" disabled="false" struct="RigidBodyIndicesBlock" maxelements="64" />
+        </struct>
+        <value type="Block" name="permutations" disabled="false" struct="PermutationsBlock" maxelements="32" />
+      </struct>
+      <value type="Block" name="regions" disabled="true" struct="RegionsBlock" maxelements="16" />
+      <struct name="NodesBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="does not animate" />
+        </value>
+        <value type="ShortBlockIndex" name="parent" disabled="true" block="NodesBlock" />
+        <value type="ShortBlockIndex" name="sibling" disabled="true" block="NodesBlock" />
+        <value type="ShortBlockIndex" name="child" disabled="true" block="NodesBlock" />
+      </struct>
+      <value type="Block" name="nodes" disabled="true" struct="NodesBlock" maxelements="255" />
+      <struct name="GlobalTagImportInfoBlock">
+        <value type="LongInteger" name="build" disabled="true" />
+        <value type="LongerFixedLengthString" name="version" disabled="true" />
+        <value type="FixedLengthString" name="import date" disabled="true" />
+        <value type="FixedLengthString" name="culprit" disabled="true" />
+        <value type="Pad" name="_unnamed0" length="96" />
+        <value type="FixedLengthString" name="import time" disabled="true" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <struct name="TagImportFileBlock">
+          <value type="LongerFixedLengthString" name="path" disabled="true" />
+          <value type="FixedLengthString" name="modification date" disabled="true" />
+          <value type="Skip" name="_unnamed0" length="8" />
+          <value type="Pad" name="_unnamed1" length="88" />
+          <value type="LongInteger" name="checksum" disabled="true" unit="crc32" />
+          <value type="LongInteger" name="size" disabled="true" unit="bytes" />
+          <value type="Data" name="zipped data" disabled="true" />
+          <value type="Pad" name="_unnamed2" length="128" />
+        </struct>
+        <value type="Block" name="files" disabled="true" struct="TagImportFileBlock" maxelements="1024" />
+        <value type="Pad" name="_unnamed2" length="128" />
+      </struct>
+      <value type="Block" name="import info" disabled="true" struct="GlobalTagImportInfoBlock" maxelements="1" />
+      <struct name="GlobalErrorReportCategoriesBlock">
+        <value type="LongerFixedLengthString" name="Name" disabled="true" blockname="true" />
+        <value type="Enum" name="Report Type" length="2" disabled="true">
+          <item value="0" name="Silent" />
+          <item value="1" name="Comment" />
+          <item value="2" name="Warning" />
+          <item value="3" name="Error" />
+        </value>
+        <value type="Flags" name="Flags" length="2" disabled="true">
+          <bit index="0" name="Rendered" />
+          <bit index="1" name="Tangent Space" />
+          <bit index="2" name="Noncritical" />
+          <bit index="3" name="Lightmap Light" />
+          <bit index="4" name="Report key is valid." />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Pad" name="_unnamed2" length="404" />
+        <struct name="ErrorReportsBlock">
+          <value type="Enum" name="Type" length="2" disabled="true">
+            <item value="0" name="Silent" />
+            <item value="1" name="Comment" />
+            <item value="2" name="Warning" />
+            <item value="3" name="Error" />
+          </value>
+          <value type="Flags" name="Flags" length="2" disabled="true">
+            <bit index="0" name="Rendered" />
+            <bit index="1" name="Tangent Space" />
+            <bit index="2" name="Noncritical" />
+            <bit index="3" name="Lightmap Light" />
+            <bit index="4" name="Report key is valid." />
+          </value>
+          <value type="Data" name="Text" disabled="true" />
+          <value type="FixedLengthString" name="Source Filename" disabled="true" />
+          <value type="LongInteger" name="Source Line Number" disabled="true" />
+          <struct name="ErrorReportVerticesBlock">
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="CharInteger" name="Node Index" disabled="true" />
+            <value type="CharInteger" name="Node Index2" disabled="true" />
+            <value type="CharInteger" name="Node Index3" disabled="true" />
+            <value type="CharInteger" name="Node Index4" disabled="true" />
+            <value type="Real" name="Node Weight" disabled="true" />
+            <value type="Real" name="Node Weight2" disabled="true" />
+            <value type="Real" name="Node Weight3" disabled="true" />
+            <value type="Real" name="Node Weight4" disabled="true" />
+            <value type="RealArgbColor" name="Color" disabled="true" />
+            <value type="Real" name="Screen Size" disabled="true" />
+          </struct>
+          <value type="Block" name="Vertices" disabled="true" struct="ErrorReportVerticesBlock" maxelements="1024" />
+          <struct name="ErrorReportVectorsBlock">
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="CharInteger" name="Node Index" disabled="true" />
+            <value type="CharInteger" name="Node Index2" disabled="true" />
+            <value type="CharInteger" name="Node Index3" disabled="true" />
+            <value type="CharInteger" name="Node Index4" disabled="true" />
+            <value type="Real" name="Node Weight" disabled="true" />
+            <value type="Real" name="Node Weight2" disabled="true" />
+            <value type="Real" name="Node Weight3" disabled="true" />
+            <value type="Real" name="Node Weight4" disabled="true" />
+            <value type="RealArgbColor" name="Color" disabled="true" />
+            <value type="RealVector3d" name="Normal" disabled="true" />
+            <value type="Real" name="Screen Length" disabled="true" />
+          </struct>
+          <value type="Block" name="Vectors" disabled="true" struct="ErrorReportVectorsBlock" maxelements="1024" />
+          <struct name="ErrorReportLinesBlock">
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="CharInteger" name="Node Index" disabled="true" />
+            <value type="CharInteger" name="Node Index2" disabled="true" />
+            <value type="CharInteger" name="Node Index3" disabled="true" />
+            <value type="CharInteger" name="Node Index4" disabled="true" />
+            <value type="RealPoint3d" name="Position2" disabled="true" />
+            <value type="CharInteger" name="Node Index5" disabled="true" />
+            <value type="CharInteger" name="Node Index6" disabled="true" />
+            <value type="CharInteger" name="Node Index7" disabled="true" />
+            <value type="CharInteger" name="Node Index8" disabled="true" />
+            <value type="Real" name="Node Weight" disabled="true" />
+            <value type="Real" name="Node Weight2" disabled="true" />
+            <value type="Real" name="Node Weight3" disabled="true" />
+            <value type="Real" name="Node Weight4" disabled="true" />
+            <value type="RealArgbColor" name="Color" disabled="true" />
+          </struct>
+          <value type="Block" name="Lines" disabled="true" struct="ErrorReportLinesBlock" maxelements="1024" />
+          <struct name="ErrorReportTrianglesBlock">
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="CharInteger" name="Node Index" disabled="true" />
+            <value type="CharInteger" name="Node Index2" disabled="true" />
+            <value type="CharInteger" name="Node Index3" disabled="true" />
+            <value type="CharInteger" name="Node Index4" disabled="true" />
+            <value type="RealPoint3d" name="Position2" disabled="true" />
+            <value type="CharInteger" name="Node Index5" disabled="true" />
+            <value type="CharInteger" name="Node Index6" disabled="true" />
+            <value type="CharInteger" name="Node Index7" disabled="true" />
+            <value type="CharInteger" name="Node Index8" disabled="true" />
+            <value type="RealPoint3d" name="Position3" disabled="true" />
+            <value type="CharInteger" name="Node Index9" disabled="true" />
+            <value type="CharInteger" name="Node Index10" disabled="true" />
+            <value type="CharInteger" name="Node Index11" disabled="true" />
+            <value type="CharInteger" name="Node Index12" disabled="true" />
+            <value type="Real" name="Node Weight" disabled="true" />
+            <value type="Real" name="Node Weight2" disabled="true" />
+            <value type="Real" name="Node Weight3" disabled="true" />
+            <value type="Real" name="Node Weight4" disabled="true" />
+            <value type="RealArgbColor" name="Color" disabled="true" />
+          </struct>
+          <value type="Block" name="Triangles" disabled="true" struct="ErrorReportTrianglesBlock" maxelements="1024" />
+          <struct name="ErrorReportQuadsBlock">
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="CharInteger" name="Node Index" disabled="true" />
+            <value type="CharInteger" name="Node Index2" disabled="true" />
+            <value type="CharInteger" name="Node Index3" disabled="true" />
+            <value type="CharInteger" name="Node Index4" disabled="true" />
+            <value type="RealPoint3d" name="Position2" disabled="true" />
+            <value type="CharInteger" name="Node Index5" disabled="true" />
+            <value type="CharInteger" name="Node Index6" disabled="true" />
+            <value type="CharInteger" name="Node Index7" disabled="true" />
+            <value type="CharInteger" name="Node Index8" disabled="true" />
+            <value type="RealPoint3d" name="Position3" disabled="true" />
+            <value type="CharInteger" name="Node Index9" disabled="true" />
+            <value type="CharInteger" name="Node Index10" disabled="true" />
+            <value type="CharInteger" name="Node Index11" disabled="true" />
+            <value type="CharInteger" name="Node Index12" disabled="true" />
+            <value type="RealPoint3d" name="Position4" disabled="true" />
+            <value type="CharInteger" name="Node Index13" disabled="true" />
+            <value type="CharInteger" name="Node Index14" disabled="true" />
+            <value type="CharInteger" name="Node Index15" disabled="true" />
+            <value type="CharInteger" name="Node Index16" disabled="true" />
+            <value type="Real" name="Node Weight" disabled="true" />
+            <value type="Real" name="Node Weight2" disabled="true" />
+            <value type="Real" name="Node Weight3" disabled="true" />
+            <value type="Real" name="Node Weight4" disabled="true" />
+            <value type="RealArgbColor" name="Color" disabled="true" />
+          </struct>
+          <value type="Block" name="Quads" disabled="true" struct="ErrorReportQuadsBlock" maxelements="1024" />
+          <struct name="ErrorReportCommentsBlock">
+            <value type="Data" name="Text" disabled="true" />
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="CharInteger" name="Node Index" disabled="true" />
+            <value type="CharInteger" name="Node Index2" disabled="true" />
+            <value type="CharInteger" name="Node Index3" disabled="true" />
+            <value type="CharInteger" name="Node Index4" disabled="true" />
+            <value type="Real" name="Node Weight" disabled="true" />
+            <value type="Real" name="Node Weight2" disabled="true" />
+            <value type="Real" name="Node Weight3" disabled="true" />
+            <value type="Real" name="Node Weight4" disabled="true" />
+            <value type="RealArgbColor" name="Color" disabled="true" />
+          </struct>
+          <value type="Block" name="Comments" disabled="true" struct="ErrorReportCommentsBlock" maxelements="1024" />
+          <value type="Pad" name="_unnamed0" length="380" />
+          <value type="LongInteger" name="Report Key" disabled="true" />
+          <value type="LongInteger" name="Node Index" disabled="true" />
+          <value type="RealBounds" name="Bounds x" disabled="true" />
+          <value type="RealBounds" name="Bounds y" disabled="true" />
+          <value type="RealBounds" name="Bounds z" disabled="true" />
+          <value type="RealArgbColor" name="Color" disabled="true" />
+          <value type="Pad" name="_unnamed1" length="84" />
+        </struct>
+        <value type="Block" name="Reports" disabled="true" struct="ErrorReportsBlock" maxelements="1024" />
+      </struct>
+      <value type="Block" name="errors" disabled="true" struct="GlobalErrorReportCategoriesBlock" maxelements="64" />
+      <struct name="PointToPathCurveBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="node index" disabled="true" block="NodesBlock" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <struct name="PointToPathCurvePointBlock">
+          <value type="RealPoint3d" name="position" disabled="true" />
+          <value type="Real" name="t value" disabled="true" />
+        </struct>
+        <value type="Block" name="points" disabled="true" struct="PointToPathCurvePointBlock" maxelements="1024" />
+      </struct>
+      <value type="Block" name="point to path curves" disabled="true" struct="PointToPathCurveBlock" maxelements="64" />
+      <struct name="LimitedHingeConstraintsBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="node a" disabled="true" block="NodesBlock" />
+        <value type="ShortBlockIndex" name="node b" disabled="true" block="NodesBlock" />
+        <value type="Real" name="a scale" disabled="true" />
+        <value type="RealVector3d" name="a forward" disabled="true" />
+        <value type="RealVector3d" name="a left" disabled="true" />
+        <value type="RealVector3d" name="a up" disabled="true" />
+        <value type="RealPoint3d" name="a position" disabled="true" />
+        <value type="Real" name="b scale" disabled="true" />
+        <value type="RealVector3d" name="b forward" disabled="true" />
+        <value type="RealVector3d" name="b left" disabled="true" />
+        <value type="RealVector3d" name="b up" disabled="true" />
+        <value type="RealPoint3d" name="b position" disabled="true" />
+        <value type="ShortBlockIndex" name="edge index" disabled="true" block="PhysicsModelNodeConstraintEdgeBlock" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <value type="Real" name="limit friction" disabled="true" />
+        <value type="Real" name="limit min angle" disabled="true" />
+        <value type="Real" name="limit max angle" disabled="true" />
+      </struct>
+      <value type="Block" name="limited hinge constraints" disabled="true" struct="LimitedHingeConstraintsBlock" maxelements="64" />
+      <struct name="BallAndSocketConstraintsBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="node a" disabled="true" block="NodesBlock" />
+        <value type="ShortBlockIndex" name="node b" disabled="true" block="NodesBlock" />
+        <value type="Real" name="a scale" disabled="true" />
+        <value type="RealVector3d" name="a forward" disabled="true" />
+        <value type="RealVector3d" name="a left" disabled="true" />
+        <value type="RealVector3d" name="a up" disabled="true" />
+        <value type="RealPoint3d" name="a position" disabled="true" />
+        <value type="Real" name="b scale" disabled="true" />
+        <value type="RealVector3d" name="b forward" disabled="true" />
+        <value type="RealVector3d" name="b left" disabled="true" />
+        <value type="RealVector3d" name="b up" disabled="true" />
+        <value type="RealPoint3d" name="b position" disabled="true" />
+        <value type="ShortBlockIndex" name="edge index" disabled="true" block="PhysicsModelNodeConstraintEdgeBlock" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="4" />
+      </struct>
+      <value type="Block" name="ball and socket constraints" disabled="true" struct="BallAndSocketConstraintsBlock" maxelements="64" />
+      <struct name="StiffSpringConstraintsBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="node a" disabled="true" block="NodesBlock" />
+        <value type="ShortBlockIndex" name="node b" disabled="true" block="NodesBlock" />
+        <value type="Real" name="a scale" disabled="true" />
+        <value type="RealVector3d" name="a forward" disabled="true" />
+        <value type="RealVector3d" name="a left" disabled="true" />
+        <value type="RealVector3d" name="a up" disabled="true" />
+        <value type="RealPoint3d" name="a position" disabled="true" />
+        <value type="Real" name="b scale" disabled="true" />
+        <value type="RealVector3d" name="b forward" disabled="true" />
+        <value type="RealVector3d" name="b left" disabled="true" />
+        <value type="RealVector3d" name="b up" disabled="true" />
+        <value type="RealPoint3d" name="b position" disabled="true" />
+        <value type="ShortBlockIndex" name="edge index" disabled="true" block="PhysicsModelNodeConstraintEdgeBlock" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <value type="Real" name="spring_length" disabled="true" />
+      </struct>
+      <value type="Block" name="stiff spring constraints" disabled="true" struct="StiffSpringConstraintsBlock" maxelements="64" />
+      <struct name="PrismaticConstraintsBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="node a" disabled="true" block="NodesBlock" />
+        <value type="ShortBlockIndex" name="node b" disabled="true" block="NodesBlock" />
+        <value type="Real" name="a scale" disabled="true" />
+        <value type="RealVector3d" name="a forward" disabled="true" />
+        <value type="RealVector3d" name="a left" disabled="true" />
+        <value type="RealVector3d" name="a up" disabled="true" />
+        <value type="RealPoint3d" name="a position" disabled="true" />
+        <value type="Real" name="b scale" disabled="true" />
+        <value type="RealVector3d" name="b forward" disabled="true" />
+        <value type="RealVector3d" name="b left" disabled="true" />
+        <value type="RealVector3d" name="b up" disabled="true" />
+        <value type="RealPoint3d" name="b position" disabled="true" />
+        <value type="ShortBlockIndex" name="edge index" disabled="true" block="PhysicsModelNodeConstraintEdgeBlock" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <value type="Real" name="min_limit" disabled="true" />
+        <value type="Real" name="max_limit" disabled="true" />
+        <value type="Real" name="max_friction_force" disabled="true" />
+      </struct>
+      <value type="Block" name="prismatic constraints" disabled="true" struct="PrismaticConstraintsBlock" maxelements="64" />
+      <struct name="PhantomsBlock">
+        <value type="Skip" name="_unnamed0" length="4" />
+        <value type="ShortInteger" name="size" disabled="true" />
+        <value type="ShortInteger" name="count" disabled="true" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="Pad" name="_unnamed3" length="4" />
+        <value type="Skip" name="_unnamed4" length="4" />
+        <value type="ShortInteger" name="size2" disabled="true" />
+        <value type="ShortInteger" name="count2" disabled="true" />
+        <value type="Skip" name="_unnamed5" length="4" />
+      </struct>
+      <value type="Block" name="phantoms" disabled="true" struct="PhantomsBlock" maxelements="1024" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,100 @@
+<xml>
+  <name type="pmov" parenttype="????">ParticlePhysics</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ParticlePhysicsBlock">
+      <value type="TagReference" name="template" disabled="false" extensions="pmov" />
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="physics" />
+        <bit index="1" name="collide with structure" />
+        <bit index="2" name="collide with media" />
+        <bit index="3" name="collide with scenery" />
+        <bit index="4" name="collide with vehicles" />
+        <bit index="5" name="collide with bipeds" />
+        <bit index="6" name="swarm" />
+        <bit index="7" name="wind" />
+      </value>
+      <struct name="ParticleController">
+        <value type="Enum" name="type" length="2" disabled="false">
+          <item value="0" name="physics" />
+          <item value="1" name="collider" />
+          <item value="2" name="swarm" />
+          <item value="3" name="wind" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <struct name="ParticleControllerParameters">
+          <value type="LongInteger" name="parameter id" disabled="false" />
+          <value type="Enum" name="Input Variable" length="2" disabled="false">
+            <item value="0" name="particle age" />
+            <item value="1" name="particle emit time" />
+            <item value="2" name="particle random 1" />
+            <item value="3" name="particle random 2" />
+            <item value="4" name="emitter age" />
+            <item value="5" name="emitter random 1" />
+            <item value="6" name="emitter random 2" />
+            <item value="7" name="system lod" />
+            <item value="8" name="game time" />
+            <item value="9" name="effect a scale" />
+            <item value="10" name="effect b scale" />
+            <item value="11" name="particle rotation" />
+            <item value="12" name="explosion animation" />
+            <item value="13" name="explosion rotation" />
+            <item value="14" name="particle random 3" />
+            <item value="15" name="particle random 4" />
+            <item value="16" name="location random" />
+          </value>
+          <value type="Enum" name="Range Variable" length="2" disabled="false">
+            <item value="0" name="particle age" />
+            <item value="1" name="particle emit time" />
+            <item value="2" name="particle random 1" />
+            <item value="3" name="particle random 2" />
+            <item value="4" name="emitter age" />
+            <item value="5" name="emitter random 1" />
+            <item value="6" name="emitter random 2" />
+            <item value="7" name="system lod" />
+            <item value="8" name="game time" />
+            <item value="9" name="effect a scale" />
+            <item value="10" name="effect b scale" />
+            <item value="11" name="particle rotation" />
+            <item value="12" name="explosion animation" />
+            <item value="13" name="explosion rotation" />
+            <item value="14" name="particle random 3" />
+            <item value="15" name="particle random 4" />
+            <item value="16" name="location random" />
+          </value>
+          <value type="Enum" name="Output Modifier" length="2" disabled="false">
+            <item value="0" name="" />
+            <item value="1" name="Plus" />
+            <item value="2" name="Times" />
+          </value>
+          <value type="Enum" name="Output Modifier Input" length="2" disabled="false">
+            <item value="0" name="particle age" />
+            <item value="1" name="particle emit time" />
+            <item value="2" name="particle random 1" />
+            <item value="3" name="particle random 2" />
+            <item value="4" name="emitter age" />
+            <item value="5" name="emitter random 1" />
+            <item value="6" name="emitter random 2" />
+            <item value="7" name="system lod" />
+            <item value="8" name="game time" />
+            <item value="9" name="effect a scale" />
+            <item value="10" name="effect b scale" />
+            <item value="11" name="particle rotation" />
+            <item value="12" name="explosion animation" />
+            <item value="13" name="explosion rotation" />
+            <item value="14" name="particle random 3" />
+            <item value="15" name="particle random 4" />
+            <item value="16" name="location random" />
+          </value>
+          <struct name="ByteBlock">
+            <value type="CharInteger" name="Value" disabled="false" />
+          </struct>
+          <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+        </struct>
+        <value type="Block" name="parameters" disabled="false" struct="ParticleControllerParameters" maxelements="9" />
+        <value type="Pad" name="_unnamed1" length="8" />
+      </struct>
+      <value type="Block" name="movements" disabled="false" struct="ParticleController" maxelements="4" />
+    </struct>
+  </plugin>
+</xml>

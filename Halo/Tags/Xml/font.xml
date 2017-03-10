@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="font" parenttype="????">Font</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Font">
+      <value type="LongInteger" name="flags" />
+      <value type="ShortInteger" name="ascending height" />
+      <value type="ShortInteger" name="decending height" />
+      <value type="ShortInteger" name="leading height" />
+      <value type="ShortInteger" name="leadin width" />
+      <value type="Pad" name="_unnamed" length="36" />
+      <struct name="FontCharacterTables">
+        <struct name="FontCharacterTable">
+          <value type="ShortBlockIndex" name="character index" block="Character" />
+        </struct>
+        <value type="Block" name="character table" struct="FontCharacterTable" maxelements="256" />
+      </struct>
+      <value type="Block" name="character tables" struct="FontCharacterTables" maxelements="256" />
+      <value type="TagReference" name="bold" extensions="font" />
+      <value type="TagReference" name="italic" extensions="font" />
+      <value type="TagReference" name="condense" extensions="font" />
+      <value type="TagReference" name="underline" extensions="font" />
+      <struct name="Character">
+        <value type="ShortInteger" name="character" />
+        <value type="ShortInteger" name="character width" />
+        <value type="ShortInteger" name="bitmap width" />
+        <value type="ShortInteger" name="bitmap height" />
+        <value type="ShortInteger" name="bitmap origin x" />
+        <value type="ShortInteger" name="bitmap origin y" />
+        <value type="ShortInteger" name="hardware character index" />
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="LongInteger" name="pixels offset" />
+      </struct>
+      <value type="Block" name="characters" struct="Character" maxelements="32000" />
+      <value type="Data" name="pixels" />
+    </struct>
+  </plugin>
+</xml>

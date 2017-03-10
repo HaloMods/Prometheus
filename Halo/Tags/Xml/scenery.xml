@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="scen" parenttype="obje">Scenery</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Scenery">
+      <value type="Pad" name="_unnamed" length="128" />
+    </struct>
+  </plugin>
+</xml>

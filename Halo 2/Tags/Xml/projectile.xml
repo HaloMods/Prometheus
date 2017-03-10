@@ -1,0 +1,204 @@
+<xml>
+  <name type="proj" parenttype="obje">Projectile</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="AngularVelocityLowerBoundStructBlock">
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="oriented along velocity" />
+        <bit index="1" name="AI must use ballistic aiming" />
+        <bit index="2" name="detonation max time if attached" />
+        <bit index="3" name="has super combining explosion" />
+        <bit index="4" name="damage scales based on distance" />
+        <bit index="5" name="travels instantaneously" />
+        <bit index="6" name="steering adjusts orientation" />
+        <bit index="7" name="don't noise up steering" />
+        <bit index="8" name="can track behind itself" />
+        <bit index="9" name="ROBOTRON STEERING!" />
+        <bit index="10" name="faster when owned by player" />
+      </value>
+      <value type="Enum" name="detonation timer starts" length="2" disabled="false">
+        <item value="0" name="immediately" />
+        <item value="1" name="after first bounce" />
+        <item value="2" name="when at rest" />
+        <item value="3" name="after first bounce off any surface" />
+      </value>
+      <value type="Enum" name="impact noise" length="2" disabled="false">
+        <item value="0" name="silent" />
+        <item value="1" name="medium" />
+        <item value="2" name="loud" />
+        <item value="3" name="shout" />
+        <item value="4" name="quiet" />
+      </value>
+      <value type="Real" name="AI perception radius" disabled="false" unit="world units" />
+      <value type="Real" name="collision radius" disabled="false" unit="world units" />
+      <value type="Real" name="arming time" disabled="false" unit="seconds">
+        <tooltip>won't detonate before this time elapses</tooltip>
+      </value>
+      <value type="Real" name="danger radius" disabled="false" unit="world units" />
+      <value type="RealBounds" name="timer" disabled="false" unit="seconds">
+        <tooltip>detonation countdown (zero is untimed)</tooltip>
+      </value>
+      <value type="Real" name="minimum velocity" disabled="false" unit="world units per second">
+        <tooltip>detonates when slowed below this velocity</tooltip>
+      </value>
+      <value type="Real" name="maximum range" disabled="false" unit="world units">
+        <tooltip>detonates after travelling this distance</tooltip>
+      </value>
+      <value type="Enum" name="detonation noise" length="2" disabled="false">
+        <item value="0" name="silent" />
+        <item value="1" name="medium" />
+        <item value="2" name="loud" />
+        <item value="3" name="shout" />
+        <item value="4" name="quiet" />
+      </value>
+      <value type="ShortInteger" name="super det projectile count" disabled="false" />
+      <value type="TagReference" name="detonation started" disabled="false" extensions="effe" />
+      <value type="TagReference" name="detonation effect airborne" disabled="false" extensions="effe" />
+      <value type="TagReference" name="detonation effect ground" disabled="false" extensions="effe" />
+      <value type="TagReference" name="detonation damage" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="attached detonation damage" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="super detonation" disabled="false" extensions="effe" />
+      <value type="TagReference" name="super detonation damage" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="detonation sound" disabled="false" extensions="snd!" />
+      <value type="Enum" name="damage reporting type" length="1" disabled="false">
+        <item value="0" name="teh guardians!!1!!1!" />
+        <item value="1" name="falling damage" />
+        <item value="2" name="generic collision damage" />
+        <item value="3" name="generic melee damage" />
+        <item value="4" name="generic explosion" />
+        <item value="5" name="magnum pistol" />
+        <item value="6" name="plasma pistol" />
+        <item value="7" name="needler" />
+        <item value="8" name="smg" />
+        <item value="9" name="plasma rifle" />
+        <item value="10" name="battle rifle" />
+        <item value="11" name="carbine" />
+        <item value="12" name="shotgun" />
+        <item value="13" name="sniper rifle" />
+        <item value="14" name="beam rifle" />
+        <item value="15" name="rocket launcher" />
+        <item value="16" name="flak cannon" />
+        <item value="17" name="brute shot" />
+        <item value="18" name="disintegrator" />
+        <item value="19" name="brute plasma rifle" />
+        <item value="20" name="energy sword" />
+        <item value="21" name="frag grenade" />
+        <item value="22" name="plasma grenade" />
+        <item value="23" name="flag melee damage" />
+        <item value="24" name="bomb melee damage" />
+        <item value="25" name="bomb explosion damage" />
+        <item value="26" name="ball melee damage" />
+        <item value="27" name="human turret" />
+        <item value="28" name="plasma turret" />
+        <item value="29" name="banshee" />
+        <item value="30" name="ghost" />
+        <item value="31" name="mongoose" />
+        <item value="32" name="scorpion" />
+        <item value="33" name="spectre driver" />
+        <item value="34" name="spectre gunner" />
+        <item value="35" name="warthog driver" />
+        <item value="36" name="warthog gunner" />
+        <item value="37" name="wraith" />
+        <item value="38" name="tank" />
+        <item value="39" name="sentinel beam" />
+        <item value="40" name="sentinel rpg" />
+        <item value="41" name="teleporter" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="3" />
+      <value type="TagReference" name="super attached detonation damage" disabled="false" extensions="jpt!" />
+      <value type="Real" name="material effect radius" disabled="false">
+        <tooltip>radius within we will generate material effects</tooltip>
+      </value>
+      <value type="TagReference" name="flyby sound" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="impact effect" disabled="false" extensions="effe" />
+      <value type="TagReference" name="impact damage" disabled="false" extensions="jpt!" />
+      <value type="Real" name="boarding detonation time" disabled="false" />
+      <value type="TagReference" name="boarding detonation damage" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="boarding attached detonation damage" disabled="false" extensions="jpt!" />
+      <value type="Real" name="air gravity scale" disabled="false">
+        <tooltip>the proportion of normal gravity applied to the projectile when in air.</tooltip>
+      </value>
+      <value type="RealBounds" name="air damage range" disabled="false" unit="world units">
+        <tooltip>the range over which damage is scaled when the projectile is in air.</tooltip>
+      </value>
+      <value type="Real" name="water gravity scale" disabled="false">
+        <tooltip>the proportion of normal gravity applied to the projectile when in water.</tooltip>
+      </value>
+      <value type="RealBounds" name="water damage range" disabled="false" unit="world units">
+        <tooltip>the range over which damage is scaled when the projectile is in water.</tooltip>
+      </value>
+      <value type="Real" name="initial velocity" disabled="false" unit="world units per second">
+        <tooltip>bullet's velocity when inflicting maximum damage</tooltip>
+      </value>
+      <value type="Real" name="final velocity" disabled="false" unit="world units per second">
+        <tooltip>bullet's velocity when inflicting minimum damage</tooltip>
+      </value>
+      <value type="Angle" name="guided angular velocity lower" disabled="false" unit="degrees per second" />
+      <value type="Angle" name="guided angular velocity upper" disabled="false" unit="degrees per second" />
+      <value type="RealBounds" name="acceleration range" disabled="false" unit="world units">
+        <tooltip>what distance range the projectile goes from initial velocity to final velocity</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed1" length="4" />
+      <value type="RealFraction" name="targeted leading fraction" disabled="false" />
+      <struct name="ProjectileMaterialResponseBlock">
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="cannot be overpenetrated" />
+        </value>
+        <value type="Enum" name="response" length="2" disabled="false">
+          <item value="0" name="impact (detonate)" />
+          <item value="1" name="fizzle" />
+          <item value="2" name="overpenetrate" />
+          <item value="3" name="attach" />
+          <item value="4" name="bounce" />
+          <item value="5" name="bounce (dud)" />
+          <item value="6" name="fizzle (ricochet)" />
+        </value>
+        <value type="TagReference" name="DO NOT USE OLD effect" disabled="false" extensions="effe" />
+        <value type="StringId" name="material name" disabled="false" />
+        <value type="Skip" name="_unnamed0" length="4" />
+        <value type="Enum" name="response2" length="2" disabled="false">
+          <item value="0" name="impact (detonate)" />
+          <item value="1" name="fizzle" />
+          <item value="2" name="overpenetrate" />
+          <item value="3" name="attach" />
+          <item value="4" name="bounce" />
+          <item value="5" name="bounce (dud)" />
+          <item value="6" name="fizzle (ricochet)" />
+        </value>
+        <value type="Flags" name="flags2" length="2" disabled="false">
+          <bit index="0" name="only against units" />
+          <bit index="1" name="never against units" />
+        </value>
+        <value type="RealFraction" name="chance fraction" disabled="false" unit="[0,1]" />
+        <value type="AngleBounds" name="between" disabled="false" unit="degrees" />
+        <value type="RealBounds" name="and" disabled="false" unit="world units per second" />
+        <value type="TagReference" name="DO NOT USE OLD effect2" disabled="false" extensions="effe" />
+        <value type="Enum" name="scale effects by" length="2" disabled="false">
+          <item value="0" name="damage" />
+          <item value="1" name="angle" />
+        </value>
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Angle" name="angular noise" disabled="false" unit="degrees">
+          <tooltip>the angle of incidence is randomly perturbed by at most this amount to simulate irregularity.</tooltip>
+        </value>
+        <value type="Real" name="velocity noise" disabled="false" unit="world units per second">
+          <tooltip>the velocity is randomly perturbed by at most this amount to simulate irregularity.</tooltip>
+        </value>
+        <value type="TagReference" name="DO NOT USE OLD detonation effect" disabled="false" extensions="effe" />
+        <value type="Real" name="initial friction" disabled="false">
+          <tooltip>the fraction of the projectile's velocity lost on penetration</tooltip>
+        </value>
+        <value type="Real" name="maximum distance" disabled="false">
+          <tooltip>the maximum distance the projectile can travel through on object of this material</tooltip>
+        </value>
+        <value type="Real" name="parallel friction" disabled="false">
+          <tooltip>the fraction of the projectile's velocity parallel to the surface lost on impact</tooltip>
+        </value>
+        <value type="Real" name="perpendicular friction" disabled="false">
+          <tooltip>the fraction of the projectile's velocity perpendicular to the surface lost on impact</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="material responses" disabled="false" struct="ProjectileMaterialResponseBlock" maxelements="200" />
+    </struct>
+  </plugin>
+</xml>

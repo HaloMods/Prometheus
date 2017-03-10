@@ -1,0 +1,339 @@
+<xml>
+  <name type="shad" parenttype="????">Shader</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ShaderBlock">
+      <value type="TagReference" name="Template" disabled="false" extensions="stem" />
+      <value type="StringId" name="Material Name" disabled="false" />
+      <struct name="ShaderPropertiesBlock">
+        <value type="TagReference" name="Diffuse Map" disabled="true" extensions="bitm" />
+        <value type="TagReference" name="Lightmap Emissive Map" disabled="true" extensions="bitm" />
+        <value type="RealRgbColor" name="Lightmap Emissive Color" disabled="true" />
+        <value type="Real" name="Lightmap Emissive Power" disabled="true" />
+        <value type="Real" name="Lightmap Resolution Scale" disabled="true" />
+        <value type="Real" name="Lightmap Half Life" disabled="true" />
+        <value type="Real" name="Lightmap Diffuse Scale" disabled="true" />
+        <value type="TagReference" name="Alpha Test Map" disabled="true" extensions="bitm" />
+        <value type="TagReference" name="Translucent Map" disabled="true" extensions="bitm" />
+        <value type="RealRgbColor" name="Lightmap Transparent Color" disabled="true" />
+        <value type="Real" name="Lightmap Transparent Alpha" disabled="true" />
+        <value type="Real" name="Lightmap Foliage Scale" disabled="true" />
+      </struct>
+      <value type="Block" name="Runtime Properties" disabled="true" struct="ShaderPropertiesBlock" maxelements="1" />
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Flags" name="Flags" length="2" disabled="false">
+        <bit index="0" name="Water" />
+        <bit index="1" name="Sort First" />
+        <bit index="2" name="No Active Camo" />
+      </value>
+      <struct name="GlobalShaderParameterBlock">
+        <value type="StringId" name="Name" disabled="false" blockname="true" />
+        <value type="Enum" name="Type" length="2" disabled="false">
+          <item value="0" name="Bitmap" />
+          <item value="1" name="Value" />
+          <item value="2" name="Color" />
+          <item value="3" name="Switch" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="TagReference" name="Bitmap" disabled="false" extensions="bitm" />
+        <value type="Real" name="Const Value" disabled="false" />
+        <value type="RealRgbColor" name="Const Color" disabled="false" />
+        <struct name="ShaderAnimationPropertyBlock">
+          <value type="Enum" name="Type" length="2" disabled="false" blockname="true">
+            <item value="0" name="Bitmap Scale Uniform" />
+            <item value="1" name="Bitmap Scale x" />
+            <item value="2" name="Bitmap Scale y" />
+            <item value="3" name="Bitmap Scale z" />
+            <item value="4" name="Bitmap Translation x" />
+            <item value="5" name="Bitmap Translation y" />
+            <item value="6" name="Bitmap Translation z" />
+            <item value="7" name="Bitmap Rotation Angle" />
+            <item value="8" name="Bitmap Rotation Axis x" />
+            <item value="9" name="Bitmap Rotation Axis y" />
+            <item value="10" name="Bitmap Rotation Axis z" />
+            <item value="11" name="Value" />
+            <item value="12" name="Color" />
+            <item value="13" name="Bitmap Index" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="StringId" name="Input Name" disabled="false" />
+          <value type="StringId" name="Range Name" disabled="false" />
+          <value type="Real" name="Time Period" disabled="false" unit="sec" />
+          <struct name="ByteBlock">
+            <value type="CharInteger" name="Value" disabled="false" />
+          </struct>
+          <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+        </struct>
+        <value type="Block" name="Animation Properties" disabled="false" struct="ShaderAnimationPropertyBlock" maxelements="14" />
+      </struct>
+      <value type="Block" name="Parameters" disabled="false" struct="GlobalShaderParameterBlock" maxelements="64" />
+      <struct name="ShaderPostprocessDefinitionNewBlock">
+        <value type="LongInteger" name="shader template index" disabled="false" />
+        <struct name="ShaderPostprocessBitmapNewBlock">
+          <value type="Skip" name="Shader Bitmap Reference" length="4" disabled="false" />
+          <value type="LongInteger" name="bitmap index" disabled="false" />
+          <value type="Real" name="log bitmap dimension" disabled="false" />
+        </struct>
+        <value type="Block" name="bitmaps" disabled="false" struct="ShaderPostprocessBitmapNewBlock" maxelements="1024" />
+        <struct name="Pixel32Block">
+          <value type="ArgbColor" name="color" disabled="false" />
+        </struct>
+        <value type="Block" name="pixel constants" disabled="false" struct="Pixel32Block" maxelements="1024" />
+        <struct name="RealVector4dBlock">
+          <value type="RealVector3d" name="vector3" disabled="false" />
+          <value type="Real" name="w" disabled="false" />
+        </struct>
+        <value type="Block" name="vertex constants" disabled="false" struct="RealVector4dBlock" maxelements="1024" />
+        <struct name="ShaderPostprocessLevelOfDetailNewBlock">
+          <value type="LongInteger" name="available layer flags" disabled="false" />
+          <value type="ShortInteger" name="block index data" disabled="false" />
+        </struct>
+        <value type="Block" name="levels of detail" disabled="false" struct="ShaderPostprocessLevelOfDetailNewBlock" maxelements="1024" />
+        <struct name="TagBlockIndexBlock">
+          <value type="ShortInteger" name="block index data" disabled="false" />
+        </struct>
+        <value type="Block" name="layers" disabled="false" struct="TagBlockIndexBlock" maxelements="1024" />
+        <value type="Block" name="passes" disabled="false" struct="TagBlockIndexBlock" maxelements="1024" />
+        <struct name="ShaderPostprocessImplementationNewBlock">
+          <value type="ShortInteger" name="block index data" disabled="false" />
+          <value type="ShortInteger" name="block index data2" disabled="false" />
+          <value type="ShortInteger" name="block index data3" disabled="false" />
+          <value type="ShortInteger" name="block index data4" disabled="false" />
+          <value type="ShortInteger" name="block index data5" disabled="false" />
+        </struct>
+        <value type="Block" name="implementations" disabled="false" struct="ShaderPostprocessImplementationNewBlock" maxelements="1024" />
+        <struct name="ShaderPostprocessOverlayNewBlock">
+          <value type="StringId" name="input name" disabled="false" />
+          <value type="StringId" name="range name" disabled="false" />
+          <value type="Real" name="time period in seconds" disabled="false" />
+          <struct name="ByteBlock">
+            <value type="CharInteger" name="Value" disabled="false" />
+          </struct>
+          <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+        </struct>
+        <value type="Block" name="overlays" disabled="false" struct="ShaderPostprocessOverlayNewBlock" maxelements="1024" />
+        <struct name="ShaderPostprocessOverlayReferenceNewBlock">
+          <value type="ShortInteger" name="overlay index" disabled="false" />
+          <value type="ShortInteger" name="transform index" disabled="false" />
+        </struct>
+        <value type="Block" name="overlay references" disabled="false" struct="ShaderPostprocessOverlayReferenceNewBlock" maxelements="1024" />
+        <struct name="ShaderPostprocessAnimatedParameterNewBlock">
+          <value type="ShortInteger" name="block index data" disabled="false" />
+        </struct>
+        <value type="Block" name="animated parameters" disabled="false" struct="ShaderPostprocessAnimatedParameterNewBlock" maxelements="1024" />
+        <struct name="ShaderPostprocessAnimatedParameterReferenceNewBlock">
+          <value type="Skip" name="_unnamed0" length="3" />
+          <value type="CharInteger" name="parameter index" disabled="false" />
+        </struct>
+        <value type="Block" name="animated parameter references" disabled="false" struct="ShaderPostprocessAnimatedParameterReferenceNewBlock" maxelements="1024" />
+        <struct name="ShaderPostprocessBitmapPropertyBlock">
+          <value type="ShortInteger" name="bitmap index" disabled="false" />
+          <value type="ShortInteger" name="animated parameter index" disabled="false" />
+        </struct>
+        <value type="Block" name="bitmap properties" disabled="false" struct="ShaderPostprocessBitmapPropertyBlock" maxelements="5" />
+        <struct name="ShaderPostprocessColorPropertyBlock">
+          <value type="RealRgbColor" name="color" disabled="false" />
+        </struct>
+        <value type="Block" name="color properties" disabled="false" struct="ShaderPostprocessColorPropertyBlock" maxelements="2" />
+        <struct name="ShaderPostprocessValuePropertyBlock">
+          <value type="Real" name="value" disabled="false" />
+        </struct>
+        <value type="Block" name="value properties" disabled="false" struct="ShaderPostprocessValuePropertyBlock" maxelements="6" />
+        <struct name="ShaderPostprocessLevelOfDetailBlock">
+          <value type="Real" name="projected height percentage" disabled="false" />
+          <value type="LongInteger" name="available layers" disabled="false" />
+          <struct name="ShaderPostprocessLayerBlock">
+            <value type="ShortInteger" name="block index data" disabled="false" />
+          </struct>
+          <value type="Block" name="layers" disabled="false" struct="ShaderPostprocessLayerBlock" maxelements="25" />
+          <struct name="ShaderPostprocessPassBlock">
+            <value type="TagReference" name="shader pass" disabled="false" extensions="spas" />
+            <value type="ShortInteger" name="block index data" disabled="false" />
+          </struct>
+          <value type="Block" name="passes" disabled="false" struct="ShaderPostprocessPassBlock" maxelements="1024" />
+          <struct name="ShaderPostprocessImplementationBlock">
+            <value type="ShortInteger" name="block index data" disabled="false" />
+            <value type="ShortInteger" name="block index data2" disabled="false" />
+            <value type="ShortInteger" name="block index data3" disabled="false" />
+            <value type="ShortInteger" name="block index data4" disabled="false" />
+            <value type="ShortInteger" name="block index data5" disabled="false" />
+            <value type="ShortInteger" name="block index data6" disabled="false" />
+            <value type="ShortInteger" name="block index data7" disabled="false" />
+            <value type="ShortInteger" name="block index data8" disabled="false" />
+            <value type="ShortInteger" name="block index data9" disabled="false" />
+            <value type="ShortInteger" name="block index data10" disabled="false" />
+            <value type="ShortInteger" name="block index data11" disabled="false" />
+            <value type="ShortInteger" name="block index data12" disabled="false" />
+            <value type="ShortInteger" name="block index data13" disabled="false" />
+            <value type="ShortInteger" name="block index data14" disabled="false" />
+            <value type="ShortInteger" name="block index data15" disabled="false" />
+            <value type="ShortInteger" name="block index data16" disabled="false" />
+            <value type="ShortInteger" name="block index data17" disabled="false" />
+            <value type="ShortInteger" name="block index data18" disabled="false" />
+            <value type="ShortInteger" name="block index data19" disabled="false" />
+            <value type="ShortInteger" name="block index data20" disabled="false" />
+            <value type="ShortInteger" name="block index data21" disabled="false" />
+            <value type="ShortInteger" name="block index data22" disabled="false" />
+          </struct>
+          <value type="Block" name="implementations" disabled="false" struct="ShaderPostprocessImplementationBlock" maxelements="1024" />
+          <struct name="ShaderPostprocessBitmapBlock">
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="CharInteger" name="flags" disabled="false" />
+            <value type="LongInteger" name="bitmap group index" disabled="false" />
+            <value type="Real" name="log bitmap dimension" disabled="false" />
+          </struct>
+          <value type="Block" name="bitmaps" disabled="false" struct="ShaderPostprocessBitmapBlock" maxelements="1024" />
+          <struct name="ShaderPostprocessBitmapTransformBlock">
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="CharInteger" name="bitmap transform index" disabled="false" />
+            <value type="Real" name="value" disabled="false" />
+          </struct>
+          <value type="Block" name="bitmap transforms" disabled="false" struct="ShaderPostprocessBitmapTransformBlock" maxelements="1024" />
+          <struct name="ShaderPostprocessValueBlock">
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="Real" name="value" disabled="false" />
+          </struct>
+          <value type="Block" name="values" disabled="false" struct="ShaderPostprocessValueBlock" maxelements="1024" />
+          <struct name="ShaderPostprocessColorBlock">
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="RealRgbColor" name="color" disabled="false" />
+          </struct>
+          <value type="Block" name="colors" disabled="false" struct="ShaderPostprocessColorBlock" maxelements="1024" />
+          <struct name="ShaderPostprocessBitmapTransformOverlayBlock">
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="CharInteger" name="transform index" disabled="false" />
+            <value type="CharInteger" name="animation property type" disabled="false" />
+            <value type="StringId" name="input name" disabled="false" />
+            <value type="StringId" name="range name" disabled="false" />
+            <value type="Real" name="time period in seconds" disabled="false" />
+            <struct name="ByteBlock">
+              <value type="CharInteger" name="Value" disabled="false" />
+            </struct>
+            <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+          </struct>
+          <value type="Block" name="bitmap transform overlays" disabled="false" struct="ShaderPostprocessBitmapTransformOverlayBlock" maxelements="1024" />
+          <struct name="ShaderPostprocessValueOverlayBlock">
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="StringId" name="input name" disabled="false" />
+            <value type="StringId" name="range name" disabled="false" />
+            <value type="Real" name="time period in seconds" disabled="false" />
+            <struct name="ByteBlock">
+              <value type="CharInteger" name="Value" disabled="false" />
+            </struct>
+            <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+          </struct>
+          <value type="Block" name="value overlays" disabled="false" struct="ShaderPostprocessValueOverlayBlock" maxelements="1024" />
+          <struct name="ShaderPostprocessColorOverlayBlock">
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="StringId" name="input name" disabled="false" />
+            <value type="StringId" name="range name" disabled="false" />
+            <value type="Real" name="time period in seconds" disabled="false" />
+            <struct name="ByteBlock">
+              <value type="CharInteger" name="Value" disabled="false" />
+            </struct>
+            <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+          </struct>
+          <value type="Block" name="color overlays" disabled="false" struct="ShaderPostprocessColorOverlayBlock" maxelements="1024" />
+          <struct name="ShaderPostprocessVertexShaderConstantBlock">
+            <value type="CharInteger" name="register index" disabled="false" />
+            <value type="CharInteger" name="register bank" disabled="false" />
+            <value type="Real" name="data" disabled="false" />
+            <value type="Real" name="data2" disabled="false" />
+            <value type="Real" name="data3" disabled="false" />
+            <value type="Real" name="data4" disabled="false" />
+          </struct>
+          <value type="Block" name="vertex shader constants" disabled="false" struct="ShaderPostprocessVertexShaderConstantBlock" maxelements="1024" />
+          <struct name="RenderStateBlock">
+            <value type="CharInteger" name="state index" disabled="false" />
+            <value type="LongInteger" name="state value" disabled="false" />
+          </struct>
+          <value type="Block" name="render states" disabled="false" struct="RenderStateBlock" maxelements="1024" />
+          <struct name="TextureStageStateBlock">
+            <value type="CharInteger" name="state index" disabled="false" />
+            <value type="CharInteger" name="stage index" disabled="false" />
+            <value type="LongInteger" name="state value" disabled="false" />
+          </struct>
+          <value type="Block" name="texture stage states" disabled="false" struct="TextureStageStateBlock" maxelements="1024" />
+          <struct name="RenderStateParameterBlock">
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="CharInteger" name="parameter type" disabled="false" />
+            <value type="CharInteger" name="state index" disabled="false" />
+          </struct>
+          <value type="Block" name="render state parameters" disabled="false" struct="RenderStateParameterBlock" maxelements="1024" />
+          <struct name="TextureStageStateParameterBlock">
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="CharInteger" name="parameter type" disabled="false" />
+            <value type="CharInteger" name="state index" disabled="false" />
+            <value type="CharInteger" name="stage index" disabled="false" />
+          </struct>
+          <value type="Block" name="texture stage parameters" disabled="false" struct="TextureStageStateParameterBlock" maxelements="1024" />
+          <struct name="TextureBlock">
+            <value type="CharInteger" name="stage index" disabled="false" />
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="CharInteger" name="global texture index" disabled="false" />
+            <value type="CharInteger" name="flags" disabled="false" />
+          </struct>
+          <value type="Block" name="textures" disabled="false" struct="TextureBlock" maxelements="1024" />
+          <struct name="VertexShaderConstantBlock">
+            <value type="CharInteger" name="register index" disabled="false" />
+            <value type="CharInteger" name="parameter index" disabled="false" />
+            <value type="CharInteger" name="destination mask" disabled="false" />
+            <value type="CharInteger" name="scale by texture stage" disabled="false" />
+          </struct>
+          <value type="Block" name="Vn Constants" disabled="false" struct="VertexShaderConstantBlock" maxelements="1024" />
+          <value type="Block" name="Cn Constants" disabled="false" struct="VertexShaderConstantBlock" maxelements="1024" />
+        </struct>
+        <value type="Block" name="old levels of detail" disabled="false" struct="ShaderPostprocessLevelOfDetailBlock" maxelements="1024" />
+      </struct>
+      <value type="Block" name="Postprocess Definition" disabled="true" struct="ShaderPostprocessDefinitionNewBlock" maxelements="1" />
+      <value type="Pad" name="_unnamed1" length="4" />
+      <struct name="PredictedResourceBlock">
+        <value type="Enum" name="type" length="2" disabled="false">
+          <item value="0" name="bitmap" />
+          <item value="1" name="sound" />
+          <item value="2" name="render model geometry" />
+          <item value="3" name="cluster geometry" />
+          <item value="4" name="cluster instanced geometry" />
+          <item value="5" name="lightmap geometry object buckets" />
+          <item value="6" name="lightmap geometry instance buckets" />
+          <item value="7" name="lightmap cluster bitmaps" />
+          <item value="8" name="lightmap instance bitmaps" />
+        </value>
+        <value type="ShortInteger" name="resource index" disabled="false" />
+        <value type="PredictedResource" name="Predicted Resource Tag" length="4" disabled="false" />
+      </struct>
+      <value type="Block" name="Predicted Resources" disabled="false" struct="PredictedResourceBlock" maxelements="2048" />
+      <value type="TagReference" name="Light Response" disabled="false" extensions="slit" />
+      <value type="Enum" name="Shader LOD Bias" length="2" disabled="false">
+        <item value="0" name="None" />
+        <item value="1" name="4x Size" />
+        <item value="2" name="2x Size" />
+        <item value="3" name="1/2 Size" />
+        <item value="4" name="1/4 Size" />
+        <item value="5" name="Never" />
+        <item value="6" name="Cinematic" />
+      </value>
+      <value type="Enum" name="Specular Type" length="2" disabled="false">
+        <item value="0" name="None" />
+        <item value="1" name="Default" />
+        <item value="2" name="Dull" />
+        <item value="3" name="Shiny" />
+      </value>
+      <value type="Enum" name="Lightmap Type" length="2" disabled="false">
+        <item value="0" name="Diffuse" />
+        <item value="1" name="Default Specular" />
+        <item value="2" name="Dull Specular" />
+        <item value="3" name="Shiny Specular" />
+      </value>
+      <value type="Pad" name="_unnamed2" length="2" />
+      <value type="Real" name="Lightmap Specular Brightness" disabled="false" />
+      <value type="Real" name="Lightmap Ambient Bias" disabled="false" unit="[-1,1]" />
+      <struct name="LongBlock">
+        <value type="LongInteger" name="Bitmap Group Index" disabled="false" />
+      </struct>
+      <value type="Block" name="Postprocess Properties" disabled="false" struct="LongBlock" maxelements="5" />
+      <value type="Real" name="Added depth bias offset" disabled="false" />
+      <value type="Real" name="Added depth bias slope scale" disabled="false" />
+    </struct>
+  </plugin>
+</xml>

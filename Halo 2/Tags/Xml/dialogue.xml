@@ -1,0 +1,24 @@
+<xml>
+  <name type="udlg" parenttype="????">Dialogue</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="DialogueBlock">
+      <value type="TagReference" name="global dialogue info" disabled="false" extensions="adlg" />
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="female" />
+      </value>
+      <struct name="SoundReferencesBlock">
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="new vocalization" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="StringId" name="vocalization" disabled="false" blockname="true" />
+        <value type="TagReference" name="sound" disabled="false" extensions="snd!" />
+      </struct>
+      <value type="Block" name="vocalizations" disabled="false" struct="SoundReferencesBlock" maxelements="500" />
+      <value type="StringId" name="mission dialogue designator" disabled="false">
+        <tooltip>3-letter mission dialogue designator name</tooltip>
+      </value>
+    </struct>
+  </plugin>
+</xml>

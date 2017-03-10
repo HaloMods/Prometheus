@@ -1,0 +1,592 @@
+<xml>
+  <name type="mode" parenttype="????">RenderModel</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="RenderModelBlock">
+      <value type="StringId" name="name" disabled="true" />
+      <value type="Flags" name="render model flags" length="2" disabled="true">
+        <bit index="0" name="_render_model_force_third_person_bit" />
+        <bit index="1" name="force carmack-reverse" />
+        <bit index="2" name="force node maps" />
+        <bit index="3" name="geometry postprocessed" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Pad" name="_unnamed1" length="4" />
+      <struct name="GlobalTagImportInfoBlock">
+        <value type="LongInteger" name="build" disabled="true" />
+        <value type="LongerFixedLengthString" name="version" disabled="true" />
+        <value type="FixedLengthString" name="import date" disabled="true" />
+        <value type="FixedLengthString" name="culprit" disabled="true" />
+        <value type="Pad" name="_unnamed0" length="96" />
+        <value type="FixedLengthString" name="import time" disabled="true" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <struct name="TagImportFileBlock">
+          <value type="LongerFixedLengthString" name="path" disabled="true" />
+          <value type="FixedLengthString" name="modification date" disabled="true" />
+          <value type="Skip" name="_unnamed0" length="8" />
+          <value type="Pad" name="_unnamed1" length="88" />
+          <value type="LongInteger" name="checksum" disabled="true" unit="crc32" />
+          <value type="LongInteger" name="size" disabled="true" unit="bytes" />
+          <value type="Data" name="zipped data" disabled="true" />
+          <value type="Pad" name="_unnamed2" length="128" />
+        </struct>
+        <value type="Block" name="files" disabled="true" struct="TagImportFileBlock" maxelements="1024" />
+        <value type="Pad" name="_unnamed2" length="128" />
+      </struct>
+      <value type="Block" name="import info" disabled="true" struct="GlobalTagImportInfoBlock" maxelements="1" />
+      <struct name="GlobalGeometryCompressionInfoBlock">
+        <value type="RealBounds" name="Position Bounds x" disabled="true" />
+        <value type="RealBounds" name="Position Bounds y" disabled="true" />
+        <value type="RealBounds" name="Position Bounds z" disabled="true" />
+        <value type="RealBounds" name="Texcoord Bounds x" disabled="true" />
+        <value type="RealBounds" name="Texcoord Bounds y" disabled="true" />
+        <value type="RealBounds" name="Secondary Texcoord Bounds x" disabled="true" />
+        <value type="RealBounds" name="Secondary Texcoord Bounds y" disabled="true" />
+      </struct>
+      <value type="Block" name="compression info" disabled="true" struct="GlobalGeometryCompressionInfoBlock" maxelements="1" />
+      <struct name="RenderModelRegionBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortInteger" name="node map offset OLD" disabled="true" />
+        <value type="ShortInteger" name="node map size OLD" disabled="true" />
+        <struct name="RenderModelPermutationBlock">
+          <value type="StringId" name="name" disabled="true" blockname="true" />
+          <value type="ShortInteger" name="L1 section index" disabled="true" unit="(super low)" />
+          <value type="ShortInteger" name="L2 section index" disabled="true" unit="(low)" />
+          <value type="ShortInteger" name="L3 section index" disabled="true" unit="(medium)" />
+          <value type="ShortInteger" name="L4 section index" disabled="true" unit="(high)" />
+          <value type="ShortInteger" name="L5 section index" disabled="true" unit="(super high)" />
+          <value type="ShortInteger" name="L6 section index" disabled="true" unit="(hollywood)" />
+        </struct>
+        <value type="Block" name="permutations" disabled="true" struct="RenderModelPermutationBlock" maxelements="32" />
+      </struct>
+      <value type="Block" name="regions" disabled="true" struct="RenderModelRegionBlock" maxelements="16" />
+      <struct name="RenderModelSectionBlock">
+        <value type="Enum" name="global_geometry_classification_enum_definition" length="2" disabled="false">
+          <item value="0" name="Worldspace" />
+          <item value="1" name="Rigid" />
+          <item value="2" name="Rigid Boned" />
+          <item value="3" name="Skinned" />
+          <item value="4" name="Unsupported (Reimport)" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="ShortInteger" name="Total Vertex Count" disabled="true" />
+        <value type="ShortInteger" name="Total Triangle Count" disabled="true" />
+        <value type="ShortInteger" name="Total Part Count" disabled="true" />
+        <value type="ShortInteger" name="Shadow-Casting Triangle Count" disabled="true" />
+        <value type="ShortInteger" name="Shadow-Casting Part Count" disabled="true" />
+        <value type="ShortInteger" name="Opaque Point Count" disabled="true" />
+        <value type="ShortInteger" name="Opaque Vertex Count" disabled="true" />
+        <value type="ShortInteger" name="Opaque Part Count" disabled="true" />
+        <value type="CharInteger" name="Opaque Max NodesVertex" disabled="true" />
+        <value type="CharInteger" name="Transparent Max NodesVertex" disabled="true" />
+        <value type="ShortInteger" name="Shadow-Casting Rigid Triangle Count" disabled="true" />
+        <value type="Enum" name="Geometry Classification" length="2" disabled="true">
+          <item value="0" name="Worldspace" />
+          <item value="1" name="Rigid" />
+          <item value="2" name="Rigid Boned" />
+          <item value="3" name="Skinned" />
+          <item value="4" name="Unsupported (Reimport)" />
+        </value>
+        <value type="Flags" name="Geometry Compression Flags" length="2" disabled="true">
+          <bit index="0" name="Compressed Position" />
+          <bit index="1" name="Compressed Texcoord" />
+          <bit index="2" name="Compressed Secondary Texcoord" />
+        </value>
+        <struct name="GlobalGeometryCompressionInfoBlock">
+          <value type="RealBounds" name="Position Bounds x" disabled="true" />
+          <value type="RealBounds" name="Position Bounds y" disabled="true" />
+          <value type="RealBounds" name="Position Bounds z" disabled="true" />
+          <value type="RealBounds" name="Texcoord Bounds x" disabled="true" />
+          <value type="RealBounds" name="Texcoord Bounds y" disabled="true" />
+          <value type="RealBounds" name="Secondary Texcoord Bounds x" disabled="true" />
+          <value type="RealBounds" name="Secondary Texcoord Bounds y" disabled="true" />
+        </struct>
+        <value type="Block" name="internal compression info" disabled="false" struct="GlobalGeometryCompressionInfoBlock" maxelements="1" />
+        <value type="CharInteger" name="Hardware Node Count" disabled="true" />
+        <value type="CharInteger" name="Node Map Size" disabled="true" />
+        <value type="ShortInteger" name="Software Plane Count" disabled="true" />
+        <value type="ShortInteger" name="total subpart_cont" disabled="true" />
+        <value type="Flags" name="Section Lighting Flags" length="2" disabled="true">
+          <bit index="0" name="has lm texcoords" />
+          <bit index="1" name="has lm inc. rad." />
+          <bit index="2" name="Has lm Colors" />
+          <bit index="3" name="has lm prt" />
+        </value>
+        <value type="ShortBlockIndex" name="rigid node" disabled="true" block="RenderModelNodeBlock" />
+        <value type="Flags" name="section postprocess flags" length="2" disabled="false">
+          <bit index="0" name="geometry postprocessed" />
+        </value>
+        <struct name="RenderModelSectionDataBlock">
+          <struct name="GlobalGeometryPartBlockNew">
+            <value type="Enum" name="Type" length="2" disabled="true">
+              <item value="0" name="Not Drawn" />
+              <item value="1" name="Opaque Shadow Only" />
+              <item value="2" name="Opaque Shadow-Casting" />
+              <item value="3" name="Opaque Nonshadowing" />
+              <item value="4" name="Transparent" />
+              <item value="5" name="Lightmap Only" />
+            </value>
+            <value type="Flags" name="Flags" length="2" disabled="true">
+              <bit index="0" name="Decalable" />
+              <bit index="1" name="New Part Types" />
+              <bit index="2" name="Dislikes Photons" />
+              <bit index="3" name="Override Triangle List" />
+              <bit index="4" name="ignored by lightmapper" />
+            </value>
+            <value type="ShortBlockIndex" name="Material" disabled="true" block="GlobalGeometryMaterialBlock" />
+            <value type="ShortInteger" name="Strip Start Index" disabled="true" />
+            <value type="ShortInteger" name="Strip Length" disabled="true" />
+            <value type="ShortInteger" name="First Subpart Index" disabled="true" />
+            <value type="ShortInteger" name="Subpart Count" disabled="true" />
+            <value type="CharInteger" name="Max NodesVertex" disabled="true" />
+            <value type="CharInteger" name="Contributing Compound Node Count" disabled="true" />
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="CharInteger" name="Node Index" disabled="true" />
+            <value type="CharInteger" name="Node Index2" disabled="true" />
+            <value type="CharInteger" name="Node Index3" disabled="true" />
+            <value type="CharInteger" name="Node Index4" disabled="true" />
+            <value type="Real" name="Node Weight" disabled="true" />
+            <value type="Real" name="Node Weight2" disabled="true" />
+            <value type="Real" name="Node Weight3" disabled="true" />
+            <value type="Real" name="lod mipmap magic number" disabled="true" />
+            <value type="Skip" name="_unnamed0" length="24" />
+          </struct>
+          <value type="Block" name="Parts" disabled="true" struct="GlobalGeometryPartBlockNew" maxelements="255" />
+          <struct name="GlobalSubpartsBlock">
+            <value type="ShortInteger" name="indices_start_index" disabled="true" />
+            <value type="ShortInteger" name="indices_length" disabled="true" />
+            <value type="ShortInteger" name="visibility_bounds_index" disabled="true" />
+            <value type="ShortInteger" name="Part Index" disabled="true" />
+          </struct>
+          <value type="Block" name="Subparts" disabled="true" struct="GlobalSubpartsBlock" maxelements="32768" />
+          <struct name="GlobalVisibilityBoundsBlock">
+            <value type="Real" name="Position x" disabled="true" />
+            <value type="Real" name="Position y" disabled="true" />
+            <value type="Real" name="Position z" disabled="true" />
+            <value type="Real" name="Radius" disabled="true" />
+            <value type="CharInteger" name="Node 0" disabled="true" />
+            <value type="Pad" name="_unnamed0" length="3" />
+          </struct>
+          <value type="Block" name="Visibility Bounds" disabled="true" struct="GlobalVisibilityBoundsBlock" maxelements="32768" />
+          <struct name="GlobalGeometrySectionRawVertexBlock">
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="LongInteger" name="Node Index OLD" disabled="true" />
+            <value type="LongInteger" name="Node Index OLD2" disabled="true" />
+            <value type="LongInteger" name="Node Index OLD3" disabled="true" />
+            <value type="LongInteger" name="Node Index OLD4" disabled="true" />
+            <value type="Real" name="node_weight" disabled="true" />
+            <value type="Real" name="node_weight2" disabled="true" />
+            <value type="Real" name="node_weight3" disabled="true" />
+            <value type="Real" name="node_weight4" disabled="true" />
+            <value type="LongInteger" name="Node Index NEW" disabled="true" />
+            <value type="LongInteger" name="Node Index NEW2" disabled="true" />
+            <value type="LongInteger" name="Node Index NEW3" disabled="true" />
+            <value type="LongInteger" name="Node Index NEW4" disabled="true" />
+            <value type="LongInteger" name="Use New Node Indices" disabled="true" />
+            <value type="LongInteger" name="Adjusted Compound Node Index" disabled="true" />
+            <value type="RealPoint2d" name="texcoord" disabled="true" />
+            <value type="RealVector3d" name="Normal" disabled="true" />
+            <value type="RealVector3d" name="Binormal" disabled="true" />
+            <value type="RealVector3d" name="Tangent" disabled="true" />
+            <value type="RealVector3d" name="Anisotropic Binormal" disabled="true" />
+            <value type="RealPoint2d" name="Secondary texcoord" disabled="true" />
+            <value type="RealRgbColor" name="Primary Lightmap Color" disabled="false" />
+            <value type="RealPoint2d" name="Primary Lightmap texcoord" disabled="false" />
+            <value type="RealVector3d" name="Primary Lightmap Incident Direction" disabled="false" />
+            <value type="Pad" name="_unnamed0" length="12" />
+            <value type="Pad" name="_unnamed1" length="8" />
+            <value type="Pad" name="_unnamed2" length="12" />
+          </struct>
+          <value type="Block" name="Raw Vertices" disabled="true" struct="GlobalGeometrySectionRawVertexBlock" maxelements="32767" />
+          <struct name="GlobalGeometrySectionStripIndexBlock">
+            <value type="ShortInteger" name="Index" disabled="true" />
+          </struct>
+          <value type="Block" name="Strip Indices" disabled="true" struct="GlobalGeometrySectionStripIndexBlock" maxelements="65535" />
+          <value type="Data" name="Visibility mopp Code" disabled="true" />
+          <value type="Block" name="mopp Reorder Table" disabled="true" struct="GlobalGeometrySectionStripIndexBlock" maxelements="65535" />
+          <struct name="GlobalGeometrySectionVertexBufferBlock">
+            <value type="Skip" name="vertex buffer" length="32" disabled="true" />
+          </struct>
+          <value type="Block" name="Vertex Buffers" disabled="true" struct="GlobalGeometrySectionVertexBufferBlock" maxelements="512" />
+          <value type="Pad" name="_unnamed0" length="4" />
+          <struct name="GlobalGeometryRawPointBlock">
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="LongInteger" name="Node Index OLD" disabled="true" />
+            <value type="LongInteger" name="Node Index OLD2" disabled="true" />
+            <value type="LongInteger" name="Node Index OLD3" disabled="true" />
+            <value type="LongInteger" name="Node Index OLD4" disabled="true" />
+            <value type="Real" name="node_weight" disabled="true" />
+            <value type="Real" name="node_weight2" disabled="true" />
+            <value type="Real" name="node_weight3" disabled="true" />
+            <value type="Real" name="node_weight4" disabled="true" />
+            <value type="LongInteger" name="Node Index NEW" disabled="true" />
+            <value type="LongInteger" name="Node Index NEW2" disabled="true" />
+            <value type="LongInteger" name="Node Index NEW3" disabled="true" />
+            <value type="LongInteger" name="Node Index NEW4" disabled="true" />
+            <value type="LongInteger" name="Use New Node Indices" disabled="true" />
+            <value type="LongInteger" name="Adjusted Compound Node Index" disabled="true" />
+          </struct>
+          <value type="Block" name="Raw Points" disabled="true" struct="GlobalGeometryRawPointBlock" maxelements="32767" />
+          <value type="Data" name="Runtime Point Data" disabled="true" />
+          <struct name="GlobalGeometryRigidPointGroupBlock">
+            <value type="CharInteger" name="Rigid Node Index" disabled="true" />
+            <value type="CharInteger" name="NodesPoint" disabled="true" />
+            <value type="ShortInteger" name="Point Count" disabled="true" />
+          </struct>
+          <value type="Block" name="Rigid Point Groups" disabled="true" struct="GlobalGeometryRigidPointGroupBlock" maxelements="32767" />
+          <struct name="GlobalGeometryPointDataIndexBlock">
+            <value type="ShortInteger" name="Index" disabled="true" />
+          </struct>
+          <value type="Block" name="Vertex-Point Indices" disabled="true" struct="GlobalGeometryPointDataIndexBlock" maxelements="32767" />
+          <struct name="RenderModelNodeMapBlock">
+            <value type="CharInteger" name="node index" disabled="true" />
+          </struct>
+          <value type="Block" name="node map" disabled="true" struct="RenderModelNodeMapBlock" maxelements="40" />
+          <value type="Pad" name="_unnamed1" length="4" />
+        </struct>
+        <value type="Block" name="section data" disabled="true" struct="RenderModelSectionDataBlock" maxelements="1" />
+        <value type="ResourceBlock" name="Resource Data" disabled="false" />
+        <value type="LongInteger" name="Section Data Size" disabled="true" />
+        <value type="LongInteger" name="Resource Data Size" disabled="true" />
+        <struct name="GlobalGeometryBlockResourceBlock">
+          <value type="Enum" name="Type" length="1" disabled="true">
+            <item value="0" name="Tag Block" />
+            <item value="1" name="Tag Data" />
+            <item value="2" name="Vertex Buffer" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="3" />
+          <value type="ShortInteger" name="Primary Locator" disabled="true" />
+          <value type="ShortInteger" name="Secondary Locator" disabled="true" />
+          <value type="LongInteger" name="Resource Data Size" disabled="true" />
+          <value type="LongInteger" name="Resource Data Offset" disabled="true" />
+        </struct>
+        <value type="Block" name="Resources" disabled="true" struct="GlobalGeometryBlockResourceBlock" maxelements="1024" />
+        <value type="Skip" name="Geometry Self Reference" length="4" disabled="false" />
+        <value type="ShortInteger" name="Owner Tag Section Offset" disabled="true" />
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Pad" name="_unnamed2" length="4" />
+      </struct>
+      <value type="Block" name="sections" disabled="true" struct="RenderModelSectionBlock" maxelements="255" />
+      <struct name="RenderModelInvalidSectionPairsBlock">
+        <value type="LongInteger" name="bits" disabled="true" />
+      </struct>
+      <value type="Block" name="invalid section pair bits" disabled="true" struct="RenderModelInvalidSectionPairsBlock" maxelements="1013" />
+      <struct name="RenderModelSectionGroupBlock">
+        <value type="Flags" name="detail levels" length="2" disabled="true">
+          <bit index="0" name="L1 (super low)" />
+          <bit index="1" name="L2 (low)" />
+          <bit index="2" name="L3 (medium)" />
+          <bit index="3" name="L4 (high)" />
+          <bit index="4" name="L5 (super high)" />
+          <bit index="5" name="L6 (hollywood)" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <struct name="RenderModelCompoundNodeBlock">
+          <value type="CharInteger" name="node index" disabled="true" />
+          <value type="CharInteger" name="node index2" disabled="true" />
+          <value type="CharInteger" name="node index3" disabled="true" />
+          <value type="CharInteger" name="node index4" disabled="true" />
+          <value type="Real" name="node weight" disabled="true" />
+          <value type="Real" name="node weight2" disabled="true" />
+          <value type="Real" name="node weight3" disabled="true" />
+        </struct>
+        <value type="Block" name="compound nodes" disabled="true" struct="RenderModelCompoundNodeBlock" maxelements="255" />
+      </struct>
+      <value type="Block" name="section groups" disabled="true" struct="RenderModelSectionGroupBlock" maxelements="6" />
+      <value type="CharInteger" name="L1 section group index" disabled="true" unit="(super low)" />
+      <value type="CharInteger" name="L2 section group index" disabled="true" unit="(low)" />
+      <value type="CharInteger" name="L3 section group index" disabled="true" unit="(medium)" />
+      <value type="CharInteger" name="L4 section group index" disabled="true" unit="(high)" />
+      <value type="CharInteger" name="L5 section group index" disabled="true" unit="(super high)" />
+      <value type="CharInteger" name="L6 section group index" disabled="true" unit="(hollywood)" />
+      <value type="Pad" name="_unnamed2" length="2" />
+      <value type="LongInteger" name="node list checksum" disabled="true" />
+      <struct name="RenderModelNodeBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="parent node" disabled="true" block="RenderModelNodeBlock" />
+        <value type="ShortBlockIndex" name="first child node" disabled="true" block="RenderModelNodeBlock" />
+        <value type="ShortBlockIndex" name="next sibling node" disabled="true" block="RenderModelNodeBlock" />
+        <value type="ShortInteger" name="import node index" disabled="true" />
+        <value type="RealPoint3d" name="default translation" disabled="true" />
+        <value type="RealQuaternion" name="default rotation" disabled="true" />
+        <value type="RealVector3d" name="inverse forward" disabled="true" />
+        <value type="RealVector3d" name="inverse left" disabled="true" />
+        <value type="RealVector3d" name="inverse up" disabled="true" />
+        <value type="RealPoint3d" name="inverse position" disabled="true" />
+        <value type="Real" name="inverse scale" disabled="true" />
+        <value type="Real" name="distance from parent" disabled="true" />
+      </struct>
+      <value type="Block" name="nodes" disabled="true" struct="RenderModelNodeBlock" maxelements="255" />
+      <struct name="RenderModelNodeMapBlockOLD">
+        <value type="CharInteger" name="node index" disabled="true" />
+      </struct>
+      <value type="Block" name="node map OLD" disabled="true" struct="RenderModelNodeMapBlockOLD" maxelements="640" />
+      <struct name="RenderModelMarkerGroupBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <struct name="RenderModelMarkerBlock">
+          <value type="CharInteger" name="region index" disabled="true" />
+          <value type="CharInteger" name="permutation index" disabled="true" />
+          <value type="CharInteger" name="node index" disabled="true" />
+          <value type="Pad" name="_unnamed0" length="1" />
+          <value type="RealPoint3d" name="translation" disabled="true" />
+          <value type="RealQuaternion" name="rotation" disabled="true" />
+          <value type="Real" name="scale" disabled="false" />
+        </struct>
+        <value type="Block" name="markers" disabled="true" struct="RenderModelMarkerBlock" maxelements="256" />
+      </struct>
+      <value type="Block" name="marker groups" disabled="true" struct="RenderModelMarkerGroupBlock" maxelements="4096" />
+      <struct name="GlobalGeometryMaterialBlock">
+        <value type="TagReference" name="Old Shader" disabled="true" extensions="shad" />
+        <value type="TagReference" name="Shader" disabled="true" extensions="shad" blockname="true" />
+        <struct name="GlobalGeometryMaterialPropertyBlock">
+          <value type="Enum" name="Type" length="2" disabled="true">
+            <item value="0" name="Lightmap Resolution" />
+            <item value="1" name="Lightmap Power" />
+            <item value="2" name="Lightmap Half Life" />
+            <item value="3" name="Lightmap Diffuse Scale" />
+          </value>
+          <value type="ShortInteger" name="Int Value" disabled="true" />
+          <value type="Real" name="Real Value" disabled="true" />
+        </struct>
+        <value type="Block" name="Properties" disabled="true" struct="GlobalGeometryMaterialPropertyBlock" maxelements="16" />
+        <value type="Pad" name="_unnamed0" length="4" />
+        <value type="CharInteger" name="Breakable Surface Index" disabled="true" />
+        <value type="Pad" name="_unnamed1" length="3" />
+      </struct>
+      <value type="Block" name="materials" disabled="true" struct="GlobalGeometryMaterialBlock" maxelements="1024" />
+      <struct name="GlobalErrorReportCategoriesBlock">
+        <value type="LongerFixedLengthString" name="Name" disabled="true" blockname="true" />
+        <value type="Enum" name="Report Type" length="2" disabled="true">
+          <item value="0" name="Silent" />
+          <item value="1" name="Comment" />
+          <item value="2" name="Warning" />
+          <item value="3" name="Error" />
+        </value>
+        <value type="Flags" name="Flags" length="2" disabled="true">
+          <bit index="0" name="Rendered" />
+          <bit index="1" name="Tangent Space" />
+          <bit index="2" name="Noncritical" />
+          <bit index="3" name="Lightmap Light" />
+          <bit index="4" name="Report key is valid." />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Pad" name="_unnamed2" length="404" />
+        <struct name="ErrorReportsBlock">
+          <value type="Enum" name="Type" length="2" disabled="true">
+            <item value="0" name="Silent" />
+            <item value="1" name="Comment" />
+            <item value="2" name="Warning" />
+            <item value="3" name="Error" />
+          </value>
+          <value type="Flags" name="Flags" length="2" disabled="true">
+            <bit index="0" name="Rendered" />
+            <bit index="1" name="Tangent Space" />
+            <bit index="2" name="Noncritical" />
+            <bit index="3" name="Lightmap Light" />
+            <bit index="4" name="Report key is valid." />
+          </value>
+          <value type="Data" name="Text" disabled="true" />
+          <value type="FixedLengthString" name="Source Filename" disabled="true" />
+          <value type="LongInteger" name="Source Line Number" disabled="true" />
+          <struct name="ErrorReportVerticesBlock">
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="CharInteger" name="Node Index" disabled="true" />
+            <value type="CharInteger" name="Node Index2" disabled="true" />
+            <value type="CharInteger" name="Node Index3" disabled="true" />
+            <value type="CharInteger" name="Node Index4" disabled="true" />
+            <value type="Real" name="Node Weight" disabled="true" />
+            <value type="Real" name="Node Weight2" disabled="true" />
+            <value type="Real" name="Node Weight3" disabled="true" />
+            <value type="Real" name="Node Weight4" disabled="true" />
+            <value type="RealArgbColor" name="Color" disabled="true" />
+            <value type="Real" name="Screen Size" disabled="true" />
+          </struct>
+          <value type="Block" name="Vertices" disabled="true" struct="ErrorReportVerticesBlock" maxelements="1024" />
+          <struct name="ErrorReportVectorsBlock">
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="CharInteger" name="Node Index" disabled="true" />
+            <value type="CharInteger" name="Node Index2" disabled="true" />
+            <value type="CharInteger" name="Node Index3" disabled="true" />
+            <value type="CharInteger" name="Node Index4" disabled="true" />
+            <value type="Real" name="Node Weight" disabled="true" />
+            <value type="Real" name="Node Weight2" disabled="true" />
+            <value type="Real" name="Node Weight3" disabled="true" />
+            <value type="Real" name="Node Weight4" disabled="true" />
+            <value type="RealArgbColor" name="Color" disabled="true" />
+            <value type="RealVector3d" name="Normal" disabled="true" />
+            <value type="Real" name="Screen Length" disabled="true" />
+          </struct>
+          <value type="Block" name="Vectors" disabled="true" struct="ErrorReportVectorsBlock" maxelements="1024" />
+          <struct name="ErrorReportLinesBlock">
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="CharInteger" name="Node Index" disabled="true" />
+            <value type="CharInteger" name="Node Index2" disabled="true" />
+            <value type="CharInteger" name="Node Index3" disabled="true" />
+            <value type="CharInteger" name="Node Index4" disabled="true" />
+            <value type="RealPoint3d" name="Position2" disabled="true" />
+            <value type="CharInteger" name="Node Index5" disabled="true" />
+            <value type="CharInteger" name="Node Index6" disabled="true" />
+            <value type="CharInteger" name="Node Index7" disabled="true" />
+            <value type="CharInteger" name="Node Index8" disabled="true" />
+            <value type="Real" name="Node Weight" disabled="true" />
+            <value type="Real" name="Node Weight2" disabled="true" />
+            <value type="Real" name="Node Weight3" disabled="true" />
+            <value type="Real" name="Node Weight4" disabled="true" />
+            <value type="RealArgbColor" name="Color" disabled="true" />
+          </struct>
+          <value type="Block" name="Lines" disabled="true" struct="ErrorReportLinesBlock" maxelements="1024" />
+          <struct name="ErrorReportTrianglesBlock">
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="CharInteger" name="Node Index" disabled="true" />
+            <value type="CharInteger" name="Node Index2" disabled="true" />
+            <value type="CharInteger" name="Node Index3" disabled="true" />
+            <value type="CharInteger" name="Node Index4" disabled="true" />
+            <value type="RealPoint3d" name="Position2" disabled="true" />
+            <value type="CharInteger" name="Node Index5" disabled="true" />
+            <value type="CharInteger" name="Node Index6" disabled="true" />
+            <value type="CharInteger" name="Node Index7" disabled="true" />
+            <value type="CharInteger" name="Node Index8" disabled="true" />
+            <value type="RealPoint3d" name="Position3" disabled="true" />
+            <value type="CharInteger" name="Node Index9" disabled="true" />
+            <value type="CharInteger" name="Node Index10" disabled="true" />
+            <value type="CharInteger" name="Node Index11" disabled="true" />
+            <value type="CharInteger" name="Node Index12" disabled="true" />
+            <value type="Real" name="Node Weight" disabled="true" />
+            <value type="Real" name="Node Weight2" disabled="true" />
+            <value type="Real" name="Node Weight3" disabled="true" />
+            <value type="Real" name="Node Weight4" disabled="true" />
+            <value type="RealArgbColor" name="Color" disabled="true" />
+          </struct>
+          <value type="Block" name="Triangles" disabled="true" struct="ErrorReportTrianglesBlock" maxelements="1024" />
+          <struct name="ErrorReportQuadsBlock">
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="CharInteger" name="Node Index" disabled="true" />
+            <value type="CharInteger" name="Node Index2" disabled="true" />
+            <value type="CharInteger" name="Node Index3" disabled="true" />
+            <value type="CharInteger" name="Node Index4" disabled="true" />
+            <value type="RealPoint3d" name="Position2" disabled="true" />
+            <value type="CharInteger" name="Node Index5" disabled="true" />
+            <value type="CharInteger" name="Node Index6" disabled="true" />
+            <value type="CharInteger" name="Node Index7" disabled="true" />
+            <value type="CharInteger" name="Node Index8" disabled="true" />
+            <value type="RealPoint3d" name="Position3" disabled="true" />
+            <value type="CharInteger" name="Node Index9" disabled="true" />
+            <value type="CharInteger" name="Node Index10" disabled="true" />
+            <value type="CharInteger" name="Node Index11" disabled="true" />
+            <value type="CharInteger" name="Node Index12" disabled="true" />
+            <value type="RealPoint3d" name="Position4" disabled="true" />
+            <value type="CharInteger" name="Node Index13" disabled="true" />
+            <value type="CharInteger" name="Node Index14" disabled="true" />
+            <value type="CharInteger" name="Node Index15" disabled="true" />
+            <value type="CharInteger" name="Node Index16" disabled="true" />
+            <value type="Real" name="Node Weight" disabled="true" />
+            <value type="Real" name="Node Weight2" disabled="true" />
+            <value type="Real" name="Node Weight3" disabled="true" />
+            <value type="Real" name="Node Weight4" disabled="true" />
+            <value type="RealArgbColor" name="Color" disabled="true" />
+          </struct>
+          <value type="Block" name="Quads" disabled="true" struct="ErrorReportQuadsBlock" maxelements="1024" />
+          <struct name="ErrorReportCommentsBlock">
+            <value type="Data" name="Text" disabled="true" />
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="CharInteger" name="Node Index" disabled="true" />
+            <value type="CharInteger" name="Node Index2" disabled="true" />
+            <value type="CharInteger" name="Node Index3" disabled="true" />
+            <value type="CharInteger" name="Node Index4" disabled="true" />
+            <value type="Real" name="Node Weight" disabled="true" />
+            <value type="Real" name="Node Weight2" disabled="true" />
+            <value type="Real" name="Node Weight3" disabled="true" />
+            <value type="Real" name="Node Weight4" disabled="true" />
+            <value type="RealArgbColor" name="Color" disabled="true" />
+          </struct>
+          <value type="Block" name="Comments" disabled="true" struct="ErrorReportCommentsBlock" maxelements="1024" />
+          <value type="Pad" name="_unnamed0" length="380" />
+          <value type="LongInteger" name="Report Key" disabled="true" />
+          <value type="LongInteger" name="Node Index" disabled="true" />
+          <value type="RealBounds" name="Bounds x" disabled="true" />
+          <value type="RealBounds" name="Bounds y" disabled="true" />
+          <value type="RealBounds" name="Bounds z" disabled="true" />
+          <value type="RealArgbColor" name="Color" disabled="true" />
+          <value type="Pad" name="_unnamed1" length="84" />
+        </struct>
+        <value type="Block" name="Reports" disabled="true" struct="ErrorReportsBlock" maxelements="1024" />
+      </struct>
+      <value type="Block" name="errors" disabled="true" struct="GlobalErrorReportCategoriesBlock" maxelements="64" />
+      <value type="Real" name="dont draw over camera cosine angle" disabled="false">
+        <tooltip>dont draw fp model when camera &gt; this angle cosine (-1,1) Sugg. -0.2. 0 disables.</tooltip>
+      </value>
+      <struct name="PrtInfoBlock">
+        <value type="ShortInteger" name="SH Order" disabled="true" />
+        <value type="ShortInteger" name="num of clusters" disabled="true" />
+        <value type="ShortInteger" name="pca vectors per cluster" disabled="true" />
+        <value type="ShortInteger" name="number of rays" disabled="true" />
+        <value type="ShortInteger" name="number of bounces" disabled="true" />
+        <value type="ShortInteger" name="mat index for sbsfc scattering" disabled="true" />
+        <value type="Real" name="length scale" disabled="true" />
+        <value type="ShortInteger" name="number of lods in model" disabled="true" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <struct name="PrtLodInfoBlock">
+          <value type="LongInteger" name="cluster offset" disabled="true" />
+          <struct name="PrtSectionInfoBlock">
+            <value type="LongInteger" name="section index" disabled="true" />
+            <value type="LongInteger" name="pca data offset" disabled="true" />
+          </struct>
+          <value type="Block" name="section info" disabled="true" struct="PrtSectionInfoBlock" maxelements="255" />
+        </struct>
+        <value type="Block" name="lod info" disabled="true" struct="PrtLodInfoBlock" maxelements="6" />
+        <struct name="PrtClusterBasisBlock">
+          <value type="Real" name="basis data" disabled="false" />
+        </struct>
+        <value type="Block" name="cluster basis" disabled="true" struct="PrtClusterBasisBlock" maxelements="34560" />
+        <struct name="PrtRawPcaDataBlock">
+          <value type="Real" name="raw pca data" disabled="false" />
+        </struct>
+        <value type="Block" name="raw_pca_data" disabled="true" struct="PrtRawPcaDataBlock" maxelements="150405120" />
+        <struct name="PrtVertexBuffersBlock">
+          <value type="Skip" name="vertex buffer" length="32" disabled="true" />
+        </struct>
+        <value type="Block" name="vertex buffers" disabled="true" struct="PrtVertexBuffersBlock" maxelements="255" />
+        <value type="ResourceBlock" name="Resource Data" disabled="false" />
+        <value type="LongInteger" name="Section Data Size" disabled="true" />
+        <value type="LongInteger" name="Resource Data Size" disabled="true" />
+        <struct name="GlobalGeometryBlockResourceBlock">
+          <value type="Enum" name="Type" length="1" disabled="true">
+            <item value="0" name="Tag Block" />
+            <item value="1" name="Tag Data" />
+            <item value="2" name="Vertex Buffer" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="3" />
+          <value type="ShortInteger" name="Primary Locator" disabled="true" />
+          <value type="ShortInteger" name="Secondary Locator" disabled="true" />
+          <value type="LongInteger" name="Resource Data Size" disabled="true" />
+          <value type="LongInteger" name="Resource Data Offset" disabled="true" />
+        </struct>
+        <value type="Block" name="Resources" disabled="true" struct="GlobalGeometryBlockResourceBlock" maxelements="1024" />
+        <value type="Skip" name="Geometry Self Reference" length="4" disabled="false" />
+        <value type="ShortInteger" name="Owner Tag Section Offset" disabled="true" />
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Pad" name="_unnamed2" length="4" />
+      </struct>
+      <value type="Block" name="PRT info" disabled="false" struct="PrtInfoBlock" maxelements="1" />
+      <struct name="SectionRenderLeavesBlock">
+        <struct name="NodeRenderLeavesBlock">
+          <struct name="BspLeafBlock">
+            <value type="ShortInteger" name="cluster" disabled="true" />
+            <value type="ShortInteger" name="surface reference count" disabled="true" />
+            <value type="LongInteger" name="first surface reference index" disabled="true" />
+          </struct>
+          <value type="Block" name="collision leaves" disabled="true" struct="BspLeafBlock" maxelements="65536" />
+          <struct name="BspSurfaceReferenceBlock">
+            <value type="ShortInteger" name="strip index" disabled="true" />
+            <value type="ShortInteger" name="lightmap triangle index" disabled="true" />
+            <value type="LongInteger" name="bsp node index" disabled="true" />
+          </struct>
+          <value type="Block" name="surface references" disabled="true" struct="BspSurfaceReferenceBlock" maxelements="262144" />
+        </struct>
+        <value type="Block" name="node render leaves" disabled="true" struct="NodeRenderLeavesBlock" maxelements="64" />
+      </struct>
+      <value type="Block" name="section render leaves" disabled="false" struct="SectionRenderLeavesBlock" maxelements="255" />
+    </struct>
+  </plugin>
+</xml>

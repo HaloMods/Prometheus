@@ -1,0 +1,604 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="matg" parenttype="????">Globals</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Globals">
+      <value type="Pad" name="_unnamed" length="248" />
+      <struct name="Sound">
+        <value type="TagReference" name="sound" extensions="snd!" />
+      </struct>
+      <value type="Block" name="sounds" struct="Sound" maxelements="2" />
+      <struct name="Camera">
+        <value type="TagReference" name="default unit camera track" extensions="trak" />
+      </struct>
+      <value type="Block" name="camera" struct="Camera" maxelements="1" />
+      <struct name="PlayerControl">
+        <value type="RealFraction" name="magnetism friction">
+          <tooltip>How much the crosshair slows over enemies.</tooltip>
+        </value>
+        <value type="RealFraction" name="magnetism adhesion">
+          <tooltip>How much the crosshair sticks to enemies.</tooltip>
+        </value>
+        <value type="RealFraction" name="inconsequential target scale">
+          <tooltip>Scales magnetism level for inconsequential targets like infection forms.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed" length="52" />
+        <value type="Real" name="look acceleration time">
+          <tooltip>Time for a pegged look to reach maximum effect.</tooltip>
+        </value>
+        <value type="Real" name="look acceleration scale">
+          <tooltip>Maximum effect of a pegged look (scales last value in the look function below).</tooltip>
+        </value>
+        <value type="RealFraction" name="look peg threshold">
+          <tooltip>Magnitude of yaw for pegged acceleration to kick in.</tooltip>
+        </value>
+        <value type="Real" name="look default pitch rate" />
+        <value type="Real" name="look default yaw rate" />
+        <value type="Real" name="look autolevelling scale">
+          <tooltip>1 is fast, 0 is none, &gt;1 will probably be really fast.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="20" />
+        <value type="ShortInteger" name="minimum weapon swap ticks">
+          <tooltip>Amount of time player needs to hold down ACTION to pick up a new weapon.</tooltip>
+        </value>
+        <value type="ShortInteger" name="minimum autolevelling ticks">
+          <tooltip>Amount of time player needs to move and not look up or down for autolevelling to kick in.</tooltip>
+        </value>
+        <value type="Angle" name="minimum angle for vehicle flipping">
+          <tooltip>0 means the vehicle's up vector is along the ground, 90 means the up vector is pointing straight up.</tooltip>
+        </value>
+        <struct name="LookFunction">
+          <value type="Real" name="scale" />
+        </struct>
+        <value type="Block" name="look function" struct="LookFunction" maxelements="16" />
+      </struct>
+      <value type="Block" name="player control" struct="PlayerControl" maxelements="1" />
+      <struct name="Difficulty">
+        <value type="Real" name="easy enemy damage">
+          <tooltip>Enemy damage multiplier on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal enemy damage">
+          <tooltip>Enemy damage multiplier on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard enemy damage">
+          <tooltip>Enemy damage multiplier on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. enemy damage">
+          <tooltip>Enemy damage multiplier on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy enemy vitality">
+          <tooltip>Enemy maximum body vitality scale on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal enemy vitality">
+          <tooltip>Enemy maximum body vitality scale on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard enemy vitality">
+          <tooltip>Enemy maximum body vitality scale on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. enemy vitality">
+          <tooltip>Enemy maximum body vitality scale on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy enemy shield">
+          <tooltip>Enemy maximum shield vitality scale on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal enemy shield">
+          <tooltip>Enemy maximum shield vitality scale on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard enemy shield">
+          <tooltip>Enemy maximum shield vitality scale on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. enemy shield">
+          <tooltip>Enemy maximum shield vitality scale on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy enemy recharge">
+          <tooltip>Enemy shield recharge scale on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal enemy recharge">
+          <tooltip>Enemy shield recharge scale on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard enemy recharge">
+          <tooltip>Enemy shield recharge scale on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. enemy recharge">
+          <tooltip>Enemy shield recharge scale on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy friend damage">
+          <tooltip>Friend damage multiplier on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal friend damage">
+          <tooltip>Friend damage multiplier on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard friend damage">
+          <tooltip>Friend damage multiplier on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. friend damage">
+          <tooltip>Friend damage multiplier on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy friend vitality">
+          <tooltip>Friend maximum body vitality scale on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal friend vitality">
+          <tooltip>Friend maximum body vitality scale on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard friend vitality">
+          <tooltip>Friend maximum body vitality scale on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. friend vitality">
+          <tooltip>Friend maximum body vitality scale on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy friend shield">
+          <tooltip>Friend maximum shield vitality scale on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal friend shield">
+          <tooltip>Friend maximum shield vitality scale on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard friend shield">
+          <tooltip>Friend maximum shield vitality scale on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. friend shield">
+          <tooltip>Friend maximum shield vitality scale on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy friend recharge">
+          <tooltip>Friend shield recharge scale on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal friend recharge">
+          <tooltip>Friend shield recharge scale on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard friend recharge">
+          <tooltip>Friend shield recharge scale on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. friend recharge">
+          <tooltip>Friend shield recharge scale on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy infection forms">
+          <tooltip>Toughness of infection forms (may be negative) on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal infection forms">
+          <tooltip>Toughness of infection forms (may be negative) on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard infection forms">
+          <tooltip>Toughness of infection forms (may be negative) on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. infection forms">
+          <tooltip>Toughness of infection forms (may be negative) on impossible difficulty.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed" length="16" />
+        <value type="Real" name="easy rate of fire">
+          <tooltip>Enemy rate of fire scale on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal rate of fire">
+          <tooltip>Enemy rate of fire scale on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard rate of fire">
+          <tooltip>Enemy rate of fire scale on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. rate of fire">
+          <tooltip>Enemy rate of fire scale on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy projectile error">
+          <tooltip>Enemy projectile error scale, as a fraction of their base firing error. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal projectile error">
+          <tooltip>Enemy projectile error scale, as a fraction of their base firing error. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard projectile error">
+          <tooltip>Enemy projectile error scale, as a fraction of their base firing error. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. projectile error">
+          <tooltip>Enemy projectile error scale, as a fraction of their base firing error. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy burst error">
+          <tooltip>Enemy burst error scale; reduces intra-burst shot distance. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal burst error">
+          <tooltip>Enemy burst error scale; reduces intra-burst shot distance. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard burst error">
+          <tooltip>Enemy burst error scale; reduces intra-burst shot distance. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. burst error">
+          <tooltip>Enemy burst error scale; reduces intra-burst shot distance. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy new target delay">
+          <tooltip>Enemy new-target delay scale factor. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal new target delay">
+          <tooltip>Enemy new-target delay scale factor. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard new target delay">
+          <tooltip>Enemy new-target delay scale factor. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. new target delay">
+          <tooltip>Enemy new-target delay scale factor. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy burst separation">
+          <tooltip>Delay time between bursts scale factor for enemies. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal burst separation">
+          <tooltip>Delay time between bursts scale factor for enemies. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard burst separation">
+          <tooltip>Delay time between bursts scale factor for enemies. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. burst separation">
+          <tooltip>Delay time between bursts scale factor for enemies. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy target tracking">
+          <tooltip>Additional target tracking fraction for enemies. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal target tracking">
+          <tooltip>Additional target tracking fraction for enemies. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard target tracking">
+          <tooltip>Additional target tracking fraction for enemies. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. target tracking">
+          <tooltip>Additional target tracking fraction for enemies. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy target leading">
+          <tooltip>Additional target leading fraction for enemies. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal target leading">
+          <tooltip>Additional target leading fraction for enemies. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard target leading">
+          <tooltip>Additional target leading fraction for enemies. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. target leading">
+          <tooltip>Additional target leading fraction for enemies. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy overcharge chance">
+          <tooltip>Overcharge chance scale factor for enemies. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal overcharge chance">
+          <tooltip>Overcharge chance scale factor for enemies. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard overcharge chance">
+          <tooltip>Overcharge chance scale factor for enemies. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. overcharge chance">
+          <tooltip>Overcharge chance scale factor for enemies. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy special fire delay">
+          <tooltip>Delay between special-fire shots (overcharge, banshee bombs) scale factor for enemies. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal special fire delay">
+          <tooltip>Delay between special-fire shots (overcharge, banshee bombs) scale factor for enemies. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard special fire delay">
+          <tooltip>Delay between special-fire shots (overcharge, banshee bombs) scale factor for enemies. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. special fire delay">
+          <tooltip>Delay between special-fire shots (overcharge, banshee bombs) scale factor for enemies. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy guidance vs player">
+          <tooltip>Guidance velocity scale factor for all projectiles targeted on a player. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal guidance vs player">
+          <tooltip>Guidance velocity scale factor for all projectiles targeted on a player. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard guidance vs player">
+          <tooltip>Guidance velocity scale factor for all projectiles targeted on a player. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. guidance vs player">
+          <tooltip>Guidance velocity scale factor for all projectiles targeted on a player. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy melee delay base">
+          <tooltip>Delay period added to all melee attacks, even when berserk. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal melee delay base">
+          <tooltip>Delay period added to all melee attacks, even when berserk. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard melee delay base">
+          <tooltip>Delay period added to all melee attacks, even when berserk. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. melee delay base">
+          <tooltip>Delay period added to all melee attacks, even when berserk. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy melee delay scale">
+          <tooltip>Multiplier for all existing non-berserk melee delay times. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal melee delay scale">
+          <tooltip>Multiplier for all existing non-berserk melee delay times. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard melee delay scale">
+          <tooltip>Multiplier for all existing non-berserk melee delay times. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. melee delay scale">
+          <tooltip>Multiplier for all existing non-berserk melee delay times. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="16" />
+        <value type="Real" name="easy grenade chance scale">
+          <tooltip>Scale factor affecting the desicions to throw a grenade. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal grenade chance scale">
+          <tooltip>Scale factor affecting the desicions to throw a grenade. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard grenade chance scale">
+          <tooltip>Scale factor affecting the desicions to throw a grenade. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. grenade chance scale">
+          <tooltip>Scale factor affecting the desicions to throw a grenade. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy grenade timer scale">
+          <tooltip>Scale factor affecting the delay period between grenades thrown from the same encounter (lower is more often). on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal grenade timer scale">
+          <tooltip>Scale factor affecting the delay period between grenades thrown from the same encounter (lower is more often). on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard grenade timer scale">
+          <tooltip>Scale factor affecting the delay period between grenades thrown from the same encounter (lower is more often). on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. grenade timer scale">
+          <tooltip>Scale factor affecting the delay period between grenades thrown from the same encounter (lower is more often). on impossible difficulty.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed3" length="16" />
+        <value type="Pad" name="_unnamed4" length="16" />
+        <value type="Pad" name="_unnamed5" length="16" />
+        <value type="Real" name="easy major upgrade normal">
+          <tooltip>Fraction of actors upgraded to their major variant. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal major upgrade normal">
+          <tooltip>Fraction of actors upgraded to their major variant. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard major upgrade normal">
+          <tooltip>Fraction of actors upgraded to their major variant. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. major upgrade normal">
+          <tooltip>Fraction of actors upgraded to their major variant. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy major upgrade few">
+          <tooltip>Fraction of actors upgraded to their major variant when mix = normal. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal major upgrade few">
+          <tooltip>Fraction of actors upgraded to their major variant when mix = normal. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard major upgrade few">
+          <tooltip>Fraction of actors upgraded to their major variant when mix = normal. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. major upgrade few">
+          <tooltip>Fraction of actors upgraded to their major variant when mix = normal. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Real" name="easy major upgrade many">
+          <tooltip>Fraction of actors upgraded to their major variant when mix = many. on easy difficulty.</tooltip>
+        </value>
+        <value type="Real" name="normal major upgrade many">
+          <tooltip>Fraction of actors upgraded to their major variant when mix = many. on normal difficulty.</tooltip>
+        </value>
+        <value type="Real" name="hard major upgrade many">
+          <tooltip>Fraction of actors upgraded to their major variant when mix = many. on hard difficulty.</tooltip>
+        </value>
+        <value type="Real" name="imposs. major upgrade many">
+          <tooltip>Fraction of actors upgraded to their major variant when mix = many. on impossible difficulty.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed6" length="16" />
+        <value type="Pad" name="_unnamed7" length="16" />
+        <value type="Pad" name="_unnamed8" length="16" />
+        <value type="Pad" name="_unnamed9" length="16" />
+        <value type="Pad" name="_unnamed10" length="84" />
+      </struct>
+      <value type="Block" name="difficulty" struct="Difficulty" maxelements="1" />
+      <struct name="Grenades">
+        <value type="ShortInteger" name="maximum count" />
+        <value type="ShortInteger" name="mp spawn default" />
+        <value type="TagReference" name="throwing effect" extensions="effe" />
+        <value type="TagReference" name="hud interface" extensions="grhi" />
+        <value type="TagReference" name="equipment" extensions="eqip" />
+        <value type="TagReference" name="projectile" extensions="proj" />
+      </struct>
+      <value type="Block" name="grenades" struct="Grenades" maxelements="2" />
+      <struct name="RasterizerData">
+        <value type="TagReference" name="distance attenuation" extensions="bitm" />
+        <value type="TagReference" name="vector normalization" extensions="bitm" />
+        <value type="TagReference" name="atmospheric fog density" extensions="bitm" />
+        <value type="TagReference" name="planar fog density" extensions="bitm" />
+        <value type="TagReference" name="linear corner fade" extensions="bitm">
+          <tooltip>Used for shadows.</tooltip>
+        </value>
+        <value type="TagReference" name="active camouflage distortion" extensions="bitm" />
+        <value type="TagReference" name="glow" extensions="bitm" />
+        <value type="Pad" name="_unnamed" length="60" />
+        <value type="TagReference" name="default 2D" extensions="bitm" />
+        <value type="TagReference" name="default 3D" extensions="bitm" />
+        <value type="TagReference" name="default cube map" extensions="bitm" />
+        <value type="TagReference" name="test 0" extensions="bitm" />
+        <value type="TagReference" name="test 1" extensions="bitm" />
+        <value type="TagReference" name="test 2" extensions="bitm" />
+        <value type="TagReference" name="test 3" extensions="bitm" />
+        <value type="TagReference" name="video scanline map" extensions="bitm" />
+        <value type="TagReference" name="video noise map" extensions="bitm" />
+        <value type="Pad" name="_unnamed2" length="52" />
+        <value type="Flags" name="flags" length="2">
+          <bit index="0" name="tint edge density" />
+        </value>
+        <value type="Pad" name="_unnamed3" length="2" />
+        <value type="Real" name="refraction amount" />
+        <value type="Real" name="distance falloff" />
+        <value type="RealRGBColor" name="tint color" />
+        <value type="Real" name="hype" />
+        <value type="Real" name="hype2" />
+        <value type="RealRGBColor" name="hype3" />
+        <value type="TagReference" name="distance attenuation 2D" extensions="bitm">
+          <tooltip>The pc can't use 3d textures, so we use this instead.</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="rasterizer data" struct="RasterizerData" maxelements="1" />
+      <struct name="InterfaceTagReferences">
+        <value type="TagReference" name="font system" extensions="font" />
+        <value type="TagReference" name="font terminal" extensions="font" />
+        <value type="TagReference" name="screen color table" extensions="colo" />
+        <value type="TagReference" name="hud color table" extensions="colo" />
+        <value type="TagReference" name="editor color table" extensions="colo" />
+        <value type="TagReference" name="dialog color table" extensions="colo" />
+        <value type="TagReference" name="hud globals" extensions="hudg" />
+        <value type="TagReference" name="motion sensor sweep bitmap" extensions="bitm" />
+        <value type="TagReference" name="motion sensor sweep bitmap mask" extensions="bitm" />
+        <value type="TagReference" name="multiplayer hud bitmap" extensions="bitm" />
+        <value type="TagReference" name="localization" extensions="str#" />
+        <value type="TagReference" name="hud digits definition" extensions="hud#" />
+        <value type="TagReference" name="motion sensor blip bitmap" extensions="bitm" />
+        <value type="TagReference" name="interface goo map1" extensions="bitm" />
+        <value type="TagReference" name="interface goo map2" extensions="bitm" />
+        <value type="TagReference" name="interface goo map3" extensions="bitm" />
+        <value type="Pad" name="_unnamed" length="48" />
+      </struct>
+      <value type="Block" name="interface bitmaps" struct="InterfaceTagReferences" maxelements="1" />
+      <struct name="CheatWeapons">
+        <value type="TagReference" name="weapon" blockname="true" extensions="item" />
+      </struct>
+      <value type="Block" name="weapon list update _weapon_list enum in game_globals.h" struct="CheatWeapons" maxelements="20" />
+      <struct name="CheatPowerups">
+        <value type="TagReference" name="powerup" blockname="true" extensions="eqip" />
+      </struct>
+      <value type="Block" name="cheat powerups" struct="CheatPowerups" maxelements="20" />
+      <struct name="MultiplayerInformation">
+        <value type="TagReference" name="flag" extensions="item" />
+        <value type="TagReference" name="unit" extensions="unit" />
+        <struct name="Vehicles">
+          <value type="TagReference" name="vehicle" blockname="true" extensions="vehi" />
+        </struct>
+        <value type="Block" name="vehicles" struct="Vehicles" maxelements="20" />
+        <value type="TagReference" name="hill shader" extensions="shdr" />
+        <value type="TagReference" name="flag shader" extensions="shdr" />
+        <value type="TagReference" name="ball" extensions="item" />
+        <struct name="Sounds">
+          <value type="TagReference" name="sound" blockname="true" extensions="snd!" />
+        </struct>
+        <value type="Block" name="sounds" struct="Sounds" maxelements="60" />
+        <value type="Pad" name="_unnamed" length="56" />
+      </struct>
+      <value type="Block" name="multiplayer information" struct="MultiplayerInformation" maxelements="1" />
+      <struct name="PlayerInformation">
+        <value type="TagReference" name="unit" extensions="unit" />
+        <value type="Pad" name="_unnamed" length="28" />
+        <value type="Real" name="walking speed" />
+        <value type="Real" name="&quot;double speed&quot; multiplier" />
+        <value type="Real" name="run forward" />
+        <value type="Real" name="run backward" />
+        <value type="Real" name="run sideways" />
+        <value type="Real" name="run acceleration" />
+        <value type="Real" name="sneak forward" />
+        <value type="Real" name="sneak backward" />
+        <value type="Real" name="sneak sideways" />
+        <value type="Real" name="sneak acceleration" />
+        <value type="Real" name="airborne acceleration" />
+        <value type="Real" name="speed multiplier" />
+        <value type="Pad" name="_unnamed2" length="12" />
+        <value type="RealPoint3D" name="grenade origin" />
+        <value type="Pad" name="_unnamed3" length="12" />
+        <value type="Real" name="stun movement penalty">
+          <tooltip>1.0 prevents moving while stunned.</tooltip>
+        </value>
+        <value type="Real" name="stun turning penalty">
+          <tooltip>1.0 prevents turning while stunned.</tooltip>
+        </value>
+        <value type="Real" name="stun jumping penalty">
+          <tooltip>1.0 prevents jumping while stunned.</tooltip>
+        </value>
+        <value type="Real" name="minimum stun time">
+          <tooltip>All stunning damage will last for at least this long.</tooltip>
+        </value>
+        <value type="Real" name="maximum stun time">
+          <tooltip>No stunning damage will last for longer than this.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed4" length="8" />
+        <value type="RealBounds" name="first person idle time" />
+        <value type="RealFraction" name="first person skip fraction" />
+        <value type="Pad" name="_unnamed5" length="16" />
+        <value type="TagReference" name="coop respawn effect" extensions="effe" />
+        <value type="Pad" name="_unnamed6" length="44" />
+      </struct>
+      <value type="Block" name="player information" struct="PlayerInformation" maxelements="1" />
+      <struct name="FirstPersonInterface">
+        <value type="TagReference" name="first person hands" extensions="mod2" />
+        <value type="TagReference" name="base bitmap" extensions="bitm" />
+        <value type="TagReference" name="shield meter" extensions="metr" />
+        <value type="Point2D" name="shield meter origin" />
+        <value type="TagReference" name="body meter" extensions="metr" />
+        <value type="Point2D" name="body meter origin" />
+        <value type="TagReference" name="nigh" extensions="effe" />
+        <value type="TagReference" name="nigh2" extensions="effe" />
+        <value type="Pad" name="_unnamed" length="88" />
+      </struct>
+      <value type="Block" name="first person interface" struct="FirstPersonInterface" maxelements="1" />
+      <struct name="FallingDamage">
+        <value type="Pad" name="_unnamed" length="8" />
+        <value type="RealBounds" name="harmful falling distance" />
+        <value type="TagReference" name="falling damage" extensions="jpt!" />
+        <value type="Pad" name="_unnamed2" length="8" />
+        <value type="Real" name="maximum falling distance" />
+        <value type="TagReference" name="distance damage" extensions="jpt!" />
+        <value type="TagReference" name="vehicle environemtn collision damage effect" extensions="jpt!" />
+        <value type="TagReference" name="vehicle killed unit damage effect" extensions="jpt!" />
+        <value type="TagReference" name="vehicle collision damage" extensions="jpt!" />
+        <value type="TagReference" name="flaming death damage" extensions="jpt!" />
+        <value type="Pad" name="_unnamed3" length="28" />
+      </struct>
+      <value type="Block" name="falling damage" struct="FallingDamage" maxelements="1" />
+      <struct name="Materials">
+        <value type="Pad" name="_unnamed" length="100" />
+        <value type="Pad" name="_unnamed2" length="48" />
+        <value type="Real" name="ground friction scale">
+          <tooltip>Fraction of original velocity parallel to the ground after one tick.</tooltip>
+        </value>
+        <value type="Real" name="ground friction normal k1 scale">
+          <tooltip>Cosine of angle at which friction falls off.</tooltip>
+        </value>
+        <value type="Real" name="ground friction normal k0 scale">
+          <tooltip>Cosine of angle at which friction is zero.</tooltip>
+        </value>
+        <value type="Real" name="ground depth scale">
+          <tooltip>Depth a point mass rests in the ground.</tooltip>
+        </value>
+        <value type="Real" name="ground damp fraction scale">
+          <tooltip>Fraction of original velocity perpendicular to the ground after one tick.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed3" length="76" />
+        <value type="Pad" name="_unnamed4" length="480" />
+        <value type="Real" name="maximum vitality" />
+        <value type="Pad" name="_unnamed5" length="8" />
+        <value type="Pad" name="_unnamed6" length="4" />
+        <value type="TagReference" name="effect" extensions="effe" />
+        <value type="TagReference" name="sound" extensions="snd!" />
+        <value type="Pad" name="_unnamed7" length="24" />
+        <struct name="BreakableSurfaceParticleEffect">
+          <value type="TagReference" name="particle type" blockname="true" extensions="part" />
+          <value type="Flags" name="flags" length="4">
+            <bit index="0" name="interpolate color in hsv" />
+            <bit index="1" name="...more colors" />
+          </value>
+          <value type="Real" name="density" />
+          <value type="RealBounds" name="velocity scale">
+            <tooltip>Scales initial velocity.</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed" length="4" />
+          <value type="AngleBounds" name="angular velocity" />
+          <value type="Pad" name="_unnamed2" length="8" />
+          <value type="RealBounds" name="radius">
+            <tooltip>Particle radius.</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed3" length="8" />
+          <value type="RealARGBColor" name="tint lower bound" />
+          <value type="RealARGBColor" name="tint upper bound" />
+          <value type="Pad" name="_unnamed4" length="28" />
+        </struct>
+        <value type="Block" name="particle effects" struct="BreakableSurfaceParticleEffect" maxelements="8" />
+        <value type="Pad" name="_unnamed8" length="60" />
+        <value type="TagReference" name="melee hit sound" extensions="snd!" />
+      </struct>
+      <value type="Block" name="materials" struct="Materials" maxelements="33" />
+      <struct name="PlaylistAutogenerateChoice">
+        <value type="FixedLengthString" name="map name" />
+        <value type="FixedLengthString" name="game variant" />
+        <value type="LongInteger" name="minimum experience" />
+        <value type="LongInteger" name="maximum experience" />
+        <value type="LongInteger" name="minimum player count" />
+        <value type="LongInteger" name="maximum player count" />
+        <value type="LongInteger" name="rating" />
+        <value type="Pad" name="_unnamed" length="64" />
+      </struct>
+      <value type="Block" name="playlist members" struct="PlaylistAutogenerateChoice" maxelements="20" />
+    </struct>
+  </plugin>
+</xml>

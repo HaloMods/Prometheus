@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="tagc" parenttype="????">TagCollection</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="TagCollection">
+      <struct name="Tagreference">
+        <value type="TagReference" name="tag" extensions="????" />
+      </struct>
+      <value type="Block" name="tag references" struct="Tagreference" maxelements="200" />
+    </struct>
+  </plugin>
+</xml>

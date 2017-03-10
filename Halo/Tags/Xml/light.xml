@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="ligh" parenttype="????">Light</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Light">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="dynamic">
+          <tooltip>Dynamically illuminate interiors.</tooltip>
+        </bit>
+        <bit index="1" name="no specular">
+          <tooltip>For dynamic lights, cast only diffuse light..</tooltip>
+        </bit>
+        <bit index="2" name="dont light own object">
+          <tooltip>For dynamic lights, don't light the object that the light is attached to..</tooltip>
+        </bit>
+        <bit index="3" name="supersize in first person">
+          <tooltip>For dynamic lights, light every environment surface if this light is on the gun of the current window..</tooltip>
+        </bit>
+        <bit index="4" name="first person flashlight" />
+        <bit index="5" name="dont fade active camouflage" />
+      </value>
+      <value type="Real" name="radius">
+        <tooltip>The radius where illumination is zero. (lens flare only if this is 0).</tooltip>
+      </value>
+      <value type="RealBounds" name="radius modifer">
+        <tooltip>How the radius changes with external scale.</tooltip>
+      </value>
+      <value type="Angle" name="falloff angle">
+        <tooltip>The angle at which the light begins to fade..</tooltip>
+      </value>
+      <value type="Angle" name="cutoff angle">
+        <tooltip>The angle at which the illumination is zero..</tooltip>
+      </value>
+      <value type="Real" name="lens flare only radius" />
+      <value type="Pad" name="_unnamed" length="24" />
+      <value type="Flags" name="interpolation flags" length="4">
+        <bit index="0" name="blend in hsv">
+          <tooltip>Blends colors in hsv rather than rgb space.</tooltip>
+        </bit>
+        <bit index="1" name="...more colors">
+          <tooltip>Blends colors through more hues (goes the long way around the color wheel).</tooltip>
+        </bit>
+      </value>
+      <value type="RealARGBColor" name="color lower bound" />
+      <value type="RealARGBColor" name="color upper bound" />
+      <value type="Pad" name="_unnamed2" length="12" />
+      <value type="TagReference" name="primary cube map" extensions="bitm">
+        <tooltip>Used for diffuse and specular light.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed3" length="2" />
+      <value type="Enum" name="texture animation function">
+        <tooltip>A function to control texture animation.</tooltip>
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Real" name="texture animation period">
+        <tooltip>Time between repeats.</tooltip>
+      </value>
+      <value type="TagReference" name="secondary cube map" extensions="bitm">
+        <tooltip>Used for specular light.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed4" length="2" />
+      <value type="Enum" name="yaw function">
+        <tooltip>A function to control rotation of the gel in yaw.</tooltip>
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Real" name="yaw period">
+        <tooltip>Time between repeats.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed5" length="2" />
+      <value type="Enum" name="roll function">
+        <tooltip>A function to control rotation of the gel in roll.</tooltip>
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Real" name="roll period">
+        <tooltip>Time between repeats.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed6" length="2" />
+      <value type="Enum" name="pitch function">
+        <tooltip>A function to control rotation of the gel in pitch.</tooltip>
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Real" name="pitch period">
+        <tooltip>Time between repeats.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed7" length="8" />
+      <value type="TagReference" name="lens flare" extensions="lens" />
+      <value type="Pad" name="_unnamed8" length="24" />
+      <value type="Real" name="intensity" />
+      <value type="RealRGBColor" name="color" />
+      <value type="Pad" name="_unnamed9" length="16" />
+      <value type="Real" name="duration">
+        <tooltip>The light will last this long when created by an effect.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed10" length="2" />
+      <value type="Enum" name="falloff function">
+        <tooltip>The scale of the light will diminish over time according to this function.</tooltip>
+        <item value="0" name="linear" />
+        <item value="1" name="early" />
+        <item value="2" name="very early" />
+        <item value="3" name="late" />
+        <item value="4" name="very late" />
+        <item value="5" name="cosine" />
+      </value>
+      <value type="Pad" name="_unnamed11" length="8" />
+      <value type="Pad" name="_unnamed12" length="92" />
+    </struct>
+  </plugin>
+</xml>

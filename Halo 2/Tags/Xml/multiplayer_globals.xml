@@ -1,0 +1,946 @@
+<xml>
+  <name type="mulg" parenttype="????">MultiplayerGlobals</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="MultiplayerGlobalsBlock">
+      <struct name="MultiplayerUniversalBlock">
+        <value type="TagReference" name="random player names" disabled="false" extensions="unic" />
+        <value type="TagReference" name="team names" disabled="false" extensions="unic" />
+        <struct name="MultiplayerColorBlock">
+          <value type="RealRgbColor" name="color" disabled="false" />
+        </struct>
+        <value type="Block" name="team colors" disabled="false" struct="MultiplayerColorBlock" maxelements="32" />
+        <value type="TagReference" name="multiplayer text" disabled="false" extensions="unic" />
+      </struct>
+      <value type="Block" name="universal" disabled="false" struct="MultiplayerUniversalBlock" maxelements="1" />
+      <struct name="MultiplayerRuntimeBlock">
+        <value type="TagReference" name="flag" disabled="false" extensions="item" />
+        <value type="TagReference" name="ball" disabled="false" extensions="item" />
+        <value type="TagReference" name="unit" disabled="false" extensions="unit" />
+        <value type="TagReference" name="flag shader" disabled="false" extensions="shad" />
+        <value type="TagReference" name="hill shader" disabled="false" extensions="shad" />
+        <value type="TagReference" name="head" disabled="false" extensions="item" />
+        <value type="TagReference" name="juggernaut powerup" disabled="false" extensions="item" />
+        <value type="TagReference" name="da bomb" disabled="false" extensions="item" />
+        <value type="TagReference" name="_unnamed0" extensions="????" />
+        <value type="TagReference" name="_unnamed1" extensions="????" />
+        <value type="TagReference" name="_unnamed2" extensions="????" />
+        <value type="TagReference" name="_unnamed3" extensions="????" />
+        <value type="TagReference" name="_unnamed4" extensions="????" />
+        <struct name="WeaponsBlock">
+          <value type="TagReference" name="weapon" disabled="false" extensions="item" blockname="true" />
+        </struct>
+        <value type="Block" name="weapons" disabled="false" struct="WeaponsBlock" maxelements="20" />
+        <struct name="VehiclesBlock">
+          <value type="TagReference" name="vehicle" disabled="false" extensions="vehi" blockname="true" />
+        </struct>
+        <value type="Block" name="vehicles" disabled="false" struct="VehiclesBlock" maxelements="20" />
+        <struct name="GrenadeBlock">
+          <value type="TagReference" name="weapon" disabled="false" extensions="eqip" blockname="true" />
+        </struct>
+        <value type="Block" name="grenades" disabled="false" struct="GrenadeBlock" maxelements="20" />
+        <struct name="PowerupBlock">
+          <value type="TagReference" name="weapon" disabled="false" extensions="eqip" blockname="true" />
+        </struct>
+        <value type="Block" name="powerups" disabled="false" struct="PowerupBlock" maxelements="20" />
+        <value type="TagReference" name="in game text" disabled="false" extensions="unic" />
+        <struct name="SoundsBlock">
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+        </struct>
+        <value type="Block" name="sounds" disabled="false" struct="SoundsBlock" maxelements="60" />
+        <struct name="GameEngineGeneralEventBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="quantity message" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="event" length="2" disabled="false" blockname="true">
+            <item value="0" name="kill" />
+            <item value="1" name="suicide" />
+            <item value="2" name="kill teammate" />
+            <item value="3" name="victory" />
+            <item value="4" name="team victory" />
+            <item value="5" name="unused1" />
+            <item value="6" name="unused2" />
+            <item value="7" name="1 min to win" />
+            <item value="8" name="team 1 min to win" />
+            <item value="9" name="30 secs to win" />
+            <item value="10" name="team 30 secs to win" />
+            <item value="11" name="player quit" />
+            <item value="12" name="player joined" />
+            <item value="13" name="killed by unknown" />
+            <item value="14" name="30 minutes left" />
+            <item value="15" name="15 minutes left" />
+            <item value="16" name="5 minutes left" />
+            <item value="17" name="1 minute left" />
+            <item value="18" name="time expired" />
+            <item value="19" name="game over" />
+            <item value="20" name="respawn tick" />
+            <item value="21" name="last respawn tick" />
+            <item value="22" name="teleporter used" />
+            <item value="23" name="player changed team" />
+            <item value="24" name="player rejoined" />
+            <item value="25" name="gained lead" />
+            <item value="26" name="gained team lead" />
+            <item value="27" name="lost lead" />
+            <item value="28" name="lost team lead" />
+            <item value="29" name="tied leader" />
+            <item value="30" name="tied team leader" />
+            <item value="31" name="round over" />
+            <item value="32" name="30 seconds left" />
+            <item value="33" name="10 seconds left" />
+            <item value="34" name="kill (falling)" />
+            <item value="35" name="kill (collision)" />
+            <item value="36" name="kill (melee)" />
+            <item value="37" name="sudden death" />
+            <item value="38" name="player booted player" />
+            <item value="39" name="kill (flag carrier)" />
+            <item value="40" name="kill (bomb carrier)" />
+            <item value="41" name="kill (sticky grenade)" />
+            <item value="42" name="kill (sniper)" />
+            <item value="43" name="kill (st. melee)" />
+            <item value="44" name="boarded vehicle" />
+            <item value="45" name="start team noti." />
+            <item value="46" name="telefrag" />
+            <item value="47" name="10 secs to win" />
+            <item value="48" name="team 10 secs to win" />
+          </value>
+          <value type="Enum" name="audience" length="2" disabled="false" blockname="true">
+            <item value="0" name="cause player" />
+            <item value="1" name="cause team" />
+            <item value="2" name="effect player" />
+            <item value="3" name="effect team" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="StringId" name="display string" disabled="false" />
+          <value type="Enum" name="required field" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="Enum" name="excluded audience" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="StringId" name="primary string" disabled="false" />
+          <value type="LongInteger" name="primary string duration" disabled="false" unit="seconds" />
+          <value type="StringId" name="plural display string" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="28" />
+          <value type="Real" name="sound delay announcer only" disabled="false" />
+          <value type="Flags" name="sound flags" length="2" disabled="false">
+            <bit index="0" name="announcer sound" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+          <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="16" />
+          <struct name="SoundResponseDefinitionBlock">
+            <value type="Flags" name="sound flags" length="2" disabled="false">
+              <bit index="0" name="announcer sound" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="TagReference" name="english sound" disabled="false" extensions="snd!" blockname="true" />
+            <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+            <value type="Real" name="probability" disabled="false" />
+          </struct>
+          <value type="Block" name="sound permutations" disabled="false" struct="SoundResponseDefinitionBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="general events" disabled="false" struct="GameEngineGeneralEventBlock" maxelements="128" />
+        <struct name="GameEngineFlavorEventBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="quantity message" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="event" length="2" disabled="false" blockname="true">
+            <item value="0" name="double kill" />
+            <item value="1" name="triple kill" />
+            <item value="2" name="killtacular" />
+            <item value="3" name="killing spree" />
+            <item value="4" name="running riot" />
+            <item value="5" name="well placed kill" />
+            <item value="6" name="broke killing spree" />
+            <item value="7" name="kill frenzy" />
+            <item value="8" name="killtrocity" />
+            <item value="9" name="killimajaro" />
+            <item value="10" name="15 in a row" />
+            <item value="11" name="20 in a row" />
+            <item value="12" name="25 in a row" />
+          </value>
+          <value type="Enum" name="audience" length="2" disabled="false" blockname="true">
+            <item value="0" name="cause player" />
+            <item value="1" name="cause team" />
+            <item value="2" name="effect player" />
+            <item value="3" name="effect team" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="StringId" name="display string" disabled="false" />
+          <value type="Enum" name="required field" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="Enum" name="excluded audience" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="StringId" name="primary string" disabled="false" />
+          <value type="LongInteger" name="primary string duration" disabled="false" unit="seconds" />
+          <value type="StringId" name="plural display string" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="28" />
+          <value type="Real" name="sound delay announcer only" disabled="false" />
+          <value type="Flags" name="sound flags" length="2" disabled="false">
+            <bit index="0" name="announcer sound" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+          <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="16" />
+          <struct name="SoundResponseDefinitionBlock">
+            <value type="Flags" name="sound flags" length="2" disabled="false">
+              <bit index="0" name="announcer sound" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="TagReference" name="english sound" disabled="false" extensions="snd!" blockname="true" />
+            <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+            <value type="Real" name="probability" disabled="false" />
+          </struct>
+          <value type="Block" name="sound permutations" disabled="false" struct="SoundResponseDefinitionBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="flavor events" disabled="false" struct="GameEngineFlavorEventBlock" maxelements="128" />
+        <struct name="GameEngineSlayerEventBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="quantity message" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="event" length="2" disabled="false" blockname="true">
+            <item value="0" name="game start" />
+            <item value="1" name="new target" />
+          </value>
+          <value type="Enum" name="audience" length="2" disabled="false" blockname="true">
+            <item value="0" name="cause player" />
+            <item value="1" name="cause team" />
+            <item value="2" name="effect player" />
+            <item value="3" name="effect team" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="StringId" name="display string" disabled="false" />
+          <value type="Enum" name="required field" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="Enum" name="excluded audience" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="StringId" name="primary string" disabled="false" />
+          <value type="LongInteger" name="primary string duration" disabled="false" unit="seconds" />
+          <value type="StringId" name="plural display string" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="28" />
+          <value type="Real" name="sound delay announcer only" disabled="false" />
+          <value type="Flags" name="sound flags" length="2" disabled="false">
+            <bit index="0" name="announcer sound" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+          <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="16" />
+          <struct name="SoundResponseDefinitionBlock">
+            <value type="Flags" name="sound flags" length="2" disabled="false">
+              <bit index="0" name="announcer sound" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="TagReference" name="english sound" disabled="false" extensions="snd!" blockname="true" />
+            <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+            <value type="Real" name="probability" disabled="false" />
+          </struct>
+          <value type="Block" name="sound permutations" disabled="false" struct="SoundResponseDefinitionBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="slayer events" disabled="false" struct="GameEngineSlayerEventBlock" maxelements="128" />
+        <struct name="GameEngineCtfEventBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="quantity message" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="event" length="2" disabled="false" blockname="true">
+            <item value="0" name="game start" />
+            <item value="1" name="flag taken" />
+            <item value="2" name="flag dropped" />
+            <item value="3" name="flag returned by player" />
+            <item value="4" name="flag returned by timeout" />
+            <item value="5" name="flag captured" />
+            <item value="6" name="flag new defensive team" />
+            <item value="7" name="flag return faliure" />
+            <item value="8" name="side switch tick" />
+            <item value="9" name="side switch final tick" />
+            <item value="10" name="side switch 30 seconds" />
+            <item value="11" name="side switch 10 seconds" />
+            <item value="12" name="flag contested" />
+            <item value="13" name="flag capture faliure" />
+          </value>
+          <value type="Enum" name="audience" length="2" disabled="false" blockname="true">
+            <item value="0" name="cause player" />
+            <item value="1" name="cause team" />
+            <item value="2" name="effect player" />
+            <item value="3" name="effect team" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="StringId" name="display string" disabled="false" />
+          <value type="Enum" name="required field" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="Enum" name="excluded audience" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="StringId" name="primary string" disabled="false" />
+          <value type="LongInteger" name="primary string duration" disabled="false" unit="seconds" />
+          <value type="StringId" name="plural display string" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="28" />
+          <value type="Real" name="sound delay announcer only" disabled="false" />
+          <value type="Flags" name="sound flags" length="2" disabled="false">
+            <bit index="0" name="announcer sound" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+          <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="16" />
+          <struct name="SoundResponseDefinitionBlock">
+            <value type="Flags" name="sound flags" length="2" disabled="false">
+              <bit index="0" name="announcer sound" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="TagReference" name="english sound" disabled="false" extensions="snd!" blockname="true" />
+            <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+            <value type="Real" name="probability" disabled="false" />
+          </struct>
+          <value type="Block" name="sound permutations" disabled="false" struct="SoundResponseDefinitionBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="ctf events" disabled="false" struct="GameEngineCtfEventBlock" maxelements="128" />
+        <struct name="GameEngineOddballEventBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="quantity message" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="event" length="2" disabled="false" blockname="true">
+            <item value="0" name="game start" />
+            <item value="1" name="ball spawned" />
+            <item value="2" name="ball picked up" />
+            <item value="3" name="ball dropped" />
+            <item value="4" name="ball reset" />
+            <item value="5" name="ball tick" />
+          </value>
+          <value type="Enum" name="audience" length="2" disabled="false" blockname="true">
+            <item value="0" name="cause player" />
+            <item value="1" name="cause team" />
+            <item value="2" name="effect player" />
+            <item value="3" name="effect team" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="StringId" name="display string" disabled="false" />
+          <value type="Enum" name="required field" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="Enum" name="excluded audience" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="StringId" name="primary string" disabled="false" />
+          <value type="LongInteger" name="primary string duration" disabled="false" unit="seconds" />
+          <value type="StringId" name="plural display string" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="28" />
+          <value type="Real" name="sound delay announcer only" disabled="false" />
+          <value type="Flags" name="sound flags" length="2" disabled="false">
+            <bit index="0" name="announcer sound" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+          <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="16" />
+          <struct name="SoundResponseDefinitionBlock">
+            <value type="Flags" name="sound flags" length="2" disabled="false">
+              <bit index="0" name="announcer sound" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="TagReference" name="english sound" disabled="false" extensions="snd!" blockname="true" />
+            <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+            <value type="Real" name="probability" disabled="false" />
+          </struct>
+          <value type="Block" name="sound permutations" disabled="false" struct="SoundResponseDefinitionBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="oddball events" disabled="false" struct="GameEngineOddballEventBlock" maxelements="128" />
+        <struct name="GNullBlock" />
+        <value type="Block" name="_unnamed5" struct="GNullBlock" maxelements="0" />
+        <struct name="GameEngineKingEventBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="quantity message" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="event" length="2" disabled="false" blockname="true">
+            <item value="0" name="game start" />
+            <item value="1" name="hill controlled" />
+            <item value="2" name="hill contested" />
+            <item value="3" name="hill tick" />
+            <item value="4" name="hill move" />
+            <item value="5" name="hill controlled team" />
+            <item value="6" name="hill contested team" />
+          </value>
+          <value type="Enum" name="audience" length="2" disabled="false" blockname="true">
+            <item value="0" name="cause player" />
+            <item value="1" name="cause team" />
+            <item value="2" name="effect player" />
+            <item value="3" name="effect team" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="StringId" name="display string" disabled="false" />
+          <value type="Enum" name="required field" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="Enum" name="excluded audience" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="StringId" name="primary string" disabled="false" />
+          <value type="LongInteger" name="primary string duration" disabled="false" unit="seconds" />
+          <value type="StringId" name="plural display string" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="28" />
+          <value type="Real" name="sound delay announcer only" disabled="false" />
+          <value type="Flags" name="sound flags" length="2" disabled="false">
+            <bit index="0" name="announcer sound" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+          <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="16" />
+          <struct name="SoundResponseDefinitionBlock">
+            <value type="Flags" name="sound flags" length="2" disabled="false">
+              <bit index="0" name="announcer sound" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="TagReference" name="english sound" disabled="false" extensions="snd!" blockname="true" />
+            <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+            <value type="Real" name="probability" disabled="false" />
+          </struct>
+          <value type="Block" name="sound permutations" disabled="false" struct="SoundResponseDefinitionBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="king events" disabled="false" struct="GameEngineKingEventBlock" maxelements="128" />
+        <value type="Block" name="_unnamed6" struct="GNullBlock" maxelements="0" />
+        <struct name="GameEngineJuggernautEventBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="quantity message" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="event" length="2" disabled="false" blockname="true">
+            <item value="0" name="game start" />
+            <item value="1" name="new juggernaut" />
+            <item value="2" name="juggernaut killed" />
+          </value>
+          <value type="Enum" name="audience" length="2" disabled="false" blockname="true">
+            <item value="0" name="cause player" />
+            <item value="1" name="cause team" />
+            <item value="2" name="effect player" />
+            <item value="3" name="effect team" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="StringId" name="display string" disabled="false" />
+          <value type="Enum" name="required field" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="Enum" name="excluded audience" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="StringId" name="primary string" disabled="false" />
+          <value type="LongInteger" name="primary string duration" disabled="false" unit="seconds" />
+          <value type="StringId" name="plural display string" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="28" />
+          <value type="Real" name="sound delay announcer only" disabled="false" />
+          <value type="Flags" name="sound flags" length="2" disabled="false">
+            <bit index="0" name="announcer sound" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+          <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="16" />
+          <struct name="SoundResponseDefinitionBlock">
+            <value type="Flags" name="sound flags" length="2" disabled="false">
+              <bit index="0" name="announcer sound" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="TagReference" name="english sound" disabled="false" extensions="snd!" blockname="true" />
+            <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+            <value type="Real" name="probability" disabled="false" />
+          </struct>
+          <value type="Block" name="sound permutations" disabled="false" struct="SoundResponseDefinitionBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="juggernaut events" disabled="false" struct="GameEngineJuggernautEventBlock" maxelements="128" />
+        <struct name="GameEngineTerritoriesEventBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="quantity message" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="event" length="2" disabled="false" blockname="true">
+            <item value="0" name="game start" />
+            <item value="1" name="territory control gained" />
+            <item value="2" name="territory contest lost" />
+            <item value="3" name="all territories cntrld" />
+            <item value="4" name="team territory ctrl gained" />
+            <item value="5" name="team territory ctrl lost" />
+            <item value="6" name="team all territories cntrld" />
+          </value>
+          <value type="Enum" name="audience" length="2" disabled="false" blockname="true">
+            <item value="0" name="cause player" />
+            <item value="1" name="cause team" />
+            <item value="2" name="effect player" />
+            <item value="3" name="effect team" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="StringId" name="display string" disabled="false" />
+          <value type="Enum" name="required field" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="Enum" name="excluded audience" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="StringId" name="primary string" disabled="false" />
+          <value type="LongInteger" name="primary string duration" disabled="false" unit="seconds" />
+          <value type="StringId" name="plural display string" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="28" />
+          <value type="Real" name="sound delay announcer only" disabled="false" />
+          <value type="Flags" name="sound flags" length="2" disabled="false">
+            <bit index="0" name="announcer sound" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+          <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="16" />
+          <struct name="SoundResponseDefinitionBlock">
+            <value type="Flags" name="sound flags" length="2" disabled="false">
+              <bit index="0" name="announcer sound" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="TagReference" name="english sound" disabled="false" extensions="snd!" blockname="true" />
+            <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+            <value type="Real" name="probability" disabled="false" />
+          </struct>
+          <value type="Block" name="sound permutations" disabled="false" struct="SoundResponseDefinitionBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="territories events" disabled="false" struct="GameEngineTerritoriesEventBlock" maxelements="128" />
+        <struct name="GameEngineAssaultEventBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="quantity message" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="event" length="2" disabled="false" blockname="true">
+            <item value="0" name="game start" />
+            <item value="1" name="bomb taken" />
+            <item value="2" name="bomb dropped" />
+            <item value="3" name="bomb returned by player" />
+            <item value="4" name="bomb returned by timeout" />
+            <item value="5" name="bomb captured" />
+            <item value="6" name="bomb new defensive team" />
+            <item value="7" name="bomb return faliure" />
+            <item value="8" name="side switch tick" />
+            <item value="9" name="side switch final tick" />
+            <item value="10" name="side switch 30 seconds" />
+            <item value="11" name="side switch 10 seconds" />
+            <item value="12" name="bomb returned by defusing" />
+            <item value="13" name="bomb placed on enemy post" />
+            <item value="14" name="bomb arming started" />
+            <item value="15" name="bomb arming completed" />
+            <item value="16" name="bomb contested" />
+          </value>
+          <value type="Enum" name="audience" length="2" disabled="false" blockname="true">
+            <item value="0" name="cause player" />
+            <item value="1" name="cause team" />
+            <item value="2" name="effect player" />
+            <item value="3" name="effect team" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="StringId" name="display string" disabled="false" />
+          <value type="Enum" name="required field" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="Enum" name="excluded audience" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="StringId" name="primary string" disabled="false" />
+          <value type="LongInteger" name="primary string duration" disabled="false" unit="seconds" />
+          <value type="StringId" name="plural display string" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="28" />
+          <value type="Real" name="sound delay announcer only" disabled="false" />
+          <value type="Flags" name="sound flags" length="2" disabled="false">
+            <bit index="0" name="announcer sound" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+          <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="16" />
+          <struct name="SoundResponseDefinitionBlock">
+            <value type="Flags" name="sound flags" length="2" disabled="false">
+              <bit index="0" name="announcer sound" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="TagReference" name="english sound" disabled="false" extensions="snd!" blockname="true" />
+            <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+            <value type="Real" name="probability" disabled="false" />
+          </struct>
+          <value type="Block" name="sound permutations" disabled="false" struct="SoundResponseDefinitionBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="invasion events" disabled="false" struct="GameEngineAssaultEventBlock" maxelements="128" />
+        <value type="Block" name="_unnamed7" struct="GNullBlock" maxelements="0" />
+        <value type="Block" name="_unnamed8" struct="GNullBlock" maxelements="0" />
+        <value type="Block" name="_unnamed9" struct="GNullBlock" maxelements="0" />
+        <value type="Block" name="_unnamed10" struct="GNullBlock" maxelements="0" />
+        <value type="TagReference" name="default item collection 1" disabled="false" extensions="itmc" />
+        <value type="TagReference" name="default item collection 2" disabled="false" extensions="itmc" />
+        <value type="LongInteger" name="default frag grenade count" disabled="false" />
+        <value type="LongInteger" name="default plasma grenade count" disabled="false" />
+        <value type="Pad" name="_unnamed11" length="40" />
+        <value type="Real" name="dynamic zone upper height" disabled="false" />
+        <value type="Real" name="dynamic zone lower height" disabled="false" />
+        <value type="Pad" name="_unnamed12" length="40" />
+        <value type="Real" name="enemy inner radius" disabled="false" />
+        <value type="Real" name="enemy outer radius" disabled="false" />
+        <value type="Real" name="enemy weight" disabled="false" />
+        <value type="Pad" name="_unnamed13" length="16" />
+        <value type="Real" name="friend inner radius" disabled="false" />
+        <value type="Real" name="friend outer radius" disabled="false" />
+        <value type="Real" name="friend weight" disabled="false" />
+        <value type="Pad" name="_unnamed14" length="16" />
+        <value type="Real" name="enemy vehicle inner radius" disabled="false" />
+        <value type="Real" name="enemy vehicle outer radius" disabled="false" />
+        <value type="Real" name="enemy vehicle weight" disabled="false" />
+        <value type="Pad" name="_unnamed15" length="16" />
+        <value type="Real" name="friendly vehicle inner radius" disabled="false" />
+        <value type="Real" name="friendly vehicle outer radius" disabled="false" />
+        <value type="Real" name="friendly vehicle weight" disabled="false" />
+        <value type="Pad" name="_unnamed16" length="16" />
+        <value type="Real" name="empty vehicle inner radius" disabled="false" />
+        <value type="Real" name="empty vehicle outer radius" disabled="false" />
+        <value type="Real" name="empty vehicle weight" disabled="false" />
+        <value type="Pad" name="_unnamed17" length="16" />
+        <value type="Real" name="oddball inclusion inner radius" disabled="false" />
+        <value type="Real" name="oddball inclusion outer radius" disabled="false" />
+        <value type="Real" name="oddball inclusion weight" disabled="false" />
+        <value type="Pad" name="_unnamed18" length="16" />
+        <value type="Real" name="oddball exclusion inner radius" disabled="false" />
+        <value type="Real" name="oddball exclusion outer radius" disabled="false" />
+        <value type="Real" name="oddball exclusion weight" disabled="false" />
+        <value type="Pad" name="_unnamed19" length="16" />
+        <value type="Real" name="hill inclusion inner radius" disabled="false" />
+        <value type="Real" name="hill inclusion outer radius" disabled="false" />
+        <value type="Real" name="hill inclusion weight" disabled="false" />
+        <value type="Pad" name="_unnamed20" length="16" />
+        <value type="Real" name="hill exclusion inner radius" disabled="false" />
+        <value type="Real" name="hill exclusion outer radius" disabled="false" />
+        <value type="Real" name="hill exclusion weight" disabled="false" />
+        <value type="Pad" name="_unnamed21" length="16" />
+        <value type="Real" name="last race flag inner radius" disabled="false" />
+        <value type="Real" name="last race flag outer radius" disabled="false" />
+        <value type="Real" name="last race flag weight" disabled="false" />
+        <value type="Pad" name="_unnamed22" length="16" />
+        <value type="Real" name="dead ally inner radius" disabled="false" />
+        <value type="Real" name="dead ally outer radius" disabled="false" />
+        <value type="Real" name="dead ally weight" disabled="false" />
+        <value type="Pad" name="_unnamed23" length="16" />
+        <value type="Real" name="controlled territory inner radius" disabled="false" />
+        <value type="Real" name="controlled territory outer radius" disabled="false" />
+        <value type="Real" name="controlled territory weight" disabled="false" />
+        <value type="Pad" name="_unnamed24" length="16" />
+        <value type="Pad" name="_unnamed25" length="560" />
+        <value type="Pad" name="_unnamed26" length="48" />
+        <struct name="MultiplayerConstantsBlock">
+          <value type="Real" name="maximum random spawn bias" disabled="false" />
+          <value type="Real" name="teleporter recharge time" disabled="false" unit="seconds" />
+          <value type="Real" name="grenade danger weight" disabled="false" />
+          <value type="Real" name="grenade danger inner radius" disabled="false" />
+          <value type="Real" name="grenade danger outer radius" disabled="false" />
+          <value type="Real" name="grenade danger lead time" disabled="false" unit="seconds" />
+          <value type="Real" name="vehicle danger min speed" disabled="false" unit="wu/sec" />
+          <value type="Real" name="vehicle danger weight" disabled="false" />
+          <value type="Real" name="vehicle danger radius" disabled="false" />
+          <value type="Real" name="vehicle danger lead time" disabled="false" unit="seconds" />
+          <value type="Real" name="vehicle nearby player dist" disabled="false">
+            <tooltip>how nearby a player is to count a vehicle as 'occupied'</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed0" length="84" />
+          <value type="Pad" name="_unnamed1" length="32" />
+          <value type="Pad" name="_unnamed2" length="32" />
+          <value type="TagReference" name="hill shader" disabled="false" extensions="shad" />
+          <value type="Pad" name="_unnamed3" length="16" />
+          <value type="Real" name="flag reset stop distance" disabled="false" />
+          <value type="TagReference" name="bomb explode effect" disabled="false" extensions="effe" />
+          <value type="TagReference" name="bomb explode dmg effect" disabled="false" extensions="jpt!" />
+          <value type="TagReference" name="bomb defuse effect" disabled="false" extensions="effe" />
+          <value type="StringId" name="bomb defusal string" disabled="false" />
+          <value type="StringId" name="blocked teleporter string" disabled="false" />
+          <value type="Pad" name="_unnamed4" length="4" />
+          <value type="Pad" name="_unnamed5" length="32" />
+          <value type="Pad" name="_unnamed6" length="32" />
+          <value type="Pad" name="_unnamed7" length="32" />
+        </struct>
+        <value type="Block" name="multiplayer constants" disabled="false" struct="MultiplayerConstantsBlock" maxelements="1" />
+        <struct name="GameEngineStatusResponseBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="unused" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="state" length="2" disabled="false" blockname="true">
+            <item value="0" name="waiting for space to clear" />
+            <item value="1" name="observing" />
+            <item value="2" name="respawning soon" />
+            <item value="3" name="sitting out" />
+            <item value="4" name="out of lives" />
+            <item value="5" name="playing (winning)" />
+            <item value="6" name="playing (tied)" />
+            <item value="7" name="playing (losing)" />
+            <item value="8" name="game over (won)" />
+            <item value="9" name="game over (tied)" />
+            <item value="10" name="game over (lost)" />
+            <item value="11" name="you have flag" />
+            <item value="12" name="enemy has flag" />
+            <item value="13" name="flag not home" />
+            <item value="14" name="carrying oddball" />
+            <item value="15" name="you are juggy" />
+            <item value="16" name="you control hill" />
+            <item value="17" name="switching sides soon" />
+            <item value="18" name="player recently started" />
+            <item value="19" name="you have bomb" />
+            <item value="20" name="flag contested" />
+            <item value="21" name="bomb contested" />
+            <item value="22" name="limited lives left (multiple)" />
+            <item value="23" name="limited lives left (single)" />
+            <item value="24" name="limited lives left (final)" />
+            <item value="25" name="playing (winning, unlimited)" />
+            <item value="26" name="playing (tied, unlimited)" />
+            <item value="27" name="playing (losing, unlimited)" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="StringId" name="ffa message" disabled="false" />
+          <value type="StringId" name="team message" disabled="false" />
+          <value type="TagReference" name="_unnamed2" extensions="????" />
+          <value type="Pad" name="_unnamed3" length="4" />
+        </struct>
+        <value type="Block" name="state responses" disabled="false" struct="GameEngineStatusResponseBlock" maxelements="32" />
+        <value type="TagReference" name="scoreboard hud definition" disabled="false" extensions="nhdt" />
+        <value type="TagReference" name="scoreboard emblem shader" disabled="false" extensions="shad" />
+        <value type="TagReference" name="scoreboard emblem bitmap" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="scoreboard dead emblem shader" disabled="false" extensions="shad" />
+        <value type="TagReference" name="scoreboard dead emblem bitmap" disabled="false" extensions="bitm" />
+      </struct>
+      <value type="Block" name="runtime" disabled="false" struct="MultiplayerRuntimeBlock" maxelements="1" />
+    </struct>
+  </plugin>
+</xml>

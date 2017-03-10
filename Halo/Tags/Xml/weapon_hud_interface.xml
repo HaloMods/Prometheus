@@ -1,0 +1,492 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="wphi" parenttype="????">WeaponHudInterface</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="WeaponHudInterface">
+      <value type="TagReference" name="child hud" extensions="wphi" />
+      <value type="Flags" name="flags" length="2">
+        <bit index="0" name="use parent hud flashing parameters" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="ShortInteger" name="total ammo cutoff" />
+      <value type="ShortInteger" name="loaded ammo cutoff" />
+      <value type="ShortInteger" name="heat cutoff" />
+      <value type="ShortInteger" name="age cutoff" />
+      <value type="Pad" name="_unnamed2" length="32" />
+      <value type="Enum" name="anchor">
+        <item value="0" name="top left" />
+        <item value="1" name="top right" />
+        <item value="2" name="bottom left" />
+        <item value="3" name="bottom right" />
+        <item value="4" name="center" />
+      </value>
+      <value type="Pad" name="_unnamed3" length="2" />
+      <value type="Pad" name="_unnamed4" length="32" />
+      <struct name="WeaponHudStatic">
+        <value type="Enum" name="state attached to">
+          <item value="0" name="total ammo" />
+          <item value="1" name="loaded ammo" />
+          <item value="2" name="heat" />
+          <item value="3" name="age" />
+          <item value="4" name="secondary weapon total ammo" />
+          <item value="5" name="secondary weapon loaded ammo" />
+          <item value="6" name="distance to target" />
+          <item value="7" name="elevation to target" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Enum" name="can use on map type">
+          <item value="0" name="any" />
+          <item value="1" name="solo" />
+          <item value="2" name="multiplayer" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="28" />
+        <value type="Point2D" name="anchor offset" />
+        <value type="Real" name="width scale" />
+        <value type="Real" name="height scale" />
+        <value type="Flags" name="scaling flags" length="2">
+          <bit index="0" name="dont scale offset" />
+          <bit index="1" name="dont scale size" />
+          <bit index="2" name="use high res scale" />
+        </value>
+        <value type="Pad" name="_unnamed4" length="2" />
+        <value type="Pad" name="_unnamed5" length="20" />
+        <value type="TagReference" name="interface bitmap" extensions="bitm" />
+        <value type="ARGBColor" name="default color" />
+        <value type="ARGBColor" name="flashing color" />
+        <value type="Real" name="flash period" />
+        <value type="Real" name="flash delay" />
+        <value type="ShortInteger" name="number of flashes" />
+        <value type="Flags" name="flash flags" length="2">
+          <bit index="0" name="reverse defaultflashing colors" />
+        </value>
+        <value type="Real" name="flash length" />
+        <value type="ARGBColor" name="disabled color" />
+        <value type="Pad" name="_unnamed6" length="4" />
+        <value type="ShortInteger" name="sequence index" />
+        <value type="Pad" name="_unnamed7" length="2" />
+        <struct name="GlobalHudMultitextureOverlayDefinition">
+          <value type="Pad" name="_unnamed" length="2" />
+          <value type="ShortInteger" name="type" />
+          <value type="Enum" name="framebuffer blend func">
+            <item value="0" name="alpha blend" />
+            <item value="1" name="multiply" />
+            <item value="2" name="double multiply" />
+            <item value="3" name="add" />
+            <item value="4" name="subtract" />
+            <item value="5" name="component min" />
+            <item value="6" name="component max" />
+            <item value="7" name="alph" />
+          </value>
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="Pad" name="_unnamed3" length="32" />
+          <value type="Enum" name="primary anchor">
+            <item value="0" name="texture" />
+            <item value="1" name="screen" />
+          </value>
+          <value type="Enum" name="secondary anchor">
+            <item value="0" name="texture" />
+            <item value="1" name="screen" />
+          </value>
+          <value type="Enum" name="tertiary anchor">
+            <item value="0" name="texture" />
+            <item value="1" name="screen" />
+          </value>
+          <value type="Enum" name="0 to 1 blend func">
+            <item value="0" name="add" />
+            <item value="1" name="subtract" />
+            <item value="2" name="multiply" />
+            <item value="3" name="multiply2x" />
+            <item value="4" name="dot" />
+          </value>
+          <value type="Enum" name="1 to 2 blend func">
+            <item value="0" name="add" />
+            <item value="1" name="subtract" />
+            <item value="2" name="multiply" />
+            <item value="3" name="multiply2x" />
+            <item value="4" name="dot" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="RealPoint2D" name="primary scale" />
+          <value type="RealPoint2D" name="secondary scale" />
+          <value type="RealPoint2D" name="tertiary scale" />
+          <value type="RealPoint2D" name="primary offset" />
+          <value type="RealPoint2D" name="secondary offset" />
+          <value type="RealPoint2D" name="tertiary offset" />
+          <value type="TagReference" name="primary" extensions="bitm" />
+          <value type="TagReference" name="secondary" extensions="bitm" />
+          <value type="TagReference" name="tertiary" extensions="bitm" />
+          <value type="Enum" name="primary wrap mode">
+            <item value="0" name="clamp" />
+            <item value="1" name="wrap" />
+          </value>
+          <value type="Enum" name="secondary wrap mode">
+            <item value="0" name="clamp" />
+            <item value="1" name="wrap" />
+          </value>
+          <value type="Enum" name="tertiary wrap mode">
+            <item value="0" name="clamp" />
+            <item value="1" name="wrap" />
+          </value>
+          <value type="Pad" name="_unnamed5" length="2" />
+          <value type="Pad" name="_unnamed6" length="184" />
+          <struct name="GlobalHudMultitextureOverlayEffectorDefinition">
+            <value type="Pad" name="_unnamed" length="64" />
+            <value type="Enum" name="destination type">
+              <item value="0" name="tint" />
+              <item value="1" name="horizontal offset" />
+              <item value="2" name="vertical offset" />
+              <item value="3" name="fade" />
+            </value>
+            <value type="Enum" name="destination">
+              <item value="0" name="geometry offset" />
+              <item value="1" name="primary map" />
+              <item value="2" name="secondary map" />
+              <item value="3" name="tertiary map" />
+            </value>
+            <value type="Enum" name="source">
+              <item value="0" name="player pitch" />
+              <item value="1" name="player pitch tangent" />
+              <item value="2" name="player yaw" />
+              <item value="3" name="weapon ammo total" />
+              <item value="4" name="weapon ammo loaded" />
+              <item value="5" name="weapon heat" />
+              <item value="6" name="explicit uses low bound" />
+              <item value="7" name="weapon zoom level" />
+            </value>
+            <value type="Pad" name="_unnamed2" length="2" />
+            <value type="RealBounds" name="in bounds" />
+            <value type="RealBounds" name="out bounds" />
+            <value type="Pad" name="_unnamed3" length="64" />
+            <value type="RealRGBColor" name="tint color lower bound" />
+            <value type="RealRGBColor" name="tint color upper bound" />
+            <value type="Enum" name="periodic function">
+              <item value="0" name="one" />
+              <item value="1" name="zero" />
+              <item value="2" name="cosine" />
+              <item value="3" name="cosine variable period" />
+              <item value="4" name="diagonal wave" />
+              <item value="5" name="diagonal wave variable period" />
+              <item value="6" name="slide" />
+              <item value="7" name="slide variable period" />
+              <item value="8" name="noise" />
+              <item value="9" name="jitter" />
+              <item value="10" name="wander" />
+              <item value="11" name="spark" />
+            </value>
+            <value type="Pad" name="_unnamed4" length="2" />
+            <value type="Real" name="function period" />
+            <value type="Real" name="function phase" />
+            <value type="Pad" name="_unnamed5" length="32" />
+          </struct>
+          <value type="Block" name="effectors" struct="GlobalHudMultitextureOverlayEffectorDefinition" maxelements="30" />
+          <value type="Pad" name="_unnamed7" length="128" />
+        </struct>
+        <value type="Block" name="multitex overlay" struct="GlobalHudMultitextureOverlayDefinition" maxelements="30" />
+        <value type="Pad" name="_unnamed8" length="4" />
+        <value type="Pad" name="_unnamed9" length="40" />
+      </struct>
+      <value type="Block" name="static elements" struct="WeaponHudStatic" maxelements="16" />
+      <struct name="WeaponHudMeter">
+        <value type="Enum" name="state attached to">
+          <item value="0" name="total ammo" />
+          <item value="1" name="loaded ammo" />
+          <item value="2" name="heat" />
+          <item value="3" name="age" />
+          <item value="4" name="secondary weapon total ammo" />
+          <item value="5" name="secondary weapon loaded ammo" />
+          <item value="6" name="distance to target" />
+          <item value="7" name="elevation to target" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Enum" name="can use on map type">
+          <item value="0" name="any" />
+          <item value="1" name="solo" />
+          <item value="2" name="multiplayer" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="28" />
+        <value type="Point2D" name="anchor offset" />
+        <value type="Real" name="width scale" />
+        <value type="Real" name="height scale" />
+        <value type="Flags" name="scaling flags" length="2">
+          <bit index="0" name="dont scale offset" />
+          <bit index="1" name="dont scale size" />
+          <bit index="2" name="use high res scale" />
+        </value>
+        <value type="Pad" name="_unnamed4" length="2" />
+        <value type="Pad" name="_unnamed5" length="20" />
+        <value type="TagReference" name="meter bitmap" extensions="bitm" />
+        <value type="RGBColor" name="color at meter minimum" />
+        <value type="RGBColor" name="color at meter maximum" />
+        <value type="RGBColor" name="flash color" />
+        <value type="ARGBColor" name="empty color" />
+        <value type="Flags" name="flags" length="1">
+          <bit index="0" name="use minmax for state changes" />
+          <bit index="1" name="interpolate between minmax flash colors as state changes" />
+          <bit index="2" name="interpolate color along hsv space" />
+          <bit index="3" name="...more colors for hsv interpolation" />
+          <bit index="4" name="invert interpolation" />
+        </value>
+        <value type="CharInteger" name="minumum meter value" />
+        <value type="ShortInteger" name="sequence index" />
+        <value type="CharInteger" name="alpha multiplier" />
+        <value type="CharInteger" name="alpha bias" />
+        <value type="ShortInteger" name="value scale">
+          <tooltip>Used for non-integral values, i.e. health and shields.</tooltip>
+        </value>
+        <value type="Real" name="opacity" />
+        <value type="Real" name="translucency" />
+        <value type="ARGBColor" name="disabled color" />
+        <value type="Pad" name="_unnamed6" length="16" />
+        <value type="Pad" name="_unnamed7" length="40" />
+      </struct>
+      <value type="Block" name="meter elements" struct="WeaponHudMeter" maxelements="16" />
+      <struct name="WeaponHudNumber">
+        <value type="Enum" name="state attached to">
+          <item value="0" name="total ammo" />
+          <item value="1" name="loaded ammo" />
+          <item value="2" name="heat" />
+          <item value="3" name="age" />
+          <item value="4" name="secondary weapon total ammo" />
+          <item value="5" name="secondary weapon loaded ammo" />
+          <item value="6" name="distance to target" />
+          <item value="7" name="elevation to target" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Enum" name="can use on map type">
+          <item value="0" name="any" />
+          <item value="1" name="solo" />
+          <item value="2" name="multiplayer" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="28" />
+        <value type="Point2D" name="anchor offset" />
+        <value type="Real" name="width scale" />
+        <value type="Real" name="height scale" />
+        <value type="Flags" name="scaling flags" length="2">
+          <bit index="0" name="dont scale offset" />
+          <bit index="1" name="dont scale size" />
+          <bit index="2" name="use high res scale" />
+        </value>
+        <value type="Pad" name="_unnamed4" length="2" />
+        <value type="Pad" name="_unnamed5" length="20" />
+        <value type="ARGBColor" name="default color" />
+        <value type="ARGBColor" name="flashing color" />
+        <value type="Real" name="flash period" />
+        <value type="Real" name="flash delay" />
+        <value type="ShortInteger" name="number of flashes" />
+        <value type="Flags" name="flash flags" length="2">
+          <bit index="0" name="reverse defaultflashing colors" />
+        </value>
+        <value type="Real" name="flash length" />
+        <value type="ARGBColor" name="disabled color" />
+        <value type="Pad" name="_unnamed6" length="4" />
+        <value type="CharInteger" name="maximum number of digits" />
+        <value type="Flags" name="flags" length="1">
+          <bit index="0" name="show leading zeros" />
+          <bit index="1" name="only show when zoomed" />
+          <bit index="2" name="draw a trailing m" />
+        </value>
+        <value type="CharInteger" name="number of fractional digits" />
+        <value type="Pad" name="_unnamed7" length="1" />
+        <value type="Pad" name="_unnamed8" length="12" />
+        <value type="Flags" name="weapon specific flags" length="2">
+          <bit index="0" name="divide number by clip size" />
+        </value>
+        <value type="Pad" name="_unnamed9" length="2" />
+        <value type="Pad" name="_unnamed10" length="36" />
+      </struct>
+      <value type="Block" name="number elements" struct="WeaponHudNumber" maxelements="16" />
+      <struct name="WeaponHudCrosshair">
+        <value type="Enum" name="crosshair type">
+          <item value="0" name="aim" />
+          <item value="1" name="zoom" />
+          <item value="2" name="charge" />
+          <item value="3" name="should reload" />
+          <item value="4" name="flash heat" />
+          <item value="5" name="flash total ammo" />
+          <item value="6" name="flash battery" />
+          <item value="7" name="reloadoverheat" />
+          <item value="8" name="flash when firing and no ammo" />
+          <item value="9" name="flash when throwing and no grenade" />
+          <item value="10" name="low ammo and none left to reload" />
+          <item value="11" name="should reload secondary trigger" />
+          <item value="12" name="flash secondary total ammo" />
+          <item value="13" name="flash secondary reload" />
+          <item value="14" name="flash when firing secondary trigger with no ammo" />
+          <item value="15" name="low secondary ammo and none left to reload" />
+          <item value="16" name="primary trigger ready" />
+          <item value="17" name="secondary trigger ready" />
+          <item value="18" name="flash when firing with depleted battery" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Enum" name="can use on map type">
+          <item value="0" name="any" />
+          <item value="1" name="solo" />
+          <item value="2" name="multiplayer" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="28" />
+        <value type="TagReference" name="Crosshair bitmap" extensions="bitm" />
+        <struct name="WeaponHudCrosshairItem">
+          <value type="Point2D" name="anchor offset" />
+          <value type="Real" name="width scale" />
+          <value type="Real" name="height scale" />
+          <value type="Flags" name="scaling flags" length="2">
+            <bit index="0" name="dont scale offset" />
+            <bit index="1" name="dont scale size" />
+            <bit index="2" name="use high res scale" />
+          </value>
+          <value type="Pad" name="_unnamed" length="2" />
+          <value type="Pad" name="_unnamed2" length="20" />
+          <value type="ARGBColor" name="default color" />
+          <value type="ARGBColor" name="flashing color" />
+          <value type="Real" name="flash period" />
+          <value type="Real" name="flash delay" />
+          <value type="ShortInteger" name="number of flashes" />
+          <value type="Flags" name="flash flags" length="2">
+            <bit index="0" name="reverse defaultflashing colors" />
+          </value>
+          <value type="Real" name="flash length" />
+          <value type="ARGBColor" name="disabled color" />
+          <value type="Pad" name="_unnamed3" length="4" />
+          <value type="ShortInteger" name="frame rate" />
+          <value type="ShortInteger" name="sequence index" />
+          <value type="Flags" name="flags" length="4">
+            <bit index="0" name="flashes when active" />
+            <bit index="1" name="not a sprite" />
+            <bit index="2" name="show only when zoomed" />
+            <bit index="3" name="show sniper data" />
+            <bit index="4" name="hide area outside reticle" />
+            <bit index="5" name="one zoom level" />
+            <bit index="6" name="dont show when zoomed" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="32" />
+        </struct>
+        <value type="Block" name="Crosshair overlays" struct="WeaponHudCrosshairItem" maxelements="16" />
+        <value type="Pad" name="_unnamed4" length="40" />
+      </struct>
+      <value type="Block" name="crosshairs" struct="WeaponHudCrosshair" maxelements="19" />
+      <struct name="WeaponHudOverlays">
+        <value type="Enum" name="state attached to">
+          <item value="0" name="total ammo" />
+          <item value="1" name="loaded ammo" />
+          <item value="2" name="heat" />
+          <item value="3" name="age" />
+          <item value="4" name="secondary weapon total ammo" />
+          <item value="5" name="secondary weapon loaded ammo" />
+          <item value="6" name="distance to target" />
+          <item value="7" name="elevation to target" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Enum" name="can use on map type">
+          <item value="0" name="any" />
+          <item value="1" name="solo" />
+          <item value="2" name="multiplayer" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="28" />
+        <value type="TagReference" name="Overlay bitmap" extensions="bitm" />
+        <struct name="WeaponHudOverlay">
+          <value type="Point2D" name="anchor offset" />
+          <value type="Real" name="width scale" />
+          <value type="Real" name="height scale" />
+          <value type="Flags" name="scaling flags" length="2">
+            <bit index="0" name="dont scale offset" />
+            <bit index="1" name="dont scale size" />
+            <bit index="2" name="use high res scale" />
+          </value>
+          <value type="Pad" name="_unnamed" length="2" />
+          <value type="Pad" name="_unnamed2" length="20" />
+          <value type="ARGBColor" name="default color" />
+          <value type="ARGBColor" name="flashing color" />
+          <value type="Real" name="flash period" />
+          <value type="Real" name="flash delay" />
+          <value type="ShortInteger" name="number of flashes" />
+          <value type="Flags" name="flash flags" length="2">
+            <bit index="0" name="reverse defaultflashing colors" />
+          </value>
+          <value type="Real" name="flash length" />
+          <value type="ARGBColor" name="disabled color" />
+          <value type="Pad" name="_unnamed3" length="4" />
+          <value type="ShortInteger" name="frame rate" />
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="ShortInteger" name="sequence index" />
+          <value type="Flags" name="type" length="2">
+            <bit index="0" name="show on flashing" />
+            <bit index="1" name="show on empty" />
+            <bit index="2" name="show on reloadoverheating" />
+            <bit index="3" name="show on default" />
+            <bit index="4" name="show always" />
+          </value>
+          <value type="Flags" name="flags" length="4">
+            <bit index="0" name="flashes when active" />
+          </value>
+          <value type="Pad" name="_unnamed5" length="16" />
+          <value type="Pad" name="_unnamed6" length="40" />
+        </struct>
+        <value type="Block" name="Overlays" struct="WeaponHudOverlay" maxelements="16" />
+        <value type="Pad" name="_unnamed4" length="40" />
+      </struct>
+      <value type="Block" name="overlay elements" struct="WeaponHudOverlays" maxelements="16" />
+      <value type="Pad" name="_unnamed5" length="4" />
+      <value type="Pad" name="_unnamed6" length="12" />
+      <struct name="GlobalHudScreenEffectDefinition">
+        <value type="Pad" name="_unnamed" length="4" />
+        <value type="Flags" name="flags" length="2">
+          <bit index="0" name="only when zoomed" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="16" />
+        <value type="TagReference" name="mask fullscreen" extensions="bitm" />
+        <value type="TagReference" name="mask splitscreen" extensions="bitm" />
+        <value type="Pad" name="_unnamed4" length="8" />
+        <value type="Flags" name="flags2" length="2">
+          <bit index="0" name="only when zoomed" />
+        </value>
+        <value type="Pad" name="_unnamed5" length="2" />
+        <value type="AngleBounds" name="FOV in bounds" />
+        <value type="RealBounds" name="radius out bounds" />
+        <value type="Pad" name="_unnamed6" length="24" />
+        <value type="Flags" name="flags3" length="2">
+          <bit index="0" name="only when zoomed" />
+          <bit index="1" name="connect to flashlight" />
+          <bit index="2" name="masked" />
+        </value>
+        <value type="ShortInteger" name="script source" />
+        <value type="RealFraction" name="intensity" />
+        <value type="Pad" name="_unnamed7" length="24" />
+        <value type="Flags" name="flags4" length="2">
+          <bit index="0" name="only when zoomed" />
+          <bit index="1" name="connect to flashlight" />
+          <bit index="2" name="additive" />
+          <bit index="3" name="masked" />
+        </value>
+        <value type="ShortInteger" name="script source2" />
+        <value type="RealFraction" name="intensity2" />
+        <value type="RealRGBColor" name="tint" />
+        <value type="Pad" name="_unnamed8" length="24" />
+      </struct>
+      <value type="Block" name="screen effect" struct="GlobalHudScreenEffectDefinition" maxelements="1" />
+      <value type="Pad" name="_unnamed7" length="132" />
+      <value type="ShortInteger" name="sequence index">
+        <tooltip>Sequence index into the global hud icon bitmap.</tooltip>
+      </value>
+      <value type="ShortInteger" name="width offset">
+        <tooltip>Extra spacing beyond bitmap width for text alignment.</tooltip>
+      </value>
+      <value type="Point2D" name="offset from reference corner" />
+      <value type="ARGBColor" name="override icon color" />
+      <value type="CharInteger" name="frame rate" />
+      <value type="Flags" name="flags2" length="1">
+        <bit index="0" name="use text from string_list instead" />
+        <bit index="1" name="override default color" />
+        <bit index="2" name="width offset is absolute icon width" />
+      </value>
+      <value type="ShortInteger" name="text index" />
+      <value type="Pad" name="_unnamed8" length="48" />
+    </struct>
+  </plugin>
+</xml>

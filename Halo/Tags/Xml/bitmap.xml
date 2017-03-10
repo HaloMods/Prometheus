@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="bitm" parenttype="????">Bitmap</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Bitmap">
+      <value type="Custom" name="_unnamed" />
+      <value type="Enum" name="type">
+        <item value="0" name="2D textures" />
+        <item value="1" name="3D textures" />
+        <item value="2" name="cube maps" />
+        <item value="3" name="sprites" />
+        <item value="4" name="interface bitmaps" />
+      </value>
+      <value type="Enum" name="format">
+        <item value="0" name="compressed with colo" />
+        <item value="1" name="compressed with explicit alpha" />
+        <item value="2" name="compressed with interpolated alpha" />
+        <item value="3" name="1" />
+        <item value="4" name="3" />
+        <item value="5" name="monochrome" />
+      </value>
+      <value type="Enum" name="usage">
+        <item value="0" name="alph" />
+        <item value="1" name="default" />
+        <item value="2" name="height map" />
+        <item value="3" name="detail map" />
+        <item value="4" name="light map" />
+        <item value="5" name="vector map" />
+      </value>
+      <value type="Flags" name="flags" length="2">
+        <bit index="0" name="enable diffusion dithering" />
+        <bit index="1" name="disable height map compression" />
+        <bit index="2" name="uniform sprite sequences" />
+        <bit index="3" name="filthy sprite bug fix" />
+      </value>
+      <value type="RealFraction" name="detail fade factor">
+        <tooltip>0 means fade to gray by last mipmap, 1 means fade to gray by first mipmap.</tooltip>
+      </value>
+      <value type="RealFraction" name="sharpen amount">
+        <tooltip>Sharpens mipmap after downsampling.</tooltip>
+      </value>
+      <value type="RealFraction" name="bump height">
+        <tooltip>The apparent height of the bump map above the triangle it is textured onto, in texture repeats (i.e., 1.0 would be as high as the texture is wide).</tooltip>
+      </value>
+      <value type="Enum" name="sprite budget size">
+        <item value="0" name="32x32" />
+        <item value="1" name="64x64" />
+        <item value="2" name="128x128" />
+        <item value="3" name="256x256" />
+        <item value="4" name="512x512" />
+      </value>
+      <value type="ShortInteger" name="sprite budget count" />
+      <value type="ShortInteger" name="color plate width" />
+      <value type="ShortInteger" name="color plate height" />
+      <value type="Data" name="compressed color plate data" />
+      <value type="Data" name="processed pixel data" />
+      <value type="Real" name="blur filter size">
+        <tooltip>Blurs the bitmap before generating mipmaps.</tooltip>
+      </value>
+      <value type="Real" name="alpha bias">
+        <tooltip>Affects alpha mipmap generation.</tooltip>
+      </value>
+      <value type="ShortInteger" name="mipmap count">
+        <tooltip>0 defaults to all levels.</tooltip>
+      </value>
+      <value type="Enum" name="sprite usage">
+        <item value="0" name="blendaddsubtractmax" />
+        <item value="1" name="multiplymin" />
+        <item value="2" name="double multiply" />
+      </value>
+      <value type="ShortInteger" name="sprite spacing" />
+      <value type="Pad" name="_unnamed2" length="2" />
+      <struct name="BitmapGroupSequence">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="ShortInteger" name="first bitmap index" />
+        <value type="ShortInteger" name="bitmap count" />
+        <value type="Pad" name="_unnamed" length="16" />
+        <struct name="BitmapGroupSprite">
+          <value type="ShortInteger" name="bitmap index" />
+          <value type="Pad" name="_unnamed" length="2" />
+          <value type="Pad" name="_unnamed2" length="4" />
+          <value type="Real" name="left" />
+          <value type="Real" name="right" />
+          <value type="Real" name="top" />
+          <value type="Real" name="bottom" />
+          <value type="RealPoint2D" name="registration point" />
+        </struct>
+        <value type="Block" name="sprites" struct="BitmapGroupSprite" maxelements="64" />
+      </struct>
+      <value type="Block" name="sequences" struct="BitmapGroupSequence" maxelements="256" />
+      <struct name="BitmapData">
+        <value type="Tag" name="signature" />
+        <value type="ShortInteger" name="width" />
+        <value type="ShortInteger" name="height" />
+        <value type="ShortInteger" name="depth">
+          <tooltip>Depth is 1 for 2D textures and cube maps.</tooltip>
+        </value>
+        <value type="Enum" name="type">
+          <tooltip>Determines bitmap 'geometry'.</tooltip>
+          <item value="0" name="2D texture" />
+          <item value="1" name="3D texture" />
+          <item value="2" name="cube map" />
+          <item value="3" name="white" />
+        </value>
+        <value type="Enum" name="format">
+          <tooltip>Determines how pixels are represented internally.</tooltip>
+          <item value="0" name="a8" />
+          <item value="1" name="y8" />
+          <item value="2" name="ay8" />
+          <item value="3" name="a8y8" />
+          <item value="4" name="unused1" />
+          <item value="5" name="unused2" />
+          <item value="6" name="r5g6b5" />
+          <item value="7" name="unused3" />
+          <item value="8" name="a1r5g5b5" />
+          <item value="9" name="a4r4g4b4" />
+          <item value="10" name="x8r8g8b8" />
+          <item value="11" name="a8r8g8b8" />
+          <item value="12" name="unused4" />
+          <item value="13" name="unused5" />
+          <item value="14" name="dxt1" />
+          <item value="15" name="dxt3" />
+          <item value="16" name="dxt5" />
+          <item value="17" name="p" />
+        </value>
+        <value type="Flags" name="flags" length="2">
+          <bit index="0" name="power of two dimensions" />
+          <bit index="1" name="compressed" />
+          <bit index="2" name="palettized" />
+          <bit index="3" name="swizzled" />
+          <bit index="4" name="linear" />
+          <bit index="5" name="v16u16" />
+        </value>
+        <value type="Point2D" name="registration point" />
+        <value type="ShortInteger" name="mipmap count" />
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="LongInteger" name="pixels offset" />
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="Pad" name="_unnamed3" length="4" />
+        <value type="Pad" name="_unnamed4" length="4" />
+        <value type="Pad" name="_unnamed5" length="4" />
+        <value type="LongInteger" name="base address" />
+      </struct>
+      <value type="Block" name="bitmaps" struct="BitmapData" maxelements="2048" />
+    </struct>
+  </plugin>
+</xml>

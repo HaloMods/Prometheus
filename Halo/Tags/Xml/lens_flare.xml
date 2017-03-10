@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="lens" parenttype="????">LensFlare</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="LensFlare">
+      <value type="Angle" name="falloff angle" />
+      <value type="Angle" name="cutoff angle" />
+      <value type="Pad" name="_unnamed" length="8" />
+      <value type="Real" name="occlusion radius">
+        <tooltip>Radius of the square used to test occlusion.</tooltip>
+      </value>
+      <value type="Enum" name="occlusion offset direction">
+        <item value="0" name="toward viewer" />
+        <item value="1" name="marker forward" />
+        <item value="2" name="none" />
+      </value>
+      <value type="Pad" name="_unnamed2" length="2" />
+      <value type="Real" name="near fade distance">
+        <tooltip>Distance at which the lens flare brightness is maximum.</tooltip>
+      </value>
+      <value type="Real" name="far fade distance">
+        <tooltip>Distance at which the lens flare brightness is minimum; set to zero to disable distance fading.</tooltip>
+      </value>
+      <value type="TagReference" name="bitmap" extensions="bitm">
+        <tooltip>Used by reflections.</tooltip>
+      </value>
+      <value type="Flags" name="flags" length="2">
+        <bit index="0" name="sun" />
+      </value>
+      <value type="Pad" name="_unnamed3" length="2" />
+      <value type="Pad" name="_unnamed4" length="76" />
+      <value type="Enum" name="rotation function">
+        <item value="0" name="none" />
+        <item value="1" name="rotation A" />
+        <item value="2" name="rotation B" />
+        <item value="3" name="rotatio" />
+        <item value="4" name="translation" />
+      </value>
+      <value type="Pad" name="_unnamed5" length="2" />
+      <value type="Angle" name="rotation function scale" />
+      <value type="Pad" name="_unnamed6" length="24" />
+      <value type="Real" name="horizontal scale">
+        <tooltip>Amount to stretch the corona along the horizontal axis; 0 defaults to 1.</tooltip>
+      </value>
+      <value type="Real" name="vertical scale">
+        <tooltip>Amount to stretch the corona along the vertical axis; 0 defaults to 1.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed7" length="28" />
+      <struct name="LensFlareReflection">
+        <value type="Flags" name="flags" length="2">
+          <bit index="0" name="align rotation with screen center" />
+          <bit index="1" name="radius NOT scaled by distance" />
+          <bit index="2" name="radius scaled by occlusion factor" />
+          <bit index="3" name="occluded by solid objects" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="ShortInteger" name="bitmap index" />
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="20" />
+        <value type="Real" name="position">
+          <tooltip>0 is on top of light, 1 is opposite light, 0.5 is the center of the screen, etc..</tooltip>
+        </value>
+        <value type="Real" name="rotation offset" />
+        <value type="Pad" name="_unnamed4" length="4" />
+        <value type="RealBounds" name="radius">
+          <tooltip>Interpolated by light scale.</tooltip>
+        </value>
+        <value type="Enum" name="radius scaled by">
+          <item value="0" name="none" />
+          <item value="1" name="rotation" />
+          <item value="2" name="rotation and strafing" />
+          <item value="3" name="distance from center" />
+        </value>
+        <value type="Pad" name="_unnamed5" length="2" />
+        <value type="RealFractionBounds" name="brightness">
+          <tooltip>Interpolated by light scale.</tooltip>
+        </value>
+        <value type="Enum" name="brightness scaled by">
+          <item value="0" name="none" />
+          <item value="1" name="rotation" />
+          <item value="2" name="rotation and strafing" />
+          <item value="3" name="distance from center" />
+        </value>
+        <value type="Pad" name="_unnamed6" length="2" />
+        <value type="RealARGBColor" name="tint color">
+          <tooltip>If a=r=g=b=0 use light color instead; alpha blends between modulation and tinting.</tooltip>
+        </value>
+        <value type="RealARGBColor" name="color lower bound">
+          <tooltip>If a=r=g=b=0, default to a=r=g=b=1.</tooltip>
+        </value>
+        <value type="RealARGBColor" name="color upper bound">
+          <tooltip>If a=r=g=b=0, default to a=r=g=b=1.</tooltip>
+        </value>
+        <value type="Flags" name="flags2" length="2">
+          <bit index="0" name="interpolate color in hsv" />
+          <bit index="1" name="...more colors" />
+        </value>
+        <value type="Enum" name="animation function">
+          <item value="0" name="one" />
+          <item value="1" name="zero" />
+          <item value="2" name="cosine" />
+          <item value="3" name="cosine variable period" />
+          <item value="4" name="diagonal wave" />
+          <item value="5" name="diagonal wave variable period" />
+          <item value="6" name="slide" />
+          <item value="7" name="slide variable period" />
+          <item value="8" name="noise" />
+          <item value="9" name="jitter" />
+          <item value="10" name="wander" />
+          <item value="11" name="spark" />
+        </value>
+        <value type="Real" name="animation period">
+          <tooltip>0 defaults to 1.</tooltip>
+        </value>
+        <value type="Real" name="animation phase" />
+        <value type="Pad" name="_unnamed7" length="4" />
+      </struct>
+      <value type="Block" name="reflections" struct="LensFlareReflection" maxelements="32" />
+      <value type="Pad" name="_unnamed8" length="32" />
+    </struct>
+  </plugin>
+</xml>

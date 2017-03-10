@@ -1,0 +1,39 @@
+<xml>
+  <name type="fpch" parenttype="????">PatchyFog</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="PatchyFogBlock">
+      <value type="Flags" name="flags" length="2" disabled="false">
+        <bit index="0" name="separate layer depths" />
+        <bit index="1" name="sort behind transparents" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="RealFraction" name="rotation multiplier" disabled="false" unit="[0,1]" />
+      <value type="RealFraction" name="strafing multiplier" disabled="false" unit="[0,1]" />
+      <value type="RealFraction" name="zoom multiplier" disabled="false" unit="[0,1]" />
+      <value type="Real" name="noise map scale" disabled="false">
+        <tooltip>0 defaults to 1</tooltip>
+      </value>
+      <value type="TagReference" name="noise map" disabled="false" extensions="bitm" />
+      <value type="Real" name="noise vertical scale forward" disabled="false">
+        <tooltip>0 defaults to 1</tooltip>
+      </value>
+      <value type="Real" name="noise vertical scale up" disabled="false">
+        <tooltip>0 defaults to 1</tooltip>
+      </value>
+      <value type="Real" name="noise opacity scale up" disabled="false">
+        <tooltip>0 defaults to 1</tooltip>
+      </value>
+      <value type="Real" name="animation period" disabled="false" unit="seconds" />
+      <value type="RealBounds" name="wind velocity" disabled="false" unit="world units per second" />
+      <value type="RealBounds" name="wind period" disabled="false" unit="seconds">
+        <tooltip>0 defaults to 1</tooltip>
+      </value>
+      <value type="RealFraction" name="wind acceleration weight" disabled="false" unit="[0,1]" />
+      <value type="RealFraction" name="wind perpendicular weight" disabled="false" unit="[0,1]" />
+      <value type="Real" name="wind constant velocity x" disabled="false" unit="world units per second" />
+      <value type="Real" name="wind constant velocity y" disabled="false" unit="world units per second" />
+      <value type="Real" name="wind constant velocity z" disabled="false" unit="world units per second" />
+    </struct>
+  </plugin>
+</xml>

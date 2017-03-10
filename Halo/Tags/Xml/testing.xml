@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="test" parenttype="????">Testing</name>
+  <!-- With suggestions for format improvement by SwampFox. -->
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Testing">
+      <value type="Angle" name="Angle" />
+      <value type="AngleBounds" name="AngleBounds" />
+      <value type="ArgbColor" name="ArgbColor" />
+      <struct name="EmptyStructure">
+        <!-- <value type="Pad" name="_unnamed">
+          <length>4</length> -->
+          <!-- Length entries should be attributes, not children. -->
+        <!-- </value> -->
+      </struct>
+      <!-- These files would be significantly simpler if the structure fields were children
+      to the Block value, instead of inside their own useless element. -->
+      <value type="Block" name="Block" struct="EmptyStructure">
+        <maxelements>8</maxelements>
+        <!-- MaxElements entries should be attributes, not children. -->
+      </value>
+      <value type="CharInteger" name="CharInteger" />
+      <value type="Data" name="Data" />
+      <!-- Data fields have no MaxLength attribute. -->
+      <value type="Enum" name="Enum">
+        <item value="0" name="Zero" />
+        <item value="1" name="One" />
+        <item value="2" name="Two" />
+        <item value="3" name="Three" />
+        <item value="4" name="Four" />
+      </value>
+      <value type="FixedLengthString" name="FixedLengthString" />
+      <value type="Flags" name="Flags" length="2">
+        <bit index="0" name="Bit Zero" />
+        <bit index="1" name="Bit One" />
+        <bit index="2" name="Bit Two" />
+        <bit index="3" name="Bit Three" />
+        <bit index="4" name="Bit Four" />
+      </value>
+      <!-- We should recreate the Flags field using a 'mask' attribute instead of an 'index' attribute. -->
+      <value type="LongBlockIndex" name="LongBlockIndex" />
+      <!-- LongBlockIndex has no way to specify which block it is indexing. -->
+      <value type="LongInteger" name="LongInteger" />
+      <value type="Point2D" name="Point2D" />
+      <value type="Real" name="Real" />
+      <value type="RealArgbColor" name="RealArgbColor" />
+      <value type="RealBounds" name="RealBounds" />
+      <value type="RealEulerAngles2D" name="RealEulerAngles2D" />
+      <value type="RealEulerAngles3D" name="RealEulerAngles3D" />
+      <value type="RealFraction" name="RealFraction" />
+      <value type="RealFractionBounds" name="RealFractionBounds" />
+      <value type="RealPlane2D" name="RealPlane2D" />
+      <value type="RealPlane3D" name="RealPlane3D" />
+      <value type="RealPoint2D" name="RealPoint2D" />
+      <value type="RealPoint3D" name="RealPoint3D" />
+      <value type="RealQuaternion" name="RealQuaternion" />
+      <value type="RealRgbColor" name="RealRgbColor" />
+      <value type="RealVector2D" name="RealVector2D" />
+      <value type="RealVector3D" name="RealVector3D" />
+      <value type="Rectangle2D" name="Rectangle2D" />
+      <value type="RgbColor" name="RgbColor" />
+      <value type="ShortBlockIndex" name="ShortBlockIndex" />
+      <!-- ShortBlockIndex has no way to specify which block it is indexing. -->
+      <value type="ShortBounds" name="ShortBounds" />
+      <value type="ShortInteger" name="ShortInteger" />
+      <value type="TagReference" name="TagReference" />
+      <!-- TagReference entries have no way to specify what tag types should be allowed
+      when strict tag reference rules are being enforced. THIS is a good place to use children.-->
+      <value type="Tag" name="TagSignature" />
+      <value type="VariableLengthString" name="VariableLengthString" />
+      <struct name="FiveEntryStructure">
+        <value type="Real" name="Real" />
+        <value type="RealArgbColor" name="RealArgbColor" />
+        <value type="RealBounds" name="RealBounds" />
+        <value type="RealEulerAngles2D" name="RealEulerAngles2D" />
+        <value type="RealRgbColor" name="RealRgbColor" />
+      </struct>
+      <!-- These files would be significantly simpler if the structure fields were children
+      to the Block value, instead of inside their own useless element. -->
+      <value type="Block" name="FiveEntryBlock" struct="FiveEntryStructure">
+        <maxelements>8</maxelements>
+        <!-- MaxElements entries should be attributes, not children. -->
+      </value>
+    </struct>
+  </plugin>
+</xml>

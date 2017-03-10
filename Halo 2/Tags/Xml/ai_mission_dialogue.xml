@@ -1,0 +1,21 @@
+<xml>
+  <name type="mdlg" parenttype="????">AiMissionDialogue</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="AiMissionDialogueBlock">
+      <struct name="MissionDialogueLinesBlock">
+        <value type="StringId" name="name" disabled="false" blockname="true" />
+        <struct name="MissionDialogueVariantsBlock">
+          <value type="StringId" name="variant designation" disabled="false" blockname="true">
+            <tooltip>3-letter designation for the character</tooltip>
+          </value>
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" />
+          <value type="StringId" name="sound effect" disabled="false" />
+        </struct>
+        <value type="Block" name="variants" disabled="false" struct="MissionDialogueVariantsBlock" maxelements="10" />
+        <value type="StringId" name="default sound effect" disabled="false" />
+      </struct>
+      <value type="Block" name="lines" disabled="false" struct="MissionDialogueLinesBlock" maxelements="500" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,187 @@
+<xml>
+  <name type="stem" parenttype="????">ShaderTemplate</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ShaderTemplateBlock">
+      <value type="Data" name="Documentation" disabled="false" />
+      <value type="StringId" name="Default Material Name" disabled="false" />
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Flags" name="Flags" length="2" disabled="false">
+        <bit index="0" name="Force Active Camo" />
+        <bit index="1" name="Water" />
+        <bit index="2" name="Foliage" />
+        <bit index="3" name="Hide Standard Parameters" />
+      </value>
+      <struct name="ShaderTemplatePropertyBlock">
+        <value type="Enum" name="Property" length="2" disabled="false" blockname="true">
+          <item value="0" name="Unused" />
+          <item value="1" name="Diffuse Map" />
+          <item value="2" name="Lightmap Emissive Map" />
+          <item value="3" name="Lightmap Emissive Color" />
+          <item value="4" name="Lightmap Emissive Power" />
+          <item value="5" name="Lightmap Resolution Scale" />
+          <item value="6" name="Lightmap Half Life" />
+          <item value="7" name="Lightmap Diffuse Scale" />
+          <item value="8" name="Lightmap Alpha Test Map" />
+          <item value="9" name="Lightmap Translucent Map" />
+          <item value="10" name="Lightmap Translucent Color" />
+          <item value="11" name="Lightmap Translucent Alpha" />
+          <item value="12" name="Active Camo Map" />
+          <item value="13" name="Lightmap Foliage Scale" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="StringId" name="Parameter Name" disabled="false" />
+      </struct>
+      <value type="Block" name="Properties" disabled="false" struct="ShaderTemplatePropertyBlock" maxelements="14" />
+      <struct name="ShaderTemplateCategoryBlock">
+        <value type="StringId" name="Name" disabled="false" blockname="true" />
+        <struct name="ShaderTemplateParameterBlock">
+          <value type="StringId" name="Name" disabled="false" blockname="true" />
+          <value type="Data" name="Explanation" disabled="false" />
+          <value type="Enum" name="Type" length="2" disabled="false">
+            <item value="0" name="Bitmap" />
+            <item value="1" name="Value" />
+            <item value="2" name="Color" />
+            <item value="3" name="Switch" />
+          </value>
+          <value type="Flags" name="Flags" length="2" disabled="false">
+            <bit index="0" name="Animated" />
+            <bit index="1" name="Hide Bitmap Reference" />
+          </value>
+          <value type="TagReference" name="Default Bitmap" disabled="false" extensions="bitm" />
+          <value type="Real" name="Default Const Value" disabled="false" />
+          <value type="RealRgbColor" name="Default Const Color" disabled="false" />
+          <value type="Enum" name="Bitmap Type" length="2" disabled="false">
+            <item value="0" name="2D" />
+            <item value="1" name="3D" />
+            <item value="2" name="Cube Map" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Flags" name="Bitmap Animation Flags" length="2" disabled="false">
+            <bit index="0" name="Scale Uniform" />
+            <bit index="1" name="Scale" />
+            <bit index="2" name="Translation" />
+            <bit index="3" name="Rotation" />
+            <bit index="4" name="Index" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Real" name="Bitmap Scale" disabled="false" />
+        </struct>
+        <value type="Block" name="Parameters" disabled="false" struct="ShaderTemplateParameterBlock" maxelements="64" />
+      </struct>
+      <value type="Block" name="Categories" disabled="false" struct="ShaderTemplateCategoryBlock" maxelements="16" />
+      <value type="TagReference" name="Light Response" disabled="false" extensions="slit" />
+      <struct name="ShaderTemplateLevelOfDetailBlock">
+        <value type="Real" name="Projected Diameter" disabled="false" unit="pixels" />
+        <struct name="ShaderTemplatePassReferenceBlock">
+          <value type="Enum" name="Layer" length="2" disabled="false">
+            <item value="0" name="texaccum" />
+            <item value="1" name="Environment Map" />
+            <item value="2" name="Self-Illumination" />
+            <item value="3" name="Overlay" />
+            <item value="4" name="Transparent" />
+            <item value="5" name="Lightmap (Indirect)" />
+            <item value="6" name="Diffuse" />
+            <item value="7" name="Specular" />
+            <item value="8" name="Shadow Generate" />
+            <item value="9" name="Shadow Apply" />
+            <item value="10" name="Boom" />
+            <item value="11" name="Fog" />
+            <item value="12" name="Sh Prt" />
+            <item value="13" name="Active Camo" />
+            <item value="14" name="Water Edge Blend" />
+            <item value="15" name="Decal" />
+            <item value="16" name="Active Camo Stencil Modulate" />
+            <item value="17" name="Hologram" />
+            <item value="18" name="Light Albedo" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="TagReference" name="Pass" disabled="false" extensions="spas" blockname="true" />
+          <value type="Pad" name="_unnamed1" length="12" />
+        </struct>
+        <value type="Block" name="Pass" disabled="false" struct="ShaderTemplatePassReferenceBlock" maxelements="16" />
+      </struct>
+      <value type="Block" name="LODs" disabled="false" struct="ShaderTemplateLevelOfDetailBlock" maxelements="8" />
+      <struct name="ShaderTemplateRuntimeExternalLightResponseIndexBlock">
+        <value type="LongInteger" name="_unnamed0" />
+      </struct>
+      <value type="Block" name="_unnamed1" struct="ShaderTemplateRuntimeExternalLightResponseIndexBlock" maxelements="65535" />
+      <value type="Block" name="_unnamed2" struct="ShaderTemplateRuntimeExternalLightResponseIndexBlock" maxelements="65535" />
+      <value type="TagReference" name="Aux 1 Shader" disabled="false" extensions="shad" />
+      <value type="Enum" name="Aux 1 Layer" length="2" disabled="false">
+        <item value="0" name="texaccum" />
+        <item value="1" name="Environment Map" />
+        <item value="2" name="Self-Illumination" />
+        <item value="3" name="Overlay" />
+        <item value="4" name="Transparent" />
+        <item value="5" name="Lightmap (Indirect)" />
+        <item value="6" name="Diffuse" />
+        <item value="7" name="Specular" />
+        <item value="8" name="Shadow Generate" />
+        <item value="9" name="Shadow Apply" />
+        <item value="10" name="Boom" />
+        <item value="11" name="Fog" />
+        <item value="12" name="Sh Prt" />
+        <item value="13" name="Active Camo" />
+        <item value="14" name="Water Edge Blend" />
+        <item value="15" name="Decal" />
+        <item value="16" name="Active Camo Stencil Modulate" />
+        <item value="17" name="Hologram" />
+        <item value="18" name="Light Albedo" />
+      </value>
+      <value type="Pad" name="_unnamed3" length="2" />
+      <value type="TagReference" name="Aux 2 Shader" disabled="false" extensions="shad" />
+      <value type="Enum" name="Aux 2 Layer" length="2" disabled="false">
+        <item value="0" name="texaccum" />
+        <item value="1" name="Environment Map" />
+        <item value="2" name="Self-Illumination" />
+        <item value="3" name="Overlay" />
+        <item value="4" name="Transparent" />
+        <item value="5" name="Lightmap (Indirect)" />
+        <item value="6" name="Diffuse" />
+        <item value="7" name="Specular" />
+        <item value="8" name="Shadow Generate" />
+        <item value="9" name="Shadow Apply" />
+        <item value="10" name="Boom" />
+        <item value="11" name="Fog" />
+        <item value="12" name="Sh Prt" />
+        <item value="13" name="Active Camo" />
+        <item value="14" name="Water Edge Blend" />
+        <item value="15" name="Decal" />
+        <item value="16" name="Active Camo Stencil Modulate" />
+        <item value="17" name="Hologram" />
+        <item value="18" name="Light Albedo" />
+      </value>
+      <value type="Pad" name="_unnamed4" length="2" />
+      <struct name="ShaderTemplatePostprocessDefinitionNewBlock">
+        <struct name="ShaderTemplatePostprocessLevelOfDetailNewBlock">
+          <value type="ShortInteger" name="block index data" disabled="false" />
+          <value type="LongInteger" name="available layers" disabled="false" />
+          <value type="Real" name="projected height percentage" disabled="false" />
+        </struct>
+        <value type="Block" name="levels of detail" disabled="false" struct="ShaderTemplatePostprocessLevelOfDetailNewBlock" maxelements="1024" />
+        <struct name="TagBlockIndexBlock">
+          <value type="ShortInteger" name="block index data" disabled="false" />
+        </struct>
+        <value type="Block" name="layers" disabled="false" struct="TagBlockIndexBlock" maxelements="1024" />
+        <struct name="ShaderTemplatePostprocessPassNewBlock">
+          <value type="TagReference" name="pass" disabled="false" extensions="spas" />
+          <value type="ShortInteger" name="block index data" disabled="false" />
+        </struct>
+        <value type="Block" name="passes" disabled="false" struct="ShaderTemplatePostprocessPassNewBlock" maxelements="1024" />
+        <struct name="ShaderTemplatePostprocessImplementationNewBlock">
+          <value type="ShortInteger" name="block index data" disabled="false" />
+          <value type="ShortInteger" name="block index data2" disabled="false" />
+          <value type="ShortInteger" name="block index data3" disabled="false" />
+        </struct>
+        <value type="Block" name="implementations" disabled="false" struct="ShaderTemplatePostprocessImplementationNewBlock" maxelements="1024" />
+        <struct name="ShaderTemplatePostprocessRemappingNewBlock">
+          <value type="Skip" name="_unnamed0" length="3" />
+          <value type="CharInteger" name="source index" disabled="false" />
+        </struct>
+        <value type="Block" name="remappings" disabled="false" struct="ShaderTemplatePostprocessRemappingNewBlock" maxelements="1024" />
+      </struct>
+      <value type="Block" name="Postprocess Definition" disabled="true" struct="ShaderTemplatePostprocessDefinitionNewBlock" maxelements="1" />
+    </struct>
+  </plugin>
+</xml>

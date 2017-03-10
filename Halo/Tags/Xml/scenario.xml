@@ -1,0 +1,1766 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="scnr" parenttype="????">Scenario</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Scenario">
+      <value type="TagReference" name="DONT USE" extensions="sbsp" />
+      <value type="TagReference" name="WONT USE" extensions="sbsp" />
+      <value type="TagReference" name="CANT USE" extensions="sky ">
+        <tooltip>Set me.</tooltip>
+      </value>
+      <struct name="ScenarioSkyReference">
+        <value type="TagReference" name="sky" extensions="sky " />
+      </struct>
+      <value type="Block" name="skies" struct="ScenarioSkyReference" maxelements="8" />
+      <value type="Enum" name="type">
+        <item value="0" name="solo" />
+        <item value="1" name="multiplayer" />
+        <item value="2" name="main menu" />
+      </value>
+      <value type="Flags" name="flags" length="2">
+        <bit index="0" name="cortana hack">
+          <tooltip>Sort cortana in front of other transparent geometry.</tooltip>
+        </bit>
+        <bit index="1" name="use demo UI">
+          <tooltip>Uses alternate UI collection for demo.</tooltip>
+        </bit>
+      </value>
+      <struct name="ScenarioChildScenario">
+        <value type="TagReference" name="child scenario" extensions="scnr" />
+        <value type="Pad" name="_unnamed" length="16" />
+      </struct>
+      <value type="Block" name="child scenarios" struct="ScenarioChildScenario" maxelements="16" />
+      <value type="Angle" name="local north" />
+      <value type="Pad" name="_unnamed" length="20" />
+      <value type="Pad" name="_unnamed2" length="136" />
+      <struct name="PredictedResource">
+        <value type="Enum" name="type">
+          <item value="0" name="bitmap" />
+          <item value="1" name="sound" />
+        </value>
+        <value type="ShortInteger" name="resource index" />
+        <value type="LongInteger" name="tag index" />
+      </struct>
+      <value type="Block" name="predicted resources" struct="PredictedResource" maxelements="1024" />
+      <struct name="ScenarioFunction">
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="scripted">
+            <tooltip>The level script will set this value; the other settings here will be ignored..</tooltip>
+          </bit>
+          <bit index="1" name="invert">
+            <tooltip>Result of function is one minus actual result.</tooltip>
+          </bit>
+          <bit index="2" name="additive" />
+          <bit index="3" name="always active">
+            <tooltip>Function does not deactivate when at or below lower bound.</tooltip>
+          </bit>
+        </value>
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="Real" name="period">
+          <tooltip>This is the period for the above function (lower values make the function oscillate quickly, higher values make it oscillate slowly).</tooltip>
+        </value>
+        <value type="ShortBlockIndex" name="scale period by" block="ScenarioFunction">
+          <tooltip>Multiply this function by the above period.</tooltip>
+        </value>
+        <value type="Enum" name="function">
+          <item value="0" name="one" />
+          <item value="1" name="zero" />
+          <item value="2" name="cosine" />
+          <item value="3" name="cosine variable period" />
+          <item value="4" name="diagonal wave" />
+          <item value="5" name="diagonal wave variable period" />
+          <item value="6" name="slide" />
+          <item value="7" name="slide variable period" />
+          <item value="8" name="noise" />
+          <item value="9" name="jitter" />
+          <item value="10" name="wander" />
+          <item value="11" name="spark" />
+        </value>
+        <value type="ShortBlockIndex" name="scale function by" block="ScenarioFunction">
+          <tooltip>Multiply this function by the result of the above function.</tooltip>
+        </value>
+        <value type="Enum" name="wobble function">
+          <tooltip>The curve used for the wobble.</tooltip>
+          <item value="0" name="one" />
+          <item value="1" name="zero" />
+          <item value="2" name="cosine" />
+          <item value="3" name="cosine variable period" />
+          <item value="4" name="diagonal wave" />
+          <item value="5" name="diagonal wave variable period" />
+          <item value="6" name="slide" />
+          <item value="7" name="slide variable period" />
+          <item value="8" name="noise" />
+          <item value="9" name="jitter" />
+          <item value="10" name="wander" />
+          <item value="11" name="spark" />
+        </value>
+        <value type="Real" name="wobble period">
+          <tooltip>The length of time it takes for the magnitude of this function to complete a wobble.</tooltip>
+        </value>
+        <value type="Real" name="wobble magnitude">
+          <tooltip>The amount of random wobble in the magnitude.</tooltip>
+        </value>
+        <value type="RealFraction" name="square wave threshold">
+          <tooltip>If non-zero, all values above the square wave threshold are snapped to 1.0, and all values below it are snapped to 0.0 to create a square wave..</tooltip>
+        </value>
+        <value type="ShortInteger" name="step count">
+          <tooltip>The number of discrete values to snap to (e.g., a step count of 5 would snap the function to 0.00,0.25,0.50,0.75 or 1.00).</tooltip>
+        </value>
+        <value type="Enum" name="map to">
+          <item value="0" name="linear" />
+          <item value="1" name="early" />
+          <item value="2" name="very early" />
+          <item value="3" name="late" />
+          <item value="4" name="very late" />
+          <item value="5" name="cosine" />
+        </value>
+        <value type="ShortInteger" name="sawtooth count">
+          <tooltip>The number of times this function should repeat (e.g., a sawtooth count of 5 would give the function a value of 1.0 at each of 0.25,0.50,0.75 as well as at 1.0.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="ShortBlockIndex" name="scale result by" block="ScenarioFunction">
+          <tooltip>Multiply this function (from a weapon, vehicle, etc.) final result of all of the above math.</tooltip>
+        </value>
+        <value type="Enum" name="bounds mode">
+          <tooltip>Controls how the bounds, below, are used.</tooltip>
+          <item value="0" name="clip" />
+          <item value="1" name="clip and normalize" />
+          <item value="2" name="scale to fit" />
+        </value>
+        <value type="RealFractionBounds" name="bounds" />
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="Pad" name="_unnamed3" length="2" />
+        <value type="ShortBlockIndex" name="turn off with" block="ScenarioFunction">
+          <tooltip>If the specified function is off, so is this function.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed4" length="16" />
+        <value type="Pad" name="_unnamed5" length="16" />
+      </struct>
+      <value type="Block" name="functions" struct="ScenarioFunction" maxelements="32" />
+      <value type="Data" name="editor scenario data" />
+      <struct name="EditorComment">
+        <value type="RealPoint3D" name="position" />
+        <value type="Pad" name="_unnamed" length="16" />
+        <value type="Data" name="comment" />
+      </struct>
+      <value type="Block" name="comments" struct="EditorComment" maxelements="1024" />
+      <value type="Pad" name="_unnamed3" length="224" />
+      <struct name="ScenarioObjectNames">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="Pad" name="_unnamed" length="4" />
+      </struct>
+      <value type="Block" name="object names" struct="ScenarioObjectNames" maxelements="512" />
+      <struct name="ScenarioScenery">
+        <value type="ShortBlockIndex" name="type" block="ScenarioSceneryPalette" />
+        <value type="ShortBlockIndex" name="name" block="ScenarioObjectNames" />
+        <value type="Flags" name="not placed" length="2">
+          <bit index="0" name="automatically" />
+          <bit index="1" name="on easy" />
+          <bit index="2" name="on normal" />
+          <bit index="3" name="on hard" />
+        </value>
+        <value type="ShortInteger" name="desired permutation">
+          <tooltip>If non-zero, will try to use model permutations with names that end in that number, e.g. 7 would pick "body-7" and "head-7".</tooltip>
+        </value>
+        <value type="RealPoint3D" name="position" />
+        <value type="RealEulerAngles3D" name="rotation" />
+        <value type="Pad" name="_unnamed" length="8" />
+        <value type="Pad" name="_unnamed2" length="16" />
+        <value type="Pad" name="_unnamed3" length="8" />
+        <value type="Pad" name="_unnamed4" length="8" />
+      </struct>
+      <value type="Block" name="scenery" struct="ScenarioScenery" maxelements="2000" />
+      <struct name="ScenarioSceneryPalette">
+        <value type="TagReference" name="name" blockname="true" extensions="scen" />
+        <value type="Pad" name="_unnamed" length="32" />
+      </struct>
+      <value type="Block" name="scenery palette" struct="ScenarioSceneryPalette" maxelements="100" />
+      <struct name="ScenarioBiped">
+        <value type="ShortBlockIndex" name="type" block="ScenarioBipedPalette" />
+        <value type="ShortBlockIndex" name="name" block="ScenarioObjectNames" />
+        <value type="Flags" name="not placed" length="2">
+          <bit index="0" name="automatically" />
+          <bit index="1" name="on easy" />
+          <bit index="2" name="on normal" />
+          <bit index="3" name="on hard" />
+        </value>
+        <value type="ShortInteger" name="desired permutation">
+          <tooltip>If non-zero, will try to use model permutations with names that end in that number, e.g. 7 would pick "body-7" and "head-7".</tooltip>
+        </value>
+        <value type="RealPoint3D" name="position" />
+        <value type="RealEulerAngles3D" name="rotation" />
+        <value type="Pad" name="_unnamed" length="8" />
+        <value type="Pad" name="_unnamed2" length="16" />
+        <value type="Pad" name="_unnamed3" length="8" />
+        <value type="Pad" name="_unnamed4" length="8" />
+        <value type="Real" name="body vitality" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="dead" />
+        </value>
+        <value type="Pad" name="_unnamed5" length="8" />
+        <value type="Pad" name="_unnamed6" length="32" />
+      </struct>
+      <value type="Block" name="bipeds" struct="ScenarioBiped" maxelements="128" />
+      <struct name="ScenarioBipedPalette">
+        <value type="TagReference" name="name" blockname="true" extensions="bipd" />
+        <value type="Pad" name="_unnamed" length="32" />
+      </struct>
+      <value type="Block" name="biped palette" struct="ScenarioBipedPalette" maxelements="100" />
+      <struct name="ScenarioVehicle">
+        <value type="ShortBlockIndex" name="type" block="ScenarioVehiclePalette" />
+        <value type="ShortBlockIndex" name="name" block="ScenarioObjectNames" />
+        <value type="Flags" name="not placed" length="2">
+          <bit index="0" name="automatically" />
+          <bit index="1" name="on easy" />
+          <bit index="2" name="on normal" />
+          <bit index="3" name="on hard" />
+        </value>
+        <value type="ShortInteger" name="desired permutation">
+          <tooltip>If non-zero, will try to use model permutations with names that end in that number, e.g. 7 would pick "body-7" and "head-7".</tooltip>
+        </value>
+        <value type="RealPoint3D" name="position" />
+        <value type="RealEulerAngles3D" name="rotation" />
+        <value type="Pad" name="_unnamed" length="8" />
+        <value type="Pad" name="_unnamed2" length="16" />
+        <value type="Pad" name="_unnamed3" length="8" />
+        <value type="Pad" name="_unnamed4" length="8" />
+        <value type="Real" name="body vitality" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="dead" />
+        </value>
+        <value type="Pad" name="_unnamed5" length="8" />
+        <value type="CharInteger" name="multiplayer team index">
+          <tooltip>On a multiplayer map, this determines which team the vehicle belongs to for custom vehicle sets..</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed6" length="1" />
+        <value type="Flags" name="multiplayer spawn flags" length="2">
+          <bit index="0" name="slayer default">
+            <tooltip>Vehicle will spawn when default vehicle set is used in a slayer game.</tooltip>
+          </bit>
+          <bit index="1" name="ctf default">
+            <tooltip>Vehicle will spawn when default vehicle set is used in a ctf game.</tooltip>
+          </bit>
+          <bit index="2" name="king default">
+            <tooltip>Vehicle will spawn when default vehicle set is used in a king game.</tooltip>
+          </bit>
+          <bit index="3" name="oddball default">
+            <tooltip>Vehicle will spawn when default vehicle set is used in a oddball game.</tooltip>
+          </bit>
+          <bit index="4" name="unused">
+            <tooltip>Unused.</tooltip>
+          </bit>
+          <bit index="5" name="unused">
+            <tooltip>Unused.</tooltip>
+          </bit>
+          <bit index="6" name="unused">
+            <tooltip>Unused.</tooltip>
+          </bit>
+          <bit index="7" name="unused">
+            <tooltip>Unused.</tooltip>
+          </bit>
+          <bit index="8" name="slayer allowed">
+            <tooltip>Vehicle can spawn in a slayer game.</tooltip>
+          </bit>
+          <bit index="9" name="ctf allowed">
+            <tooltip>Vehicle can spawn in a ctf game.</tooltip>
+          </bit>
+          <bit index="10" name="king allowed">
+            <tooltip>Vehicle can spawn in a king game.</tooltip>
+          </bit>
+          <bit index="11" name="oddball allowed">
+            <tooltip>Vehicle can spawn in a oddball game.</tooltip>
+          </bit>
+          <bit index="12" name="unused">
+            <tooltip>Unused.</tooltip>
+          </bit>
+          <bit index="13" name="unused">
+            <tooltip>Unused.</tooltip>
+          </bit>
+          <bit index="14" name="unused">
+            <tooltip>Unused.</tooltip>
+          </bit>
+          <bit index="15" name="unused">
+            <tooltip>Unused.</tooltip>
+          </bit>
+        </value>
+        <value type="Pad" name="_unnamed7" length="28" />
+      </struct>
+      <value type="Block" name="vehicles" struct="ScenarioVehicle" maxelements="80" />
+      <struct name="ScenarioVehiclePalette">
+        <value type="TagReference" name="name" blockname="true" extensions="vehi" />
+        <value type="Pad" name="_unnamed" length="32" />
+      </struct>
+      <value type="Block" name="vehicle palette" struct="ScenarioVehiclePalette" maxelements="100" />
+      <struct name="ScenarioEquipment">
+        <value type="ShortBlockIndex" name="type" block="ScenarioEquipmentPalette" />
+        <value type="ShortBlockIndex" name="name" block="ScenarioObjectNames" />
+        <value type="Flags" name="not placed" length="2">
+          <bit index="0" name="automatically" />
+          <bit index="1" name="on easy" />
+          <bit index="2" name="on normal" />
+          <bit index="3" name="on hard" />
+        </value>
+        <value type="ShortInteger" name="desired permutation">
+          <tooltip>If non-zero, will try to use model permutations with names that end in that number, e.g. 7 would pick "body-7" and "head-7".</tooltip>
+        </value>
+        <value type="RealPoint3D" name="position" />
+        <value type="RealEulerAngles3D" name="rotation" />
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Flags" name="misc flags" length="2">
+          <bit index="0" name="initially at rest doesnt fall" />
+          <bit index="1" name="obsolete" />
+          <bit index="2" name="does accelerate moves due to explosions" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="4" />
+      </struct>
+      <value type="Block" name="equipment" struct="ScenarioEquipment" maxelements="256" />
+      <struct name="ScenarioEquipmentPalette">
+        <value type="TagReference" name="name" blockname="true" extensions="eqip" />
+        <value type="Pad" name="_unnamed" length="32" />
+      </struct>
+      <value type="Block" name="equipment palette" struct="ScenarioEquipmentPalette" maxelements="100" />
+      <struct name="ScenarioWeapon">
+        <value type="ShortBlockIndex" name="type" block="ScenarioWeaponPalette" />
+        <value type="ShortBlockIndex" name="name" block="ScenarioObjectNames" />
+        <value type="Flags" name="not placed" length="2">
+          <bit index="0" name="automatically" />
+          <bit index="1" name="on easy" />
+          <bit index="2" name="on normal" />
+          <bit index="3" name="on hard" />
+        </value>
+        <value type="ShortInteger" name="desired permutation">
+          <tooltip>If non-zero, will try to use model permutations with names that end in that number, e.g. 7 would pick "body-7" and "head-7".</tooltip>
+        </value>
+        <value type="RealPoint3D" name="position" />
+        <value type="RealEulerAngles3D" name="rotation" />
+        <value type="Pad" name="_unnamed" length="8" />
+        <value type="Pad" name="_unnamed2" length="16" />
+        <value type="Pad" name="_unnamed3" length="8" />
+        <value type="Pad" name="_unnamed4" length="8" />
+        <value type="ShortInteger" name="rounds left" />
+        <value type="ShortInteger" name="rounds loaded" />
+        <value type="Flags" name="flags" length="2">
+          <bit index="0" name="initially at rest doesnt fall" />
+          <bit index="1" name="obsolete" />
+          <bit index="2" name="does accelerate moves due to explosions" />
+        </value>
+        <value type="Pad" name="_unnamed5" length="2" />
+        <value type="Pad" name="_unnamed6" length="12" />
+      </struct>
+      <value type="Block" name="weapons" struct="ScenarioWeapon" maxelements="128" />
+      <struct name="ScenarioWeaponPalette">
+        <value type="TagReference" name="name" blockname="true" extensions="weap" />
+        <value type="Pad" name="_unnamed" length="32" />
+      </struct>
+      <value type="Block" name="weapon palette" struct="ScenarioWeaponPalette" maxelements="100" />
+      <struct name="DeviceGroup">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="Real" name="initial value" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="can change only once" />
+        </value>
+        <value type="Pad" name="_unnamed" length="12" />
+      </struct>
+      <value type="Block" name="device groups" struct="DeviceGroup" maxelements="128" />
+      <struct name="ScenarioMachine">
+        <value type="ShortBlockIndex" name="type" block="ScenarioMachinePalette" />
+        <value type="ShortBlockIndex" name="name" block="ScenarioObjectNames" />
+        <value type="Flags" name="not placed" length="2">
+          <bit index="0" name="automatically" />
+          <bit index="1" name="on easy" />
+          <bit index="2" name="on normal" />
+          <bit index="3" name="on hard" />
+        </value>
+        <value type="ShortInteger" name="desired permutation">
+          <tooltip>If non-zero, will try to use model permutations with names that end in that number, e.g. 7 would pick "body-7" and "head-7".</tooltip>
+        </value>
+        <value type="RealPoint3D" name="position" />
+        <value type="RealEulerAngles3D" name="rotation" />
+        <value type="Pad" name="_unnamed" length="8" />
+        <value type="ShortBlockIndex" name="power group" block="DeviceGroup" />
+        <value type="ShortBlockIndex" name="position group" block="DeviceGroup" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="initially open 1.0" />
+          <bit index="1" name="initially off 0.0" />
+          <bit index="2" name="can change only once" />
+          <bit index="3" name="position reversed" />
+          <bit index="4" name="not usable from any side" />
+        </value>
+        <value type="Flags" name="flags2" length="4">
+          <bit index="0" name="does not operate automatically" />
+          <bit index="1" name="on" />
+          <bit index="2" name="never appears locked" />
+          <bit index="3" name="opened by melee attack" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="12" />
+      </struct>
+      <value type="Block" name="machines" struct="ScenarioMachine" maxelements="400" />
+      <struct name="ScenarioMachinePalette">
+        <value type="TagReference" name="name" blockname="true" extensions="mach" />
+        <value type="Pad" name="_unnamed" length="32" />
+      </struct>
+      <value type="Block" name="machine palette" struct="ScenarioMachinePalette" maxelements="100" />
+      <struct name="ScenarioControl">
+        <value type="ShortBlockIndex" name="type" block="ScenarioControlPalette" />
+        <value type="ShortBlockIndex" name="name" block="ScenarioObjectNames" />
+        <value type="Flags" name="not placed" length="2">
+          <bit index="0" name="automatically" />
+          <bit index="1" name="on easy" />
+          <bit index="2" name="on normal" />
+          <bit index="3" name="on hard" />
+        </value>
+        <value type="ShortInteger" name="desired permutation">
+          <tooltip>If non-zero, will try to use model permutations with names that end in that number, e.g. 7 would pick "body-7" and "head-7".</tooltip>
+        </value>
+        <value type="RealPoint3D" name="position" />
+        <value type="RealEulerAngles3D" name="rotation" />
+        <value type="Pad" name="_unnamed" length="8" />
+        <value type="ShortBlockIndex" name="power group" block="DeviceGroup" />
+        <value type="ShortBlockIndex" name="position group" block="DeviceGroup" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="initially open 1.0" />
+          <bit index="1" name="initially off 0.0" />
+          <bit index="2" name="can change only once" />
+          <bit index="3" name="position reversed" />
+          <bit index="4" name="not usable from any side" />
+        </value>
+        <value type="Flags" name="flags2" length="4">
+          <bit index="0" name="usable from both sides" />
+        </value>
+        <value type="ShortInteger" name="_unnamed2" />
+        <value type="Custom" name="_unnamed3" />
+        <value type="Pad" name="_unnamed4" length="2" />
+        <value type="Pad" name="_unnamed5" length="8" />
+      </struct>
+      <value type="Block" name="controls" struct="ScenarioControl" maxelements="100" />
+      <struct name="ScenarioControlPalette">
+        <value type="TagReference" name="name" blockname="true" extensions="ctrl" />
+        <value type="Pad" name="_unnamed" length="32" />
+      </struct>
+      <value type="Block" name="control palette" struct="ScenarioControlPalette" maxelements="100" />
+      <struct name="ScenarioLightFixture">
+        <value type="ShortBlockIndex" name="type" block="ScenarioLightFixturePalette" />
+        <value type="ShortBlockIndex" name="name" block="ScenarioObjectNames" />
+        <value type="Flags" name="not placed" length="2">
+          <bit index="0" name="automatically" />
+          <bit index="1" name="on easy" />
+          <bit index="2" name="on normal" />
+          <bit index="3" name="on hard" />
+        </value>
+        <value type="ShortInteger" name="desired permutation">
+          <tooltip>If non-zero, will try to use model permutations with names that end in that number, e.g. 7 would pick "body-7" and "head-7".</tooltip>
+        </value>
+        <value type="RealPoint3D" name="position" />
+        <value type="RealEulerAngles3D" name="rotation" />
+        <value type="Pad" name="_unnamed" length="8" />
+        <value type="ShortBlockIndex" name="power group" block="DeviceGroup" />
+        <value type="ShortBlockIndex" name="position group" block="DeviceGroup" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="initially open 1.0" />
+          <bit index="1" name="initially off 0.0" />
+          <bit index="2" name="can change only once" />
+          <bit index="3" name="position reversed" />
+          <bit index="4" name="not usable from any side" />
+        </value>
+        <value type="RealRGBColor" name="color" />
+        <value type="Real" name="intensity" />
+        <value type="Angle" name="falloff angle" />
+        <value type="Angle" name="cutoff angle" />
+        <value type="Pad" name="_unnamed2" length="16" />
+      </struct>
+      <value type="Block" name="light fixtures" struct="ScenarioLightFixture" maxelements="500" />
+      <struct name="ScenarioLightFixturePalette">
+        <value type="TagReference" name="name" blockname="true" extensions="lifi" />
+        <value type="Pad" name="_unnamed" length="32" />
+      </struct>
+      <value type="Block" name="light fixtures palette" struct="ScenarioLightFixturePalette" maxelements="100" />
+      <struct name="ScenarioSoundScenery">
+        <value type="ShortBlockIndex" name="type" block="ScenarioSoundSceneryPalette" />
+        <value type="ShortBlockIndex" name="name" block="ScenarioObjectNames" />
+        <value type="Flags" name="not placed" length="2">
+          <bit index="0" name="automatically" />
+          <bit index="1" name="on easy" />
+          <bit index="2" name="on normal" />
+          <bit index="3" name="on hard" />
+        </value>
+        <value type="ShortInteger" name="desired permutation">
+          <tooltip>If non-zero, will try to use model permutations with names that end in that number, e.g. 7 would pick "body-7" and "head-7".</tooltip>
+        </value>
+        <value type="RealPoint3D" name="position" />
+        <value type="RealEulerAngles3D" name="rotation" />
+        <value type="Pad" name="_unnamed" length="8" />
+      </struct>
+      <value type="Block" name="sound scenery" struct="ScenarioSoundScenery" maxelements="256" />
+      <struct name="ScenarioSoundSceneryPalette">
+        <value type="TagReference" name="name" blockname="true" extensions="ssce" />
+        <value type="Pad" name="_unnamed" length="32" />
+      </struct>
+      <value type="Block" name="sound scenery palette" struct="ScenarioSoundSceneryPalette" maxelements="100" />
+      <value type="Pad" name="_unnamed4" length="84" />
+      <struct name="ScenarioProfiles">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="RealFraction" name="starting health modifier" />
+        <value type="RealFraction" name="starting shield modifier" />
+        <value type="TagReference" name="primary weapon" extensions="weap" />
+        <value type="ShortInteger" name="rounds loaded" />
+        <value type="ShortInteger" name="rounds total" />
+        <value type="TagReference" name="secondary weapon" extensions="weap" />
+        <value type="ShortInteger" name="rounds loaded2" />
+        <value type="ShortInteger" name="rounds total2" />
+        <value type="CharInteger" name="starting fragmentation grenade count" />
+        <value type="CharInteger" name="starting plasma grenade count" />
+        <value type="CharInteger" name="starting unknown grenade count" />
+        <value type="CharInteger" name="starting unknown grenade count2" />
+        <value type="Pad" name="_unnamed" length="20" />
+      </struct>
+      <value type="Block" name="player starting profile" struct="ScenarioProfiles" maxelements="256" />
+      <struct name="ScenarioPlayers">
+        <value type="RealPoint3D" name="position" />
+        <value type="Angle" name="facing" />
+        <value type="ShortInteger" name="team index" />
+        <value type="ShortInteger" name="bsp index" />
+        <value type="Enum" name="type 0">
+          <item value="0" name="none" />
+          <item value="1" name="ctf" />
+          <item value="2" name="slayer" />
+          <item value="3" name="oddball" />
+          <item value="4" name="king of the hill" />
+          <item value="5" name="race" />
+          <item value="6" name="terminator" />
+          <item value="7" name="stub" />
+          <item value="8" name="ignored1" />
+          <item value="9" name="ignored2" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="all games" />
+          <item value="13" name="all except ctf" />
+          <item value="14" name="all except race &amp; ctf" />
+        </value>
+        <value type="Enum" name="type 1">
+          <item value="0" name="none" />
+          <item value="1" name="ctf" />
+          <item value="2" name="slayer" />
+          <item value="3" name="oddball" />
+          <item value="4" name="king of the hill" />
+          <item value="5" name="race" />
+          <item value="6" name="terminator" />
+          <item value="7" name="stub" />
+          <item value="8" name="ignored1" />
+          <item value="9" name="ignored2" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="all games" />
+          <item value="13" name="all except ctf" />
+          <item value="14" name="all except race &amp; ctf" />
+        </value>
+        <value type="Enum" name="type 2">
+          <item value="0" name="none" />
+          <item value="1" name="ctf" />
+          <item value="2" name="slayer" />
+          <item value="3" name="oddball" />
+          <item value="4" name="king of the hill" />
+          <item value="5" name="race" />
+          <item value="6" name="terminator" />
+          <item value="7" name="stub" />
+          <item value="8" name="ignored1" />
+          <item value="9" name="ignored2" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="all games" />
+          <item value="13" name="all except ctf" />
+          <item value="14" name="all except race &amp; ctf" />
+        </value>
+        <value type="Enum" name="type 3">
+          <item value="0" name="none" />
+          <item value="1" name="ctf" />
+          <item value="2" name="slayer" />
+          <item value="3" name="oddball" />
+          <item value="4" name="king of the hill" />
+          <item value="5" name="race" />
+          <item value="6" name="terminator" />
+          <item value="7" name="stub" />
+          <item value="8" name="ignored1" />
+          <item value="9" name="ignored2" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="all games" />
+          <item value="13" name="all except ctf" />
+          <item value="14" name="all except race &amp; ctf" />
+        </value>
+        <value type="Pad" name="_unnamed" length="24" />
+      </struct>
+      <value type="Block" name="player starting locations" struct="ScenarioPlayers" maxelements="256" />
+      <struct name="ScenarioTriggerVolume">
+        <value type="Skip" name="_unnamed" length="4" />
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="RealPoint3D" name="min" />
+        <value type="RealPoint3D" name="max" />
+
+        <value type="RealPoint3D" name="trigvol1" />
+        <value type="RealPoint3D" name="trigvol2" />
+        <value type="RealPoint3D" name="trigvol3" />
+      </struct>
+      <value type="Block" name="trigger volumes" struct="ScenarioTriggerVolume" maxelements="256" />
+      <struct name="RecordedAnimation">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="CharInteger" name="version" />
+        <value type="CharInteger" name="raw animation data" />
+        <value type="CharInteger" name="unit control data version" />
+        <value type="Pad" name="_unnamed" length="1" />
+        <value type="ShortInteger" name="length of animation" />
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="4" />
+        <value type="Data" name="recorded animation event stream" />
+      </struct>
+      <value type="Block" name="recorded animations" struct="RecordedAnimation" maxelements="1024" />
+      <struct name="ScenarioNetgameFlags">
+        <value type="RealPoint3D" name="position" />
+        <value type="Angle" name="facing" />
+        <value type="Enum" name="type">
+          <item value="0" name="ctf" />
+          <item value="1" name="ctf" />
+          <item value="2" name="oddball" />
+          <item value="3" name="race" />
+          <item value="4" name="race" />
+          <item value="5" name="vegas" />
+          <item value="6" name="teleport from" />
+          <item value="7" name="teleport to" />
+          <item value="8" name="hill" />
+        </value>
+        <value type="ShortInteger" name="team index" />
+        <value type="TagReference" name="weapon group" extensions="itmc" />
+        <value type="Pad" name="_unnamed" length="112" />
+      </struct>
+      <value type="Block" name="netgame flags" struct="ScenarioNetgameFlags" maxelements="200" />
+      <struct name="ScenarioNetgameEquipment">
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="levitate" />
+        </value>
+        <value type="Enum" name="type 0">
+          <item value="0" name="none" />
+          <item value="1" name="ctf" />
+          <item value="2" name="slayer" />
+          <item value="3" name="oddball" />
+          <item value="4" name="king of the hill" />
+          <item value="5" name="race" />
+          <item value="6" name="terminator" />
+          <item value="7" name="stub" />
+          <item value="8" name="ignored1" />
+          <item value="9" name="ignored2" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="all games" />
+          <item value="13" name="all except ctf" />
+          <item value="14" name="all except race &amp; ctf" />
+        </value>
+        <value type="Enum" name="type 1">
+          <item value="0" name="none" />
+          <item value="1" name="ctf" />
+          <item value="2" name="slayer" />
+          <item value="3" name="oddball" />
+          <item value="4" name="king of the hill" />
+          <item value="5" name="race" />
+          <item value="6" name="terminator" />
+          <item value="7" name="stub" />
+          <item value="8" name="ignored1" />
+          <item value="9" name="ignored2" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="all games" />
+          <item value="13" name="all except ctf" />
+          <item value="14" name="all except race &amp; ctf" />
+        </value>
+        <value type="Enum" name="type 2">
+          <item value="0" name="none" />
+          <item value="1" name="ctf" />
+          <item value="2" name="slayer" />
+          <item value="3" name="oddball" />
+          <item value="4" name="king of the hill" />
+          <item value="5" name="race" />
+          <item value="6" name="terminator" />
+          <item value="7" name="stub" />
+          <item value="8" name="ignored1" />
+          <item value="9" name="ignored2" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="all games" />
+          <item value="13" name="all except ctf" />
+          <item value="14" name="all except race &amp; ctf" />
+        </value>
+        <value type="Enum" name="type 3">
+          <item value="0" name="none" />
+          <item value="1" name="ctf" />
+          <item value="2" name="slayer" />
+          <item value="3" name="oddball" />
+          <item value="4" name="king of the hill" />
+          <item value="5" name="race" />
+          <item value="6" name="terminator" />
+          <item value="7" name="stub" />
+          <item value="8" name="ignored1" />
+          <item value="9" name="ignored2" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="all games" />
+          <item value="13" name="all except ctf" />
+          <item value="14" name="all except race &amp; ctf" />
+        </value>
+        <value type="ShortInteger" name="team index" />
+        <value type="ShortInteger" name="spawn time in second" />
+        <value type="Pad" name="_unnamed" length="48" />
+        <value type="RealPoint3D" name="position" />
+        <value type="Angle" name="facing" />
+        <value type="TagReference" name="item collection" extensions="itmc" />
+        <value type="Pad" name="_unnamed2" length="48" />
+      </struct>
+      <value type="Block" name="netgame equipment" struct="ScenarioNetgameEquipment" maxelements="200" />
+      <struct name="ScenarioStartingEquipment">
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="no grenades" />
+          <bit index="1" name="plasma grenades" />
+        </value>
+        <value type="Enum" name="type 0">
+          <item value="0" name="none" />
+          <item value="1" name="ctf" />
+          <item value="2" name="slayer" />
+          <item value="3" name="oddball" />
+          <item value="4" name="king of the hill" />
+          <item value="5" name="race" />
+          <item value="6" name="terminator" />
+          <item value="7" name="stub" />
+          <item value="8" name="ignored1" />
+          <item value="9" name="ignored2" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="all games" />
+          <item value="13" name="all except ctf" />
+          <item value="14" name="all except race &amp; ctf" />
+        </value>
+        <value type="Enum" name="type 1">
+          <item value="0" name="none" />
+          <item value="1" name="ctf" />
+          <item value="2" name="slayer" />
+          <item value="3" name="oddball" />
+          <item value="4" name="king of the hill" />
+          <item value="5" name="race" />
+          <item value="6" name="terminator" />
+          <item value="7" name="stub" />
+          <item value="8" name="ignored1" />
+          <item value="9" name="ignored2" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="all games" />
+          <item value="13" name="all except ctf" />
+          <item value="14" name="all except race &amp; ctf" />
+        </value>
+        <value type="Enum" name="type 2">
+          <item value="0" name="none" />
+          <item value="1" name="ctf" />
+          <item value="2" name="slayer" />
+          <item value="3" name="oddball" />
+          <item value="4" name="king of the hill" />
+          <item value="5" name="race" />
+          <item value="6" name="terminator" />
+          <item value="7" name="stub" />
+          <item value="8" name="ignored1" />
+          <item value="9" name="ignored2" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="all games" />
+          <item value="13" name="all except ctf" />
+          <item value="14" name="all except race &amp; ctf" />
+        </value>
+        <value type="Enum" name="type 3">
+          <item value="0" name="none" />
+          <item value="1" name="ctf" />
+          <item value="2" name="slayer" />
+          <item value="3" name="oddball" />
+          <item value="4" name="king of the hill" />
+          <item value="5" name="race" />
+          <item value="6" name="terminator" />
+          <item value="7" name="stub" />
+          <item value="8" name="ignored1" />
+          <item value="9" name="ignored2" />
+          <item value="10" name="ignored3" />
+          <item value="11" name="ignored4" />
+          <item value="12" name="all games" />
+          <item value="13" name="all except ctf" />
+          <item value="14" name="all except race &amp; ctf" />
+        </value>
+        <value type="Pad" name="_unnamed" length="48" />
+        <value type="TagReference" name="item collection 1" extensions="itmc" />
+        <value type="TagReference" name="item collection 2" extensions="itmc" />
+        <value type="TagReference" name="item collection 3" extensions="itmc" />
+        <value type="TagReference" name="item collection 4" extensions="itmc" />
+        <value type="TagReference" name="item collection 5" extensions="itmc" />
+        <value type="TagReference" name="item collection 6" extensions="itmc" />
+        <value type="Pad" name="_unnamed2" length="48" />
+      </struct>
+      <value type="Block" name="starting equipment" struct="ScenarioStartingEquipment" maxelements="200" />
+      <struct name="ScenarioBspSwitchTriggerVolume">
+        <value type="ShortBlockIndex" name="trigger volume" block="ScenarioTriggerVolume" />
+        <value type="ShortInteger" name="source" />
+        <value type="ShortInteger" name="destination" />
+        <value type="Pad" name="_unnamed" length="2" />
+      </struct>
+      <value type="Block" name="bsp switch trigger volumes" struct="ScenarioBspSwitchTriggerVolume" maxelements="256" />
+      <struct name="ScenarioDecals">
+        <value type="ShortBlockIndex" name="decal type" blockname="true" block="ScenarioDecalPalette" />
+        <value type="CharInteger" name="ya" />
+        <value type="CharInteger" name="pitc" />
+        <value type="RealPoint3D" name="position" />
+      </struct>
+      <value type="Block" name="decals" struct="ScenarioDecals" maxelements="65536" />
+      <struct name="ScenarioDecalPalette">
+        <value type="TagReference" name="reference" blockname="true" extensions="deca" />
+      </struct>
+      <value type="Block" name="decal palette" struct="ScenarioDecalPalette" maxelements="128" />
+      <struct name="ScenarioDetailObjectCollectionPalette">
+        <value type="TagReference" name="name" blockname="true" extensions="dobc" />
+        <value type="Pad" name="_unnamed" length="32" />
+      </struct>
+      <value type="Block" name="detail object collection palette" struct="ScenarioDetailObjectCollectionPalette" maxelements="32" />
+      <value type="Pad" name="_unnamed5" length="84" />
+      <struct name="ActorPalette">
+        <value type="TagReference" name="reference" blockname="true" extensions="actv" />
+      </struct>
+      <value type="Block" name="actor palette" struct="ActorPalette" maxelements="64" />
+      <struct name="Encounter">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="not initially created" />
+          <bit index="1" name="respawn enabled" />
+          <bit index="2" name="initially blind" />
+          <bit index="3" name="initially deaf" />
+          <bit index="4" name="initially braindead" />
+          <bit index="5" name="3d firing positions" />
+          <bit index="6" name="manual bsp index specified" />
+        </value>
+        <value type="Enum" name="team index">
+          <item value="0" name="0  default by unit" />
+          <item value="1" name="1  player" />
+          <item value="2" name="2  human" />
+          <item value="3" name="3  covenant" />
+          <item value="4" name="4  flood" />
+          <item value="5" name="5  sentinel" />
+          <item value="6" name="6  unused6" />
+          <item value="7" name="7  unused7" />
+          <item value="8" name="8  unused8" />
+          <item value="9" name="9  unused9" />
+        </value>
+        <value type="Skip" name="_unnamed" length="2" />
+        <value type="Enum" name="search behavior">
+          <item value="0" name="normal" />
+          <item value="1" name="never" />
+          <item value="2" name="tenacious" />
+        </value>
+        <value type="ShortInteger" name="manual bsp index">
+          <tooltip>Structure bsp index that this encounter belongs to... ignored unless 'manual bsp index' flag is checked. if this flag is not checked, the structure bsp is found automatically (may fail in areas of overlapping geometry).</tooltip>
+        </value>
+        <value type="RealBounds" name="respawn delay">
+          <tooltip>Delay between respawning actors in this encounter.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="76" />
+        <struct name="Squads">
+          <value type="FixedLengthString" name="name" />
+          <value type="ShortBlockIndex" name="actor type" block="ActorPalette" />
+          <value type="ShortBlockIndex" name="platoon" block="Platoons" />
+          <value type="Enum" name="initial state">
+            <tooltip>State that this actor starts in.</tooltip>
+            <item value="0" name="none" />
+            <item value="1" name="sleeping" />
+            <item value="2" name="alert" />
+            <item value="3" name="moving" />
+            <item value="4" name="moving" />
+            <item value="5" name="moving" />
+            <item value="6" name="moving" />
+            <item value="7" name="moving" />
+            <item value="8" name="guarding" />
+            <item value="9" name="guarding at guard position" />
+            <item value="10" name="searching" />
+            <item value="11" name="fleeing" />
+          </value>
+          <value type="Enum" name="return state">
+            <tooltip>State that this actor will return to when it has nothing to do.</tooltip>
+            <item value="0" name="none" />
+            <item value="1" name="sleeping" />
+            <item value="2" name="alert" />
+            <item value="3" name="moving" />
+            <item value="4" name="moving" />
+            <item value="5" name="moving" />
+            <item value="6" name="moving" />
+            <item value="7" name="moving" />
+            <item value="8" name="guarding" />
+            <item value="9" name="guarding at guard position" />
+            <item value="10" name="searching" />
+            <item value="11" name="fleeing" />
+          </value>
+          <value type="Flags" name="flags" length="4">
+            <bit index="0" name="unused" />
+            <bit index="1" name="never search" />
+            <bit index="2" name="start timer immediately" />
+            <bit index="3" name="no time" />
+            <bit index="4" name="magic sight after timer" />
+            <bit index="5" name="automatic migration" />
+          </value>
+          <value type="Enum" name="unique leader type">
+            <tooltip>What kind of leader this squad has (e.g. a sarge for marines) - 'normal' is based on the size of the squad, 'random' always creates a leader, or you can specify an individual type.</tooltip>
+            <item value="0" name="normal" />
+            <item value="1" name="none" />
+            <item value="2" name="random" />
+            <item value="3" name="sgt johnson" />
+            <item value="4" name="sgt lehto" />
+          </value>
+          <value type="Pad" name="_unnamed" length="2" />
+          <value type="Pad" name="_unnamed2" length="28" />
+          <value type="Pad" name="_unnamed3" length="2" />
+          <value type="ShortBlockIndex" name="maneuver to squad" block="Squads" />
+          <value type="Real" name="squad delay time" />
+          <value type="Flags" name="attacking" length="4">
+            <bit index="0" name="A" />
+            <bit index="1" name="B" />
+            <bit index="2" name="C" />
+            <bit index="3" name="D" />
+            <bit index="4" name="E" />
+            <bit index="5" name="F" />
+            <bit index="6" name="G" />
+            <bit index="7" name="H" />
+            <bit index="8" name="I" />
+            <bit index="9" name="J" />
+            <bit index="10" name="K" />
+            <bit index="11" name="L" />
+            <bit index="12" name="M" />
+            <bit index="13" name="N" />
+            <bit index="14" name="O" />
+            <bit index="15" name="P" />
+            <bit index="16" name="Q" />
+            <bit index="17" name="R" />
+            <bit index="18" name="S" />
+            <bit index="19" name="T" />
+            <bit index="20" name="U" />
+            <bit index="21" name="V" />
+            <bit index="22" name="W" />
+            <bit index="23" name="X" />
+            <bit index="24" name="Y" />
+            <bit index="25" name="Z" />
+          </value>
+          <value type="Flags" name="attacking search" length="4">
+            <bit index="0" name="A" />
+            <bit index="1" name="B" />
+            <bit index="2" name="C" />
+            <bit index="3" name="D" />
+            <bit index="4" name="E" />
+            <bit index="5" name="F" />
+            <bit index="6" name="G" />
+            <bit index="7" name="H" />
+            <bit index="8" name="I" />
+            <bit index="9" name="J" />
+            <bit index="10" name="K" />
+            <bit index="11" name="L" />
+            <bit index="12" name="M" />
+            <bit index="13" name="N" />
+            <bit index="14" name="O" />
+            <bit index="15" name="P" />
+            <bit index="16" name="Q" />
+            <bit index="17" name="R" />
+            <bit index="18" name="S" />
+            <bit index="19" name="T" />
+            <bit index="20" name="U" />
+            <bit index="21" name="V" />
+            <bit index="22" name="W" />
+            <bit index="23" name="X" />
+            <bit index="24" name="Y" />
+            <bit index="25" name="Z" />
+          </value>
+          <value type="Flags" name="attacking guard" length="4">
+            <bit index="0" name="A" />
+            <bit index="1" name="B" />
+            <bit index="2" name="C" />
+            <bit index="3" name="D" />
+            <bit index="4" name="E" />
+            <bit index="5" name="F" />
+            <bit index="6" name="G" />
+            <bit index="7" name="H" />
+            <bit index="8" name="I" />
+            <bit index="9" name="J" />
+            <bit index="10" name="K" />
+            <bit index="11" name="L" />
+            <bit index="12" name="M" />
+            <bit index="13" name="N" />
+            <bit index="14" name="O" />
+            <bit index="15" name="P" />
+            <bit index="16" name="Q" />
+            <bit index="17" name="R" />
+            <bit index="18" name="S" />
+            <bit index="19" name="T" />
+            <bit index="20" name="U" />
+            <bit index="21" name="V" />
+            <bit index="22" name="W" />
+            <bit index="23" name="X" />
+            <bit index="24" name="Y" />
+            <bit index="25" name="Z" />
+          </value>
+          <value type="Flags" name="defending" length="4">
+            <bit index="0" name="A" />
+            <bit index="1" name="B" />
+            <bit index="2" name="C" />
+            <bit index="3" name="D" />
+            <bit index="4" name="E" />
+            <bit index="5" name="F" />
+            <bit index="6" name="G" />
+            <bit index="7" name="H" />
+            <bit index="8" name="I" />
+            <bit index="9" name="J" />
+            <bit index="10" name="K" />
+            <bit index="11" name="L" />
+            <bit index="12" name="M" />
+            <bit index="13" name="N" />
+            <bit index="14" name="O" />
+            <bit index="15" name="P" />
+            <bit index="16" name="Q" />
+            <bit index="17" name="R" />
+            <bit index="18" name="S" />
+            <bit index="19" name="T" />
+            <bit index="20" name="U" />
+            <bit index="21" name="V" />
+            <bit index="22" name="W" />
+            <bit index="23" name="X" />
+            <bit index="24" name="Y" />
+            <bit index="25" name="Z" />
+          </value>
+          <value type="Flags" name="defending search" length="4">
+            <bit index="0" name="A" />
+            <bit index="1" name="B" />
+            <bit index="2" name="C" />
+            <bit index="3" name="D" />
+            <bit index="4" name="E" />
+            <bit index="5" name="F" />
+            <bit index="6" name="G" />
+            <bit index="7" name="H" />
+            <bit index="8" name="I" />
+            <bit index="9" name="J" />
+            <bit index="10" name="K" />
+            <bit index="11" name="L" />
+            <bit index="12" name="M" />
+            <bit index="13" name="N" />
+            <bit index="14" name="O" />
+            <bit index="15" name="P" />
+            <bit index="16" name="Q" />
+            <bit index="17" name="R" />
+            <bit index="18" name="S" />
+            <bit index="19" name="T" />
+            <bit index="20" name="U" />
+            <bit index="21" name="V" />
+            <bit index="22" name="W" />
+            <bit index="23" name="X" />
+            <bit index="24" name="Y" />
+            <bit index="25" name="Z" />
+          </value>
+          <value type="Flags" name="defending guard" length="4">
+            <bit index="0" name="A" />
+            <bit index="1" name="B" />
+            <bit index="2" name="C" />
+            <bit index="3" name="D" />
+            <bit index="4" name="E" />
+            <bit index="5" name="F" />
+            <bit index="6" name="G" />
+            <bit index="7" name="H" />
+            <bit index="8" name="I" />
+            <bit index="9" name="J" />
+            <bit index="10" name="K" />
+            <bit index="11" name="L" />
+            <bit index="12" name="M" />
+            <bit index="13" name="N" />
+            <bit index="14" name="O" />
+            <bit index="15" name="P" />
+            <bit index="16" name="Q" />
+            <bit index="17" name="R" />
+            <bit index="18" name="S" />
+            <bit index="19" name="T" />
+            <bit index="20" name="U" />
+            <bit index="21" name="V" />
+            <bit index="22" name="W" />
+            <bit index="23" name="X" />
+            <bit index="24" name="Y" />
+            <bit index="25" name="Z" />
+          </value>
+          <value type="Flags" name="pursuing" length="4">
+            <bit index="0" name="A" />
+            <bit index="1" name="B" />
+            <bit index="2" name="C" />
+            <bit index="3" name="D" />
+            <bit index="4" name="E" />
+            <bit index="5" name="F" />
+            <bit index="6" name="G" />
+            <bit index="7" name="H" />
+            <bit index="8" name="I" />
+            <bit index="9" name="J" />
+            <bit index="10" name="K" />
+            <bit index="11" name="L" />
+            <bit index="12" name="M" />
+            <bit index="13" name="N" />
+            <bit index="14" name="O" />
+            <bit index="15" name="P" />
+            <bit index="16" name="Q" />
+            <bit index="17" name="R" />
+            <bit index="18" name="S" />
+            <bit index="19" name="T" />
+            <bit index="20" name="U" />
+            <bit index="21" name="V" />
+            <bit index="22" name="W" />
+            <bit index="23" name="X" />
+            <bit index="24" name="Y" />
+            <bit index="25" name="Z" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="4" />
+          <value type="Pad" name="_unnamed5" length="8" />
+          <value type="ShortInteger" name="normal diff count">
+            <tooltip>Initial number of actors on normal difficulty.</tooltip>
+          </value>
+          <value type="ShortInteger" name="insane diff count">
+            <tooltip>Initial number of actors on insane difficulty (hard difficulty is midway between normal and insane).</tooltip>
+          </value>
+          <value type="Enum" name="major upgrade">
+            <item value="0" name="normal" />
+            <item value="1" name="few" />
+            <item value="2" name="many" />
+            <item value="3" name="none" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed6" length="2" />
+          <value type="ShortInteger" name="respawn min actors">
+            <tooltip>Minimum number of actors alive at once (will spawn instantly if less than this number).</tooltip>
+          </value>
+          <value type="ShortInteger" name="respawn max actors">
+            <tooltip>Maximum number of actors alive at once (never spawns above this number).</tooltip>
+          </value>
+          <value type="ShortInteger" name="respawn total">
+            <tooltip>Total number to respawn (zero = infinite).</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed7" length="2" />
+          <value type="RealBounds" name="respawn delay">
+            <tooltip>Delay between respawning actors in this squad.</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed8" length="48" />
+          <struct name="MovePositions">
+            <value type="RealPoint3D" name="position" />
+            <value type="Angle" name="facing" />
+            <value type="Real" name="weight" />
+            <value type="RealBounds" name="time" />
+            <value type="ShortBlockIndex" name="animation" block="AiAnimationReference" />
+            <value type="CharInteger" name="sequence ID">
+              <tooltip>Identifies this move position as belonging to a sequence, only actors whose starting locations match this sequence ID can use it (zero = no sequence).</tooltip>
+            </value>
+            <value type="Pad" name="_unnamed" length="1" />
+            <value type="Pad" name="_unnamed2" length="44" />
+            <value type="LongInteger" name="surface index" />
+          </struct>
+          <value type="Block" name="move positions" struct="MovePositions" maxelements="32" />
+          <struct name="ActorStartingLocations">
+            <value type="RealPoint3D" name="position" />
+            <value type="Angle" name="facing" />
+            <value type="Pad" name="_unnamed" length="2" />
+            <value type="CharInteger" name="sequence ID">
+              <tooltip>Which move position sequence we can use (zero = no specific sequences).</tooltip>
+            </value>
+            <value type="Flags" name="flags" length="1">
+              <bit index="0" name="required" />
+            </value>
+            <value type="Enum" name="return state">
+              <tooltip>State that this actor will return to when it has nothing to do.</tooltip>
+              <item value="0" name="none" />
+              <item value="1" name="sleeping" />
+              <item value="2" name="alert" />
+              <item value="3" name="moving" />
+              <item value="4" name="moving" />
+              <item value="5" name="moving" />
+              <item value="6" name="moving" />
+              <item value="7" name="moving" />
+              <item value="8" name="guarding" />
+              <item value="9" name="guarding at guard position" />
+              <item value="10" name="searching" />
+              <item value="11" name="fleeing" />
+            </value>
+            <value type="Enum" name="initial state">
+              <tooltip>State that this actor starts in.</tooltip>
+              <item value="0" name="none" />
+              <item value="1" name="sleeping" />
+              <item value="2" name="alert" />
+              <item value="3" name="moving" />
+              <item value="4" name="moving" />
+              <item value="5" name="moving" />
+              <item value="6" name="moving" />
+              <item value="7" name="moving" />
+              <item value="8" name="guarding" />
+              <item value="9" name="guarding at guard position" />
+              <item value="10" name="searching" />
+              <item value="11" name="fleeing" />
+            </value>
+            <value type="ShortBlockIndex" name="actor type" block="ActorPalette" />
+            <value type="ShortBlockIndex" name="command list" block="AiCommandList" />
+          </struct>
+          <value type="Block" name="starting locations" struct="ActorStartingLocations" maxelements="32" />
+          <value type="Pad" name="_unnamed9" length="12" />
+        </struct>
+        <value type="Block" name="squads" struct="Squads" maxelements="64" />
+        <struct name="Platoons">
+          <value type="FixedLengthString" name="name" blockname="true" />
+          <value type="Flags" name="flags" length="4">
+            <bit index="0" name="flee when maneuvering" />
+            <bit index="1" name="say advancing when maneuver" />
+            <bit index="2" name="start in defending state" />
+          </value>
+          <value type="Pad" name="_unnamed" length="12" />
+          <value type="Enum" name="change attackingdefending state when">
+            <item value="0" name="never" />
+            <item value="1" name=" 75% strengt" />
+            <item value="2" name=" 50% strengt" />
+            <item value="3" name=" 25% strengt" />
+            <item value="4" name="anybody dead" />
+            <item value="5" name="25% dead" />
+            <item value="6" name="50% dead" />
+            <item value="7" name="75% dead" />
+            <item value="8" name="all but one dead" />
+            <item value="9" name="all dead" />
+          </value>
+          <value type="ShortBlockIndex" name="happens to" block="Platoons" />
+          <value type="Pad" name="_unnamed2" length="4" />
+          <value type="Pad" name="_unnamed3" length="4" />
+          <value type="Enum" name="maneuver when">
+            <item value="0" name="never" />
+            <item value="1" name=" 75% strengt" />
+            <item value="2" name=" 50% strengt" />
+            <item value="3" name=" 25% strengt" />
+            <item value="4" name="anybody dead" />
+            <item value="5" name="25% dead" />
+            <item value="6" name="50% dead" />
+            <item value="7" name="75% dead" />
+            <item value="8" name="all but one dead" />
+            <item value="9" name="all dead" />
+          </value>
+          <value type="ShortBlockIndex" name="happens to2" block="Platoons" />
+          <value type="Pad" name="_unnamed4" length="4" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="64" />
+          <value type="Pad" name="_unnamed7" length="36" />
+        </struct>
+        <value type="Block" name="platoons" struct="Platoons" maxelements="32" />
+        <struct name="FiringPositions">
+          <value type="RealPoint3D" name="position" />
+          <value type="Enum" name="group index">
+            <item value="0" name="A" />
+            <item value="1" name="B" />
+            <item value="2" name="C" />
+            <item value="3" name="D" />
+            <item value="4" name="E" />
+            <item value="5" name="F" />
+            <item value="6" name="G" />
+            <item value="7" name="H" />
+            <item value="8" name="I" />
+            <item value="9" name="J" />
+            <item value="10" name="K" />
+            <item value="11" name="L" />
+            <item value="12" name="M" />
+            <item value="13" name="N" />
+            <item value="14" name="O" />
+            <item value="15" name="P" />
+            <item value="16" name="Q" />
+            <item value="17" name="R" />
+            <item value="18" name="S" />
+            <item value="19" name="T" />
+            <item value="20" name="U" />
+            <item value="21" name="V" />
+            <item value="22" name="W" />
+            <item value="23" name="X" />
+            <item value="24" name="Y" />
+            <item value="25" name="Z" />
+          </value>
+          <value type="Pad" name="_unnamed" length="10" />
+          <value type="Custom" name="_unnamed2" />
+        </struct>
+        <value type="Block" name="firing positions" struct="FiringPositions" maxelements="512" />
+        <struct name="ScenarioPlayers">
+          <value type="RealPoint3D" name="position" />
+          <value type="Angle" name="facing" />
+          <value type="ShortInteger" name="team index" />
+          <value type="ShortInteger" name="bsp index" />
+          <value type="Enum" name="type 0">
+            <item value="0" name="none" />
+            <item value="1" name="ctf" />
+            <item value="2" name="slayer" />
+            <item value="3" name="oddball" />
+            <item value="4" name="king of the hill" />
+            <item value="5" name="race" />
+            <item value="6" name="terminator" />
+            <item value="7" name="stub" />
+            <item value="8" name="ignored1" />
+            <item value="9" name="ignored2" />
+            <item value="10" name="ignored3" />
+            <item value="11" name="ignored4" />
+            <item value="12" name="all games" />
+            <item value="13" name="all except ctf" />
+            <item value="14" name="all except race &amp; ctf" />
+          </value>
+          <value type="Enum" name="type 1">
+            <item value="0" name="none" />
+            <item value="1" name="ctf" />
+            <item value="2" name="slayer" />
+            <item value="3" name="oddball" />
+            <item value="4" name="king of the hill" />
+            <item value="5" name="race" />
+            <item value="6" name="terminator" />
+            <item value="7" name="stub" />
+            <item value="8" name="ignored1" />
+            <item value="9" name="ignored2" />
+            <item value="10" name="ignored3" />
+            <item value="11" name="ignored4" />
+            <item value="12" name="all games" />
+            <item value="13" name="all except ctf" />
+            <item value="14" name="all except race &amp; ctf" />
+          </value>
+          <value type="Enum" name="type 2">
+            <item value="0" name="none" />
+            <item value="1" name="ctf" />
+            <item value="2" name="slayer" />
+            <item value="3" name="oddball" />
+            <item value="4" name="king of the hill" />
+            <item value="5" name="race" />
+            <item value="6" name="terminator" />
+            <item value="7" name="stub" />
+            <item value="8" name="ignored1" />
+            <item value="9" name="ignored2" />
+            <item value="10" name="ignored3" />
+            <item value="11" name="ignored4" />
+            <item value="12" name="all games" />
+            <item value="13" name="all except ctf" />
+            <item value="14" name="all except race &amp; ctf" />
+          </value>
+          <value type="Enum" name="type 3">
+            <item value="0" name="none" />
+            <item value="1" name="ctf" />
+            <item value="2" name="slayer" />
+            <item value="3" name="oddball" />
+            <item value="4" name="king of the hill" />
+            <item value="5" name="race" />
+            <item value="6" name="terminator" />
+            <item value="7" name="stub" />
+            <item value="8" name="ignored1" />
+            <item value="9" name="ignored2" />
+            <item value="10" name="ignored3" />
+            <item value="11" name="ignored4" />
+            <item value="12" name="all games" />
+            <item value="13" name="all except ctf" />
+            <item value="14" name="all except race &amp; ctf" />
+          </value>
+          <value type="Pad" name="_unnamed" length="24" />
+        </struct>
+        <value type="Block" name="player starting locations" struct="ScenarioPlayers" maxelements="256" />
+      </struct>
+      <value type="Block" name="encounters" struct="Encounter" maxelements="128" />
+      <struct name="AiCommandList">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="allow initiative">
+            <tooltip>Lets an actor decide to stop following its commands and attack an enemy.</tooltip>
+          </bit>
+          <bit index="1" name="allow targeting">
+            <tooltip>Lets an actor shoot at enemies while following its commands.</tooltip>
+          </bit>
+          <bit index="2" name="disable looking">
+            <tooltip>Stops an actor from turning, stopping or looking around in response to stimuli received while following its commands.</tooltip>
+          </bit>
+          <bit index="3" name="disable communication">
+            <tooltip>Stops an actor from communicating while following its commands.</tooltip>
+          </bit>
+          <bit index="4" name="disable falling damage">
+            <tooltip>Makes an actor not take any damage from falling while following its commands.</tooltip>
+          </bit>
+          <bit index="5" name="manual bsp index">
+            <tooltip>Set if the command list is manually attached to a specific bsp.</tooltip>
+          </bit>
+        </value>
+        <value type="Pad" name="_unnamed" length="8" />
+        <value type="ShortInteger" name="manual bsp index">
+          <tooltip>Structure bsp index that this encounter belongs to... ignored unless 'manual bsp index' flag is checked. if this flag is not checked, the structure bsp is found automatically (may fail in areas of overlapping geometry).</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <struct name="AiCommand">
+          <value type="Enum" name="atom type">
+            <item value="0" name="pause" />
+            <item value="1" name="go to" />
+            <item value="2" name="go to and face" />
+            <item value="3" name="move in direction" />
+            <item value="4" name="look" />
+            <item value="5" name="animation mode" />
+            <item value="6" name="crouch" />
+            <item value="7" name="shoot" />
+            <item value="8" name="grenade" />
+            <item value="9" name="vehicle" />
+            <item value="10" name="running jump" />
+            <item value="11" name="targeted jump" />
+            <item value="12" name="script" />
+            <item value="13" name="animate" />
+            <item value="14" name="recording" />
+            <item value="15" name="action" />
+            <item value="16" name="vocalize" />
+            <item value="17" name="targeting" />
+            <item value="18" name="initiative" />
+            <item value="19" name="wait" />
+            <item value="20" name="loop" />
+            <item value="21" name="die" />
+            <item value="22" name="move immediate" />
+            <item value="23" name="look random" />
+            <item value="24" name="look player" />
+            <item value="25" name="look object" />
+            <item value="26" name="set radius" />
+            <item value="27" name="teleport" />
+          </value>
+          <value type="ShortInteger" name="atom modifier" />
+          <value type="Real" name="parameter1" />
+          <value type="Real" name="parameter2" />
+          <value type="ShortBlockIndex" name="point 1" block="AiCommandPoint" />
+          <value type="ShortBlockIndex" name="point 2" block="AiCommandPoint" />
+          <value type="ShortBlockIndex" name="animation" block="AiAnimationReference" />
+          <value type="ShortBlockIndex" name="script" block="AiScriptReference" />
+          <value type="ShortBlockIndex" name="recording" block="AiRecordingReference" />
+          <value type="ShortBlockIndex" name="command" block="AiCommand" />
+          <value type="ShortBlockIndex" name="object name" block="ScenarioObjectNames" />
+          <value type="Pad" name="_unnamed" length="6" />
+        </struct>
+        <value type="Block" name="commands" struct="AiCommand" maxelements="64" />
+        <struct name="AiCommandPoint">
+          <value type="RealPoint3D" name="position" />
+          <value type="Pad" name="_unnamed" length="8" />
+        </struct>
+        <value type="Block" name="points" struct="AiCommandPoint" maxelements="64" />
+        <value type="Pad" name="_unnamed3" length="24" />
+      </struct>
+      <value type="Block" name="command lists" struct="AiCommandList" maxelements="256" />
+      <struct name="AiAnimationReference">
+        <value type="FixedLengthString" name="animation name" blockname="true" />
+        <value type="TagReference" name="animation graph" extensions="antr">
+          <tooltip>Leave this blank to use the unit's normal animation graph.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed" length="12" />
+      </struct>
+      <value type="Block" name="ai animation references" struct="AiAnimationReference" maxelements="128" />
+      <struct name="AiScriptReference">
+        <value type="FixedLengthString" name="script name" blockname="true" />
+        <value type="Pad" name="_unnamed" length="8" />
+      </struct>
+      <value type="Block" name="ai script references" struct="AiScriptReference" maxelements="128" />
+      <struct name="AiRecordingReference">
+        <value type="FixedLengthString" name="recording name" blockname="true" />
+        <value type="Pad" name="_unnamed" length="8" />
+      </struct>
+      <value type="Block" name="ai recording references" struct="AiRecordingReference" maxelements="128" />
+      <struct name="AiConversation">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="Flags" name="flags" length="2">
+          <bit index="0" name="stop if death">
+            <tooltip>This conversation will be aborted if any participant dies.</tooltip>
+          </bit>
+          <bit index="1" name="stop if damaged">
+            <tooltip>An actor will abort this conversation if they are damaged.</tooltip>
+          </bit>
+          <bit index="2" name="stop if visible enemy">
+            <tooltip>An actor will abort this conversation if they see an enemy.</tooltip>
+          </bit>
+          <bit index="3" name="stop if alerted to enemy">
+            <tooltip>An actor will abort this conversation if they suspect an enemy.</tooltip>
+          </bit>
+          <bit index="4" name="player must be visible">
+            <tooltip>This conversation cannot take place unless the participants can _see_ a nearby player.</tooltip>
+          </bit>
+          <bit index="5" name="stop other actions">
+            <tooltip>Participants stop doing whatever they were doing in order to perform this conversation.</tooltip>
+          </bit>
+          <bit index="6" name="keep trying to play">
+            <tooltip>If this conversation fails initially, it will keep testing to see when it can play.</tooltip>
+          </bit>
+          <bit index="7" name="player must be looking">
+            <tooltip>This conversation will not start until the player is looking at one of the participants.</tooltip>
+          </bit>
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Real" name="trigger distance">
+          <tooltip>Distance the player must enter before the conversation can trigger.</tooltip>
+        </value>
+        <value type="Real" name="ru">
+          <tooltip>If the 'involves player' flag is set, when triggered the conversation's participant(s) will run to within this distance of the player.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="36" />
+        <struct name="AiConversationParticipant">
+          <value type="Pad" name="_unnamed" length="2" />
+          <value type="Flags" name="flags" length="2">
+            <bit index="0" name="optional">
+              <tooltip>The conversation can continue even if nobody for this participant was found.</tooltip>
+            </bit>
+            <bit index="1" name="has alternate">
+              <tooltip>If nobody for this participant can be found, we use a participant marked as 'is alternate' instead, e.g. someone from over the radio.</tooltip>
+            </bit>
+            <bit index="2" name="is alternate">
+              <tooltip>This participant is only used if some participant in this conversation was marked as 'has alternate' could not be found.</tooltip>
+            </bit>
+          </value>
+          <value type="Enum" name="selection type">
+            <item value="0" name="friendly actor" />
+            <item value="1" name="disembodied" />
+            <item value="2" name="in players vehicle" />
+            <item value="3" name="not in a vehicle" />
+            <item value="4" name="prefer sergeant" />
+            <item value="5" name="any actor" />
+            <item value="6" name="radio unit" />
+            <item value="7" name="radio sergeant" />
+          </value>
+          <value type="Enum" name="actor type">
+            <item value="0" name="elite" />
+            <item value="1" name="jackal" />
+            <item value="2" name="grunt" />
+            <item value="3" name="hunter" />
+            <item value="4" name="engineer" />
+            <item value="5" name="assassin" />
+            <item value="6" name="player" />
+            <item value="7" name="marine" />
+            <item value="8" name="crew" />
+            <item value="9" name="combat form" />
+            <item value="10" name="infection form" />
+            <item value="11" name="carrier form" />
+            <item value="12" name="monitor" />
+            <item value="13" name="sentinel" />
+            <item value="14" name="none" />
+            <item value="15" name="mounted weapon" />
+          </value>
+          <value type="ShortBlockIndex" name="use this object" block="ScenarioObjectNames">
+            <tooltip>If a unit with this name exists, we try to pick them to start the conversation.</tooltip>
+          </value>
+          <value type="ShortBlockIndex" name="set new name" block="ScenarioObjectNames">
+            <tooltip>Once we pick a unit, we name it this.</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed2" length="12" />
+          <value type="Pad" name="_unnamed3" length="12" />
+          <value type="FixedLengthString" name="encounter name" />
+          <value type="Pad" name="_unnamed4" length="4" />
+          <value type="Pad" name="_unnamed5" length="12" />
+        </struct>
+        <value type="Block" name="participants" struct="AiConversationParticipant" maxelements="8" />
+        <struct name="AiConversationLine">
+          <value type="Flags" name="flags" length="2">
+            <bit index="0" name="addressee look at speaker" />
+            <bit index="1" name="everyone look at speaker" />
+            <bit index="2" name="everyone look at addressee" />
+            <bit index="3" name="wait after until told to advance" />
+            <bit index="4" name="wait until speaker nearby" />
+            <bit index="5" name="wait until everyone nearby" />
+          </value>
+          <value type="ShortBlockIndex" name="participant" block="AiConversationParticipant" />
+          <value type="Enum" name="addressee">
+            <item value="0" name="none" />
+            <item value="1" name="player" />
+            <item value="2" name="participant" />
+          </value>
+          <value type="ShortBlockIndex" name="addressee participant" block="AiConversationParticipant">
+            <tooltip>This field is only used if the addressee type is 'participant'.</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed" length="4" />
+          <value type="Real" name="line delay time" />
+          <value type="Pad" name="_unnamed2" length="12" />
+          <value type="TagReference" name="variant 1" extensions="snd!" />
+          <value type="TagReference" name="variant 2" extensions="snd!" />
+          <value type="TagReference" name="variant 3" extensions="snd!" />
+          <value type="TagReference" name="variant 4" extensions="snd!" />
+          <value type="TagReference" name="variant 5" extensions="snd!" />
+          <value type="TagReference" name="variant 6" extensions="snd!" />
+        </struct>
+        <value type="Block" name="lines" struct="AiConversationLine" maxelements="32" />
+        <value type="Pad" name="_unnamed3" length="12" />
+      </struct>
+      <value type="Block" name="ai conversations" struct="AiConversation" maxelements="128" />
+      <value type="Data" name="script syntax data" />
+      <value type="Data" name="script string data" />
+      <struct name="HsScripts">
+        <value type="FixedLengthString" name="name" />
+        <value type="Enum" name="script type">
+          <item value="0" name="startup" />
+          <item value="1" name="dormant" />
+          <item value="2" name="continuous" />
+          <item value="3" name="static" />
+          <item value="4" name="stub" />
+        </value>
+        <value type="Enum" name="return type">
+          <item value="0" name="unparsed" />
+          <item value="1" name="special form" />
+          <item value="2" name="function name" />
+          <item value="3" name="passthrough" />
+          <item value="4" name="void" />
+          <item value="5" name="boolean" />
+          <item value="6" name="real" />
+          <item value="7" name="short" />
+          <item value="8" name="long" />
+          <item value="9" name="string" />
+          <item value="10" name="script" />
+          <item value="11" name="trigger_volume" />
+          <item value="12" name="cutscene_flag" />
+          <item value="13" name="cutscene_camera_point" />
+          <item value="14" name="cutscene_title" />
+          <item value="15" name="cutscene_recording" />
+          <item value="16" name="device_group" />
+          <item value="17" name="ai" />
+          <item value="18" name="ai_command_list" />
+          <item value="19" name="starting_profile" />
+          <item value="20" name="conversation" />
+          <item value="21" name="navpoint" />
+          <item value="22" name="hud_message" />
+          <item value="23" name="object_list" />
+          <item value="24" name="sound" />
+          <item value="25" name="effect" />
+          <item value="26" name="damage" />
+          <item value="27" name="looping_sound" />
+          <item value="28" name="animation_graph" />
+          <item value="29" name="actor_variant" />
+          <item value="30" name="damage_effect" />
+          <item value="31" name="object_definition" />
+          <item value="32" name="game_difficulty" />
+          <item value="33" name="team" />
+          <item value="34" name="ai_default_state" />
+          <item value="35" name="actor_type" />
+          <item value="36" name="hud_corner" />
+          <item value="37" name="object" />
+          <item value="38" name="unit" />
+          <item value="39" name="vehicle" />
+          <item value="40" name="weapon" />
+          <item value="41" name="device" />
+          <item value="42" name="scenery" />
+          <item value="43" name="object_name" />
+          <item value="44" name="unit_name" />
+          <item value="45" name="vehicle_name" />
+          <item value="46" name="weapon_name" />
+          <item value="47" name="device_name" />
+          <item value="48" name="scenery_name" />
+        </value>
+        <value type="LongInteger" name="root expression index" />
+        <value type="Pad" name="_unnamed" length="52" />
+      </struct>
+      <value type="Block" name="scripts" struct="HsScripts" maxelements="512" />
+      <struct name="HsGlobals">
+        <value type="FixedLengthString" name="name" />
+        <value type="Enum" name="type">
+          <item value="0" name="unparsed" />
+          <item value="1" name="special form" />
+          <item value="2" name="function name" />
+          <item value="3" name="passthrough" />
+          <item value="4" name="void" />
+          <item value="5" name="boolean" />
+          <item value="6" name="real" />
+          <item value="7" name="short" />
+          <item value="8" name="long" />
+          <item value="9" name="string" />
+          <item value="10" name="script" />
+          <item value="11" name="trigger_volume" />
+          <item value="12" name="cutscene_flag" />
+          <item value="13" name="cutscene_camera_point" />
+          <item value="14" name="cutscene_title" />
+          <item value="15" name="cutscene_recording" />
+          <item value="16" name="device_group" />
+          <item value="17" name="ai" />
+          <item value="18" name="ai_command_list" />
+          <item value="19" name="starting_profile" />
+          <item value="20" name="conversation" />
+          <item value="21" name="navpoint" />
+          <item value="22" name="hud_message" />
+          <item value="23" name="object_list" />
+          <item value="24" name="sound" />
+          <item value="25" name="effect" />
+          <item value="26" name="damage" />
+          <item value="27" name="looping_sound" />
+          <item value="28" name="animation_graph" />
+          <item value="29" name="actor_variant" />
+          <item value="30" name="damage_effect" />
+          <item value="31" name="object_definition" />
+          <item value="32" name="game_difficulty" />
+          <item value="33" name="team" />
+          <item value="34" name="ai_default_state" />
+          <item value="35" name="actor_type" />
+          <item value="36" name="hud_corner" />
+          <item value="37" name="object" />
+          <item value="38" name="unit" />
+          <item value="39" name="vehicle" />
+          <item value="40" name="weapon" />
+          <item value="41" name="device" />
+          <item value="42" name="scenery" />
+          <item value="43" name="object_name" />
+          <item value="44" name="unit_name" />
+          <item value="45" name="vehicle_name" />
+          <item value="46" name="weapon_name" />
+          <item value="47" name="device_name" />
+          <item value="48" name="scenery_name" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="LongInteger" name="initialization expression index" />
+        <value type="Pad" name="_unnamed3" length="48" />
+      </struct>
+      <value type="Block" name="globals" struct="HsGlobals" maxelements="128" />
+      <struct name="HsReferences">
+        <value type="Pad" name="_unnamed" length="24" />
+        <value type="TagReference" name="reference" blockname="true" extensions="????" />
+      </struct>
+      <value type="Block" name="references" struct="HsReferences" maxelements="256" />
+      <struct name="HsSourceFiles">
+        <value type="FixedLengthString" name="name" />
+        <value type="Data" name="source" />
+      </struct>
+      <value type="Block" name="source files" struct="HsSourceFiles" maxelements="8" />
+      <value type="Pad" name="_unnamed6" length="24" />
+      <struct name="ScenarioCutsceneFlag">
+        <value type="Pad" name="_unnamed" length="4" />
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="RealPoint3D" name="position" />
+        <value type="RealEulerAngles2D" name="facing" />
+        <value type="Pad" name="_unnamed2" length="36" />
+      </struct>
+      <value type="Block" name="cutscene flags" struct="ScenarioCutsceneFlag" maxelements="512" />
+      <struct name="ScenarioCutsceneCameraPoint">
+        <value type="Pad" name="_unnamed" length="4" />
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="RealPoint3D" name="position" />
+        <value type="RealEulerAngles3D" name="orientation" />
+        <value type="Angle" name="field of view" />
+        <value type="Pad" name="_unnamed3" length="36" />
+      </struct>
+      <value type="Block" name="cutscene camera points" struct="ScenarioCutsceneCameraPoint" maxelements="512" />
+      <struct name="ScenarioCutsceneTitle">
+        <value type="Pad" name="_unnamed" length="4" />
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="Rectangle2D" name="text bounds on screen" />
+        <value type="ShortInteger" name="string index" />
+        <value type="Pad" name="_unnamed3" length="2" />
+        <value type="Enum" name="justification">
+          <item value="0" name="left" />
+          <item value="1" name="right" />
+          <item value="2" name="center" />
+        </value>
+        <value type="Pad" name="_unnamed4" length="2" />
+        <value type="Pad" name="_unnamed5" length="4" />
+        <value type="ARGBColor" name="text color" />
+        <value type="ARGBColor" name="shadow color" />
+        <value type="Real" name="fade in time seconds" />
+        <value type="Real" name="up time seconds" />
+        <value type="Real" name="fade out time seconds" />
+        <value type="Pad" name="_unnamed6" length="16" />
+      </struct>
+      <value type="Block" name="cutscene titles" struct="ScenarioCutsceneTitle" maxelements="64" />
+      <value type="Pad" name="_unnamed7" length="108" />
+      <value type="TagReference" name="custom object names" extensions="ustr" />
+      <value type="TagReference" name="ingame help text" extensions="ustr" />
+      <value type="TagReference" name="hud messages" extensions="hmt " />
+      <struct name="ScenarioStructureBsps">
+        <value type="Pad" name="_unnamed" length="16" />
+        <value type="TagReference" name="structure bsp" blockname="true" extensions="sbsp" />
+      </struct>
+      <value type="Block" name="structure bsps" struct="ScenarioStructureBsps" maxelements="16" />
+    </struct>
+  </plugin>
+</xml>

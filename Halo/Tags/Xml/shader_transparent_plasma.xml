@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="spla" parenttype="shdr">ShaderTransparentPlasma</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="ShaderTransparentPlasma">
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Pad" name="_unnamed2" length="2" />
+      <value type="Enum" name="intensity source">
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Pad" name="_unnamed3" length="2" />
+      <value type="Real" name="intensity exponent">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Enum" name="offset source">
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Pad" name="_unnamed4" length="2" />
+      <value type="Real" name="offset amount" />
+      <value type="Real" name="offset exponent">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed5" length="32" />
+      <value type="RealFraction" name="perpendicular brightness" />
+      <value type="RealRGBColor" name="perpendicular tint color" />
+      <value type="RealFraction" name="parallel brightness" />
+      <value type="RealRGBColor" name="parallel tint color" />
+      <value type="Enum" name="tint color source">
+        <tooltip>Modulates perpendicular and parallel colors above.</tooltip>
+        <item value="0" name="none" />
+        <item value="1" name="A" />
+        <item value="2" name="B" />
+        <item value="3" name="C" />
+        <item value="4" name="D" />
+      </value>
+      <value type="Pad" name="_unnamed6" length="2" />
+      <value type="Pad" name="_unnamed7" length="32" />
+      <value type="Pad" name="_unnamed8" length="2" />
+      <value type="Pad" name="_unnamed9" length="2" />
+      <value type="Pad" name="_unnamed10" length="16" />
+      <value type="Pad" name="_unnamed11" length="4" />
+      <value type="Pad" name="_unnamed12" length="4" />
+      <value type="Real" name="primary animation period" />
+      <value type="RealVector3D" name="primary animation direction" />
+      <value type="Real" name="primary noise map scale" />
+      <value type="TagReference" name="primary noise map" extensions="bitm" />
+      <value type="Pad" name="_unnamed13" length="32" />
+      <value type="Pad" name="_unnamed14" length="4" />
+      <value type="Real" name="secondary animation period" />
+      <value type="RealVector3D" name="secondary animation direction" />
+      <value type="Real" name="secondary noise map scale" />
+      <value type="TagReference" name="secondary noise map" extensions="bitm" />
+      <value type="Pad" name="_unnamed15" length="32" />
+    </struct>
+  </plugin>
+</xml>

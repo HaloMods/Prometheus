@@ -1,0 +1,33 @@
+<xml>
+  <name type="devi" parenttype="obje">Device</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="DeviceBlock">
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="position loops" />
+        <bit index="1" name="(unused)" />
+        <bit index="2" name="allow interpolation" />
+      </value>
+      <value type="Real" name="power transition time" disabled="false" unit="seconds" />
+      <value type="Real" name="power acceleration time" disabled="false" unit="seconds" />
+      <value type="Real" name="position transition time" disabled="false" unit="seconds" />
+      <value type="Real" name="position acceleration time" disabled="false" unit="seconds" />
+      <value type="Real" name="depowered position transition time" disabled="false" unit="seconds" />
+      <value type="Real" name="depowered position acceleration time" disabled="false" unit="seconds" />
+      <value type="Flags" name="lightmap flags" length="2" disabled="false">
+        <bit index="0" name="don't use in lightmap" />
+        <bit index="1" name="don't use in lightprobe" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="TagReference" name="open up" disabled="false" extensions="snd!|effe" />
+      <value type="TagReference" name="close down" disabled="false" extensions="snd!|effe" />
+      <value type="TagReference" name="opened" disabled="false" extensions="snd!|effe" />
+      <value type="TagReference" name="closed" disabled="false" extensions="snd!|effe" />
+      <value type="TagReference" name="depowered" disabled="false" extensions="snd!|effe" />
+      <value type="TagReference" name="repowered" disabled="false" extensions="snd!|effe" />
+      <value type="Real" name="delay time" disabled="false" unit="seconds" />
+      <value type="TagReference" name="delay effect" disabled="false" extensions="snd!|effe" />
+      <value type="Real" name="automatic activation radius" disabled="false" unit="world units" />
+    </struct>
+  </plugin>
+</xml>

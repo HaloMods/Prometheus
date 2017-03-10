@@ -1,0 +1,58 @@
+<xml>
+  <name type="clwd" parenttype="????">Cloth</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ClothPropertiesBlock">
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="Doesn't use wind" />
+        <bit index="1" name="Uses grid attach top" />
+      </value>
+      <value type="StringId" name="marker attachment name" disabled="false" />
+      <value type="TagReference" name="Shader" disabled="false" extensions="shad" />
+      <value type="ShortInteger" name="grid x dimension" disabled="false" />
+      <value type="ShortInteger" name="grid y dimension" disabled="false" />
+      <value type="Real" name="grid spacing x" disabled="false" />
+      <value type="Real" name="grid spacing y" disabled="false" />
+      <value type="Enum" name="Integration type" length="2" disabled="true">
+        <item value="0" name="verlet" />
+      </value>
+      <value type="ShortInteger" name="Number iterations" disabled="false">
+        <tooltip>[1-8] sug 1</tooltip>
+      </value>
+      <value type="Real" name="weight" disabled="false">
+        <tooltip>[-10.0 - 10.0] sug 1.0</tooltip>
+      </value>
+      <value type="Real" name="drag" disabled="false">
+        <tooltip>[0.0 - 0.5] sug 0.07</tooltip>
+      </value>
+      <value type="Real" name="wind_scale" disabled="false">
+        <tooltip>[0.0 - 3.0] sug 1.0</tooltip>
+      </value>
+      <value type="Real" name="wind_flappiness_scale" disabled="false">
+        <tooltip>[0.0 - 1.0] sug 0.75</tooltip>
+      </value>
+      <value type="Real" name="longest_rod" disabled="false">
+        <tooltip>[1.0 - 10.0] sug 3.5</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed0" length="24" />
+      <struct name="ClothVerticesBlock">
+        <value type="RealPoint3d" name="initial position" disabled="true" />
+        <value type="RealVector2d" name="uv" disabled="true" />
+      </struct>
+      <value type="Block" name="vertices" disabled="true" struct="ClothVerticesBlock" maxelements="128" />
+      <struct name="ClothIndicesBlock">
+        <value type="ShortInteger" name="index" disabled="true" />
+      </struct>
+      <value type="Block" name="indices" disabled="true" struct="ClothIndicesBlock" maxelements="768" />
+      <value type="Block" name="strip indices" disabled="true" struct="ClothIndicesBlock" maxelements="768" />
+      <struct name="ClothLinksBlock">
+        <value type="LongInteger" name="attachment bits" disabled="true" />
+        <value type="ShortInteger" name="index1" disabled="true" />
+        <value type="ShortInteger" name="index2" disabled="true" />
+        <value type="Real" name="default_distance" disabled="true" />
+        <value type="Real" name="damping_multiplier" disabled="true" />
+      </struct>
+      <value type="Block" name="links" disabled="true" struct="ClothLinksBlock" maxelements="640" />
+    </struct>
+  </plugin>
+</xml>

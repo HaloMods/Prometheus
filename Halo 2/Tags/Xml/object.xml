@@ -1,0 +1,218 @@
+<xml>
+  <name type="obje" parenttype="????">Object</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ObjectBlock">
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Flags" name="flags" length="2" disabled="false">
+        <bit index="0" name="does not cast shadow" />
+        <bit index="1" name="search cardinal direction lightmaps on failure" />
+        <bit index="2" name="unused" />
+        <bit index="3" name="not a pathfinding obstacle" />
+        <bit index="4" name="extension of parent">
+          <tooltip>object passes all function values to parent and uses parent's markers</tooltip>
+        </bit>
+        <bit index="5" name="does not cause collision damage" />
+        <bit index="6" name="early mover" />
+        <bit index="7" name="early mover localized physics" />
+        <bit index="8" name="use static massive lightmap sample">
+          <tooltip>cast a ton of rays once and store the results for lighting</tooltip>
+        </bit>
+        <bit index="9" name="object scales attachments" />
+        <bit index="10" name="inherits player's appearance" />
+        <bit index="11" name="dead bipeds can't localize" />
+        <bit index="12" name="attach to clusters by dynamic sphere">
+          <tooltip>use this for the mac gun on spacestation</tooltip>
+        </bit>
+        <bit index="13" name="Effects created by this object do not spawn objects in multiplayer." />
+      </value>
+      <value type="Real" name="bounding radius" disabled="false" unit="world units" />
+      <value type="RealPoint3d" name="bounding offset" disabled="false" />
+      <value type="Real" name="acceleration scale" disabled="false" unit="[0,+inf]">
+        <tooltip>marine 1.0, grunt 1.4, elite 0.9, hunter 0.5, etc.</tooltip>
+      </value>
+      <value type="Enum" name="lightmap shadow mode" length="2" disabled="false">
+        <item value="0" name="default" />
+        <item value="1" name="never" />
+        <item value="2" name="always" />
+      </value>
+      <value type="Enum" name="sweetener size" length="1" disabled="false">
+        <item value="0" name="small" />
+        <item value="1" name="medium" />
+        <item value="2" name="large" />
+      </value>
+      <value type="Pad" name="_unnamed1" length="1" />
+      <value type="Pad" name="_unnamed2" length="4" />
+      <value type="Real" name="dynamic light sphere radius" disabled="false">
+        <tooltip>sphere to use for dynamic lights and shadows. only used if not 0</tooltip>
+      </value>
+      <value type="RealPoint3d" name="dynamic light sphere offset" disabled="false">
+        <tooltip>only used if radius not 0</tooltip>
+      </value>
+      <value type="StringId" name="default model variant" disabled="false" />
+      <value type="TagReference" name="model" disabled="false" extensions="hlmt" />
+      <value type="TagReference" name="crate object" disabled="false" extensions="bloc" />
+      <value type="TagReference" name="modifier shader" disabled="false" extensions="shad" />
+      <value type="TagReference" name="creation effect" disabled="false" extensions="effe" />
+      <value type="TagReference" name="material effects" disabled="false" extensions="foot" />
+      <struct name="ObjectAiPropertiesBlock">
+        <value type="Flags" name="ai flags" length="4" disabled="false">
+          <bit index="0" name="detroyable cover" />
+          <bit index="1" name="pathfinding ignore when dead" />
+          <bit index="2" name="dynamic cover" />
+        </value>
+        <value type="StringId" name="ai type name" disabled="false">
+          <tooltip>used for combat dialogue, etc.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="4" />
+        <value type="Enum" name="ai size" length="2" disabled="false">
+          <item value="0" name="default" />
+          <item value="1" name="tiny" />
+          <item value="2" name="small" />
+          <item value="3" name="medium" />
+          <item value="4" name="large" />
+          <item value="5" name="huge" />
+          <item value="6" name="immobile" />
+        </value>
+        <value type="Enum" name="leap jump speed" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="down" />
+          <item value="2" name="step" />
+          <item value="3" name="crouch" />
+          <item value="4" name="stand" />
+          <item value="5" name="storey" />
+          <item value="6" name="tower" />
+          <item value="7" name="infinite" />
+        </value>
+      </struct>
+      <value type="Block" name="ai properties" disabled="false" struct="ObjectAiPropertiesBlock" maxelements="1" />
+      <struct name="ObjectFunctionBlock">
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="invert">
+            <tooltip>result of function is one minus actual result</tooltip>
+          </bit>
+          <bit index="1" name="mapping does not controls active">
+            <tooltip>the curve mapping can make the function active/inactive</tooltip>
+          </bit>
+          <bit index="2" name="always active">
+            <tooltip>function does not deactivate when at or below lower bound</tooltip>
+          </bit>
+          <bit index="3" name="random time offset">
+            <tooltip>function offsets periodic function input by random value between 0 and 1</tooltip>
+          </bit>
+        </value>
+        <value type="StringId" name="import name" disabled="false" />
+        <value type="StringId" name="export name" disabled="false" />
+        <value type="StringId" name="turn off with" disabled="false">
+          <tooltip>if the specified function is off, so is this function</tooltip>
+        </value>
+        <value type="Real" name="min value" disabled="false">
+          <tooltip>function must exceed this value (after mapping) to be active 0. means do nothing</tooltip>
+        </value>
+        <struct name="ByteBlock">
+          <value type="CharInteger" name="Value" disabled="false" />
+        </struct>
+        <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="StringId" name="scale by" disabled="false" />
+      </struct>
+      <value type="Block" name="functions" disabled="false" struct="ObjectFunctionBlock" maxelements="256" />
+      <value type="Real" name="Apply collision damage scale" disabled="false">
+        <tooltip>0 means 1.  1 is standard scale.  Some things may want to apply more damage</tooltip>
+      </value>
+      <value type="Real" name="min game acc default" disabled="false">
+        <tooltip>0-oo</tooltip>
+      </value>
+      <value type="Real" name="max game acc default" disabled="false">
+        <tooltip>0-oo</tooltip>
+      </value>
+      <value type="Real" name="min game scale default" disabled="false">
+        <tooltip>0-1</tooltip>
+      </value>
+      <value type="Real" name="max game scale default" disabled="false">
+        <tooltip>0-1</tooltip>
+      </value>
+      <value type="Real" name="min abs acc default" disabled="false">
+        <tooltip>0-oo</tooltip>
+      </value>
+      <value type="Real" name="max abs acc default" disabled="false">
+        <tooltip>0-oo</tooltip>
+      </value>
+      <value type="Real" name="min abs scale default" disabled="false">
+        <tooltip>0-1</tooltip>
+      </value>
+      <value type="Real" name="max abs scale default" disabled="false">
+        <tooltip>0-1</tooltip>
+      </value>
+      <value type="ShortInteger" name="hud text message index" disabled="false" />
+      <value type="Pad" name="_unnamed3" length="2" />
+      <struct name="ObjectAttachmentBlock">
+        <value type="TagReference" name="type" disabled="false" extensions="ligh|MGS2|tdtl|cont|effe|lsnd|lens" blockname="true" />
+        <value type="StringId" name="marker" disabled="false" />
+        <value type="Enum" name="change color" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="primary" />
+          <item value="2" name="secondary" />
+          <item value="3" name="tertiary" />
+          <item value="4" name="quaternary" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="StringId" name="primary scale" disabled="false" />
+        <value type="StringId" name="secondary scale" disabled="false" />
+      </struct>
+      <value type="Block" name="attachments" disabled="false" struct="ObjectAttachmentBlock" maxelements="16" />
+      <struct name="ObjectWidgetBlock">
+        <value type="TagReference" name="type" disabled="false" extensions="ant!|devo|whip|BooM|tdtl" />
+      </struct>
+      <value type="Block" name="widgets" disabled="false" struct="ObjectWidgetBlock" maxelements="4" />
+      <struct name="OldObjectFunctionBlock">
+        <value type="Pad" name="_unnamed0" length="76" />
+        <value type="StringId" name="_unnamed1" />
+      </struct>
+      <value type="Block" name="old functions" disabled="false" struct="OldObjectFunctionBlock" maxelements="4" />
+      <struct name="ObjectChangeColors">
+        <struct name="ObjectChangeColorInitialPermutation">
+          <value type="Real" name="weight" disabled="false" />
+          <value type="RealRgbColor" name="color lower bound" disabled="false" />
+          <value type="RealRgbColor" name="color upper bound" disabled="false" />
+          <value type="StringId" name="variant name" disabled="false">
+            <tooltip>if empty, may be used by any model variant</tooltip>
+          </value>
+        </struct>
+        <value type="Block" name="initial permutations" disabled="false" struct="ObjectChangeColorInitialPermutation" maxelements="32" />
+        <struct name="ObjectChangeColorFunction">
+          <value type="Pad" name="_unnamed0" length="4" />
+          <value type="Flags" name="scale flags" length="4" disabled="false">
+            <bit index="0" name="blend in hsv">
+              <tooltip>blends colors in hsv rather than rgb space</tooltip>
+            </bit>
+            <bit index="1" name="...more colors">
+              <tooltip>blends colors through more hues (goes the long way around the color wheel)</tooltip>
+            </bit>
+          </value>
+          <value type="RealRgbColor" name="color lower bound" disabled="false" />
+          <value type="RealRgbColor" name="color upper bound" disabled="false" />
+          <value type="StringId" name="darken by" disabled="false" />
+          <value type="StringId" name="scale by" disabled="false" />
+        </struct>
+        <value type="Block" name="functions" disabled="false" struct="ObjectChangeColorFunction" maxelements="4" />
+      </struct>
+      <value type="Block" name="change colors" disabled="false" struct="ObjectChangeColors" maxelements="4" />
+      <struct name="PredictedResourceBlock">
+        <value type="Enum" name="type" length="2" disabled="false">
+          <item value="0" name="bitmap" />
+          <item value="1" name="sound" />
+          <item value="2" name="render model geometry" />
+          <item value="3" name="cluster geometry" />
+          <item value="4" name="cluster instanced geometry" />
+          <item value="5" name="lightmap geometry object buckets" />
+          <item value="6" name="lightmap geometry instance buckets" />
+          <item value="7" name="lightmap cluster bitmaps" />
+          <item value="8" name="lightmap instance bitmaps" />
+        </value>
+        <value type="ShortInteger" name="resource index" disabled="false" />
+        <value type="PredictedResource" name="Predicted Resource Tag" length="4" disabled="false" />
+      </struct>
+      <value type="Block" name="predicted resources" disabled="true" struct="PredictedResourceBlock" maxelements="2048" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,189 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{52F190F6-BA19-42DE-8035-F1C4F5EEEA5E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Imaging, Version=2.2.0.38750, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=1.0.2089.38749, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.Direct3D.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2911.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.Direct3DX.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectInput, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.DirectInput.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectSound, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.DirectSound.DLL</HintPath>
+    </Reference>
+    <Reference Include="Nini, Version=0.9.2.0, Culture=neutral, PublicKeyToken=691faec150a7fa7b">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Nini.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Threading, Version=1.0.3058.34407, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DebugConsole\DebugConsole.cs" />
+    <Compile Include="DebugConsole\FieldInvocation.cs" />
+    <Compile Include="DebugConsole\MethodInvocation.cs" />
+    <Compile Include="CoreException.cs" />
+    <Compile Include="CoreTracer.cs" />
+    <Compile Include="Factory\ClassGenerator.cs" />
+    <Compile Include="Factory\TypeInstancePair.cs" />
+    <Compile Include="Factory\TdfXmlConverter.cs" />
+    <Compile Include="Factory\XmlXmlConverter.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="Input\InputManager.cs" />
+    <Compile Include="Input\MdxInput.cs" />
+    <Compile Include="MapValidator.cs" />
+    <Compile Include="Networks\XboxFTP.cs" />
+    <Compile Include="Pool\TagAlreadyExistsException.cs" />
+    <Compile Include="Pool\PoolException.cs" />
+    <Compile Include="Pool\Pool.cs" />
+    <Compile Include="Pool\TagNotFoundException.cs" />
+    <Compile Include="Project\ProjectManager.cs" />
+    <Compile Include="Prometheus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Radiosity\Console\ConsoleWriter.cs" />
+    <Compile Include="Radiosity\PhotonMapping\HeapSort.cs" />
+    <Compile Include="Radiosity\PhotonMapping\PhotonMap.cs">
+    </Compile>
+    <Compile Include="Radiosity\PhotonMapping\QuickSort.cs" />
+    <Compile Include="Radiosity\PhotonMapping\Vector3.cs" />
+    <Compile Include="Radiosity\Radiosity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Radiosity\Radiosity.save.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Radiosity\Radiosity.static.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Radiosity\RadiosityException.cs" />
+    <Compile Include="Radiosity\TextureMapping\ExposureMapOperator.cs" />
+    <Compile Include="Radiosity\TextureMapping\LinearToneMapper.cs" />
+    <Compile Include="Radiosity\TextureMapping\Reinhard5ToneMapOperator.cs" />
+    <Compile Include="Radiosity\Utils\LightmapUtils.cs" />
+    <Compile Include="Radiosity\TextureMapping\ReinhardToneMapOperator.cs" />
+    <Compile Include="Radiosity\TextureMapping\TextureMapping.cs" />
+    <Compile Include="Radiosity\Console\WinConsole.cs" />
+    <Compile Include="Rendering\Camera\Camera.cs" />
+    <Compile Include="Rendering\Camera\CameraStopStyle.cs" />
+    <Compile Include="Rendering\Camera\CameraTranslationPlane.cs" />
+    <Compile Include="Rendering\Camera\FrustumPlane.cs" />
+    <Compile Include="Rendering\Camera\RunningAvg.cs" />
+    <Compile Include="Rendering\RenderCore.cs" />
+    <Compile Include="Rendering\RenderState.cs" />
+    <Compile Include="Rendering\SceneState.cs" />
+    <Compile Include="Rendering\ScreenCapture.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Tools\PTABuilder.cs" />
+    <Compile Include="Tools\TagListCompiler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{ED1C3C5A-392F-4B0A-830F-F33B066440B4}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\shaders\deferred_shading.fx" />
+    <EmbeddedResource Include="Resources\X\prom_logo.X" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\textures\sand.dds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Radiosity\Lights\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

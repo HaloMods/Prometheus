@@ -1,0 +1,356 @@
+<xml>
+  <name type="jmad" parenttype="????">ModelAnimationGraph</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ModelAnimationRuntimeDataStructBlock">
+      <value type="TagReference" name="parent animation graph" disabled="false" extensions="jmad" />
+      <value type="Flags" name="inheritance flags" length="1" disabled="false">
+        <bit index="0" name="inherit root trans scale only" />
+        <bit index="1" name="inherit for use on player" />
+      </value>
+      <value type="Flags" name="private flags" length="1" disabled="true">
+        <bit index="0" name="prepared for cache" />
+        <bit index="1" name="unused" />
+        <bit index="2" name="imported with codec compressors" />
+        <bit index="3" name="unused smelly flag" />
+        <bit index="4" name="written to cache" />
+        <bit index="5" name="animation data reordered" />
+      </value>
+      <value type="ShortInteger" name="animation codec pack" disabled="true" />
+      <struct name="AnimationGraphNodeBlock">
+        <value type="StringId" name="name" disabled="false" blockname="true" />
+        <value type="ShortBlockIndex" name="next sibling node index" disabled="true" block="AnimationGraphNodeBlock" />
+        <value type="ShortBlockIndex" name="first child node index" disabled="true" block="AnimationGraphNodeBlock" />
+        <value type="ShortBlockIndex" name="parent node index" disabled="true" block="AnimationGraphNodeBlock" />
+        <value type="Flags" name="model flags" length="1" disabled="true">
+          <bit index="0" name="primary model" />
+          <bit index="1" name="secondary model" />
+          <bit index="2" name="local root" />
+          <bit index="3" name="left hand" />
+          <bit index="4" name="right hand" />
+          <bit index="5" name="left arm member" />
+        </value>
+        <value type="Flags" name="node joint flags" length="1" disabled="false">
+          <bit index="0" name="ball-socket" />
+          <bit index="1" name="hinge" />
+          <bit index="2" name="no movement" />
+        </value>
+        <value type="RealVector3d" name="base vector" disabled="true" />
+        <value type="Real" name="vector range" disabled="true" />
+        <value type="Real" name="z_pos" disabled="true" />
+      </struct>
+      <value type="Block" name="skeleton nodesABCDCC" disabled="true" struct="AnimationGraphNodeBlock" maxelements="255" />
+      <struct name="AnimationGraphSoundReferenceBlock">
+        <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="allow on player" />
+          <bit index="1" name="left arm only" />
+          <bit index="2" name="right arm only" />
+          <bit index="3" name="first-person only" />
+          <bit index="4" name="forward only" />
+          <bit index="5" name="reverse only" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+      </struct>
+      <value type="Block" name="sound referencesABCDCC" disabled="false" struct="AnimationGraphSoundReferenceBlock" maxelements="512" />
+      <struct name="AnimationGraphEffectReferenceBlock">
+        <value type="TagReference" name="effect" disabled="false" extensions="effe" blockname="true" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="allow on player" />
+          <bit index="1" name="left arm only" />
+          <bit index="2" name="right arm only" />
+          <bit index="3" name="first-person only" />
+          <bit index="4" name="forward only" />
+          <bit index="5" name="reverse only" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+      </struct>
+      <value type="Block" name="effect referencesABCDCC" disabled="false" struct="AnimationGraphEffectReferenceBlock" maxelements="512" />
+      <struct name="AnimationBlendScreenBlock">
+        <value type="StringId" name="label" disabled="false" blockname="true" />
+        <value type="Angle" name="right yaw per frame" disabled="false" />
+        <value type="Angle" name="left yaw per frame" disabled="false" />
+        <value type="ShortInteger" name="right frame count" disabled="false" />
+        <value type="ShortInteger" name="left frame count" disabled="false" />
+        <value type="Angle" name="down pitch per frame" disabled="false" />
+        <value type="Angle" name="up pitch per frame" disabled="false" />
+        <value type="ShortInteger" name="down pitch frame count" disabled="false" />
+        <value type="ShortInteger" name="up pitch frame count" disabled="false" />
+      </struct>
+      <value type="Block" name="blend screensABCDCC" disabled="false" struct="AnimationBlendScreenBlock" maxelements="64" />
+      <struct name="AnimationPoolBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="LongInteger" name="node list checksum" disabled="true" />
+        <value type="LongInteger" name="production checksum" disabled="true" />
+        <value type="LongInteger" name="import_checksum" disabled="true" />
+        <value type="Enum" name="type" length="1" disabled="true">
+          <item value="0" name="base" />
+          <item value="1" name="overlay" />
+          <item value="2" name="replacement" />
+        </value>
+        <value type="Enum" name="frame info type" length="1" disabled="true">
+          <item value="0" name="none" />
+          <item value="1" name="dx,dy" />
+          <item value="2" name="dx,dy,dyaw" />
+          <item value="3" name="dx,dy,dz,dyaw" />
+        </value>
+        <value type="CharBlockIndex" name="blend screen" disabled="false" />
+        <value type="CharInteger" name="node count" disabled="true" />
+        <value type="ShortInteger" name="frame count" disabled="true" />
+        <value type="Flags" name="internal flags" length="1" disabled="true">
+          <bit index="0" name="&lt;unused0&gt;!" />
+          <bit index="1" name="world relative" />
+          <bit index="2" name="&lt;unused1&gt;!" />
+          <bit index="3" name="&lt;unused2&gt;!" />
+          <bit index="4" name="&lt;unused3&gt;!" />
+          <bit index="5" name="compression disabled" />
+          <bit index="6" name="old production checksum" />
+          <bit index="7" name="valid production checksum" />
+        </value>
+        <value type="Flags" name="production flags" length="1" disabled="false">
+          <bit index="0" name="do not monitor changes" />
+          <bit index="1" name="verify sound events" />
+          <bit index="2" name="do not inherit for player graphs" />
+        </value>
+        <value type="Flags" name="playback flags" length="2" disabled="false">
+          <bit index="0" name="disable interpolation_in" />
+          <bit index="1" name="disable interpolation_out" />
+          <bit index="2" name="disable mode ik" />
+          <bit index="3" name="disable weapon ik" />
+          <bit index="4" name="disable weapon aim/1st person" />
+          <bit index="5" name="disable look screen" />
+          <bit index="6" name="disable transition adjustment" />
+        </value>
+        <value type="Enum" name="desired compression" length="1" disabled="false">
+          <item value="0" name="best score" />
+          <item value="1" name="best compression" />
+          <item value="2" name="best accuracy" />
+          <item value="3" name="best fullframe" />
+          <item value="4" name="best small keyframe" />
+          <item value="5" name="best large keyframe" />
+        </value>
+        <value type="Enum" name="current compression" length="1" disabled="true">
+          <item value="0" name="best score" />
+          <item value="1" name="best compression" />
+          <item value="2" name="best accuracy" />
+          <item value="3" name="best fullframe" />
+          <item value="4" name="best small keyframe" />
+          <item value="5" name="best large keyframe" />
+        </value>
+        <value type="Real" name="weight" disabled="false" />
+        <value type="ShortInteger" name="loop frame index" disabled="false" />
+        <value type="ShortBlockIndex" name="_unnamed0" block="AnimationPoolBlock" />
+        <value type="ShortBlockIndex" name="_unnamed1" block="AnimationPoolBlock" />
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Skip" name="Animation Data" length="20" disabled="false" />
+        <value type="CharInteger" name="_unnamed3" />
+        <value type="CharInteger" name="_unnamed4" />
+        <value type="ShortInteger" name="_unnamed5" />
+        <value type="ShortInteger" name="_unnamed6" />
+        <value type="ShortInteger" name="_unnamed7" />
+        <value type="LongInteger" name="_unnamed8" />
+        <value type="LongInteger" name="_unnamed9" />
+        <struct name="AnimationFrameEventBlock">
+          <value type="Enum" name="type" length="2" disabled="false">
+            <item value="0" name="primary_keyframe" />
+            <item value="1" name="secondary_keyframe" />
+            <item value="2" name="left_foot" />
+            <item value="3" name="right_foot" />
+            <item value="4" name="allow_interruption" />
+            <item value="5" name="transition A" />
+            <item value="6" name="transition B" />
+            <item value="7" name="transition C" />
+            <item value="8" name="transition D" />
+            <item value="9" name="both-feet shuffle" />
+            <item value="10" name="body impact" />
+          </value>
+          <value type="ShortInteger" name="frame" disabled="false" />
+        </struct>
+        <value type="Block" name="frame eventsABCDCC" disabled="false" struct="AnimationFrameEventBlock" maxelements="512" />
+        <struct name="AnimationSoundEventBlock">
+          <value type="ShortBlockIndex" name="sound" disabled="false" block="AnimationGraphSoundReferenceBlock" />
+          <value type="ShortInteger" name="frame" disabled="false" />
+          <value type="StringId" name="marker name" disabled="false" />
+        </struct>
+        <value type="Block" name="sound eventsABCDCC" disabled="false" struct="AnimationSoundEventBlock" maxelements="512" />
+        <struct name="AnimationEffectEventBlock">
+          <value type="ShortBlockIndex" name="effect" disabled="false" block="AnimationGraphEffectReferenceBlock" />
+          <value type="ShortInteger" name="frame" disabled="false" />
+        </struct>
+        <value type="Block" name="effect eventsABCDCC" disabled="false" struct="AnimationEffectEventBlock" maxelements="512" />
+        <struct name="ObjectSpaceNodeDataBlock">
+          <value type="ShortInteger" name="node_index" disabled="true" />
+          <value type="Flags" name="component flags" length="2" disabled="false">
+            <bit index="0" name="rotation" />
+            <bit index="1" name="translation" />
+            <bit index="2" name="scale" />
+          </value>
+          <value type="ShortInteger" name="rotation x" disabled="true" />
+          <value type="ShortInteger" name="rotation y" disabled="true" />
+          <value type="ShortInteger" name="rotation z" disabled="true" />
+          <value type="ShortInteger" name="rotation w" disabled="true" />
+          <value type="RealPoint3d" name="default translation" disabled="true" />
+          <value type="Real" name="default scale" disabled="true" />
+        </struct>
+        <value type="Block" name="object-space parent nodesABCDCC" disabled="false" struct="ObjectSpaceNodeDataBlock" maxelements="255" />
+      </struct>
+      <value type="Block" name="animationsABCDCC" disabled="true" struct="AnimationPoolBlock" maxelements="2048" />
+      <struct name="AnimationModeBlock">
+        <value type="StringId" name="label" disabled="false" blockname="true" />
+        <struct name="WeaponClassBlock">
+          <value type="StringId" name="label" disabled="false" blockname="true" />
+          <struct name="WeaponTypeBlock">
+            <value type="StringId" name="label" disabled="false" blockname="true" />
+            <struct name="AnimationEntryBlock">
+              <value type="StringId" name="label" disabled="false" blockname="true" />
+              <value type="ShortInteger" name="graph index" disabled="true" />
+              <value type="ShortBlockIndex" name="animation" disabled="true" block="AnimationPoolBlock" />
+            </struct>
+            <value type="Block" name="actionsAABBCC" disabled="false" struct="AnimationEntryBlock" maxelements="256" />
+            <value type="Block" name="overlaysAABBCC" disabled="false" struct="AnimationEntryBlock" maxelements="256" />
+            <struct name="DamageAnimationBlock">
+              <value type="StringId" name="label" disabled="false" blockname="true" />
+              <struct name="DamageDirectionBlock">
+                <struct name="DamageRegionBlock">
+                  <value type="ShortInteger" name="graph index" disabled="true" />
+                  <value type="ShortBlockIndex" name="animation" disabled="true" block="AnimationPoolBlock" />
+                </struct>
+                <value type="Block" name="regionsAABBCC" disabled="true" struct="DamageRegionBlock" maxelements="11" />
+              </struct>
+              <value type="Block" name="directionsAABBCC" disabled="true" struct="DamageDirectionBlock" maxelements="4" />
+            </struct>
+            <value type="Block" name="death and damageAABBCC" disabled="false" struct="DamageAnimationBlock" maxelements="8" />
+            <struct name="AnimationTransitionBlock">
+              <value type="StringId" name="full name" disabled="false" blockname="true">
+                <tooltip>name of the mode &amp; state of the source</tooltip>
+              </value>
+              <value type="StringId" name="state name" disabled="true">
+                <tooltip>name of the state</tooltip>
+              </value>
+              <value type="Pad" name="_unnamed0" length="2" />
+              <value type="CharInteger" name="index a" disabled="true">
+                <tooltip>first level sub-index into state</tooltip>
+              </value>
+              <value type="CharInteger" name="index b" disabled="true">
+                <tooltip>second level sub-index into state</tooltip>
+              </value>
+              <struct name="AnimationTransitionDestinationBlock">
+                <value type="StringId" name="full name" disabled="false" blockname="true">
+                  <tooltip>name of the mode &amp; state this transitions to</tooltip>
+                </value>
+                <value type="StringId" name="mode" disabled="true">
+                  <tooltip>name of the mode</tooltip>
+                </value>
+                <value type="StringId" name="state name" disabled="true">
+                  <tooltip>name of the state</tooltip>
+                </value>
+                <value type="Enum" name="frame event link" length="1" disabled="true">
+                  <item value="0" name="NO KEYFRAME" />
+                  <item value="1" name="KEYFRAME TYPE A" />
+                  <item value="2" name="KEYFRAME TYPE B" />
+                  <item value="3" name="KEYFRAME TYPE C" />
+                  <item value="4" name="KEYFRAME TYPE D" />
+                  <tooltip>which frame event to link to</tooltip>
+                </value>
+                <value type="Pad" name="_unnamed0" length="1" />
+                <value type="CharInteger" name="index a" disabled="true">
+                  <tooltip>first level sub-index into state</tooltip>
+                </value>
+                <value type="CharInteger" name="index b" disabled="true">
+                  <tooltip>second level sub-index into state</tooltip>
+                </value>
+                <value type="ShortInteger" name="graph index" disabled="true" />
+                <value type="ShortBlockIndex" name="animation" disabled="true" block="AnimationPoolBlock" />
+              </struct>
+              <value type="Block" name="destinationsAABBCC" disabled="false" struct="AnimationTransitionDestinationBlock" maxelements="32" />
+            </struct>
+            <value type="Block" name="transitionsAABBCC" disabled="false" struct="AnimationTransitionBlock" maxelements="256" />
+            <struct name="PrecacheListBlock">
+              <value type="LongInteger" name="cache block index" disabled="false" />
+            </struct>
+            <value type="Block" name="high precacheCCCCC" disabled="false" struct="PrecacheListBlock" maxelements="1024" />
+            <value type="Block" name="low precacheCCCCC" disabled="false" struct="PrecacheListBlock" maxelements="1024" />
+          </struct>
+          <value type="Block" name="weapon typeAABBCC" disabled="false" struct="WeaponTypeBlock" maxelements="64" />
+          <struct name="AnimationIkBlock">
+            <value type="StringId" name="marker" disabled="false">
+              <tooltip>the marker name on the object being attached</tooltip>
+            </value>
+            <value type="StringId" name="attach to marker" disabled="false">
+              <tooltip>the marker name object (weapon, vehicle, etc.) the above marker is being attached to</tooltip>
+            </value>
+          </struct>
+          <value type="Block" name="weapon ikAABBCC" disabled="false" struct="AnimationIkBlock" maxelements="8" />
+        </struct>
+        <value type="Block" name="weapon classAABBCC" disabled="false" struct="WeaponClassBlock" maxelements="64" />
+        <struct name="AnimationIkBlock">
+          <value type="StringId" name="marker" disabled="false">
+            <tooltip>the marker name on the object being attached</tooltip>
+          </value>
+          <value type="StringId" name="attach to marker" disabled="false">
+            <tooltip>the marker name object (weapon, vehicle, etc.) the above marker is being attached to</tooltip>
+          </value>
+        </struct>
+        <value type="Block" name="mode ikAABBCC" disabled="false" struct="AnimationIkBlock" maxelements="8" />
+      </struct>
+      <value type="Block" name="modesAABBCC" disabled="false" struct="AnimationModeBlock" maxelements="512" />
+      <struct name="VehicleSuspensionBlock">
+        <value type="StringId" name="label" disabled="false" blockname="true" />
+        <value type="ShortInteger" name="graph index" disabled="true" />
+        <value type="ShortBlockIndex" name="animation" disabled="true" block="AnimationPoolBlock" />
+        <value type="StringId" name="marker name" disabled="false" />
+        <value type="Real" name="mass point offset" disabled="false" />
+        <value type="Real" name="full extension ground_depth" disabled="false" />
+        <value type="Real" name="full compression ground_depth" disabled="false" />
+        <value type="StringId" name="region name" disabled="false" />
+        <value type="Real" name="destroyed mass point offset" disabled="false" />
+        <value type="Real" name="destroyed full extension ground_depth" disabled="false" />
+        <value type="Real" name="destroyed full compression ground_depth" disabled="false" />
+      </struct>
+      <value type="Block" name="vehicle suspensionCCAABB" disabled="false" struct="VehicleSuspensionBlock" maxelements="32" />
+      <struct name="ObjectAnimationBlock">
+        <value type="StringId" name="label" disabled="false" blockname="true" />
+        <value type="ShortInteger" name="graph index" disabled="true" />
+        <value type="ShortBlockIndex" name="animation" disabled="true" block="AnimationPoolBlock" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Enum" name="function controls" length="2" disabled="false">
+          <item value="0" name="frame" />
+          <item value="1" name="scale" />
+        </value>
+        <value type="StringId" name="function" disabled="false" />
+        <value type="Pad" name="_unnamed1" length="4" />
+      </struct>
+      <value type="Block" name="object overlaysCCAABB" disabled="false" struct="ObjectAnimationBlock" maxelements="32" />
+      <struct name="InheritedAnimationBlock">
+        <value type="TagReference" name="inherited graph" disabled="true" extensions="jmad" />
+        <struct name="InheritedAnimationNodeMapBlock">
+          <value type="ShortInteger" name="local node" disabled="false" />
+        </struct>
+        <value type="Block" name="node map" disabled="true" struct="InheritedAnimationNodeMapBlock" maxelements="255" />
+        <struct name="InheritedAnimationNodeMapFlagBlock">
+          <value type="LongInteger" name="local node flags" disabled="false" />
+        </struct>
+        <value type="Block" name="node map flags" disabled="true" struct="InheritedAnimationNodeMapFlagBlock" maxelements="255" />
+        <value type="Real" name="root z offset" disabled="true" />
+        <value type="LongInteger" name="inheritance_flags" disabled="true" />
+      </struct>
+      <value type="Block" name="inheritence listBBAAAA" disabled="true" struct="InheritedAnimationBlock" maxelements="8" />
+      <struct name="WeaponClassLookupBlock">
+        <value type="StringId" name="weapon name" disabled="false" blockname="true" />
+        <value type="StringId" name="weapon class" disabled="false" />
+      </struct>
+      <value type="Block" name="weapon listBBAAAA" disabled="true" struct="WeaponClassLookupBlock" maxelements="64" />
+      <value type="Pad" name="_unnamed0" length="80" />
+      <struct name="AnimationRawDataBlockHandmade">
+        <value type="Skip" name="Animation Self Reference" length="4" disabled="false" />
+        <value type="ResourceBlockInverted" name="Resource Data" disabled="false" />
+        <value type="Skip" name="unknown" length="8" disabled="false" />
+      </struct>
+      <value type="Block" name="raw data" disabled="false" struct="AnimationRawDataBlockHandmade" maxelements="131072" />
+      <struct name="NodeDataHandcoded">
+        <value type="Skip" name="_unnamed0" length="24" />
+      </struct>
+      <value type="Block" name="node data replacement" disabled="false" struct="NodeDataHandcoded" maxelements="255" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,20 @@
+<xml>
+  <name type="itmc" parenttype="????">ItemCollection</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ItemCollectionBlock">
+      <struct name="ItemPermutation">
+        <value type="Real" name="weight" disabled="false">
+          <tooltip>relatively how likely this item will be chosen</tooltip>
+        </value>
+        <value type="TagReference" name="item" disabled="false" extensions="item" blockname="true">
+          <tooltip>which item to </tooltip>
+        </value>
+        <value type="StringId" name="variant name" disabled="false" />
+      </struct>
+      <value type="Block" name="item permutations" disabled="false" struct="ItemPermutation" maxelements="32" />
+      <value type="ShortInteger" name="spawn time in seconds 0  default" disabled="false" />
+      <value type="Pad" name="_unnamed0" length="2" />
+    </struct>
+  </plugin>
+</xml>

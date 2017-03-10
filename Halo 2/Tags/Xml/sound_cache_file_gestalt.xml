@@ -1,0 +1,302 @@
+<xml>
+  <name type="ugh!" parenttype="????">SoundCacheFileGestalt</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="SoundCacheFileGestaltBlock">
+      <struct name="SoundGestaltPlaybackBlock">
+        <value type="Real" name="minimum distance" disabled="false" unit="world units">
+          <tooltip>the distance below which this sound no longer gets louder</tooltip>
+        </value>
+        <value type="Real" name="maximum distance" disabled="false" unit="world units">
+          <tooltip>the distance beyond which this sound is no longer audible</tooltip>
+        </value>
+        <value type="RealFraction" name="skip fraction" disabled="false">
+          <tooltip>fraction of requests to play this sound that will be ignored (0 means always play.)</tooltip>
+        </value>
+        <value type="Real" name="maximum bend per second" disabled="false" unit="cents" />
+        <value type="Real" name="gain base" disabled="false" unit="dB">
+          <tooltip>sound's random gain will start here</tooltip>
+        </value>
+        <value type="Real" name="gain variance" disabled="false" unit="dB">
+          <tooltip>sound's gain will be randomly modulated within this range</tooltip>
+        </value>
+        <value type="ShortIntegerBounds" name="random pitch bounds" disabled="false" unit="cents">
+          <tooltip>the sound's pitch will be modulated randomly within this range.</tooltip>
+        </value>
+        <value type="Angle" name="inner cone angle" disabled="false" unit="degrees">
+          <tooltip>within the cone defined by this angle and the sound's direction, the sound plays with a gain of 1.0.</tooltip>
+        </value>
+        <value type="Angle" name="outer cone angle" disabled="false" unit="degrees">
+          <tooltip>outside the cone defined by this angle and the sound's direction, the sound plays with a gain of OUTER CONE GAIN. (0 means the sound does not attenuate with direction.)</tooltip>
+        </value>
+        <value type="Real" name="outer cone gain" disabled="false" unit="dB">
+          <tooltip>the gain to use when the sound is directed away from the listener</tooltip>
+        </value>
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="override azimuth" />
+          <bit index="1" name="override 3d gain" />
+          <bit index="2" name="override speaker gain" />
+        </value>
+        <value type="Angle" name="azimuth" disabled="false" />
+        <value type="Real" name="positional gain" disabled="false" unit="dB" />
+        <value type="Real" name="first person gain" disabled="false" unit="dB" />
+      </struct>
+      <value type="Block" name="playbacks" disabled="false" struct="SoundGestaltPlaybackBlock" maxelements="32767" />
+      <struct name="SoundGestaltScaleBlock">
+        <value type="RealBounds" name="gain modifier" disabled="false" unit="dB" />
+        <value type="ShortIntegerBounds" name="pitch modifier" disabled="false" unit="cents" />
+        <value type="FractionBounds" name="skip fraction modifier" disabled="false" />
+      </struct>
+      <value type="Block" name="scales" disabled="false" struct="SoundGestaltScaleBlock" maxelements="32767" />
+      <struct name="SoundGestaltImportNamesBlock">
+        <value type="StringId" name="import name" disabled="false" blockname="true" />
+      </struct>
+      <value type="Block" name="import names" disabled="false" struct="SoundGestaltImportNamesBlock" maxelements="32767" />
+      <struct name="SoundGestaltPitchRangeParametersBlock">
+        <value type="ShortInteger" name="natural pitch" disabled="false" unit="cents" />
+        <value type="ShortIntegerBounds" name="bend bounds" disabled="false" unit="cents">
+          <tooltip>the range of pitches that will be represented using this sample.</tooltip>
+        </value>
+        <value type="ShortIntegerBounds" name="max gain pitch bounds" disabled="false" unit="cents" />
+      </struct>
+      <value type="Block" name="pitch range parameters" disabled="false" struct="SoundGestaltPitchRangeParametersBlock" maxelements="32767" />
+      <struct name="SoundGestaltPitchRangesBlock">
+        <value type="ShortBlockIndex" name="name" disabled="false" block="SoundGestaltImportNamesBlock" blockname="true" />
+        <value type="ShortBlockIndex" name="parameters" disabled="false" block="SoundGestaltPitchRangeParametersBlock" />
+        <value type="ShortInteger" name="encoded permutation data" disabled="false" />
+        <value type="ShortInteger" name="first runtime permutation flag index" disabled="false" />
+        <value type="ShortBlockIndex" name="first permutation" disabled="false" block="SoundGestaltPermutationsBlock" />
+        <value type="ShortInteger" name="permutation count" disabled="false" />
+      </struct>
+      <value type="Block" name="pitch ranges" disabled="false" struct="SoundGestaltPitchRangesBlock" maxelements="32767" />
+      <struct name="SoundGestaltPermutationsBlock">
+        <value type="ShortBlockIndex" name="name" disabled="false" block="SoundGestaltImportNamesBlock" blockname="true" />
+        <value type="ShortInteger" name="encoded skip fraction" disabled="false" />
+        <value type="CharInteger" name="encoded gain" disabled="false" unit="dB" />
+        <value type="CharInteger" name="permutation info index" disabled="false" />
+        <value type="ShortInteger" name="language neutral time" disabled="false" unit="ms" />
+        <value type="LongInteger" name="sample size" disabled="false" />
+        <value type="ShortBlockIndex" name="first chunk" disabled="false" block="SoundPermutationChunkBlock" />
+        <value type="ShortInteger" name="chunk count" disabled="false" />
+      </struct>
+      <value type="Block" name="permutations" disabled="false" struct="SoundGestaltPermutationsBlock" maxelements="32767" />
+      <struct name="SoundGestaltCustomPlaybackBlock">
+        <struct name="PlatformSoundOverrideMixbinsBlock">
+          <value type="Enum" name="mixbin" length="4" disabled="false">
+            <item value="0" name="front left" />
+            <item value="1" name="front right" />
+            <item value="2" name="back left" />
+            <item value="3" name="back right" />
+            <item value="4" name="center" />
+            <item value="5" name="low frequency" />
+            <item value="6" name="reverb" />
+            <item value="7" name="3d front left" />
+            <item value="8" name="3d front right" />
+            <item value="9" name="3d back left" />
+            <item value="10" name="3d back right" />
+            <item value="11" name="default left speakers" />
+            <item value="12" name="default right speakers" />
+          </value>
+          <value type="Real" name="gain" disabled="false" unit="dB" />
+        </struct>
+        <value type="Block" name="_unnamed0" struct="PlatformSoundOverrideMixbinsBlock" maxelements="8" />
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="use 3d radio hack" />
+        </value>
+        <value type="Pad" name="_unnamed1" length="8" />
+        <struct name="PlatformSoundFilterBlock">
+          <value type="Enum" name="filter type" length="4" disabled="false">
+            <item value="0" name="parametric EQ" />
+            <item value="1" name="DLS2" />
+            <item value="2" name="both (only valid for mono)" />
+          </value>
+          <value type="LongInteger" name="filter width" disabled="false" unit="[0,7]" />
+          <value type="RealBounds" name="scale bounds" disabled="false" />
+          <value type="RealBounds" name="random base and variance" disabled="false" />
+          <value type="RealBounds" name="scale bounds2" disabled="false" />
+          <value type="RealBounds" name="random base and variance2" disabled="false" />
+          <value type="RealBounds" name="scale bounds3" disabled="false" />
+          <value type="RealBounds" name="random base and variance3" disabled="false" />
+          <value type="RealBounds" name="scale bounds4" disabled="false" />
+          <value type="RealBounds" name="random base and variance4" disabled="false" />
+        </struct>
+        <value type="Block" name="filter" disabled="false" struct="PlatformSoundFilterBlock" maxelements="1" />
+        <struct name="PlatformSoundPitchLfoBlock">
+          <value type="RealBounds" name="scale bounds" disabled="false" />
+          <value type="RealBounds" name="random base and variance" disabled="false" />
+          <value type="RealBounds" name="scale bounds2" disabled="false" />
+          <value type="RealBounds" name="random base and variance2" disabled="false" />
+          <value type="RealBounds" name="scale bounds3" disabled="false" />
+          <value type="RealBounds" name="random base and variance3" disabled="false" />
+        </struct>
+        <value type="Block" name="pitch lfo" disabled="false" struct="PlatformSoundPitchLfoBlock" maxelements="1" />
+        <struct name="PlatformSoundFilterLfoBlock">
+          <value type="RealBounds" name="scale bounds" disabled="false" />
+          <value type="RealBounds" name="random base and variance" disabled="false" />
+          <value type="RealBounds" name="scale bounds2" disabled="false" />
+          <value type="RealBounds" name="random base and variance2" disabled="false" />
+          <value type="RealBounds" name="scale bounds3" disabled="false" />
+          <value type="RealBounds" name="random base and variance3" disabled="false" />
+          <value type="RealBounds" name="scale bounds4" disabled="false" />
+          <value type="RealBounds" name="random base and variance4" disabled="false" />
+        </struct>
+        <value type="Block" name="filter lfo" disabled="false" struct="PlatformSoundFilterLfoBlock" maxelements="1" />
+        <struct name="SoundEffectPlaybackBlock">
+          <value type="TagReference" name="_unnamed0" extensions="&lt;fx&gt;" />
+          <struct name="SoundEffectComponentBlock">
+            <value type="TagReference" name="sound" disabled="false" extensions="lsnd|snd!" blockname="true" />
+            <value type="Real" name="gain" disabled="false" unit="dB">
+              <tooltip>additional attenuation to sound</tooltip>
+            </value>
+            <value type="Flags" name="flags" length="4" disabled="false">
+              <bit index="0" name="don't play at start" />
+              <bit index="1" name="play on stop" />
+              <bit index="2" name="" />
+              <bit index="3" name="play alternate" />
+              <bit index="4" name="" />
+              <bit index="5" name="sync with origin looping sound" />
+            </value>
+          </struct>
+          <value type="Block" name="components" disabled="false" struct="SoundEffectComponentBlock" maxelements="16" />
+          <struct name="SoundEffectOverridesBlock">
+            <value type="StringId" name="name" disabled="false" />
+            <struct name="SoundEffectOverrideParametersBlock">
+              <value type="StringId" name="name" disabled="false" />
+              <value type="StringId" name="input" disabled="false" />
+              <value type="StringId" name="range" disabled="false" />
+              <value type="Real" name="time period" disabled="false" unit=" seconds" />
+              <value type="LongInteger" name="integer value" disabled="false" />
+              <value type="Real" name="real value" disabled="false" />
+              <struct name="ByteBlock">
+                <value type="CharInteger" name="Value" disabled="false" />
+              </struct>
+              <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+            </struct>
+            <value type="Block" name="overrides" disabled="false" struct="SoundEffectOverrideParametersBlock" maxelements="128" />
+          </struct>
+          <value type="Block" name="_unnamed1" struct="SoundEffectOverridesBlock" maxelements="128" />
+          <value type="Data" name="_unnamed2" />
+          <struct name="PlatformSoundEffectCollectionBlock">
+            <struct name="PlatformSoundEffectBlock">
+              <struct name="PlatformSoundEffectFunctionBlock">
+                <value type="Enum" name="input" length="2" disabled="false">
+                  <item value="0" name="zero" />
+                  <item value="1" name="time" />
+                  <item value="2" name="scale" />
+                  <item value="3" name="rolloff" />
+                </value>
+                <value type="Enum" name="range" length="2" disabled="false">
+                  <item value="0" name="zero" />
+                  <item value="1" name="time" />
+                  <item value="2" name="scale" />
+                  <item value="3" name="rolloff" />
+                </value>
+                <struct name="ByteBlock">
+                  <value type="CharInteger" name="Value" disabled="false" />
+                </struct>
+                <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+                <value type="Real" name="time period" disabled="false" unit=" seconds" />
+              </struct>
+              <value type="Block" name="function inputs" disabled="false" struct="PlatformSoundEffectFunctionBlock" maxelements="16" />
+              <struct name="PlatformSoundEffectConstantBlock">
+                <value type="Real" name="constant value" disabled="false" />
+              </struct>
+              <value type="Block" name="constant inputs" disabled="false" struct="PlatformSoundEffectConstantBlock" maxelements="16" />
+              <struct name="PlatformSoundEffectOverrideDescriptorBlock">
+                <value type="CharInteger" name="override descriptor" disabled="false" />
+              </struct>
+              <value type="Block" name="template override descriptors" disabled="false" struct="PlatformSoundEffectOverrideDescriptorBlock" maxelements="16" />
+              <value type="LongInteger" name="input overrides" disabled="false" />
+            </struct>
+            <value type="Block" name="sound effects" disabled="true" struct="PlatformSoundEffectBlock" maxelements="8" />
+            <struct name="PlatformSoundEffectFunctionBlock">
+              <value type="Enum" name="input" length="2" disabled="false">
+                <item value="0" name="zero" />
+                <item value="1" name="time" />
+                <item value="2" name="scale" />
+                <item value="3" name="rolloff" />
+              </value>
+              <value type="Enum" name="range" length="2" disabled="false">
+                <item value="0" name="zero" />
+                <item value="1" name="time" />
+                <item value="2" name="scale" />
+                <item value="3" name="rolloff" />
+              </value>
+              <struct name="ByteBlock">
+                <value type="CharInteger" name="Value" disabled="false" />
+              </struct>
+              <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+              <value type="Real" name="time period" disabled="false" unit=" seconds" />
+            </struct>
+            <value type="Block" name="low frequency input" disabled="true" struct="PlatformSoundEffectFunctionBlock" maxelements="16" />
+            <value type="LongInteger" name="sound effect overrides" disabled="false" />
+          </struct>
+          <value type="Block" name="_unnamed3" struct="PlatformSoundEffectCollectionBlock" maxelements="1" />
+        </struct>
+        <value type="Block" name="sound effect" disabled="false" struct="SoundEffectPlaybackBlock" maxelements="1" />
+      </struct>
+      <value type="Block" name="custom playbacks" disabled="false" struct="SoundGestaltCustomPlaybackBlock" maxelements="32767" />
+      <struct name="SoundGestaltRuntimePermutationBitVectorBlock">
+        <value type="CharInteger" name="_unnamed0" />
+      </struct>
+      <value type="Block" name="runtime permutation flags" disabled="false" struct="SoundGestaltRuntimePermutationBitVectorBlock" maxelements="32767" />
+      <struct name="SoundPermutationChunkBlock">
+        <value type="LongInteger" name="file offset" disabled="true" />
+        <value type="LongInteger" name="_unnamed0" />
+        <value type="LongInteger" name="_unnamed1" />
+      </struct>
+      <value type="Block" name="chunks" disabled="false" struct="SoundPermutationChunkBlock" maxelements="32767" />
+      <struct name="SoundGestaltPromotionsBlock">
+        <struct name="SoundPromotionRuleBlock">
+          <value type="ShortBlockIndex" name="pitch range" disabled="false" block="SoundPitchRangeBlock" blockname="true" />
+          <value type="ShortInteger" name="maximum playing count" disabled="false" />
+          <value type="Real" name="suppression time" disabled="false" unit="seconds">
+            <tooltip>time from when first permutation plays to when another sound from an equal or lower promotion can play</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed0" length="8" />
+        </struct>
+        <value type="Block" name="promotion rules" disabled="false" struct="SoundPromotionRuleBlock" maxelements="9" />
+        <struct name="SoundPromotionRuntimeTimerBlock">
+          <value type="LongInteger" name="_unnamed0" />
+        </struct>
+        <value type="Block" name="_unnamed0" struct="SoundPromotionRuntimeTimerBlock" maxelements="9" />
+        <value type="Pad" name="_unnamed1" length="12" />
+      </struct>
+      <value type="Block" name="promotions" disabled="false" struct="SoundGestaltPromotionsBlock" maxelements="32767" />
+      <struct name="SoundGestaltExtraInfoBlock">
+        <struct name="SoundEncodedDialogueSectionBlock">
+          <value type="Data" name="encoded data" disabled="false" />
+          <struct name="SoundPermutationDialogueInfoBlock">
+            <value type="LongInteger" name="mouth data offset" disabled="false" />
+            <value type="LongInteger" name="mouth data length" disabled="false" />
+            <value type="LongInteger" name="lipsync data offset" disabled="false" />
+            <value type="LongInteger" name="lipsync data length" disabled="false" />
+          </struct>
+          <value type="Block" name="sound dialogue info" disabled="false" struct="SoundPermutationDialogueInfoBlock" maxelements="288" />
+        </struct>
+        <value type="Block" name="encoded permutation section" disabled="false" struct="SoundEncodedDialogueSectionBlock" maxelements="1" />
+        <value type="ResourceBlock" name="Coconuts Data" disabled="false" />
+        <value type="LongInteger" name="Section Data Size" disabled="true" />
+        <value type="LongInteger" name="Resource Data Size" disabled="true" />
+        <struct name="GlobalGeometryBlockResourceBlock">
+          <value type="Enum" name="Type" length="1" disabled="true">
+            <item value="0" name="Tag Block" />
+            <item value="1" name="Tag Data" />
+            <item value="2" name="Vertex Buffer" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="3" />
+          <value type="ShortInteger" name="Primary Locator" disabled="true" />
+          <value type="ShortInteger" name="Secondary Locator" disabled="true" />
+          <value type="LongInteger" name="Resource Data Size" disabled="true" />
+          <value type="LongInteger" name="Resource Data Offset" disabled="true" />
+        </struct>
+        <value type="Block" name="Resources" disabled="true" struct="GlobalGeometryBlockResourceBlock" maxelements="1024" />
+        <value type="Skip" name="Geometry Self Reference" length="4" disabled="false" />
+        <value type="ShortInteger" name="Owner Tag Section Offset" disabled="true" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="4" />
+      </struct>
+      <value type="Block" name="extra infos" disabled="false" struct="SoundGestaltExtraInfoBlock" maxelements="32767" />
+    </struct>
+  </plugin>
+</xml>

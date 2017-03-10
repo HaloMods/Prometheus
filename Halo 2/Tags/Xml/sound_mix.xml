@@ -1,0 +1,30 @@
+<xml>
+  <name type="snmx" parenttype="????">SoundMix</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="SoundGlobalMixStructBlock">
+      <value type="Real" name="left stereo gain" disabled="false" unit="dB" />
+      <value type="Real" name="right stereo gain" disabled="false" unit="dB" />
+      <value type="Real" name="left stereo gain2" disabled="false" unit="dB" />
+      <value type="Real" name="right stereo gain2" disabled="false" unit="dB" />
+      <value type="Real" name="left stereo gain3" disabled="false" unit="dB" />
+      <value type="Real" name="right stereo gain3" disabled="false" unit="dB" />
+      <value type="Real" name="front speaker gain" disabled="false" unit="dB" />
+      <value type="Real" name="rear speaker gain" disabled="false" unit="dB" />
+      <value type="Real" name="front speaker gain2" disabled="false" unit="dB" />
+      <value type="Real" name="rear speaker gain2" disabled="false" unit="dB" />
+      <value type="Real" name="mono unspatialized gain" disabled="false" unit="dB" />
+      <value type="Real" name="stereo to 3d gain" disabled="false" unit="dB" />
+      <value type="Real" name="rear surround to front stereo gain" disabled="false" unit="dB" />
+      <value type="Real" name="front speaker gain3" disabled="false" unit="dB" />
+      <value type="Real" name="center speaker gain" disabled="false" unit="dB" />
+      <value type="Real" name="front speaker gain4" disabled="false" unit="dB" />
+      <value type="Real" name="center speaker gain2" disabled="false" unit="dB" />
+      <value type="Real" name="stereo unspatialized gain" disabled="false" unit="dB" />
+      <value type="Real" name="solo player fade out delay" disabled="false" unit=" seconds" />
+      <value type="Real" name="solo player fade out time" disabled="false" unit=" seconds" />
+      <value type="Real" name="solo player fade in time" disabled="false" unit=" seconds" />
+      <value type="Real" name="game music fade out time" disabled="false" unit=" seconds" />
+    </struct>
+  </plugin>
+</xml>

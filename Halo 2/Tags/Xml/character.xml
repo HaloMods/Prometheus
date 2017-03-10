@@ -1,0 +1,940 @@
+<xml>
+  <name type="char" parenttype="????">Character</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="CharacterBlock">
+      <value type="Flags" name="Character flags" length="4" disabled="false">
+        <bit index="0" name="Flag1" />
+      </value>
+      <value type="TagReference" name="parent character" disabled="false" extensions="char" />
+      <value type="TagReference" name="unit" disabled="false" extensions="unit" />
+      <value type="TagReference" name="creature" disabled="false" extensions="crea">
+        <tooltip>Creature reference for swarm characters ONLY</tooltip>
+      </value>
+      <value type="TagReference" name="style" disabled="false" extensions="styl" />
+      <value type="TagReference" name="major character" disabled="false" extensions="char" />
+      <struct name="CharacterVariantsBlock">
+        <value type="StringId" name="variant name" disabled="false" blockname="true" />
+        <value type="ShortInteger" name="variant index" disabled="true" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="StringId" name="variant designator" disabled="true" />
+      </struct>
+      <value type="Block" name="variants" disabled="false" struct="CharacterVariantsBlock" maxelements="64" />
+      <struct name="CharacterGeneralBlock">
+        <value type="Flags" name="general flags" length="4" disabled="false">
+          <bit index="0" name="swarm" />
+          <bit index="1" name="flying" />
+          <bit index="2" name="dual wields" />
+          <bit index="3" name="uses gravemind" />
+        </value>
+        <value type="Enum" name="type" length="2" disabled="false">
+          <item value="0" name="elite" />
+          <item value="1" name="jackal" />
+          <item value="2" name="grunt" />
+          <item value="3" name="hunter" />
+          <item value="4" name="engineer" />
+          <item value="5" name="assassin" />
+          <item value="6" name="player" />
+          <item value="7" name="marine" />
+          <item value="8" name="crew" />
+          <item value="9" name="combat_form" />
+          <item value="10" name="infection_form" />
+          <item value="11" name="carrier_form" />
+          <item value="12" name="monitor" />
+          <item value="13" name="sentinel" />
+          <item value="14" name="none" />
+          <item value="15" name="mounted_weapon" />
+          <item value="16" name="brute" />
+          <item value="17" name="prophet" />
+          <item value="18" name="bugger" />
+          <item value="19" name="juggernaut" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Real" name="scariness" disabled="false">
+          <tooltip>the inherent scariness of the character</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="general properties" disabled="false" struct="CharacterGeneralBlock" maxelements="1" />
+      <struct name="CharacterVitalityBlock">
+        <value type="Flags" name="vitality flags" length="4" disabled="false">
+          <bit index="0" name="unused" />
+        </value>
+        <value type="Real" name="normal body vitality" disabled="false">
+          <tooltip>maximum body vitality of our unit</tooltip>
+        </value>
+        <value type="Real" name="normal shield vitality" disabled="false">
+          <tooltip>maximum shield vitality of our unit</tooltip>
+        </value>
+        <value type="Real" name="legendary body vitality" disabled="false">
+          <tooltip>maximum body vitality of our unit (on legendary)</tooltip>
+        </value>
+        <value type="Real" name="legendary shield vitality" disabled="false">
+          <tooltip>maximum shield vitality of our unit (on legendary)</tooltip>
+        </value>
+        <value type="Real" name="body recharge fraction" disabled="false">
+          <tooltip>fraction of body health that can be regained after damage</tooltip>
+        </value>
+        <value type="Real" name="soft ping threshold with shields" disabled="false">
+          <tooltip>damage necessary to trigger a soft ping when shields are up</tooltip>
+        </value>
+        <value type="Real" name="soft ping threshold no shields" disabled="false">
+          <tooltip>damage necessary to trigger a soft ping when shields are down</tooltip>
+        </value>
+        <value type="Real" name="soft ping min interrupt time" disabled="false">
+          <tooltip>minimum time before a soft ping can be interrupted</tooltip>
+        </value>
+        <value type="Real" name="hard ping threshold with shields" disabled="false">
+          <tooltip>damage necessary to trigger a hard ping when shields are up</tooltip>
+        </value>
+        <value type="Real" name="hard ping threshold no shields" disabled="false">
+          <tooltip>damage necessary to trigger a hard ping when shields are down</tooltip>
+        </value>
+        <value type="Real" name="hard ping min interrupt time" disabled="false">
+          <tooltip>minimum time before a hard ping can be interrupted</tooltip>
+        </value>
+        <value type="Real" name="current damage decay delay" disabled="false">
+          <tooltip>current damage begins to fall after a time delay has passed since last the damage</tooltip>
+        </value>
+        <value type="Real" name="current damage decay time" disabled="false">
+          <tooltip>amount of time it would take for 100% current damage to decay to 0</tooltip>
+        </value>
+        <value type="Real" name="recent damage decay delay" disabled="false">
+          <tooltip>recent damage begins to fall after a time delay has passed since last the damage</tooltip>
+        </value>
+        <value type="Real" name="recent damage decay time" disabled="false">
+          <tooltip>amount of time it would take for 100% recent damage to decay to 0</tooltip>
+        </value>
+        <value type="Real" name="body recharge delay time" disabled="false">
+          <tooltip>amount of time delay before a shield begins to recharge</tooltip>
+        </value>
+        <value type="Real" name="body recharge time" disabled="false">
+          <tooltip>amount of time for shields to recharge completely</tooltip>
+        </value>
+        <value type="Real" name="shield recharge delay time" disabled="false">
+          <tooltip>amount of time delay before a shield begins to recharge</tooltip>
+        </value>
+        <value type="Real" name="shield recharge time" disabled="false">
+          <tooltip>amount of time for shields to recharge completely</tooltip>
+        </value>
+        <value type="Real" name="stun threshold" disabled="false">
+          <tooltip>stun level that triggers the stunned state (currently, the 'stunned' behavior)</tooltip>
+        </value>
+        <value type="RealBounds" name="stun time bounds" disabled="false" unit="seconds" />
+        <value type="Real" name="extended shield damage threshold" disabled="false" unit="%">
+          <tooltip>Amount of shield damage sustained before it is considered 'extended'</tooltip>
+        </value>
+        <value type="Real" name="extended body damage threshold" disabled="false" unit="%">
+          <tooltip>Amount of body damage sustained before it is considered 'extended'</tooltip>
+        </value>
+        <value type="Real" name="suicide radius" disabled="false">
+          <tooltip>when I die and explode, I damage stuff within this distance of me.</tooltip>
+        </value>
+        <value type="Skip" name="_unnamed0" length="8" />
+      </struct>
+      <value type="Block" name="vitality properties" disabled="false" struct="CharacterVitalityBlock" maxelements="1" />
+      <struct name="CharacterPlacementBlock">
+        <value type="Pad" name="_unnamed0" length="4" />
+        <value type="Real" name="few upgrade chance easy" disabled="false" />
+        <value type="Real" name="few upgrade chance normal" disabled="false" />
+        <value type="Real" name="few upgrade chance heroic" disabled="false" />
+        <value type="Real" name="few upgrade chance legendary" disabled="false" />
+        <value type="Real" name="normal upgrade chance easy" disabled="false" />
+        <value type="Real" name="normal upgrade chance normal" disabled="false" />
+        <value type="Real" name="normal upgrade chance heroic" disabled="false" />
+        <value type="Real" name="normal upgrade chance legendary" disabled="false" />
+        <value type="Real" name="many upgrade chance easy" disabled="false" />
+        <value type="Real" name="many upgrade chance normal" disabled="false" />
+        <value type="Real" name="many upgrade chance heroic" disabled="false" />
+        <value type="Real" name="many upgrade chance legendary" disabled="false" />
+      </struct>
+      <value type="Block" name="placement properties" disabled="false" struct="CharacterPlacementBlock" maxelements="1" />
+      <struct name="CharacterPerceptionBlock">
+        <value type="Flags" name="perception flags" length="4" disabled="false">
+          <bit index="0" name="Flag1" />
+        </value>
+        <value type="Real" name="max vision distance" disabled="false" unit="world units">
+          <tooltip>maximum range of sight</tooltip>
+        </value>
+        <value type="Angle" name="central vision angle" disabled="false" unit="degrees">
+          <tooltip>horizontal angle within which we see targets out to our maximum range</tooltip>
+        </value>
+        <value type="Angle" name="max vision angle" disabled="false" unit="degrees">
+          <tooltip>maximum horizontal angle within which we see targets at range</tooltip>
+        </value>
+        <value type="Angle" name="peripheral vision angle" disabled="false" unit="degrees">
+          <tooltip>maximum horizontal angle within which we can see targets out of the corner of our eye</tooltip>
+        </value>
+        <value type="Real" name="peripheral distance" disabled="false" unit="world units">
+          <tooltip>maximum range at which we can see targets our of the corner of our eye</tooltip>
+        </value>
+        <value type="Real" name="hearing distance" disabled="false" unit="world units">
+          <tooltip>maximum range at which sounds can be heard</tooltip>
+        </value>
+        <value type="Real" name="notice projectile chance" disabled="false" unit="[0,1]">
+          <tooltip>random chance of noticing a dangerous enemy projectile (e.g. grenade)</tooltip>
+        </value>
+        <value type="Real" name="notice vehicle chance" disabled="false" unit="[0,1]">
+          <tooltip>random chance of noticing a dangerous vehicle</tooltip>
+        </value>
+        <value type="Real" name="combat perception time" disabled="false" unit="seconds">
+          <tooltip>time required to acknowledge a visible enemy when we are already in combat or searching for them</tooltip>
+        </value>
+        <value type="Real" name="guard perception time" disabled="false" unit="seconds">
+          <tooltip>time required to acknowledge a visible enemy when we have been alerted</tooltip>
+        </value>
+        <value type="Real" name="non-combat perception time" disabled="false" unit="seconds">
+          <tooltip>time required to acknowledge a visible enemy when we are not alerted</tooltip>
+        </value>
+        <value type="Real" name="first ack surprise distance" disabled="false" unit="world units">
+          <tooltip>If a new prop is acknowledged within the given distance, surprise is registerd</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="perception properties" disabled="false" struct="CharacterPerceptionBlock" maxelements="4" />
+      <struct name="CharacterLookBlock">
+        <value type="RealEulerAngles2d" name="maximum aiming deviation" disabled="false" unit="degrees">
+          <tooltip>how far we can turn our weapon</tooltip>
+        </value>
+        <value type="RealEulerAngles2d" name="maximum looking deviation" disabled="false" unit="degrees">
+          <tooltip>how far we can turn our head</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="16" />
+        <value type="Angle" name="noncombat look delta L" disabled="false" unit="degrees">
+          <tooltip>how far we can turn our head left away from our aiming vector when not in combat</tooltip>
+        </value>
+        <value type="Angle" name="noncombat look delta R" disabled="false" unit="degrees">
+          <tooltip>how far we can turn our head right away from our aiming vector when not in combat</tooltip>
+        </value>
+        <value type="Angle" name="combat look delta L" disabled="false" unit="degrees">
+          <tooltip>how far we can turn our head left away from our aiming vector when in combat</tooltip>
+        </value>
+        <value type="Angle" name="combat look delta R" disabled="false" unit="degrees">
+          <tooltip>how far we can turn our head right away from our aiming vector when in combat</tooltip>
+        </value>
+        <value type="RealBounds" name="noncombat idle looking" disabled="false" unit="seconds">
+          <tooltip>rate at which we change look around randomly when not in combat</tooltip>
+        </value>
+        <value type="RealBounds" name="noncombat idle aiming" disabled="false" unit="seconds">
+          <tooltip>rate at which we change aiming directions when looking around randomly when not in combat</tooltip>
+        </value>
+        <value type="RealBounds" name="combat idle looking" disabled="false" unit="seconds">
+          <tooltip>rate at which we change look around randomly when searching or in combat</tooltip>
+        </value>
+        <value type="RealBounds" name="combat idle aiming" disabled="false" unit="seconds">
+          <tooltip>rate at which we change aiming directions when looking around randomly when searching or in combat</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="look properties" disabled="false" struct="CharacterLookBlock" maxelements="1" />
+      <struct name="CharacterMovementBlock">
+        <value type="Flags" name="movement flags" length="4" disabled="false">
+          <bit index="0" name="danger crouch allow movement" />
+          <bit index="1" name="no side-step" />
+          <bit index="2" name="prefer to combar near friends" />
+          <bit index="3" name="hop (to cover path segements)" />
+          <bit index="4" name="perch" />
+          <bit index="5" name="has flying mode" />
+          <bit index="6" name="disallow crouch" />
+        </value>
+        <value type="Real" name="pathfinding radius" disabled="false" />
+        <value type="Real" name="destination radius" disabled="false" />
+        <value type="Real" name="dive grenade chance" disabled="false" />
+        <value type="Enum" name="obstacle leap min size" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="tiny" />
+          <item value="2" name="small" />
+          <item value="3" name="medium" />
+          <item value="4" name="large" />
+          <item value="5" name="huge" />
+          <item value="6" name="immobile" />
+        </value>
+        <value type="Enum" name="obstacle leap max size" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="tiny" />
+          <item value="2" name="small" />
+          <item value="3" name="medium" />
+          <item value="4" name="large" />
+          <item value="5" name="huge" />
+          <item value="6" name="immobile" />
+        </value>
+        <value type="Enum" name="obstacle ignore size" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="tiny" />
+          <item value="2" name="small" />
+          <item value="3" name="medium" />
+          <item value="4" name="large" />
+          <item value="5" name="huge" />
+          <item value="6" name="immobile" />
+        </value>
+        <value type="Enum" name="obstacle smashable size" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="tiny" />
+          <item value="2" name="small" />
+          <item value="3" name="medium" />
+          <item value="4" name="large" />
+          <item value="5" name="huge" />
+          <item value="6" name="immobile" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Enum" name="jump height" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="down" />
+          <item value="2" name="step" />
+          <item value="3" name="crouch" />
+          <item value="4" name="stand" />
+          <item value="5" name="storey" />
+          <item value="6" name="tower" />
+          <item value="7" name="infinite" />
+        </value>
+        <value type="Flags" name="movement hints" length="4" disabled="false">
+          <bit index="0" name="vault step" />
+          <bit index="1" name="vault crouch" />
+          <bit index="2" name="" />
+          <bit index="3" name="" />
+          <bit index="4" name="" />
+          <bit index="5" name="mount step" />
+          <bit index="6" name="mount crouch" />
+          <bit index="7" name="mount stand" />
+          <bit index="8" name="" />
+          <bit index="9" name="" />
+          <bit index="10" name="" />
+          <bit index="11" name="hoist crouch" />
+          <bit index="12" name="hoist stand" />
+          <bit index="13" name="" />
+          <bit index="14" name="" />
+          <bit index="15" name="" />
+        </value>
+        <value type="Real" name="throttle scale" disabled="false" />
+      </struct>
+      <value type="Block" name="movement properties" disabled="false" struct="CharacterMovementBlock" maxelements="1" />
+      <struct name="CharacterSwarmBlock">
+        <value type="ShortInteger" name="scatter killed count" disabled="false">
+          <tooltip>After the given number of deaths, the swarm scatters</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Real" name="scatter radius" disabled="false">
+          <tooltip>the distance from the target that the swarm scatters</tooltip>
+        </value>
+        <value type="Real" name="scatter time" disabled="false">
+          <tooltip>amount of time to remain scattered</tooltip>
+        </value>
+        <value type="Real" name="hound min distance" disabled="false" />
+        <value type="Real" name="hound max distance" disabled="false" />
+        <value type="Real" name="perlin offset scale" disabled="false" unit="[0-1]">
+          <tooltip>amount of randomness added to creature's throttle</tooltip>
+        </value>
+        <value type="RealBounds" name="offset period" disabled="false" unit="s">
+          <tooltip>how fast the creature changes random offset to throttle</tooltip>
+        </value>
+        <value type="Real" name="perlin idle movement threshold" disabled="false" unit="[0-1]">
+          <tooltip>a random offset lower then given threshold is made 0. (threshold of 1 = no movement)</tooltip>
+        </value>
+        <value type="Real" name="perlin combat movement threshold" disabled="false" unit="[0-1]">
+          <tooltip>a random offset lower then given threshold is made 0. (threshold of 1 = no movement)</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="swarm properties" disabled="false" struct="CharacterSwarmBlock" maxelements="3" />
+      <struct name="CharacterReadyBlock">
+        <value type="RealBounds" name="ready time bounds" disabled="false">
+          <tooltip>Character will pause for given time before engaging threat</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="ready properties" disabled="false" struct="CharacterReadyBlock" maxelements="3" />
+      <struct name="CharacterEngageBlock">
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="engage perch" />
+          <bit index="1" name="fight constant movement" />
+          <bit index="2" name="flight fight constant movement" />
+        </value>
+        <value type="Real" name="Crouch danger threshold" disabled="false">
+          <tooltip>When danger rises above the threshold, the actor crouches</tooltip>
+        </value>
+        <value type="Real" name="Stand danger threshold" disabled="false">
+          <tooltip>When danger drops below this threshold, the actor can stand again.</tooltip>
+        </value>
+        <value type="Real" name="Fight danger move threshold" disabled="false">
+          <tooltip>When danger goes above given level, this actor switches firing positions</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="engage properties" disabled="false" struct="CharacterEngageBlock" maxelements="3" />
+      <struct name="CharacterChargeBlock">
+        <value type="Flags" name="Charge flags" length="4" disabled="false">
+          <bit index="0" name="offhand melee allowed" />
+          <bit index="1" name="berserk whenever charge" />
+        </value>
+        <value type="Real" name="melee consider range" disabled="false" />
+        <value type="Real" name="melee chance" disabled="false">
+          <tooltip>chance of initiating a melee within a 1 second period</tooltip>
+        </value>
+        <value type="Real" name="melee attack range" disabled="false" />
+        <value type="Real" name="melee abort range" disabled="false" />
+        <value type="Real" name="melee attack timeout" disabled="false" unit="seconds">
+          <tooltip>Give up after given amount of time spent charging</tooltip>
+        </value>
+        <value type="Real" name="melee attack delay timer" disabled="false" unit="seconds">
+          <tooltip>don't attempt again before given time since last melee</tooltip>
+        </value>
+        <value type="RealBounds" name="melee leap range" disabled="false" />
+        <value type="Real" name="melee leap chance" disabled="false" />
+        <value type="Real" name="ideal leap velocity" disabled="false" />
+        <value type="Real" name="max leap velocity" disabled="false" />
+        <value type="Real" name="melee leap ballistic" disabled="false" />
+        <value type="Real" name="melee delay timer" disabled="false" unit="seconds">
+          <tooltip>time between melee leaps</tooltip>
+        </value>
+        <value type="TagReference" name="berserk weapon" disabled="false" extensions="weap">
+          <tooltip>when I berserk, I pull out a ...</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="charge properties" disabled="false" struct="CharacterChargeBlock" maxelements="3" />
+      <struct name="CharacterEvasionBlock">
+        <value type="Real" name="Evasion danger threshold" disabled="false">
+          <tooltip>Consider evading when immediate danger surpasses threshold</tooltip>
+        </value>
+        <value type="Real" name="Evasion delay timer" disabled="false">
+          <tooltip>Wait at least this delay between evasions</tooltip>
+        </value>
+        <value type="Real" name="Evasion chance" disabled="false">
+          <tooltip>If danger is above threshold, the chance that we will evade. Expressed as chance of evading within a 1 second time period</tooltip>
+        </value>
+        <value type="Real" name="Evasion proximity threshold" disabled="false">
+          <tooltip>If target is within given proximity, possibly evade</tooltip>
+        </value>
+        <value type="Real" name="dive retreat chance" disabled="false">
+          <tooltip>Chance of retreating (fleeing) after danger avoidance dive</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="evasion properties" disabled="false" struct="CharacterEvasionBlock" maxelements="3" />
+      <struct name="CharacterCoverBlock">
+        <value type="Flags" name="cover flags" length="4" disabled="false">
+          <bit index="0" name="Flag1" />
+        </value>
+        <value type="RealBounds" name="hide behind cover time" disabled="false" unit="seconds">
+          <tooltip>how long we stay behind cover after seeking cover</tooltip>
+        </value>
+        <value type="Real" name="Cover vitality threshold" disabled="false">
+          <tooltip>When vitality drops below this level, possibly trigger a cover</tooltip>
+        </value>
+        <value type="Real" name="Cover shield fraction" disabled="false">
+          <tooltip>trigger cover when shield drops below this fraction (low shield cover impulse must be enabled)</tooltip>
+        </value>
+        <value type="Real" name="Cover check delay" disabled="false">
+          <tooltip>amount of time I will wait before trying again after covering</tooltip>
+        </value>
+        <value type="Real" name="Emerge from cover when shield fraction reaches threshold" disabled="false">
+          <tooltip>Emerge from cover when shield fraction reaches threshold</tooltip>
+        </value>
+        <value type="Real" name="Cover danger threshold" disabled="false">
+          <tooltip>Danger must be this high to cover. At a danger level of 'danger threshold', the chance of seeking cover is the cover chance lower bound (below)</tooltip>
+        </value>
+        <value type="Real" name="Danger upper threshold" disabled="false">
+          <tooltip>At or above danger level of upper threshold, the chance of seeking cover is the cover chance upper bound (below)</tooltip>
+        </value>
+        <value type="RealBounds" name="Cover chance" disabled="false">
+          <tooltip>Bounds on the chances of seeking cover.</tooltip>
+        </value>
+        <value type="Real" name="Proximity self-preserve" disabled="false" unit="wus">
+          <tooltip>When the proximity_self_preservation impulse is enabled, triggers self-preservation when target within this distance</tooltip>
+        </value>
+        <value type="Real" name="Disallow cover distance" disabled="false" unit="world units">
+          <tooltip>Disallow covering from visible target under the given distance away</tooltip>
+        </value>
+        <value type="Real" name="proximity melee distance" disabled="false">
+          <tooltip>When self preserving from a target less than given distance, causes melee attack (assuming proximity_melee_impulse is enabled)</tooltip>
+        </value>
+        <value type="Real" name="unreachable enemy danger threshold" disabled="false">
+          <tooltip>When danger from an unreachable enemy surpasses threshold, actor cover (assuming unreachable_enemy_cover impulse is enabled)</tooltip>
+        </value>
+        <value type="Real" name="scary target threshold" disabled="false">
+          <tooltip>When target is aware of me and surpasses the given scariness, self-preserve (scary_target_cover_impulse)</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="cover properties" disabled="false" struct="CharacterCoverBlock" maxelements="3" />
+      <struct name="CharacterRetreatBlock">
+        <value type="Flags" name="Retreat flags" length="4" disabled="false">
+          <bit index="0" name="Zig-zag when fleeing" />
+          <bit index="1" name="Unused1" />
+        </value>
+        <value type="Real" name="Shield threshold" disabled="false">
+          <tooltip>When shield vitality drops below given amount, retreat is triggered by low_shield_retreat_impulse</tooltip>
+        </value>
+        <value type="Real" name="Scary target threshold" disabled="false">
+          <tooltip>When confronting an enemy of over the given scariness, retreat is triggered by scary_target_retreat_impulse</tooltip>
+        </value>
+        <value type="Real" name="Danger threshold" disabled="false">
+          <tooltip>When perceived danger rises above the given threshold, retreat is triggered by danger_retreat_impulse</tooltip>
+        </value>
+        <value type="Real" name="Proximity threshold" disabled="false">
+          <tooltip>When enemy closer than given threshold, retreat is triggered by proximity_retreat_impulse</tooltip>
+        </value>
+        <value type="RealBounds" name="minmax forced cower time bounds" disabled="false">
+          <tooltip>actor cowers for at least the given amount of time</tooltip>
+        </value>
+        <value type="RealBounds" name="minmax cower timeout bounds" disabled="false">
+          <tooltip>actor times out of cower after the given amount of time</tooltip>
+        </value>
+        <value type="Real" name="proximity ambush threshold" disabled="false">
+          <tooltip>If target reaches is within the given proximity, an ambush is triggered by the proximity ambush impulse</tooltip>
+        </value>
+        <value type="Real" name="awareness ambush threshold" disabled="false">
+          <tooltip>If target is less than threshold (0-1) aware of me, an ambush is triggered by the vulnerable enemy ambush impulse</tooltip>
+        </value>
+        <value type="Real" name="leader dead retreat chance" disabled="false">
+          <tooltip>If leader-dead-retreat-impulse is active, gives the chance that we will flee when our leader dies within 4 world units of us</tooltip>
+        </value>
+        <value type="Real" name="peer dead retreat chance" disabled="false">
+          <tooltip>If peer-dead-retreat-impulse is active, gives the chance that we will flee when one of our peers (friend of the same race) dies within 4 world units of us</tooltip>
+        </value>
+        <value type="Real" name="second peer dead retreat chance" disabled="false">
+          <tooltip>If peer-dead-retreat-impulse is active, gives the chance that we will flee when a second peer (friend of the same race) dies within 4 world units of us</tooltip>
+        </value>
+        <value type="Angle" name="zig-zag angle" disabled="false" unit="degrees">
+          <tooltip>The angle from the intended destination direction that a zig-zag will cause</tooltip>
+        </value>
+        <value type="Real" name="zig-zag period" disabled="false" unit="seconds">
+          <tooltip>How long it takes to zig left and then zag right.</tooltip>
+        </value>
+        <value type="Real" name="retreat grenade chance" disabled="false">
+          <tooltip>The likelihood of throwing down a grenade to cover our retreat</tooltip>
+        </value>
+        <value type="TagReference" name="backup weapon" disabled="false" extensions="weap">
+          <tooltip>If I want to flee and I don't have flee animations with my current weapon, throw it away and try a ...</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="retreat properties" disabled="false" struct="CharacterRetreatBlock" maxelements="3" />
+      <struct name="CharacterSearchBlock">
+        <value type="Flags" name="Search flags" length="4" disabled="false">
+          <bit index="0" name="crouch on investigate" />
+          <bit index="1" name="walk on pursuit" />
+        </value>
+        <value type="RealBounds" name="search time" disabled="false" />
+        <value type="RealBounds" name="Uncover distance bounds" disabled="false">
+          <tooltip>Distance of uncover point from target. Hard lower limit, soft upper limit.</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="search properties" disabled="false" struct="CharacterSearchBlock" maxelements="3" />
+      <struct name="CharacterPresearchBlock">
+        <value type="Flags" name="Pre-search flags" length="4" disabled="false">
+          <bit index="0" name="Flag1" />
+        </value>
+        <value type="RealBounds" name="min presearch time" disabled="false" unit="seconds">
+          <tooltip>If the min presearch time expires and the target is (actually) outside the min-certainty radius, presearch turns off</tooltip>
+        </value>
+        <value type="RealBounds" name="max presearch time" disabled="false" unit="seconds">
+          <tooltip>Presearch turns off after the given time</tooltip>
+        </value>
+        <value type="Real" name="Min certainty radius" disabled="false" />
+        <value type="Real" name="DEPRECATED" disabled="false" />
+        <value type="RealBounds" name="min suppressing time" disabled="false">
+          <tooltip>if the min suppressing time expires and the target is outside the min-certainty radius, suppressing fire turns off</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="pre-search properties" disabled="false" struct="CharacterPresearchBlock" maxelements="3" />
+      <struct name="CharacterIdleBlock">
+        <value type="Pad" name="_unnamed0" length="4" />
+        <value type="RealBounds" name="idle pose delay time" disabled="false" unit="seconds">
+          <tooltip>time range for delays between idle poses</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="idle properties" disabled="false" struct="CharacterIdleBlock" maxelements="3" />
+      <struct name="CharacterVocalizationBlock">
+        <value type="Real" name="look comment time" disabled="false" unit="s">
+          <tooltip>How long does the player look at an AI before the AI responds?</tooltip>
+        </value>
+        <value type="Real" name="look long comment time" disabled="false" unit="s">
+          <tooltip>How long does the player look at the AI before he responds with his 'long look' comment?</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="vocalization properties" disabled="false" struct="CharacterVocalizationBlock" maxelements="1" />
+      <struct name="CharacterBoardingBlock">
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="airborne boarding" />
+        </value>
+        <value type="Real" name="max distance" disabled="false" unit="wus">
+          <tooltip>maximum distance from entry point that we will consider boarding</tooltip>
+        </value>
+        <value type="Real" name="abort distance" disabled="false" unit="wus">
+          <tooltip>give up trying to get in boarding seat if entry point is further away than this</tooltip>
+        </value>
+        <value type="Real" name="max speed" disabled="false" unit="wu/s">
+          <tooltip>maximum speed at which we will consider boarding</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="boarding properties" disabled="false" struct="CharacterBoardingBlock" maxelements="1" />
+      <struct name="CharacterBossBlock">
+        <value type="Pad" name="_unnamed0" length="4" />
+        <value type="Real" name="flurry damage threshold" disabled="false" unit="[0..1]">
+          <tooltip>when more than x damage is caused a juggernaut flurry is triggered</tooltip>
+        </value>
+        <value type="Real" name="flurry time" disabled="false" unit="seconds">
+          <tooltip>flurry lasts this long</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="boss properties" disabled="false" struct="CharacterBossBlock" maxelements="1" />
+      <struct name="CharacterWeaponsBlock">
+        <value type="Flags" name="weapons flags" length="4" disabled="false">
+          <bit index="0" name="bursting inhibits movement" />
+          <bit index="1" name="must crouch to shoot" />
+          <bit index="2" name="use extended safe-to-save range" />
+        </value>
+        <value type="TagReference" name="weapon" disabled="false" extensions="weap" blockname="true" />
+        <value type="Real" name="maximum firing range" disabled="false" unit="world units">
+          <tooltip>we can only fire our weapon at targets within this distance</tooltip>
+        </value>
+        <value type="Real" name="minimum firing range" disabled="false">
+          <tooltip>weapon will not be fired at target closer than given distance</tooltip>
+        </value>
+        <value type="RealBounds" name="normal combat range" disabled="false" unit="world units" />
+        <value type="Real" name="bombardment range" disabled="false">
+          <tooltip>we offset our burst targets randomly by this range when firing at non-visible enemies (zero = never)</tooltip>
+        </value>
+        <value type="Real" name="Max special target distance" disabled="false" unit="world units">
+          <tooltip>Specific target regions on a vehicle or unit will be fired upon only under the given distance</tooltip>
+        </value>
+        <value type="RealBounds" name="timid combat range" disabled="false" unit="world units" />
+        <value type="RealBounds" name="aggressive combat range" disabled="false" unit="world units" />
+        <value type="Real" name="super-ballistic range" disabled="false">
+          <tooltip>we try to aim our shots super-ballistically if target is outside this range (zero = never)</tooltip>
+        </value>
+        <value type="RealBounds" name="Ballistic firing bounds" disabled="false" unit="world units">
+          <tooltip>At the min range, the min ballistic fraction is used, at the max, the max ballistic fraction is used</tooltip>
+        </value>
+        <value type="RealBounds" name="Ballistic fraction bounds" disabled="false" unit="[0-1]">
+          <tooltip>Controls speed and degree of arc. 0 = high, slow, 1 = low, fast</tooltip>
+        </value>
+        <value type="RealBounds" name="first burst delay time" disabled="false" unit="seconds" />
+        <value type="Real" name="surprise delay time" disabled="false" unit="seconds" />
+        <value type="Real" name="surprise fire-wildly time" disabled="false" unit="seconds" />
+        <value type="Real" name="death fire-wildly chance" disabled="false" unit="[0,1]" />
+        <value type="Real" name="death fire-wildly time" disabled="false" unit="seconds" />
+        <value type="RealVector3d" name="custom stand gun offset" disabled="false">
+          <tooltip>custom standing gun offset for overriding the default in the base actor</tooltip>
+        </value>
+        <value type="RealVector3d" name="custom crouch gun offset" disabled="false">
+          <tooltip>custom crouching gun offset for overriding the default in the base actor</tooltip>
+        </value>
+        <value type="Enum" name="special-fire mode" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="overcharge" />
+          <item value="2" name="secondary trigger" />
+          <tooltip>the type of special weapon fire that we can use</tooltip>
+        </value>
+        <value type="Enum" name="special-fire situation" length="2" disabled="false">
+          <item value="0" name="never" />
+          <item value="1" name="enemy visible" />
+          <item value="2" name="enemy out of sight" />
+          <item value="3" name="strafing" />
+          <tooltip>when we will decide to use our special weapon fire mode</tooltip>
+        </value>
+        <value type="Real" name="special-fire chance" disabled="false" unit="[0,1]">
+          <tooltip>how likely we are to use our special weapon fire mode</tooltip>
+        </value>
+        <value type="Real" name="special-fire delay" disabled="false" unit="seconds">
+          <tooltip>how long we must wait between uses of our special weapon fire mode</tooltip>
+        </value>
+        <value type="Real" name="special damage modifier" disabled="false" unit="[0,1]">
+          <tooltip>damage modifier for special weapon fire (applied in addition to the normal damage modifier. zero = no change)</tooltip>
+        </value>
+        <value type="Angle" name="special projectile error" disabled="false" unit="degrees">
+          <tooltip>projectile error angle for special weapon fire (applied in addition to the normal error)</tooltip>
+        </value>
+        <value type="RealBounds" name="drop weapon loaded" disabled="false">
+          <tooltip>amount of ammo loaded into the weapon that we drop (in fractions of a clip, e.g. 0.3 to 0.5)</tooltip>
+        </value>
+        <value type="ShortIntegerBounds" name="drop weapon ammo" disabled="false">
+          <tooltip>total number of rounds in the weapon that we drop (ignored for energy weapons)</tooltip>
+        </value>
+        <value type="RealBounds" name="normal accuracy bounds" disabled="false">
+          <tooltip>Indicates starting and ending accuracies at normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal accuracy time" disabled="false">
+          <tooltip>The amount of time it takes the accuracy to go from starting to ending</tooltip>
+        </value>
+        <value type="RealBounds" name="heroic accuracy bounds" disabled="false">
+          <tooltip>Indicates starting and ending accuracies at heroic difficulty</tooltip>
+        </value>
+        <value type="Real" name="heroic accuracy time" disabled="false">
+          <tooltip>The amount of time it takes the accuracy to go from starting to ending</tooltip>
+        </value>
+        <value type="RealBounds" name="legendary accuracy bounds" disabled="false">
+          <tooltip>Indicates starting and ending accuracies at legendary difficulty</tooltip>
+        </value>
+        <value type="Real" name="legendary accuracy time" disabled="false">
+          <tooltip>The amount of time it takes the accuracy to go from starting to ending</tooltip>
+        </value>
+        <struct name="CharacterFiringPatternBlock">
+          <value type="Real" name="rate of fire" disabled="false">
+            <tooltip>how many times per second we pull the trigger (zero = continuously held down)</tooltip>
+          </value>
+          <value type="Real" name="target tracking" disabled="false" unit="[0,1]">
+            <tooltip>how well our bursts track moving targets. 0.0= fire at the position they were standing when we started the burst. 1.0= fire at current position</tooltip>
+          </value>
+          <value type="Real" name="target leading" disabled="false" unit="[0,1]">
+            <tooltip>how much we lead moving targets. 0.0= no prediction. 1.0= predict completely.</tooltip>
+          </value>
+          <value type="Real" name="burst origin radius" disabled="false" unit="world units">
+            <tooltip>how far away from the target the starting point is</tooltip>
+          </value>
+          <value type="Angle" name="burst origin angle" disabled="false" unit="degrees">
+            <tooltip>the range from the horizontal that our starting error can be</tooltip>
+          </value>
+          <value type="RealBounds" name="burst return length" disabled="false" unit="world units">
+            <tooltip>how far the burst point moves back towards the target (could be negative)</tooltip>
+          </value>
+          <value type="Angle" name="burst return angle" disabled="false" unit="degrees">
+            <tooltip>the range from the horizontal that the return direction can be</tooltip>
+          </value>
+          <value type="RealBounds" name="burst duration" disabled="false" unit="seconds">
+            <tooltip>how long each burst we fire is</tooltip>
+          </value>
+          <value type="RealBounds" name="burst separation" disabled="false" unit="seconds">
+            <tooltip>how long we wait between bursts</tooltip>
+          </value>
+          <value type="Real" name="weapon damage modifier" disabled="false">
+            <tooltip>what fraction of its normal damage our weapon inflicts (zero = no modifier)</tooltip>
+          </value>
+          <value type="Angle" name="projectile error" disabled="false" unit="degrees">
+            <tooltip>error added to every projectile we fire</tooltip>
+          </value>
+          <value type="Angle" name="burst angular velocity" disabled="false" unit="degrees per second">
+            <tooltip>the maximum rate at which we can sweep our fire (zero = unlimited)</tooltip>
+          </value>
+          <value type="Angle" name="maximum error angle" disabled="false" unit="degrees">
+            <tooltip>cap on the maximum angle by which we will miss target (restriction on burst origin radius</tooltip>
+          </value>
+        </struct>
+        <value type="Block" name="firing patterns" disabled="false" struct="CharacterFiringPatternBlock" maxelements="2" />
+        <value type="TagReference" name="weapon melee damage" disabled="false" extensions="jpt!" />
+      </struct>
+      <value type="Block" name="weapons properties" disabled="false" struct="CharacterWeaponsBlock" maxelements="100" />
+      <struct name="CharacterFiringPatternPropertiesBlock">
+        <value type="TagReference" name="weapon" disabled="false" extensions="weap" blockname="true" />
+        <struct name="CharacterFiringPatternBlock">
+          <value type="Real" name="rate of fire" disabled="false">
+            <tooltip>how many times per second we pull the trigger (zero = continuously held down)</tooltip>
+          </value>
+          <value type="Real" name="target tracking" disabled="false" unit="[0,1]">
+            <tooltip>how well our bursts track moving targets. 0.0= fire at the position they were standing when we started the burst. 1.0= fire at current position</tooltip>
+          </value>
+          <value type="Real" name="target leading" disabled="false" unit="[0,1]">
+            <tooltip>how much we lead moving targets. 0.0= no prediction. 1.0= predict completely.</tooltip>
+          </value>
+          <value type="Real" name="burst origin radius" disabled="false" unit="world units">
+            <tooltip>how far away from the target the starting point is</tooltip>
+          </value>
+          <value type="Angle" name="burst origin angle" disabled="false" unit="degrees">
+            <tooltip>the range from the horizontal that our starting error can be</tooltip>
+          </value>
+          <value type="RealBounds" name="burst return length" disabled="false" unit="world units">
+            <tooltip>how far the burst point moves back towards the target (could be negative)</tooltip>
+          </value>
+          <value type="Angle" name="burst return angle" disabled="false" unit="degrees">
+            <tooltip>the range from the horizontal that the return direction can be</tooltip>
+          </value>
+          <value type="RealBounds" name="burst duration" disabled="false" unit="seconds">
+            <tooltip>how long each burst we fire is</tooltip>
+          </value>
+          <value type="RealBounds" name="burst separation" disabled="false" unit="seconds">
+            <tooltip>how long we wait between bursts</tooltip>
+          </value>
+          <value type="Real" name="weapon damage modifier" disabled="false">
+            <tooltip>what fraction of its normal damage our weapon inflicts (zero = no modifier)</tooltip>
+          </value>
+          <value type="Angle" name="projectile error" disabled="false" unit="degrees">
+            <tooltip>error added to every projectile we fire</tooltip>
+          </value>
+          <value type="Angle" name="burst angular velocity" disabled="false" unit="degrees per second">
+            <tooltip>the maximum rate at which we can sweep our fire (zero = unlimited)</tooltip>
+          </value>
+          <value type="Angle" name="maximum error angle" disabled="false" unit="degrees">
+            <tooltip>cap on the maximum angle by which we will miss target (restriction on burst origin radius</tooltip>
+          </value>
+        </struct>
+        <value type="Block" name="firing patterns" disabled="false" struct="CharacterFiringPatternBlock" maxelements="2" />
+      </struct>
+      <value type="Block" name="firing pattern properties" disabled="false" struct="CharacterFiringPatternPropertiesBlock" maxelements="100" />
+      <struct name="CharacterGrenadesBlock">
+        <value type="Flags" name="grenades flags" length="4" disabled="false">
+          <bit index="0" name="Flag1" />
+        </value>
+        <value type="Enum" name="grenade type" length="2" disabled="false" blockname="true">
+          <item value="0" name="human fragmentation" />
+          <item value="1" name="covenant plasma" />
+          <tooltip>type of grenades that we throw</tooltip>
+        </value>
+        <value type="Enum" name="trajectory type" length="2" disabled="false">
+          <item value="0" name="toss" />
+          <item value="1" name="lob" />
+          <item value="2" name="bounce" />
+          <tooltip>how we throw our grenades</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="ShortInteger" name="minimum enemy count" disabled="false">
+          <tooltip>how many enemies must be within the radius of the grenade before we will consider throwing there</tooltip>
+        </value>
+        <value type="Real" name="enemy radius" disabled="false" unit="world units">
+          <tooltip>we consider enemies within this radius when determining where to throw</tooltip>
+        </value>
+        <value type="Real" name="grenade ideal velocity" disabled="false" unit="world units per second">
+          <tooltip>how fast we LIKE to throw our grenades</tooltip>
+        </value>
+        <value type="Real" name="grenade velocity" disabled="false" unit="world units per second">
+          <tooltip>the fastest we can possibly throw our grenades</tooltip>
+        </value>
+        <value type="RealBounds" name="grenade ranges" disabled="false" unit="world units">
+          <tooltip>ranges within which we will consider throwing a grenade</tooltip>
+        </value>
+        <value type="Real" name="collateral damage radius" disabled="false" unit="world units">
+          <tooltip>we won't throw if there are friendlies around our target within this range</tooltip>
+        </value>
+        <value type="RealFraction" name="grenade chance" disabled="false" unit="[0,1]">
+          <tooltip>how likely we are to throw a grenade in one second</tooltip>
+        </value>
+        <value type="Real" name="grenade throw delay" disabled="false" unit="seconds">
+          <tooltip>How long we have to wait after throwing a grenade before we can throw another one</tooltip>
+        </value>
+        <value type="RealFraction" name="grenade uncover chance" disabled="false" unit="[0,1]">
+          <tooltip>how likely we are to throw a grenade to flush out a target in one second</tooltip>
+        </value>
+        <value type="RealFraction" name="anti-vehicle grenade chance" disabled="false" unit="[0,1]">
+          <tooltip>how likely we are to throw a grenade against a vehicle</tooltip>
+        </value>
+        <value type="ShortIntegerBounds" name="grenade count" disabled="false">
+          <tooltip>number of grenades that we start with</tooltip>
+        </value>
+        <value type="Real" name="dont drop grenades chance" disabled="false" unit="[0,1]">
+          <tooltip>how likely we are not to drop any grenades when we die, even if we still have some</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="grenades properties" disabled="false" struct="CharacterGrenadesBlock" maxelements="10" />
+      <struct name="CharacterVehicleBlock">
+        <value type="TagReference" name="unit" disabled="false" extensions="unit" blockname="true" />
+        <value type="TagReference" name="style" disabled="false" extensions="styl" blockname="true" />
+        <value type="Flags" name="vehicle flags" length="4" disabled="false">
+          <bit index="0" name="passengers adopt original squad" />
+        </value>
+        <value type="Real" name="ai pathfinding radius" disabled="false" unit="world units">
+          <tooltip>(Ground vehicles)</tooltip>
+        </value>
+        <value type="Real" name="ai destination radius" disabled="false" unit="world units">
+          <tooltip>(All vehicles) Distance within which goal is considered reached</tooltip>
+        </value>
+        <value type="Real" name="ai deceleration distanceworld units" disabled="false">
+          <tooltip>(All vehicles)Distance from goal at which AI starts to decelerate</tooltip>
+        </value>
+        <value type="Real" name="ai turning radius" disabled="false">
+          <tooltip>(Warthog, Pelican, Ghost) Idealized average turning radius (should reflect actual vehicle physics)</tooltip>
+        </value>
+        <value type="Real" name="ai inner turning radius  tr" disabled="false">
+          <tooltip>(Warthog-type) Idealized minimum turning radius (should reflect actual vehicle physics)</tooltip>
+        </value>
+        <value type="Real" name="ai ideal turning radius  tr" disabled="false">
+          <tooltip>(Warthogs, ghosts) Ideal turning radius for rounding turns (barring obstacles, etc.)</tooltip>
+        </value>
+        <value type="Angle" name="ai banshee steering maximum" disabled="false">
+          <tooltip>(Banshee)</tooltip>
+        </value>
+        <value type="Real" name="ai max steering angle" disabled="false" unit="degrees">
+          <tooltip>(Warthog, ghosts, wraiths)Maximum steering angle from forward (ultimately controls turning speed)</tooltip>
+        </value>
+        <value type="Real" name="ai max steering delta" disabled="false" unit=" degrees">
+          <tooltip>(pelicans, dropships, ghosts, wraiths)Maximum delta in steering angle from one tick to the next (ultimately controls turn acceleration)</tooltip>
+        </value>
+        <value type="Real" name="ai oversteering scale" disabled="false">
+          <tooltip>(Warthog, ghosts, wraiths)</tooltip>
+        </value>
+        <value type="AngleBounds" name="ai oversteering bounds" disabled="false">
+          <tooltip>(Banshee) Angle to goal at which AI will oversteer</tooltip>
+        </value>
+        <value type="Real" name="ai sideslip distance" disabled="false">
+          <tooltip>(Ghosts, Dropships) Distance within which Ai will strafe to target (as opposed to turning)</tooltip>
+        </value>
+        <value type="Real" name="ai avoidance distance" disabled="false" unit="world units">
+          <tooltip>(Banshee-style) Look-ahead distance for obstacle avoidance</tooltip>
+        </value>
+        <value type="Real" name="ai min urgency" disabled="false" unit="[0-1]">
+          <tooltip>(Banshees)The minimum urgency with which a turn can be made (urgency = percent of maximum steering delta)</tooltip>
+        </value>
+        <value type="Real" name="ai throttle maximum" disabled="false" unit="(0 - 1)">
+          <tooltip>(All vehicles)</tooltip>
+        </value>
+        <value type="Real" name="ai goal min throttle scale" disabled="false">
+          <tooltip>(Warthogs, Dropships, ghosts)scale on throttle when within 'ai deceleration distance' of goal (0...1)</tooltip>
+        </value>
+        <value type="Real" name="ai turn min throttle scale" disabled="false">
+          <tooltip>(Warthogs, ghosts) Scale on throttle due to nearness to a turn (0...1)</tooltip>
+        </value>
+        <value type="Real" name="ai direction min throttle scale" disabled="false">
+          <tooltip>(Warthogs, ghosts) Scale on throttle due to facing away from intended direction (0...1)</tooltip>
+        </value>
+        <value type="Real" name="ai acceleration scale" disabled="false" unit="(0-1)">
+          <tooltip>(warthogs, ghosts) The maximum allowable change in throttle between ticks</tooltip>
+        </value>
+        <value type="Real" name="ai throttle blend" disabled="false" unit="(0-1)">
+          <tooltip>(dropships, sentinels) The degree of throttle blending between one tick and the next (0 = no blending)</tooltip>
+        </value>
+        <value type="Real" name="theoretical max speed" disabled="false" unit="wu/s">
+          <tooltip>(dropships, warthogs, ghosts) About how fast I can go.</tooltip>
+        </value>
+        <value type="Real" name="error scale" disabled="false">
+          <tooltip>(dropships, warthogs) scale on the difference between desired and actual speed, applied to throttle</tooltip>
+        </value>
+        <value type="Angle" name="ai allowable aim deviation angle" disabled="false" />
+        <value type="Real" name="ai charge tight angle distance" disabled="false">
+          <tooltip>(All vehicles) The distance at which the tight angle criterion is used for deciding to vehicle charge</tooltip>
+        </value>
+        <value type="Real" name="ai charge tight angle" disabled="false" unit="[0-1]">
+          <tooltip>(All vehicles) Angle cosine within which the target must be when target is closer than tight angle distance in order to charge</tooltip>
+        </value>
+        <value type="Real" name="ai charge repeat timeout" disabled="false">
+          <tooltip>(All vehicles) Time delay between vehicle charges</tooltip>
+        </value>
+        <value type="Real" name="ai charge look-ahead time" disabled="false">
+          <tooltip>(All vehicles) In deciding when to abort vehicle charge, look ahead these many seconds to predict time of contact</tooltip>
+        </value>
+        <value type="Real" name="ai charge consider distance" disabled="false">
+          <tooltip>Consider charging the target when it is within this range (0 = infinite distance)</tooltip>
+        </value>
+        <value type="Real" name="ai charge abort distance" disabled="false">
+          <tooltip>Abort the charge when the target get more than this far away (0 = never abort)</tooltip>
+        </value>
+        <value type="Real" name="vehicle ram timeout" disabled="false">
+          <tooltip>The ram behavior stops after a maximum of the given number of seconds</tooltip>
+        </value>
+        <value type="Real" name="ram paralysis time" disabled="false">
+          <tooltip>The ram behavior freezes the vehicle for a given number of seconds after performing the ram</tooltip>
+        </value>
+        <value type="Real" name="ai cover damage threshold" disabled="false">
+          <tooltip>(All vehicles) Trigger a cover when recent damage is above given threshold (damage_vehicle_cover impulse)</tooltip>
+        </value>
+        <value type="Real" name="ai cover min distance" disabled="false">
+          <tooltip>(All vehicles) When executing vehicle-cover, minimum distance from the target to flee to</tooltip>
+        </value>
+        <value type="Real" name="ai cover time" disabled="false">
+          <tooltip>(All vehicles) How long to stay away from the target</tooltip>
+        </value>
+        <value type="Real" name="ai cover min boost distance" disabled="false">
+          <tooltip>(All vehicles) Boosting allowed when distance to cover destination is greater then this.</tooltip>
+        </value>
+        <value type="Real" name="turtling recent damage threshold" disabled="false" unit="%">
+          <tooltip>If vehicle turtling behavior is enabled, turtling is initiated if 'recent damage' surpasses the given threshold</tooltip>
+        </value>
+        <value type="Real" name="turtling min time" disabled="false" unit="seconds">
+          <tooltip>If the vehicle turtling behavior is enabled, turtling occurs for at least the given time</tooltip>
+        </value>
+        <value type="Real" name="turtling timeout" disabled="false" unit="seconds">
+          <tooltip>The turtled state times out after the given number of seconds</tooltip>
+        </value>
+        <value type="Enum" name="obstacle ignore size" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="tiny" />
+          <item value="2" name="small" />
+          <item value="3" name="medium" />
+          <item value="4" name="large" />
+          <item value="5" name="huge" />
+          <item value="6" name="immobile" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+      </struct>
+      <value type="Block" name="vehicle properties" disabled="false" struct="CharacterVehicleBlock" maxelements="100" />
+    </struct>
+  </plugin>
+</xml>

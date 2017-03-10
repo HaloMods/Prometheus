@@ -1,0 +1,56 @@
+<xml>
+  <name type="deca" parenttype="????">Decal</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="DecalBlock">
+      <value type="Flags" name="flags" length="2" disabled="false">
+        <bit index="0" name="geometry inherited by next decal in chain" />
+        <bit index="1" name="interpolate color in hsv" />
+        <bit index="2" name="...more colors" />
+        <bit index="3" name="no random rotation" />
+        <bit index="4" name="UNUSED" />
+        <bit index="5" name="SAPIEN- snap to axis" />
+        <bit index="6" name="SAPIEN- incremental counter" />
+        <bit index="7" name="UNUSED" />
+        <bit index="8" name="preserve aspect" />
+        <bit index="9" name="UNUSED" />
+      </value>
+      <value type="Enum" name="type" length="2" disabled="false">
+        <item value="0" name="scratch" />
+        <item value="1" name="splatter" />
+        <item value="2" name="burn" />
+        <item value="3" name="painted sign" />
+        <tooltip>controls how the decal wraps onto surface geometry</tooltip>
+      </value>
+      <value type="Enum" name="layer" length="2" disabled="false">
+        <item value="0" name="lit alpha-blend prelight" />
+        <item value="1" name="lit alpha-blend" />
+        <item value="2" name="double multiply" />
+        <item value="3" name="multiply" />
+        <item value="4" name="max" />
+        <item value="5" name="add" />
+        <item value="6" name="error" />
+      </value>
+      <value type="ShortInteger" name="max overlapping count" disabled="false" />
+      <value type="TagReference" name="next decal in chain" disabled="false" extensions="deca" />
+      <value type="RealBounds" name="radius" disabled="false" unit="world units">
+        <tooltip>0 defaults to 0.125</tooltip>
+      </value>
+      <value type="Real" name="radius overlap rejection" disabled="false" unit="muliplier" />
+      <value type="RealRgbColor" name="color lower bounds" disabled="false" />
+      <value type="RealRgbColor" name="color upper bounds" disabled="false" />
+      <value type="RealBounds" name="lifetime" disabled="false" unit="seconds" />
+      <value type="RealBounds" name="decay time" disabled="false" unit="seconds" />
+      <value type="Pad" name="_unnamed0" length="40" />
+      <value type="Pad" name="_unnamed1" length="2" />
+      <value type="Pad" name="_unnamed2" length="2" />
+      <value type="Pad" name="_unnamed3" length="2" />
+      <value type="Pad" name="_unnamed4" length="2" />
+      <value type="Pad" name="_unnamed5" length="20" />
+      <value type="TagReference" name="bitmap" disabled="false" extensions="bitm" />
+      <value type="Pad" name="_unnamed6" length="20" />
+      <value type="Real" name="maximum sprite extent" disabled="true" unit="pixels" />
+      <value type="Pad" name="_unnamed7" length="4" />
+    </struct>
+  </plugin>
+</xml>

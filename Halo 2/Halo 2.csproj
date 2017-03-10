@@ -1,0 +1,463 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F3D2218-5EA4-4872-8C2E-7C554C912D9A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Games.Halo2</RootNamespace>
+    <AssemblyName>Halo 2</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Compiler\Classes\Class.cs" />
+    <Compile Include="Compiler\Classes\ClassManager.cs" />
+    <Compile Include="Compiler\Classes\Element.cs" />
+    <Compile Include="Compiler\Classes\ElementType.cs" />
+    <Compile Include="Compiler\Classes\ElementWrapper.cs" />
+    <Compile Include="Compiler\Data\AlignmentConstants.cs" />
+    <Compile Include="Compiler\Data\CacheFileSound.cs" />
+    <Compile Include="Compiler\Data\Coconuts.cs" />
+    <Compile Include="Compiler\Data\Globals.cs" />
+    <Compile Include="Compiler\Data\ResourceBlock.cs" />
+    <Compile Include="Compiler\Data\Tag.cs" />
+    <Compile Include="Compiler\Data\UnicodeStringList.cs" />
+    <Compile Include="Platforms\Shared\SharedMaps.cs" />
+    <Compile Include="Platforms\Xbox\Halo2XboxGameDefinition.cs" />
+    <Compile Include="Platforms\Xbox\Halo2XboxMap.cs" />
+    <Compile Include="Platforms\Xbox\MapFileList.cs" />
+    <Compile Include="Platforms\Xbox\ScriptEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tags\Classes\ai_dialogue_globals.cs" />
+    <Compile Include="Tags\Classes\ai_mission_dialogue.cs" />
+    <Compile Include="Tags\Classes\antenna.cs" />
+    <Compile Include="Tags\Classes\biped.cs" />
+    <Compile Include="Tags\Classes\bitmap.cs" />
+    <Compile Include="Tags\Classes\breakable_surface.cs" />
+    <Compile Include="Tags\Classes\camera_track.cs" />
+    <Compile Include="Tags\Classes\cellular_automata.cs" />
+    <Compile Include="Tags\Classes\cellular_automata2d.cs" />
+    <Compile Include="Tags\Classes\character.cs" />
+    <Compile Include="Tags\Classes\chocolate_mountain.cs" />
+    <Compile Include="Tags\Classes\cloth.cs" />
+    <Compile Include="Tags\Classes\collision_model.cs" />
+    <Compile Include="Tags\Classes\colony.cs" />
+    <Compile Include="Tags\Classes\color_table.cs" />
+    <Compile Include="Tags\Classes\contrail.cs" />
+    <Compile Include="Tags\Classes\crate.cs" />
+    <Compile Include="Tags\Classes\creature.cs" />
+    <Compile Include="Tags\Classes\damage_effect.cs" />
+    <Compile Include="Tags\Classes\decal.cs" />
+    <Compile Include="Tags\Classes\decorators.cs" />
+    <Compile Include="Tags\Classes\decorator_set.cs" />
+    <Compile Include="Tags\Classes\detail_object_collection.cs" />
+    <Compile Include="Tags\Classes\device.cs" />
+    <Compile Include="Tags\Classes\device_control.cs" />
+    <Compile Include="Tags\Classes\device_light_fixture.cs" />
+    <Compile Include="Tags\Classes\device_machine.cs" />
+    <Compile Include="Tags\Classes\dialogue.cs" />
+    <Compile Include="Tags\Classes\effect.cs" />
+    <Compile Include="Tags\Classes\equipment.cs" />
+    <Compile Include="Tags\Classes\garbage.cs" />
+    <Compile Include="Tags\Classes\globals.cs" />
+    <Compile Include="Tags\Classes\hud_globals.cs" />
+    <Compile Include="Tags\Classes\hud_message_text.cs" />
+    <Compile Include="Tags\Classes\hud_number.cs" />
+    <Compile Include="Tags\Classes\item.cs" />
+    <Compile Include="Tags\Classes\item_collection.cs" />
+    <Compile Include="Tags\Classes\lens_flare.cs" />
+    <Compile Include="Tags\Classes\light.cs" />
+    <Compile Include="Tags\Classes\light_volume.cs" />
+    <Compile Include="Tags\Classes\liquid.cs" />
+    <Compile Include="Tags\Classes\material_effects.cs" />
+    <Compile Include="Tags\Classes\material_physics.cs" />
+    <Compile Include="Tags\Classes\meter.cs" />
+    <Compile Include="Tags\Classes\model.cs" />
+    <Compile Include="Tags\Classes\model_animation_graph.cs" />
+    <Compile Include="Tags\Classes\multilingual_unicode_string_list.cs" />
+    <Compile Include="Tags\Classes\multiplayer_globals.cs" />
+    <Compile Include="Tags\Classes\multiplayer_scenario_description.cs" />
+    <Compile Include="Tags\Classes\multiplayer_variant_settings_interface_definition.cs" />
+    <Compile Include="Tags\Classes\new_hud_definition.cs" />
+    <Compile Include="Tags\Classes\object.cs" />
+    <Compile Include="Tags\Classes\particle.cs" />
+    <Compile Include="Tags\Classes\particle_model.cs" />
+    <Compile Include="Tags\Classes\particle_physics.cs" />
+    <Compile Include="Tags\Classes\patchy_fog.cs" />
+    <Compile Include="Tags\Classes\physics.cs" />
+    <Compile Include="Tags\Classes\physics_model.cs" />
+    <Compile Include="Tags\Classes\pixel_shader.cs" />
+    <Compile Include="Tags\Classes\planar_fog.cs" />
+    <Compile Include="Tags\Classes\point_physics.cs" />
+    <Compile Include="Tags\Classes\projectile.cs" />
+    <Compile Include="Tags\Classes\render_model.cs" />
+    <Compile Include="Tags\Classes\scenario.cs" />
+    <Compile Include="Tags\Classes\scenario_structure_bsp.cs" />
+    <Compile Include="Tags\Classes\scenario_structure_lightmap.cs" />
+    <Compile Include="Tags\Classes\scenery.cs" />
+    <Compile Include="Tags\Classes\screen_effect.cs" />
+    <Compile Include="Tags\Classes\shader.cs" />
+    <Compile Include="Tags\Classes\shader_light_response.cs" />
+    <Compile Include="Tags\Classes\shader_pass.cs" />
+    <Compile Include="Tags\Classes\shader_template.cs" />
+    <Compile Include="Tags\Classes\sky.cs" />
+    <Compile Include="Tags\Classes\sound.cs" />
+    <Compile Include="Tags\Classes\sound_cache_file_gestalt.cs" />
+    <Compile Include="Tags\Classes\sound_classes.cs" />
+    <Compile Include="Tags\Classes\sound_dialogue_constants.cs" />
+    <Compile Include="Tags\Classes\sound_effect_collection.cs" />
+    <Compile Include="Tags\Classes\sound_effect_template.cs" />
+    <Compile Include="Tags\Classes\sound_environment.cs" />
+    <Compile Include="Tags\Classes\sound_looping.cs" />
+    <Compile Include="Tags\Classes\sound_mix.cs" />
+    <Compile Include="Tags\Classes\sound_scenery.cs" />
+    <Compile Include="Tags\Classes\stereo_system.cs" />
+    <Compile Include="Tags\Classes\style.cs" />
+    <Compile Include="Tags\Classes\text_value_pair_definition.cs" />
+    <Compile Include="Tags\Classes\unit.cs" />
+    <Compile Include="Tags\Classes\user_interface_globals_definition.cs" />
+    <Compile Include="Tags\Classes\user_interface_list_skin_definition.cs" />
+    <Compile Include="Tags\Classes\user_interface_screen_widget_definition.cs" />
+    <Compile Include="Tags\Classes\user_interface_shared_globals_definition.cs" />
+    <Compile Include="Tags\Classes\vehicle.cs" />
+    <Compile Include="Tags\Classes\vehicle_collection.cs" />
+    <Compile Include="Tags\Classes\vertex_shader.cs" />
+    <Compile Include="Tags\Classes\weapon.cs" />
+    <Compile Include="Tags\Classes\weather_system.cs" />
+    <Compile Include="Tags\Classes\wind.cs" />
+    <Compile Include="Tags\Fields\Angle.cs" />
+    <Compile Include="Tags\Fields\AngleBounds.cs" />
+    <Compile Include="Tags\Fields\ArgbColor.cs" />
+    <Compile Include="Tags\Fields\Block.cs" />
+    <Compile Include="Tags\Fields\CharInteger.cs" />
+    <Compile Include="Tags\Fields\BitmapData.cs" />
+    <Compile Include="Tags\Fields\CharBlockIndex.cs" />
+    <Compile Include="Tags\Fields\PredictedResource.cs" />
+    <Compile Include="Tags\Fields\StringId.cs" />
+    <Compile Include="Tags\Fields\ResourceBlockInverted.cs" />
+    <Compile Include="Tags\Fields\ResourceBlock.cs" />
+    <Compile Include="Tags\Fields\LongerFixedLengthString.cs" />
+    <Compile Include="Tags\Fields\Data.cs" />
+    <Compile Include="Tags\Fields\Enum.cs" />
+    <Compile Include="Tags\Fields\FixedLengthString.cs" />
+    <Compile Include="Tags\Fields\Flags.cs" />
+    <Compile Include="Tags\Fields\LongBlockIndex.cs" />
+    <Compile Include="Tags\Fields\LongInteger.cs" />
+    <Compile Include="Tags\Fields\Pad.cs" />
+    <Compile Include="Tags\Fields\Point2D.cs" />
+    <Compile Include="Tags\Fields\Real.cs" />
+    <Compile Include="Tags\Fields\RealArgbColor.cs" />
+    <Compile Include="Tags\Fields\RealBounds.cs" />
+    <Compile Include="Tags\Fields\RealEulerAngles2D.cs" />
+    <Compile Include="Tags\Fields\RealEulerAngles3D.cs" />
+    <Compile Include="Tags\Fields\RealFraction.cs" />
+    <Compile Include="Tags\Fields\FractionBounds.cs" />
+    <Compile Include="Tags\Fields\RealPlane2D.cs" />
+    <Compile Include="Tags\Fields\RealPlane3D.cs" />
+    <Compile Include="Tags\Fields\RealPoint2D.cs" />
+    <Compile Include="Tags\Fields\RealPoint3D.cs" />
+    <Compile Include="Tags\Fields\RealQuaternion.cs" />
+    <Compile Include="Tags\Fields\RealRgbColor.cs" />
+    <Compile Include="Tags\Fields\RealVector2D.cs" />
+    <Compile Include="Tags\Fields\RealVector3D.cs" />
+    <Compile Include="Tags\Fields\Rectangle2D.cs" />
+    <Compile Include="Tags\Fields\RgbColor.cs" />
+    <Compile Include="Tags\Fields\ShortBlockIndex.cs" />
+    <Compile Include="Tags\Fields\ShortIntegerBounds.cs" />
+    <Compile Include="Tags\Fields\ShortInteger.cs" />
+    <Compile Include="Tags\Fields\Skip.cs" />
+    <Compile Include="Tags\Fields\TagReference.cs" />
+    <Compile Include="Tags\Fields\TagSignature.cs" />
+    <Compile Include="Tags\Fields\VariableLengthString.cs" />
+    <Compile Include="Tags\Halo2TypeTable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{ED1C3C5A-392F-4B0A-830F-F33B066440B4}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.Direct3D.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2911.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.Direct3DX.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectInput, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.DirectInput.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectSound, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.DirectSound.DLL</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tags\Xml\ai_dialogue_globals.xml" />
+    <EmbeddedResource Include="Tags\Xml\ai_mission_dialogue.xml" />
+    <EmbeddedResource Include="Tags\Xml\antenna.xml" />
+    <EmbeddedResource Include="Tags\Xml\biped.xml" />
+    <EmbeddedResource Include="Tags\Xml\bitmap.xml" />
+    <EmbeddedResource Include="Tags\Xml\breakable_surface.xml" />
+    <EmbeddedResource Include="Tags\Xml\camera_track.xml" />
+    <EmbeddedResource Include="Tags\Xml\cellular_automata.xml" />
+    <EmbeddedResource Include="Tags\Xml\cellular_automata2d.xml" />
+    <EmbeddedResource Include="Tags\Xml\character.xml" />
+    <EmbeddedResource Include="Tags\Xml\chocolate_mountain.xml" />
+    <EmbeddedResource Include="Tags\Xml\cloth.xml" />
+    <EmbeddedResource Include="Tags\Xml\collision_model.xml" />
+    <EmbeddedResource Include="Tags\Xml\colony.xml" />
+    <EmbeddedResource Include="Tags\Xml\color_table.xml" />
+    <EmbeddedResource Include="Tags\Xml\contrail.xml" />
+    <EmbeddedResource Include="Tags\Xml\crate.xml" />
+    <EmbeddedResource Include="Tags\Xml\creature.xml" />
+    <EmbeddedResource Include="Tags\Xml\damage_effect.xml" />
+    <EmbeddedResource Include="Tags\Xml\decal.xml" />
+    <EmbeddedResource Include="Tags\Xml\decorators.xml" />
+    <EmbeddedResource Include="Tags\Xml\decorator_set.xml" />
+    <EmbeddedResource Include="Tags\Xml\detail_object_collection.xml" />
+    <EmbeddedResource Include="Tags\Xml\device.xml" />
+    <EmbeddedResource Include="Tags\Xml\device_control.xml" />
+    <EmbeddedResource Include="Tags\Xml\device_light_fixture.xml" />
+    <EmbeddedResource Include="Tags\Xml\device_machine.xml" />
+    <EmbeddedResource Include="Tags\Xml\dialogue.xml" />
+    <EmbeddedResource Include="Tags\Xml\effect.xml" />
+    <EmbeddedResource Include="Tags\Xml\equipment.xml" />
+    <EmbeddedResource Include="Tags\Xml\garbage.xml" />
+    <EmbeddedResource Include="Tags\Xml\globals.xml" />
+    <EmbeddedResource Include="Tags\Xml\hud_globals.xml" />
+    <EmbeddedResource Include="Tags\Xml\hud_message_text.xml" />
+    <EmbeddedResource Include="Tags\Xml\hud_number.xml" />
+    <EmbeddedResource Include="Tags\Xml\item.xml" />
+    <EmbeddedResource Include="Tags\Xml\item_collection.xml" />
+    <EmbeddedResource Include="Tags\Xml\lens_flare.xml" />
+    <EmbeddedResource Include="Tags\Xml\light.xml" />
+    <EmbeddedResource Include="Tags\Xml\light_volume.xml" />
+    <EmbeddedResource Include="Tags\Xml\liquid.xml" />
+    <EmbeddedResource Include="Tags\Xml\material_effects.xml" />
+    <EmbeddedResource Include="Tags\Xml\material_physics.xml" />
+    <EmbeddedResource Include="Tags\Xml\meter.xml" />
+    <EmbeddedResource Include="Tags\Xml\model.xml" />
+    <EmbeddedResource Include="Tags\Xml\model_animation_graph.xml" />
+    <EmbeddedResource Include="Tags\Xml\multilingual_unicode_string_list.xml" />
+    <EmbeddedResource Include="Tags\Xml\multiplayer_globals.xml" />
+    <EmbeddedResource Include="Tags\Xml\multiplayer_scenario_description.xml" />
+    <EmbeddedResource Include="Tags\Xml\multiplayer_variant_settings_interface_definition.xml" />
+    <EmbeddedResource Include="Tags\Xml\new_hud_definition.xml" />
+    <EmbeddedResource Include="Tags\Xml\object.xml" />
+    <EmbeddedResource Include="Tags\Xml\particle.xml" />
+    <EmbeddedResource Include="Tags\Xml\particle_model.xml" />
+    <EmbeddedResource Include="Tags\Xml\particle_physics.xml" />
+    <EmbeddedResource Include="Tags\Xml\patchy_fog.xml" />
+    <EmbeddedResource Include="Tags\Xml\physics.xml" />
+    <EmbeddedResource Include="Tags\Xml\physics_model.xml" />
+    <EmbeddedResource Include="Tags\Xml\pixel_shader.xml" />
+    <EmbeddedResource Include="Tags\Xml\planar_fog.xml" />
+    <EmbeddedResource Include="Tags\Xml\point_physics.xml" />
+    <EmbeddedResource Include="Tags\Xml\projectile.xml" />
+    <EmbeddedResource Include="Tags\Xml\render_model.xml" />
+    <EmbeddedResource Include="Tags\Xml\scenario.xml" />
+    <EmbeddedResource Include="Tags\Xml\scenario_structure_bsp.xml" />
+    <EmbeddedResource Include="Tags\Xml\scenario_structure_lightmap.xml" />
+    <EmbeddedResource Include="Tags\Xml\scenery.xml" />
+    <EmbeddedResource Include="Tags\Xml\screen_effect.xml" />
+    <EmbeddedResource Include="Tags\Xml\shader.xml" />
+    <EmbeddedResource Include="Tags\Xml\shader_light_response.xml" />
+    <EmbeddedResource Include="Tags\Xml\shader_pass.xml" />
+    <EmbeddedResource Include="Tags\Xml\shader_template.xml" />
+    <EmbeddedResource Include="Tags\Xml\sky.xml" />
+    <EmbeddedResource Include="Tags\Xml\sound.xml" />
+    <EmbeddedResource Include="Tags\Xml\sound_cache_file_gestalt.xml" />
+    <EmbeddedResource Include="Tags\Xml\sound_classes.xml" />
+    <EmbeddedResource Include="Tags\Xml\sound_dialogue_constants.xml" />
+    <EmbeddedResource Include="Tags\Xml\sound_effect_collection.xml" />
+    <EmbeddedResource Include="Tags\Xml\sound_effect_template.xml" />
+    <EmbeddedResource Include="Tags\Xml\sound_environment.xml" />
+    <EmbeddedResource Include="Tags\Xml\sound_looping.xml" />
+    <EmbeddedResource Include="Tags\Xml\sound_mix.xml" />
+    <EmbeddedResource Include="Tags\Xml\sound_scenery.xml" />
+    <EmbeddedResource Include="Tags\Xml\stereo_system.xml" />
+    <EmbeddedResource Include="Tags\Xml\style.xml" />
+    <EmbeddedResource Include="Tags\Xml\text_value_pair_definition.xml" />
+    <EmbeddedResource Include="Tags\Xml\unit.xml" />
+    <EmbeddedResource Include="Tags\Xml\user_interface_globals_definition.xml" />
+    <EmbeddedResource Include="Tags\Xml\user_interface_list_skin_definition.xml" />
+    <EmbeddedResource Include="Tags\Xml\user_interface_screen_widget_definition.xml" />
+    <EmbeddedResource Include="Tags\Xml\user_interface_shared_globals_definition.xml" />
+    <EmbeddedResource Include="Tags\Xml\vehicle.xml" />
+    <EmbeddedResource Include="Tags\Xml\vehicle_collection.xml" />
+    <EmbeddedResource Include="Tags\Xml\vertex_shader.xml" />
+    <EmbeddedResource Include="Tags\Xml\weapon.xml" />
+    <EmbeddedResource Include="Tags\Xml\weather_system.xml" />
+    <EmbeddedResource Include="Tags\Xml\wind.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Classes\ai_dialogue_globals.class" />
+    <EmbeddedResource Include="Resources\Classes\ai_mission_dialogue.class" />
+    <EmbeddedResource Include="Resources\Classes\antenna.class" />
+    <EmbeddedResource Include="Resources\Classes\biped.class" />
+    <EmbeddedResource Include="Resources\Classes\bitmap.class" />
+    <EmbeddedResource Include="Resources\Classes\breakable_surface.class" />
+    <EmbeddedResource Include="Resources\Classes\camera_track.class" />
+    <EmbeddedResource Include="Resources\Classes\cellular_automata.class" />
+    <EmbeddedResource Include="Resources\Classes\cellular_automata2d.class" />
+    <EmbeddedResource Include="Resources\Classes\character.class" />
+    <EmbeddedResource Include="Resources\Classes\chocolate_mountain.class" />
+    <EmbeddedResource Include="Resources\Classes\cloth.class" />
+    <EmbeddedResource Include="Resources\Classes\collision_model.class" />
+    <EmbeddedResource Include="Resources\Classes\colony.class" />
+    <EmbeddedResource Include="Resources\Classes\color_table.class" />
+    <EmbeddedResource Include="Resources\Classes\contrail.class" />
+    <EmbeddedResource Include="Resources\Classes\crate.class" />
+    <EmbeddedResource Include="Resources\Classes\creature.class" />
+    <EmbeddedResource Include="Resources\Classes\damage_effect.class" />
+    <EmbeddedResource Include="Resources\Classes\decal.class" />
+    <EmbeddedResource Include="Resources\Classes\decorators.class" />
+    <EmbeddedResource Include="Resources\Classes\decorator_set.class" />
+    <EmbeddedResource Include="Resources\Classes\detail_object_collection.class" />
+    <EmbeddedResource Include="Resources\Classes\device.class" />
+    <EmbeddedResource Include="Resources\Classes\device_control.class" />
+    <EmbeddedResource Include="Resources\Classes\device_light_fixture.class" />
+    <EmbeddedResource Include="Resources\Classes\device_machine.class" />
+    <EmbeddedResource Include="Resources\Classes\dialogue.class" />
+    <EmbeddedResource Include="Resources\Classes\effect.class" />
+    <EmbeddedResource Include="Resources\Classes\equipment.class" />
+    <EmbeddedResource Include="Resources\Classes\garbage.class" />
+    <EmbeddedResource Include="Resources\Classes\globals.class" />
+    <EmbeddedResource Include="Resources\Classes\hud_globals.class" />
+    <EmbeddedResource Include="Resources\Classes\hud_message_text.class" />
+    <EmbeddedResource Include="Resources\Classes\hud_number.class" />
+    <EmbeddedResource Include="Resources\Classes\item.class" />
+    <EmbeddedResource Include="Resources\Classes\item_collection.class" />
+    <EmbeddedResource Include="Resources\Classes\lens_flare.class" />
+    <EmbeddedResource Include="Resources\Classes\light.class" />
+    <EmbeddedResource Include="Resources\Classes\light_volume.class" />
+    <EmbeddedResource Include="Resources\Classes\liquid.class" />
+    <EmbeddedResource Include="Resources\Classes\material_effects.class" />
+    <EmbeddedResource Include="Resources\Classes\material_physics.class" />
+    <EmbeddedResource Include="Resources\Classes\meter.class" />
+    <EmbeddedResource Include="Resources\Classes\model.class" />
+    <EmbeddedResource Include="Resources\Classes\model_animation_graph.class" />
+    <EmbeddedResource Include="Resources\Classes\multilingual_unicode_string_list.class" />
+    <EmbeddedResource Include="Resources\Classes\multiplayer_globals.class" />
+    <EmbeddedResource Include="Resources\Classes\multiplayer_scenario_description.class" />
+    <EmbeddedResource Include="Resources\Classes\multiplayer_variant_settings_interface_definition.class" />
+    <EmbeddedResource Include="Resources\Classes\new_hud_definition.class" />
+    <EmbeddedResource Include="Resources\Classes\object.class" />
+    <EmbeddedResource Include="Resources\Classes\particle.class" />
+    <EmbeddedResource Include="Resources\Classes\particle_model.class" />
+    <EmbeddedResource Include="Resources\Classes\particle_physics.class" />
+    <EmbeddedResource Include="Resources\Classes\patchy_fog.class" />
+    <EmbeddedResource Include="Resources\Classes\physics.class" />
+    <EmbeddedResource Include="Resources\Classes\physics_model.class" />
+    <EmbeddedResource Include="Resources\Classes\pixel_shader.class" />
+    <EmbeddedResource Include="Resources\Classes\planar_fog.class" />
+    <EmbeddedResource Include="Resources\Classes\point_physics.class" />
+    <EmbeddedResource Include="Resources\Classes\projectile.class" />
+    <EmbeddedResource Include="Resources\Classes\render_model.class" />
+    <EmbeddedResource Include="Resources\Classes\scenario.class" />
+    <EmbeddedResource Include="Resources\Classes\scenario_structure_bsp.class" />
+    <EmbeddedResource Include="Resources\Classes\scenario_structure_lightmap.class" />
+    <EmbeddedResource Include="Resources\Classes\scenery.class" />
+    <EmbeddedResource Include="Resources\Classes\screen_effect.class" />
+    <EmbeddedResource Include="Resources\Classes\shader.class" />
+    <EmbeddedResource Include="Resources\Classes\shader_light_response.class" />
+    <EmbeddedResource Include="Resources\Classes\shader_pass.class" />
+    <EmbeddedResource Include="Resources\Classes\shader_template.class" />
+    <EmbeddedResource Include="Resources\Classes\sky.class" />
+    <EmbeddedResource Include="Resources\Classes\sound.class" />
+    <EmbeddedResource Include="Resources\Classes\sound_cache_file_gestalt.class" />
+    <EmbeddedResource Include="Resources\Classes\sound_classes.class" />
+    <EmbeddedResource Include="Resources\Classes\sound_dialogue_constants.class" />
+    <EmbeddedResource Include="Resources\Classes\sound_effect_collection.class" />
+    <EmbeddedResource Include="Resources\Classes\sound_effect_template.class" />
+    <EmbeddedResource Include="Resources\Classes\sound_environment.class" />
+    <EmbeddedResource Include="Resources\Classes\sound_looping.class" />
+    <EmbeddedResource Include="Resources\Classes\sound_mix.class" />
+    <EmbeddedResource Include="Resources\Classes\sound_scenery.class" />
+    <EmbeddedResource Include="Resources\Classes\stereo_system.class" />
+    <EmbeddedResource Include="Resources\Classes\style.class" />
+    <EmbeddedResource Include="Resources\Classes\text_value_pair_definition.class" />
+    <EmbeddedResource Include="Resources\Classes\unit.class" />
+    <EmbeddedResource Include="Resources\Classes\user_interface_globals_definition.class" />
+    <EmbeddedResource Include="Resources\Classes\user_interface_list_skin_definition.class" />
+    <EmbeddedResource Include="Resources\Classes\user_interface_screen_widget_definition.class" />
+    <EmbeddedResource Include="Resources\Classes\user_interface_shared_globals_definition.class" />
+    <EmbeddedResource Include="Resources\Classes\vehicle.class" />
+    <EmbeddedResource Include="Resources\Classes\vehicle_collection.class" />
+    <EmbeddedResource Include="Resources\Classes\vertex_shader.class" />
+    <EmbeddedResource Include="Resources\Classes\weapon.class" />
+    <EmbeddedResource Include="Resources\Classes\weather_system.class" />
+    <EmbeddedResource Include="Resources\Classes\wind.class" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\halo2xbox.pta" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tags\Implementations\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)PrometheusMX\bin\Debug"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

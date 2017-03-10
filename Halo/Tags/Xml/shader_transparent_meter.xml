@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="smet" parenttype="shdr">ShaderTransparentMeter</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="ShaderTransparentMeter">
+      <value type="Flags" name="flags" length="2">
+        <bit index="0" name="decal" />
+        <bit index="1" name="tw" />
+        <bit index="2" name="flash color is negative" />
+        <bit index="3" name="tint mod" />
+        <bit index="4" name="unfiltered" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Pad" name="_unnamed2" length="32" />
+      <value type="TagReference" name="map" extensions="bitm" />
+      <value type="Pad" name="_unnamed3" length="32" />
+      <value type="RealRGBColor" name="gradient min color" />
+      <value type="RealRGBColor" name="gradient max color" />
+      <value type="RealRGBColor" name="background color" />
+      <value type="RealRGBColor" name="flash color" />
+      <value type="RealRGBColor" name="tint color">
+        <tooltip>Modulates framebuffer color unless map alpha is zero.</tooltip>
+      </value>
+      <value type="RealFraction" name="meter transparency">
+        <tooltip>Used only when 'tint mode-2' is set.</tooltip>
+      </value>
+      <value type="RealFraction" name="background transparency">
+        <tooltip>Used only when 'tint mode-2' is set.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed4" length="24" />
+      <value type="Enum" name="meter brightness source">
+        <tooltip>Overall meter brightness (default is 1).</tooltip>
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="flash brightness source">
+        <tooltip>Brightness of flash (default is 1).</tooltip>
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="value source">
+        <tooltip>Position of flash leading edge (default is 1).</tooltip>
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="gradient source">
+        <tooltip>High color leading edge (default is 1).</tooltip>
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="flas">
+        <tooltip>Position of flash extension leading edge (default is 1).</tooltip>
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Pad" name="_unnamed5" length="2" />
+      <value type="Pad" name="_unnamed6" length="32" />
+    </struct>
+  </plugin>
+</xml>

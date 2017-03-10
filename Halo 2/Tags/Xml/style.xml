@@ -1,0 +1,277 @@
+<xml>
+  <name type="styl" parenttype="????">Style</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="StyleBlock">
+      <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+      <value type="Enum" name="Combat status decay options" length="2" disabled="false">
+        <item value="0" name="Latch at Idle" />
+        <item value="1" name="Latch at Alert" />
+        <item value="2" name="Latch at Combat" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Enum" name="Attitude" length="2" disabled="false">
+        <item value="0" name="Normal" />
+        <item value="1" name="Timid" />
+        <item value="2" name="Aggressive" />
+      </value>
+      <value type="Pad" name="_unnamed1" length="2" />
+      <value type="Enum" name="engage attitude" length="1" disabled="false">
+        <item value="0" name="Default" />
+        <item value="1" name="Normal" />
+        <item value="2" name="Timid" />
+        <item value="3" name="Aggressive" />
+      </value>
+      <value type="Enum" name="evasion attitude" length="1" disabled="false">
+        <item value="0" name="Default" />
+        <item value="1" name="Normal" />
+        <item value="2" name="Timid" />
+        <item value="3" name="Aggressive" />
+      </value>
+      <value type="Enum" name="cover attitude" length="1" disabled="false">
+        <item value="0" name="Default" />
+        <item value="1" name="Normal" />
+        <item value="2" name="Timid" />
+        <item value="3" name="Aggressive" />
+      </value>
+      <value type="Enum" name="search attitude" length="1" disabled="false">
+        <item value="0" name="Default" />
+        <item value="1" name="Normal" />
+        <item value="2" name="Timid" />
+        <item value="3" name="Aggressive" />
+      </value>
+      <value type="Enum" name="presearch attitude" length="1" disabled="false">
+        <item value="0" name="Default" />
+        <item value="1" name="Normal" />
+        <item value="2" name="Timid" />
+        <item value="3" name="Aggressive" />
+      </value>
+      <value type="Enum" name="retreat attitude" length="1" disabled="false">
+        <item value="0" name="Default" />
+        <item value="1" name="Normal" />
+        <item value="2" name="Timid" />
+        <item value="3" name="Aggressive" />
+      </value>
+      <value type="Enum" name="charge attitude" length="1" disabled="false">
+        <item value="0" name="Default" />
+        <item value="1" name="Normal" />
+        <item value="2" name="Timid" />
+        <item value="3" name="Aggressive" />
+      </value>
+      <value type="Enum" name="ready attitude" length="1" disabled="false">
+        <item value="0" name="Default" />
+        <item value="1" name="Normal" />
+        <item value="2" name="Timid" />
+        <item value="3" name="Aggressive" />
+      </value>
+      <value type="Enum" name="idle attitude" length="1" disabled="false">
+        <item value="0" name="Default" />
+        <item value="1" name="Normal" />
+        <item value="2" name="Timid" />
+        <item value="3" name="Aggressive" />
+      </value>
+      <value type="Enum" name="weapon attitude" length="1" disabled="false">
+        <item value="0" name="Default" />
+        <item value="1" name="Normal" />
+        <item value="2" name="Timid" />
+        <item value="3" name="Aggressive" />
+      </value>
+      <value type="Enum" name="swarm attitude" length="1" disabled="false">
+        <item value="0" name="Default" />
+        <item value="1" name="Normal" />
+        <item value="2" name="Timid" />
+        <item value="3" name="Aggressive" />
+      </value>
+      <value type="Pad" name="_unnamed2" length="1" />
+      <value type="Flags" name="Style control" length="4" disabled="false">
+        <bit index="0" name="New behaviors default to ON" />
+      </value>
+      <value type="Flags" name="Behaviors1" length="4" disabled="false">
+        <bit index="0" name="------GENERAL------" />
+        <bit index="1" name="root" />
+        <bit index="2" name="null" />
+        <bit index="3" name="null_discrete" />
+        <bit index="4" name="obey" />
+        <bit index="5" name="guard" />
+        <bit index="6" name="follow behavior" />
+        <bit index="7" name="ready" />
+        <bit index="8" name="smash_obstacle" />
+        <bit index="9" name="destroy_obstacle" />
+        <bit index="10" name="perch" />
+        <bit index="11" name="cover_friend" />
+        <bit index="12" name="blind_panic" />
+        <bit index="13" name="------ENGAGE------" />
+        <bit index="14" name="engage" />
+        <bit index="15" name="fight" />
+        <bit index="16" name="melee_charge" />
+        <bit index="17" name="melee_leaping_charge" />
+        <bit index="18" name="surprise" />
+        <bit index="19" name="grenade_impulse" />
+        <bit index="20" name="anti_vehicle_grenade" />
+        <bit index="21" name="stalk" />
+        <bit index="22" name="berserk_wander_impulse" />
+        <bit index="23" name="------BERSERK------" />
+        <bit index="24" name="last_man_berserk" />
+        <bit index="25" name="stuck_with_grenade_berserk" />
+        <bit index="26" name="------PRESEARCH------" />
+        <bit index="27" name="presearch" />
+        <bit index="28" name="presearch uncover" />
+        <bit index="29" name="destroy_cover" />
+        <bit index="30" name="suppressing fire" />
+        <bit index="31" name="grenade_uncover" />
+      </value>
+      <value type="Flags" name="Behaviors2" length="4" disabled="false">
+        <bit index="0" name="leap_on_cover" />
+        <bit index="1" name="------SEARCH------" />
+        <bit index="2" name="search" />
+        <bit index="3" name="uncover" />
+        <bit index="4" name="investigate" />
+        <bit index="5" name="pursuit_sync" />
+        <bit index="6" name="pursuit" />
+        <bit index="7" name="postsearch" />
+        <bit index="8" name="coverme_investigate" />
+        <bit index="9" name="------SELF-DEFENSE------" />
+        <bit index="10" name="self_preservation" />
+        <bit index="11" name="cover" />
+        <bit index="12" name="cover peek" />
+        <bit index="13" name="avoid" />
+        <bit index="14" name="evasion_impulse" />
+        <bit index="15" name="dive_impulse" />
+        <bit index="16" name="danger cover impulse" />
+        <bit index="17" name="danger crouch impulse" />
+        <bit index="18" name="proximity_melee" />
+        <bit index="19" name="proximity_self_preservation" />
+        <bit index="20" name="unreachable_enemy_cover" />
+        <bit index="21" name="scary_target_cover" />
+        <bit index="22" name="group_emerge" />
+        <bit index="23" name="------RETREAT------" />
+        <bit index="24" name="retreat" />
+        <bit index="25" name="retreat_grenade" />
+        <bit index="26" name="flee" />
+        <bit index="27" name="cower" />
+        <bit index="28" name="low_shield_retreat" />
+        <bit index="29" name="scary_target_retreat" />
+        <bit index="30" name="leader_dead_retreat" />
+        <bit index="31" name="peer_dead_retreat" />
+      </value>
+      <value type="Flags" name="Behaviors3" length="4" disabled="false">
+        <bit index="0" name="danger_retreat" />
+        <bit index="1" name="proximity_retreat" />
+        <bit index="2" name="charge when cornered" />
+        <bit index="3" name="surprise_retreat" />
+        <bit index="4" name="overheated_weapon_retreat" />
+        <bit index="5" name="------AMBUSH------" />
+        <bit index="6" name="ambush" />
+        <bit index="7" name="coordinated_ambush" />
+        <bit index="8" name="proximity_ambush" />
+        <bit index="9" name="vulnerable_enemy_ambush" />
+        <bit index="10" name="nowhere_to_run_ambush" />
+        <bit index="11" name="------VEHICLE------" />
+        <bit index="12" name="vehicle" />
+        <bit index="13" name="enter_friendly_vehicle" />
+        <bit index="14" name="re-enter_flipped_vehicle" />
+        <bit index="15" name="vehicle_entry_engage_impulse" />
+        <bit index="16" name="vehicle_board" />
+        <bit index="17" name="vehicle_fight" />
+        <bit index="18" name="vehicle_charge" />
+        <bit index="19" name="vehicle_ram_behavior" />
+        <bit index="20" name="vehicle_cover" />
+        <bit index="21" name="damage_vehicle_cover" />
+        <bit index="22" name="exposed_rear_cover_impulse" />
+        <bit index="23" name="player_endagered_cover_impulse" />
+        <bit index="24" name="vehicle_avoid" />
+        <bit index="25" name="vehicle_pickup" />
+        <bit index="26" name="vehicle_player_pickup" />
+        <bit index="27" name="vehicle_exit_impulse" />
+        <bit index="28" name="danger_vehicle_exit_impulse" />
+        <bit index="29" name="vehicle_flip" />
+        <bit index="30" name="vehicle_turtle" />
+        <bit index="31" name="vehicle_engage_patrol_impulse" />
+      </value>
+      <value type="Flags" name="Behaviors4" length="4" disabled="false">
+        <bit index="0" name="vehicle_engage_wander_impulse" />
+        <bit index="1" name="------POSTCOMBAT------" />
+        <bit index="2" name="postcombat" />
+        <bit index="3" name="post_postcombat" />
+        <bit index="4" name="check_friend" />
+        <bit index="5" name="shoot_corpse" />
+        <bit index="6" name="postcombat_approach" />
+        <bit index="7" name="------ALERT------" />
+        <bit index="8" name="alert" />
+        <bit index="9" name="------IDLE------" />
+        <bit index="10" name="idle" />
+        <bit index="11" name="wander behavior" />
+        <bit index="12" name="flight_wander" />
+        <bit index="13" name="patrol" />
+        <bit index="14" name="fall_sleep" />
+        <bit index="15" name="------BUGGERS------" />
+        <bit index="16" name="bugger_ground_uncover" />
+        <bit index="17" name="------SWARMS------" />
+        <bit index="18" name="swarm_root" />
+        <bit index="19" name="swarm_attack" />
+        <bit index="20" name="support_attack" />
+        <bit index="21" name="infect" />
+        <bit index="22" name="scatter" />
+        <bit index="23" name="eject parasite" />
+        <bit index="24" name="flood_self_preservation" />
+        <bit index="25" name="juggernaut flurry" />
+        <bit index="26" name="------SENTINELS------" />
+        <bit index="27" name="enforcer weapon control" />
+        <bit index="28" name="grapple" />
+        <bit index="29" name="------SPECIAL------" />
+        <bit index="30" name="formation" />
+        <bit index="31" name="grunt scared by elite" />
+      </value>
+      <value type="Flags" name="Behaviors5" length="4" disabled="false">
+        <bit index="0" name="stunned" />
+        <bit index="1" name="cure_isolation" />
+        <bit index="2" name="deploy_turret" />
+        <bit index="3" name="" />
+        <bit index="4" name="" />
+        <bit index="5" name="" />
+        <bit index="6" name="" />
+        <bit index="7" name="" />
+        <bit index="8" name="" />
+        <bit index="9" name="" />
+        <bit index="10" name="" />
+        <bit index="11" name="" />
+        <bit index="12" name="" />
+        <bit index="13" name="" />
+        <bit index="14" name="" />
+        <bit index="15" name="" />
+        <bit index="16" name="" />
+        <bit index="17" name="" />
+        <bit index="18" name="" />
+        <bit index="19" name="" />
+        <bit index="20" name="" />
+        <bit index="21" name="" />
+        <bit index="22" name="" />
+        <bit index="23" name="" />
+        <bit index="24" name="" />
+        <bit index="25" name="" />
+        <bit index="26" name="" />
+        <bit index="27" name="" />
+        <bit index="28" name="" />
+        <bit index="29" name="" />
+        <bit index="30" name="" />
+        <bit index="31" name="" />
+      </value>
+      <struct name="SpecialMovementBlock">
+        <value type="Flags" name="Special movement 1" length="4" disabled="false">
+          <bit index="0" name="jump" />
+          <bit index="1" name="climb" />
+          <bit index="2" name="vault" />
+          <bit index="3" name="mount" />
+          <bit index="4" name="hoist" />
+          <bit index="5" name="wall jump" />
+          <bit index="6" name="n/a" />
+        </value>
+      </struct>
+      <value type="Block" name="Special movement" disabled="false" struct="SpecialMovementBlock" maxelements="1" />
+      <struct name="BehaviorNamesBlock">
+        <value type="FixedLengthString" name="behavior name" disabled="true" blockname="true" />
+      </struct>
+      <value type="Block" name="Behavior list" disabled="false" struct="BehaviorNamesBlock" maxelements="160" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,45 @@
+<xml>
+  <name type="ant!" parenttype="????">Antenna</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="AntennaBlock">
+      <value type="StringId" name="attachment marker name" disabled="false">
+        <tooltip>the marker name where the antenna should be attached</tooltip>
+      </value>
+      <value type="TagReference" name="bitmaps" disabled="false" extensions="bitm" />
+      <value type="TagReference" name="physics" disabled="false" extensions="pphy" />
+      <value type="Pad" name="_unnamed0" length="80" />
+      <value type="RealFraction" name="spring strength coefficient" disabled="false">
+        <tooltip>strength of the spring (larger values make the spring stronger)</tooltip>
+      </value>
+      <value type="Real" name="falloff pixels" disabled="false" />
+      <value type="Real" name="cutoff pixels" disabled="false" />
+      <value type="Pad" name="_unnamed1" length="40" />
+      <struct name="AntennaVertexBlock">
+        <value type="RealFraction" name="spring strength coefficient" disabled="false">
+          <tooltip>strength of the spring (larger values make the spring stronger)</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="24" />
+        <value type="RealEulerAngles2d" name="angles" disabled="false">
+          <tooltip>direction toward next vertex</tooltip>
+        </value>
+        <value type="Real" name="length" disabled="false" unit="world units">
+          <tooltip>distance between this vertex and the next</tooltip>
+        </value>
+        <value type="ShortInteger" name="sequence index" disabled="false">
+          <tooltip>bitmap group sequence index for this vertex's texture</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="RealArgbColor" name="color" disabled="false">
+          <tooltip>color at this vertex</tooltip>
+        </value>
+        <value type="RealArgbColor" name="LOD color" disabled="false">
+          <tooltip>color at this vertex for the low-LOD line primitives</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="40" />
+        <value type="Pad" name="_unnamed3" length="12" />
+      </struct>
+      <value type="Block" name="vertices" disabled="false" struct="AntennaVertexBlock" maxelements="20" />
+    </struct>
+  </plugin>
+</xml>

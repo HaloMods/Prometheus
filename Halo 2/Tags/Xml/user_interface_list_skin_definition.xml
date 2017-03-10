@@ -1,0 +1,312 @@
+<xml>
+  <name type="skin" parenttype="????">UserInterfaceListSkinDefinition</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="UserInterfaceListSkinDefinitionBlock">
+      <value type="Flags" name="list flags" length="4" disabled="false">
+        <bit index="0" name="unused" />
+      </value>
+      <value type="TagReference" name="arrows bitmap" disabled="false" extensions="bitm" />
+      <value type="Point2d" name="up-arrows offset" disabled="false" unit="from bot-left of 1st item" />
+      <value type="Point2d" name="down-arrows offset" disabled="false" unit="from bot-left of 1st item" />
+      <struct name="SingleAnimationReferenceBlock">
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="unused" />
+        </value>
+        <value type="LongInteger" name="animation period" disabled="false" unit="milliseconds" />
+        <struct name="ScreenAnimationKeyframeReferenceBlock">
+          <value type="Pad" name="_unnamed0" length="4" />
+          <value type="Real" name="alpha" disabled="false" />
+          <value type="RealPoint3d" name="position" disabled="false" />
+        </struct>
+        <value type="Block" name="keyframes" disabled="false" struct="ScreenAnimationKeyframeReferenceBlock" maxelements="64" />
+      </struct>
+      <value type="Block" name="item animations" disabled="false" struct="SingleAnimationReferenceBlock" maxelements="7" />
+      <struct name="TextBlockReferenceBlock">
+        <value type="Flags" name="text flags" length="4" disabled="false">
+          <bit index="0" name="left justify text" />
+          <bit index="1" name="right justify text" />
+          <bit index="2" name="pulsating text" />
+          <bit index="3" name="callout text" />
+          <bit index="4" name="small (31 char) buffer" />
+        </value>
+        <value type="Enum" name="animation index" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="00" />
+          <item value="2" name="01" />
+          <item value="3" name="02" />
+          <item value="4" name="03" />
+          <item value="5" name="04" />
+          <item value="6" name="05" />
+          <item value="7" name="06" />
+          <item value="8" name="07" />
+          <item value="9" name="08" />
+          <item value="10" name="09" />
+          <item value="11" name="10" />
+          <item value="12" name="11" />
+          <item value="13" name="12" />
+          <item value="14" name="13" />
+          <item value="15" name="14" />
+          <item value="16" name="15" />
+          <item value="17" name="16" />
+          <item value="18" name="17" />
+          <item value="19" name="18" />
+          <item value="20" name="19" />
+          <item value="21" name="20" />
+          <item value="22" name="21" />
+          <item value="23" name="22" />
+          <item value="24" name="23" />
+          <item value="25" name="24" />
+          <item value="26" name="25" />
+          <item value="27" name="26" />
+          <item value="28" name="27" />
+          <item value="29" name="28" />
+          <item value="30" name="29" />
+          <item value="31" name="30" />
+          <item value="32" name="31" />
+          <item value="33" name="32" />
+          <item value="34" name="33" />
+          <item value="35" name="34" />
+          <item value="36" name="35" />
+          <item value="37" name="36" />
+          <item value="38" name="37" />
+          <item value="39" name="38" />
+          <item value="40" name="39" />
+          <item value="41" name="40" />
+          <item value="42" name="41" />
+          <item value="43" name="42" />
+          <item value="44" name="43" />
+          <item value="45" name="44" />
+          <item value="46" name="45" />
+          <item value="47" name="46" />
+          <item value="48" name="47" />
+          <item value="49" name="48" />
+          <item value="50" name="49" />
+          <item value="51" name="50" />
+          <item value="52" name="51" />
+          <item value="53" name="52" />
+          <item value="54" name="53" />
+          <item value="55" name="54" />
+          <item value="56" name="55" />
+          <item value="57" name="56" />
+          <item value="58" name="57" />
+          <item value="59" name="58" />
+          <item value="60" name="59" />
+          <item value="61" name="60" />
+          <item value="62" name="61" />
+          <item value="63" name="62" />
+          <item value="64" name="63" />
+        </value>
+        <value type="ShortInteger" name="intro animation delay milliseconds" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Enum" name="custom font" length="2" disabled="false">
+          <item value="0" name="terminal" />
+          <item value="1" name="body text" />
+          <item value="2" name="title" />
+          <item value="3" name="super large font" />
+          <item value="4" name="large body text" />
+          <item value="5" name="split screen hud message" />
+          <item value="6" name="full screen hud message" />
+          <item value="7" name="english body text" />
+          <item value="8" name="HUD number text" />
+          <item value="9" name="subtitle font" />
+          <item value="10" name="main menu font" />
+          <item value="11" name="text chat font" />
+        </value>
+        <value type="RealArgbColor" name="text color" disabled="false" />
+        <value type="Rectangle2D" name="text bounds" disabled="false" />
+        <value type="StringId" name="string id" disabled="false" />
+        <value type="ShortInteger" name="render depth bias" disabled="false" />
+        <value type="Pad" name="_unnamed1" length="2" />
+      </struct>
+      <value type="Block" name="text blocks" disabled="false" struct="TextBlockReferenceBlock" maxelements="64" />
+      <struct name="BitmapBlockReferenceBlock">
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="ignore for list skin size calculation" />
+          <bit index="1" name="swap on relative list position" />
+          <bit index="2" name="render as progress bar" />
+        </value>
+        <value type="Enum" name="animation index" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="00" />
+          <item value="2" name="01" />
+          <item value="3" name="02" />
+          <item value="4" name="03" />
+          <item value="5" name="04" />
+          <item value="6" name="05" />
+          <item value="7" name="06" />
+          <item value="8" name="07" />
+          <item value="9" name="08" />
+          <item value="10" name="09" />
+          <item value="11" name="10" />
+          <item value="12" name="11" />
+          <item value="13" name="12" />
+          <item value="14" name="13" />
+          <item value="15" name="14" />
+          <item value="16" name="15" />
+          <item value="17" name="16" />
+          <item value="18" name="17" />
+          <item value="19" name="18" />
+          <item value="20" name="19" />
+          <item value="21" name="20" />
+          <item value="22" name="21" />
+          <item value="23" name="22" />
+          <item value="24" name="23" />
+          <item value="25" name="24" />
+          <item value="26" name="25" />
+          <item value="27" name="26" />
+          <item value="28" name="27" />
+          <item value="29" name="28" />
+          <item value="30" name="29" />
+          <item value="31" name="30" />
+          <item value="32" name="31" />
+          <item value="33" name="32" />
+          <item value="34" name="33" />
+          <item value="35" name="34" />
+          <item value="36" name="35" />
+          <item value="37" name="36" />
+          <item value="38" name="37" />
+          <item value="39" name="38" />
+          <item value="40" name="39" />
+          <item value="41" name="40" />
+          <item value="42" name="41" />
+          <item value="43" name="42" />
+          <item value="44" name="43" />
+          <item value="45" name="44" />
+          <item value="46" name="45" />
+          <item value="47" name="46" />
+          <item value="48" name="47" />
+          <item value="49" name="48" />
+          <item value="50" name="49" />
+          <item value="51" name="50" />
+          <item value="52" name="51" />
+          <item value="53" name="52" />
+          <item value="54" name="53" />
+          <item value="55" name="54" />
+          <item value="56" name="55" />
+          <item value="57" name="56" />
+          <item value="58" name="57" />
+          <item value="59" name="58" />
+          <item value="60" name="59" />
+          <item value="61" name="60" />
+          <item value="62" name="61" />
+          <item value="63" name="62" />
+          <item value="64" name="63" />
+        </value>
+        <value type="ShortInteger" name="intro animation delay milliseconds" disabled="false" />
+        <value type="Enum" name="bitmap blend method" length="2" disabled="false">
+          <item value="0" name="standard" />
+          <item value="1" name="multiply" />
+          <item value="2" name="UNUSED" />
+        </value>
+        <value type="ShortInteger" name="initial sprite frame" disabled="false" />
+        <value type="Point2d" name="top-left" disabled="false" />
+        <value type="Real" name="horiz texture wrapssecond" disabled="false" />
+        <value type="Real" name="vert texture wrapssecond" disabled="false" />
+        <value type="TagReference" name="bitmap tag" disabled="false" extensions="bitm" />
+        <value type="ShortInteger" name="render depth bias" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Real" name="sprite animation speed fps" disabled="false" />
+        <value type="Point2d" name="progress bottom-left" disabled="false" />
+        <value type="StringId" name="string identifier" disabled="false" />
+        <value type="RealVector2d" name="progress scale" disabled="false" />
+      </struct>
+      <value type="Block" name="bitmap blocks" disabled="false" struct="BitmapBlockReferenceBlock" maxelements="64" />
+      <struct name="HudBlockReferenceBlock">
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="ignore for list skin size" />
+          <bit index="1" name="needs valid rank" />
+        </value>
+        <value type="Enum" name="animation index" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="00" />
+          <item value="2" name="01" />
+          <item value="3" name="02" />
+          <item value="4" name="03" />
+          <item value="5" name="04" />
+          <item value="6" name="05" />
+          <item value="7" name="06" />
+          <item value="8" name="07" />
+          <item value="9" name="08" />
+          <item value="10" name="09" />
+          <item value="11" name="10" />
+          <item value="12" name="11" />
+          <item value="13" name="12" />
+          <item value="14" name="13" />
+          <item value="15" name="14" />
+          <item value="16" name="15" />
+          <item value="17" name="16" />
+          <item value="18" name="17" />
+          <item value="19" name="18" />
+          <item value="20" name="19" />
+          <item value="21" name="20" />
+          <item value="22" name="21" />
+          <item value="23" name="22" />
+          <item value="24" name="23" />
+          <item value="25" name="24" />
+          <item value="26" name="25" />
+          <item value="27" name="26" />
+          <item value="28" name="27" />
+          <item value="29" name="28" />
+          <item value="30" name="29" />
+          <item value="31" name="30" />
+          <item value="32" name="31" />
+          <item value="33" name="32" />
+          <item value="34" name="33" />
+          <item value="35" name="34" />
+          <item value="36" name="35" />
+          <item value="37" name="36" />
+          <item value="38" name="37" />
+          <item value="39" name="38" />
+          <item value="40" name="39" />
+          <item value="41" name="40" />
+          <item value="42" name="41" />
+          <item value="43" name="42" />
+          <item value="44" name="43" />
+          <item value="45" name="44" />
+          <item value="46" name="45" />
+          <item value="47" name="46" />
+          <item value="48" name="47" />
+          <item value="49" name="48" />
+          <item value="50" name="49" />
+          <item value="51" name="50" />
+          <item value="52" name="51" />
+          <item value="53" name="52" />
+          <item value="54" name="53" />
+          <item value="55" name="54" />
+          <item value="56" name="55" />
+          <item value="57" name="56" />
+          <item value="58" name="57" />
+          <item value="59" name="58" />
+          <item value="60" name="59" />
+          <item value="61" name="60" />
+          <item value="62" name="61" />
+          <item value="63" name="62" />
+          <item value="64" name="63" />
+        </value>
+        <value type="ShortInteger" name="intro animation delay milliseconds" disabled="false" />
+        <value type="ShortInteger" name="render depth bias" disabled="false" />
+        <value type="ShortInteger" name="starting bitmap sequence index" disabled="false" />
+        <value type="TagReference" name="bitmap" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="shader" disabled="false" extensions="shad" />
+        <value type="Rectangle2D" name="bounds" disabled="false" />
+      </struct>
+      <value type="Block" name="hud blocks" disabled="false" struct="HudBlockReferenceBlock" maxelements="64" />
+      <struct name="PlayerBlockReferenceBlock">
+        <value type="Pad" name="_unnamed0" length="4" />
+        <value type="TagReference" name="skin" disabled="false" extensions="skin" />
+        <value type="Point2d" name="bottom-left" disabled="false" />
+        <value type="Enum" name="table order" length="1" disabled="false">
+          <item value="0" name="row major" />
+          <item value="1" name="column major" />
+        </value>
+        <value type="CharInteger" name="maximum player count" disabled="false" />
+        <value type="CharInteger" name="row count" disabled="false" />
+        <value type="CharInteger" name="column count" disabled="false" />
+        <value type="ShortInteger" name="row height" disabled="false" />
+        <value type="ShortInteger" name="column width" disabled="false" />
+      </struct>
+      <value type="Block" name="player blocks" disabled="false" struct="PlayerBlockReferenceBlock" maxelements="64" />
+    </struct>
+  </plugin>
+</xml>

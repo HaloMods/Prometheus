@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="mod2" parenttype="????">Gbxmodel</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Gbxmodel">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="blend shared normals" />
+        <bit index="1" name="parts have local nodes" />
+        <bit index="2" name="ignore skinning" />
+      </value>
+      <value type="LongInteger" name="node list checksum" />
+      <value type="Real" name="super low detail cutoff" />
+      <value type="Real" name="low detail cutoff" />
+      <value type="Real" name="medium detail cutoff" />
+      <value type="Real" name="high detail cutoff" />
+      <value type="Real" name="super high detail cutoff" />
+      <value type="ShortInteger"
+      name="super low detail node count" />
+      <value type="ShortInteger" name="low detail node count" />
+      <value type="ShortInteger" name="medium detail node count" />
+      <value type="ShortInteger" name="high detail node count" />
+      <value type="ShortInteger"
+      name="super high detail node count" />
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Pad" name="_unnamed2" length="8" />
+      <value type="Real" name="base map">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Real" name="base map2">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed3" length="116" />
+      <struct name="ModelMarkers">
+        <value type="FixedLengthString" name="name"
+        blockname="true" />
+        <value type="ShortInteger" name="magic identifier" />
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Pad" name="_unnamed2" length="16" />
+        <struct name="ModelMarkerInstance">
+          <value type="CharInteger" name="region index" />
+          <value type="CharInteger" name="permutation index" />
+          <value type="CharInteger" name="node index" />
+          <value type="Pad" name="_unnamed" length="1" />
+          <value type="RealPoint3D" name="translation" />
+          <value type="RealQuaternion" name="rotation" />
+        </struct>
+        <value type="Block" name="instances"
+        struct="ModelMarkerInstance" maxelements="32" />
+      </struct>
+      <value type="Block" name="markers" struct="ModelMarkers"
+      maxelements="256" />
+      <struct name="ModelNode">
+        <value type="FixedLengthString" name="name"
+        blockname="true" />
+        <value type="ShortBlockIndex"
+        name="next sibling node index" block="ModelNode" />
+        <value type="ShortBlockIndex" name="first child node index"
+        block="ModelNode" />
+        <value type="ShortBlockIndex" name="parent node index"
+        block="ModelNode" />
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="RealPoint3D" name="default translation" />
+        <value type="RealQuaternion" name="default rotation" />
+        <value type="Real" name="node distance from parent" />
+        <value type="Pad" name="_unnamed2" length="32" />
+        <value type="Pad" name="_unnamed3" length="52" />
+      </struct>
+      <value type="Block" name="nodes" struct="ModelNode"
+      maxelements="64" />
+      <struct name="GbxmodelRegion">
+        <value type="FixedLengthString" name="name"
+        blockname="true" />
+        <value type="Pad" name="_unnamed" length="32" />
+        <struct name="GbxmodelRegionPermutation">
+          <value type="FixedLengthString" name="name"
+          blockname="true" />
+          <value type="Flags" name="flags" length="4">
+            <bit index="0" name="cannot be chosen randomly" />
+          </value>
+          <value type="Pad" name="_unnamed" length="28" />
+          <value type="ShortBlockIndex" name="super low"
+          block="GbxmodelGeometry" />
+          <value type="ShortBlockIndex" name="low"
+          block="GbxmodelGeometry" />
+          <value type="ShortBlockIndex" name="medium"
+          block="GbxmodelGeometry" />
+          <value type="ShortBlockIndex" name="high"
+          block="GbxmodelGeometry" />
+          <value type="ShortBlockIndex" name="super high"
+          block="GbxmodelGeometry" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <struct name="ModelRegionPermutationMarker">
+            <value type="FixedLengthString" name="name"
+            blockname="true" />
+            <value type="ShortBlockIndex" name="node index"
+            block="ModelNode" />
+            <value type="Pad" name="_unnamed" length="2" />
+            <value type="RealQuaternion" name="rotation" />
+            <value type="RealPoint3D" name="translation" />
+            <value type="Pad" name="_unnamed2" length="16" />
+          </struct>
+          <value type="Block" name="markers"
+          struct="ModelRegionPermutationMarker" maxelements="64" />
+        </struct>
+        <value type="Block" name="permutations"
+        struct="GbxmodelRegionPermutation" maxelements="32" />
+      </struct>
+      <value type="Block" name="regions" struct="GbxmodelRegion"
+      maxelements="32" />
+      <struct name="GbxmodelGeometry">
+        <value type="Flags" name="flags" length="4" />
+        <value type="Pad" name="_unnamed" length="32" />
+        <struct name="GbxmodelGeometryPart">
+          <value type="Flags" name="flags" length="4">
+            <bit index="0" name="stripped INTERNAL" />
+            <bit index="1" name="ZONER" />
+          </value>
+          <value type="ShortBlockIndex" name="shader index"
+          block="ModelShaderReference" />
+          <value type="CharInteger"
+          name="prev filthy part index" />
+          <value type="CharInteger"
+          name="next filthy part index" />
+          <value type="ShortInteger"
+          name="centroid primary node" />
+          <value type="ShortInteger"
+          name="centroid secondary node" />
+          <value type="RealFraction"
+          name="centroid primary weight" />
+          <value type="RealFraction"
+          name="centroid secondary weight" />
+          <value type="RealPoint3D" name="centroid" />
+          <struct name="ModelVertexUncompressed">
+            <value type="RealPoint3D" name="position" />
+            <value type="RealVector3D" name="normal" />
+            <value type="RealVector3D" name="binormal" />
+            <value type="RealVector3D" name="tangent" />
+            <value type="RealPoint2D" name="texture coords" />
+            <value type="ShortInteger" name="node0 index" />
+            <value type="ShortInteger" name="node1 index" />
+            <value type="Real" name="node0 weight" />
+            <value type="Real" name="node1 weight" />
+          </struct>
+          <value type="Block" name="uncompressed vertices"
+          struct="ModelVertexUncompressed" maxelements="65535" />
+          <struct name="ModelVertexCompressed">
+            <value type="RealPoint3D" name="position" />
+            <value type="LongInteger" name="normal11.11.1" />
+            <value type="LongInteger" name="binormal11.11.1" />
+            <value type="LongInteger" name="tangent11.11.1" />
+            <value type="ShortInteger"
+            name="texture coordinate u1" />
+            <value type="ShortInteger"
+            name="texture coordinate v1" />
+            <value type="CharInteger" name="node0 indexx3" />
+            <value type="CharInteger" name="node1 indexx3" />
+            <value type="ShortInteger" name="node0 weight1" />
+          </struct>
+          <value type="Block" name="compressed vertices"
+          struct="ModelVertexCompressed" maxelements="65535" />
+          <struct name="ModelTriangle">
+            <value type="ShortInteger" name="vertex0 index" />
+            <value type="ShortInteger" name="vertex1 index" />
+            <value type="ShortInteger" name="vertex2 index" />
+          </struct>
+          <value type="Block" name="triangles"
+          struct="ModelTriangle" maxelements="65535" />
+          <value type="Pad" name="_unnamed" length="20" />
+          <value type="Pad" name="_unnamed2" length="16" />
+          <value type="Pad" name="_unnamed3" length="1" />
+          <value type="Pad" name="_unnamed4" length="1" />
+          <value type="Pad" name="_unnamed5" length="1" />
+          <value type="Pad" name="_unnamed6" length="1" />
+          <value type="Pad" name="_unnamed7" length="24" />
+        </struct>
+        <value type="Block" name="parts"
+        struct="GbxmodelGeometryPart" maxelements="32" />
+      </struct>
+      <value type="Block" name="geometries"
+      struct="GbxmodelGeometry" maxelements="256" />
+      <struct name="ModelShaderReference">
+        <value type="TagReference" name="shader" blockname="true"
+        extensions="shdr" />
+        <value type="ShortInteger" name="permutation" />
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Pad" name="_unnamed2" length="12" />
+      </struct>
+      <value type="Block" name="shaders"
+      struct="ModelShaderReference" maxelements="32" />
+    </struct>
+  </plugin>
+</xml>

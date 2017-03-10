@@ -1,0 +1,12 @@
+<xml>
+  <name type="bloc" parenttype="obje">Crate</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="CrateBlock">
+      <value type="Flags" name="flags" length="2" disabled="false">
+        <bit index="0" name="does not block AOE" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+    </struct>
+  </plugin>
+</xml>

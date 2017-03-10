@@ -1,0 +1,24 @@
+<xml>
+  <name type="hmt " parenttype="????">HudMessageText</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="HudMessageTextBlock">
+      <value type="Data" name="text data" disabled="true" />
+      <struct name="HudMessageElementsBlock">
+        <value type="CharInteger" name="type" disabled="true" />
+        <value type="CharInteger" name="data" disabled="true" />
+      </struct>
+      <value type="Block" name="message elements" disabled="true" struct="HudMessageElementsBlock" maxelements="8192" />
+      <struct name="HudMessagesBlock">
+        <value type="FixedLengthString" name="name" disabled="true" />
+        <value type="ShortInteger" name="start index into text blob" disabled="true" />
+        <value type="ShortInteger" name="start index of message block" disabled="true" />
+        <value type="CharInteger" name="panel count" disabled="true" />
+        <value type="Pad" name="_unnamed0" length="3" />
+        <value type="Pad" name="_unnamed1" length="24" />
+      </struct>
+      <value type="Block" name="messages" disabled="true" struct="HudMessagesBlock" maxelements="1024" />
+      <value type="Pad" name="_unnamed0" length="84" />
+    </struct>
+  </plugin>
+</xml>

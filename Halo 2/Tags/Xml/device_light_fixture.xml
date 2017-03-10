@@ -1,0 +1,7 @@
+<xml>
+  <name type="lifi" parenttype="devi">DeviceLightFixture</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="DeviceLightFixtureBlock" />
+  </plugin>
+</xml>

@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="antr" parenttype="????">ModelAnimations</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="ModelAnimations">
+      <struct name="AnimationGraphObjectOverlay">
+        <value type="ShortBlockIndex" name="animation"
+        block="Animation" />
+        <value type="Enum" name="function">
+          <item value="0" name="A out" />
+          <item value="1" name="B out" />
+          <item value="2" name="C out" />
+          <item value="3" name="D out" />
+        </value>
+        <value type="Enum" name="function controls">
+          <item value="0" name="frame" />
+          <item value="1" name="scale" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Pad" name="_unnamed2" length="12" />
+      </struct>
+      <value type="Block" name="OBJECTS"
+      struct="AnimationGraphObjectOverlay" maxelements="4" />
+      <struct name="AnimationGraphUnitSeat">
+        <value type="FixedLengthString" name="label"
+        blockname="true" />
+        <value type="Angle" name="right yaw per frame" />
+        <value type="Angle" name="left yaw per frame" />
+        <value type="ShortInteger" name="right frame count" />
+        <value type="ShortInteger" name="left frame count" />
+        <value type="Angle" name="down pitch per frame" />
+        <value type="Angle" name="up pitch per frame" />
+        <value type="ShortInteger" name="down pitch frame count" />
+        <value type="ShortInteger" name="up pitch frame count" />
+        <value type="Pad" name="_unnamed" length="8" />
+        <struct name="UnitSeatAnimation">
+          <value type="ShortBlockIndex" name="animation"
+          block="Animation" />
+        </struct>
+        <value type="Block" name="animations"
+        struct="UnitSeatAnimation" maxelements="30" />
+        <struct name="AnimationGraphUnitSeatIkPoint">
+          <value type="FixedLengthString" name="marker">
+            <tooltip>The marker name on the object being
+            attached.</tooltip>
+          </value>
+          <value type="FixedLengthString" name="attach to marker">
+            <tooltip>The marker name object (weapon, vehicle, etc.)
+            the above marker is being attached to.</tooltip>
+          </value>
+        </struct>
+        <value type="Block" name="ik points"
+        struct="AnimationGraphUnitSeatIkPoint" maxelements="4" />
+        <struct name="AnimationGraphWeapon">
+          <value type="FixedLengthString" name="name"
+          blockname="true" />
+          <value type="FixedLengthString" name="grip marker">
+            <tooltip>The marker name on the weapon to which the
+            hand is attached (leave blank to use origin).</tooltip>
+          </value>
+          <value type="FixedLengthString" name="hand marker">
+            <tooltip>The marker name on the unit to which the
+            weapon is attached.</tooltip>
+          </value>
+          <value type="Angle" name="right yaw per frame" />
+          <value type="Angle" name="left yaw per frame" />
+          <value type="ShortInteger" name="right frame count" />
+          <value type="ShortInteger" name="left frame count" />
+          <value type="Angle" name="down pitch per frame" />
+          <value type="Angle" name="up pitch per frame" />
+          <value type="ShortInteger"
+          name="down pitch frame count" />
+          <value type="ShortInteger" name="up pitch frame count" />
+          <value type="Pad" name="_unnamed" length="32" />
+          <struct name="WeaponClassAnimation">
+            <value type="ShortBlockIndex" name="animation"
+            block="Animation" />
+          </struct>
+          <value type="Block" name="animations"
+          struct="WeaponClassAnimation" maxelements="55" />
+          <struct name="AnimationGraphUnitSeatIkPoint">
+            <value type="FixedLengthString" name="marker">
+              <tooltip>The marker name on the object being
+              attached.</tooltip>
+            </value>
+            <value type="FixedLengthString"
+            name="attach to marker">
+              <tooltip>The marker name object (weapon, vehicle,
+              etc.) the above marker is being attached
+              to.</tooltip>
+            </value>
+          </struct>
+          <value type="Block" name="ik points"
+          struct="AnimationGraphUnitSeatIkPoint" maxelements="4" />
+          <struct name="AnimationGraphWeaponType">
+            <value type="FixedLengthString" name="label"
+            blockname="true" />
+            <value type="Pad" name="_unnamed" length="16" />
+            <struct name="WeaponTypeAnimation">
+              <value type="ShortBlockIndex" name="animation"
+              block="Animation" />
+            </struct>
+            <value type="Block" name="animations"
+            struct="WeaponTypeAnimation" maxelements="10" />
+          </struct>
+          <value type="Block" name="weapon types"
+          struct="AnimationGraphWeaponType" maxelements="16" />
+        </struct>
+        <value type="Block" name="weapons"
+        struct="AnimationGraphWeapon" maxelements="16" />
+      </struct>
+      <value type="Block" name="UNITS"
+      struct="AnimationGraphUnitSeat" maxelements="32" />
+      <struct name="AnimationGraphWeaponAnimations">
+        <value type="Pad" name="_unnamed" length="16" />
+        <struct name="WeaponAnimation">
+          <value type="ShortBlockIndex" name="animation"
+          block="Animation" />
+        </struct>
+        <value type="Block" name="animations"
+        struct="WeaponAnimation" maxelements="11" />
+      </struct>
+      <value type="Block" name="WEAPONS"
+      struct="AnimationGraphWeaponAnimations" maxelements="1" />
+      <struct name="AnimationGraphVehicleAnimations">
+        <value type="Angle" name="right yaw per frame" />
+        <value type="Angle" name="left yaw per frame" />
+        <value type="ShortInteger" name="right frame count" />
+        <value type="ShortInteger" name="left frame count" />
+        <value type="Angle" name="down pitch per frame" />
+        <value type="Angle" name="up pitch per frame" />
+        <value type="ShortInteger" name="down pitch frame count" />
+        <value type="ShortInteger" name="up pitch frame count" />
+        <value type="Pad" name="_unnamed" length="68" />
+        <struct name="VehicleAnimation">
+          <value type="ShortBlockIndex" name="animation"
+          block="Animation" />
+        </struct>
+        <value type="Block" name="animations"
+        struct="VehicleAnimation" maxelements="8" />
+        <struct name="SuspensionAnimation">
+          <value type="ShortInteger" name="mass point index" />
+          <value type="ShortBlockIndex" name="animation"
+          blockname="true" block="Animation" />
+          <value type="Real" name="full extension ground_depth" />
+          <value type="Real"
+          name="full compression ground_depth" />
+          <value type="Pad" name="_unnamed" length="8" />
+        </struct>
+        <value type="Block" name="suspension animations"
+        struct="SuspensionAnimation" maxelements="8" />
+      </struct>
+      <value type="Block" name="VEHICLES"
+      struct="AnimationGraphVehicleAnimations" maxelements="1" />
+      <struct name="DeviceAnimations">
+        <value type="Pad" name="_unnamed" length="84" />
+        <struct name="DeviceAnimation">
+          <value type="ShortBlockIndex" name="animation"
+          block="Animation" />
+        </struct>
+        <value type="Block" name="animations"
+        struct="DeviceAnimation" maxelements="2" />
+      </struct>
+      <value type="Block" name="DEVICES" struct="DeviceAnimations"
+      maxelements="1" />
+      <struct name="UnitDamageAnimations">
+        <value type="ShortBlockIndex" name="animation"
+        blockname="true" block="Animation" />
+      </struct>
+      <value type="Block" name="UNIT DAMAGE"
+      struct="UnitDamageAnimations" maxelements="176" />
+      <struct name="AnimationGraphFirstPersonWeaponAnimations">
+        <value type="Pad" name="_unnamed" length="16" />
+        <struct name="FirstPersonWeapon">
+          <value type="ShortBlockIndex" name="animation"
+          block="Animation" />
+        </struct>
+        <value type="Block" name="animations"
+        struct="FirstPersonWeapon" maxelements="28" />
+      </struct>
+      <value type="Block" name="FIRST PERSON WEAPONS"
+      struct="AnimationGraphFirstPersonWeaponAnimations"
+      maxelements="1" />
+      <struct name="AnimationGraphSoundReference">
+        <value type="TagReference" name="sound" blockname="true"
+        extensions="snd!" />
+        <value type="Pad" name="_unnamed" length="4" />
+      </struct>
+      <value type="Block" name="sound references"
+      struct="AnimationGraphSoundReference" maxelements="257" />
+      <value type="Real" name="limp body node radius">
+        <tooltip>0 uses 0.04 default.</tooltip>
+      </value>
+      <value type="Flags" name="flags" length="2">
+        <bit index="0" name="compress all animations" />
+        <bit index="1" name="force idle compression" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <struct name="AnimationGraphNode">
+        <value type="FixedLengthString" name="name"
+        blockname="true" />
+        <value type="ShortBlockIndex"
+        name="next sibling node index"
+        block="AnimationGraphNode" />
+        <value type="ShortBlockIndex" name="first child node index"
+        block="AnimationGraphNode" />
+        <value type="ShortBlockIndex" name="parent node index"
+        block="AnimationGraphNode" />
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Flags" name="Node joint flags" length="4">
+          <bit index="0" name="bal" />
+          <bit index="1" name="hinge" />
+          <bit index="2" name="no movement" />
+        </value>
+        <value type="RealVector3D" name="base vector" />
+        <value type="Real" name="vector range" />
+        <value type="Pad" name="_unnamed2" length="4" />
+      </struct>
+      <value type="Block" name="nodes" struct="AnimationGraphNode"
+      maxelements="64" />
+      <struct name="Animation">
+        <value type="FixedLengthString" name="name"
+        blockname="true" />
+        <value type="Enum" name="type">
+          <item value="0" name="base" />
+          <item value="1" name="overlay" />
+          <item value="2" name="replacement" />
+        </value>
+        <value type="ShortInteger" name="frame count" />
+        <value type="ShortInteger" name="frame size" />
+        <value type="Enum" name="frame info type">
+          <item value="0" name="none" />
+          <item value="1" name="d" />
+          <item value="2" name="d" />
+          <item value="3" name="d" />
+        </value>
+        <value type="LongInteger" name="node list checksum" />
+        <value type="ShortInteger" name="node count" />
+        <value type="ShortInteger" name="loop frame index" />
+        <value type="RealFraction" name="weight" />
+        <value type="ShortInteger" name="key frame index" />
+        <value type="ShortInteger" name="second key frame index" />
+        <value type="ShortBlockIndex" name="next animation"
+        block="Animation" />
+        <value type="Flags" name="flags" length="2">
+          <bit index="0" name="compressed data" />
+          <bit index="1" name="world relative" />
+          <bit index="2" name="25Hz PAL" />
+        </value>
+        <value type="ShortBlockIndex" name="sound"
+        block="AnimationGraphSoundReference" />
+        <value type="ShortInteger" name="sound frame index" />
+        <value type="CharInteger" name="left foot frame index" />
+        <value type="CharInteger" name="right foot frame index" />
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="Data" name="frame info" />
+        <value type="LongInteger"
+        name="node translation flags a" />
+        <value type="LongInteger"
+        name="node translation flags b" />
+        <value type="Pad" name="_unnamed4" length="8" />
+        <value type="LongInteger" name="node rotation flags a" />
+        <value type="LongInteger" name="node rotation flags b" />
+        <value type="Pad" name="_unnamed5" length="8" />
+        <value type="LongInteger" name="node scale flags a" />
+        <value type="LongInteger" name="node scale flags b" />
+        <value type="Pad" name="_unnamed6" length="4" />
+        <value type="LongInteger"
+        name="offset to compressed data" />
+        <value type="Data" name="default data" />
+        <value type="Data" name="frame data" />
+      </struct>
+      <value type="Block" name="animations" struct="Animation"
+      maxelements="256" />
+    </struct>
+  </plugin>
+</xml>

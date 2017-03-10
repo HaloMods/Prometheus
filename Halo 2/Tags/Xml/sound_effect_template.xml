@@ -1,0 +1,71 @@
+<xml>
+  <name type="&lt;fx&gt;" parenttype="????">SoundEffectTemplate</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="SoundEffectTemplateBlock">
+      <struct name="SoundEffectTemplatesBlock">
+        <value type="StringId" name="dsp effect" disabled="false" />
+        <value type="Data" name="explanation" disabled="false" />
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="use high level parameters" />
+          <bit index="1" name="custom parameters" />
+        </value>
+        <value type="ShortInteger" name="_unnamed0" />
+        <value type="ShortInteger" name="_unnamed1" />
+        <struct name="SoundEffectTemplateParameterBlock">
+          <value type="StringId" name="name" disabled="false" />
+          <value type="Enum" name="type" length="2" disabled="false">
+            <item value="0" name="integer" />
+            <item value="1" name="real" />
+            <item value="2" name="filter type" />
+          </value>
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="expose as function" />
+          </value>
+          <value type="LongInteger" name="hardware offset" disabled="false" />
+          <value type="LongInteger" name="default enum integer value" disabled="false" />
+          <value type="Real" name="default scalar value" disabled="false" />
+          <struct name="ByteBlock">
+            <value type="CharInteger" name="Value" disabled="false" />
+          </struct>
+          <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="Real" name="minimum scalar value" disabled="false" />
+          <value type="Real" name="maximum scalar value" disabled="false" />
+        </struct>
+        <value type="Block" name="parameters" disabled="false" struct="SoundEffectTemplateParameterBlock" maxelements="128" />
+      </struct>
+      <value type="Block" name="template collection" disabled="false" struct="SoundEffectTemplatesBlock" maxelements="8" />
+      <value type="StringId" name="input effect name" disabled="false" />
+      <struct name="SoundEffectTemplateAdditionalSoundInputBlock">
+        <value type="StringId" name="dsp effect" disabled="false" />
+        <struct name="ByteBlock">
+          <value type="CharInteger" name="Value" disabled="false" />
+        </struct>
+        <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="Real" name="time period" disabled="false" unit=" seconds" />
+      </struct>
+      <value type="Block" name="additional sound inputs" disabled="false" struct="SoundEffectTemplateAdditionalSoundInputBlock" maxelements="1" />
+      <struct name="PlatformSoundEffectTemplateCollectionBlock">
+        <struct name="PlatformSoundEffectTemplateBlock">
+          <value type="StringId" name="input dsp effect name" disabled="false" />
+          <value type="Pad" name="_unnamed0" length="12" />
+          <struct name="PlatformSoundEffectTemplateComponentBlock">
+            <value type="Enum" name="value type" length="4" disabled="false">
+              <item value="0" name="zero" />
+              <item value="1" name="time" />
+              <item value="2" name="scale" />
+              <item value="3" name="rolloff" />
+            </value>
+            <value type="Real" name="default value" disabled="false" />
+            <value type="Real" name="minimum value" disabled="false" />
+            <value type="Real" name="maximum value" disabled="false" />
+          </struct>
+          <value type="Block" name="components" disabled="false" struct="PlatformSoundEffectTemplateComponentBlock" maxelements="16" />
+        </struct>
+        <value type="Block" name="platform effect templates" disabled="false" struct="PlatformSoundEffectTemplateBlock" maxelements="8" />
+        <value type="StringId" name="input dsp effect name" disabled="false" />
+      </struct>
+      <value type="Block" name="_unnamed0" struct="PlatformSoundEffectTemplateCollectionBlock" maxelements="1" />
+    </struct>
+  </plugin>
+</xml>

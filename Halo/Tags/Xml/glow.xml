@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="glw!" parenttype="????">Glow</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Glow">
+      <value type="FixedLengthString" name="attachment marker">
+        <tooltip>The marker name that the glow should be attached to.</tooltip>
+      </value>
+      <value type="ShortInteger" name="number of particles">
+        <tooltip>The number of particles that comprise the glow system.</tooltip>
+      </value>
+      <value type="Enum" name="boundary effect">
+        <tooltip>Particles behavior on reaching the end of an object.</tooltip>
+        <item value="0" name="bounce" />
+        <item value="1" name="wrap" />
+      </value>
+      <value type="Enum" name="normal particle distribution">
+        <tooltip>Distribution of the normal particles about the object.</tooltip>
+        <item value="0" name="distributed randomly" />
+        <item value="1" name="distributed uniformly" />
+      </value>
+      <value type="Enum" name="trailing particle distribution">
+        <tooltip>Distribution of the trailing particles about the object.</tooltip>
+        <item value="0" name="emit vertically" />
+        <item value="1" name="emit normal up" />
+        <item value="2" name="emit randomly" />
+      </value>
+      <value type="Flags" name="glow flags" length="4">
+        <bit index="0" name="modify particle color in range" />
+        <bit index="1" name="particles move backwards" />
+        <bit index="2" name="partices move in both directions" />
+        <bit index="3" name="trailing particles fade over time" />
+        <bit index="4" name="trailing particles shrink over time" />
+        <bit index="5" name="trailing particles slow over time" />
+      </value>
+      <value type="Pad" name="_unnamed" length="28" />
+      <value type="Pad" name="_unnamed2" length="2" />
+      <value type="Pad" name="_unnamed3" length="2" />
+      <value type="Pad" name="_unnamed4" length="4" />
+      <value type="Enum" name="attachment">
+        <item value="0" name="NONE" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Pad" name="_unnamed5" length="2" />
+      <value type="Real" name="particle rotational velocity">
+        <tooltip>Radians per second.</tooltip>
+      </value>
+      <value type="Real" name="particle rot vel mul low">
+        <tooltip>Multiplied by overall velocity; only used if controlled by attachment.</tooltip>
+      </value>
+      <value type="Real" name="particle rot vel mul high">
+        <tooltip>Multiplied by overall velocity; only used if controlled by attachment.</tooltip>
+      </value>
+      <value type="Enum" name="attachment2">
+        <item value="0" name="NONE" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Pad" name="_unnamed6" length="2" />
+      <value type="Real" name="effect rotational velocity">
+        <tooltip>In radians per second.</tooltip>
+      </value>
+      <value type="Real" name="effect rot vel mul low">
+        <tooltip>Multiplied by overall velocity; only used if controlled by attachment.</tooltip>
+      </value>
+      <value type="Real" name="effect rot vel mul high">
+        <tooltip>Multiplied by overall velocity; only used if controlled by attachment.</tooltip>
+      </value>
+      <value type="Enum" name="attachment3">
+        <item value="0" name="NONE" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Pad" name="_unnamed7" length="2" />
+      <value type="Real" name="effect translational velocity">
+        <tooltip>In world units per second.</tooltip>
+      </value>
+      <value type="Real" name="effect trans vel mul low">
+        <tooltip>Multiplied by overall velocity; only used if controlled by attachment.</tooltip>
+      </value>
+      <value type="Real" name="effect trans vel mul high">
+        <tooltip>Multiplied by overall velocity; only used if controlled by attachment.</tooltip>
+      </value>
+      <value type="Enum" name="attachment4">
+        <item value="0" name="NONE" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Pad" name="_unnamed8" length="2" />
+      <value type="Real" name="min distance particle to object">
+        <tooltip>In world units.</tooltip>
+      </value>
+      <value type="Real" name="max distance particle to object">
+        <tooltip>In world units.</tooltip>
+      </value>
+      <value type="Real" name="distance to object mul low">
+        <tooltip>Multiplied by particle distance; only used if controlled by attachment.</tooltip>
+      </value>
+      <value type="Real" name="distance to object mul high">
+        <tooltip>Multiplied by particle distance; only used if controlled by attachment.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed9" length="8" />
+      <value type="Enum" name="attachment5">
+        <item value="0" name="NONE" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Pad" name="_unnamed10" length="2" />
+      <value type="RealBounds" name="particle size bounds">
+        <tooltip>Size of particles.</tooltip>
+      </value>
+      <value type="RealBounds" name="size attachment multiplier">
+        <tooltip>Multiplied by particle size; only used if controlled by attachment.</tooltip>
+      </value>
+      <value type="Enum" name="attachment6">
+        <item value="0" name="NONE" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Pad" name="_unnamed11" length="2" />
+      <value type="RealARGBColor" name="color_bound_0">
+        <tooltip>The color of all particles will vary between color bound 0 and color bound 1.</tooltip>
+      </value>
+      <value type="RealARGBColor" name="color_bound_1">
+        <tooltip>The color of all particles will vary between color bound 0 and color bound 1.</tooltip>
+      </value>
+      <value type="RealARGBColor" name="scale color 0">
+        <tooltip>Used to scale the particle color; only used if controlled by attachment.</tooltip>
+      </value>
+      <value type="RealARGBColor" name="scale color 1">
+        <tooltip>Used to scale the particle color; only used if controlled by attachment.</tooltip>
+      </value>
+      <value type="Real" name="color rate of change">
+        <tooltip>For glow effects that dynamically control particle color; sets rate of change.</tooltip>
+      </value>
+      <value type="Real" name="fading percentage of glow">
+        <tooltip>Percentage of the glow that is fading at any given time.</tooltip>
+      </value>
+      <value type="Real" name="particle generation freq">
+        <tooltip>Frequency in Hz that trailing particles are generated.</tooltip>
+      </value>
+      <value type="Real" name="lifetime of trailing particles">
+        <tooltip>Seconds that a trailing particle remains in existence.</tooltip>
+      </value>
+      <value type="Real" name="velocity of trailing particles" />
+      <value type="Real" name="trailing particle minimum t" />
+      <value type="Real" name="trailing particle maximum t" />
+      <value type="Pad" name="_unnamed12" length="52" />
+      <value type="TagReference" name="texture" extensions="bitm" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,17 @@
+<xml>
+  <name type="hud#" parenttype="????">HudNumber</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="HudNumberBlock">
+      <value type="TagReference" name="digits bitmap" disabled="false" extensions="bitm" />
+      <value type="CharInteger" name="bitmap digit width" disabled="false" />
+      <value type="CharInteger" name="screen digit width" disabled="false" />
+      <value type="CharInteger" name="x offset" disabled="false" />
+      <value type="CharInteger" name="y offset" disabled="false" />
+      <value type="CharInteger" name="decimal point width" disabled="false" />
+      <value type="CharInteger" name="colon width" disabled="false" />
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Pad" name="_unnamed1" length="76" />
+    </struct>
+  </plugin>
+</xml>

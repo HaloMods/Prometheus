@@ -1,0 +1,490 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="sbsp" parenttype="????">ScenarioStructureBsp</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="ScenarioStructureBsp">
+      <value type="TagReference" name="lightmaps"
+      extensions="bitm" />
+      <value type="Real" name="vehicle floor">
+        <tooltip>Height below which vehicles get pushed up by an
+        unstoppable force.</tooltip>
+      </value>
+      <value type="Real" name="vehicle ceiling">
+        <tooltip>Height above which vehicles get pushed down by an
+        unstoppable force.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed" length="20" />
+      <value type="RealRGBColor" name="default ambient color" />
+      <value type="Pad" name="_unnamed2" length="4" />
+      <value type="RealRGBColor"
+      name="default distant light 0 color" />
+      <value type="RealVector3D"
+      name="default distant light 0 direction" />
+      <value type="RealRGBColor"
+      name="default distant light 1 color" />
+      <value type="RealVector3D"
+      name="default distant light 1 direction" />
+      <value type="Pad" name="_unnamed3" length="12" />
+      <value type="RealARGBColor" name="default reflection tint" />
+      <value type="RealVector3D" name="default shadow vector" />
+      <value type="RealRGBColor" name="default shadow color" />
+      <value type="Pad" name="_unnamed4" length="4" />
+      <struct name="StructureCollisionMaterials">
+        <value type="TagReference" name="shader"
+        extensions="shdr" />
+        <value type="Pad" name="_unnamed" length="4" />
+      </struct>
+      <value type="Block" name="collision materials"
+      struct="StructureCollisionMaterials" maxelements="512" />
+      <struct name="Bsp">
+        <struct name="Bsp3dnode">
+          <value type="LongInteger" name="plane" />
+          <value type="LongInteger" name="back child" />
+          <value type="LongInteger" name="front child" />
+        </struct>
+        <value type="Block" name="bsp3d nodes" struct="Bsp3dnode"
+        maxelements="131072" />
+        <struct name="Plane">
+          <value type="RealPlane3D" name="plane" />
+        </struct>
+        <value type="Block" name="planes" struct="Plane"
+        maxelements="65536" />
+        <struct name="Leaf">
+          <value type="Flags" name="flags" length="2">
+            <bit index="0" name="contains doubl" />
+          </value>
+          <value type="ShortInteger"
+          name="bsp2d reference count" />
+          <value type="LongInteger" name="first bsp2d reference" />
+        </struct>
+        <value type="Block" name="leaves" struct="Leaf"
+        maxelements="65536" />
+        <struct name="Bsp2dreference">
+          <value type="LongInteger" name="plane" />
+          <value type="LongInteger" name="bsp2d node" />
+        </struct>
+        <value type="Block" name="bsp2d references"
+        struct="Bsp2dreference" maxelements="131072" />
+        <struct name="Bsp2dnode">
+          <value type="RealPlane2D" name="plane" />
+          <value type="LongInteger" name="left child" />
+          <value type="LongInteger" name="right child" />
+        </struct>
+        <value type="Block" name="bsp2d nodes" struct="Bsp2dnode"
+        maxelements="65535" />
+        <struct name="Surface">
+          <value type="LongInteger" name="plane" />
+          <value type="LongInteger" name="first edge" />
+          <value type="Flags" name="flags" length="1">
+            <bit index="0" name="two sided" />
+            <bit index="1" name="invisible" />
+            <bit index="2" name="climbable" />
+            <bit index="3" name="breakable" />
+          </value>
+          <value type="CharInteger" name="breakable surface" />
+          <value type="ShortInteger" name="material" />
+        </struct>
+        <value type="Block" name="surfaces" struct="Surface"
+        maxelements="131072" />
+        <struct name="Edge">
+          <value type="LongInteger" name="start vertex" />
+          <value type="LongInteger" name="end vertex" />
+          <value type="LongInteger" name="forward edge" />
+          <value type="LongInteger" name="reverse edge" />
+          <value type="LongInteger" name="left surface" />
+          <value type="LongInteger" name="right surface" />
+        </struct>
+        <value type="Block" name="edges" struct="Edge"
+        maxelements="262144" />
+        <struct name="Vertex">
+          <value type="RealPoint3D" name="point" />
+          <value type="LongInteger" name="first edge" />
+        </struct>
+        <value type="Block" name="vertices" struct="Vertex"
+        maxelements="131072" />
+      </struct>
+      <value type="Block" name="collision bsp" struct="Bsp"
+      maxelements="1" />
+      <struct name="StructureBspNode">
+        <value type="Skip" name="_unnamed" length="6" />
+      </struct>
+      <value type="Block" name="nodes" struct="StructureBspNode"
+      maxelements="131072" />
+      <value type="RealBounds" name="world bounds x" />
+      <value type="RealBounds" name="world bounds y" />
+      <value type="RealBounds" name="world bounds z" />
+      <struct name="StructureBspLeaf">
+        <value type="Skip" name="_unnamed" length="6" />
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="ShortInteger" name="cluster" />
+        <value type="ShortInteger"
+        name="surface reference count" />
+        <value type="LongBlockIndex" name="surface references" />
+      </struct>
+      <value type="Block" name="leaves" struct="StructureBspLeaf"
+      maxelements="65536" />
+      <struct name="StructureBspSurfaceReference">
+        <value type="LongBlockIndex" name="surface" />
+        <value type="LongBlockIndex" name="node" />
+      </struct>
+      <value type="Block" name="leaf surfaces"
+      struct="StructureBspSurfaceReference" maxelements="262144" />
+      <struct name="StructureBspSurface">
+        <value type="ShortBlockIndex" name="tri_a" />
+        <value type="ShortBlockIndex" name="tri_b" />
+        <value type="ShortBlockIndex" name="tri_c" />
+      </struct>
+      <value type="Block" name="surfaces"
+      struct="StructureBspSurface" maxelements="131072" />
+      <struct name="StructureBspLightmap">
+        <value type="ShortInteger" name="bitmap" />
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Pad" name="_unnamed2" length="16" />
+        <struct name="StructureBspMaterial">
+          <value type="TagReference" name="shader"
+          extensions="shdr" />
+          <value type="ShortInteger" name="shader permutation" />
+          <value type="Flags" name="flags" length="2">
+            <bit index="0" name="coplanar" />
+            <bit index="1" name="fog plane" />
+          </value>
+          <value type="LongBlockIndex" name="surfaces" />
+          <value type="LongInteger" name="surface count" />
+          <value type="RealPoint3D" name="centroid" />
+          <value type="RealRGBColor" name="ambient color" />
+          <value type="ShortInteger" name="distant light count" />
+          <value type="Pad" name="_unnamed" length="2" />
+          <value type="RealRGBColor"
+          name="distant light 0 color" />
+          <value type="RealVector3D"
+          name="distant light 0 direction" />
+          <value type="RealRGBColor"
+          name="distant light 1 color" />
+          <value type="RealVector3D"
+          name="distant light 1 direction" />
+          <value type="Pad" name="_unnamed2" length="12" />
+          <value type="RealARGBColor" name="reflection tint" />
+          <value type="RealVector3D" name="shadow vector" />
+          <value type="RealRGBColor" name="shadow color" />
+          <value type="RealPlane3D" name="plane" />
+          <value type="ShortInteger" name="breakable surface" />
+          <value type="Pad" name="_unnamed3" length="2" />
+          <value type="LongInteger" name="vertex constant" />
+          <value type="LongInteger" name="vertex count" />
+          <value type="Pad" name="_unnamed4" length="8" />
+          <value type="LongInteger" name="vertex offset" />
+          <value type="LongInteger" name="lightmap constant" />
+          <value type="LongInteger" name="lightmap count" />
+          <value type="Pad" name="_unnamed5" length="8" />
+	  <value type="LongInteger" name="lightmap offset" />
+          <value type="Data" name="uncompressed vertices" />
+          <value type="Data" name="compressed vertices" />
+        </struct>
+        <value type="Block" name="materials"
+        struct="StructureBspMaterial" maxelements="2048" />
+      </struct>
+      <value type="Block" name="lightmaps2"
+      struct="StructureBspLightmap" maxelements="128" />
+      <value type="Pad" name="_unnamed5" length="12" />
+      <struct name="StructureBspLensFlare">
+        <value type="TagReference" name="lens flare"
+        extensions="lens" />
+      </struct>
+      <value type="Block" name="lens flares"
+      struct="StructureBspLensFlare" maxelements="256" />
+      <struct name="StructureBspLensFlareMarker">
+        <value type="RealPoint3D" name="position" />
+        <value type="CharInteger" name="direction" />
+        <value type="CharInteger" name="direction2" />
+        <value type="CharInteger" name="direction3" />
+        <value type="CharInteger" name="lens flare index" />
+      </struct>
+      <value type="Block" name="lens flare markers"
+      struct="StructureBspLensFlareMarker" maxelements="65536" />
+      <struct name="StructureBspCluster">
+        <value type="ShortInteger" name="sky" />
+        <value type="ShortInteger" name="fog" />
+        <value type="ShortBlockIndex" name="background sound"
+        block="StructureBspBackgroundSoundPalette" />
+        <value type="ShortBlockIndex" name="sound environment"
+        block="StructureBspSoundEnvironmentPalette" />
+        <value type="ShortBlockIndex" name="weather"
+        block="StructureBspWeatherPalette" />
+        <value type="ShortInteger"
+        name="transition structure bsp" />
+        <value type="Pad" name="_unnamed" length="4" />
+        <value type="Pad" name="_unnamed2" length="24" />
+        <struct name="PredictedResource">
+          <value type="Enum" name="type">
+            <item value="0" name="bitmap" />
+            <item value="1" name="sound" />
+          </value>
+          <value type="ShortInteger" name="resource index" />
+          <value type="LongInteger" name="tag index" />
+        </struct>
+        <value type="Block" name="predicted resources"
+        struct="PredictedResource" maxelements="1024" />
+        <struct name="StructureBspSubcluster">
+          <value type="RealBounds" name="world bounds x" />
+          <value type="RealBounds" name="world bounds y" />
+          <value type="RealBounds" name="world bounds z" />
+          <struct name="StructureBspSubclusterSurfaceIndex">
+            <value type="LongInteger" name="index" />
+          </struct>
+          <value type="Block" name="surface indices"
+          struct="StructureBspSubclusterSurfaceIndex"
+          maxelements="128" />
+        </struct>
+        <value type="Block" name="subclusters"
+        struct="StructureBspSubcluster" maxelements="4096" />
+        <value type="ShortInteger"
+        name="first lens flare marker index" />
+        <value type="ShortInteger"
+        name="lens flare marker count" />
+        <struct name="StructureBspClusterSurfaceIndex">
+          <value type="LongInteger" name="index" />
+        </struct>
+        <value type="Block" name="surface indices"
+        struct="StructureBspClusterSurfaceIndex"
+        maxelements="32768" />
+        <struct name="StructureBspMirror">
+          <value type="RealPlane3D" name="plane" />
+          <value type="Pad" name="_unnamed" length="20" />
+          <value type="TagReference" name="shader"
+          extensions="shdr" />
+          <struct name="StructureBspMirrorVertex">
+            <value type="RealPoint3D" name="point" />
+          </struct>
+          <value type="Block" name="vertices"
+          struct="StructureBspMirrorVertex" maxelements="512" />
+        </struct>
+        <value type="Block" name="mirrors"
+        struct="StructureBspMirror" maxelements="16" />
+        <struct name="StructureBspClusterPortalIndex">
+          <value type="ShortInteger" name="portal" />
+        </struct>
+        <value type="Block" name="portals"
+        struct="StructureBspClusterPortalIndex"
+        maxelements="128" />
+      </struct>
+      <value type="Block" name="clusters"
+      struct="StructureBspCluster" maxelements="8192" />
+      <value type="Data" name="cluster data" />
+      <struct name="StructureBspClusterPortal">
+        <value type="ShortInteger" name="front cluster" />
+        <value type="ShortInteger" name="back cluster" />
+        <value type="LongInteger" name="plane index" />
+        <value type="RealPoint3D" name="centroid" />
+        <value type="Real" name="bounding radius" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="ai cant hear through this shit" />
+        </value>
+        <value type="Pad" name="_unnamed" length="24" />
+        <struct name="StructureBspClusterPortalVertex">
+          <value type="RealPoint3D" name="point" />
+        </struct>
+        <value type="Block" name="vertices"
+        struct="StructureBspClusterPortalVertex"
+        maxelements="128" />
+      </struct>
+      <value type="Block" name="cluster portals"
+      struct="StructureBspClusterPortal" maxelements="512" />
+      <value type="Pad" name="_unnamed6" length="12" />
+      <struct name="StructureBspBreakableSurface">
+        <value type="RealPoint3D" name="centroid" />
+        <value type="Real" name="radius" />
+        <value type="LongInteger" name="collision surface index" />
+        <value type="Pad" name="_unnamed" length="28" />
+      </struct>
+      <value type="Block" name="breakable surfaces"
+      struct="StructureBspBreakableSurface" maxelements="256" />
+      <struct name="StructureBspFogPlane">
+        <value type="ShortBlockIndex" name="front region"
+        block="StructureBspFogRegion" />
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="RealPlane3D" name="plane" />
+        <struct name="StructureBspFogPlaneVertex">
+          <value type="RealPoint3D" name="point" />
+        </struct>
+        <value type="Block" name="vertices"
+        struct="StructureBspFogPlaneVertex" maxelements="4096" />
+      </struct>
+      <value type="Block" name="fog planes"
+      struct="StructureBspFogPlane" maxelements="32" />
+      <struct name="StructureBspFogRegion">
+        <value type="Pad" name="_unnamed" length="36" />
+        <value type="ShortBlockIndex" name="fog palette"
+        block="StructureBspFogPalette" />
+        <value type="ShortBlockIndex" name="weather palette"
+        block="StructureBspWeatherPalette" />
+      </struct>
+      <value type="Block" name="fog regions"
+      struct="StructureBspFogRegion" maxelements="32" />
+      <struct name="StructureBspFogPalette">
+        <value type="FixedLengthString" name="name"
+        blockname="true" />
+        <value type="TagReference" name="fog" extensions="fog" />
+        <value type="Pad" name="_unnamed" length="4" />
+        <value type="FixedLengthString"
+        name="fog scale function" />
+        <value type="Pad" name="_unnamed2" length="52" />
+      </struct>
+      <value type="Block" name="fog palette"
+      struct="StructureBspFogPalette" maxelements="32" />
+      <value type="Pad" name="_unnamed7" length="24" />
+      <struct name="StructureBspWeatherPalette">
+        <value type="FixedLengthString" name="name"
+        blockname="true" />
+        <value type="TagReference" name="particle system"
+        extensions="rain" />
+        <value type="Pad" name="_unnamed" length="4" />
+        <value type="FixedLengthString"
+        name="particle system scale function" />
+        <value type="Pad" name="_unnamed2" length="44" />
+        <value type="TagReference" name="wind" extensions="wind" />
+        <value type="RealVector3D" name="wind direction" />
+        <value type="Real" name="wind magnitude" />
+        <value type="Pad" name="_unnamed3" length="4" />
+        <value type="FixedLengthString"
+        name="wind scale function" />
+        <value type="Pad" name="_unnamed4" length="44" />
+      </struct>
+      <value type="Block" name="weather palette"
+      struct="StructureBspWeatherPalette" maxelements="32" />
+      <struct name="StructureBspWeatherPolyhedron">
+        <value type="RealPoint3D" name="bounding sphere center" />
+        <value type="Real" name="bounding sphere radius" />
+        <value type="Pad" name="_unnamed" length="4" />
+        <struct name="StructureBspWeatherPolyhedronPlane">
+          <value type="RealPlane3D" name="plane" />
+        </struct>
+        <value type="Block" name="planes"
+        struct="StructureBspWeatherPolyhedronPlane"
+        maxelements="16" />
+      </struct>
+      <value type="Block" name="weather polyhedra"
+      struct="StructureBspWeatherPolyhedron" maxelements="32" />
+      <value type="Pad" name="_unnamed8" length="24" />
+      <struct name="StructureBspPathfindingSurfaces">
+        <value type="CharInteger" name="data" />
+      </struct>
+      <value type="Block" name="pathfinding surfaces"
+      struct="StructureBspPathfindingSurfaces"
+      maxelements="131072" />
+      <struct name="StructureBspPathfindingEdges">
+        <value type="CharInteger" name="midpoint" />
+      </struct>
+      <value type="Block" name="pathfinding edges"
+      struct="StructureBspPathfindingEdges" maxelements="262144" />
+      <struct name="StructureBspBackgroundSoundPalette">
+        <value type="FixedLengthString" name="name"
+        blockname="true" />
+        <value type="TagReference" name="background sound"
+        extensions="lsnd" />
+        <value type="Pad" name="_unnamed" length="4" />
+        <value type="FixedLengthString" name="scale function" />
+        <value type="Pad" name="_unnamed2" length="32" />
+      </struct>
+      <value type="Block" name="background sound palette"
+      struct="StructureBspBackgroundSoundPalette"
+      maxelements="64" />
+      <struct name="StructureBspSoundEnvironmentPalette">
+        <value type="FixedLengthString" name="name"
+        blockname="true" />
+        <value type="TagReference" name="sound environment"
+        extensions="snde" />
+        <value type="Pad" name="_unnamed" length="32" />
+      </struct>
+      <value type="Block" name="sound environment palette"
+      struct="StructureBspSoundEnvironmentPalette"
+      maxelements="64" />
+      <value type="Data" name="sound PAS data" />
+      <value type="Pad" name="_unnamed9" length="24" />
+      <struct name="StructureBspMarker">
+        <value type="FixedLengthString" name="name" />
+        <value type="RealQuaternion" name="rotation" />
+        <value type="RealPoint3D" name="position" />
+      </struct>
+      <value type="Block" name="markers"
+      struct="StructureBspMarker" maxelements="1024" />
+      <struct name="StructureBspDetailObjectData">
+        <struct name="GlobalDetailObjectCells">
+          <value type="ShortInteger" name="_unnamed" />
+          <value type="ShortInteger" name="_unnamed2" />
+          <value type="ShortInteger" name="_unnamed3" />
+          <value type="ShortInteger" name="_unnamed4" />
+          <value type="LongInteger" name="_unnamed5" />
+          <value type="LongInteger" name="_unnamed6" />
+          <value type="LongInteger" name="_unnamed7" />
+          <value type="Pad" name="_unnamed8" length="12" />
+        </struct>
+        <value type="Block" name="cells"
+        struct="GlobalDetailObjectCells" maxelements="262144" />
+        <struct name="GlobalDetailObject">
+          <value type="CharInteger" name="_unnamed" />
+          <value type="CharInteger" name="_unnamed2" />
+          <value type="CharInteger" name="_unnamed3" />
+          <value type="CharInteger" name="_unnamed4" />
+          <value type="ShortInteger" name="_unnamed5" />
+        </struct>
+        <value type="Block" name="instances"
+        struct="GlobalDetailObject" maxelements="2097152" />
+        <struct name="GlobalDetailObjectCounts">
+          <value type="ShortInteger" name="_unnamed" />
+        </struct>
+        <value type="Block" name="counts"
+        struct="GlobalDetailObjectCounts" maxelements="8388608" />
+        <struct name="GlobalZReferenceVector">
+          <value type="Real" name="_unnamed" />
+          <value type="Real" name="_unnamed2" />
+          <value type="Real" name="_unnamed3" />
+          <value type="Real" name="_unnamed4" />
+        </struct>
+        <value type="Block" name="z reference vectors"
+        struct="GlobalZReferenceVector" maxelements="262144" />
+        <value type="Pad" name="_unnamed" length="16" />
+      </struct>
+      <value type="Block" name="detail objects"
+      struct="StructureBspDetailObjectData" maxelements="1" />
+      <struct name="StructureBspRuntimeDecal">
+        <value type="Skip" name="_unnamed" length="16" />
+      </struct>
+      <value type="Block" name="runtime decals"
+      struct="StructureBspRuntimeDecal" maxelements="6144" />
+      <value type="Pad" name="_unnamed10" length="8" />
+      <value type="Pad" name="_unnamed11" length="4" />
+      <struct name="GlobalMapLeaf">
+        <struct name="MapLeafFace">
+          <value type="LongInteger" name="node index" />
+          <struct name="MapLeafFaceVertex">
+            <value type="RealPoint2D" name="vertex" />
+          </struct>
+          <value type="Block" name="vertices"
+          struct="MapLeafFaceVertex" maxelements="64" />
+        </struct>
+        <value type="Block" name="faces" struct="MapLeafFace"
+        maxelements="256" />
+        <struct name="MapLeafPortalIndex">
+          <value type="LongInteger" name="portal index" />
+        </struct>
+        <value type="Block" name="portal indices"
+        struct="MapLeafPortalIndex" maxelements="256" />
+      </struct>
+      <value type="Block" name="leaf map leaves"
+      struct="GlobalMapLeaf" maxelements="65536" />
+      <struct name="GlobalLeafPortal">
+        <value type="LongInteger" name="plane index" />
+        <value type="LongInteger" name="back leaf index" />
+        <value type="LongInteger" name="front leaf index" />
+        <struct name="LeafPortalVertex">
+          <value type="RealPoint3D" name="point" />
+        </struct>
+        <value type="Block" name="vertices"
+        struct="LeafPortalVertex" maxelements="64" />
+      </struct>
+      <value type="Block" name="leaf map portals"
+      struct="GlobalLeafPortal" maxelements="524288" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="pctl" parenttype="????">ParticleSystem</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="ParticleSystem">
+      <value type="Pad" name="_unnamed" length="4" />
+      <value type="Pad" name="_unnamed2" length="52" />
+      <value type="TagReference" name="point physics" extensions="pphy" />
+      <value type="Enum" name="system update physics">
+        <item value="0" name="default" />
+        <item value="1" name="explosion" />
+      </value>
+      <value type="Pad" name="_unnamed3" length="2" />
+      <value type="Flags" name="physics flags" length="4" />
+      <struct name="ParticleSystemPhysicsConstants">
+        <value type="Real" name="k">
+          <tooltip>The meaning of this constant depends on the selected physics creation/update function..</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="physics constants" struct="ParticleSystemPhysicsConstants" maxelements="16" />
+      <struct name="ParticleSystemTypes">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="type states loop" />
+          <bit index="1" name="... forwardbackward" />
+          <bit index="2" name="particle states loop" />
+          <bit index="3" name="... forwardbackward" />
+          <bit index="4" name="particles die in water" />
+          <bit index="5" name="particles die in air" />
+          <bit index="6" name="particles die on ground" />
+          <bit index="7" name="rotational sprites animate sideways">
+            <tooltip>If the complex sprite mode is rotational and this flag is set, the sideways sequence is contains an animation rather than a set of permutations..</tooltip>
+          </bit>
+          <bit index="8" name="disabled" />
+          <bit index="9" name="tint by effect color" />
+          <bit index="10" name="initial count scales with effect" />
+          <bit index="11" name="minimum count scales with effect" />
+          <bit index="12" name="creation rate scales with effect" />
+          <bit index="13" name="scale scales with effect" />
+          <bit index="14" name="animation rate scales with effect" />
+          <bit index="15" name="rotation rate scales with effect" />
+          <bit index="16" name="dont draw in first person" />
+          <bit index="17" name="dont draw in third person" />
+        </value>
+        <value type="ShortInteger" name="initial particle count" />
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Enum" name="complex sprite render modes">
+          <item value="0" name="simple" />
+          <item value="1" name="rotational" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Real" name="radius" />
+        <value type="Pad" name="_unnamed3" length="36" />
+        <value type="Enum" name="particle creation physics">
+          <tooltip>This controls the initial placement of particles..</tooltip>
+          <item value="0" name="default" />
+          <item value="1" name="explosion" />
+          <item value="2" name="jet" />
+        </value>
+        <value type="Pad" name="_unnamed4" length="2" />
+        <value type="Flags" name="physics flags" length="4" />
+        <struct name="ParticleSystemPhysicsConstants">
+          <value type="Real" name="k">
+            <tooltip>The meaning of this constant depends on the selected physics creation/update function..</tooltip>
+          </value>
+        </struct>
+        <value type="Block" name="physics constants" struct="ParticleSystemPhysicsConstants" maxelements="16" />
+        <struct name="ParticleSystemTypeStates">
+          <value type="FixedLengthString" name="name" blockname="true" />
+          <value type="RealBounds" name="duration bounds">
+            <tooltip>Time in this state..</tooltip>
+          </value>
+          <value type="RealBounds" name="transition time bounds">
+            <tooltip>Time spent in transition to next state..</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed" length="4" />
+          <value type="Real" name="scale multiplier">
+            <tooltip>This value will be multiplied into the scale computed by the particles' state..</tooltip>
+          </value>
+          <value type="Real" name="animation_rate_multiplier">
+            <tooltip>This value will be multiplied into the animation rate computed by the particles' state..</tooltip>
+          </value>
+          <value type="Real" name="rotation rate multiplier">
+            <tooltip>This value will be multiplied into the rotation rate computed by the particles' state..</tooltip>
+          </value>
+          <value type="RealARGBColor" name="color multiplier">
+            <tooltip>This value will be multiplied into the color computed by the particles' state..</tooltip>
+          </value>
+          <value type="Real" name="radius multiplier">
+            <tooltip>This value will be multiplied into the radius computed by the type..</tooltip>
+          </value>
+          <value type="Real" name="minimum particle count" />
+          <value type="Real" name="particle creation rate" />
+          <value type="Pad" name="_unnamed2" length="84" />
+          <value type="Enum" name="particle creation physics">
+            <tooltip>This controls the placement of particles created during this state..</tooltip>
+            <item value="0" name="default" />
+            <item value="1" name="explosion" />
+            <item value="2" name="jet" />
+          </value>
+          <value type="Enum" name="particle update physics">
+            <tooltip>This controls the motion of particles during this state..</tooltip>
+            <item value="0" name="default" />
+          </value>
+          <struct name="ParticleSystemPhysicsConstants">
+            <value type="Real" name="k">
+              <tooltip>The meaning of this constant depends on the selected physics creation/update function..</tooltip>
+            </value>
+          </struct>
+          <value type="Block" name="physics constants" struct="ParticleSystemPhysicsConstants" maxelements="16" />
+        </struct>
+        <value type="Block" name="states" struct="ParticleSystemTypeStates" maxelements="8" />
+        <struct name="ParticleSystemTypeParticleStates">
+          <value type="FixedLengthString" name="name" blockname="true" />
+          <value type="RealBounds" name="duration bounds">
+            <tooltip>Time in this state..</tooltip>
+          </value>
+          <value type="RealBounds" name="transition time bounds">
+            <tooltip>Time spent in transition to next state..</tooltip>
+          </value>
+          <value type="TagReference" name="bitmaps" extensions="bitm" />
+          <value type="ShortInteger" name="sequence index" />
+          <value type="Pad" name="_unnamed" length="2" />
+          <value type="Pad" name="_unnamed2" length="4" />
+          <value type="RealBounds" name="scale">
+            <tooltip>Apparent size of the particles..</tooltip>
+          </value>
+          <value type="RealBounds" name="animation rate">
+            <tooltip>Rate of sprite animation..</tooltip>
+          </value>
+          <value type="AngleBounds" name="rotation rate">
+            <tooltip>Rate of texture rotation..</tooltip>
+          </value>
+          <value type="RealARGBColor" name="color 1">
+            <tooltip>Particle will have a random color in the range determined by these two colors..</tooltip>
+          </value>
+          <value type="RealARGBColor" name="color 2">
+            <tooltip>Particle will have a random color in the range determined by these two colors..</tooltip>
+          </value>
+          <value type="Real" name="radius multiplier">
+            <tooltip>This value will be multiplied into the radius computed by the type..</tooltip>
+          </value>
+          <value type="TagReference" name="point physics" extensions="pphy" />
+          <value type="Pad" name="_unnamed3" length="36" />
+          <value type="Pad" name="_unnamed4" length="40" />
+          <value type="Flags" name="shader flags" length="2">
+            <bit index="0" name="sort bias" />
+            <bit index="1" name="nonlinear tint" />
+            <bit index="2" name="dont overdraw fp weapon" />
+          </value>
+          <value type="Enum" name="framebuffer blend function">
+            <item value="0" name="alpha blend" />
+            <item value="1" name="multiply" />
+            <item value="2" name="double multiply" />
+            <item value="3" name="add" />
+            <item value="4" name="subtract" />
+            <item value="5" name="component min" />
+            <item value="6" name="component max" />
+            <item value="7" name="alph" />
+          </value>
+          <value type="Enum" name="framebuffer fade mode">
+            <item value="0" name="none" />
+            <item value="1" name="fade when perpendicular" />
+            <item value="2" name="fade when parallel" />
+          </value>
+          <value type="Flags" name="map flags" length="2">
+            <bit index="0" name="unfiltered" />
+          </value>
+          <value type="Pad" name="_unnamed5" length="28" />
+          <value type="TagReference" name="bitmap" extensions="bitm" />
+          <value type="Enum" name="anchor">
+            <item value="0" name="with primary" />
+            <item value="1" name="with screen space" />
+            <item value="2" name="zsprite" />
+          </value>
+          <value type="Flags" name="flags" length="2">
+            <bit index="0" name="unfiltered" />
+          </value>
+          <value type="Enum" name="_unnamed6">
+            <item value="0" name="none" />
+            <item value="1" name="A out" />
+            <item value="2" name="B out" />
+            <item value="3" name="C out" />
+            <item value="4" name="D out" />
+          </value>
+          <value type="Enum" name="_unnamed7">
+            <item value="0" name="one" />
+            <item value="1" name="zero" />
+            <item value="2" name="cosine" />
+            <item value="3" name="cosine variable period" />
+            <item value="4" name="diagonal wave" />
+            <item value="5" name="diagonal wave variable period" />
+            <item value="6" name="slide" />
+            <item value="7" name="slide variable period" />
+            <item value="8" name="noise" />
+            <item value="9" name="jitter" />
+            <item value="10" name="wander" />
+            <item value="11" name="spark" />
+          </value>
+          <value type="Real" name="_unnamed8">
+            <tooltip>0 defaults to 1.</tooltip>
+          </value>
+          <value type="Real" name="_unnamed9" />
+          <value type="Real" name="_unnamed10">
+            <tooltip>0 defaults to 1.</tooltip>
+          </value>
+          <value type="Enum" name="_unnamed11">
+            <item value="0" name="none" />
+            <item value="1" name="A out" />
+            <item value="2" name="B out" />
+            <item value="3" name="C out" />
+            <item value="4" name="D out" />
+          </value>
+          <value type="Enum" name="_unnamed12">
+            <item value="0" name="one" />
+            <item value="1" name="zero" />
+            <item value="2" name="cosine" />
+            <item value="3" name="cosine variable period" />
+            <item value="4" name="diagonal wave" />
+            <item value="5" name="diagonal wave variable period" />
+            <item value="6" name="slide" />
+            <item value="7" name="slide variable period" />
+            <item value="8" name="noise" />
+            <item value="9" name="jitter" />
+            <item value="10" name="wander" />
+            <item value="11" name="spark" />
+          </value>
+          <value type="Real" name="_unnamed13">
+            <tooltip>0 defaults to 1.</tooltip>
+          </value>
+          <value type="Real" name="_unnamed14" />
+          <value type="Real" name="_unnamed15">
+            <tooltip>0 defaults to 1.</tooltip>
+          </value>
+          <value type="Enum" name="rotatio">
+            <item value="0" name="none" />
+            <item value="1" name="A out" />
+            <item value="2" name="B out" />
+            <item value="3" name="C out" />
+            <item value="4" name="D out" />
+          </value>
+          <value type="Enum" name="rotatio2">
+            <item value="0" name="one" />
+            <item value="1" name="zero" />
+            <item value="2" name="cosine" />
+            <item value="3" name="cosine variable period" />
+            <item value="4" name="diagonal wave" />
+            <item value="5" name="diagonal wave variable period" />
+            <item value="6" name="slide" />
+            <item value="7" name="slide variable period" />
+            <item value="8" name="noise" />
+            <item value="9" name="jitter" />
+            <item value="10" name="wander" />
+            <item value="11" name="spark" />
+          </value>
+          <value type="Real" name="rotatio3">
+            <tooltip>0 defaults to 1.</tooltip>
+          </value>
+          <value type="Real" name="rotatio4" />
+          <value type="Real" name="rotatio5">
+            <tooltip>0 defaults to 360.</tooltip>
+          </value>
+          <value type="RealPoint2D" name="rotatio6" />
+          <value type="Pad" name="_unnamed16" length="4" />
+          <value type="Real" name="zsprite radius scale" />
+          <value type="Pad" name="_unnamed17" length="20" />
+          <struct name="ParticleSystemPhysicsConstants">
+            <value type="Real" name="k">
+              <tooltip>The meaning of this constant depends on the selected physics creation/update function..</tooltip>
+            </value>
+          </struct>
+          <value type="Block" name="physics constants" struct="ParticleSystemPhysicsConstants" maxelements="16" />
+        </struct>
+        <value type="Block" name="particle states" struct="ParticleSystemTypeParticleStates" maxelements="8" />
+      </struct>
+      <value type="Block" name="particle types" struct="ParticleSystemTypes" maxelements="4" />
+    </struct>
+  </plugin>
+</xml>

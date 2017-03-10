@@ -1,0 +1,23 @@
+<xml>
+  <name type="ctrl" parenttype="devi">DeviceControl</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="DeviceControlBlock">
+      <value type="Enum" name="type" length="2" disabled="false">
+        <item value="0" name="toggle switch" />
+        <item value="1" name="on button" />
+        <item value="2" name="off button" />
+        <item value="3" name="call button" />
+      </value>
+      <value type="Enum" name="triggers when" length="2" disabled="false">
+        <item value="0" name="touched by player" />
+        <item value="1" name="destroyed" />
+      </value>
+      <value type="Real" name="call value" disabled="false" unit="[0,1]" />
+      <value type="StringId" name="action string" disabled="false" />
+      <value type="TagReference" name="on" disabled="false" extensions="snd!|effe" />
+      <value type="TagReference" name="off" disabled="false" extensions="snd!|effe" />
+      <value type="TagReference" name="deny" disabled="false" extensions="snd!|effe" />
+    </struct>
+  </plugin>
+</xml>

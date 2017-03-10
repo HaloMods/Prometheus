@@ -1,0 +1,57 @@
+<xml>
+  <name type="fog " parenttype="????">PlanarFog</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="PlanarFogBlock">
+      <value type="Flags" name="flags" length="2" disabled="false">
+        <bit index="0" name="render only submerged geometry" />
+        <bit index="1" name="extend infinitely while visible" />
+        <bit index="2" name="don't floodfill" />
+        <bit index="3" name="aggressive floodfill" />
+        <bit index="4" name="do not render" />
+        <bit index="5" name="do not render unless submerged" />
+      </value>
+      <value type="ShortInteger" name="priority" disabled="false" />
+      <value type="StringId" name="global material name" disabled="false" />
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Pad" name="_unnamed1" length="2" />
+      <value type="RealFraction" name="maximum density" disabled="false" unit="[0,1]">
+        <tooltip>planar fog density is clamped to this value</tooltip>
+      </value>
+      <value type="Real" name="opaque distance" disabled="false" unit="world units">
+        <tooltip>the fog becomes opaque (maximum density) at this distance from the viewer</tooltip>
+      </value>
+      <value type="Real" name="opaque depth" disabled="false" unit="world units">
+        <tooltip>the fog becomes opaque at this distance below fog plane</tooltip>
+      </value>
+      <value type="RealBounds" name="atmospheric-planar depth" disabled="false" unit="world units">
+        <tooltip>distances above fog plane where atmospheric fog supercedes planar fog and visa-versa</tooltip>
+      </value>
+      <value type="Real" name="eye offset scale" disabled="false" unit="[-1,1]">
+        <tooltip>negative numbers are bad, mmmkay?</tooltip>
+      </value>
+      <value type="RealRgbColor" name="color" disabled="false" />
+      <struct name="PlanarFogPatchyFogBlock">
+        <value type="RealRgbColor" name="color" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="12" />
+        <value type="FractionBounds" name="density" disabled="false" unit="[0,1]" />
+        <value type="RealBounds" name="distance" disabled="false" unit="world units" />
+        <value type="RealFraction" name="min depth fraction" disabled="false" unit="[0,1]">
+          <tooltip>in range (0,max_depth) world units, where patchy fog starts fading in</tooltip>
+        </value>
+        <value type="TagReference" name="patchy fog" disabled="false" extensions="fpch" />
+      </struct>
+      <value type="Block" name="patchy fog" disabled="false" struct="PlanarFogPatchyFogBlock" maxelements="1" />
+      <value type="TagReference" name="background sound" disabled="false" extensions="lsnd" />
+      <value type="TagReference" name="sound environment" disabled="false" extensions="snde" />
+      <value type="Real" name="environment damping factor" disabled="false">
+        <tooltip>scales the surrounding background sound by this much</tooltip>
+      </value>
+      <value type="Real" name="background sound gain" disabled="false">
+        <tooltip>scale for fog background sound</tooltip>
+      </value>
+      <value type="TagReference" name="enter sound" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="exit sound" disabled="false" extensions="snd!" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="unit" parenttype="obje">Unit</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Unit">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="circular aiming" />
+        <bit index="1" name="destroyed after dying" />
+        <bit index="2" name="hal" />
+        <bit index="3" name="fires from camera" />
+        <bit index="4" name="entrance inside bounding sphere" />
+        <bit index="5" name="unused" />
+        <bit index="6" name="causes passenger dialogue" />
+        <bit index="7" name="resists pings" />
+        <bit index="8" name="melee attack is fatal" />
+        <bit index="9" name="dont reface during pings" />
+        <bit index="10" name="has no aiming" />
+        <bit index="11" name="simple creature" />
+        <bit index="12" name="impact melee attaches to unit" />
+        <bit index="13" name="impact melee dies on shields" />
+        <bit index="14" name="cannot open doors automatically" />
+        <bit index="15" name="melee attackers cannot attach" />
+        <bit index="16" name="not instantly killed by melee" />
+        <bit index="17" name="shield sapping" />
+        <bit index="18" name="runs around flaming" />
+        <bit index="19" name="inconsequential" />
+        <bit index="20" name="special cinematic unit" />
+        <bit index="21" name="ignored by autoaiming" />
+        <bit index="22" name="shields fry infection forms" />
+        <bit index="23" name="integrated light cntrls weapon" />
+        <bit index="24" name="integrated light lasts forever" />
+      </value>
+      <value type="Enum" name="default team">
+        <item value="0" name="none" />
+        <item value="1" name="player" />
+        <item value="2" name="human" />
+        <item value="3" name="covenant" />
+        <item value="4" name="flood" />
+        <item value="5" name="sentinel" />
+        <item value="6" name="unused 6" />
+        <item value="7" name="unused 7" />
+        <item value="8" name="unused 8" />
+        <item value="9" name="unused 9" />
+      </value>
+      <value type="Enum" name="constant sound volume">
+        <item value="0" name="silent" />
+        <item value="1" name="medium" />
+        <item value="2" name="loud" />
+        <item value="3" name="shout" />
+        <item value="4" name="quiet" />
+      </value>
+      <value type="Real" name="rider damage fraction">
+        <tooltip>What percent damage applied to us gets applied to our children (i.e., riders).</tooltip>
+      </value>
+      <value type="TagReference" name="integrated light toggle" extensions="effe" />
+      <value type="Enum" name="A in">
+        <item value="0" name="none" />
+        <item value="1" name="driver seat power" />
+        <item value="2" name="gunner seat power" />
+        <item value="3" name="aiming change" />
+        <item value="4" name="mouth aperture" />
+        <item value="5" name="integrated light power" />
+        <item value="6" name="can blink" />
+        <item value="7" name="shield sapping" />
+      </value>
+      <value type="Enum" name="B in">
+        <item value="0" name="none" />
+        <item value="1" name="driver seat power" />
+        <item value="2" name="gunner seat power" />
+        <item value="3" name="aiming change" />
+        <item value="4" name="mouth aperture" />
+        <item value="5" name="integrated light power" />
+        <item value="6" name="can blink" />
+        <item value="7" name="shield sapping" />
+      </value>
+      <value type="Enum" name="C in">
+        <item value="0" name="none" />
+        <item value="1" name="driver seat power" />
+        <item value="2" name="gunner seat power" />
+        <item value="3" name="aiming change" />
+        <item value="4" name="mouth aperture" />
+        <item value="5" name="integrated light power" />
+        <item value="6" name="can blink" />
+        <item value="7" name="shield sapping" />
+      </value>
+      <value type="Enum" name="D in">
+        <item value="0" name="none" />
+        <item value="1" name="driver seat power" />
+        <item value="2" name="gunner seat power" />
+        <item value="3" name="aiming change" />
+        <item value="4" name="mouth aperture" />
+        <item value="5" name="integrated light power" />
+        <item value="6" name="can blink" />
+        <item value="7" name="shield sapping" />
+      </value>
+      <value type="Angle" name="camera field of view" />
+      <value type="Real" name="camera stiffness" />
+      <value type="FixedLengthString" name="camera marker name" />
+      <value type="FixedLengthString" name="camera submerged marker name" />
+      <value type="Angle" name="pitch aut" />
+      <value type="AngleBounds" name="pitch range" />
+      <struct name="UnitCameraTrack">
+        <value type="TagReference" name="track" extensions="trak" />
+        <value type="Pad" name="_unnamed" length="12" />
+      </struct>
+      <value type="Block" name="camera tracks" struct="UnitCameraTrack" maxelements="2" />
+      <value type="RealVector3D" name="seat acceleration scale" />
+      <value type="Pad" name="_unnamed" length="12" />
+      <value type="Real" name="soft ping threshold" />
+      <value type="Real" name="soft ping interrupt time" />
+      <value type="Real" name="hard ping threshold" />
+      <value type="Real" name="hard ping interrupt time" />
+      <value type="Real" name="hard death threshold" />
+      <value type="Real" name="feign death threshold" />
+      <value type="Real" name="feign death time" />
+      <value type="Real" name="distance of evade anim">
+        <tooltip>This must be set to tell the AI how far it should expect our evade animation to move us.</tooltip>
+      </value>
+      <value type="Real" name="distance of dive anim">
+        <tooltip>This must be set to tell the AI how far it should expect our dive animation to move us.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed2" length="4" />
+      <value type="Real" name="stunned movement threshold">
+        <tooltip>If we take this much damage in a short space of time we will play our 'stunned movement' animations.</tooltip>
+      </value>
+      <value type="Real" name="feign death chance" />
+      <value type="Real" name="feign repeat chance" />
+      <value type="TagReference" name="spawned actor" extensions="actv">
+        <tooltip>Actor variant which we spawn when we are destroyed or self-destruct.</tooltip>
+      </value>
+      <value type="ShortBounds" name="spawned actor count">
+        <tooltip>Number of actors which we spawn.</tooltip>
+      </value>
+      <value type="Real" name="spawned velocity">
+        <tooltip>Velocity at which we throw spawned actors.</tooltip>
+      </value>
+      <value type="Angle" name="aiming velocity maximum" />
+      <value type="Angle" name="aiming acceleration maximum" />
+      <value type="RealFraction" name="casual aiming modifier" />
+      <value type="Angle" name="looking velocity maximum" />
+      <value type="Angle" name="looking acceleration maximum" />
+      <value type="Pad" name="_unnamed3" length="8" />
+      <value type="Real" name="AI vehicle radius">
+        <tooltip>Radius around this unit that the AI tries to avoid when entering it as a vehicle (zero = use bounding sphere radius).</tooltip>
+      </value>
+      <value type="Real" name="AI danger radius">
+        <tooltip>Danger radius around this unit that the AI tries to avoid.</tooltip>
+      </value>
+      <value type="TagReference" name="melee damage" extensions="jpt!" />
+      <value type="Enum" name="motion sensor blip size">
+        <item value="0" name="medium" />
+        <item value="1" name="small" />
+        <item value="2" name="large" />
+      </value>
+      <value type="Pad" name="_unnamed4" length="2" />
+      <value type="Pad" name="_unnamed5" length="12" />
+      <struct name="UnitHudReference">
+        <value type="TagReference" name="unit hud interface" extensions="unhi" />
+        <value type="Pad" name="_unnamed" length="32" />
+      </struct>
+      <value type="Block" name="NEW HUD INTERFACES" struct="UnitHudReference" maxelements="2" />
+      <struct name="DialogueVariant">
+        <value type="ShortInteger" name="variant number">
+          <tooltip>Variant number to use this dialogue with (must match the suffix in the permutations on the unit's model).</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="TagReference" name="dialogue" extensions="udlg" />
+      </struct>
+      <value type="Block" name="dialogue variants" struct="DialogueVariant" maxelements="16" />
+      <value type="Real" name="grenade velocity" />
+      <value type="Enum" name="grenade type">
+        <item value="0" name="human fragmentation" />
+        <item value="1" name="covenant plasma" />
+      </value>
+      <value type="ShortInteger" name="grenade count" />
+      <value type="Pad" name="_unnamed6" length="4" />
+      <struct name="PoweredSeat">
+        <value type="Pad" name="_unnamed" length="4" />
+        <value type="Real" name="driver powerup time" />
+        <value type="Real" name="driver powerdown time" />
+        <value type="Pad" name="_unnamed2" length="56" />
+      </struct>
+      <value type="Block" name="powered seats" struct="PoweredSeat" maxelements="2" />
+      <struct name="UnitWeapon">
+        <value type="TagReference" name="weapon" blockname="true" extensions="weap" />
+        <value type="Pad" name="_unnamed" length="20" />
+      </struct>
+      <value type="Block" name="weapons" struct="UnitWeapon" maxelements="4" />
+      <struct name="UnitSeat">
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="invisible" />
+          <bit index="1" name="locked" />
+          <bit index="2" name="driver" />
+          <bit index="3" name="gunner" />
+          <bit index="4" name="third person camera" />
+          <bit index="5" name="allows weapons" />
+          <bit index="6" name="third person on enter" />
+          <bit index="7" name="first person camera slaved to gun." />
+          <bit index="8" name="allow vehicle communication animations" />
+          <bit index="9" name="not valid without driver" />
+          <bit index="10" name="allow AI noncombatants" />
+        </value>
+        <value type="FixedLengthString" name="label" />
+        <value type="FixedLengthString" name="marker name" blockname="true" />
+        <value type="Pad" name="_unnamed" length="32" />
+        <value type="RealVector3D" name="acceleration scale" />
+        <value type="Pad" name="_unnamed2" length="12" />
+        <value type="Real" name="yaw rate" />
+        <value type="Real" name="pitch rate" />
+        <value type="FixedLengthString" name="camera marker name" />
+        <value type="FixedLengthString" name="camera submerged marker name" />
+        <value type="Angle" name="pitch aut" />
+        <value type="AngleBounds" name="pitch range" />
+        <struct name="UnitCameraTrack">
+          <value type="TagReference" name="track" extensions="trak" />
+          <value type="Pad" name="_unnamed" length="12" />
+        </struct>
+        <value type="Block" name="camera tracks" struct="UnitCameraTrack" maxelements="2" />
+        <struct name="UnitHudReference">
+          <value type="TagReference" name="unit hud interface" extensions="unhi" />
+          <value type="Pad" name="_unnamed" length="32" />
+        </struct>
+        <value type="Block" name="unit hud interface" struct="UnitHudReference" maxelements="2" />
+        <value type="Pad" name="_unnamed3" length="4" />
+        <value type="ShortInteger" name="hud text message index" />
+        <value type="Pad" name="_unnamed4" length="2" />
+        <value type="Angle" name="yaw minimum" />
+        <value type="Angle" name="yaw maximum" />
+        <value type="TagReference" name="buil" extensions="actv" />
+        <value type="Pad" name="_unnamed5" length="20" />
+      </struct>
+      <value type="Block" name="seats" struct="UnitSeat" maxelements="16" />
+    </struct>
+  </plugin>
+</xml>

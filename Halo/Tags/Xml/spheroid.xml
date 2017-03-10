@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="boom" parenttype="????">Spheroid</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Spheroid">
+      <value type="Pad" name="_unnamed" length="4" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="wind" parenttype="????">Wind</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Wind">
+      <value type="RealBounds" name="velocity">
+        <tooltip>The wind magnitude in the weather region scales the wind between these bounds.</tooltip>
+      </value>
+      <value type="RealEulerAngles2D" name="variation area">
+        <tooltip>The wind direction varies inside a box defined by these angles on either side of the direction from the weather region..</tooltip>
+      </value>
+      <value type="Real" name="local variation weight" />
+      <value type="Real" name="local variation rate" />
+      <value type="Real" name="damping" />
+      <value type="Pad" name="_unnamed" length="36" />
+    </struct>
+  </plugin>
+</xml>

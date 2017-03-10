@@ -1,0 +1,13 @@
+<xml>
+  <name type="spk!" parenttype="????">SoundDialogueConstants</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="SoundDialogueConstantsBlock">
+      <value type="Real" name="almost never" disabled="false" />
+      <value type="Real" name="rarely" disabled="false" />
+      <value type="Real" name="somewhat" disabled="false" />
+      <value type="Real" name="often" disabled="false" />
+      <value type="Pad" name="_unnamed0" length="24" />
+    </struct>
+  </plugin>
+</xml>

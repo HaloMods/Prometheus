@@ -1,0 +1,141 @@
+<xml>
+  <name type="sky " parenttype="????">Sky</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="SkyBlock">
+      <value type="TagReference" name="Render Model" disabled="false" extensions="mode" />
+      <value type="TagReference" name="Animation Graph" disabled="false" extensions="jmad" />
+      <value type="Flags" name="Flags" length="4" disabled="false">
+        <bit index="0" name="Fixed in World Space" />
+        <bit index="1" name="Depreciated" />
+        <bit index="2" name="Sky Casts Light from Below" />
+        <bit index="3" name="Disable Sky in Lightmaps" />
+        <bit index="4" name="Fog Only Affects Containing Clusters" />
+        <bit index="5" name="Use Clear Color" />
+      </value>
+      <value type="Real" name="Render Model Scale" disabled="false">
+        <tooltip>Multiplier by which to scale the model's geometry up or down (0 defaults to standard, 0.03).</tooltip>
+      </value>
+      <value type="Real" name="Movement Scale" disabled="false">
+        <tooltip>How much the sky moves to remain centered on the player (0 defaults to 1.0, which means no parallax).</tooltip>
+      </value>
+      <struct name="SkyCubemapBlock">
+        <value type="TagReference" name="Cube Map Reference" disabled="false" extensions="bitm" />
+        <value type="Real" name="Power Scale" disabled="false">
+          <tooltip>0 Defaults to 1.</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="Cube Map" disabled="false" struct="SkyCubemapBlock" maxelements="1" />
+      <value type="RealRgbColor" name="Indoor Ambient Color" disabled="false">
+        <tooltip>Indoor ambient light color.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed0" length="4" />
+      <value type="RealRgbColor" name="Outdoor Ambient Color" disabled="false">
+        <tooltip>Indoor ambient light color.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed1" length="4" />
+      <value type="Real" name="Fog Spread Distance" disabled="false" unit="world units">
+        <tooltip>How far fog spreads into adjacent clusters.</tooltip>
+      </value>
+      <struct name="SkyAtmosphericFogBlock">
+        <value type="RealRgbColor" name="Color" disabled="false" />
+        <value type="RealFraction" name="Maximum Density" disabled="false" unit="[0,1]">
+          <tooltip>Fog density is clamped to this value.</tooltip>
+        </value>
+        <value type="Real" name="Start Distance" disabled="false" unit="world units">
+          <tooltip>Before this distance there is no fog.</tooltip>
+        </value>
+        <value type="Real" name="Opaque Distance" disabled="false" unit="world units">
+          <tooltip>Fog becomes opaque (maximum density) at this distance from the viewer.</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="Atmospheric Fog" disabled="false" struct="SkyAtmosphericFogBlock" maxelements="1" />
+      <value type="Block" name="Secondary Fog" disabled="false" struct="SkyAtmosphericFogBlock" maxelements="1" />
+      <struct name="SkyFogBlock">
+        <value type="RealRgbColor" name="Color" disabled="false" />
+        <value type="RealFraction" name="Density" disabled="false" unit="[0,1]">
+          <tooltip>Fog density is clamped to this value.</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="Sky Fog" disabled="false" struct="SkyFogBlock" maxelements="1" />
+      <struct name="SkyPatchyFogBlock">
+        <value type="RealRgbColor" name="Color" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="12" />
+        <value type="FractionBounds" name="Density" disabled="false" unit="[0,1]" />
+        <value type="RealBounds" name="Distance" disabled="false" unit="world units" />
+        <value type="Pad" name="_unnamed1" length="32" />
+        <value type="TagReference" name="Patchy Fog" disabled="false" extensions="fpch" />
+      </struct>
+      <value type="Block" name="Patchy Fog" disabled="false" struct="SkyPatchyFogBlock" maxelements="1" />
+      <value type="RealFraction" name="Amount" disabled="false" unit="[0,1]" />
+      <value type="RealFraction" name="Threshold" disabled="false" unit="[0,1]" />
+      <value type="RealFraction" name="Brightness" disabled="false" unit="[0,1]" />
+      <value type="Real" name="Gamma Power" disabled="false" />
+      <struct name="SkyLightBlock">
+        <value type="RealVector3d" name="Direction Vector" disabled="false" />
+        <value type="RealEulerAngles2d" name="Direction" disabled="false" />
+        <value type="TagReference" name="Lens Flare" disabled="false" extensions="lens" />
+        <struct name="SkyLightFogBlock">
+          <value type="RealRgbColor" name="Color" disabled="false" />
+          <value type="RealFraction" name="Maximum Density" disabled="false" unit="[0,1]">
+            <tooltip>Fog density is clamped to this value.</tooltip>
+          </value>
+          <value type="Real" name="Start Distance" disabled="false" unit="world units">
+            <tooltip>Before this distance there is no fog.</tooltip>
+          </value>
+          <value type="Real" name="Opaque Distance" disabled="false" unit="world units">
+            <tooltip>Fog becomes opaque (maximum density) at this distance from the viewer.</tooltip>
+          </value>
+          <value type="AngleBounds" name="Cone" disabled="false" unit="degrees" />
+          <value type="RealFraction" name="Atmospheric Fog Influence" disabled="false" unit="[0,1]" />
+          <value type="RealFraction" name="Secondary Fog Influence" disabled="false" unit="[0,1]" />
+          <value type="RealFraction" name="Sky Fog Influence" disabled="false" unit="[0,1]" />
+        </struct>
+        <value type="Block" name="Fog" disabled="false" struct="SkyLightFogBlock" maxelements="1" />
+        <value type="Block" name="Fog Opposite" disabled="false" struct="SkyLightFogBlock" maxelements="1" />
+        <struct name="SkyRadiosityLightBlock">
+          <value type="Flags" name="Flags" length="4" disabled="false">
+            <bit index="0" name="Affects Exteriors" />
+            <bit index="1" name="Affects Interiors" />
+            <bit index="2" name="Direct Illumination in Lightmaps" />
+            <bit index="3" name="Indirect Illumination in Lightmaps" />
+          </value>
+          <value type="RealRgbColor" name="Color" disabled="false" unit="">
+            <tooltip>Light color.</tooltip>
+          </value>
+          <value type="Real" name="Power" disabled="false" unit="[0,+inf]">
+            <tooltip>Light power from 0 to infinity.</tooltip>
+          </value>
+          <value type="Real" name="Test Distance" disabled="false" unit="world units">
+            <tooltip>Length of the ray for shadow testing.</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed0" length="12" />
+          <value type="Angle" name="Diameter" disabled="false" unit="degrees">
+            <tooltip>Angular diameter of the light source in the sky.</tooltip>
+          </value>
+        </struct>
+        <value type="Block" name="Radiosity" disabled="false" struct="SkyRadiosityLightBlock" maxelements="1" />
+      </struct>
+      <value type="Block" name="Lights" disabled="false" struct="SkyLightBlock" maxelements="8" />
+      <value type="Angle" name="Global Sky Rotation" disabled="false" />
+      <struct name="SkyShaderFunctionBlock">
+        <value type="Pad" name="_unnamed0" length="4" />
+        <value type="FixedLengthString" name="Global Function Name" disabled="false" blockname="true">
+          <tooltip>Global function that controls this shader value.</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="Shader Functions" disabled="false" struct="SkyShaderFunctionBlock" maxelements="8" />
+      <struct name="SkyAnimationBlock">
+        <value type="ShortInteger" name="Animation Index" disabled="false">
+          <tooltip>Index of the animation in the animation graph.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Real" name="Period" disabled="false" unit="sec" />
+        <value type="Pad" name="_unnamed1" length="28" />
+      </struct>
+      <value type="Block" name="Animations" disabled="false" struct="SkyAnimationBlock" maxelements="8" />
+      <value type="Pad" name="_unnamed2" length="12" />
+      <value type="RealRgbColor" name="Clear Color" disabled="false" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,403 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="grhi" parenttype="????">GrenadeHudInterface</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="GrenadeHudInterface">
+      <value type="Custom" name="_unnamed" />
+      <value type="Enum" name="anchor">
+        <item value="0" name="top left" />
+        <item value="1" name="top right" />
+        <item value="2" name="bottom left" />
+        <item value="3" name="bottom right" />
+        <item value="4" name="center" />
+      </value>
+      <value type="Pad" name="_unnamed2" length="2" />
+      <value type="Pad" name="_unnamed3" length="32" />
+      <value type="Point2D" name="anchor offset" />
+      <value type="Real" name="width scale" />
+      <value type="Real" name="height scale" />
+      <value type="Flags" name="scaling flags" length="2">
+        <bit index="0" name="dont scale offset" />
+        <bit index="1" name="dont scale size" />
+        <bit index="2" name="use high res scale" />
+      </value>
+      <value type="Pad" name="_unnamed4" length="2" />
+      <value type="Pad" name="_unnamed5" length="20" />
+      <value type="TagReference" name="interface bitmap" extensions="bitm" />
+      <value type="ARGBColor" name="default color" />
+      <value type="ARGBColor" name="flashing color" />
+      <value type="Real" name="flash period" />
+      <value type="Real" name="flash delay" />
+      <value type="ShortInteger" name="number of flashes" />
+      <value type="Flags" name="flash flags" length="2">
+        <bit index="0" name="reverse defaultflashing colors" />
+      </value>
+      <value type="Real" name="flash length" />
+      <value type="ARGBColor" name="disabled color" />
+      <value type="Pad" name="_unnamed6" length="4" />
+      <value type="ShortInteger" name="sequence index" />
+      <value type="Pad" name="_unnamed7" length="2" />
+      <struct name="GlobalHudMultitextureOverlayDefinition">
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="ShortInteger" name="type" />
+        <value type="Enum" name="framebuffer blend func">
+          <item value="0" name="alpha blend" />
+          <item value="1" name="multiply" />
+          <item value="2" name="double multiply" />
+          <item value="3" name="add" />
+          <item value="4" name="subtract" />
+          <item value="5" name="component min" />
+          <item value="6" name="component max" />
+          <item value="7" name="alph" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="32" />
+        <value type="Enum" name="primary anchor">
+          <item value="0" name="texture" />
+          <item value="1" name="screen" />
+        </value>
+        <value type="Enum" name="secondary anchor">
+          <item value="0" name="texture" />
+          <item value="1" name="screen" />
+        </value>
+        <value type="Enum" name="tertiary anchor">
+          <item value="0" name="texture" />
+          <item value="1" name="screen" />
+        </value>
+        <value type="Enum" name="0 to 1 blend func">
+          <item value="0" name="add" />
+          <item value="1" name="subtract" />
+          <item value="2" name="multiply" />
+          <item value="3" name="multiply2x" />
+          <item value="4" name="dot" />
+        </value>
+        <value type="Enum" name="1 to 2 blend func">
+          <item value="0" name="add" />
+          <item value="1" name="subtract" />
+          <item value="2" name="multiply" />
+          <item value="3" name="multiply2x" />
+          <item value="4" name="dot" />
+        </value>
+        <value type="Pad" name="_unnamed4" length="2" />
+        <value type="RealPoint2D" name="primary scale" />
+        <value type="RealPoint2D" name="secondary scale" />
+        <value type="RealPoint2D" name="tertiary scale" />
+        <value type="RealPoint2D" name="primary offset" />
+        <value type="RealPoint2D" name="secondary offset" />
+        <value type="RealPoint2D" name="tertiary offset" />
+        <value type="TagReference" name="primary" extensions="bitm" />
+        <value type="TagReference" name="secondary" extensions="bitm" />
+        <value type="TagReference" name="tertiary" extensions="bitm" />
+        <value type="Enum" name="primary wrap mode">
+          <item value="0" name="clamp" />
+          <item value="1" name="wrap" />
+        </value>
+        <value type="Enum" name="secondary wrap mode">
+          <item value="0" name="clamp" />
+          <item value="1" name="wrap" />
+        </value>
+        <value type="Enum" name="tertiary wrap mode">
+          <item value="0" name="clamp" />
+          <item value="1" name="wrap" />
+        </value>
+        <value type="Pad" name="_unnamed5" length="2" />
+        <value type="Pad" name="_unnamed6" length="184" />
+        <struct name="GlobalHudMultitextureOverlayEffectorDefinition">
+          <value type="Pad" name="_unnamed" length="64" />
+          <value type="Enum" name="destination type">
+            <item value="0" name="tint" />
+            <item value="1" name="horizontal offset" />
+            <item value="2" name="vertical offset" />
+            <item value="3" name="fade" />
+          </value>
+          <value type="Enum" name="destination">
+            <item value="0" name="geometry offset" />
+            <item value="1" name="primary map" />
+            <item value="2" name="secondary map" />
+            <item value="3" name="tertiary map" />
+          </value>
+          <value type="Enum" name="source">
+            <item value="0" name="player pitch" />
+            <item value="1" name="player pitch tangent" />
+            <item value="2" name="player yaw" />
+            <item value="3" name="weapon ammo total" />
+            <item value="4" name="weapon ammo loaded" />
+            <item value="5" name="weapon heat" />
+            <item value="6" name="explicit uses low bound" />
+            <item value="7" name="weapon zoom level" />
+          </value>
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="RealBounds" name="in bounds" />
+          <value type="RealBounds" name="out bounds" />
+          <value type="Pad" name="_unnamed3" length="64" />
+          <value type="RealRGBColor" name="tint color lower bound" />
+          <value type="RealRGBColor" name="tint color upper bound" />
+          <value type="Enum" name="periodic function">
+            <item value="0" name="one" />
+            <item value="1" name="zero" />
+            <item value="2" name="cosine" />
+            <item value="3" name="cosine variable period" />
+            <item value="4" name="diagonal wave" />
+            <item value="5" name="diagonal wave variable period" />
+            <item value="6" name="slide" />
+            <item value="7" name="slide variable period" />
+            <item value="8" name="noise" />
+            <item value="9" name="jitter" />
+            <item value="10" name="wander" />
+            <item value="11" name="spark" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="Real" name="function period" />
+          <value type="Real" name="function phase" />
+          <value type="Pad" name="_unnamed5" length="32" />
+        </struct>
+        <value type="Block" name="effectors" struct="GlobalHudMultitextureOverlayEffectorDefinition" maxelements="30" />
+        <value type="Pad" name="_unnamed7" length="128" />
+      </struct>
+      <value type="Block" name="multitex overlay" struct="GlobalHudMultitextureOverlayDefinition" maxelements="30" />
+      <value type="Pad" name="_unnamed8" length="4" />
+      <value type="Point2D" name="anchor offset2" />
+      <value type="Real" name="width scale2" />
+      <value type="Real" name="height scale2" />
+      <value type="Flags" name="scaling flags2" length="2">
+        <bit index="0" name="dont scale offset" />
+        <bit index="1" name="dont scale size" />
+        <bit index="2" name="use high res scale" />
+      </value>
+      <value type="Pad" name="_unnamed9" length="2" />
+      <value type="Pad" name="_unnamed10" length="20" />
+      <value type="TagReference" name="interface bitmap2" extensions="bitm" />
+      <value type="ARGBColor" name="default color2" />
+      <value type="ARGBColor" name="flashing color2" />
+      <value type="Real" name="flash period2" />
+      <value type="Real" name="flash delay2" />
+      <value type="ShortInteger" name="number of flashes2" />
+      <value type="Flags" name="flash flags2" length="2">
+        <bit index="0" name="reverse defaultflashing colors" />
+      </value>
+      <value type="Real" name="flash length2" />
+      <value type="ARGBColor" name="disabled color2" />
+      <value type="Pad" name="_unnamed11" length="4" />
+      <value type="ShortInteger" name="sequence index2" />
+      <value type="Pad" name="_unnamed12" length="2" />
+      <struct name="GlobalHudMultitextureOverlayDefinition">
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="ShortInteger" name="type" />
+        <value type="Enum" name="framebuffer blend func">
+          <item value="0" name="alpha blend" />
+          <item value="1" name="multiply" />
+          <item value="2" name="double multiply" />
+          <item value="3" name="add" />
+          <item value="4" name="subtract" />
+          <item value="5" name="component min" />
+          <item value="6" name="component max" />
+          <item value="7" name="alph" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="32" />
+        <value type="Enum" name="primary anchor">
+          <item value="0" name="texture" />
+          <item value="1" name="screen" />
+        </value>
+        <value type="Enum" name="secondary anchor">
+          <item value="0" name="texture" />
+          <item value="1" name="screen" />
+        </value>
+        <value type="Enum" name="tertiary anchor">
+          <item value="0" name="texture" />
+          <item value="1" name="screen" />
+        </value>
+        <value type="Enum" name="0 to 1 blend func">
+          <item value="0" name="add" />
+          <item value="1" name="subtract" />
+          <item value="2" name="multiply" />
+          <item value="3" name="multiply2x" />
+          <item value="4" name="dot" />
+        </value>
+        <value type="Enum" name="1 to 2 blend func">
+          <item value="0" name="add" />
+          <item value="1" name="subtract" />
+          <item value="2" name="multiply" />
+          <item value="3" name="multiply2x" />
+          <item value="4" name="dot" />
+        </value>
+        <value type="Pad" name="_unnamed4" length="2" />
+        <value type="RealPoint2D" name="primary scale" />
+        <value type="RealPoint2D" name="secondary scale" />
+        <value type="RealPoint2D" name="tertiary scale" />
+        <value type="RealPoint2D" name="primary offset" />
+        <value type="RealPoint2D" name="secondary offset" />
+        <value type="RealPoint2D" name="tertiary offset" />
+        <value type="TagReference" name="primary" extensions="bitm" />
+        <value type="TagReference" name="secondary" extensions="bitm" />
+        <value type="TagReference" name="tertiary" extensions="bitm" />
+        <value type="Enum" name="primary wrap mode">
+          <item value="0" name="clamp" />
+          <item value="1" name="wrap" />
+        </value>
+        <value type="Enum" name="secondary wrap mode">
+          <item value="0" name="clamp" />
+          <item value="1" name="wrap" />
+        </value>
+        <value type="Enum" name="tertiary wrap mode">
+          <item value="0" name="clamp" />
+          <item value="1" name="wrap" />
+        </value>
+        <value type="Pad" name="_unnamed5" length="2" />
+        <value type="Pad" name="_unnamed6" length="184" />
+        <struct name="GlobalHudMultitextureOverlayEffectorDefinition">
+          <value type="Pad" name="_unnamed" length="64" />
+          <value type="Enum" name="destination type">
+            <item value="0" name="tint" />
+            <item value="1" name="horizontal offset" />
+            <item value="2" name="vertical offset" />
+            <item value="3" name="fade" />
+          </value>
+          <value type="Enum" name="destination">
+            <item value="0" name="geometry offset" />
+            <item value="1" name="primary map" />
+            <item value="2" name="secondary map" />
+            <item value="3" name="tertiary map" />
+          </value>
+          <value type="Enum" name="source">
+            <item value="0" name="player pitch" />
+            <item value="1" name="player pitch tangent" />
+            <item value="2" name="player yaw" />
+            <item value="3" name="weapon ammo total" />
+            <item value="4" name="weapon ammo loaded" />
+            <item value="5" name="weapon heat" />
+            <item value="6" name="explicit uses low bound" />
+            <item value="7" name="weapon zoom level" />
+          </value>
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="RealBounds" name="in bounds" />
+          <value type="RealBounds" name="out bounds" />
+          <value type="Pad" name="_unnamed3" length="64" />
+          <value type="RealRGBColor" name="tint color lower bound" />
+          <value type="RealRGBColor" name="tint color upper bound" />
+          <value type="Enum" name="periodic function">
+            <item value="0" name="one" />
+            <item value="1" name="zero" />
+            <item value="2" name="cosine" />
+            <item value="3" name="cosine variable period" />
+            <item value="4" name="diagonal wave" />
+            <item value="5" name="diagonal wave variable period" />
+            <item value="6" name="slide" />
+            <item value="7" name="slide variable period" />
+            <item value="8" name="noise" />
+            <item value="9" name="jitter" />
+            <item value="10" name="wander" />
+            <item value="11" name="spark" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="Real" name="function period" />
+          <value type="Real" name="function phase" />
+          <value type="Pad" name="_unnamed5" length="32" />
+        </struct>
+        <value type="Block" name="effectors" struct="GlobalHudMultitextureOverlayEffectorDefinition" maxelements="30" />
+        <value type="Pad" name="_unnamed7" length="128" />
+      </struct>
+      <value type="Block" name="multitex overlay2" struct="GlobalHudMultitextureOverlayDefinition" maxelements="30" />
+      <value type="Pad" name="_unnamed13" length="4" />
+      <value type="Point2D" name="anchor offset3" />
+      <value type="Real" name="width scale3" />
+      <value type="Real" name="height scale3" />
+      <value type="Flags" name="scaling flags3" length="2">
+        <bit index="0" name="dont scale offset" />
+        <bit index="1" name="dont scale size" />
+        <bit index="2" name="use high res scale" />
+      </value>
+      <value type="Pad" name="_unnamed14" length="2" />
+      <value type="Pad" name="_unnamed15" length="20" />
+      <value type="ARGBColor" name="default color3" />
+      <value type="ARGBColor" name="flashing color3" />
+      <value type="Real" name="flash period3" />
+      <value type="Real" name="flash delay3" />
+      <value type="ShortInteger" name="number of flashes3" />
+      <value type="Flags" name="flash flags3" length="2">
+        <bit index="0" name="reverse defaultflashing colors" />
+      </value>
+      <value type="Real" name="flash length3" />
+      <value type="ARGBColor" name="disabled color3" />
+      <value type="Pad" name="_unnamed16" length="4" />
+      <value type="CharInteger" name="maximum number of digits" />
+      <value type="Flags" name="flags" length="1">
+        <bit index="0" name="show leading zeros" />
+        <bit index="1" name="only show when zoomed" />
+        <bit index="2" name="draw a trailing m" />
+      </value>
+      <value type="CharInteger" name="number of fractional digits" />
+      <value type="Pad" name="_unnamed17" length="1" />
+      <value type="Pad" name="_unnamed18" length="12" />
+      <value type="ShortInteger" name="flash cutoff" />
+      <value type="Pad" name="_unnamed19" length="2" />
+      <value type="TagReference" name="Overlay bitmap" extensions="bitm" />
+      <struct name="GrenadeHudOverlay">
+        <value type="Point2D" name="anchor offset" />
+        <value type="Real" name="width scale" />
+        <value type="Real" name="height scale" />
+        <value type="Flags" name="scaling flags" length="2">
+          <bit index="0" name="dont scale offset" />
+          <bit index="1" name="dont scale size" />
+          <bit index="2" name="use high res scale" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Pad" name="_unnamed2" length="20" />
+        <value type="ARGBColor" name="default color" />
+        <value type="ARGBColor" name="flashing color" />
+        <value type="Real" name="flash period" />
+        <value type="Real" name="flash delay" />
+        <value type="ShortInteger" name="number of flashes" />
+        <value type="Flags" name="flash flags" length="2">
+          <bit index="0" name="reverse defaultflashing colors" />
+        </value>
+        <value type="Real" name="flash length" />
+        <value type="ARGBColor" name="disabled color" />
+        <value type="Pad" name="_unnamed3" length="4" />
+        <value type="Real" name="frame rate" />
+        <value type="ShortInteger" name="sequence index" />
+        <value type="Flags" name="type" length="2">
+          <bit index="0" name="show on flashing" />
+          <bit index="1" name="show on empty" />
+          <bit index="2" name="show on default" />
+          <bit index="3" name="show always" />
+        </value>
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="flashes when active" />
+        </value>
+        <value type="Pad" name="_unnamed4" length="16" />
+        <value type="Pad" name="_unnamed5" length="40" />
+      </struct>
+      <value type="Block" name="Overlays" struct="GrenadeHudOverlay" maxelements="16" />
+      <struct name="GrenadeHudSound">
+        <value type="TagReference" name="sound" blockname="true" extensions="snd!" />
+        <value type="Flags" name="latched to" length="4">
+          <bit index="0" name="low grenade count" />
+          <bit index="1" name="no grenades left" />
+          <bit index="2" name="throw on no grenades" />
+        </value>
+        <value type="Real" name="scale" />
+        <value type="Pad" name="_unnamed" length="32" />
+      </struct>
+      <value type="Block" name="Warning sounds" struct="GrenadeHudSound" maxelements="12" />
+      <value type="Pad" name="_unnamed20" length="68" />
+      <value type="ShortInteger" name="sequence index3">
+        <tooltip>Sequence index into the global hud icon bitmap.</tooltip>
+      </value>
+      <value type="ShortInteger" name="width offset">
+        <tooltip>Extra spacing beyond bitmap width for text alignment.</tooltip>
+      </value>
+      <value type="Point2D" name="offset from reference corner" />
+      <value type="ARGBColor" name="override icon color" />
+      <value type="CharInteger" name="frame rate" />
+      <value type="Flags" name="flags2" length="1">
+        <bit index="0" name="use text from string_list instead" />
+        <bit index="1" name="override default color" />
+        <bit index="2" name="width offset is absolute icon width" />
+      </value>
+      <value type="ShortInteger" name="text index" />
+      <value type="Pad" name="_unnamed21" length="48" />
+    </struct>
+  </plugin>
+</xml>

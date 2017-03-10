@@ -1,0 +1,554 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="udlg" parenttype="????">Dialogue</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Dialogue">
+      <value type="Skip" name="_unnamed" length="2" />
+      <value type="Pad" name="_unnamed2" length="2" />
+      <value type="Pad" name="_unnamed3" length="12" />
+      <value type="TagReference" name="idle noncombat" extensions="snd!">
+        <tooltip>Played randomly and intermittently whenever we aren't in combat.</tooltip>
+      </value>
+      <value type="TagReference" name="idle combat" extensions="snd!">
+        <tooltip>Played randomly and intermittently whenever we're in combat.</tooltip>
+      </value>
+      <value type="TagReference" name="idle flee" extensions="snd!">
+        <tooltip>Played continuously while we are fleeing.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed4" length="16" />
+      <value type="Pad" name="_unnamed5" length="16" />
+      <value type="Pad" name="_unnamed6" length="16" />
+      <value type="TagReference" name="pain body minor" extensions="snd!">
+        <tooltip>Took body damage.</tooltip>
+      </value>
+      <value type="TagReference" name="pain body major" extensions="snd!">
+        <tooltip>Took a significant amount of body damage.</tooltip>
+      </value>
+      <value type="TagReference" name="pain shield" extensions="snd!">
+        <tooltip>Took shield damage.</tooltip>
+      </value>
+      <value type="TagReference" name="pain falling" extensions="snd!">
+        <tooltip>Took damage from falling.</tooltip>
+      </value>
+      <value type="TagReference" name="scream fear" extensions="snd!">
+        <tooltip>Screaming in fear (falling to your death, explosive stuck to you).</tooltip>
+      </value>
+      <value type="TagReference" name="scream pain" extensions="snd!">
+        <tooltip>Screaming in pain (being flamed).</tooltip>
+      </value>
+      <value type="TagReference" name="maimed limb" extensions="snd!">
+        <tooltip>Limb body part (arm or leg) was destroyed.</tooltip>
+      </value>
+      <value type="TagReference" name="maimed head" extensions="snd!">
+        <tooltip>Head body part was destroyed.</tooltip>
+      </value>
+      <value type="TagReference" name="death quiet" extensions="snd!">
+        <tooltip>Died from minor damage, or was unprepared.</tooltip>
+      </value>
+      <value type="TagReference" name="death violent" extensions="snd!">
+        <tooltip>Died from violent trauma.</tooltip>
+      </value>
+      <value type="TagReference" name="death falling" extensions="snd!">
+        <tooltip>Died from falling.</tooltip>
+      </value>
+      <value type="TagReference" name="death agonizing" extensions="snd!">
+        <tooltip>Died in a horribly painful fashion (burnt to death).</tooltip>
+      </value>
+      <value type="TagReference" name="death instant" extensions="snd!">
+        <tooltip>Died instantly.</tooltip>
+      </value>
+      <value type="TagReference" name="death flying" extensions="snd!">
+        <tooltip>Died and was blown up into the air.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed7" length="16" />
+      <value type="TagReference" name="damaged friend" extensions="snd!">
+        <tooltip>Hurt a friendly AI.</tooltip>
+      </value>
+      <value type="TagReference" name="damaged friend player" extensions="snd!">
+        <tooltip>Hurt a friendly player.</tooltip>
+      </value>
+      <value type="TagReference" name="damaged enemy" extensions="snd!">
+        <tooltip>Hurt an enemy.</tooltip>
+      </value>
+      <value type="TagReference" name="damaged enemy cm" extensions="snd!">
+        <tooltip>Hurt an enemy.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed8" length="16" />
+      <value type="Pad" name="_unnamed9" length="16" />
+      <value type="Pad" name="_unnamed10" length="16" />
+      <value type="Pad" name="_unnamed11" length="16" />
+      <value type="TagReference" name="hurt friend" extensions="snd!">
+        <tooltip>Hurt by a friendly AI.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt friend re" extensions="snd!">
+        <tooltip>Hurt by a friendly AI.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt friend player" extensions="snd!">
+        <tooltip>Hurt by a friendly player.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt enemy" extensions="snd!">
+        <tooltip>Hurt by an enemy.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt enemy re" extensions="snd!">
+        <tooltip>Hurt by an enemy.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt enemy cm" extensions="snd!">
+        <tooltip>Hurt by an enemy.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt enemy bullet" extensions="snd!">
+        <tooltip>Hurt by an enemy with bullets.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt enemy needler" extensions="snd!">
+        <tooltip>Hurt by an enemy with needles.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt enemy plasma" extensions="snd!">
+        <tooltip>Hurt by an enemy with a plasma bolt.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt enemy sniper" extensions="snd!">
+        <tooltip>Hurt by an enemy with a sniper weapon.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt enemy grenade" extensions="snd!">
+        <tooltip>A grenade is stuck to us.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt enemy explosion" extensions="snd!">
+        <tooltip>Hurt by an enemy with an explosive weapon.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt enemy melee" extensions="snd!">
+        <tooltip>Hurt by an enemy with a melee weapon.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt enemy flame" extensions="snd!">
+        <tooltip>Hurt by an enemy with flamethrower.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt enemy shotgun" extensions="snd!">
+        <tooltip>Hurt by an enemy with a shotgun.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt enemy vehicle" extensions="snd!">
+        <tooltip>Hurt by an enemy with a vehicle.</tooltip>
+      </value>
+      <value type="TagReference" name="hurt enemy mountedweapon" extensions="snd!">
+        <tooltip>Hurt by an enemy with a fixed weapon.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed12" length="16" />
+      <value type="Pad" name="_unnamed13" length="16" />
+      <value type="Pad" name="_unnamed14" length="16" />
+      <value type="TagReference" name="killed friend" extensions="snd!">
+        <tooltip>Killed a friendly AI.</tooltip>
+      </value>
+      <value type="TagReference" name="killed friend cm" extensions="snd!">
+        <tooltip>Killed a friendly AI.</tooltip>
+      </value>
+      <value type="TagReference" name="killed friend player" extensions="snd!">
+        <tooltip>Killed a friendly player.</tooltip>
+      </value>
+      <value type="TagReference" name="killed friend player cm" extensions="snd!">
+        <tooltip>Killed a friendly player.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy" extensions="snd!">
+        <tooltip>Killed an enemy.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy cm" extensions="snd!">
+        <tooltip>Killed an enemy.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy player" extensions="snd!">
+        <tooltip>Killed an enemy player.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy player cm" extensions="snd!">
+        <tooltip>Killed an enemy player.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy covenant" extensions="snd!">
+        <tooltip>Killed an enemy covenant.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy covenant cm" extensions="snd!">
+        <tooltip>Killed an enemy covenant.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy floodcombat" extensions="snd!">
+        <tooltip>Killed an enemy flood combat form.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy floodcombat cm" extensions="snd!">
+        <tooltip>Killed an enemy flood combat form.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy floodcarrier" extensions="snd!">
+        <tooltip>Killed an enemy flood carrier form.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy floodcarrier cm" extensions="snd!">
+        <tooltip>Killed an enemy flood carrier form.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy sentinel" extensions="snd!">
+        <tooltip>Killed an enemy sentinel.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy sentinel cm" extensions="snd!">
+        <tooltip>Killed an enemy sentinel.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy bullet" extensions="snd!">
+        <tooltip>Killed an enemy with bullets.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy needler" extensions="snd!">
+        <tooltip>Killed an enemy with needles.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy plasma" extensions="snd!">
+        <tooltip>Killed an enemy with a plasma bolt.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy sniper" extensions="snd!">
+        <tooltip>Killed an enemy with a sniper weapon.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy grenade" extensions="snd!">
+        <tooltip>Killed an enemy with a grenade.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy explosion" extensions="snd!">
+        <tooltip>Killed an enemy with an explosive weapon.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy melee" extensions="snd!">
+        <tooltip>Killed an enemy with a melee weapon.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy flame" extensions="snd!">
+        <tooltip>Killed an enemy with flamethrower.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy shotgun" extensions="snd!">
+        <tooltip>Killed an enemy with a shotgun.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy vehicle" extensions="snd!">
+        <tooltip>Killed an enemy by hitting them with a vehicle.</tooltip>
+      </value>
+      <value type="TagReference" name="killed enemy mountedweapon" extensions="snd!">
+        <tooltip>Killed an enemy with a fixed weapon.</tooltip>
+      </value>
+      <value type="TagReference" name="killing spree" extensions="snd!">
+        <tooltip>We are on a killing spree.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed15" length="16" />
+      <value type="Pad" name="_unnamed16" length="16" />
+      <value type="Pad" name="_unnamed17" length="16" />
+      <value type="TagReference" name="player kill cm" extensions="snd!">
+        <tooltip>Response to the player killing an enemy.</tooltip>
+      </value>
+      <value type="TagReference" name="player kill bullet cm" extensions="snd!">
+        <tooltip>Response to the player killing an enemy with bullets.</tooltip>
+      </value>
+      <value type="TagReference" name="player kill needler cm" extensions="snd!">
+        <tooltip>Response to the player killing an enemy with needles.</tooltip>
+      </value>
+      <value type="TagReference" name="player kill plasma cm" extensions="snd!">
+        <tooltip>Response to the player killing an enemy with a plasma bolt.</tooltip>
+      </value>
+      <value type="TagReference" name="player kill sniper cm" extensions="snd!">
+        <tooltip>Response to the player killing an enemy with a sniper weapon.</tooltip>
+      </value>
+      <value type="TagReference" name="anyone kill grenade cm" extensions="snd!">
+        <tooltip>Response to _anyone_ killing an enemy with a grenade.</tooltip>
+      </value>
+      <value type="TagReference" name="player kill explosion cm" extensions="snd!">
+        <tooltip>Response to the player killing an enemy with an explosive weapon.</tooltip>
+      </value>
+      <value type="TagReference" name="player kill melee cm" extensions="snd!">
+        <tooltip>Response to the player killing an enemy with a melee weapon.</tooltip>
+      </value>
+      <value type="TagReference" name="player kill flame cm" extensions="snd!">
+        <tooltip>Response to the player killing an enemy with flamethrower.</tooltip>
+      </value>
+      <value type="TagReference" name="player kill shotgun cm" extensions="snd!">
+        <tooltip>Response to the player killing an enemy with a shotgun.</tooltip>
+      </value>
+      <value type="TagReference" name="player kill vehicle cm" extensions="snd!">
+        <tooltip>Response to the player killing an enemy by hitting them with a vehicle.</tooltip>
+      </value>
+      <value type="TagReference" name="player kill mountedweapon cm" extensions="snd!">
+        <tooltip>Response to the player killing an enemy with a fixed weapon.</tooltip>
+      </value>
+      <value type="TagReference" name="player killling spree cm" extensions="snd!">
+        <tooltip>Response to the player going on a killing spree.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed18" length="16" />
+      <value type="Pad" name="_unnamed19" length="16" />
+      <value type="Pad" name="_unnamed20" length="16" />
+      <value type="TagReference" name="friend died" extensions="snd!">
+        <tooltip>A friendly AI died.</tooltip>
+      </value>
+      <value type="TagReference" name="friend player died" extensions="snd!">
+        <tooltip>A friendly player died.</tooltip>
+      </value>
+      <value type="TagReference" name="friend killed by friend" extensions="snd!">
+        <tooltip>A friend died from friendly fire.</tooltip>
+      </value>
+      <value type="TagReference" name="friend killed by friendly player" extensions="snd!">
+        <tooltip> friend died from player's friendly fire.</tooltip>
+      </value>
+      <value type="TagReference" name="friend killed by enemy" extensions="snd!">
+        <tooltip>A friend died from enemy fire.</tooltip>
+      </value>
+      <value type="TagReference" name="friend killed by enemy player" extensions="snd!">
+        <tooltip> friend died from an enemy player.</tooltip>
+      </value>
+      <value type="TagReference" name="friend killed by covenant" extensions="snd!">
+        <tooltip>A friend died from covenant fire.</tooltip>
+      </value>
+      <value type="TagReference" name="friend killed by flood" extensions="snd!">
+        <tooltip>A friend died from the flood.</tooltip>
+      </value>
+      <value type="TagReference" name="friend killed by sentinel" extensions="snd!">
+        <tooltip>A friend died from sentinel fire.</tooltip>
+      </value>
+      <value type="TagReference" name="friend betrayed" extensions="snd!">
+        <tooltip>A friend was deliberately killed by an ally that we don't trust (e.g. player killed a marine).</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed21" length="16" />
+      <value type="Pad" name="_unnamed22" length="16" />
+      <value type="TagReference" name="new combat alone" extensions="snd!">
+        <tooltip>See an enemy and we have not previously been in combat.</tooltip>
+      </value>
+      <value type="TagReference" name="new enemy recent combat" extensions="snd!">
+        <tooltip>See a new enemy and we have recently been in combat.</tooltip>
+      </value>
+      <value type="TagReference" name="old enemy sighted" extensions="snd!">
+        <tooltip>See an enemy that we are currently looking for.</tooltip>
+      </value>
+      <value type="TagReference" name="unexpected enemy" extensions="snd!">
+        <tooltip>Unexpectedly encounters enemy (behind or to the side).</tooltip>
+      </value>
+      <value type="TagReference" name="dead friend found" extensions="snd!">
+        <tooltip>Unexpectedly finds a dead body of a friend.</tooltip>
+      </value>
+      <value type="TagReference" name="alliance broken" extensions="snd!">
+        <tooltip>We decide that a former ally is now a traitor.</tooltip>
+      </value>
+      <value type="TagReference" name="alliance reformed" extensions="snd!">
+        <tooltip>We forgive a traitor and make him our friend again.</tooltip>
+      </value>
+      <value type="TagReference" name="grenade throwing" extensions="snd!">
+        <tooltip>Throwing a grenade.</tooltip>
+      </value>
+      <value type="TagReference" name="grenade sighted" extensions="snd!">
+        <tooltip>See an enemy grenade.</tooltip>
+      </value>
+      <value type="TagReference" name="grenade startle" extensions="snd!">
+        <tooltip>Alerted by a grenade bouncing near us.</tooltip>
+      </value>
+      <value type="TagReference" name="grenade danger enemy" extensions="snd!">
+        <tooltip>In danger from an enemy grenade.</tooltip>
+      </value>
+      <value type="TagReference" name="grenade danger self" extensions="snd!">
+        <tooltip>In danger from your own grenade.</tooltip>
+      </value>
+      <value type="TagReference" name="grenade danger friend" extensions="snd!">
+        <tooltip>In danger from a friendly grenade (not our own).</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed23" length="16" />
+      <value type="Pad" name="_unnamed24" length="16" />
+      <value type="TagReference" name="new combat group re" extensions="snd!">
+        <tooltip>Reply to a nearby friend who alerted us to an enemy.</tooltip>
+      </value>
+      <value type="TagReference" name="new combat nearby re" extensions="snd!">
+        <tooltip>Reply to a distant friend who alerted us to an enemy.</tooltip>
+      </value>
+      <value type="TagReference" name="alert friend" extensions="snd!">
+        <tooltip>Alert a friend who is in a noncombat state.</tooltip>
+      </value>
+      <value type="TagReference" name="alert friend re" extensions="snd!">
+        <tooltip>Alerted by a friend when in a noncombat state.</tooltip>
+      </value>
+      <value type="TagReference" name="alert lost contact" extensions="snd!">
+        <tooltip>Alert friends that target was not at expected location.</tooltip>
+      </value>
+      <value type="TagReference" name="alert lost contact re" extensions="snd!">
+        <tooltip>Alert friends that target was not at expected location.</tooltip>
+      </value>
+      <value type="TagReference" name="blocked" extensions="snd!">
+        <tooltip>Friend is blocking us from moving or firing.</tooltip>
+      </value>
+      <value type="TagReference" name="blocked re" extensions="snd!">
+        <tooltip>Friend is blocking us from moving or firing.</tooltip>
+      </value>
+      <value type="TagReference" name="search start" extensions="snd!">
+        <tooltip>Starting to search.</tooltip>
+      </value>
+      <value type="TagReference" name="search query" extensions="snd!">
+        <tooltip>Asking searchers whether they have found anything.</tooltip>
+      </value>
+      <value type="TagReference" name="search query re" extensions="snd!">
+        <tooltip>Asking searchers whether they have found anything.</tooltip>
+      </value>
+      <value type="TagReference" name="search report" extensions="snd!">
+        <tooltip>Searcher reporting that an area is clear.</tooltip>
+      </value>
+      <value type="TagReference" name="search abandon" extensions="snd!">
+        <tooltip>Searcher giving up on search.</tooltip>
+      </value>
+      <value type="TagReference" name="search group abandon" extensions="snd!">
+        <tooltip>Search coordinator giving up on search.</tooltip>
+      </value>
+      <value type="TagReference" name="group uncover" extensions="snd!">
+        <tooltip>Starting to uncover target with friend.</tooltip>
+      </value>
+      <value type="TagReference" name="group uncover re" extensions="snd!">
+        <tooltip>Starting to uncover target.</tooltip>
+      </value>
+      <value type="TagReference" name="advance" extensions="snd!">
+        <tooltip>Our platoon starts to attack or advance.</tooltip>
+      </value>
+      <value type="TagReference" name="advance re" extensions="snd!">
+        <tooltip>Our platoon starts to attack or advance.</tooltip>
+      </value>
+      <value type="TagReference" name="retreat" extensions="snd!">
+        <tooltip>Our platoon starts to defend or retreat.</tooltip>
+      </value>
+      <value type="TagReference" name="retreat re" extensions="snd!">
+        <tooltip>Our platoon starts to defend or retreat.</tooltip>
+      </value>
+      <value type="TagReference" name="cover" extensions="snd!">
+        <tooltip>Telling friends to seek cover.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed25" length="16" />
+      <value type="Pad" name="_unnamed26" length="16" />
+      <value type="Pad" name="_unnamed27" length="16" />
+      <value type="Pad" name="_unnamed28" length="16" />
+      <value type="TagReference" name="sighted friend player" extensions="snd!">
+        <tooltip>Sighted a new friendly player.</tooltip>
+      </value>
+      <value type="TagReference" name="shooting" extensions="snd!">
+        <tooltip>Shooting at an enemy.</tooltip>
+      </value>
+      <value type="TagReference" name="shooting vehicle" extensions="snd!">
+        <tooltip>Shooting from a vehicle at an enemy.</tooltip>
+      </value>
+      <value type="TagReference" name="shooting berserk" extensions="snd!">
+        <tooltip>Shooting at an enemy while berserk.</tooltip>
+      </value>
+      <value type="TagReference" name="shooting group" extensions="snd!">
+        <tooltip>Shooting at a group of enemies.</tooltip>
+      </value>
+      <value type="TagReference" name="shooting traitor" extensions="snd!">
+        <tooltip>Shooting at a traitorous player.</tooltip>
+      </value>
+      <value type="TagReference" name="taunt" extensions="snd!">
+        <tooltip>Taunting the enemy.</tooltip>
+      </value>
+      <value type="TagReference" name="taunt re" extensions="snd!">
+        <tooltip>Taunted by an enemy.</tooltip>
+      </value>
+      <value type="TagReference" name="flee" extensions="snd!">
+        <tooltip>Fleeing in panic.</tooltip>
+      </value>
+      <value type="TagReference" name="flee re" extensions="snd!">
+        <tooltip>Fleeing in panic.</tooltip>
+      </value>
+      <value type="TagReference" name="flee leader died" extensions="snd!">
+        <tooltip>Fleeing in panic because our leaders are all dead.</tooltip>
+      </value>
+      <value type="TagReference" name="attempted flee" extensions="snd!">
+        <tooltip>Unable to flee because a leader is nearby.</tooltip>
+      </value>
+      <value type="TagReference" name="attempted flee re" extensions="snd!">
+        <tooltip>Unable to flee because a leader is nearby - response.</tooltip>
+      </value>
+      <value type="TagReference" name="lost contact" extensions="snd!">
+        <tooltip>Target was not at expected location.</tooltip>
+      </value>
+      <value type="TagReference" name="hiding finished" extensions="snd!">
+        <tooltip>Stops hiding and pursues target.</tooltip>
+      </value>
+      <value type="TagReference" name="vehicle entry" extensions="snd!">
+        <tooltip>Enters vehicle.</tooltip>
+      </value>
+      <value type="TagReference" name="vehicle exit" extensions="snd!">
+        <tooltip>Exits vehicle.</tooltip>
+      </value>
+      <value type="TagReference" name="vehicle woohoo" extensions="snd!">
+        <tooltip>Excited while in vehicle (big air, etc).</tooltip>
+      </value>
+      <value type="TagReference" name="vehicle scared" extensions="snd!">
+        <tooltip>Scared while in vehicle (imminent crash).</tooltip>
+      </value>
+      <value type="TagReference" name="vehicle collision" extensions="snd!">
+        <tooltip>Riding in a vehicle and the driver collides with something.</tooltip>
+      </value>
+      <value type="TagReference" name="partially sighted" extensions="snd!">
+        <tooltip>Saw something suspicious but not sure it was an enemy.</tooltip>
+      </value>
+      <value type="TagReference" name="nothing there" extensions="snd!">
+        <tooltip>Decided that a suspicious sighting was nothing after all.</tooltip>
+      </value>
+      <value type="TagReference" name="pleading" extensions="snd!">
+        <tooltip>Pleading for the player to spare our pitiable lives.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed29" length="16" />
+      <value type="Pad" name="_unnamed30" length="16" />
+      <value type="Pad" name="_unnamed31" length="16" />
+      <value type="Pad" name="_unnamed32" length="16" />
+      <value type="Pad" name="_unnamed33" length="16" />
+      <value type="Pad" name="_unnamed34" length="16" />
+      <value type="TagReference" name="surprise" extensions="snd!">
+        <tooltip>Surprised by an enemy, noise, body or weapon impact.</tooltip>
+      </value>
+      <value type="TagReference" name="berserk" extensions="snd!">
+        <tooltip>Went berserk.</tooltip>
+      </value>
+      <value type="TagReference" name="melee attack" extensions="snd!">
+        <tooltip>Attacked an enemy in melee.</tooltip>
+      </value>
+      <value type="TagReference" name="dive" extensions="snd!">
+        <tooltip>Dove away from danger or into cover.</tooltip>
+      </value>
+      <value type="TagReference" name="uncover exclamation" extensions="snd!">
+        <tooltip>Leapt out of corner to uncover a suspected target.</tooltip>
+      </value>
+      <value type="TagReference" name="leap attack" extensions="snd!">
+        <tooltip>Begin a leap attack.</tooltip>
+      </value>
+      <value type="TagReference" name="resurrection" extensions="snd!">
+        <tooltip>Arise and return to life.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed35" length="16" />
+      <value type="Pad" name="_unnamed36" length="16" />
+      <value type="Pad" name="_unnamed37" length="16" />
+      <value type="Pad" name="_unnamed38" length="16" />
+      <value type="TagReference" name="celebration" extensions="snd!">
+        <tooltip>All enemies defeated.</tooltip>
+      </value>
+      <value type="TagReference" name="check body enemy" extensions="snd!">
+        <tooltip>Post-combat checking an enemy's dead body.</tooltip>
+      </value>
+      <value type="TagReference" name="check body friend" extensions="snd!">
+        <tooltip>Post-combat checking a friend's dead body.</tooltip>
+      </value>
+      <value type="TagReference" name="shooting dead enemy" extensions="snd!">
+        <tooltip>Post-combat shooting an enemy's dead body.</tooltip>
+      </value>
+      <value type="TagReference" name="shooting dead enemy player" extensions="snd!">
+        <tooltip>Post-combat shooting an enemy player's dead body.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed39" length="16" />
+      <value type="Pad" name="_unnamed40" length="16" />
+      <value type="Pad" name="_unnamed41" length="16" />
+      <value type="Pad" name="_unnamed42" length="16" />
+      <value type="TagReference" name="alone" extensions="snd!">
+        <tooltip>Post-combat all friends killed.</tooltip>
+      </value>
+      <value type="TagReference" name="unscathed" extensions="snd!">
+        <tooltip>Post-combat we were not hurt.</tooltip>
+      </value>
+      <value type="TagReference" name="seriously wounded" extensions="snd!">
+        <tooltip>Post-combat we were badly hurt.</tooltip>
+      </value>
+      <value type="TagReference" name="seriously wounded re" extensions="snd!">
+        <tooltip>Post-combat replying to a friend who was badly hurt.</tooltip>
+      </value>
+      <value type="TagReference" name="massacre" extensions="snd!">
+        <tooltip>Post-combat our friends took heavy casualties.</tooltip>
+      </value>
+      <value type="TagReference" name="massacre re" extensions="snd!">
+        <tooltip>Post-combat reply.</tooltip>
+      </value>
+      <value type="TagReference" name="rout" extensions="snd!">
+        <tooltip>Post-combat our friends kicked alien ass.</tooltip>
+      </value>
+      <value type="TagReference" name="rout re" extensions="snd!">
+        <tooltip>Post-combat reply.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed43" length="16" />
+      <value type="Pad" name="_unnamed44" length="16" />
+      <value type="Pad" name="_unnamed45" length="16" />
+      <value type="Pad" name="_unnamed46" length="16" />
+      <value type="Pad" name="_unnamed47" length="752" />
+    </struct>
+  </plugin>
+</xml>

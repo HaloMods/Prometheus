@@ -1,0 +1,1174 @@
+<xml>
+  <name type="wgit" parenttype="????">UserInterfaceScreenWidgetDefinition</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="UserInterfaceScreenWidgetDefinitionBlock">
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="1/4 screen dialog" />
+        <bit index="1" name="multiple panes are for list flavor items" />
+        <bit index="2" name="no header text" />
+        <bit index="3" name="1/2 screen dialog" />
+        <bit index="4" name="large dialog" />
+        <bit index="5" name="disable overlay effect" />
+      </value>
+      <value type="Enum" name="screen ID" length="2" disabled="false">
+        <item value="0" name="Test #1" />
+        <item value="1" name="Test #2" />
+        <item value="2" name="Test #3" />
+        <item value="3" name="Test #4" />
+        <item value="4" name="Test #5" />
+        <item value="5" name="Game Shell Background" />
+        <item value="6" name="Main Menu" />
+        <item value="7" name="Error Dialog OK Cancel" />
+        <item value="8" name="Error Dialog OK" />
+        <item value="9" name="Press Start Intro" />
+        <item value="10" name="Player Profile Select" />
+        <item value="11" name="SP Level Select" />
+        <item value="12" name="SP Difficulty Select" />
+        <item value="13" name="Network Squad Browser" />
+        <item value="14" name="MP Pregame Lobby" />
+        <item value="15" name="Custom Game Menu" />
+        <item value="16" name="Postgame Stats" />
+        <item value="17" name="MP Map Select" />
+        <item value="18" name="SP Pause Game" />
+        <item value="19" name="Settings" />
+        <item value="20" name="Gamertag Select" />
+        <item value="21" name="Gamertag Passcode Entry" />
+        <item value="22" name="Multiplayer Protocol" />
+        <item value="23" name="Squad Settings" />
+        <item value="24" name="Squad Game Settings" />
+        <item value="25" name="Squad Privacy Settings" />
+        <item value="26" name="Y Menu-Gameshell" />
+        <item value="27" name="Y Menu-Gameshell Collapsed" />
+        <item value="28" name="Y Menu-InGame" />
+        <item value="29" name="Y Menu-InGame Collapsed" />
+        <item value="30" name="4way join screen" />
+        <item value="31" name="Y Menu-Player Selected Options" />
+        <item value="32" name="Player Selected Options" />
+        <item value="33" name="Confirmation Dialog" />
+        <item value="34" name="Live Feedback Menu Dialog" />
+        <item value="35" name="Live Message Type Dialog" />
+        <item value="36" name="Voice Msg Dialog" />
+        <item value="37" name="Stereo Faceplate" />
+        <item value="38" name="Player Profile Edit Menu" />
+        <item value="39" name="PP Controller Settings" />
+        <item value="40" name="PP Button Settings" />
+        <item value="41" name="PP Thumbstick Settings" />
+        <item value="42" name="PP Look Sensitivity Settings" />
+        <item value="43" name="PP Invert Look Settings" />
+        <item value="44" name="PP Autolevel Settings" />
+        <item value="45" name="PP Handicap Settings" />
+        <item value="46" name="PP High Score Rec Settings" />
+        <item value="47" name="PP Multiplayer Settings Menu" />
+        <item value="48" name="PP Profile Delete Confirmation Dlg" />
+        <item value="49" name="PP Choose Foreground Emblem" />
+        <item value="50" name="PP Choose Primary Color" />
+        <item value="51" name="PP Choose Secondary Color" />
+        <item value="52" name="PP Choose Model" />
+        <item value="53" name="PP Voice Settings Menu" />
+        <item value="54" name="PP Choose Voice Mask" />
+        <item value="55" name="PP Voice thru TV" />
+        <item value="56" name="PP Edit Rotation List" />
+        <item value="57" name="PP XBL Status Menu" />
+        <item value="58" name="PP Appear Offline" />
+        <item value="59" name="PP Auto-Offline" />
+        <item value="60" name="Game Engine Category Listing" />
+        <item value="61" name="Edit Slayer Menu" />
+        <item value="62" name="Edit KOTH Menu" />
+        <item value="63" name="Edit Race Menu" />
+        <item value="64" name="Edit Oddball Menu" />
+        <item value="65" name="Edit Juggernaut Menu" />
+        <item value="66" name="Edit Headhunter Menu" />
+        <item value="67" name="Edit CTF Menu" />
+        <item value="68" name="Edit Assault Menu" />
+        <item value="69" name="Edit Slayer Score to Win" />
+        <item value="70" name="Edit Slayer Time Limit" />
+        <item value="71" name="Edit Slayer Teams" />
+        <item value="72" name="Edit Slayer Score 4 Killing" />
+        <item value="73" name="Edit Slayer Kill in Order" />
+        <item value="74" name="Edit Slayer Death Pt Loss" />
+        <item value="75" name="Edit Slayer Suicide Pt Loss" />
+        <item value="76" name="Edit Slayer Dmg After Kill" />
+        <item value="77" name="Edit Slayer Dmg After Death" />
+        <item value="78" name="Edit Slayer Speed After Kill" />
+        <item value="79" name="Edit Slayer Speed After Death" />
+        <item value="80" name="Edit KOTH Score to Win" />
+        <item value="81" name="Edit KOTH Time Limit" />
+        <item value="82" name="Edit KOTH Teams" />
+        <item value="83" name="Edit KOTH Moving Hills" />
+        <item value="84" name="Edit KOTH Uncontesed Control" />
+        <item value="85" name="Edit KOTH Xtra Dmg" />
+        <item value="86" name="Edit Race Laps to Win" />
+        <item value="87" name="Edit Race Time Limit" />
+        <item value="88" name="Edit Race Teams" />
+        <item value="89" name="Edit Race Team Scoring" />
+        <item value="90" name="Edit Race Type" />
+        <item value="91" name="Edit Race Flag Order" />
+        <item value="92" name="Edit Race Game End Condition" />
+        <item value="93" name="Edit Race Dmg with Laps" />
+        <item value="94" name="Edit Race Speed with Laps" />
+        <item value="95" name="Edit Oddball Time to Win" />
+        <item value="96" name="Edit Oddball Time Limit" />
+        <item value="97" name="Edit Oddball Teams" />
+        <item value="98" name="Edit Oddball Ball Spawn Count" />
+        <item value="99" name="Edit Oddball Ball Waypoints" />
+        <item value="100" name="Edit Oddball Damage with Ball" />
+        <item value="101" name="Edit Oddball Speed with Ball" />
+        <item value="102" name="Edit Oddball Invisibility with Ball" />
+        <item value="103" name="Edit Jug Score to Win" />
+        <item value="104" name="Edit Jug Time Limit" />
+        <item value="105" name="Edit Jug Pts for Killing Jugger" />
+        <item value="106" name="Edit Jug Count" />
+        <item value="107" name="Edit Jug Species" />
+        <item value="108" name="Edit Jug Starting Equip" />
+        <item value="109" name="Edit Jug Damage" />
+        <item value="110" name="Edit Jug Health" />
+        <item value="111" name="Edit Jug Speed" />
+        <item value="112" name="Edit Jug Regeneration" />
+        <item value="113" name="Edit Jug Waypoints" />
+        <item value="114" name="Edit HH Score to Win" />
+        <item value="115" name="Edit HH Time Limit" />
+        <item value="116" name="Edit HH Teams" />
+        <item value="117" name="Edit HH Death Pt Loss" />
+        <item value="118" name="Edit HH Suicide Pt Loss" />
+        <item value="119" name="Edit HH Speed with Token" />
+        <item value="120" name="Edit HH Dropped Token Lifetime" />
+        <item value="121" name="Edit HH Score Multiplier" />
+        <item value="122" name="Edit CTF Score to Win" />
+        <item value="123" name="Edit CTF Time Limit" />
+        <item value="124" name="Edit CTF Tie Resolution" />
+        <item value="125" name="Edit CTF Single Flag" />
+        <item value="126" name="Edit CTF Role Swapping" />
+        <item value="127" name="Edit CTF Flag at Home to Score" />
+        <item value="128" name="Edit CTF Flag Must Reset" />
+        <item value="129" name="Edit CTF Dmg with Flag" />
+        <item value="130" name="Edit CTF Speed with Flag" />
+        <item value="131" name="Edit Assault Score to Win" />
+        <item value="132" name="Edit Assault Time Limit" />
+        <item value="133" name="Edit Assault Tie Resolution" />
+        <item value="134" name="Edit Assault Single Flag" />
+        <item value="135" name="Edit Assault Role Swapping" />
+        <item value="136" name="Edit Assault Enemy Flag at Home to Score" />
+        <item value="137" name="Edit Assault Flag Must Reset" />
+        <item value="138" name="Edit Assault Dmg with Flag" />
+        <item value="139" name="Edit Assault Speed with Flag" />
+        <item value="140" name="Edit Player Number of Lives" />
+        <item value="141" name="Edit Player Max Health" />
+        <item value="142" name="Edit Player Shields" />
+        <item value="143" name="Edit Player Respawn Time" />
+        <item value="144" name="Edit Player Count" />
+        <item value="145" name="Edit Player Invisibility" />
+        <item value="146" name="Edit Player Suicide Penalty" />
+        <item value="147" name="Edit Player Friendly Fire" />
+        <item value="148" name="Edit Item Respawn Grenades" />
+        <item value="149" name="Edit Item Powerups" />
+        <item value="150" name="Edit Item Weapon Set" />
+        <item value="151" name="Edit Item Starting Equipment" />
+        <item value="152" name="Edit Item Warthogs" />
+        <item value="153" name="Edit Item Ghosts" />
+        <item value="154" name="Edit Item Scorpions" />
+        <item value="155" name="Edit Item Banshees" />
+        <item value="156" name="Edit Item Mongeese" />
+        <item value="157" name="Edit Item Shadows" />
+        <item value="158" name="Edit Item Wraiths" />
+        <item value="159" name="Edit Indicator Objectives" />
+        <item value="160" name="Edit Indicator Players on Motion Sensor" />
+        <item value="161" name="Edit Indicator Invisible Players on Motion Sensor" />
+        <item value="162" name="Edit Indicator Friends" />
+        <item value="163" name="Edit Indicator Enemies" />
+        <item value="164" name="Edit Player Options" />
+        <item value="165" name="Edit Item Options" />
+        <item value="166" name="Edit Indicator Options" />
+        <item value="167" name="Virtual Keyboard" />
+        <item value="168" name="Custom Game Menu" />
+        <item value="169" name="Slayer Quick Options" />
+        <item value="170" name="KOTH Quick Options" />
+        <item value="171" name="Race Quick Options" />
+        <item value="172" name="Oddball Quick Options" />
+        <item value="173" name="Jugger Quick Options" />
+        <item value="174" name="HH Quick Options" />
+        <item value="175" name="CTF Quick Options" />
+        <item value="176" name="Assault Quick Options" />
+        <item value="177" name="Pick New Squad Leader" />
+        <item value="178" name="Variant Editing Options Menu" />
+        <item value="179" name="Playlist List-Settings" />
+        <item value="180" name="Playlist Contents" />
+        <item value="181" name="Playlist Selected Options" />
+        <item value="182" name="Xbox Live Task Progress" />
+        <item value="183" name="PP Vibration Settings" />
+        <item value="184" name="Boot Player Dialog" />
+        <item value="185" name="Postgame Stats-Lobby" />
+        <item value="186" name="XBox Live Main Menu" />
+        <item value="187" name="Edit Terries Menu" />
+        <item value="188" name="Edit Terries Score to Win" />
+        <item value="189" name="Edit Terries Time Limit" />
+        <item value="190" name="Edit Terries Teams" />
+        <item value="191" name="Terries Quick Options" />
+        <item value="192" name="XBox Live Notification Beeper" />
+        <item value="193" name="Player Profile Select-Fancy" />
+        <item value="194" name="Saved Game File Actions Dialog" />
+        <item value="195" name="MP Start Menu" />
+        <item value="196" name="MP Start Player Settings" />
+        <item value="197" name="MP Start Handicap Settings" />
+        <item value="198" name="MP Start Change Teams" />
+        <item value="199" name="MP Start Admin Settings" />
+        <item value="200" name="MP Start Controller Settings" />
+        <item value="201" name="MP Start Voice Settings" />
+        <item value="202" name="MP Start Online Status" />
+        <item value="203" name="MPAlpha Legal Warning" />
+        <item value="204" name="Squad Join Progress Dialog" />
+        <item value="205" name="MP Alpha Postgame Legal Warning" />
+        <item value="206" name="MP Map Select-Lobby" />
+        <item value="207" name="MP Variant Type-Lobby" />
+        <item value="208" name="MP Variant List-Lobby" />
+        <item value="209" name="Loading Progress" />
+        <item value="210" name="Matchmaking Progress" />
+        <item value="211" name="Live Message Display" />
+        <item value="212" name="Fade-in From Black" />
+        <item value="213" name="Live Player Profile" />
+        <item value="214" name="Live Clan Profile" />
+        <item value="215" name="Live Message Send" />
+        <item value="216" name="Friends Options Dialog" />
+        <item value="217" name="Clan Options Dialog" />
+        <item value="218" name="Campaign Options Dialog" />
+        <item value="219" name="Optimatch Hoppers Fullscreen" />
+        <item value="220" name="Playlist List-dialog" />
+        <item value="221" name="Variant Editing Format" />
+        <item value="222" name="Variant Quick Options Format" />
+        <item value="223" name="Variant Param Setting Format" />
+        <item value="224" name="Vehicle Options" />
+        <item value="225" name="Match Options" />
+        <item value="226" name="Player Options" />
+        <item value="227" name="Team Options" />
+        <item value="228" name="Game Options" />
+        <item value="229" name="Equipment Options" />
+        <item value="230" name="Multiple Choice Dialog" />
+        <item value="231" name="Network Transition Progress" />
+        <item value="232" name="Xbox Live Stats" />
+        <item value="233" name="PP Choose Background Emblem" />
+        <item value="234" name="PP Buttons Qtr" />
+        <item value="235" name="PP Stix Qtr" />
+        <item value="236" name="Clan Member Privs" />
+        <item value="237" name="Optimatch Hoppers Lobby" />
+        <item value="238" name="Saved game file dialog" />
+        <item value="239" name="XYZZY" />
+        <item value="240" name="Error OK Cancel Large" />
+        <item value="241" name="YZZYX" />
+        <item value="242" name="Subtitle Display" />
+        <item value="243" name="PP Keyboard Settings" />
+        <item value="244" name="PP Keyboard Settings Qtr" />
+        <item value="245" name="PP Invert Dual Wield" />
+        <item value="246" name="System Settings" />
+        <item value="247" name="Bungie News" />
+        <item value="248" name="Filter Select" />
+        <item value="249" name="Live Game Browser" />
+        <item value="250" name="Game Details" />
+        <item value="251" name="MP Custom Map Select" />
+        <item value="252" name="MP All Maps Select" />
+        <item value="253" name="PP Advanced Keyboard Settings" />
+        <item value="254" name="PP Advanced Keyboard Settings Qtr" />
+        <item value="255" name="Network Adapter Settings" />
+      </value>
+      <value type="Enum" name="button key type" length="2" disabled="false">
+        <item value="0" name="NONE" />
+        <item value="1" name="A=SELECT B=BACK" />
+        <item value="2" name="A=SELECT B=CANCEL" />
+        <item value="3" name="A=ENTER B=CANCEL" />
+        <item value="4" name="Y=XBOX LIVE PLAYERS" />
+        <item value="5" name="X=FRIENDS OPTIONS" />
+        <item value="6" name="X=CLAN OPTIONS" />
+        <item value="7" name="X=RECENT PLAYERS OPTIONS" />
+        <item value="8" name="X=OPTIONS" />
+        <item value="9" name="A=SELECT" />
+        <item value="10" name="X=SETTINGS A=SELECT B=BACK" />
+        <item value="11" name="X=DELETE A=SELECT B=DONE" />
+        <item value="12" name="A=ACCEPT" />
+        <item value="13" name="B=CANCEL" />
+        <item value="14" name="Y=XBOX_LIVE_PLAYERS A=SELECT B=BACK" />
+        <item value="15" name="Y=XBOX_LIVE_PLAYERS A=SELECT B=CANCEL" />
+        <item value="16" name="Y=XBOX_LIVE_PLAYERS A=ENTER B=CANCEL" />
+        <item value="17" name="Y=XBOX_LIVE_PLAYERS A=SELECT" />
+        <item value="18" name="Y=XBOX_LIVE_PLAYERS A=SELECT B=DONE" />
+        <item value="19" name="Y=XBOX_LIVE_PLAYERS A=ACCEPT" />
+        <item value="20" name="Y=XBOX_LIVE_PLAYERS B=CANCEL" />
+        <item value="21" name="X=DELETE A=SELECT B=BACK" />
+        <item value="22" name="A=OK" />
+      </value>
+      <value type="RealArgbColor" name="text color" disabled="false" />
+      <value type="TagReference" name="string list tag" disabled="false" extensions="unic" />
+      <struct name="WindowPaneReferenceBlock">
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Enum" name="animation index" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="00" />
+          <item value="2" name="01" />
+          <item value="3" name="02" />
+          <item value="4" name="03" />
+          <item value="5" name="04" />
+          <item value="6" name="05" />
+          <item value="7" name="06" />
+          <item value="8" name="07" />
+          <item value="9" name="08" />
+          <item value="10" name="09" />
+          <item value="11" name="10" />
+          <item value="12" name="11" />
+          <item value="13" name="12" />
+          <item value="14" name="13" />
+          <item value="15" name="14" />
+          <item value="16" name="15" />
+          <item value="17" name="16" />
+          <item value="18" name="17" />
+          <item value="19" name="18" />
+          <item value="20" name="19" />
+          <item value="21" name="20" />
+          <item value="22" name="21" />
+          <item value="23" name="22" />
+          <item value="24" name="23" />
+          <item value="25" name="24" />
+          <item value="26" name="25" />
+          <item value="27" name="26" />
+          <item value="28" name="27" />
+          <item value="29" name="28" />
+          <item value="30" name="29" />
+          <item value="31" name="30" />
+          <item value="32" name="31" />
+          <item value="33" name="32" />
+          <item value="34" name="33" />
+          <item value="35" name="34" />
+          <item value="36" name="35" />
+          <item value="37" name="36" />
+          <item value="38" name="37" />
+          <item value="39" name="38" />
+          <item value="40" name="39" />
+          <item value="41" name="40" />
+          <item value="42" name="41" />
+          <item value="43" name="42" />
+          <item value="44" name="43" />
+          <item value="45" name="44" />
+          <item value="46" name="45" />
+          <item value="47" name="46" />
+          <item value="48" name="47" />
+          <item value="49" name="48" />
+          <item value="50" name="49" />
+          <item value="51" name="50" />
+          <item value="52" name="51" />
+          <item value="53" name="52" />
+          <item value="54" name="53" />
+          <item value="55" name="54" />
+          <item value="56" name="55" />
+          <item value="57" name="56" />
+          <item value="58" name="57" />
+          <item value="59" name="58" />
+          <item value="60" name="59" />
+          <item value="61" name="60" />
+          <item value="62" name="61" />
+          <item value="63" name="62" />
+          <item value="64" name="63" />
+        </value>
+        <struct name="ButtonWidgetReferenceBlock">
+          <value type="Flags" name="text flags" length="4" disabled="false">
+            <bit index="0" name="left justify text" />
+            <bit index="1" name="right justify text" />
+            <bit index="2" name="pulsating text" />
+            <bit index="3" name="callout text" />
+            <bit index="4" name="small (31 char) buffer" />
+          </value>
+          <value type="Enum" name="animation index" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="00" />
+            <item value="2" name="01" />
+            <item value="3" name="02" />
+            <item value="4" name="03" />
+            <item value="5" name="04" />
+            <item value="6" name="05" />
+            <item value="7" name="06" />
+            <item value="8" name="07" />
+            <item value="9" name="08" />
+            <item value="10" name="09" />
+            <item value="11" name="10" />
+            <item value="12" name="11" />
+            <item value="13" name="12" />
+            <item value="14" name="13" />
+            <item value="15" name="14" />
+            <item value="16" name="15" />
+            <item value="17" name="16" />
+            <item value="18" name="17" />
+            <item value="19" name="18" />
+            <item value="20" name="19" />
+            <item value="21" name="20" />
+            <item value="22" name="21" />
+            <item value="23" name="22" />
+            <item value="24" name="23" />
+            <item value="25" name="24" />
+            <item value="26" name="25" />
+            <item value="27" name="26" />
+            <item value="28" name="27" />
+            <item value="29" name="28" />
+            <item value="30" name="29" />
+            <item value="31" name="30" />
+            <item value="32" name="31" />
+            <item value="33" name="32" />
+            <item value="34" name="33" />
+            <item value="35" name="34" />
+            <item value="36" name="35" />
+            <item value="37" name="36" />
+            <item value="38" name="37" />
+            <item value="39" name="38" />
+            <item value="40" name="39" />
+            <item value="41" name="40" />
+            <item value="42" name="41" />
+            <item value="43" name="42" />
+            <item value="44" name="43" />
+            <item value="45" name="44" />
+            <item value="46" name="45" />
+            <item value="47" name="46" />
+            <item value="48" name="47" />
+            <item value="49" name="48" />
+            <item value="50" name="49" />
+            <item value="51" name="50" />
+            <item value="52" name="51" />
+            <item value="53" name="52" />
+            <item value="54" name="53" />
+            <item value="55" name="54" />
+            <item value="56" name="55" />
+            <item value="57" name="56" />
+            <item value="58" name="57" />
+            <item value="59" name="58" />
+            <item value="60" name="59" />
+            <item value="61" name="60" />
+            <item value="62" name="61" />
+            <item value="63" name="62" />
+            <item value="64" name="63" />
+          </value>
+          <value type="ShortInteger" name="intro animation delay milliseconds" disabled="false" />
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="custom font" length="2" disabled="false">
+            <item value="0" name="terminal" />
+            <item value="1" name="body text" />
+            <item value="2" name="title" />
+            <item value="3" name="super large font" />
+            <item value="4" name="large body text" />
+            <item value="5" name="split screen hud message" />
+            <item value="6" name="full screen hud message" />
+            <item value="7" name="english body text" />
+            <item value="8" name="HUD number text" />
+            <item value="9" name="subtitle font" />
+            <item value="10" name="main menu font" />
+            <item value="11" name="text chat font" />
+          </value>
+          <value type="RealArgbColor" name="text color" disabled="false" />
+          <value type="Rectangle2D" name="bounds" disabled="false" />
+          <value type="TagReference" name="bitmap" disabled="false" extensions="bitm" />
+          <value type="Point2d" name="bitmap offset" disabled="false">
+            <tooltip>from top-left</tooltip>
+          </value>
+          <value type="StringId" name="string id" disabled="false" />
+          <value type="ShortInteger" name="render depth bias" disabled="false" />
+          <value type="ShortInteger" name="mouse region top offset" disabled="false" />
+          <value type="Flags" name="button flags" length="4" disabled="false">
+            <bit index="0" name="DOESN'T tab vertically" />
+            <bit index="1" name="DOESN'T tab horizontally" />
+          </value>
+        </struct>
+        <value type="Block" name="buttons" disabled="false" struct="ButtonWidgetReferenceBlock" maxelements="64" />
+        <struct name="ListReferenceBlock">
+          <value type="Flags" name="flags" length="4" disabled="false">
+            <bit index="0" name="list wraps" />
+            <bit index="1" name="interactive" />
+          </value>
+          <value type="Enum" name="skin index" length="2" disabled="false">
+            <item value="0" name="default" />
+            <item value="1" name="squad lobby player list" />
+            <item value="2" name="settings list" />
+            <item value="3" name="playlist entry list" />
+            <item value="4" name="variants" />
+            <item value="5" name="game browser" />
+            <item value="6" name="online player menu" />
+            <item value="7" name="game setup menu" />
+            <item value="8" name="playlist contents display" />
+            <item value="9" name="player profile picker" />
+            <item value="10" name="mp map selection" />
+            <item value="11" name="main menu list" />
+            <item value="12" name="color picker" />
+            <item value="13" name="profile picker" />
+            <item value="14" name="y menu recent list" />
+            <item value="15" name="pcr team stats" />
+            <item value="16" name="pcr player stats" />
+            <item value="17" name="pcr kill stats" />
+            <item value="18" name="pcr pvp stats" />
+            <item value="19" name="pcr medal stats" />
+            <item value="20" name="matchmaking progress" />
+            <item value="21" name="default 5" />
+            <item value="22" name="default 6" />
+            <item value="23" name="advanced settings list" />
+            <item value="24" name="live game browser" />
+            <item value="25" name="default wide" />
+            <item value="26" name="unused26" />
+            <item value="27" name="unused27" />
+            <item value="28" name="unused28" />
+            <item value="29" name="unused29" />
+            <item value="30" name="unused30" />
+            <item value="31" name="unused31" />
+          </value>
+          <value type="ShortInteger" name="num visible items" disabled="false" />
+          <value type="Point2d" name="bottom left" disabled="false" />
+          <value type="Enum" name="animation index" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="00" />
+            <item value="2" name="01" />
+            <item value="3" name="02" />
+            <item value="4" name="03" />
+            <item value="5" name="04" />
+            <item value="6" name="05" />
+            <item value="7" name="06" />
+            <item value="8" name="07" />
+            <item value="9" name="08" />
+            <item value="10" name="09" />
+            <item value="11" name="10" />
+            <item value="12" name="11" />
+            <item value="13" name="12" />
+            <item value="14" name="13" />
+            <item value="15" name="14" />
+            <item value="16" name="15" />
+            <item value="17" name="16" />
+            <item value="18" name="17" />
+            <item value="19" name="18" />
+            <item value="20" name="19" />
+            <item value="21" name="20" />
+            <item value="22" name="21" />
+            <item value="23" name="22" />
+            <item value="24" name="23" />
+            <item value="25" name="24" />
+            <item value="26" name="25" />
+            <item value="27" name="26" />
+            <item value="28" name="27" />
+            <item value="29" name="28" />
+            <item value="30" name="29" />
+            <item value="31" name="30" />
+            <item value="32" name="31" />
+            <item value="33" name="32" />
+            <item value="34" name="33" />
+            <item value="35" name="34" />
+            <item value="36" name="35" />
+            <item value="37" name="36" />
+            <item value="38" name="37" />
+            <item value="39" name="38" />
+            <item value="40" name="39" />
+            <item value="41" name="40" />
+            <item value="42" name="41" />
+            <item value="43" name="42" />
+            <item value="44" name="43" />
+            <item value="45" name="44" />
+            <item value="46" name="45" />
+            <item value="47" name="46" />
+            <item value="48" name="47" />
+            <item value="49" name="48" />
+            <item value="50" name="49" />
+            <item value="51" name="50" />
+            <item value="52" name="51" />
+            <item value="53" name="52" />
+            <item value="54" name="53" />
+            <item value="55" name="54" />
+            <item value="56" name="55" />
+            <item value="57" name="56" />
+            <item value="58" name="57" />
+            <item value="59" name="58" />
+            <item value="60" name="59" />
+            <item value="61" name="60" />
+            <item value="62" name="61" />
+            <item value="63" name="62" />
+            <item value="64" name="63" />
+          </value>
+          <value type="ShortInteger" name="intro animation delay milliseconds" disabled="false" />
+          <struct name="STextValuePairReferenceBlockUNUSED">
+            <value type="Enum" name="value type" length="2" disabled="false">
+              <item value="0" name="integer number" />
+              <item value="1" name="floating point number" />
+              <item value="2" name="boolean" />
+              <item value="3" name="text string" />
+            </value>
+            <value type="Enum" name="boolean value" length="2" disabled="false">
+              <item value="0" name="FALSE" />
+              <item value="1" name="TRUE" />
+            </value>
+            <value type="LongInteger" name="integer value" disabled="false" />
+            <value type="Real" name="fp value" disabled="false" />
+            <value type="StringId" name="text value string_id" disabled="false" />
+            <value type="StringId" name="text label string_id" disabled="false" />
+          </struct>
+          <value type="Block" name="UNUSED" disabled="false" struct="STextValuePairReferenceBlockUNUSED" maxelements="100" />
+        </struct>
+        <value type="Block" name="list block" disabled="false" struct="ListReferenceBlock" maxelements="1" />
+        <struct name="TableViewListReferenceBlock">
+          <value type="Flags" name="flags" length="4" disabled="false">
+            <bit index="0" name="unused" />
+          </value>
+          <value type="Enum" name="animation index" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="00" />
+            <item value="2" name="01" />
+            <item value="3" name="02" />
+            <item value="4" name="03" />
+            <item value="5" name="04" />
+            <item value="6" name="05" />
+            <item value="7" name="06" />
+            <item value="8" name="07" />
+            <item value="9" name="08" />
+            <item value="10" name="09" />
+            <item value="11" name="10" />
+            <item value="12" name="11" />
+            <item value="13" name="12" />
+            <item value="14" name="13" />
+            <item value="15" name="14" />
+            <item value="16" name="15" />
+            <item value="17" name="16" />
+            <item value="18" name="17" />
+            <item value="19" name="18" />
+            <item value="20" name="19" />
+            <item value="21" name="20" />
+            <item value="22" name="21" />
+            <item value="23" name="22" />
+            <item value="24" name="23" />
+            <item value="25" name="24" />
+            <item value="26" name="25" />
+            <item value="27" name="26" />
+            <item value="28" name="27" />
+            <item value="29" name="28" />
+            <item value="30" name="29" />
+            <item value="31" name="30" />
+            <item value="32" name="31" />
+            <item value="33" name="32" />
+            <item value="34" name="33" />
+            <item value="35" name="34" />
+            <item value="36" name="35" />
+            <item value="37" name="36" />
+            <item value="38" name="37" />
+            <item value="39" name="38" />
+            <item value="40" name="39" />
+            <item value="41" name="40" />
+            <item value="42" name="41" />
+            <item value="43" name="42" />
+            <item value="44" name="43" />
+            <item value="45" name="44" />
+            <item value="46" name="45" />
+            <item value="47" name="46" />
+            <item value="48" name="47" />
+            <item value="49" name="48" />
+            <item value="50" name="49" />
+            <item value="51" name="50" />
+            <item value="52" name="51" />
+            <item value="53" name="52" />
+            <item value="54" name="53" />
+            <item value="55" name="54" />
+            <item value="56" name="55" />
+            <item value="57" name="56" />
+            <item value="58" name="57" />
+            <item value="59" name="58" />
+            <item value="60" name="59" />
+            <item value="61" name="60" />
+            <item value="62" name="61" />
+            <item value="63" name="62" />
+            <item value="64" name="63" />
+          </value>
+          <value type="ShortInteger" name="intro animation delay milliseconds" disabled="false" />
+          <value type="Enum" name="custom font" length="2" disabled="false">
+            <item value="0" name="terminal" />
+            <item value="1" name="body text" />
+            <item value="2" name="title" />
+            <item value="3" name="super large font" />
+            <item value="4" name="large body text" />
+            <item value="5" name="split screen hud message" />
+            <item value="6" name="full screen hud message" />
+            <item value="7" name="english body text" />
+            <item value="8" name="HUD number text" />
+            <item value="9" name="subtitle font" />
+            <item value="10" name="main menu font" />
+            <item value="11" name="text chat font" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="RealArgbColor" name="text color" disabled="false" />
+          <value type="Point2d" name="top-left" disabled="false" />
+          <struct name="TableViewListRowReferenceBlock">
+            <value type="Flags" name="flags" length="4" disabled="false">
+              <bit index="0" name="unused" />
+            </value>
+            <value type="ShortInteger" name="row height" disabled="false" />
+            <value type="Pad" name="_unnamed0" length="2" />
+            <struct name="TableViewListItemReferenceBlock">
+              <value type="Flags" name="text flags" length="4" disabled="false">
+                <bit index="0" name="left justify text" />
+                <bit index="1" name="right justify text" />
+                <bit index="2" name="pulsating text" />
+                <bit index="3" name="callout text" />
+                <bit index="4" name="small (31 char) buffer" />
+              </value>
+              <value type="ShortInteger" name="cell width" disabled="false" />
+              <value type="Pad" name="_unnamed0" length="2" />
+              <value type="Point2d" name="bitmap top-left" disabled="false" unit="if there is a bitmap" />
+              <value type="TagReference" name="bitmap tag" disabled="false" extensions="bitm" />
+              <value type="StringId" name="string id" disabled="false" />
+              <value type="ShortInteger" name="render depth bias" disabled="false" />
+              <value type="Pad" name="_unnamed1" length="2" />
+            </struct>
+            <value type="Block" name="row cells" disabled="false" struct="TableViewListItemReferenceBlock" maxelements="8" />
+          </struct>
+          <value type="Block" name="table rows" disabled="false" struct="TableViewListRowReferenceBlock" maxelements="16" />
+        </struct>
+        <value type="Block" name="table view" disabled="false" struct="TableViewListReferenceBlock" maxelements="1" />
+        <struct name="TextBlockReferenceBlock">
+          <value type="Flags" name="text flags" length="4" disabled="false">
+            <bit index="0" name="left justify text" />
+            <bit index="1" name="right justify text" />
+            <bit index="2" name="pulsating text" />
+            <bit index="3" name="callout text" />
+            <bit index="4" name="small (31 char) buffer" />
+          </value>
+          <value type="Enum" name="animation index" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="00" />
+            <item value="2" name="01" />
+            <item value="3" name="02" />
+            <item value="4" name="03" />
+            <item value="5" name="04" />
+            <item value="6" name="05" />
+            <item value="7" name="06" />
+            <item value="8" name="07" />
+            <item value="9" name="08" />
+            <item value="10" name="09" />
+            <item value="11" name="10" />
+            <item value="12" name="11" />
+            <item value="13" name="12" />
+            <item value="14" name="13" />
+            <item value="15" name="14" />
+            <item value="16" name="15" />
+            <item value="17" name="16" />
+            <item value="18" name="17" />
+            <item value="19" name="18" />
+            <item value="20" name="19" />
+            <item value="21" name="20" />
+            <item value="22" name="21" />
+            <item value="23" name="22" />
+            <item value="24" name="23" />
+            <item value="25" name="24" />
+            <item value="26" name="25" />
+            <item value="27" name="26" />
+            <item value="28" name="27" />
+            <item value="29" name="28" />
+            <item value="30" name="29" />
+            <item value="31" name="30" />
+            <item value="32" name="31" />
+            <item value="33" name="32" />
+            <item value="34" name="33" />
+            <item value="35" name="34" />
+            <item value="36" name="35" />
+            <item value="37" name="36" />
+            <item value="38" name="37" />
+            <item value="39" name="38" />
+            <item value="40" name="39" />
+            <item value="41" name="40" />
+            <item value="42" name="41" />
+            <item value="43" name="42" />
+            <item value="44" name="43" />
+            <item value="45" name="44" />
+            <item value="46" name="45" />
+            <item value="47" name="46" />
+            <item value="48" name="47" />
+            <item value="49" name="48" />
+            <item value="50" name="49" />
+            <item value="51" name="50" />
+            <item value="52" name="51" />
+            <item value="53" name="52" />
+            <item value="54" name="53" />
+            <item value="55" name="54" />
+            <item value="56" name="55" />
+            <item value="57" name="56" />
+            <item value="58" name="57" />
+            <item value="59" name="58" />
+            <item value="60" name="59" />
+            <item value="61" name="60" />
+            <item value="62" name="61" />
+            <item value="63" name="62" />
+            <item value="64" name="63" />
+          </value>
+          <value type="ShortInteger" name="intro animation delay milliseconds" disabled="false" />
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="custom font" length="2" disabled="false">
+            <item value="0" name="terminal" />
+            <item value="1" name="body text" />
+            <item value="2" name="title" />
+            <item value="3" name="super large font" />
+            <item value="4" name="large body text" />
+            <item value="5" name="split screen hud message" />
+            <item value="6" name="full screen hud message" />
+            <item value="7" name="english body text" />
+            <item value="8" name="HUD number text" />
+            <item value="9" name="subtitle font" />
+            <item value="10" name="main menu font" />
+            <item value="11" name="text chat font" />
+          </value>
+          <value type="RealArgbColor" name="text color" disabled="false" />
+          <value type="Rectangle2D" name="text bounds" disabled="false" />
+          <value type="StringId" name="string id" disabled="false" />
+          <value type="ShortInteger" name="render depth bias" disabled="false" />
+          <value type="Pad" name="_unnamed1" length="2" />
+        </struct>
+        <value type="Block" name="text blocks" disabled="false" struct="TextBlockReferenceBlock" maxelements="64" />
+        <struct name="BitmapBlockReferenceBlock">
+          <value type="Flags" name="flags" length="4" disabled="false">
+            <bit index="0" name="ignore for list skin size calculation" />
+            <bit index="1" name="swap on relative list position" />
+            <bit index="2" name="render as progress bar" />
+          </value>
+          <value type="Enum" name="animation index" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="00" />
+            <item value="2" name="01" />
+            <item value="3" name="02" />
+            <item value="4" name="03" />
+            <item value="5" name="04" />
+            <item value="6" name="05" />
+            <item value="7" name="06" />
+            <item value="8" name="07" />
+            <item value="9" name="08" />
+            <item value="10" name="09" />
+            <item value="11" name="10" />
+            <item value="12" name="11" />
+            <item value="13" name="12" />
+            <item value="14" name="13" />
+            <item value="15" name="14" />
+            <item value="16" name="15" />
+            <item value="17" name="16" />
+            <item value="18" name="17" />
+            <item value="19" name="18" />
+            <item value="20" name="19" />
+            <item value="21" name="20" />
+            <item value="22" name="21" />
+            <item value="23" name="22" />
+            <item value="24" name="23" />
+            <item value="25" name="24" />
+            <item value="26" name="25" />
+            <item value="27" name="26" />
+            <item value="28" name="27" />
+            <item value="29" name="28" />
+            <item value="30" name="29" />
+            <item value="31" name="30" />
+            <item value="32" name="31" />
+            <item value="33" name="32" />
+            <item value="34" name="33" />
+            <item value="35" name="34" />
+            <item value="36" name="35" />
+            <item value="37" name="36" />
+            <item value="38" name="37" />
+            <item value="39" name="38" />
+            <item value="40" name="39" />
+            <item value="41" name="40" />
+            <item value="42" name="41" />
+            <item value="43" name="42" />
+            <item value="44" name="43" />
+            <item value="45" name="44" />
+            <item value="46" name="45" />
+            <item value="47" name="46" />
+            <item value="48" name="47" />
+            <item value="49" name="48" />
+            <item value="50" name="49" />
+            <item value="51" name="50" />
+            <item value="52" name="51" />
+            <item value="53" name="52" />
+            <item value="54" name="53" />
+            <item value="55" name="54" />
+            <item value="56" name="55" />
+            <item value="57" name="56" />
+            <item value="58" name="57" />
+            <item value="59" name="58" />
+            <item value="60" name="59" />
+            <item value="61" name="60" />
+            <item value="62" name="61" />
+            <item value="63" name="62" />
+            <item value="64" name="63" />
+          </value>
+          <value type="ShortInteger" name="intro animation delay milliseconds" disabled="false" />
+          <value type="Enum" name="bitmap blend method" length="2" disabled="false">
+            <item value="0" name="standard" />
+            <item value="1" name="multiply" />
+            <item value="2" name="UNUSED" />
+          </value>
+          <value type="ShortInteger" name="initial sprite frame" disabled="false" />
+          <value type="Point2d" name="top-left" disabled="false" />
+          <value type="Real" name="horiz texture wrapssecond" disabled="false" />
+          <value type="Real" name="vert texture wrapssecond" disabled="false" />
+          <value type="TagReference" name="bitmap tag" disabled="false" extensions="bitm" />
+          <value type="ShortInteger" name="render depth bias" disabled="false" />
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Real" name="sprite animation speed fps" disabled="false" />
+          <value type="Point2d" name="progress bottom-left" disabled="false" />
+          <value type="StringId" name="string identifier" disabled="false" />
+          <value type="RealVector2d" name="progress scale" disabled="false" />
+        </struct>
+        <value type="Block" name="bitmap blocks" disabled="false" struct="BitmapBlockReferenceBlock" maxelements="64" />
+        <struct name="UiModelSceneReferenceBlock">
+          <value type="Flags" name="flags" length="4" disabled="false">
+            <bit index="0" name="unused" />
+          </value>
+          <value type="Enum" name="animation index" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="00" />
+            <item value="2" name="01" />
+            <item value="3" name="02" />
+            <item value="4" name="03" />
+            <item value="5" name="04" />
+            <item value="6" name="05" />
+            <item value="7" name="06" />
+            <item value="8" name="07" />
+            <item value="9" name="08" />
+            <item value="10" name="09" />
+            <item value="11" name="10" />
+            <item value="12" name="11" />
+            <item value="13" name="12" />
+            <item value="14" name="13" />
+            <item value="15" name="14" />
+            <item value="16" name="15" />
+            <item value="17" name="16" />
+            <item value="18" name="17" />
+            <item value="19" name="18" />
+            <item value="20" name="19" />
+            <item value="21" name="20" />
+            <item value="22" name="21" />
+            <item value="23" name="22" />
+            <item value="24" name="23" />
+            <item value="25" name="24" />
+            <item value="26" name="25" />
+            <item value="27" name="26" />
+            <item value="28" name="27" />
+            <item value="29" name="28" />
+            <item value="30" name="29" />
+            <item value="31" name="30" />
+            <item value="32" name="31" />
+            <item value="33" name="32" />
+            <item value="34" name="33" />
+            <item value="35" name="34" />
+            <item value="36" name="35" />
+            <item value="37" name="36" />
+            <item value="38" name="37" />
+            <item value="39" name="38" />
+            <item value="40" name="39" />
+            <item value="41" name="40" />
+            <item value="42" name="41" />
+            <item value="43" name="42" />
+            <item value="44" name="43" />
+            <item value="45" name="44" />
+            <item value="46" name="45" />
+            <item value="47" name="46" />
+            <item value="48" name="47" />
+            <item value="49" name="48" />
+            <item value="50" name="49" />
+            <item value="51" name="50" />
+            <item value="52" name="51" />
+            <item value="53" name="52" />
+            <item value="54" name="53" />
+            <item value="55" name="54" />
+            <item value="56" name="55" />
+            <item value="57" name="56" />
+            <item value="58" name="57" />
+            <item value="59" name="58" />
+            <item value="60" name="59" />
+            <item value="61" name="60" />
+            <item value="62" name="61" />
+            <item value="63" name="62" />
+            <item value="64" name="63" />
+          </value>
+          <value type="ShortInteger" name="intro animation delay milliseconds" disabled="false" />
+          <value type="ShortInteger" name="render depth bias" disabled="false" />
+          <value type="Pad" name="_unnamed0" length="2" />
+          <struct name="UiObjectReferenceBlock">
+            <value type="FixedLengthString" name="name" disabled="false" />
+          </struct>
+          <value type="Block" name="objects" disabled="false" struct="UiObjectReferenceBlock" maxelements="32" />
+          <struct name="UiLightReferenceBlock">
+            <value type="FixedLengthString" name="name" disabled="false" />
+          </struct>
+          <value type="Block" name="lights" disabled="false" struct="UiLightReferenceBlock" maxelements="8" />
+          <value type="RealVector3d" name="animation scale factor" disabled="false" />
+          <value type="RealPoint3d" name="camera position" disabled="false" />
+          <value type="Real" name="fov degress" disabled="false" />
+          <value type="Rectangle2D" name="ui viewport" disabled="false" />
+          <value type="StringId" name="UNUSED intro anim" disabled="false" />
+          <value type="StringId" name="UNUSED outro anim" disabled="false" />
+          <value type="StringId" name="UNUSED ambient anim" disabled="false" />
+        </struct>
+        <value type="Block" name="model scene blocks" disabled="false" struct="UiModelSceneReferenceBlock" maxelements="32" />
+        <struct name="STextValuePairBlocksBlockUNUSED">
+          <value type="FixedLengthString" name="name" disabled="false" />
+          <struct name="STextValuePairReferenceBlockUNUSED">
+            <value type="Enum" name="value type" length="2" disabled="false">
+              <item value="0" name="integer number" />
+              <item value="1" name="floating point number" />
+              <item value="2" name="boolean" />
+              <item value="3" name="text string" />
+            </value>
+            <value type="Enum" name="boolean value" length="2" disabled="false">
+              <item value="0" name="FALSE" />
+              <item value="1" name="TRUE" />
+            </value>
+            <value type="LongInteger" name="integer value" disabled="false" />
+            <value type="Real" name="fp value" disabled="false" />
+            <value type="StringId" name="text value string_id" disabled="false" />
+            <value type="StringId" name="text label string_id" disabled="false" />
+          </struct>
+          <value type="Block" name="text value pairs" disabled="false" struct="STextValuePairReferenceBlockUNUSED" maxelements="100" />
+        </struct>
+        <value type="Block" name="text-value blocks" disabled="false" struct="STextValuePairBlocksBlockUNUSED" maxelements="100" />
+        <struct name="HudBlockReferenceBlock">
+          <value type="Flags" name="flags" length="4" disabled="false">
+            <bit index="0" name="ignore for list skin size" />
+            <bit index="1" name="needs valid rank" />
+          </value>
+          <value type="Enum" name="animation index" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="00" />
+            <item value="2" name="01" />
+            <item value="3" name="02" />
+            <item value="4" name="03" />
+            <item value="5" name="04" />
+            <item value="6" name="05" />
+            <item value="7" name="06" />
+            <item value="8" name="07" />
+            <item value="9" name="08" />
+            <item value="10" name="09" />
+            <item value="11" name="10" />
+            <item value="12" name="11" />
+            <item value="13" name="12" />
+            <item value="14" name="13" />
+            <item value="15" name="14" />
+            <item value="16" name="15" />
+            <item value="17" name="16" />
+            <item value="18" name="17" />
+            <item value="19" name="18" />
+            <item value="20" name="19" />
+            <item value="21" name="20" />
+            <item value="22" name="21" />
+            <item value="23" name="22" />
+            <item value="24" name="23" />
+            <item value="25" name="24" />
+            <item value="26" name="25" />
+            <item value="27" name="26" />
+            <item value="28" name="27" />
+            <item value="29" name="28" />
+            <item value="30" name="29" />
+            <item value="31" name="30" />
+            <item value="32" name="31" />
+            <item value="33" name="32" />
+            <item value="34" name="33" />
+            <item value="35" name="34" />
+            <item value="36" name="35" />
+            <item value="37" name="36" />
+            <item value="38" name="37" />
+            <item value="39" name="38" />
+            <item value="40" name="39" />
+            <item value="41" name="40" />
+            <item value="42" name="41" />
+            <item value="43" name="42" />
+            <item value="44" name="43" />
+            <item value="45" name="44" />
+            <item value="46" name="45" />
+            <item value="47" name="46" />
+            <item value="48" name="47" />
+            <item value="49" name="48" />
+            <item value="50" name="49" />
+            <item value="51" name="50" />
+            <item value="52" name="51" />
+            <item value="53" name="52" />
+            <item value="54" name="53" />
+            <item value="55" name="54" />
+            <item value="56" name="55" />
+            <item value="57" name="56" />
+            <item value="58" name="57" />
+            <item value="59" name="58" />
+            <item value="60" name="59" />
+            <item value="61" name="60" />
+            <item value="62" name="61" />
+            <item value="63" name="62" />
+            <item value="64" name="63" />
+          </value>
+          <value type="ShortInteger" name="intro animation delay milliseconds" disabled="false" />
+          <value type="ShortInteger" name="render depth bias" disabled="false" />
+          <value type="ShortInteger" name="starting bitmap sequence index" disabled="false" />
+          <value type="TagReference" name="bitmap" disabled="false" extensions="bitm" />
+          <value type="TagReference" name="shader" disabled="false" extensions="shad" />
+          <value type="Rectangle2D" name="bounds" disabled="false" />
+        </struct>
+        <value type="Block" name="hud blocks" disabled="false" struct="HudBlockReferenceBlock" maxelements="64" />
+        <struct name="PlayerBlockReferenceBlock">
+          <value type="Pad" name="_unnamed0" length="4" />
+          <value type="TagReference" name="skin" disabled="false" extensions="skin" />
+          <value type="Point2d" name="bottom-left" disabled="false" />
+          <value type="Enum" name="table order" length="1" disabled="false">
+            <item value="0" name="row major" />
+            <item value="1" name="column major" />
+          </value>
+          <value type="CharInteger" name="maximum player count" disabled="false" />
+          <value type="CharInteger" name="row count" disabled="false" />
+          <value type="CharInteger" name="column count" disabled="false" />
+          <value type="ShortInteger" name="row height" disabled="false" />
+          <value type="ShortInteger" name="column width" disabled="false" />
+        </struct>
+        <value type="Block" name="player blocks" disabled="false" struct="PlayerBlockReferenceBlock" maxelements="64" />
+      </struct>
+      <value type="Block" name="panes" disabled="false" struct="WindowPaneReferenceBlock" maxelements="16" />
+      <value type="Enum" name="shape group" length="2" disabled="false">
+        <item value="0" name="NONE" />
+        <item value="1" name="00" />
+        <item value="2" name="01" />
+        <item value="3" name="02" />
+        <item value="4" name="03" />
+        <item value="5" name="04" />
+        <item value="6" name="05" />
+        <item value="7" name="06" />
+        <item value="8" name="07" />
+        <item value="9" name="08" />
+        <item value="10" name="09" />
+        <item value="11" name="10" />
+        <item value="12" name="11" />
+        <item value="13" name="12" />
+        <item value="14" name="13" />
+        <item value="15" name="14" />
+        <item value="16" name="15" />
+        <item value="17" name="16" />
+        <item value="18" name="17" />
+        <item value="19" name="18" />
+        <item value="20" name="19" />
+        <item value="21" name="20" />
+        <item value="22" name="21" />
+        <item value="23" name="22" />
+        <item value="24" name="23" />
+        <item value="25" name="24" />
+        <item value="26" name="25" />
+        <item value="27" name="26" />
+        <item value="28" name="27" />
+        <item value="29" name="28" />
+        <item value="30" name="29" />
+        <item value="31" name="30" />
+        <item value="32" name="31" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="StringId" name="header string id" disabled="false" />
+      <struct name="LocalStringIdListSectionReferenceBlock">
+        <value type="StringId" name="section name" disabled="false" blockname="true" />
+        <struct name="LocalStringIdListStringReferenceBlock">
+          <value type="StringId" name="string id" disabled="false" />
+        </struct>
+        <value type="Block" name="local string section references" disabled="false" struct="LocalStringIdListStringReferenceBlock" maxelements="64" />
+      </struct>
+      <value type="Block" name="local strings" disabled="false" struct="LocalStringIdListSectionReferenceBlock" maxelements="16" />
+      <struct name="LocalBitmapReferenceBlock">
+        <value type="TagReference" name="bitmap" disabled="false" extensions="bitm" />
+      </struct>
+      <value type="Block" name="local bitmaps" disabled="false" struct="LocalBitmapReferenceBlock" maxelements="16" />
+      <value type="RealRgbColor" name="source color" disabled="false" />
+      <value type="RealRgbColor" name="destination color" disabled="false" />
+      <value type="Real" name="accumulate zoom scale x" disabled="false" />
+      <value type="Real" name="accumulate zoom scale y" disabled="false" />
+      <value type="Real" name="refraction scale x" disabled="false" />
+      <value type="Real" name="refraction scale y" disabled="false" />
+    </struct>
+  </plugin>
+</xml>

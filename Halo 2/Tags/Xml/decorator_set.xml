@@ -1,0 +1,100 @@
+<xml>
+  <name type="DECR" parenttype="????">DecoratorSet</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="GlobalGeometryBlockInfoStructBlock">
+      <struct name="DecoratorShaderReferenceBlock">
+        <value type="TagReference" name="shader" disabled="false" extensions="shad" />
+      </struct>
+      <value type="Block" name="shaders" disabled="false" struct="DecoratorShaderReferenceBlock" maxelements="8" />
+      <value type="Real" name="lighting min scale" disabled="false">
+        <tooltip>0.0 defaults to 0.4</tooltip>
+      </value>
+      <value type="Real" name="lighting max scale" disabled="false">
+        <tooltip>0.0 defaults to 2.0</tooltip>
+      </value>
+      <struct name="DecoratorClassesBlock">
+        <value type="StringId" name="name" disabled="false" />
+        <value type="Enum" name="type" length="1" disabled="false">
+          <item value="0" name="model" />
+          <item value="1" name="floating decal" />
+          <item value="2" name="projected decal" />
+          <item value="3" name="screen facing quad" />
+          <item value="4" name="axis rotating quad" />
+          <item value="5" name="cross quad" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="3" />
+        <value type="Real" name="scale" disabled="false" />
+        <struct name="DecoratorPermutationsBlock">
+          <value type="StringId" name="name" disabled="false" />
+          <value type="CharBlockIndex" name="shader" disabled="false" />
+          <value type="Pad" name="_unnamed0" length="3" />
+          <value type="Flags" name="flags" length="1" disabled="false">
+            <bit index="0" name="align to normal" />
+            <bit index="1" name="only on ground" />
+            <bit index="2" name="upright" />
+          </value>
+          <value type="Enum" name="fade distance" length="1" disabled="false">
+            <item value="0" name="close" />
+            <item value="1" name="medium" />
+            <item value="2" name="far" />
+          </value>
+          <value type="CharInteger" name="index" disabled="false" />
+          <value type="CharInteger" name="distribution weight" disabled="false" />
+          <value type="RealBounds" name="scale" disabled="false" />
+          <value type="RgbColor" name="tint 1" disabled="false" />
+          <value type="RgbColor" name="tint 2" disabled="false" />
+          <value type="Real" name="base map tint percentage" disabled="false" />
+          <value type="Real" name="lightmap tint percentage" disabled="false" />
+          <value type="Real" name="wind scale" disabled="false" />
+        </struct>
+        <value type="Block" name="permutations" disabled="false" struct="DecoratorPermutationsBlock" maxelements="64" />
+      </struct>
+      <value type="Block" name="classes" disabled="false" struct="DecoratorClassesBlock" maxelements="8" />
+      <struct name="DecoratorModelsBlock">
+        <value type="StringId" name="model name" disabled="true" />
+        <value type="ShortInteger" name="index start" disabled="true" />
+        <value type="ShortInteger" name="index count" disabled="true" />
+      </struct>
+      <value type="Block" name="models" disabled="true" struct="DecoratorModelsBlock" maxelements="256" />
+      <struct name="DecoratorModelVerticesBlock">
+        <value type="RealPoint3d" name="position" disabled="true" />
+        <value type="RealVector3d" name="normal" disabled="true" />
+        <value type="RealVector3d" name="tangent" disabled="true" />
+        <value type="RealVector3d" name="binormal" disabled="true" />
+        <value type="RealPoint2d" name="texcoord" disabled="true" />
+      </struct>
+      <value type="Block" name="raw vertices" disabled="true" struct="DecoratorModelVerticesBlock" maxelements="32768" />
+      <struct name="DecoratorModelIndicesBlock">
+        <value type="ShortInteger" name="index" disabled="true" />
+      </struct>
+      <value type="Block" name="indices" disabled="true" struct="DecoratorModelIndicesBlock" maxelements="32768" />
+      <struct name="CachedDataBlock">
+        <value type="Skip" name="vertex buffer" length="32" disabled="true" />
+      </struct>
+      <value type="Block" name="cached data" disabled="false" struct="CachedDataBlock" maxelements="1" />
+      <value type="ResourceBlock" name="Resource Data" disabled="false" />
+      <value type="LongInteger" name="Section Data Size" disabled="true" />
+      <value type="LongInteger" name="Resource Data Size" disabled="true" />
+      <struct name="GlobalGeometryBlockResourceBlock">
+        <value type="Enum" name="Type" length="1" disabled="true">
+          <item value="0" name="Tag Block" />
+          <item value="1" name="Tag Data" />
+          <item value="2" name="Vertex Buffer" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="3" />
+        <value type="ShortInteger" name="Primary Locator" disabled="true" />
+        <value type="ShortInteger" name="Secondary Locator" disabled="true" />
+        <value type="LongInteger" name="Resource Data Size" disabled="true" />
+        <value type="LongInteger" name="Resource Data Offset" disabled="true" />
+      </struct>
+      <value type="Block" name="Resources" disabled="true" struct="GlobalGeometryBlockResourceBlock" maxelements="1024" />
+      <value type="Skip" name="Geometry Self Reference" length="4" disabled="false" />
+      <value type="ShortInteger" name="Owner Tag Section Offset" disabled="true" />
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Pad" name="_unnamed1" length="4" />
+      <value type="Pad" name="_unnamed2" length="16" />
+      <value type="Pad" name="_unnamed3" length="4" />
+    </struct>
+  </plugin>
+</xml>

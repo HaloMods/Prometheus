@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="devc" parenttype="????">InputDeviceDefaults</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="InputDeviceDefaults">
+      <value type="Enum" name="device type">
+        <item value="0" name="mouse and keyboard" />
+        <item value="1" name="joysticksgamepadsetc..." />
+        <item value="2" name="full profile definition" />
+      </value>
+      <value type="Flags" name="flags" length="2">
+        <bit index="0" name="unused" />
+      </value>
+      <value type="Data" name="device id" />
+      <value type="Data" name="profile" />
+      <value type="Custom" name="_unnamed" />
+    </struct>
+  </plugin>
+</xml>

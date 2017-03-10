@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="Soul" parenttype="????">UiWidgetCollection</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="UiWidgetCollection">
+      <struct name="UiWidgetReferences">
+        <value type="TagReference" name="ui_widget_definition" extensions="DeLa" />
+      </struct>
+      <value type="Block" name="ui widget definitions" struct="UiWidgetReferences" maxelements="32" />
+    </struct>
+  </plugin>
+</xml>

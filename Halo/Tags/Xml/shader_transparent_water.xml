@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="swat" parenttype="shdr">ShaderTransparentWater</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="ShaderTransparentWater">
+      <value type="Flags" name="flags" length="2">
+        <bit index="0" name="base map alpha modulates reflection" />
+        <bit index="1" name="base map color modulates background" />
+        <bit index="2" name="atmospheric fog" />
+        <bit index="3" name="draw before fog" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Pad" name="_unnamed2" length="32" />
+      <value type="TagReference" name="base map" extensions="bitm">
+        <tooltip>Controls reflection brightness and background tint.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed3" length="16" />
+      <value type="RealFraction" name="view perpendicular brightness" />
+      <value type="RealRGBColor" name="view perpendicular tint color" />
+      <value type="RealFraction" name="view parallel brightness">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="RealRGBColor" name="view parallel tint color" />
+      <value type="Pad" name="_unnamed4" length="16" />
+      <value type="TagReference" name="reflection map" extensions="bitm" />
+      <value type="Pad" name="_unnamed5" length="16" />
+      <value type="Angle" name="ripple animation angle" />
+      <value type="Real" name="ripple animation velocity" />
+      <value type="Real" name="ripple scale">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="TagReference" name="ripple maps" extensions="bitm" />
+      <value type="ShortInteger" name="ripple mipmap levels">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed6" length="2" />
+      <value type="RealFraction" name="ripple mipmap fade factor">
+        <tooltip>Flatness of last mipmap.</tooltip>
+      </value>
+      <value type="Real" name="ripple mipmap detail bias" />
+      <value type="Pad" name="_unnamed7" length="64" />
+      <struct name="ShaderTransparentWaterRipple">
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="RealFraction" name="contribution factor">
+          <tooltip>0 defaults to 1.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed3" length="32" />
+        <value type="Angle" name="animation angle" />
+        <value type="Real" name="animation velocity" />
+        <value type="RealVector2D" name="map offset" />
+        <value type="ShortInteger" name="map repeats">
+          <tooltip>0 defaults to 1.</tooltip>
+        </value>
+        <value type="ShortInteger" name="map index">
+          <tooltip>Index into ripple maps.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed4" length="16" />
+      </struct>
+      <value type="Block" name="ripples" struct="ShaderTransparentWaterRipple" maxelements="4" />
+      <value type="Pad" name="_unnamed8" length="16" />
+    </struct>
+  </plugin>
+</xml>

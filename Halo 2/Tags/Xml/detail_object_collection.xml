@@ -1,0 +1,41 @@
+<xml>
+  <name type="dobc" parenttype="????">DetailObjectCollection</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="DetailObjectCollectionBlock">
+      <value type="Enum" name="Collection Type" length="2" disabled="false">
+        <item value="0" name="Screen-Facing" />
+        <item value="1" name="Viewer-Facing" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Real" name="Global z Offset" disabled="false" unit=" Applied to all detail objects in this collection so they don't float above the ground." />
+      <value type="Pad" name="_unnamed1" length="44" />
+      <value type="TagReference" name="Sprite Plate" disabled="false" extensions="bitm" />
+      <struct name="DetailObjectTypeBlock">
+        <value type="FixedLengthString" name="Name" disabled="false" blockname="true" />
+        <value type="CharInteger" name="Sequence Index" disabled="false" unit="[0,15]" />
+        <value type="Flags" name="type flags" length="1" disabled="false">
+          <bit index="0" name="Unused" />
+          <bit index="1" name="Unused" />
+          <bit index="2" name="Interpolate Color in HSV" />
+          <bit index="3" name="...More Colors" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="RealFraction" name="Color Override Factor" disabled="false">
+          <tooltip>Fraction of detail object color to use instead of the base map color in the environment:[0,1]</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed1" length="8" />
+        <value type="Real" name="Near Fade Distance" disabled="false" unit="world units" />
+        <value type="Real" name="Far Fade Distance" disabled="false" unit="world units" />
+        <value type="Real" name="Size" disabled="false" unit="world units per pixel" />
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="RealRgbColor" name="Minimum Color" disabled="false" unit="[0,1]" />
+        <value type="RealRgbColor" name="Maximum Color" disabled="false" unit="[0,1]" />
+        <value type="ArgbColor" name="ambient color" disabled="false" unit="[0,255]" />
+        <value type="Pad" name="_unnamed3" length="4" />
+      </struct>
+      <value type="Block" name="Types" disabled="false" struct="DetailObjectTypeBlock" maxelements="16" />
+      <value type="Pad" name="_unnamed2" length="48" />
+    </struct>
+  </plugin>
+</xml>

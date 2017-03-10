@@ -1,0 +1,4941 @@
+// -------------------------------------------------
+// Prometheus Tag Library - Halo2
+// Tag definition for 'particle'
+// Generated on 1/1/2008 at 7:09 PM by The Swamp Fox
+// -------------------------------------------------
+namespace Games.Halo2.Tags.Classes {
+  using System.IO;
+  using System.Diagnostics;
+  using System.Collections.Generic;
+  using Interfaces;
+  using Interfaces.Factory;
+  using Games.Halo2.Tags.Fields;
+  
+  public partial class particle : Interfaces.Pool.Tag {
+    private MappingFunctionBlockBlock particleValues = new MappingFunctionBlockBlock();
+    public virtual MappingFunctionBlockBlock ParticleValues {
+      get {
+        return particleValues;
+      }
+    }
+    public override string[] TagReferenceList {
+      get {
+UniqueStringCollection references = new UniqueStringCollection();
+references.AddRange(ParticleValues.TagReferenceList);
+return references.ToArray();
+      }
+    }
+    public override string FileExtension {
+      get {
+return "particle";
+      }
+    }
+    #region Read/Write Methods
+    public override int Load(byte[] metadata) {
+      System.IO.BinaryReader reader = new System.IO.BinaryReader(new System.IO.MemoryStream(metadata));
+Read(reader);
+int position = (int)reader.BaseStream.Position;
+ReadChildData(reader);
+reader.Close();
+      return position;
+    }
+    public override void Read(BinaryReader reader) {
+particleValues.Read(reader);
+    }
+    public override void ReadChildData(BinaryReader reader) {
+particleValues.ReadChildData(reader);
+    }
+    public override byte[] Save() {
+BinaryWriter writer = new BinaryWriter(new MemoryStream());
+Write(writer);
+WriteChildData(writer);
+return (writer.BaseStream as MemoryStream).ToArray();
+    }
+    public override void Write(BinaryWriter writer) {
+particleValues.Write(writer);
+    }
+    public override void WriteChildData(BinaryWriter writer) {
+particleValues.WriteChildData(writer);
+    }
+    #endregion
+    public class MappingFunctionBlockBlock : IBlock {
+      private Flags _flags;
+      private Enum _particleBillboardStyle;
+      private Pad _unnamed0;
+      private ShortInteger _firstSequenceIndex = new ShortInteger();
+      private ShortInteger _sequenceCount = new ShortInteger();
+      private TagReference _shaderTemplate = new TagReference();
+      private Block _shaderParameters = new Block();
+      private Enum _inputVariable;
+      private Enum _rangeVariable;
+      private Enum _outputModifier;
+      private Enum _outputModifierInput;
+      private Block _data = new Block();
+      private Enum _inputVariable2;
+      private Enum _rangeVariable2;
+      private Enum _outputModifier2;
+      private Enum _outputModifierInput2;
+      private Block _data2 = new Block();
+      private Enum _inputVariable3;
+      private Enum _rangeVariable3;
+      private Enum _outputModifier3;
+      private Enum _outputModifierInput3;
+      private Block _data3 = new Block();
+      private Enum _inputVariable4;
+      private Enum _rangeVariable4;
+      private Enum _outputModifier4;
+      private Enum _outputModifierInput4;
+      private Block _data4 = new Block();
+      private Enum _inputVariable5;
+      private Enum _rangeVariable5;
+      private Enum _outputModifier5;
+      private Enum _outputModifierInput5;
+      private Block _data5 = new Block();
+      private TagReference _collisionEffect = new TagReference();
+      private TagReference _deathEffect = new TagReference();
+      private Block _locations = new Block();
+      private Block _attachedParticleSystems = new Block();
+      private Block _unnamed1 = new Block();
+      private Pad _unnamed2;
+      private Pad _unnamed3;
+      private Pad _unnamed4;
+      public BlockCollection<GlobalShaderParameterBlockBlock> _shaderParametersList = new BlockCollection<GlobalShaderParameterBlockBlock>();
+      public BlockCollection<ByteBlockBlock> _dataList = new BlockCollection<ByteBlockBlock>();
+      public BlockCollection<ByteBlockBlock> _data2List = new BlockCollection<ByteBlockBlock>();
+      public BlockCollection<ByteBlockBlock> _data3List = new BlockCollection<ByteBlockBlock>();
+      public BlockCollection<ByteBlockBlock> _data4List = new BlockCollection<ByteBlockBlock>();
+      public BlockCollection<ByteBlockBlock> _data5List = new BlockCollection<ByteBlockBlock>();
+      public BlockCollection<EffectLocationsBlockBlock> _locationsList = new BlockCollection<EffectLocationsBlockBlock>();
+      public BlockCollection<ParticleSystemDefinitionBlockNewBlock> _attachedParticleSystemsList = new BlockCollection<ParticleSystemDefinitionBlockNewBlock>();
+      public BlockCollection<ShaderPostprocessDefinitionNewBlockBlock> _unnamed1List = new BlockCollection<ShaderPostprocessDefinitionNewBlockBlock>();
+public event System.EventHandler BlockNameChanged;
+      public MappingFunctionBlockBlock() {
+        this._flags = new Flags(4);
+        this._particleBillboardStyle = new Enum(2);
+        this._unnamed0 = new Pad(2);
+        this._inputVariable = new Enum(2);
+        this._rangeVariable = new Enum(2);
+        this._outputModifier = new Enum(2);
+        this._outputModifierInput = new Enum(2);
+        this._inputVariable2 = new Enum(2);
+        this._rangeVariable2 = new Enum(2);
+        this._outputModifier2 = new Enum(2);
+        this._outputModifierInput2 = new Enum(2);
+        this._inputVariable3 = new Enum(2);
+        this._rangeVariable3 = new Enum(2);
+        this._outputModifier3 = new Enum(2);
+        this._outputModifierInput3 = new Enum(2);
+        this._inputVariable4 = new Enum(2);
+        this._rangeVariable4 = new Enum(2);
+        this._outputModifier4 = new Enum(2);
+        this._outputModifierInput4 = new Enum(2);
+        this._inputVariable5 = new Enum(2);
+        this._rangeVariable5 = new Enum(2);
+        this._outputModifier5 = new Enum(2);
+        this._outputModifierInput5 = new Enum(2);
+        this._unnamed2 = new Pad(8);
+        this._unnamed3 = new Pad(16);
+        this._unnamed4 = new Pad(16);
+      }
+      public BlockCollection<GlobalShaderParameterBlockBlock> ShaderParameters {
+        get {
+          return this._shaderParametersList;
+        }
+      }
+      public BlockCollection<ByteBlockBlock> Data {
+        get {
+          return this._dataList;
+        }
+      }
+      public BlockCollection<ByteBlockBlock> Data2 {
+        get {
+          return this._data2List;
+        }
+      }
+      public BlockCollection<ByteBlockBlock> Data3 {
+        get {
+          return this._data3List;
+        }
+      }
+      public BlockCollection<ByteBlockBlock> Data4 {
+        get {
+          return this._data4List;
+        }
+      }
+      public BlockCollection<ByteBlockBlock> Data5 {
+        get {
+          return this._data5List;
+        }
+      }
+      public BlockCollection<EffectLocationsBlockBlock> Locations {
+        get {
+          return this._locationsList;
+        }
+      }
+      public BlockCollection<ParticleSystemDefinitionBlockNewBlock> AttachedParticleSystems {
+        get {
+          return this._attachedParticleSystemsList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessDefinitionNewBlockBlock> Unnamed1 {
+        get {
+          return this._unnamed1List;
+        }
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+references.Add(_shaderTemplate.Value);
+references.Add(_collisionEffect.Value);
+references.Add(_deathEffect.Value);
+for (int x=0; x<ShaderParameters.BlockCount; x++)
+{
+  IBlock block = ShaderParameters.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Data.BlockCount; x++)
+{
+  IBlock block = Data.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Data2.BlockCount; x++)
+{
+  IBlock block = Data2.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Data3.BlockCount; x++)
+{
+  IBlock block = Data3.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Data4.BlockCount; x++)
+{
+  IBlock block = Data4.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Data5.BlockCount; x++)
+{
+  IBlock block = Data5.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Locations.BlockCount; x++)
+{
+  IBlock block = Locations.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<AttachedParticleSystems.BlockCount; x++)
+{
+  IBlock block = AttachedParticleSystems.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Unnamed1.BlockCount; x++)
+{
+  IBlock block = Unnamed1.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public Flags Flags {
+        get {
+          return this._flags;
+        }
+        set {
+          this._flags = value;
+        }
+      }
+      public Enum ParticleBillboardStyle {
+        get {
+          return this._particleBillboardStyle;
+        }
+        set {
+          this._particleBillboardStyle = value;
+        }
+      }
+      public ShortInteger FirstSequenceIndex {
+        get {
+          return this._firstSequenceIndex;
+        }
+        set {
+          this._firstSequenceIndex = value;
+        }
+      }
+      public ShortInteger SequenceCount {
+        get {
+          return this._sequenceCount;
+        }
+        set {
+          this._sequenceCount = value;
+        }
+      }
+      public TagReference ShaderTemplate {
+        get {
+          return this._shaderTemplate;
+        }
+        set {
+          this._shaderTemplate = value;
+        }
+      }
+      public Enum InputVariable {
+        get {
+          return this._inputVariable;
+        }
+        set {
+          this._inputVariable = value;
+        }
+      }
+      public Enum RangeVariable {
+        get {
+          return this._rangeVariable;
+        }
+        set {
+          this._rangeVariable = value;
+        }
+      }
+      public Enum OutputModifier {
+        get {
+          return this._outputModifier;
+        }
+        set {
+          this._outputModifier = value;
+        }
+      }
+      public Enum OutputModifierInput {
+        get {
+          return this._outputModifierInput;
+        }
+        set {
+          this._outputModifierInput = value;
+        }
+      }
+      public Enum InputVariable2 {
+        get {
+          return this._inputVariable2;
+        }
+        set {
+          this._inputVariable2 = value;
+        }
+      }
+      public Enum RangeVariable2 {
+        get {
+          return this._rangeVariable2;
+        }
+        set {
+          this._rangeVariable2 = value;
+        }
+      }
+      public Enum OutputModifier2 {
+        get {
+          return this._outputModifier2;
+        }
+        set {
+          this._outputModifier2 = value;
+        }
+      }
+      public Enum OutputModifierInput2 {
+        get {
+          return this._outputModifierInput2;
+        }
+        set {
+          this._outputModifierInput2 = value;
+        }
+      }
+      public Enum InputVariable3 {
+        get {
+          return this._inputVariable3;
+        }
+        set {
+          this._inputVariable3 = value;
+        }
+      }
+      public Enum RangeVariable3 {
+        get {
+          return this._rangeVariable3;
+        }
+        set {
+          this._rangeVariable3 = value;
+        }
+      }
+      public Enum OutputModifier3 {
+        get {
+          return this._outputModifier3;
+        }
+        set {
+          this._outputModifier3 = value;
+        }
+      }
+      public Enum OutputModifierInput3 {
+        get {
+          return this._outputModifierInput3;
+        }
+        set {
+          this._outputModifierInput3 = value;
+        }
+      }
+      public Enum InputVariable4 {
+        get {
+          return this._inputVariable4;
+        }
+        set {
+          this._inputVariable4 = value;
+        }
+      }
+      public Enum RangeVariable4 {
+        get {
+          return this._rangeVariable4;
+        }
+        set {
+          this._rangeVariable4 = value;
+        }
+      }
+      public Enum OutputModifier4 {
+        get {
+          return this._outputModifier4;
+        }
+        set {
+          this._outputModifier4 = value;
+        }
+      }
+      public Enum OutputModifierInput4 {
+        get {
+          return this._outputModifierInput4;
+        }
+        set {
+          this._outputModifierInput4 = value;
+        }
+      }
+      public Enum InputVariable5 {
+        get {
+          return this._inputVariable5;
+        }
+        set {
+          this._inputVariable5 = value;
+        }
+      }
+      public Enum RangeVariable5 {
+        get {
+          return this._rangeVariable5;
+        }
+        set {
+          this._rangeVariable5 = value;
+        }
+      }
+      public Enum OutputModifier5 {
+        get {
+          return this._outputModifier5;
+        }
+        set {
+          this._outputModifier5 = value;
+        }
+      }
+      public Enum OutputModifierInput5 {
+        get {
+          return this._outputModifierInput5;
+        }
+        set {
+          this._outputModifierInput5 = value;
+        }
+      }
+      public TagReference CollisionEffect {
+        get {
+          return this._collisionEffect;
+        }
+        set {
+          this._collisionEffect = value;
+        }
+      }
+      public TagReference DeathEffect {
+        get {
+          return this._deathEffect;
+        }
+        set {
+          this._deathEffect = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _flags.Read(reader);
+        _particleBillboardStyle.Read(reader);
+        _unnamed0.Read(reader);
+        _firstSequenceIndex.Read(reader);
+        _sequenceCount.Read(reader);
+        _shaderTemplate.Read(reader);
+        _shaderParameters.Read(reader);
+        _inputVariable.Read(reader);
+        _rangeVariable.Read(reader);
+        _outputModifier.Read(reader);
+        _outputModifierInput.Read(reader);
+        _data.Read(reader);
+        _inputVariable2.Read(reader);
+        _rangeVariable2.Read(reader);
+        _outputModifier2.Read(reader);
+        _outputModifierInput2.Read(reader);
+        _data2.Read(reader);
+        _inputVariable3.Read(reader);
+        _rangeVariable3.Read(reader);
+        _outputModifier3.Read(reader);
+        _outputModifierInput3.Read(reader);
+        _data3.Read(reader);
+        _inputVariable4.Read(reader);
+        _rangeVariable4.Read(reader);
+        _outputModifier4.Read(reader);
+        _outputModifierInput4.Read(reader);
+        _data4.Read(reader);
+        _inputVariable5.Read(reader);
+        _rangeVariable5.Read(reader);
+        _outputModifier5.Read(reader);
+        _outputModifierInput5.Read(reader);
+        _data5.Read(reader);
+        _collisionEffect.Read(reader);
+        _deathEffect.Read(reader);
+        _locations.Read(reader);
+        _attachedParticleSystems.Read(reader);
+        _unnamed1.Read(reader);
+        _unnamed2.Read(reader);
+        _unnamed3.Read(reader);
+        _unnamed4.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+        int x = 0;
+        _shaderTemplate.ReadString(reader);
+        for (x = 0; (x < _shaderParameters.Count); x = (x + 1)) {
+          ShaderParameters.Add(new GlobalShaderParameterBlockBlock());
+          ShaderParameters[x].Read(reader);
+        }
+        for (x = 0; (x < _shaderParameters.Count); x = (x + 1)) {
+          ShaderParameters[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data.Add(new ByteBlockBlock());
+          Data[x].Read(reader);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _data2.Count); x = (x + 1)) {
+          Data2.Add(new ByteBlockBlock());
+          Data2[x].Read(reader);
+        }
+        for (x = 0; (x < _data2.Count); x = (x + 1)) {
+          Data2[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _data3.Count); x = (x + 1)) {
+          Data3.Add(new ByteBlockBlock());
+          Data3[x].Read(reader);
+        }
+        for (x = 0; (x < _data3.Count); x = (x + 1)) {
+          Data3[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _data4.Count); x = (x + 1)) {
+          Data4.Add(new ByteBlockBlock());
+          Data4[x].Read(reader);
+        }
+        for (x = 0; (x < _data4.Count); x = (x + 1)) {
+          Data4[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _data5.Count); x = (x + 1)) {
+          Data5.Add(new ByteBlockBlock());
+          Data5[x].Read(reader);
+        }
+        for (x = 0; (x < _data5.Count); x = (x + 1)) {
+          Data5[x].ReadChildData(reader);
+        }
+        _collisionEffect.ReadString(reader);
+        _deathEffect.ReadString(reader);
+        for (x = 0; (x < _locations.Count); x = (x + 1)) {
+          Locations.Add(new EffectLocationsBlockBlock());
+          Locations[x].Read(reader);
+        }
+        for (x = 0; (x < _locations.Count); x = (x + 1)) {
+          Locations[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _attachedParticleSystems.Count); x = (x + 1)) {
+          AttachedParticleSystems.Add(new ParticleSystemDefinitionBlockNewBlock());
+          AttachedParticleSystems[x].Read(reader);
+        }
+        for (x = 0; (x < _attachedParticleSystems.Count); x = (x + 1)) {
+          AttachedParticleSystems[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _unnamed1.Count); x = (x + 1)) {
+          Unnamed1.Add(new ShaderPostprocessDefinitionNewBlockBlock());
+          Unnamed1[x].Read(reader);
+        }
+        for (x = 0; (x < _unnamed1.Count); x = (x + 1)) {
+          Unnamed1[x].ReadChildData(reader);
+        }
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _flags.Write(bw);
+        _particleBillboardStyle.Write(bw);
+        _unnamed0.Write(bw);
+        _firstSequenceIndex.Write(bw);
+        _sequenceCount.Write(bw);
+        _shaderTemplate.Write(bw);
+_shaderParameters.Count = ShaderParameters.Count;
+        _shaderParameters.Write(bw);
+        _inputVariable.Write(bw);
+        _rangeVariable.Write(bw);
+        _outputModifier.Write(bw);
+        _outputModifierInput.Write(bw);
+_data.Count = Data.Count;
+        _data.Write(bw);
+        _inputVariable2.Write(bw);
+        _rangeVariable2.Write(bw);
+        _outputModifier2.Write(bw);
+        _outputModifierInput2.Write(bw);
+_data2.Count = Data2.Count;
+        _data2.Write(bw);
+        _inputVariable3.Write(bw);
+        _rangeVariable3.Write(bw);
+        _outputModifier3.Write(bw);
+        _outputModifierInput3.Write(bw);
+_data3.Count = Data3.Count;
+        _data3.Write(bw);
+        _inputVariable4.Write(bw);
+        _rangeVariable4.Write(bw);
+        _outputModifier4.Write(bw);
+        _outputModifierInput4.Write(bw);
+_data4.Count = Data4.Count;
+        _data4.Write(bw);
+        _inputVariable5.Write(bw);
+        _rangeVariable5.Write(bw);
+        _outputModifier5.Write(bw);
+        _outputModifierInput5.Write(bw);
+_data5.Count = Data5.Count;
+        _data5.Write(bw);
+        _collisionEffect.Write(bw);
+        _deathEffect.Write(bw);
+_locations.Count = Locations.Count;
+        _locations.Write(bw);
+_attachedParticleSystems.Count = AttachedParticleSystems.Count;
+        _attachedParticleSystems.Write(bw);
+_unnamed1.Count = Unnamed1.Count;
+        _unnamed1.Write(bw);
+        _unnamed2.Write(bw);
+        _unnamed3.Write(bw);
+        _unnamed4.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+        int x = 0;
+        _shaderTemplate.WriteString(writer);
+        for (x = 0; (x < _shaderParameters.Count); x = (x + 1)) {
+          ShaderParameters[x].Write(writer);
+        }
+        for (x = 0; (x < _shaderParameters.Count); x = (x + 1)) {
+          ShaderParameters[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].Write(writer);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _data2.Count); x = (x + 1)) {
+          Data2[x].Write(writer);
+        }
+        for (x = 0; (x < _data2.Count); x = (x + 1)) {
+          Data2[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _data3.Count); x = (x + 1)) {
+          Data3[x].Write(writer);
+        }
+        for (x = 0; (x < _data3.Count); x = (x + 1)) {
+          Data3[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _data4.Count); x = (x + 1)) {
+          Data4[x].Write(writer);
+        }
+        for (x = 0; (x < _data4.Count); x = (x + 1)) {
+          Data4[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _data5.Count); x = (x + 1)) {
+          Data5[x].Write(writer);
+        }
+        for (x = 0; (x < _data5.Count); x = (x + 1)) {
+          Data5[x].WriteChildData(writer);
+        }
+        _collisionEffect.WriteString(writer);
+        _deathEffect.WriteString(writer);
+        for (x = 0; (x < _locations.Count); x = (x + 1)) {
+          Locations[x].Write(writer);
+        }
+        for (x = 0; (x < _locations.Count); x = (x + 1)) {
+          Locations[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _attachedParticleSystems.Count); x = (x + 1)) {
+          AttachedParticleSystems[x].Write(writer);
+        }
+        for (x = 0; (x < _attachedParticleSystems.Count); x = (x + 1)) {
+          AttachedParticleSystems[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _unnamed1.Count); x = (x + 1)) {
+          Unnamed1[x].Write(writer);
+        }
+        for (x = 0; (x < _unnamed1.Count); x = (x + 1)) {
+          Unnamed1[x].WriteChildData(writer);
+        }
+      }
+    }
+    public class GlobalShaderParameterBlockBlock : IBlock {
+      private StringId _name = new StringId();
+      private Enum _type;
+      private Pad _unnamed0;
+      private TagReference _bitmap = new TagReference();
+      private Real _constValue = new Real();
+      private RealRGBColor _constColor = new RealRGBColor();
+      private Block _animationProperties = new Block();
+      public BlockCollection<ShaderAnimationPropertyBlockBlock> _animationPropertiesList = new BlockCollection<ShaderAnimationPropertyBlockBlock>();
+public event System.EventHandler BlockNameChanged;
+      public GlobalShaderParameterBlockBlock() {
+if (this._name is System.ComponentModel.INotifyPropertyChanged)
+  (this._name as System.ComponentModel.INotifyPropertyChanged).PropertyChanged +=
+  (System.ComponentModel.PropertyChangedEventHandler)delegate
+  { if (BlockNameChanged != null) BlockNameChanged(this, new System.EventArgs()); };
+        this._type = new Enum(2);
+        this._unnamed0 = new Pad(2);
+      }
+      public BlockCollection<ShaderAnimationPropertyBlockBlock> AnimationProperties {
+        get {
+          return this._animationPropertiesList;
+        }
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+references.Add(_bitmap.Value);
+for (int x=0; x<AnimationProperties.BlockCount; x++)
+{
+  IBlock block = AnimationProperties.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return _name.ToString();
+        }
+      }
+      public StringId Name {
+        get {
+          return this._name;
+        }
+        set {
+          this._name = value;
+        }
+      }
+      public Enum Type {
+        get {
+          return this._type;
+        }
+        set {
+          this._type = value;
+        }
+      }
+      public TagReference Bitmap {
+        get {
+          return this._bitmap;
+        }
+        set {
+          this._bitmap = value;
+        }
+      }
+      public Real ConstValue {
+        get {
+          return this._constValue;
+        }
+        set {
+          this._constValue = value;
+        }
+      }
+      public RealRGBColor ConstColor {
+        get {
+          return this._constColor;
+        }
+        set {
+          this._constColor = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _name.Read(reader);
+        _type.Read(reader);
+        _unnamed0.Read(reader);
+        _bitmap.Read(reader);
+        _constValue.Read(reader);
+        _constColor.Read(reader);
+        _animationProperties.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+        int x = 0;
+        _name.ReadString(reader);
+        _bitmap.ReadString(reader);
+        for (x = 0; (x < _animationProperties.Count); x = (x + 1)) {
+          AnimationProperties.Add(new ShaderAnimationPropertyBlockBlock());
+          AnimationProperties[x].Read(reader);
+        }
+        for (x = 0; (x < _animationProperties.Count); x = (x + 1)) {
+          AnimationProperties[x].ReadChildData(reader);
+        }
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _name.Write(bw);
+        _type.Write(bw);
+        _unnamed0.Write(bw);
+        _bitmap.Write(bw);
+        _constValue.Write(bw);
+        _constColor.Write(bw);
+_animationProperties.Count = AnimationProperties.Count;
+        _animationProperties.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+        int x = 0;
+        _name.WriteString(writer);
+        _bitmap.WriteString(writer);
+        for (x = 0; (x < _animationProperties.Count); x = (x + 1)) {
+          AnimationProperties[x].Write(writer);
+        }
+        for (x = 0; (x < _animationProperties.Count); x = (x + 1)) {
+          AnimationProperties[x].WriteChildData(writer);
+        }
+      }
+    }
+    public class ShaderAnimationPropertyBlockBlock : IBlock {
+      private Enum _type;
+      private Pad _unnamed0;
+      private StringId _inputName = new StringId();
+      private StringId _rangeName = new StringId();
+      private Real _timePeriod = new Real();
+      private Block _data = new Block();
+      public BlockCollection<ByteBlockBlock> _dataList = new BlockCollection<ByteBlockBlock>();
+public event System.EventHandler BlockNameChanged;
+      public ShaderAnimationPropertyBlockBlock() {
+if (this._type is System.ComponentModel.INotifyPropertyChanged)
+  (this._type as System.ComponentModel.INotifyPropertyChanged).PropertyChanged +=
+  (System.ComponentModel.PropertyChangedEventHandler)delegate
+  { if (BlockNameChanged != null) BlockNameChanged(this, new System.EventArgs()); };
+        this._type = new Enum(2);
+        this._unnamed0 = new Pad(2);
+      }
+      public BlockCollection<ByteBlockBlock> Data {
+        get {
+          return this._dataList;
+        }
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+for (int x=0; x<Data.BlockCount; x++)
+{
+  IBlock block = Data.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return _type.ToString();
+        }
+      }
+      public Enum Type {
+        get {
+          return this._type;
+        }
+        set {
+          this._type = value;
+        }
+      }
+      public StringId InputName {
+        get {
+          return this._inputName;
+        }
+        set {
+          this._inputName = value;
+        }
+      }
+      public StringId RangeName {
+        get {
+          return this._rangeName;
+        }
+        set {
+          this._rangeName = value;
+        }
+      }
+      public Real TimePeriod {
+        get {
+          return this._timePeriod;
+        }
+        set {
+          this._timePeriod = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _type.Read(reader);
+        _unnamed0.Read(reader);
+        _inputName.Read(reader);
+        _rangeName.Read(reader);
+        _timePeriod.Read(reader);
+        _data.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+        int x = 0;
+        _inputName.ReadString(reader);
+        _rangeName.ReadString(reader);
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data.Add(new ByteBlockBlock());
+          Data[x].Read(reader);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].ReadChildData(reader);
+        }
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _type.Write(bw);
+        _unnamed0.Write(bw);
+        _inputName.Write(bw);
+        _rangeName.Write(bw);
+        _timePeriod.Write(bw);
+_data.Count = Data.Count;
+        _data.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+        int x = 0;
+        _inputName.WriteString(writer);
+        _rangeName.WriteString(writer);
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].Write(writer);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].WriteChildData(writer);
+        }
+      }
+    }
+    public class ByteBlockBlock : IBlock {
+      private CharInteger _value = new CharInteger();
+public event System.EventHandler BlockNameChanged;
+      public ByteBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger Value {
+        get {
+          return this._value;
+        }
+        set {
+          this._value = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _value.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _value.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class EffectLocationsBlockBlock : IBlock {
+      private StringId _markerName = new StringId();
+public event System.EventHandler BlockNameChanged;
+      public EffectLocationsBlockBlock() {
+if (this._markerName is System.ComponentModel.INotifyPropertyChanged)
+  (this._markerName as System.ComponentModel.INotifyPropertyChanged).PropertyChanged +=
+  (System.ComponentModel.PropertyChangedEventHandler)delegate
+  { if (BlockNameChanged != null) BlockNameChanged(this, new System.EventArgs()); };
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return _markerName.ToString();
+        }
+      }
+      public StringId MarkerName {
+        get {
+          return this._markerName;
+        }
+        set {
+          this._markerName = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _markerName.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+        _markerName.ReadString(reader);
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _markerName.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+        _markerName.WriteString(writer);
+      }
+    }
+    public class ParticleSystemDefinitionBlockNewBlock : IBlock {
+      private TagReference _particle = new TagReference();
+      private LongBlockIndex _location = new LongBlockIndex();
+      private Enum _coordinateSystem;
+      private Enum _environment;
+      private Enum _disposition;
+      private Enum _cameraMode;
+      private ShortInteger _sortBias = new ShortInteger();
+      private Flags _flags;
+      private Real _lODInDistance = new Real();
+      private Real _lODFeatherInDelta = new Real();
+      private Skip _unnamed0;
+      private Real _lODOutDistance = new Real();
+      private Real _lODFeatherOutDelta = new Real();
+      private Skip _unnamed1;
+      private Block _emitters = new Block();
+      public BlockCollection<ParticleSystemEmitterDefinitionBlockBlock> _emittersList = new BlockCollection<ParticleSystemEmitterDefinitionBlockBlock>();
+public event System.EventHandler BlockNameChanged;
+      public ParticleSystemDefinitionBlockNewBlock() {
+        this._coordinateSystem = new Enum(2);
+        this._environment = new Enum(2);
+        this._disposition = new Enum(2);
+        this._cameraMode = new Enum(2);
+        this._flags = new Flags(2);
+        this._unnamed0 = new Skip(4);
+        this._unnamed1 = new Skip(4);
+      }
+      public BlockCollection<ParticleSystemEmitterDefinitionBlockBlock> Emitters {
+        get {
+          return this._emittersList;
+        }
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+references.Add(_particle.Value);
+for (int x=0; x<Emitters.BlockCount; x++)
+{
+  IBlock block = Emitters.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public TagReference Particle {
+        get {
+          return this._particle;
+        }
+        set {
+          this._particle = value;
+        }
+      }
+      public LongBlockIndex Location {
+        get {
+          return this._location;
+        }
+        set {
+          this._location = value;
+        }
+      }
+      public Enum CoordinateSystem {
+        get {
+          return this._coordinateSystem;
+        }
+        set {
+          this._coordinateSystem = value;
+        }
+      }
+      public Enum Environment {
+        get {
+          return this._environment;
+        }
+        set {
+          this._environment = value;
+        }
+      }
+      public Enum Disposition {
+        get {
+          return this._disposition;
+        }
+        set {
+          this._disposition = value;
+        }
+      }
+      public Enum CameraMode {
+        get {
+          return this._cameraMode;
+        }
+        set {
+          this._cameraMode = value;
+        }
+      }
+      public ShortInteger SortBias {
+        get {
+          return this._sortBias;
+        }
+        set {
+          this._sortBias = value;
+        }
+      }
+      public Flags Flags {
+        get {
+          return this._flags;
+        }
+        set {
+          this._flags = value;
+        }
+      }
+      public Real LODInDistance {
+        get {
+          return this._lODInDistance;
+        }
+        set {
+          this._lODInDistance = value;
+        }
+      }
+      public Real LODFeatherInDelta {
+        get {
+          return this._lODFeatherInDelta;
+        }
+        set {
+          this._lODFeatherInDelta = value;
+        }
+      }
+      public Real LODOutDistance {
+        get {
+          return this._lODOutDistance;
+        }
+        set {
+          this._lODOutDistance = value;
+        }
+      }
+      public Real LODFeatherOutDelta {
+        get {
+          return this._lODFeatherOutDelta;
+        }
+        set {
+          this._lODFeatherOutDelta = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _particle.Read(reader);
+        _location.Read(reader);
+        _coordinateSystem.Read(reader);
+        _environment.Read(reader);
+        _disposition.Read(reader);
+        _cameraMode.Read(reader);
+        _sortBias.Read(reader);
+        _flags.Read(reader);
+        _lODInDistance.Read(reader);
+        _lODFeatherInDelta.Read(reader);
+        _unnamed0.Read(reader);
+        _lODOutDistance.Read(reader);
+        _lODFeatherOutDelta.Read(reader);
+        _unnamed1.Read(reader);
+        _emitters.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+        int x = 0;
+        _particle.ReadString(reader);
+        for (x = 0; (x < _emitters.Count); x = (x + 1)) {
+          Emitters.Add(new ParticleSystemEmitterDefinitionBlockBlock());
+          Emitters[x].Read(reader);
+        }
+        for (x = 0; (x < _emitters.Count); x = (x + 1)) {
+          Emitters[x].ReadChildData(reader);
+        }
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _particle.Write(bw);
+        _location.Write(bw);
+        _coordinateSystem.Write(bw);
+        _environment.Write(bw);
+        _disposition.Write(bw);
+        _cameraMode.Write(bw);
+        _sortBias.Write(bw);
+        _flags.Write(bw);
+        _lODInDistance.Write(bw);
+        _lODFeatherInDelta.Write(bw);
+        _unnamed0.Write(bw);
+        _lODOutDistance.Write(bw);
+        _lODFeatherOutDelta.Write(bw);
+        _unnamed1.Write(bw);
+_emitters.Count = Emitters.Count;
+        _emitters.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+        int x = 0;
+        _particle.WriteString(writer);
+        for (x = 0; (x < _emitters.Count); x = (x + 1)) {
+          Emitters[x].Write(writer);
+        }
+        for (x = 0; (x < _emitters.Count); x = (x + 1)) {
+          Emitters[x].WriteChildData(writer);
+        }
+      }
+    }
+    public class ParticleSystemEmitterDefinitionBlockBlock : IBlock {
+      private TagReference _particlePhysics = new TagReference();
+      private Enum _inputVariable;
+      private Enum _rangeVariable;
+      private Enum _outputModifier;
+      private Enum _outputModifierInput;
+      private Block _data = new Block();
+      private Enum _inputVariable2;
+      private Enum _rangeVariable2;
+      private Enum _outputModifier2;
+      private Enum _outputModifierInput2;
+      private Block _data2 = new Block();
+      private Enum _inputVariable3;
+      private Enum _rangeVariable3;
+      private Enum _outputModifier3;
+      private Enum _outputModifierInput3;
+      private Block _data3 = new Block();
+      private Enum _inputVariable4;
+      private Enum _rangeVariable4;
+      private Enum _outputModifier4;
+      private Enum _outputModifierInput4;
+      private Block _data4 = new Block();
+      private Enum _inputVariable5;
+      private Enum _rangeVariable5;
+      private Enum _outputModifier5;
+      private Enum _outputModifierInput5;
+      private Block _data5 = new Block();
+      private Enum _inputVariable6;
+      private Enum _rangeVariable6;
+      private Enum _outputModifier6;
+      private Enum _outputModifierInput6;
+      private Block _data6 = new Block();
+      private Enum _inputVariable7;
+      private Enum _rangeVariable7;
+      private Enum _outputModifier7;
+      private Enum _outputModifierInput7;
+      private Block _data7 = new Block();
+      private Enum _emissionShape;
+      private Enum _inputVariable8;
+      private Enum _rangeVariable8;
+      private Enum _outputModifier8;
+      private Enum _outputModifierInput8;
+      private Block _data8 = new Block();
+      private Enum _inputVariable9;
+      private Enum _rangeVariable9;
+      private Enum _outputModifier9;
+      private Enum _outputModifierInput9;
+      private Block _data9 = new Block();
+      private RealPoint3D _translationalOffset = new RealPoint3D();
+      private RealEulerAngles2D _relativeDirection = new RealEulerAngles2D();
+      private Pad _unnamed0;
+      public BlockCollection<ByteBlockBlock> _dataList = new BlockCollection<ByteBlockBlock>();
+      public BlockCollection<ByteBlockBlock> _data2List = new BlockCollection<ByteBlockBlock>();
+      public BlockCollection<ByteBlockBlock> _data3List = new BlockCollection<ByteBlockBlock>();
+      public BlockCollection<ByteBlockBlock> _data4List = new BlockCollection<ByteBlockBlock>();
+      public BlockCollection<ByteBlockBlock> _data5List = new BlockCollection<ByteBlockBlock>();
+      public BlockCollection<ByteBlockBlock> _data6List = new BlockCollection<ByteBlockBlock>();
+      public BlockCollection<ByteBlockBlock> _data7List = new BlockCollection<ByteBlockBlock>();
+      public BlockCollection<ByteBlockBlock> _data8List = new BlockCollection<ByteBlockBlock>();
+      public BlockCollection<ByteBlockBlock> _data9List = new BlockCollection<ByteBlockBlock>();
+public event System.EventHandler BlockNameChanged;
+      public ParticleSystemEmitterDefinitionBlockBlock() {
+        this._inputVariable = new Enum(2);
+        this._rangeVariable = new Enum(2);
+        this._outputModifier = new Enum(2);
+        this._outputModifierInput = new Enum(2);
+        this._inputVariable2 = new Enum(2);
+        this._rangeVariable2 = new Enum(2);
+        this._outputModifier2 = new Enum(2);
+        this._outputModifierInput2 = new Enum(2);
+        this._inputVariable3 = new Enum(2);
+        this._rangeVariable3 = new Enum(2);
+        this._outputModifier3 = new Enum(2);
+        this._outputModifierInput3 = new Enum(2);
+        this._inputVariable4 = new Enum(2);
+        this._rangeVariable4 = new Enum(2);
+        this._outputModifier4 = new Enum(2);
+        this._outputModifierInput4 = new Enum(2);
+        this._inputVariable5 = new Enum(2);
+        this._rangeVariable5 = new Enum(2);
+        this._outputModifier5 = new Enum(2);
+        this._outputModifierInput5 = new Enum(2);
+        this._inputVariable6 = new Enum(2);
+        this._rangeVariable6 = new Enum(2);
+        this._outputModifier6 = new Enum(2);
+        this._outputModifierInput6 = new Enum(2);
+        this._inputVariable7 = new Enum(2);
+        this._rangeVariable7 = new Enum(2);
+        this._outputModifier7 = new Enum(2);
+        this._outputModifierInput7 = new Enum(2);
+        this._emissionShape = new Enum(4);
+        this._inputVariable8 = new Enum(2);
+        this._rangeVariable8 = new Enum(2);
+        this._outputModifier8 = new Enum(2);
+        this._outputModifierInput8 = new Enum(2);
+        this._inputVariable9 = new Enum(2);
+        this._rangeVariable9 = new Enum(2);
+        this._outputModifier9 = new Enum(2);
+        this._outputModifierInput9 = new Enum(2);
+        this._unnamed0 = new Pad(8);
+      }
+      public BlockCollection<ByteBlockBlock> Data {
+        get {
+          return this._dataList;
+        }
+      }
+      public BlockCollection<ByteBlockBlock> Data2 {
+        get {
+          return this._data2List;
+        }
+      }
+      public BlockCollection<ByteBlockBlock> Data3 {
+        get {
+          return this._data3List;
+        }
+      }
+      public BlockCollection<ByteBlockBlock> Data4 {
+        get {
+          return this._data4List;
+        }
+      }
+      public BlockCollection<ByteBlockBlock> Data5 {
+        get {
+          return this._data5List;
+        }
+      }
+      public BlockCollection<ByteBlockBlock> Data6 {
+        get {
+          return this._data6List;
+        }
+      }
+      public BlockCollection<ByteBlockBlock> Data7 {
+        get {
+          return this._data7List;
+        }
+      }
+      public BlockCollection<ByteBlockBlock> Data8 {
+        get {
+          return this._data8List;
+        }
+      }
+      public BlockCollection<ByteBlockBlock> Data9 {
+        get {
+          return this._data9List;
+        }
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+references.Add(_particlePhysics.Value);
+for (int x=0; x<Data.BlockCount; x++)
+{
+  IBlock block = Data.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Data2.BlockCount; x++)
+{
+  IBlock block = Data2.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Data3.BlockCount; x++)
+{
+  IBlock block = Data3.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Data4.BlockCount; x++)
+{
+  IBlock block = Data4.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Data5.BlockCount; x++)
+{
+  IBlock block = Data5.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Data6.BlockCount; x++)
+{
+  IBlock block = Data6.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Data7.BlockCount; x++)
+{
+  IBlock block = Data7.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Data8.BlockCount; x++)
+{
+  IBlock block = Data8.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Data9.BlockCount; x++)
+{
+  IBlock block = Data9.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public TagReference ParticlePhysics {
+        get {
+          return this._particlePhysics;
+        }
+        set {
+          this._particlePhysics = value;
+        }
+      }
+      public Enum InputVariable {
+        get {
+          return this._inputVariable;
+        }
+        set {
+          this._inputVariable = value;
+        }
+      }
+      public Enum RangeVariable {
+        get {
+          return this._rangeVariable;
+        }
+        set {
+          this._rangeVariable = value;
+        }
+      }
+      public Enum OutputModifier {
+        get {
+          return this._outputModifier;
+        }
+        set {
+          this._outputModifier = value;
+        }
+      }
+      public Enum OutputModifierInput {
+        get {
+          return this._outputModifierInput;
+        }
+        set {
+          this._outputModifierInput = value;
+        }
+      }
+      public Enum InputVariable2 {
+        get {
+          return this._inputVariable2;
+        }
+        set {
+          this._inputVariable2 = value;
+        }
+      }
+      public Enum RangeVariable2 {
+        get {
+          return this._rangeVariable2;
+        }
+        set {
+          this._rangeVariable2 = value;
+        }
+      }
+      public Enum OutputModifier2 {
+        get {
+          return this._outputModifier2;
+        }
+        set {
+          this._outputModifier2 = value;
+        }
+      }
+      public Enum OutputModifierInput2 {
+        get {
+          return this._outputModifierInput2;
+        }
+        set {
+          this._outputModifierInput2 = value;
+        }
+      }
+      public Enum InputVariable3 {
+        get {
+          return this._inputVariable3;
+        }
+        set {
+          this._inputVariable3 = value;
+        }
+      }
+      public Enum RangeVariable3 {
+        get {
+          return this._rangeVariable3;
+        }
+        set {
+          this._rangeVariable3 = value;
+        }
+      }
+      public Enum OutputModifier3 {
+        get {
+          return this._outputModifier3;
+        }
+        set {
+          this._outputModifier3 = value;
+        }
+      }
+      public Enum OutputModifierInput3 {
+        get {
+          return this._outputModifierInput3;
+        }
+        set {
+          this._outputModifierInput3 = value;
+        }
+      }
+      public Enum InputVariable4 {
+        get {
+          return this._inputVariable4;
+        }
+        set {
+          this._inputVariable4 = value;
+        }
+      }
+      public Enum RangeVariable4 {
+        get {
+          return this._rangeVariable4;
+        }
+        set {
+          this._rangeVariable4 = value;
+        }
+      }
+      public Enum OutputModifier4 {
+        get {
+          return this._outputModifier4;
+        }
+        set {
+          this._outputModifier4 = value;
+        }
+      }
+      public Enum OutputModifierInput4 {
+        get {
+          return this._outputModifierInput4;
+        }
+        set {
+          this._outputModifierInput4 = value;
+        }
+      }
+      public Enum InputVariable5 {
+        get {
+          return this._inputVariable5;
+        }
+        set {
+          this._inputVariable5 = value;
+        }
+      }
+      public Enum RangeVariable5 {
+        get {
+          return this._rangeVariable5;
+        }
+        set {
+          this._rangeVariable5 = value;
+        }
+      }
+      public Enum OutputModifier5 {
+        get {
+          return this._outputModifier5;
+        }
+        set {
+          this._outputModifier5 = value;
+        }
+      }
+      public Enum OutputModifierInput5 {
+        get {
+          return this._outputModifierInput5;
+        }
+        set {
+          this._outputModifierInput5 = value;
+        }
+      }
+      public Enum InputVariable6 {
+        get {
+          return this._inputVariable6;
+        }
+        set {
+          this._inputVariable6 = value;
+        }
+      }
+      public Enum RangeVariable6 {
+        get {
+          return this._rangeVariable6;
+        }
+        set {
+          this._rangeVariable6 = value;
+        }
+      }
+      public Enum OutputModifier6 {
+        get {
+          return this._outputModifier6;
+        }
+        set {
+          this._outputModifier6 = value;
+        }
+      }
+      public Enum OutputModifierInput6 {
+        get {
+          return this._outputModifierInput6;
+        }
+        set {
+          this._outputModifierInput6 = value;
+        }
+      }
+      public Enum InputVariable7 {
+        get {
+          return this._inputVariable7;
+        }
+        set {
+          this._inputVariable7 = value;
+        }
+      }
+      public Enum RangeVariable7 {
+        get {
+          return this._rangeVariable7;
+        }
+        set {
+          this._rangeVariable7 = value;
+        }
+      }
+      public Enum OutputModifier7 {
+        get {
+          return this._outputModifier7;
+        }
+        set {
+          this._outputModifier7 = value;
+        }
+      }
+      public Enum OutputModifierInput7 {
+        get {
+          return this._outputModifierInput7;
+        }
+        set {
+          this._outputModifierInput7 = value;
+        }
+      }
+      public Enum EmissionShape {
+        get {
+          return this._emissionShape;
+        }
+        set {
+          this._emissionShape = value;
+        }
+      }
+      public Enum InputVariable8 {
+        get {
+          return this._inputVariable8;
+        }
+        set {
+          this._inputVariable8 = value;
+        }
+      }
+      public Enum RangeVariable8 {
+        get {
+          return this._rangeVariable8;
+        }
+        set {
+          this._rangeVariable8 = value;
+        }
+      }
+      public Enum OutputModifier8 {
+        get {
+          return this._outputModifier8;
+        }
+        set {
+          this._outputModifier8 = value;
+        }
+      }
+      public Enum OutputModifierInput8 {
+        get {
+          return this._outputModifierInput8;
+        }
+        set {
+          this._outputModifierInput8 = value;
+        }
+      }
+      public Enum InputVariable9 {
+        get {
+          return this._inputVariable9;
+        }
+        set {
+          this._inputVariable9 = value;
+        }
+      }
+      public Enum RangeVariable9 {
+        get {
+          return this._rangeVariable9;
+        }
+        set {
+          this._rangeVariable9 = value;
+        }
+      }
+      public Enum OutputModifier9 {
+        get {
+          return this._outputModifier9;
+        }
+        set {
+          this._outputModifier9 = value;
+        }
+      }
+      public Enum OutputModifierInput9 {
+        get {
+          return this._outputModifierInput9;
+        }
+        set {
+          this._outputModifierInput9 = value;
+        }
+      }
+      public RealPoint3D TranslationalOffset {
+        get {
+          return this._translationalOffset;
+        }
+        set {
+          this._translationalOffset = value;
+        }
+      }
+      public RealEulerAngles2D RelativeDirection {
+        get {
+          return this._relativeDirection;
+        }
+        set {
+          this._relativeDirection = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _particlePhysics.Read(reader);
+        _inputVariable.Read(reader);
+        _rangeVariable.Read(reader);
+        _outputModifier.Read(reader);
+        _outputModifierInput.Read(reader);
+        _data.Read(reader);
+        _inputVariable2.Read(reader);
+        _rangeVariable2.Read(reader);
+        _outputModifier2.Read(reader);
+        _outputModifierInput2.Read(reader);
+        _data2.Read(reader);
+        _inputVariable3.Read(reader);
+        _rangeVariable3.Read(reader);
+        _outputModifier3.Read(reader);
+        _outputModifierInput3.Read(reader);
+        _data3.Read(reader);
+        _inputVariable4.Read(reader);
+        _rangeVariable4.Read(reader);
+        _outputModifier4.Read(reader);
+        _outputModifierInput4.Read(reader);
+        _data4.Read(reader);
+        _inputVariable5.Read(reader);
+        _rangeVariable5.Read(reader);
+        _outputModifier5.Read(reader);
+        _outputModifierInput5.Read(reader);
+        _data5.Read(reader);
+        _inputVariable6.Read(reader);
+        _rangeVariable6.Read(reader);
+        _outputModifier6.Read(reader);
+        _outputModifierInput6.Read(reader);
+        _data6.Read(reader);
+        _inputVariable7.Read(reader);
+        _rangeVariable7.Read(reader);
+        _outputModifier7.Read(reader);
+        _outputModifierInput7.Read(reader);
+        _data7.Read(reader);
+        _emissionShape.Read(reader);
+        _inputVariable8.Read(reader);
+        _rangeVariable8.Read(reader);
+        _outputModifier8.Read(reader);
+        _outputModifierInput8.Read(reader);
+        _data8.Read(reader);
+        _inputVariable9.Read(reader);
+        _rangeVariable9.Read(reader);
+        _outputModifier9.Read(reader);
+        _outputModifierInput9.Read(reader);
+        _data9.Read(reader);
+        _translationalOffset.Read(reader);
+        _relativeDirection.Read(reader);
+        _unnamed0.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+        int x = 0;
+        _particlePhysics.ReadString(reader);
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data.Add(new ByteBlockBlock());
+          Data[x].Read(reader);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _data2.Count); x = (x + 1)) {
+          Data2.Add(new ByteBlockBlock());
+          Data2[x].Read(reader);
+        }
+        for (x = 0; (x < _data2.Count); x = (x + 1)) {
+          Data2[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _data3.Count); x = (x + 1)) {
+          Data3.Add(new ByteBlockBlock());
+          Data3[x].Read(reader);
+        }
+        for (x = 0; (x < _data3.Count); x = (x + 1)) {
+          Data3[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _data4.Count); x = (x + 1)) {
+          Data4.Add(new ByteBlockBlock());
+          Data4[x].Read(reader);
+        }
+        for (x = 0; (x < _data4.Count); x = (x + 1)) {
+          Data4[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _data5.Count); x = (x + 1)) {
+          Data5.Add(new ByteBlockBlock());
+          Data5[x].Read(reader);
+        }
+        for (x = 0; (x < _data5.Count); x = (x + 1)) {
+          Data5[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _data6.Count); x = (x + 1)) {
+          Data6.Add(new ByteBlockBlock());
+          Data6[x].Read(reader);
+        }
+        for (x = 0; (x < _data6.Count); x = (x + 1)) {
+          Data6[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _data7.Count); x = (x + 1)) {
+          Data7.Add(new ByteBlockBlock());
+          Data7[x].Read(reader);
+        }
+        for (x = 0; (x < _data7.Count); x = (x + 1)) {
+          Data7[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _data8.Count); x = (x + 1)) {
+          Data8.Add(new ByteBlockBlock());
+          Data8[x].Read(reader);
+        }
+        for (x = 0; (x < _data8.Count); x = (x + 1)) {
+          Data8[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _data9.Count); x = (x + 1)) {
+          Data9.Add(new ByteBlockBlock());
+          Data9[x].Read(reader);
+        }
+        for (x = 0; (x < _data9.Count); x = (x + 1)) {
+          Data9[x].ReadChildData(reader);
+        }
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _particlePhysics.Write(bw);
+        _inputVariable.Write(bw);
+        _rangeVariable.Write(bw);
+        _outputModifier.Write(bw);
+        _outputModifierInput.Write(bw);
+_data.Count = Data.Count;
+        _data.Write(bw);
+        _inputVariable2.Write(bw);
+        _rangeVariable2.Write(bw);
+        _outputModifier2.Write(bw);
+        _outputModifierInput2.Write(bw);
+_data2.Count = Data2.Count;
+        _data2.Write(bw);
+        _inputVariable3.Write(bw);
+        _rangeVariable3.Write(bw);
+        _outputModifier3.Write(bw);
+        _outputModifierInput3.Write(bw);
+_data3.Count = Data3.Count;
+        _data3.Write(bw);
+        _inputVariable4.Write(bw);
+        _rangeVariable4.Write(bw);
+        _outputModifier4.Write(bw);
+        _outputModifierInput4.Write(bw);
+_data4.Count = Data4.Count;
+        _data4.Write(bw);
+        _inputVariable5.Write(bw);
+        _rangeVariable5.Write(bw);
+        _outputModifier5.Write(bw);
+        _outputModifierInput5.Write(bw);
+_data5.Count = Data5.Count;
+        _data5.Write(bw);
+        _inputVariable6.Write(bw);
+        _rangeVariable6.Write(bw);
+        _outputModifier6.Write(bw);
+        _outputModifierInput6.Write(bw);
+_data6.Count = Data6.Count;
+        _data6.Write(bw);
+        _inputVariable7.Write(bw);
+        _rangeVariable7.Write(bw);
+        _outputModifier7.Write(bw);
+        _outputModifierInput7.Write(bw);
+_data7.Count = Data7.Count;
+        _data7.Write(bw);
+        _emissionShape.Write(bw);
+        _inputVariable8.Write(bw);
+        _rangeVariable8.Write(bw);
+        _outputModifier8.Write(bw);
+        _outputModifierInput8.Write(bw);
+_data8.Count = Data8.Count;
+        _data8.Write(bw);
+        _inputVariable9.Write(bw);
+        _rangeVariable9.Write(bw);
+        _outputModifier9.Write(bw);
+        _outputModifierInput9.Write(bw);
+_data9.Count = Data9.Count;
+        _data9.Write(bw);
+        _translationalOffset.Write(bw);
+        _relativeDirection.Write(bw);
+        _unnamed0.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+        int x = 0;
+        _particlePhysics.WriteString(writer);
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].Write(writer);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _data2.Count); x = (x + 1)) {
+          Data2[x].Write(writer);
+        }
+        for (x = 0; (x < _data2.Count); x = (x + 1)) {
+          Data2[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _data3.Count); x = (x + 1)) {
+          Data3[x].Write(writer);
+        }
+        for (x = 0; (x < _data3.Count); x = (x + 1)) {
+          Data3[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _data4.Count); x = (x + 1)) {
+          Data4[x].Write(writer);
+        }
+        for (x = 0; (x < _data4.Count); x = (x + 1)) {
+          Data4[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _data5.Count); x = (x + 1)) {
+          Data5[x].Write(writer);
+        }
+        for (x = 0; (x < _data5.Count); x = (x + 1)) {
+          Data5[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _data6.Count); x = (x + 1)) {
+          Data6[x].Write(writer);
+        }
+        for (x = 0; (x < _data6.Count); x = (x + 1)) {
+          Data6[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _data7.Count); x = (x + 1)) {
+          Data7[x].Write(writer);
+        }
+        for (x = 0; (x < _data7.Count); x = (x + 1)) {
+          Data7[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _data8.Count); x = (x + 1)) {
+          Data8[x].Write(writer);
+        }
+        for (x = 0; (x < _data8.Count); x = (x + 1)) {
+          Data8[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _data9.Count); x = (x + 1)) {
+          Data9[x].Write(writer);
+        }
+        for (x = 0; (x < _data9.Count); x = (x + 1)) {
+          Data9[x].WriteChildData(writer);
+        }
+      }
+    }
+    public class ShaderPostprocessDefinitionNewBlockBlock : IBlock {
+      private LongInteger _shaderTemplateIndex = new LongInteger();
+      private Block _bitmaps = new Block();
+      private Block _pixelConstants = new Block();
+      private Block _vertexConstants = new Block();
+      private Block _levelsOfDetail = new Block();
+      private Block _layers = new Block();
+      private Block _passes = new Block();
+      private Block _implementations = new Block();
+      private Block _overlays = new Block();
+      private Block _overlayReferences = new Block();
+      private Block _animatedParameters = new Block();
+      private Block _animatedParameterReferences = new Block();
+      private Block _bitmapProperties = new Block();
+      private Block _colorProperties = new Block();
+      private Block _valueProperties = new Block();
+      private Block _oldLevelsOfDetail = new Block();
+      public BlockCollection<ShaderPostprocessBitmapNewBlockBlock> _bitmapsList = new BlockCollection<ShaderPostprocessBitmapNewBlockBlock>();
+      public BlockCollection<Pixel32BlockBlock> _pixelConstantsList = new BlockCollection<Pixel32BlockBlock>();
+      public BlockCollection<RealVector4dBlockBlock> _vertexConstantsList = new BlockCollection<RealVector4dBlockBlock>();
+      public BlockCollection<ShaderPostprocessLevelOfDetailNewBlockBlock> _levelsOfDetailList = new BlockCollection<ShaderPostprocessLevelOfDetailNewBlockBlock>();
+      public BlockCollection<TagBlockIndexBlockBlock> _layersList = new BlockCollection<TagBlockIndexBlockBlock>();
+      public BlockCollection<TagBlockIndexBlockBlock> _passesList = new BlockCollection<TagBlockIndexBlockBlock>();
+      public BlockCollection<ShaderPostprocessImplementationNewBlockBlock> _implementationsList = new BlockCollection<ShaderPostprocessImplementationNewBlockBlock>();
+      public BlockCollection<ShaderPostprocessOverlayNewBlockBlock> _overlaysList = new BlockCollection<ShaderPostprocessOverlayNewBlockBlock>();
+      public BlockCollection<ShaderPostprocessOverlayReferenceNewBlockBlock> _overlayReferencesList = new BlockCollection<ShaderPostprocessOverlayReferenceNewBlockBlock>();
+      public BlockCollection<ShaderPostprocessAnimatedParameterNewBlockBlock> _animatedParametersList = new BlockCollection<ShaderPostprocessAnimatedParameterNewBlockBlock>();
+      public BlockCollection<ShaderPostprocessAnimatedParameterReferenceNewBlockBlock> _animatedParameterReferencesList = new BlockCollection<ShaderPostprocessAnimatedParameterReferenceNewBlockBlock>();
+      public BlockCollection<ShaderPostprocessBitmapPropertyBlockBlock> _bitmapPropertiesList = new BlockCollection<ShaderPostprocessBitmapPropertyBlockBlock>();
+      public BlockCollection<ShaderPostprocessColorPropertyBlockBlock> _colorPropertiesList = new BlockCollection<ShaderPostprocessColorPropertyBlockBlock>();
+      public BlockCollection<ShaderPostprocessValuePropertyBlockBlock> _valuePropertiesList = new BlockCollection<ShaderPostprocessValuePropertyBlockBlock>();
+      public BlockCollection<ShaderPostprocessLevelOfDetailBlockBlock> _oldLevelsOfDetailList = new BlockCollection<ShaderPostprocessLevelOfDetailBlockBlock>();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessDefinitionNewBlockBlock() {
+      }
+      public BlockCollection<ShaderPostprocessBitmapNewBlockBlock> Bitmaps {
+        get {
+          return this._bitmapsList;
+        }
+      }
+      public BlockCollection<Pixel32BlockBlock> PixelConstants {
+        get {
+          return this._pixelConstantsList;
+        }
+      }
+      public BlockCollection<RealVector4dBlockBlock> VertexConstants {
+        get {
+          return this._vertexConstantsList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessLevelOfDetailNewBlockBlock> LevelsOfDetail {
+        get {
+          return this._levelsOfDetailList;
+        }
+      }
+      public BlockCollection<TagBlockIndexBlockBlock> Layers {
+        get {
+          return this._layersList;
+        }
+      }
+      public BlockCollection<TagBlockIndexBlockBlock> Passes {
+        get {
+          return this._passesList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessImplementationNewBlockBlock> Implementations {
+        get {
+          return this._implementationsList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessOverlayNewBlockBlock> Overlays {
+        get {
+          return this._overlaysList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessOverlayReferenceNewBlockBlock> OverlayReferences {
+        get {
+          return this._overlayReferencesList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessAnimatedParameterNewBlockBlock> AnimatedParameters {
+        get {
+          return this._animatedParametersList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessAnimatedParameterReferenceNewBlockBlock> AnimatedParameterReferences {
+        get {
+          return this._animatedParameterReferencesList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessBitmapPropertyBlockBlock> BitmapProperties {
+        get {
+          return this._bitmapPropertiesList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessColorPropertyBlockBlock> ColorProperties {
+        get {
+          return this._colorPropertiesList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessValuePropertyBlockBlock> ValueProperties {
+        get {
+          return this._valuePropertiesList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessLevelOfDetailBlockBlock> OldLevelsOfDetail {
+        get {
+          return this._oldLevelsOfDetailList;
+        }
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+for (int x=0; x<Bitmaps.BlockCount; x++)
+{
+  IBlock block = Bitmaps.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<PixelConstants.BlockCount; x++)
+{
+  IBlock block = PixelConstants.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<VertexConstants.BlockCount; x++)
+{
+  IBlock block = VertexConstants.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<LevelsOfDetail.BlockCount; x++)
+{
+  IBlock block = LevelsOfDetail.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Layers.BlockCount; x++)
+{
+  IBlock block = Layers.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Passes.BlockCount; x++)
+{
+  IBlock block = Passes.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Implementations.BlockCount; x++)
+{
+  IBlock block = Implementations.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Overlays.BlockCount; x++)
+{
+  IBlock block = Overlays.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<OverlayReferences.BlockCount; x++)
+{
+  IBlock block = OverlayReferences.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<AnimatedParameters.BlockCount; x++)
+{
+  IBlock block = AnimatedParameters.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<AnimatedParameterReferences.BlockCount; x++)
+{
+  IBlock block = AnimatedParameterReferences.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<BitmapProperties.BlockCount; x++)
+{
+  IBlock block = BitmapProperties.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<ColorProperties.BlockCount; x++)
+{
+  IBlock block = ColorProperties.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<ValueProperties.BlockCount; x++)
+{
+  IBlock block = ValueProperties.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<OldLevelsOfDetail.BlockCount; x++)
+{
+  IBlock block = OldLevelsOfDetail.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public LongInteger ShaderTemplateIndex {
+        get {
+          return this._shaderTemplateIndex;
+        }
+        set {
+          this._shaderTemplateIndex = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _shaderTemplateIndex.Read(reader);
+        _bitmaps.Read(reader);
+        _pixelConstants.Read(reader);
+        _vertexConstants.Read(reader);
+        _levelsOfDetail.Read(reader);
+        _layers.Read(reader);
+        _passes.Read(reader);
+        _implementations.Read(reader);
+        _overlays.Read(reader);
+        _overlayReferences.Read(reader);
+        _animatedParameters.Read(reader);
+        _animatedParameterReferences.Read(reader);
+        _bitmapProperties.Read(reader);
+        _colorProperties.Read(reader);
+        _valueProperties.Read(reader);
+        _oldLevelsOfDetail.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+        int x = 0;
+        for (x = 0; (x < _bitmaps.Count); x = (x + 1)) {
+          Bitmaps.Add(new ShaderPostprocessBitmapNewBlockBlock());
+          Bitmaps[x].Read(reader);
+        }
+        for (x = 0; (x < _bitmaps.Count); x = (x + 1)) {
+          Bitmaps[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _pixelConstants.Count); x = (x + 1)) {
+          PixelConstants.Add(new Pixel32BlockBlock());
+          PixelConstants[x].Read(reader);
+        }
+        for (x = 0; (x < _pixelConstants.Count); x = (x + 1)) {
+          PixelConstants[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _vertexConstants.Count); x = (x + 1)) {
+          VertexConstants.Add(new RealVector4dBlockBlock());
+          VertexConstants[x].Read(reader);
+        }
+        for (x = 0; (x < _vertexConstants.Count); x = (x + 1)) {
+          VertexConstants[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _levelsOfDetail.Count); x = (x + 1)) {
+          LevelsOfDetail.Add(new ShaderPostprocessLevelOfDetailNewBlockBlock());
+          LevelsOfDetail[x].Read(reader);
+        }
+        for (x = 0; (x < _levelsOfDetail.Count); x = (x + 1)) {
+          LevelsOfDetail[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _layers.Count); x = (x + 1)) {
+          Layers.Add(new TagBlockIndexBlockBlock());
+          Layers[x].Read(reader);
+        }
+        for (x = 0; (x < _layers.Count); x = (x + 1)) {
+          Layers[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _passes.Count); x = (x + 1)) {
+          Passes.Add(new TagBlockIndexBlockBlock());
+          Passes[x].Read(reader);
+        }
+        for (x = 0; (x < _passes.Count); x = (x + 1)) {
+          Passes[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _implementations.Count); x = (x + 1)) {
+          Implementations.Add(new ShaderPostprocessImplementationNewBlockBlock());
+          Implementations[x].Read(reader);
+        }
+        for (x = 0; (x < _implementations.Count); x = (x + 1)) {
+          Implementations[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _overlays.Count); x = (x + 1)) {
+          Overlays.Add(new ShaderPostprocessOverlayNewBlockBlock());
+          Overlays[x].Read(reader);
+        }
+        for (x = 0; (x < _overlays.Count); x = (x + 1)) {
+          Overlays[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _overlayReferences.Count); x = (x + 1)) {
+          OverlayReferences.Add(new ShaderPostprocessOverlayReferenceNewBlockBlock());
+          OverlayReferences[x].Read(reader);
+        }
+        for (x = 0; (x < _overlayReferences.Count); x = (x + 1)) {
+          OverlayReferences[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _animatedParameters.Count); x = (x + 1)) {
+          AnimatedParameters.Add(new ShaderPostprocessAnimatedParameterNewBlockBlock());
+          AnimatedParameters[x].Read(reader);
+        }
+        for (x = 0; (x < _animatedParameters.Count); x = (x + 1)) {
+          AnimatedParameters[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _animatedParameterReferences.Count); x = (x + 1)) {
+          AnimatedParameterReferences.Add(new ShaderPostprocessAnimatedParameterReferenceNewBlockBlock());
+          AnimatedParameterReferences[x].Read(reader);
+        }
+        for (x = 0; (x < _animatedParameterReferences.Count); x = (x + 1)) {
+          AnimatedParameterReferences[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _bitmapProperties.Count); x = (x + 1)) {
+          BitmapProperties.Add(new ShaderPostprocessBitmapPropertyBlockBlock());
+          BitmapProperties[x].Read(reader);
+        }
+        for (x = 0; (x < _bitmapProperties.Count); x = (x + 1)) {
+          BitmapProperties[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _colorProperties.Count); x = (x + 1)) {
+          ColorProperties.Add(new ShaderPostprocessColorPropertyBlockBlock());
+          ColorProperties[x].Read(reader);
+        }
+        for (x = 0; (x < _colorProperties.Count); x = (x + 1)) {
+          ColorProperties[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _valueProperties.Count); x = (x + 1)) {
+          ValueProperties.Add(new ShaderPostprocessValuePropertyBlockBlock());
+          ValueProperties[x].Read(reader);
+        }
+        for (x = 0; (x < _valueProperties.Count); x = (x + 1)) {
+          ValueProperties[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _oldLevelsOfDetail.Count); x = (x + 1)) {
+          OldLevelsOfDetail.Add(new ShaderPostprocessLevelOfDetailBlockBlock());
+          OldLevelsOfDetail[x].Read(reader);
+        }
+        for (x = 0; (x < _oldLevelsOfDetail.Count); x = (x + 1)) {
+          OldLevelsOfDetail[x].ReadChildData(reader);
+        }
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _shaderTemplateIndex.Write(bw);
+_bitmaps.Count = Bitmaps.Count;
+        _bitmaps.Write(bw);
+_pixelConstants.Count = PixelConstants.Count;
+        _pixelConstants.Write(bw);
+_vertexConstants.Count = VertexConstants.Count;
+        _vertexConstants.Write(bw);
+_levelsOfDetail.Count = LevelsOfDetail.Count;
+        _levelsOfDetail.Write(bw);
+_layers.Count = Layers.Count;
+        _layers.Write(bw);
+_passes.Count = Passes.Count;
+        _passes.Write(bw);
+_implementations.Count = Implementations.Count;
+        _implementations.Write(bw);
+_overlays.Count = Overlays.Count;
+        _overlays.Write(bw);
+_overlayReferences.Count = OverlayReferences.Count;
+        _overlayReferences.Write(bw);
+_animatedParameters.Count = AnimatedParameters.Count;
+        _animatedParameters.Write(bw);
+_animatedParameterReferences.Count = AnimatedParameterReferences.Count;
+        _animatedParameterReferences.Write(bw);
+_bitmapProperties.Count = BitmapProperties.Count;
+        _bitmapProperties.Write(bw);
+_colorProperties.Count = ColorProperties.Count;
+        _colorProperties.Write(bw);
+_valueProperties.Count = ValueProperties.Count;
+        _valueProperties.Write(bw);
+_oldLevelsOfDetail.Count = OldLevelsOfDetail.Count;
+        _oldLevelsOfDetail.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+        int x = 0;
+        for (x = 0; (x < _bitmaps.Count); x = (x + 1)) {
+          Bitmaps[x].Write(writer);
+        }
+        for (x = 0; (x < _bitmaps.Count); x = (x + 1)) {
+          Bitmaps[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _pixelConstants.Count); x = (x + 1)) {
+          PixelConstants[x].Write(writer);
+        }
+        for (x = 0; (x < _pixelConstants.Count); x = (x + 1)) {
+          PixelConstants[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _vertexConstants.Count); x = (x + 1)) {
+          VertexConstants[x].Write(writer);
+        }
+        for (x = 0; (x < _vertexConstants.Count); x = (x + 1)) {
+          VertexConstants[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _levelsOfDetail.Count); x = (x + 1)) {
+          LevelsOfDetail[x].Write(writer);
+        }
+        for (x = 0; (x < _levelsOfDetail.Count); x = (x + 1)) {
+          LevelsOfDetail[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _layers.Count); x = (x + 1)) {
+          Layers[x].Write(writer);
+        }
+        for (x = 0; (x < _layers.Count); x = (x + 1)) {
+          Layers[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _passes.Count); x = (x + 1)) {
+          Passes[x].Write(writer);
+        }
+        for (x = 0; (x < _passes.Count); x = (x + 1)) {
+          Passes[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _implementations.Count); x = (x + 1)) {
+          Implementations[x].Write(writer);
+        }
+        for (x = 0; (x < _implementations.Count); x = (x + 1)) {
+          Implementations[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _overlays.Count); x = (x + 1)) {
+          Overlays[x].Write(writer);
+        }
+        for (x = 0; (x < _overlays.Count); x = (x + 1)) {
+          Overlays[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _overlayReferences.Count); x = (x + 1)) {
+          OverlayReferences[x].Write(writer);
+        }
+        for (x = 0; (x < _overlayReferences.Count); x = (x + 1)) {
+          OverlayReferences[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _animatedParameters.Count); x = (x + 1)) {
+          AnimatedParameters[x].Write(writer);
+        }
+        for (x = 0; (x < _animatedParameters.Count); x = (x + 1)) {
+          AnimatedParameters[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _animatedParameterReferences.Count); x = (x + 1)) {
+          AnimatedParameterReferences[x].Write(writer);
+        }
+        for (x = 0; (x < _animatedParameterReferences.Count); x = (x + 1)) {
+          AnimatedParameterReferences[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _bitmapProperties.Count); x = (x + 1)) {
+          BitmapProperties[x].Write(writer);
+        }
+        for (x = 0; (x < _bitmapProperties.Count); x = (x + 1)) {
+          BitmapProperties[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _colorProperties.Count); x = (x + 1)) {
+          ColorProperties[x].Write(writer);
+        }
+        for (x = 0; (x < _colorProperties.Count); x = (x + 1)) {
+          ColorProperties[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _valueProperties.Count); x = (x + 1)) {
+          ValueProperties[x].Write(writer);
+        }
+        for (x = 0; (x < _valueProperties.Count); x = (x + 1)) {
+          ValueProperties[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _oldLevelsOfDetail.Count); x = (x + 1)) {
+          OldLevelsOfDetail[x].Write(writer);
+        }
+        for (x = 0; (x < _oldLevelsOfDetail.Count); x = (x + 1)) {
+          OldLevelsOfDetail[x].WriteChildData(writer);
+        }
+      }
+    }
+    public class ShaderPostprocessBitmapNewBlockBlock : IBlock {
+      private LongInteger _bitmapGroup = new LongInteger();
+      private LongInteger _bitmapIndex = new LongInteger();
+      private Real _logBitmapDimension = new Real();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessBitmapNewBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public LongInteger BitmapGroup {
+        get {
+          return this._bitmapGroup;
+        }
+        set {
+          this._bitmapGroup = value;
+        }
+      }
+      public LongInteger BitmapIndex {
+        get {
+          return this._bitmapIndex;
+        }
+        set {
+          this._bitmapIndex = value;
+        }
+      }
+      public Real LogBitmapDimension {
+        get {
+          return this._logBitmapDimension;
+        }
+        set {
+          this._logBitmapDimension = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _bitmapGroup.Read(reader);
+        _bitmapIndex.Read(reader);
+        _logBitmapDimension.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _bitmapGroup.Write(bw);
+        _bitmapIndex.Write(bw);
+        _logBitmapDimension.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class Pixel32BlockBlock : IBlock {
+      private ARGBColor _color = new ARGBColor();
+public event System.EventHandler BlockNameChanged;
+      public Pixel32BlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public ARGBColor Color {
+        get {
+          return this._color;
+        }
+        set {
+          this._color = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _color.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _color.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class RealVector4dBlockBlock : IBlock {
+      private RealVector3D _vector3 = new RealVector3D();
+      private Real _w = new Real();
+public event System.EventHandler BlockNameChanged;
+      public RealVector4dBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public RealVector3D Vector3 {
+        get {
+          return this._vector3;
+        }
+        set {
+          this._vector3 = value;
+        }
+      }
+      public Real W {
+        get {
+          return this._w;
+        }
+        set {
+          this._w = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _vector3.Read(reader);
+        _w.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _vector3.Write(bw);
+        _w.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessLevelOfDetailNewBlockBlock : IBlock {
+      private LongInteger _availableLayerFlags = new LongInteger();
+      private ShortInteger _blockIndexData = new ShortInteger();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessLevelOfDetailNewBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public LongInteger AvailableLayerFlags {
+        get {
+          return this._availableLayerFlags;
+        }
+        set {
+          this._availableLayerFlags = value;
+        }
+      }
+      public ShortInteger BlockIndexData {
+        get {
+          return this._blockIndexData;
+        }
+        set {
+          this._blockIndexData = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _availableLayerFlags.Read(reader);
+        _blockIndexData.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _availableLayerFlags.Write(bw);
+        _blockIndexData.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class TagBlockIndexBlockBlock : IBlock {
+      private ShortInteger _blockIndexData = new ShortInteger();
+public event System.EventHandler BlockNameChanged;
+      public TagBlockIndexBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public ShortInteger BlockIndexData {
+        get {
+          return this._blockIndexData;
+        }
+        set {
+          this._blockIndexData = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _blockIndexData.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _blockIndexData.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessImplementationNewBlockBlock : IBlock {
+      private ShortInteger _blockIndexData = new ShortInteger();
+      private ShortInteger _blockIndexData2 = new ShortInteger();
+      private ShortInteger _blockIndexData3 = new ShortInteger();
+      private ShortInteger _blockIndexData4 = new ShortInteger();
+      private ShortInteger _blockIndexData5 = new ShortInteger();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessImplementationNewBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public ShortInteger BlockIndexData {
+        get {
+          return this._blockIndexData;
+        }
+        set {
+          this._blockIndexData = value;
+        }
+      }
+      public ShortInteger BlockIndexData2 {
+        get {
+          return this._blockIndexData2;
+        }
+        set {
+          this._blockIndexData2 = value;
+        }
+      }
+      public ShortInteger BlockIndexData3 {
+        get {
+          return this._blockIndexData3;
+        }
+        set {
+          this._blockIndexData3 = value;
+        }
+      }
+      public ShortInteger BlockIndexData4 {
+        get {
+          return this._blockIndexData4;
+        }
+        set {
+          this._blockIndexData4 = value;
+        }
+      }
+      public ShortInteger BlockIndexData5 {
+        get {
+          return this._blockIndexData5;
+        }
+        set {
+          this._blockIndexData5 = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _blockIndexData.Read(reader);
+        _blockIndexData2.Read(reader);
+        _blockIndexData3.Read(reader);
+        _blockIndexData4.Read(reader);
+        _blockIndexData5.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _blockIndexData.Write(bw);
+        _blockIndexData2.Write(bw);
+        _blockIndexData3.Write(bw);
+        _blockIndexData4.Write(bw);
+        _blockIndexData5.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessOverlayNewBlockBlock : IBlock {
+      private StringId _inputName = new StringId();
+      private StringId _rangeName = new StringId();
+      private Real _timePeriodInSeconds = new Real();
+      private Block _data = new Block();
+      public BlockCollection<ByteBlockBlock> _dataList = new BlockCollection<ByteBlockBlock>();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessOverlayNewBlockBlock() {
+      }
+      public BlockCollection<ByteBlockBlock> Data {
+        get {
+          return this._dataList;
+        }
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+for (int x=0; x<Data.BlockCount; x++)
+{
+  IBlock block = Data.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public StringId InputName {
+        get {
+          return this._inputName;
+        }
+        set {
+          this._inputName = value;
+        }
+      }
+      public StringId RangeName {
+        get {
+          return this._rangeName;
+        }
+        set {
+          this._rangeName = value;
+        }
+      }
+      public Real TimePeriodInSeconds {
+        get {
+          return this._timePeriodInSeconds;
+        }
+        set {
+          this._timePeriodInSeconds = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _inputName.Read(reader);
+        _rangeName.Read(reader);
+        _timePeriodInSeconds.Read(reader);
+        _data.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+        int x = 0;
+        _inputName.ReadString(reader);
+        _rangeName.ReadString(reader);
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data.Add(new ByteBlockBlock());
+          Data[x].Read(reader);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].ReadChildData(reader);
+        }
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _inputName.Write(bw);
+        _rangeName.Write(bw);
+        _timePeriodInSeconds.Write(bw);
+_data.Count = Data.Count;
+        _data.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+        int x = 0;
+        _inputName.WriteString(writer);
+        _rangeName.WriteString(writer);
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].Write(writer);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].WriteChildData(writer);
+        }
+      }
+    }
+    public class ShaderPostprocessOverlayReferenceNewBlockBlock : IBlock {
+      private ShortInteger _overlayIndex = new ShortInteger();
+      private ShortInteger _transformIndex = new ShortInteger();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessOverlayReferenceNewBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public ShortInteger OverlayIndex {
+        get {
+          return this._overlayIndex;
+        }
+        set {
+          this._overlayIndex = value;
+        }
+      }
+      public ShortInteger TransformIndex {
+        get {
+          return this._transformIndex;
+        }
+        set {
+          this._transformIndex = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _overlayIndex.Read(reader);
+        _transformIndex.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _overlayIndex.Write(bw);
+        _transformIndex.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessAnimatedParameterNewBlockBlock : IBlock {
+      private ShortInteger _blockIndexData = new ShortInteger();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessAnimatedParameterNewBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public ShortInteger BlockIndexData {
+        get {
+          return this._blockIndexData;
+        }
+        set {
+          this._blockIndexData = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _blockIndexData.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _blockIndexData.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessAnimatedParameterReferenceNewBlockBlock : IBlock {
+      private Skip _unnamed0;
+      private CharInteger _parameterIndex = new CharInteger();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessAnimatedParameterReferenceNewBlockBlock() {
+        this._unnamed0 = new Skip(3);
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger ParameterIndex {
+        get {
+          return this._parameterIndex;
+        }
+        set {
+          this._parameterIndex = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _unnamed0.Read(reader);
+        _parameterIndex.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _unnamed0.Write(bw);
+        _parameterIndex.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessBitmapPropertyBlockBlock : IBlock {
+      private ShortInteger _bitmapIndex = new ShortInteger();
+      private ShortInteger _animatedParameterIndex = new ShortInteger();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessBitmapPropertyBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public ShortInteger BitmapIndex {
+        get {
+          return this._bitmapIndex;
+        }
+        set {
+          this._bitmapIndex = value;
+        }
+      }
+      public ShortInteger AnimatedParameterIndex {
+        get {
+          return this._animatedParameterIndex;
+        }
+        set {
+          this._animatedParameterIndex = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _bitmapIndex.Read(reader);
+        _animatedParameterIndex.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _bitmapIndex.Write(bw);
+        _animatedParameterIndex.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessColorPropertyBlockBlock : IBlock {
+      private RealRGBColor _color = new RealRGBColor();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessColorPropertyBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public RealRGBColor Color {
+        get {
+          return this._color;
+        }
+        set {
+          this._color = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _color.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _color.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessValuePropertyBlockBlock : IBlock {
+      private Real _value = new Real();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessValuePropertyBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public Real Value {
+        get {
+          return this._value;
+        }
+        set {
+          this._value = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _value.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _value.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessLevelOfDetailBlockBlock : IBlock {
+      private Real _projectedHeightPercentage = new Real();
+      private LongInteger _availableLayers = new LongInteger();
+      private Block _layers = new Block();
+      private Block _passes = new Block();
+      private Block _implementations = new Block();
+      private Block _bitmaps = new Block();
+      private Block _bitmapTransforms = new Block();
+      private Block _values = new Block();
+      private Block _colors = new Block();
+      private Block _bitmapTransformOverlays = new Block();
+      private Block _valueOverlays = new Block();
+      private Block _colorOverlays = new Block();
+      private Block _vertexShaderConstants = new Block();
+      private Block _renderStates = new Block();
+      private Block _textureStageStates = new Block();
+      private Block _renderStateParameters = new Block();
+      private Block _textureStageParameters = new Block();
+      private Block _textures = new Block();
+      private Block _vnConstants = new Block();
+      private Block _cnConstants = new Block();
+      public BlockCollection<ShaderPostprocessLayerBlockBlock> _layersList = new BlockCollection<ShaderPostprocessLayerBlockBlock>();
+      public BlockCollection<ShaderPostprocessPassBlockBlock> _passesList = new BlockCollection<ShaderPostprocessPassBlockBlock>();
+      public BlockCollection<ShaderPostprocessImplementationBlockBlock> _implementationsList = new BlockCollection<ShaderPostprocessImplementationBlockBlock>();
+      public BlockCollection<ShaderPostprocessBitmapBlockBlock> _bitmapsList = new BlockCollection<ShaderPostprocessBitmapBlockBlock>();
+      public BlockCollection<ShaderPostprocessBitmapTransformBlockBlock> _bitmapTransformsList = new BlockCollection<ShaderPostprocessBitmapTransformBlockBlock>();
+      public BlockCollection<ShaderPostprocessValueBlockBlock> _valuesList = new BlockCollection<ShaderPostprocessValueBlockBlock>();
+      public BlockCollection<ShaderPostprocessColorBlockBlock> _colorsList = new BlockCollection<ShaderPostprocessColorBlockBlock>();
+      public BlockCollection<ShaderPostprocessBitmapTransformOverlayBlockBlock> _bitmapTransformOverlaysList = new BlockCollection<ShaderPostprocessBitmapTransformOverlayBlockBlock>();
+      public BlockCollection<ShaderPostprocessValueOverlayBlockBlock> _valueOverlaysList = new BlockCollection<ShaderPostprocessValueOverlayBlockBlock>();
+      public BlockCollection<ShaderPostprocessColorOverlayBlockBlock> _colorOverlaysList = new BlockCollection<ShaderPostprocessColorOverlayBlockBlock>();
+      public BlockCollection<ShaderPostprocessVertexShaderConstantBlockBlock> _vertexShaderConstantsList = new BlockCollection<ShaderPostprocessVertexShaderConstantBlockBlock>();
+      public BlockCollection<RenderStateBlockBlock> _renderStatesList = new BlockCollection<RenderStateBlockBlock>();
+      public BlockCollection<TextureStageStateBlockBlock> _textureStageStatesList = new BlockCollection<TextureStageStateBlockBlock>();
+      public BlockCollection<RenderStateParameterBlockBlock> _renderStateParametersList = new BlockCollection<RenderStateParameterBlockBlock>();
+      public BlockCollection<TextureStageStateParameterBlockBlock> _textureStageParametersList = new BlockCollection<TextureStageStateParameterBlockBlock>();
+      public BlockCollection<TextureBlockBlock> _texturesList = new BlockCollection<TextureBlockBlock>();
+      public BlockCollection<VertexShaderConstantBlockBlock> _vnConstantsList = new BlockCollection<VertexShaderConstantBlockBlock>();
+      public BlockCollection<VertexShaderConstantBlockBlock> _cnConstantsList = new BlockCollection<VertexShaderConstantBlockBlock>();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessLevelOfDetailBlockBlock() {
+      }
+      public BlockCollection<ShaderPostprocessLayerBlockBlock> Layers {
+        get {
+          return this._layersList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessPassBlockBlock> Passes {
+        get {
+          return this._passesList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessImplementationBlockBlock> Implementations {
+        get {
+          return this._implementationsList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessBitmapBlockBlock> Bitmaps {
+        get {
+          return this._bitmapsList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessBitmapTransformBlockBlock> BitmapTransforms {
+        get {
+          return this._bitmapTransformsList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessValueBlockBlock> Values {
+        get {
+          return this._valuesList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessColorBlockBlock> Colors {
+        get {
+          return this._colorsList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessBitmapTransformOverlayBlockBlock> BitmapTransformOverlays {
+        get {
+          return this._bitmapTransformOverlaysList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessValueOverlayBlockBlock> ValueOverlays {
+        get {
+          return this._valueOverlaysList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessColorOverlayBlockBlock> ColorOverlays {
+        get {
+          return this._colorOverlaysList;
+        }
+      }
+      public BlockCollection<ShaderPostprocessVertexShaderConstantBlockBlock> VertexShaderConstants {
+        get {
+          return this._vertexShaderConstantsList;
+        }
+      }
+      public BlockCollection<RenderStateBlockBlock> RenderStates {
+        get {
+          return this._renderStatesList;
+        }
+      }
+      public BlockCollection<TextureStageStateBlockBlock> TextureStageStates {
+        get {
+          return this._textureStageStatesList;
+        }
+      }
+      public BlockCollection<RenderStateParameterBlockBlock> RenderStateParameters {
+        get {
+          return this._renderStateParametersList;
+        }
+      }
+      public BlockCollection<TextureStageStateParameterBlockBlock> TextureStageParameters {
+        get {
+          return this._textureStageParametersList;
+        }
+      }
+      public BlockCollection<TextureBlockBlock> Textures {
+        get {
+          return this._texturesList;
+        }
+      }
+      public BlockCollection<VertexShaderConstantBlockBlock> VnConstants {
+        get {
+          return this._vnConstantsList;
+        }
+      }
+      public BlockCollection<VertexShaderConstantBlockBlock> CnConstants {
+        get {
+          return this._cnConstantsList;
+        }
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+for (int x=0; x<Layers.BlockCount; x++)
+{
+  IBlock block = Layers.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Passes.BlockCount; x++)
+{
+  IBlock block = Passes.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Implementations.BlockCount; x++)
+{
+  IBlock block = Implementations.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Bitmaps.BlockCount; x++)
+{
+  IBlock block = Bitmaps.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<BitmapTransforms.BlockCount; x++)
+{
+  IBlock block = BitmapTransforms.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Values.BlockCount; x++)
+{
+  IBlock block = Values.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Colors.BlockCount; x++)
+{
+  IBlock block = Colors.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<BitmapTransformOverlays.BlockCount; x++)
+{
+  IBlock block = BitmapTransformOverlays.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<ValueOverlays.BlockCount; x++)
+{
+  IBlock block = ValueOverlays.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<ColorOverlays.BlockCount; x++)
+{
+  IBlock block = ColorOverlays.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<VertexShaderConstants.BlockCount; x++)
+{
+  IBlock block = VertexShaderConstants.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<RenderStates.BlockCount; x++)
+{
+  IBlock block = RenderStates.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<TextureStageStates.BlockCount; x++)
+{
+  IBlock block = TextureStageStates.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<RenderStateParameters.BlockCount; x++)
+{
+  IBlock block = RenderStateParameters.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<TextureStageParameters.BlockCount; x++)
+{
+  IBlock block = TextureStageParameters.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<Textures.BlockCount; x++)
+{
+  IBlock block = Textures.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<VnConstants.BlockCount; x++)
+{
+  IBlock block = VnConstants.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+for (int x=0; x<CnConstants.BlockCount; x++)
+{
+  IBlock block = CnConstants.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public Real ProjectedHeightPercentage {
+        get {
+          return this._projectedHeightPercentage;
+        }
+        set {
+          this._projectedHeightPercentage = value;
+        }
+      }
+      public LongInteger AvailableLayers {
+        get {
+          return this._availableLayers;
+        }
+        set {
+          this._availableLayers = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _projectedHeightPercentage.Read(reader);
+        _availableLayers.Read(reader);
+        _layers.Read(reader);
+        _passes.Read(reader);
+        _implementations.Read(reader);
+        _bitmaps.Read(reader);
+        _bitmapTransforms.Read(reader);
+        _values.Read(reader);
+        _colors.Read(reader);
+        _bitmapTransformOverlays.Read(reader);
+        _valueOverlays.Read(reader);
+        _colorOverlays.Read(reader);
+        _vertexShaderConstants.Read(reader);
+        _renderStates.Read(reader);
+        _textureStageStates.Read(reader);
+        _renderStateParameters.Read(reader);
+        _textureStageParameters.Read(reader);
+        _textures.Read(reader);
+        _vnConstants.Read(reader);
+        _cnConstants.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+        int x = 0;
+        for (x = 0; (x < _layers.Count); x = (x + 1)) {
+          Layers.Add(new ShaderPostprocessLayerBlockBlock());
+          Layers[x].Read(reader);
+        }
+        for (x = 0; (x < _layers.Count); x = (x + 1)) {
+          Layers[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _passes.Count); x = (x + 1)) {
+          Passes.Add(new ShaderPostprocessPassBlockBlock());
+          Passes[x].Read(reader);
+        }
+        for (x = 0; (x < _passes.Count); x = (x + 1)) {
+          Passes[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _implementations.Count); x = (x + 1)) {
+          Implementations.Add(new ShaderPostprocessImplementationBlockBlock());
+          Implementations[x].Read(reader);
+        }
+        for (x = 0; (x < _implementations.Count); x = (x + 1)) {
+          Implementations[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _bitmaps.Count); x = (x + 1)) {
+          Bitmaps.Add(new ShaderPostprocessBitmapBlockBlock());
+          Bitmaps[x].Read(reader);
+        }
+        for (x = 0; (x < _bitmaps.Count); x = (x + 1)) {
+          Bitmaps[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _bitmapTransforms.Count); x = (x + 1)) {
+          BitmapTransforms.Add(new ShaderPostprocessBitmapTransformBlockBlock());
+          BitmapTransforms[x].Read(reader);
+        }
+        for (x = 0; (x < _bitmapTransforms.Count); x = (x + 1)) {
+          BitmapTransforms[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _values.Count); x = (x + 1)) {
+          Values.Add(new ShaderPostprocessValueBlockBlock());
+          Values[x].Read(reader);
+        }
+        for (x = 0; (x < _values.Count); x = (x + 1)) {
+          Values[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _colors.Count); x = (x + 1)) {
+          Colors.Add(new ShaderPostprocessColorBlockBlock());
+          Colors[x].Read(reader);
+        }
+        for (x = 0; (x < _colors.Count); x = (x + 1)) {
+          Colors[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _bitmapTransformOverlays.Count); x = (x + 1)) {
+          BitmapTransformOverlays.Add(new ShaderPostprocessBitmapTransformOverlayBlockBlock());
+          BitmapTransformOverlays[x].Read(reader);
+        }
+        for (x = 0; (x < _bitmapTransformOverlays.Count); x = (x + 1)) {
+          BitmapTransformOverlays[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _valueOverlays.Count); x = (x + 1)) {
+          ValueOverlays.Add(new ShaderPostprocessValueOverlayBlockBlock());
+          ValueOverlays[x].Read(reader);
+        }
+        for (x = 0; (x < _valueOverlays.Count); x = (x + 1)) {
+          ValueOverlays[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _colorOverlays.Count); x = (x + 1)) {
+          ColorOverlays.Add(new ShaderPostprocessColorOverlayBlockBlock());
+          ColorOverlays[x].Read(reader);
+        }
+        for (x = 0; (x < _colorOverlays.Count); x = (x + 1)) {
+          ColorOverlays[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _vertexShaderConstants.Count); x = (x + 1)) {
+          VertexShaderConstants.Add(new ShaderPostprocessVertexShaderConstantBlockBlock());
+          VertexShaderConstants[x].Read(reader);
+        }
+        for (x = 0; (x < _vertexShaderConstants.Count); x = (x + 1)) {
+          VertexShaderConstants[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _renderStates.Count); x = (x + 1)) {
+          RenderStates.Add(new RenderStateBlockBlock());
+          RenderStates[x].Read(reader);
+        }
+        for (x = 0; (x < _renderStates.Count); x = (x + 1)) {
+          RenderStates[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _textureStageStates.Count); x = (x + 1)) {
+          TextureStageStates.Add(new TextureStageStateBlockBlock());
+          TextureStageStates[x].Read(reader);
+        }
+        for (x = 0; (x < _textureStageStates.Count); x = (x + 1)) {
+          TextureStageStates[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _renderStateParameters.Count); x = (x + 1)) {
+          RenderStateParameters.Add(new RenderStateParameterBlockBlock());
+          RenderStateParameters[x].Read(reader);
+        }
+        for (x = 0; (x < _renderStateParameters.Count); x = (x + 1)) {
+          RenderStateParameters[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _textureStageParameters.Count); x = (x + 1)) {
+          TextureStageParameters.Add(new TextureStageStateParameterBlockBlock());
+          TextureStageParameters[x].Read(reader);
+        }
+        for (x = 0; (x < _textureStageParameters.Count); x = (x + 1)) {
+          TextureStageParameters[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _textures.Count); x = (x + 1)) {
+          Textures.Add(new TextureBlockBlock());
+          Textures[x].Read(reader);
+        }
+        for (x = 0; (x < _textures.Count); x = (x + 1)) {
+          Textures[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _vnConstants.Count); x = (x + 1)) {
+          VnConstants.Add(new VertexShaderConstantBlockBlock());
+          VnConstants[x].Read(reader);
+        }
+        for (x = 0; (x < _vnConstants.Count); x = (x + 1)) {
+          VnConstants[x].ReadChildData(reader);
+        }
+        for (x = 0; (x < _cnConstants.Count); x = (x + 1)) {
+          CnConstants.Add(new VertexShaderConstantBlockBlock());
+          CnConstants[x].Read(reader);
+        }
+        for (x = 0; (x < _cnConstants.Count); x = (x + 1)) {
+          CnConstants[x].ReadChildData(reader);
+        }
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _projectedHeightPercentage.Write(bw);
+        _availableLayers.Write(bw);
+_layers.Count = Layers.Count;
+        _layers.Write(bw);
+_passes.Count = Passes.Count;
+        _passes.Write(bw);
+_implementations.Count = Implementations.Count;
+        _implementations.Write(bw);
+_bitmaps.Count = Bitmaps.Count;
+        _bitmaps.Write(bw);
+_bitmapTransforms.Count = BitmapTransforms.Count;
+        _bitmapTransforms.Write(bw);
+_values.Count = Values.Count;
+        _values.Write(bw);
+_colors.Count = Colors.Count;
+        _colors.Write(bw);
+_bitmapTransformOverlays.Count = BitmapTransformOverlays.Count;
+        _bitmapTransformOverlays.Write(bw);
+_valueOverlays.Count = ValueOverlays.Count;
+        _valueOverlays.Write(bw);
+_colorOverlays.Count = ColorOverlays.Count;
+        _colorOverlays.Write(bw);
+_vertexShaderConstants.Count = VertexShaderConstants.Count;
+        _vertexShaderConstants.Write(bw);
+_renderStates.Count = RenderStates.Count;
+        _renderStates.Write(bw);
+_textureStageStates.Count = TextureStageStates.Count;
+        _textureStageStates.Write(bw);
+_renderStateParameters.Count = RenderStateParameters.Count;
+        _renderStateParameters.Write(bw);
+_textureStageParameters.Count = TextureStageParameters.Count;
+        _textureStageParameters.Write(bw);
+_textures.Count = Textures.Count;
+        _textures.Write(bw);
+_vnConstants.Count = VnConstants.Count;
+        _vnConstants.Write(bw);
+_cnConstants.Count = CnConstants.Count;
+        _cnConstants.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+        int x = 0;
+        for (x = 0; (x < _layers.Count); x = (x + 1)) {
+          Layers[x].Write(writer);
+        }
+        for (x = 0; (x < _layers.Count); x = (x + 1)) {
+          Layers[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _passes.Count); x = (x + 1)) {
+          Passes[x].Write(writer);
+        }
+        for (x = 0; (x < _passes.Count); x = (x + 1)) {
+          Passes[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _implementations.Count); x = (x + 1)) {
+          Implementations[x].Write(writer);
+        }
+        for (x = 0; (x < _implementations.Count); x = (x + 1)) {
+          Implementations[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _bitmaps.Count); x = (x + 1)) {
+          Bitmaps[x].Write(writer);
+        }
+        for (x = 0; (x < _bitmaps.Count); x = (x + 1)) {
+          Bitmaps[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _bitmapTransforms.Count); x = (x + 1)) {
+          BitmapTransforms[x].Write(writer);
+        }
+        for (x = 0; (x < _bitmapTransforms.Count); x = (x + 1)) {
+          BitmapTransforms[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _values.Count); x = (x + 1)) {
+          Values[x].Write(writer);
+        }
+        for (x = 0; (x < _values.Count); x = (x + 1)) {
+          Values[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _colors.Count); x = (x + 1)) {
+          Colors[x].Write(writer);
+        }
+        for (x = 0; (x < _colors.Count); x = (x + 1)) {
+          Colors[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _bitmapTransformOverlays.Count); x = (x + 1)) {
+          BitmapTransformOverlays[x].Write(writer);
+        }
+        for (x = 0; (x < _bitmapTransformOverlays.Count); x = (x + 1)) {
+          BitmapTransformOverlays[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _valueOverlays.Count); x = (x + 1)) {
+          ValueOverlays[x].Write(writer);
+        }
+        for (x = 0; (x < _valueOverlays.Count); x = (x + 1)) {
+          ValueOverlays[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _colorOverlays.Count); x = (x + 1)) {
+          ColorOverlays[x].Write(writer);
+        }
+        for (x = 0; (x < _colorOverlays.Count); x = (x + 1)) {
+          ColorOverlays[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _vertexShaderConstants.Count); x = (x + 1)) {
+          VertexShaderConstants[x].Write(writer);
+        }
+        for (x = 0; (x < _vertexShaderConstants.Count); x = (x + 1)) {
+          VertexShaderConstants[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _renderStates.Count); x = (x + 1)) {
+          RenderStates[x].Write(writer);
+        }
+        for (x = 0; (x < _renderStates.Count); x = (x + 1)) {
+          RenderStates[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _textureStageStates.Count); x = (x + 1)) {
+          TextureStageStates[x].Write(writer);
+        }
+        for (x = 0; (x < _textureStageStates.Count); x = (x + 1)) {
+          TextureStageStates[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _renderStateParameters.Count); x = (x + 1)) {
+          RenderStateParameters[x].Write(writer);
+        }
+        for (x = 0; (x < _renderStateParameters.Count); x = (x + 1)) {
+          RenderStateParameters[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _textureStageParameters.Count); x = (x + 1)) {
+          TextureStageParameters[x].Write(writer);
+        }
+        for (x = 0; (x < _textureStageParameters.Count); x = (x + 1)) {
+          TextureStageParameters[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _textures.Count); x = (x + 1)) {
+          Textures[x].Write(writer);
+        }
+        for (x = 0; (x < _textures.Count); x = (x + 1)) {
+          Textures[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _vnConstants.Count); x = (x + 1)) {
+          VnConstants[x].Write(writer);
+        }
+        for (x = 0; (x < _vnConstants.Count); x = (x + 1)) {
+          VnConstants[x].WriteChildData(writer);
+        }
+        for (x = 0; (x < _cnConstants.Count); x = (x + 1)) {
+          CnConstants[x].Write(writer);
+        }
+        for (x = 0; (x < _cnConstants.Count); x = (x + 1)) {
+          CnConstants[x].WriteChildData(writer);
+        }
+      }
+    }
+    public class ShaderPostprocessLayerBlockBlock : IBlock {
+      private ShortInteger _blockIndexData = new ShortInteger();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessLayerBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public ShortInteger BlockIndexData {
+        get {
+          return this._blockIndexData;
+        }
+        set {
+          this._blockIndexData = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _blockIndexData.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _blockIndexData.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessPassBlockBlock : IBlock {
+      private TagReference _shaderPass = new TagReference();
+      private ShortInteger _blockIndexData = new ShortInteger();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessPassBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+references.Add(_shaderPass.Value);
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public TagReference ShaderPass {
+        get {
+          return this._shaderPass;
+        }
+        set {
+          this._shaderPass = value;
+        }
+      }
+      public ShortInteger BlockIndexData {
+        get {
+          return this._blockIndexData;
+        }
+        set {
+          this._blockIndexData = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _shaderPass.Read(reader);
+        _blockIndexData.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+        _shaderPass.ReadString(reader);
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _shaderPass.Write(bw);
+        _blockIndexData.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+        _shaderPass.WriteString(writer);
+      }
+    }
+    public class ShaderPostprocessImplementationBlockBlock : IBlock {
+      private ShortInteger _blockIndexData = new ShortInteger();
+      private ShortInteger _blockIndexData2 = new ShortInteger();
+      private ShortInteger _blockIndexData3 = new ShortInteger();
+      private ShortInteger _blockIndexData4 = new ShortInteger();
+      private ShortInteger _blockIndexData5 = new ShortInteger();
+      private ShortInteger _blockIndexData6 = new ShortInteger();
+      private ShortInteger _blockIndexData7 = new ShortInteger();
+      private ShortInteger _blockIndexData8 = new ShortInteger();
+      private ShortInteger _blockIndexData9 = new ShortInteger();
+      private ShortInteger _blockIndexData10 = new ShortInteger();
+      private ShortInteger _blockIndexData11 = new ShortInteger();
+      private ShortInteger _blockIndexData12 = new ShortInteger();
+      private ShortInteger _blockIndexData13 = new ShortInteger();
+      private ShortInteger _blockIndexData14 = new ShortInteger();
+      private ShortInteger _blockIndexData15 = new ShortInteger();
+      private ShortInteger _blockIndexData16 = new ShortInteger();
+      private ShortInteger _blockIndexData17 = new ShortInteger();
+      private ShortInteger _blockIndexData18 = new ShortInteger();
+      private ShortInteger _blockIndexData19 = new ShortInteger();
+      private ShortInteger _blockIndexData20 = new ShortInteger();
+      private ShortInteger _blockIndexData21 = new ShortInteger();
+      private ShortInteger _blockIndexData22 = new ShortInteger();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessImplementationBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public ShortInteger BlockIndexData {
+        get {
+          return this._blockIndexData;
+        }
+        set {
+          this._blockIndexData = value;
+        }
+      }
+      public ShortInteger BlockIndexData2 {
+        get {
+          return this._blockIndexData2;
+        }
+        set {
+          this._blockIndexData2 = value;
+        }
+      }
+      public ShortInteger BlockIndexData3 {
+        get {
+          return this._blockIndexData3;
+        }
+        set {
+          this._blockIndexData3 = value;
+        }
+      }
+      public ShortInteger BlockIndexData4 {
+        get {
+          return this._blockIndexData4;
+        }
+        set {
+          this._blockIndexData4 = value;
+        }
+      }
+      public ShortInteger BlockIndexData5 {
+        get {
+          return this._blockIndexData5;
+        }
+        set {
+          this._blockIndexData5 = value;
+        }
+      }
+      public ShortInteger BlockIndexData6 {
+        get {
+          return this._blockIndexData6;
+        }
+        set {
+          this._blockIndexData6 = value;
+        }
+      }
+      public ShortInteger BlockIndexData7 {
+        get {
+          return this._blockIndexData7;
+        }
+        set {
+          this._blockIndexData7 = value;
+        }
+      }
+      public ShortInteger BlockIndexData8 {
+        get {
+          return this._blockIndexData8;
+        }
+        set {
+          this._blockIndexData8 = value;
+        }
+      }
+      public ShortInteger BlockIndexData9 {
+        get {
+          return this._blockIndexData9;
+        }
+        set {
+          this._blockIndexData9 = value;
+        }
+      }
+      public ShortInteger BlockIndexData10 {
+        get {
+          return this._blockIndexData10;
+        }
+        set {
+          this._blockIndexData10 = value;
+        }
+      }
+      public ShortInteger BlockIndexData11 {
+        get {
+          return this._blockIndexData11;
+        }
+        set {
+          this._blockIndexData11 = value;
+        }
+      }
+      public ShortInteger BlockIndexData12 {
+        get {
+          return this._blockIndexData12;
+        }
+        set {
+          this._blockIndexData12 = value;
+        }
+      }
+      public ShortInteger BlockIndexData13 {
+        get {
+          return this._blockIndexData13;
+        }
+        set {
+          this._blockIndexData13 = value;
+        }
+      }
+      public ShortInteger BlockIndexData14 {
+        get {
+          return this._blockIndexData14;
+        }
+        set {
+          this._blockIndexData14 = value;
+        }
+      }
+      public ShortInteger BlockIndexData15 {
+        get {
+          return this._blockIndexData15;
+        }
+        set {
+          this._blockIndexData15 = value;
+        }
+      }
+      public ShortInteger BlockIndexData16 {
+        get {
+          return this._blockIndexData16;
+        }
+        set {
+          this._blockIndexData16 = value;
+        }
+      }
+      public ShortInteger BlockIndexData17 {
+        get {
+          return this._blockIndexData17;
+        }
+        set {
+          this._blockIndexData17 = value;
+        }
+      }
+      public ShortInteger BlockIndexData18 {
+        get {
+          return this._blockIndexData18;
+        }
+        set {
+          this._blockIndexData18 = value;
+        }
+      }
+      public ShortInteger BlockIndexData19 {
+        get {
+          return this._blockIndexData19;
+        }
+        set {
+          this._blockIndexData19 = value;
+        }
+      }
+      public ShortInteger BlockIndexData20 {
+        get {
+          return this._blockIndexData20;
+        }
+        set {
+          this._blockIndexData20 = value;
+        }
+      }
+      public ShortInteger BlockIndexData21 {
+        get {
+          return this._blockIndexData21;
+        }
+        set {
+          this._blockIndexData21 = value;
+        }
+      }
+      public ShortInteger BlockIndexData22 {
+        get {
+          return this._blockIndexData22;
+        }
+        set {
+          this._blockIndexData22 = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _blockIndexData.Read(reader);
+        _blockIndexData2.Read(reader);
+        _blockIndexData3.Read(reader);
+        _blockIndexData4.Read(reader);
+        _blockIndexData5.Read(reader);
+        _blockIndexData6.Read(reader);
+        _blockIndexData7.Read(reader);
+        _blockIndexData8.Read(reader);
+        _blockIndexData9.Read(reader);
+        _blockIndexData10.Read(reader);
+        _blockIndexData11.Read(reader);
+        _blockIndexData12.Read(reader);
+        _blockIndexData13.Read(reader);
+        _blockIndexData14.Read(reader);
+        _blockIndexData15.Read(reader);
+        _blockIndexData16.Read(reader);
+        _blockIndexData17.Read(reader);
+        _blockIndexData18.Read(reader);
+        _blockIndexData19.Read(reader);
+        _blockIndexData20.Read(reader);
+        _blockIndexData21.Read(reader);
+        _blockIndexData22.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _blockIndexData.Write(bw);
+        _blockIndexData2.Write(bw);
+        _blockIndexData3.Write(bw);
+        _blockIndexData4.Write(bw);
+        _blockIndexData5.Write(bw);
+        _blockIndexData6.Write(bw);
+        _blockIndexData7.Write(bw);
+        _blockIndexData8.Write(bw);
+        _blockIndexData9.Write(bw);
+        _blockIndexData10.Write(bw);
+        _blockIndexData11.Write(bw);
+        _blockIndexData12.Write(bw);
+        _blockIndexData13.Write(bw);
+        _blockIndexData14.Write(bw);
+        _blockIndexData15.Write(bw);
+        _blockIndexData16.Write(bw);
+        _blockIndexData17.Write(bw);
+        _blockIndexData18.Write(bw);
+        _blockIndexData19.Write(bw);
+        _blockIndexData20.Write(bw);
+        _blockIndexData21.Write(bw);
+        _blockIndexData22.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessBitmapBlockBlock : IBlock {
+      private CharInteger _parameterIndex = new CharInteger();
+      private CharInteger _flags = new CharInteger();
+      private LongInteger _bitmapGroupIndex = new LongInteger();
+      private Real _logBitmapDimension = new Real();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessBitmapBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger ParameterIndex {
+        get {
+          return this._parameterIndex;
+        }
+        set {
+          this._parameterIndex = value;
+        }
+      }
+      public CharInteger Flags {
+        get {
+          return this._flags;
+        }
+        set {
+          this._flags = value;
+        }
+      }
+      public LongInteger BitmapGroupIndex {
+        get {
+          return this._bitmapGroupIndex;
+        }
+        set {
+          this._bitmapGroupIndex = value;
+        }
+      }
+      public Real LogBitmapDimension {
+        get {
+          return this._logBitmapDimension;
+        }
+        set {
+          this._logBitmapDimension = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _parameterIndex.Read(reader);
+        _flags.Read(reader);
+        _bitmapGroupIndex.Read(reader);
+        _logBitmapDimension.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _parameterIndex.Write(bw);
+        _flags.Write(bw);
+        _bitmapGroupIndex.Write(bw);
+        _logBitmapDimension.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessBitmapTransformBlockBlock : IBlock {
+      private CharInteger _parameterIndex = new CharInteger();
+      private CharInteger _bitmapTransformIndex = new CharInteger();
+      private Real _value = new Real();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessBitmapTransformBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger ParameterIndex {
+        get {
+          return this._parameterIndex;
+        }
+        set {
+          this._parameterIndex = value;
+        }
+      }
+      public CharInteger BitmapTransformIndex {
+        get {
+          return this._bitmapTransformIndex;
+        }
+        set {
+          this._bitmapTransformIndex = value;
+        }
+      }
+      public Real Value {
+        get {
+          return this._value;
+        }
+        set {
+          this._value = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _parameterIndex.Read(reader);
+        _bitmapTransformIndex.Read(reader);
+        _value.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _parameterIndex.Write(bw);
+        _bitmapTransformIndex.Write(bw);
+        _value.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessValueBlockBlock : IBlock {
+      private CharInteger _parameterIndex = new CharInteger();
+      private Real _value = new Real();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessValueBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger ParameterIndex {
+        get {
+          return this._parameterIndex;
+        }
+        set {
+          this._parameterIndex = value;
+        }
+      }
+      public Real Value {
+        get {
+          return this._value;
+        }
+        set {
+          this._value = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _parameterIndex.Read(reader);
+        _value.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _parameterIndex.Write(bw);
+        _value.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessColorBlockBlock : IBlock {
+      private CharInteger _parameterIndex = new CharInteger();
+      private RealRGBColor _color = new RealRGBColor();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessColorBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger ParameterIndex {
+        get {
+          return this._parameterIndex;
+        }
+        set {
+          this._parameterIndex = value;
+        }
+      }
+      public RealRGBColor Color {
+        get {
+          return this._color;
+        }
+        set {
+          this._color = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _parameterIndex.Read(reader);
+        _color.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _parameterIndex.Write(bw);
+        _color.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class ShaderPostprocessBitmapTransformOverlayBlockBlock : IBlock {
+      private CharInteger _parameterIndex = new CharInteger();
+      private CharInteger _transformIndex = new CharInteger();
+      private CharInteger _animationPropertyType = new CharInteger();
+      private StringId _inputName = new StringId();
+      private StringId _rangeName = new StringId();
+      private Real _timePeriodInSeconds = new Real();
+      private Block _data = new Block();
+      public BlockCollection<ByteBlockBlock> _dataList = new BlockCollection<ByteBlockBlock>();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessBitmapTransformOverlayBlockBlock() {
+      }
+      public BlockCollection<ByteBlockBlock> Data {
+        get {
+          return this._dataList;
+        }
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+for (int x=0; x<Data.BlockCount; x++)
+{
+  IBlock block = Data.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger ParameterIndex {
+        get {
+          return this._parameterIndex;
+        }
+        set {
+          this._parameterIndex = value;
+        }
+      }
+      public CharInteger TransformIndex {
+        get {
+          return this._transformIndex;
+        }
+        set {
+          this._transformIndex = value;
+        }
+      }
+      public CharInteger AnimationPropertyType {
+        get {
+          return this._animationPropertyType;
+        }
+        set {
+          this._animationPropertyType = value;
+        }
+      }
+      public StringId InputName {
+        get {
+          return this._inputName;
+        }
+        set {
+          this._inputName = value;
+        }
+      }
+      public StringId RangeName {
+        get {
+          return this._rangeName;
+        }
+        set {
+          this._rangeName = value;
+        }
+      }
+      public Real TimePeriodInSeconds {
+        get {
+          return this._timePeriodInSeconds;
+        }
+        set {
+          this._timePeriodInSeconds = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _parameterIndex.Read(reader);
+        _transformIndex.Read(reader);
+        _animationPropertyType.Read(reader);
+        _inputName.Read(reader);
+        _rangeName.Read(reader);
+        _timePeriodInSeconds.Read(reader);
+        _data.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+        int x = 0;
+        _inputName.ReadString(reader);
+        _rangeName.ReadString(reader);
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data.Add(new ByteBlockBlock());
+          Data[x].Read(reader);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].ReadChildData(reader);
+        }
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _parameterIndex.Write(bw);
+        _transformIndex.Write(bw);
+        _animationPropertyType.Write(bw);
+        _inputName.Write(bw);
+        _rangeName.Write(bw);
+        _timePeriodInSeconds.Write(bw);
+_data.Count = Data.Count;
+        _data.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+        int x = 0;
+        _inputName.WriteString(writer);
+        _rangeName.WriteString(writer);
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].Write(writer);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].WriteChildData(writer);
+        }
+      }
+    }
+    public class ShaderPostprocessValueOverlayBlockBlock : IBlock {
+      private CharInteger _parameterIndex = new CharInteger();
+      private StringId _inputName = new StringId();
+      private StringId _rangeName = new StringId();
+      private Real _timePeriodInSeconds = new Real();
+      private Block _data = new Block();
+      public BlockCollection<ByteBlockBlock> _dataList = new BlockCollection<ByteBlockBlock>();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessValueOverlayBlockBlock() {
+      }
+      public BlockCollection<ByteBlockBlock> Data {
+        get {
+          return this._dataList;
+        }
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+for (int x=0; x<Data.BlockCount; x++)
+{
+  IBlock block = Data.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger ParameterIndex {
+        get {
+          return this._parameterIndex;
+        }
+        set {
+          this._parameterIndex = value;
+        }
+      }
+      public StringId InputName {
+        get {
+          return this._inputName;
+        }
+        set {
+          this._inputName = value;
+        }
+      }
+      public StringId RangeName {
+        get {
+          return this._rangeName;
+        }
+        set {
+          this._rangeName = value;
+        }
+      }
+      public Real TimePeriodInSeconds {
+        get {
+          return this._timePeriodInSeconds;
+        }
+        set {
+          this._timePeriodInSeconds = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _parameterIndex.Read(reader);
+        _inputName.Read(reader);
+        _rangeName.Read(reader);
+        _timePeriodInSeconds.Read(reader);
+        _data.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+        int x = 0;
+        _inputName.ReadString(reader);
+        _rangeName.ReadString(reader);
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data.Add(new ByteBlockBlock());
+          Data[x].Read(reader);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].ReadChildData(reader);
+        }
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _parameterIndex.Write(bw);
+        _inputName.Write(bw);
+        _rangeName.Write(bw);
+        _timePeriodInSeconds.Write(bw);
+_data.Count = Data.Count;
+        _data.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+        int x = 0;
+        _inputName.WriteString(writer);
+        _rangeName.WriteString(writer);
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].Write(writer);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].WriteChildData(writer);
+        }
+      }
+    }
+    public class ShaderPostprocessColorOverlayBlockBlock : IBlock {
+      private CharInteger _parameterIndex = new CharInteger();
+      private StringId _inputName = new StringId();
+      private StringId _rangeName = new StringId();
+      private Real _timePeriodInSeconds = new Real();
+      private Block _data = new Block();
+      public BlockCollection<ByteBlockBlock> _dataList = new BlockCollection<ByteBlockBlock>();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessColorOverlayBlockBlock() {
+      }
+      public BlockCollection<ByteBlockBlock> Data {
+        get {
+          return this._dataList;
+        }
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+for (int x=0; x<Data.BlockCount; x++)
+{
+  IBlock block = Data.GetBlock(x);
+  references.AddRange(block.TagReferenceList);
+}
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger ParameterIndex {
+        get {
+          return this._parameterIndex;
+        }
+        set {
+          this._parameterIndex = value;
+        }
+      }
+      public StringId InputName {
+        get {
+          return this._inputName;
+        }
+        set {
+          this._inputName = value;
+        }
+      }
+      public StringId RangeName {
+        get {
+          return this._rangeName;
+        }
+        set {
+          this._rangeName = value;
+        }
+      }
+      public Real TimePeriodInSeconds {
+        get {
+          return this._timePeriodInSeconds;
+        }
+        set {
+          this._timePeriodInSeconds = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _parameterIndex.Read(reader);
+        _inputName.Read(reader);
+        _rangeName.Read(reader);
+        _timePeriodInSeconds.Read(reader);
+        _data.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+        int x = 0;
+        _inputName.ReadString(reader);
+        _rangeName.ReadString(reader);
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data.Add(new ByteBlockBlock());
+          Data[x].Read(reader);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].ReadChildData(reader);
+        }
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _parameterIndex.Write(bw);
+        _inputName.Write(bw);
+        _rangeName.Write(bw);
+        _timePeriodInSeconds.Write(bw);
+_data.Count = Data.Count;
+        _data.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+        int x = 0;
+        _inputName.WriteString(writer);
+        _rangeName.WriteString(writer);
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].Write(writer);
+        }
+        for (x = 0; (x < _data.Count); x = (x + 1)) {
+          Data[x].WriteChildData(writer);
+        }
+      }
+    }
+    public class ShaderPostprocessVertexShaderConstantBlockBlock : IBlock {
+      private CharInteger _registerIndex = new CharInteger();
+      private CharInteger _registerBank = new CharInteger();
+      private Real _data = new Real();
+      private Real _data2 = new Real();
+      private Real _data3 = new Real();
+      private Real _data4 = new Real();
+public event System.EventHandler BlockNameChanged;
+      public ShaderPostprocessVertexShaderConstantBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger RegisterIndex {
+        get {
+          return this._registerIndex;
+        }
+        set {
+          this._registerIndex = value;
+        }
+      }
+      public CharInteger RegisterBank {
+        get {
+          return this._registerBank;
+        }
+        set {
+          this._registerBank = value;
+        }
+      }
+      public Real Data {
+        get {
+          return this._data;
+        }
+        set {
+          this._data = value;
+        }
+      }
+      public Real Data2 {
+        get {
+          return this._data2;
+        }
+        set {
+          this._data2 = value;
+        }
+      }
+      public Real Data3 {
+        get {
+          return this._data3;
+        }
+        set {
+          this._data3 = value;
+        }
+      }
+      public Real Data4 {
+        get {
+          return this._data4;
+        }
+        set {
+          this._data4 = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _registerIndex.Read(reader);
+        _registerBank.Read(reader);
+        _data.Read(reader);
+        _data2.Read(reader);
+        _data3.Read(reader);
+        _data4.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _registerIndex.Write(bw);
+        _registerBank.Write(bw);
+        _data.Write(bw);
+        _data2.Write(bw);
+        _data3.Write(bw);
+        _data4.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class RenderStateBlockBlock : IBlock {
+      private CharInteger _stateIndex = new CharInteger();
+      private LongInteger _stateValue = new LongInteger();
+public event System.EventHandler BlockNameChanged;
+      public RenderStateBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger StateIndex {
+        get {
+          return this._stateIndex;
+        }
+        set {
+          this._stateIndex = value;
+        }
+      }
+      public LongInteger StateValue {
+        get {
+          return this._stateValue;
+        }
+        set {
+          this._stateValue = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _stateIndex.Read(reader);
+        _stateValue.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _stateIndex.Write(bw);
+        _stateValue.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class TextureStageStateBlockBlock : IBlock {
+      private CharInteger _stateIndex = new CharInteger();
+      private CharInteger _stageIndex = new CharInteger();
+      private LongInteger _stateValue = new LongInteger();
+public event System.EventHandler BlockNameChanged;
+      public TextureStageStateBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger StateIndex {
+        get {
+          return this._stateIndex;
+        }
+        set {
+          this._stateIndex = value;
+        }
+      }
+      public CharInteger StageIndex {
+        get {
+          return this._stageIndex;
+        }
+        set {
+          this._stageIndex = value;
+        }
+      }
+      public LongInteger StateValue {
+        get {
+          return this._stateValue;
+        }
+        set {
+          this._stateValue = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _stateIndex.Read(reader);
+        _stageIndex.Read(reader);
+        _stateValue.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _stateIndex.Write(bw);
+        _stageIndex.Write(bw);
+        _stateValue.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class RenderStateParameterBlockBlock : IBlock {
+      private CharInteger _parameterIndex = new CharInteger();
+      private CharInteger _parameterType = new CharInteger();
+      private CharInteger _stateIndex = new CharInteger();
+public event System.EventHandler BlockNameChanged;
+      public RenderStateParameterBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger ParameterIndex {
+        get {
+          return this._parameterIndex;
+        }
+        set {
+          this._parameterIndex = value;
+        }
+      }
+      public CharInteger ParameterType {
+        get {
+          return this._parameterType;
+        }
+        set {
+          this._parameterType = value;
+        }
+      }
+      public CharInteger StateIndex {
+        get {
+          return this._stateIndex;
+        }
+        set {
+          this._stateIndex = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _parameterIndex.Read(reader);
+        _parameterType.Read(reader);
+        _stateIndex.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _parameterIndex.Write(bw);
+        _parameterType.Write(bw);
+        _stateIndex.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class TextureStageStateParameterBlockBlock : IBlock {
+      private CharInteger _parameterIndex = new CharInteger();
+      private CharInteger _parameterType = new CharInteger();
+      private CharInteger _stateIndex = new CharInteger();
+      private CharInteger _stageIndex = new CharInteger();
+public event System.EventHandler BlockNameChanged;
+      public TextureStageStateParameterBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger ParameterIndex {
+        get {
+          return this._parameterIndex;
+        }
+        set {
+          this._parameterIndex = value;
+        }
+      }
+      public CharInteger ParameterType {
+        get {
+          return this._parameterType;
+        }
+        set {
+          this._parameterType = value;
+        }
+      }
+      public CharInteger StateIndex {
+        get {
+          return this._stateIndex;
+        }
+        set {
+          this._stateIndex = value;
+        }
+      }
+      public CharInteger StageIndex {
+        get {
+          return this._stageIndex;
+        }
+        set {
+          this._stageIndex = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _parameterIndex.Read(reader);
+        _parameterType.Read(reader);
+        _stateIndex.Read(reader);
+        _stageIndex.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _parameterIndex.Write(bw);
+        _parameterType.Write(bw);
+        _stateIndex.Write(bw);
+        _stageIndex.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class TextureBlockBlock : IBlock {
+      private CharInteger _stageIndex = new CharInteger();
+      private CharInteger _parameterIndex = new CharInteger();
+      private CharInteger _globalTextureIndex = new CharInteger();
+      private CharInteger _flags = new CharInteger();
+public event System.EventHandler BlockNameChanged;
+      public TextureBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger StageIndex {
+        get {
+          return this._stageIndex;
+        }
+        set {
+          this._stageIndex = value;
+        }
+      }
+      public CharInteger ParameterIndex {
+        get {
+          return this._parameterIndex;
+        }
+        set {
+          this._parameterIndex = value;
+        }
+      }
+      public CharInteger GlobalTextureIndex {
+        get {
+          return this._globalTextureIndex;
+        }
+        set {
+          this._globalTextureIndex = value;
+        }
+      }
+      public CharInteger Flags {
+        get {
+          return this._flags;
+        }
+        set {
+          this._flags = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _stageIndex.Read(reader);
+        _parameterIndex.Read(reader);
+        _globalTextureIndex.Read(reader);
+        _flags.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _stageIndex.Write(bw);
+        _parameterIndex.Write(bw);
+        _globalTextureIndex.Write(bw);
+        _flags.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+    public class VertexShaderConstantBlockBlock : IBlock {
+      private CharInteger _registerIndex = new CharInteger();
+      private CharInteger _parameterIndex = new CharInteger();
+      private CharInteger _destinationMask = new CharInteger();
+      private CharInteger _scaleByTextureStage = new CharInteger();
+public event System.EventHandler BlockNameChanged;
+      public VertexShaderConstantBlockBlock() {
+      }
+      public virtual string[] TagReferenceList {
+        get {
+UniqueStringCollection references = new UniqueStringCollection();
+return references.ToArray();
+        }
+      }
+      public virtual string BlockName {
+        get {
+return "";
+        }
+      }
+      public CharInteger RegisterIndex {
+        get {
+          return this._registerIndex;
+        }
+        set {
+          this._registerIndex = value;
+        }
+      }
+      public CharInteger ParameterIndex {
+        get {
+          return this._parameterIndex;
+        }
+        set {
+          this._parameterIndex = value;
+        }
+      }
+      public CharInteger DestinationMask {
+        get {
+          return this._destinationMask;
+        }
+        set {
+          this._destinationMask = value;
+        }
+      }
+      public CharInteger ScaleByTextureStage {
+        get {
+          return this._scaleByTextureStage;
+        }
+        set {
+          this._scaleByTextureStage = value;
+        }
+      }
+      public virtual void Read(BinaryReader reader) {
+        _registerIndex.Read(reader);
+        _parameterIndex.Read(reader);
+        _destinationMask.Read(reader);
+        _scaleByTextureStage.Read(reader);
+      }
+      public virtual void ReadChildData(BinaryReader reader) {
+      }
+      public virtual void Write(BinaryWriter bw) {
+        _registerIndex.Write(bw);
+        _parameterIndex.Write(bw);
+        _destinationMask.Write(bw);
+        _scaleByTextureStage.Write(bw);
+      }
+      public virtual void WriteChildData(BinaryWriter writer) {
+      }
+    }
+  }
+}

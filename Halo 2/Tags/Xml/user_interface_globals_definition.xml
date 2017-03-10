@@ -1,0 +1,15 @@
+<xml>
+  <name type="wgtz" parenttype="????">UserInterfaceGlobalsDefinition</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="UserInterfaceGlobalsDefinitionBlock">
+      <value type="TagReference" name="shared globals" disabled="false" extensions="wigl" />
+      <struct name="UserInterfaceWidgetReferenceBlock">
+        <value type="TagReference" name="widget tag" disabled="false" extensions="wgit" />
+      </struct>
+      <value type="Block" name="screen widgets" disabled="false" struct="UserInterfaceWidgetReferenceBlock" maxelements="256" />
+      <value type="TagReference" name="mp variant settings ui" disabled="false" extensions="goof" />
+      <value type="TagReference" name="game hopper descriptions" disabled="false" extensions="unic" />
+    </struct>
+  </plugin>
+</xml>

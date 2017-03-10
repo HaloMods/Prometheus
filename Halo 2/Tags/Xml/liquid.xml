@@ -1,0 +1,92 @@
+<xml>
+  <name type="tdtl" parenttype="????">Liquid</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="LiquidBlock">
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Enum" name="type" length="2" disabled="false">
+        <item value="0" name="standard" />
+        <item value="1" name="weapon to projectile" />
+        <item value="2" name="projectile from weapon" />
+      </value>
+      <value type="StringId" name="attachment marker name" disabled="false" />
+      <value type="Pad" name="_unnamed1" length="56" />
+      <value type="Real" name="falloff distance from camera" disabled="false" unit="world units" />
+      <value type="Real" name="cutoff distance from camera" disabled="false" unit="world units" />
+      <value type="Pad" name="_unnamed2" length="32" />
+      <struct name="LiquidArcBlock">
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="basis marker-relative" />
+          <bit index="1" name="spread by external input" />
+          <bit index="2" name="collide with stuff" />
+          <bit index="3" name="no perspective midpoints" />
+        </value>
+        <value type="Enum" name="sprite count" length="2" disabled="false">
+          <item value="0" name="4 sprites" />
+          <item value="1" name="8 sprites" />
+          <item value="2" name="16 sprites" />
+          <item value="3" name="32 sprites" />
+          <item value="4" name="64 sprites" />
+          <item value="5" name="128 sprites" />
+          <item value="6" name="256 sprites" />
+        </value>
+        <value type="Real" name="natural length" disabled="false" unit="world units" />
+        <value type="ShortInteger" name="instances" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Angle" name="instance spread angle" disabled="false" unit="degrees" />
+        <value type="Real" name="instance rotation period" disabled="false" unit="seconds" />
+        <value type="Pad" name="_unnamed1" length="8" />
+        <value type="TagReference" name="material effects" disabled="false" extensions="foot" />
+        <value type="TagReference" name="bitmap" disabled="false" extensions="bitm" />
+        <value type="Pad" name="_unnamed2" length="8" />
+        <struct name="ByteBlock">
+          <value type="CharInteger" name="Value" disabled="false" />
+        </struct>
+        <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="Block" name="data2" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="RealFraction" name="vertical negative scale" disabled="false" unit="[0,1]" />
+        <value type="Block" name="data3" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="Pad" name="_unnamed3" length="64" />
+        <value type="Real" name="octave 1 frequency" disabled="false" unit="cycles/second" />
+        <value type="Real" name="octave 2 frequency" disabled="false" unit="cycles/second" />
+        <value type="Real" name="octave 3 frequency" disabled="false" unit="cycles/second" />
+        <value type="Real" name="octave 4 frequency" disabled="false" unit="cycles/second" />
+        <value type="Real" name="octave 5 frequency" disabled="false" unit="cycles/second" />
+        <value type="Real" name="octave 6 frequency" disabled="false" unit="cycles/second" />
+        <value type="Real" name="octave 7 frequency" disabled="false" unit="cycles/second" />
+        <value type="Real" name="octave 8 frequency" disabled="false" unit="cycles/second" />
+        <value type="Real" name="octave 9 frequency" disabled="false" unit="cycles/second" />
+        <value type="Pad" name="_unnamed4" length="28" />
+        <value type="Flags" name="octave flags" length="2" disabled="false">
+          <bit index="0" name="octave 1" />
+          <bit index="1" name="octave 2" />
+          <bit index="2" name="octave 3" />
+          <bit index="3" name="octave 4" />
+          <bit index="4" name="octave 5" />
+          <bit index="5" name="octave 6" />
+          <bit index="6" name="octave 7" />
+          <bit index="7" name="octave 8" />
+          <bit index="8" name="octave 9" />
+        </value>
+        <value type="Pad" name="_unnamed5" length="2" />
+        <struct name="LiquidCoreBlock">
+          <value type="Pad" name="_unnamed0" length="12" />
+          <value type="ShortInteger" name="bitmap index" disabled="false" />
+          <value type="Pad" name="_unnamed1" length="2" />
+          <struct name="ByteBlock">
+            <value type="CharInteger" name="Value" disabled="false" />
+          </struct>
+          <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="Block" name="data2" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="Block" name="data3" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="Block" name="data4" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="Block" name="data5" disabled="false" struct="ByteBlock" maxelements="1024" />
+        </struct>
+        <value type="Block" name="cores" disabled="false" struct="LiquidCoreBlock" maxelements="4" />
+        <value type="Block" name="data4" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="Block" name="data5" disabled="false" struct="ByteBlock" maxelements="1024" />
+      </struct>
+      <value type="Block" name="arcs" disabled="false" struct="LiquidArcBlock" maxelements="3" />
+    </struct>
+  </plugin>
+</xml>

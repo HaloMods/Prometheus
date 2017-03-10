@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="coll" parenttype="????">ModelCollisionGeometry</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="ModelCollisionGeometry">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="takes shield damage for children" />
+        <bit index="1" name="takes body damage for children" />
+        <bit index="2" name="always shields friendly damage" />
+        <bit index="3" name="passes area damage to children" />
+        <bit index="4" name="parent never takes body damage for us" />
+        <bit index="5" name="only damaged by explosives" />
+        <bit index="6" name="only damaged while occupied" />
+      </value>
+      <value type="ShortBlockIndex" name="indirect damage material" block="DamageMaterials">
+        <tooltip>The material we use when shielding child objects or getting hit by area of effect damage.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Real" name="maximum body vitality">
+        <tooltip>The default initial and maximum body vitality of this object.</tooltip>
+      </value>
+      <value type="Real" name="body system shock">
+        <tooltip>Anything that kills us (body depleted) doing more than this amount of damage also destroys us.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed2" length="24" />
+      <value type="Pad" name="_unnamed3" length="28" />
+      <value type="RealFraction" name="friendly damage resistance">
+        <tooltip>The fraction of damage caused by friendly units ignored by this object (zero means full damage).</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed4" length="8" />
+      <value type="Pad" name="_unnamed5" length="32" />
+      <value type="TagReference" name="localized damage effect" extensions="effe" />
+      <value type="Real" name="area damage effect threshold" />
+      <value type="TagReference" name="area damage effect" extensions="effe" />
+      <value type="Real" name="body damaged threshold">
+        <tooltip>When passing this vitality the 'body damaged' effect, below, is created.</tooltip>
+      </value>
+      <value type="TagReference" name="body damaged effect" extensions="effe" />
+      <value type="TagReference" name="body depleted effect" extensions="effe" />
+      <value type="Real" name="body destroyed threshold">
+        <tooltip>When passing this vitality (usually negative) the object is deleted.</tooltip>
+      </value>
+      <value type="TagReference" name="body destroyed effect" extensions="effe" />
+      <value type="Real" name="maximum shield vitality">
+        <tooltip>The default initial and maximum shield vitality of this object.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed6" length="2" />
+      <value type="Enum" name="shield material type">
+        <tooltip>The material type used when projectiles impact the shield (instead of the body).</tooltip>
+        <item value="0" name="dirt" />
+        <item value="1" name="sand" />
+        <item value="2" name="stone" />
+        <item value="3" name="snow" />
+        <item value="4" name="wood" />
+        <item value="5" name="metal hollow" />
+        <item value="6" name="metal thin" />
+        <item value="7" name="metal thick" />
+        <item value="8" name="rubber" />
+        <item value="9" name="glass" />
+        <item value="10" name="force field" />
+        <item value="11" name="grunt" />
+        <item value="12" name="hunter armor" />
+        <item value="13" name="hunter skin" />
+        <item value="14" name="elite" />
+        <item value="15" name="jackal" />
+        <item value="16" name="jackal energy shield" />
+        <item value="17" name="engineer skin" />
+        <item value="18" name="engineer force field" />
+        <item value="19" name="flood combat form" />
+        <item value="20" name="flood carrier form" />
+        <item value="21" name="cyborg armor" />
+        <item value="22" name="cyborg energy shield" />
+        <item value="23" name="human armor" />
+        <item value="24" name="human skin" />
+        <item value="25" name="sentinel" />
+        <item value="26" name="monitor" />
+        <item value="27" name="plastic" />
+        <item value="28" name="water" />
+        <item value="29" name="leaves" />
+        <item value="30" name="elite energy shield" />
+        <item value="31" name="ice" />
+        <item value="32" name="hunter shield" />
+      </value>
+      <value type="Pad" name="_unnamed7" length="24" />
+      <value type="Enum" name="shield failure function">
+        <tooltip>How fast the shield begins to leak.</tooltip>
+        <item value="0" name="linear" />
+        <item value="1" name="early" />
+        <item value="2" name="very early" />
+        <item value="3" name="late" />
+        <item value="4" name="very late" />
+        <item value="5" name="cosine" />
+      </value>
+      <value type="Pad" name="_unnamed8" length="2" />
+      <value type="RealFraction" name="shield failure threshold">
+        <tooltip>When the shield begins to leak (0.5 would cause the shield to begin to fail after taking half damage).</tooltip>
+      </value>
+      <value type="RealFraction" name="failing shield leak fraction">
+        <tooltip>The maximum percent [0,1] damage a failing shield will leak to the body.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed9" length="16" />
+      <value type="Real" name="minimum stun damage">
+        <tooltip>The minimum damage required to stun this object's shields.</tooltip>
+      </value>
+      <value type="Real" name="stun time">
+        <tooltip>The length of time the shields stay stunned (do not recharge) after taking damage.</tooltip>
+      </value>
+      <value type="Real" name="recharge time">
+        <tooltip>The length of time it would take for the shields to fully recharge after being completely depleted.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed10" length="16" />
+      <value type="Pad" name="_unnamed11" length="96" />
+      <value type="Real" name="shield damaged threshold" />
+      <value type="TagReference" name="shield damaged effect" extensions="effe" />
+      <value type="TagReference" name="shield depleted effect" extensions="effe" />
+      <value type="TagReference" name="shield recharging effect" extensions="effe" />
+      <value type="Pad" name="_unnamed12" length="12" />
+      <value type="Pad" name="_unnamed13" length="112" />
+      <struct name="DamageMaterials">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="head" />
+        </value>
+        <value type="Enum" name="material type">
+          <item value="0" name="dirt" />
+          <item value="1" name="sand" />
+          <item value="2" name="stone" />
+          <item value="3" name="snow" />
+          <item value="4" name="wood" />
+          <item value="5" name="metal hollow" />
+          <item value="6" name="metal thin" />
+          <item value="7" name="metal thick" />
+          <item value="8" name="rubber" />
+          <item value="9" name="glass" />
+          <item value="10" name="force field" />
+          <item value="11" name="grunt" />
+          <item value="12" name="hunter armor" />
+          <item value="13" name="hunter skin" />
+          <item value="14" name="elite" />
+          <item value="15" name="jackal" />
+          <item value="16" name="jackal energy shield" />
+          <item value="17" name="engineer skin" />
+          <item value="18" name="engineer force field" />
+          <item value="19" name="flood combat form" />
+          <item value="20" name="flood carrier form" />
+          <item value="21" name="cyborg armor" />
+          <item value="22" name="cyborg energy shield" />
+          <item value="23" name="human armor" />
+          <item value="24" name="human skin" />
+          <item value="25" name="sentinel" />
+          <item value="26" name="monitor" />
+          <item value="27" name="plastic" />
+          <item value="28" name="water" />
+          <item value="29" name="leaves" />
+          <item value="30" name="elite energy shield" />
+          <item value="31" name="ice" />
+          <item value="32" name="hunter shield" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="RealFraction" name="shield leak percentage">
+          <tooltip>The percent [0,1] damage the shield always leaks through to the body.</tooltip>
+        </value>
+        <value type="Real" name="shield damage multiplier" />
+        <value type="Pad" name="_unnamed2" length="12" />
+        <value type="Real" name="body damage multiplier">
+          <tooltip>Multiplier to body damage against this material (1.0 is normal).</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed3" length="8" />
+      </struct>
+      <value type="Block" name="materials" struct="DamageMaterials" maxelements="32" />
+      <struct name="DamageRegions">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="lives until object dies" />
+          <bit index="1" name="forces object to die" />
+          <bit index="2" name="dies when object dies" />
+          <bit index="3" name="dies when object is damaged" />
+          <bit index="4" name="disappears when shield is off" />
+          <bit index="5" name="inhibits melee attack" />
+          <bit index="6" name="inhibits weapon attack" />
+          <bit index="7" name="inhibits walking" />
+          <bit index="8" name="forces drop weapon" />
+          <bit index="9" name="causes hea" />
+        </value>
+        <value type="Pad" name="_unnamed" length="4" />
+        <value type="Real" name="damage threshold">
+          <tooltip>If this region takes this amount of damage, it will be destroyed.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="12" />
+        <value type="TagReference" name="destroyed effect" extensions="effe" />
+        <struct name="DamagePermutations">
+          <value type="FixedLengthString" name="name" blockname="true" />
+        </struct>
+        <value type="Block" name="permutations" struct="DamagePermutations" maxelements="32" />
+      </struct>
+      <value type="Block" name="regions" struct="DamageRegions" maxelements="8" />
+      <struct name="DamageModifiers">
+        <value type="Pad" name="_unnamed" length="52" />
+      </struct>
+      <value type="Block" name="modifiers" struct="DamageModifiers" maxelements="0" />
+      <value type="Pad" name="_unnamed14" length="16" />
+      <value type="RealBounds" name="x" />
+      <value type="RealBounds" name="y" />
+      <value type="RealBounds" name="z" />
+      <struct name="Sphere">
+        <value type="ShortBlockIndex" name="node" block="Node" />
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Pad" name="_unnamed2" length="12" />
+        <value type="RealPoint3D" name="center" />
+        <value type="Real" name="radius" />
+      </struct>
+      <value type="Block" name="pathfinding spheres" struct="Sphere" maxelements="32" />
+      <struct name="Node">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="ShortBlockIndex" name="region" block="DamageRegions" />
+        <value type="ShortBlockIndex" name="parent node" block="Node" />
+        <value type="ShortBlockIndex" name="next sibling node" block="Node" />
+        <value type="ShortBlockIndex" name="first child node" block="Node" />
+        <value type="Pad" name="_unnamed" length="12" />
+        <struct name="Bsp">
+          <struct name="Bsp3dnode">
+            <value type="LongInteger" name="plane" />
+            <value type="LongInteger" name="back child" />
+            <value type="LongInteger" name="front child" />
+          </struct>
+          <value type="Block" name="bsp3d nodes" struct="Bsp3dnode" maxelements="131072" />
+          <struct name="Plane">
+            <value type="RealPlane3D" name="plane" />
+          </struct>
+          <value type="Block" name="planes" struct="Plane" maxelements="65536" />
+          <struct name="Leaf">
+            <value type="Flags" name="flags" length="2">
+              <bit index="0" name="contains doubl" />
+            </value>
+            <value type="ShortInteger" name="bsp2d reference count" />
+            <value type="LongInteger" name="first bsp2d reference" />
+          </struct>
+          <value type="Block" name="leaves" struct="Leaf" maxelements="65536" />
+          <struct name="Bsp2dreference">
+            <value type="LongInteger" name="plane" />
+            <value type="LongInteger" name="bsp2d node" />
+          </struct>
+          <value type="Block" name="bsp2d references" struct="Bsp2dreference" maxelements="131072" />
+          <struct name="Bsp2dnode">
+            <value type="RealPlane2D" name="plane" />
+            <value type="LongInteger" name="left child" />
+            <value type="LongInteger" name="right child" />
+          </struct>
+          <value type="Block" name="bsp2d nodes" struct="Bsp2dnode" maxelements="65535" />
+          <struct name="Surface">
+            <value type="LongInteger" name="plane" />
+            <value type="LongInteger" name="first edge" />
+            <value type="Flags" name="flags" length="1">
+              <bit index="0" name="two sided" />
+              <bit index="1" name="invisible" />
+              <bit index="2" name="climbable" />
+              <bit index="3" name="breakable" />
+            </value>
+            <value type="CharInteger" name="breakable surface" />
+            <value type="ShortInteger" name="material" />
+          </struct>
+          <value type="Block" name="surfaces" struct="Surface" maxelements="131072" />
+          <struct name="Edge">
+            <value type="LongInteger" name="start vertex" />
+            <value type="LongInteger" name="end vertex" />
+            <value type="LongInteger" name="forward edge" />
+            <value type="LongInteger" name="reverse edge" />
+            <value type="LongInteger" name="left surface" />
+            <value type="LongInteger" name="right surface" />
+          </struct>
+          <value type="Block" name="edges" struct="Edge" maxelements="262144" />
+          <struct name="Vertex">
+            <value type="RealPoint3D" name="point" />
+            <value type="LongInteger" name="first edge" />
+          </struct>
+          <value type="Block" name="vertices" struct="Vertex" maxelements="131072" />
+        </struct>
+        <value type="Block" name="bsps" struct="Bsp" maxelements="32" />
+      </struct>
+      <value type="Block" name="nodes" struct="Node" maxelements="64" />
+    </struct>
+  </plugin>
+</xml>

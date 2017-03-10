@@ -1,0 +1,55 @@
+<xml>
+  <name type="MGS2" parenttype="????">LightVolume</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="LightVolumeBlock">
+      <value type="Real" name="falloff distance from camera" disabled="false" unit="world units" />
+      <value type="Real" name="cutoff distance from camera" disabled="false" unit="world units" />
+      <struct name="LightVolumeVolumeBlock">
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="force linear radius function" />
+          <bit index="1" name="force linear offset" />
+          <bit index="2" name="force differential evaluation" />
+          <bit index="3" name="fuzzy" />
+          <bit index="4" name="not scaled by event duration" />
+          <bit index="5" name="scaled by marker" />
+        </value>
+        <value type="TagReference" name="bitmap" disabled="false" extensions="bitm" />
+        <value type="LongInteger" name="sprite count" disabled="false" unit="[4,256]" />
+        <struct name="ByteBlock">
+          <value type="CharInteger" name="Value" disabled="false" />
+        </struct>
+        <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="Block" name="data2" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="Block" name="data3" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="Block" name="data4" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <value type="Block" name="data5" disabled="false" struct="ByteBlock" maxelements="1024" />
+        <struct name="LightVolumeAspectBlock">
+          <struct name="ByteBlock">
+            <value type="CharInteger" name="Value" disabled="false" />
+          </struct>
+          <value type="Block" name="data" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="Block" name="data2" disabled="false" struct="ByteBlock" maxelements="1024" />
+          <value type="Real" name="parallel scale" disabled="false" />
+          <value type="Angle" name="parallel threshold angle" disabled="false" unit="degrees" />
+          <value type="Real" name="parallel exponent" disabled="false" />
+        </struct>
+        <value type="Block" name="aspect" disabled="false" struct="LightVolumeAspectBlock" maxelements="1" />
+        <value type="RealFraction" name="radius frac min" disabled="true" unit="[0.00390625, 1.0]" />
+        <value type="RealFraction" name="DEPRECATED x-step exponent" disabled="true" unit="[0.5, 0.875]" />
+        <value type="LongInteger" name="DEPRECATED x-buffer length" disabled="true" unit="[32, 512]" />
+        <value type="LongInteger" name="x-buffer spacing" disabled="true" unit="[1, 256]" />
+        <value type="LongInteger" name="x-buffer min iterations" disabled="true" unit="[1, 256]" />
+        <value type="LongInteger" name="x-buffer max iterations" disabled="true" unit="[1, 256]" />
+        <value type="RealFraction" name="x-delta max error" disabled="true" unit="[0.001, 0.1]" />
+        <value type="Skip" name="_unnamed0" length="4" />
+        <struct name="LightVolumeRuntimeOffsetBlock">
+          <value type="RealVector2d" name="_unnamed0" />
+        </struct>
+        <value type="Block" name="" disabled="true" struct="LightVolumeRuntimeOffsetBlock" maxelements="256" />
+        <value type="Skip" name="_unnamed1" length="48" />
+      </struct>
+      <value type="Block" name="volumes" disabled="false" struct="LightVolumeVolumeBlock" maxelements="16" />
+    </struct>
+  </plugin>
+</xml>

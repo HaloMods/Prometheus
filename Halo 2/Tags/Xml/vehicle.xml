@@ -1,0 +1,438 @@
+<xml>
+  <name type="vehi" parenttype="unit">Vehicle</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="HavokVehiclePhysicsStructBlock">
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="speed wakes physics" />
+        <bit index="1" name="turn wakes physics" />
+        <bit index="2" name="driver power wakes physics" />
+        <bit index="3" name="gunner power wakes physics" />
+        <bit index="4" name="control opposite speed sets brake" />
+        <bit index="5" name="slide wakes physics" />
+        <bit index="6" name="kills riders at terminal velocity" />
+        <bit index="7" name="causes collision damage" />
+        <bit index="8" name="ai weapon cannot rotate" />
+        <bit index="9" name="ai does not require driver" />
+        <bit index="10" name="ai unused" />
+        <bit index="11" name="ai driver enable" />
+        <bit index="12" name="ai driver flying" />
+        <bit index="13" name="ai driver can-sidestep" />
+        <bit index="14" name="ai driver hovering" />
+        <bit index="15" name="vehicle steers directly" />
+        <bit index="16" name="unused" />
+        <bit index="17" name="has e-brake" />
+        <bit index="18" name="noncombat vehicle" />
+        <bit index="19" name="no friction w/driver" />
+        <bit index="20" name="can trigger automatic opening doors" />
+        <bit index="21" name="autoaim when teamless" />
+      </value>
+      <value type="Enum" name="type" length="2" disabled="false">
+        <item value="0" name="human tank" />
+        <item value="1" name="human jeep" />
+        <item value="2" name="human boat" />
+        <item value="3" name="human plane" />
+        <item value="4" name="alien scout" />
+        <item value="5" name="alien fighter" />
+        <item value="6" name="turret" />
+      </value>
+      <value type="Enum" name="control" length="2" disabled="false">
+        <item value="0" name="vehicle control normal" />
+        <item value="1" name="vehicle control unused" />
+        <item value="2" name="vehicle control tank" />
+      </value>
+      <value type="Real" name="maximum forward speed" disabled="false" />
+      <value type="Real" name="maximum reverse speed" disabled="false" />
+      <value type="Real" name="speed acceleration" disabled="false" />
+      <value type="Real" name="speed deceleration" disabled="false" />
+      <value type="Real" name="maximum left turn" disabled="false" />
+      <value type="Real" name="maximum right turn negative" disabled="false" />
+      <value type="Real" name="wheel circumference" disabled="false" />
+      <value type="Real" name="turn rate" disabled="false" />
+      <value type="Real" name="blur speed" disabled="false" />
+      <value type="Enum" name="specific type" length="2" disabled="false">
+        <item value="0" name="none" />
+        <item value="1" name="ghost" />
+        <item value="2" name="wraith" />
+        <item value="3" name="spectre" />
+        <item value="4" name="sentinel enforcer" />
+        <tooltip>if your type corresponds to something in this list choose it</tooltip>
+      </value>
+      <value type="Enum" name="player training vehicle type" length="2" disabled="false">
+        <item value="0" name="none" />
+        <item value="1" name="warthog" />
+        <item value="2" name="warthog turret" />
+        <item value="3" name="ghost" />
+        <item value="4" name="banshee" />
+        <item value="5" name="tank" />
+        <item value="6" name="wraith" />
+      </value>
+      <value type="StringId" name="flip message" disabled="false" />
+      <value type="Real" name="turn scale" disabled="false" />
+      <value type="Real" name="speed turn penalty power 05  2" disabled="false" />
+      <value type="Real" name="speed turn penalty 0  none 1  cant turn at top speed" disabled="false" />
+      <value type="Real" name="maximum left slide" disabled="false" />
+      <value type="Real" name="maximum right slide" disabled="false" />
+      <value type="Real" name="slide acceleration" disabled="false" />
+      <value type="Real" name="slide deceleration" disabled="false" />
+      <value type="Real" name="minimum flipping angular velocity" disabled="false" />
+      <value type="Real" name="maximum flipping angular velocity" disabled="false" />
+      <value type="Enum" name="vehicle size" length="2" disabled="false">
+        <item value="0" name="small" />
+        <item value="1" name="large" />
+        <tooltip>The size determine what kind of seats in larger vehicles it may occupy (i.e. small or large cargo seats)</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Real" name="fixed gun yaw" disabled="false" />
+      <value type="Real" name="fixed gun pitch" disabled="false" />
+      <value type="Real" name="overdampen cusp angle" disabled="false" unit="degrees" />
+      <value type="Real" name="overdampen exponent" disabled="false" />
+      <value type="Real" name="crouch transition time" disabled="false" unit="seconds" />
+      <value type="Pad" name="_unnamed1" length="4" />
+      <value type="Real" name="engine moment" disabled="false">
+        <tooltip>higher moments make engine spin up slower</tooltip>
+      </value>
+      <value type="Real" name="engine max angular velocity" disabled="false">
+        <tooltip>higher moments make engine spin up slower</tooltip>
+      </value>
+      <struct name="GearBlock">
+        <value type="Real" name="min torque" disabled="false" />
+        <value type="Real" name="max torque" disabled="false" />
+        <value type="Real" name="peak torque scale" disabled="false" />
+        <value type="Real" name="past peak torque exponent" disabled="false" />
+        <value type="Real" name="torque at max angular velocity" disabled="false">
+          <tooltip>generally 0 for loading torque and something less than max torque for cruising torque</tooltip>
+        </value>
+        <value type="Real" name="torque at 2x max angular velocity" disabled="false" />
+        <value type="Real" name="min torque2" disabled="false" />
+        <value type="Real" name="max torque2" disabled="false" />
+        <value type="Real" name="peak torque scale2" disabled="false" />
+        <value type="Real" name="past peak torque exponent2" disabled="false" />
+        <value type="Real" name="torque at max angular velocity2" disabled="false">
+          <tooltip>generally 0 for loading torque and something less than max torque for cruising torque</tooltip>
+        </value>
+        <value type="Real" name="torque at 2x max angular velocity2" disabled="false" />
+        <value type="Real" name="min time to upshift" disabled="false">
+          <tooltip>seconds</tooltip>
+        </value>
+        <value type="Real" name="engine up-shift scale" disabled="false">
+          <tooltip>0-1</tooltip>
+        </value>
+        <value type="Real" name="gear ratio" disabled="false" />
+        <value type="Real" name="min time to downshift" disabled="false">
+          <tooltip>seconds</tooltip>
+        </value>
+        <value type="Real" name="engine down-shift scale" disabled="false">
+          <tooltip>0-1</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="gears" disabled="false" struct="GearBlock" maxelements="16" />
+      <value type="Real" name="flying torque scale" disabled="false">
+        <tooltip>big vehicles need to scale this down.  0 defaults to 1, which is generally a good value.  This is used with alien fighter physics</tooltip>
+      </value>
+      <value type="Real" name="seat enterance acceleration scale" disabled="false">
+        <tooltip>how much do we scale the force the biped the applies down on the seat when he enters. 0 == no acceleration</tooltip>
+      </value>
+      <value type="Real" name="seat exit accelersation scale" disabled="false">
+        <tooltip>how much do we scale the force the biped the applies down on the seat when he exits. 0 == no acceleration</tooltip>
+      </value>
+      <value type="Real" name="air friction deceleration" disabled="false">
+        <tooltip>human plane physics only. 0 is nothing.  1 is like thowing the engine to full reverse</tooltip>
+      </value>
+      <value type="Real" name="thrust scale" disabled="false">
+        <tooltip>human plane physics only. 0 is default (1)</tooltip>
+      </value>
+      <value type="TagReference" name="suspension sound" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="crash sound" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="UNUSED" disabled="true" extensions="foot" />
+      <value type="TagReference" name="special effect" disabled="false" extensions="effe" />
+      <value type="TagReference" name="unused effect" disabled="false" extensions="effe" />
+      <value type="Flags" name="flags2" length="4" disabled="true">
+        <bit index="0" name="invalid" />
+      </value>
+      <value type="Real" name="ground friction" disabled="false">
+        <tooltip> for friction based vehicles only</tooltip>
+      </value>
+      <value type="Real" name="ground depth" disabled="false">
+        <tooltip> for friction based vehicles only</tooltip>
+      </value>
+      <value type="Real" name="ground damp factor" disabled="false">
+        <tooltip> for friction based vehicles only</tooltip>
+      </value>
+      <value type="Real" name="ground moving friction" disabled="false">
+        <tooltip> for friction based vehicles only</tooltip>
+      </value>
+      <value type="Real" name="ground maximum slope 0" disabled="false">
+        <tooltip>degrees 0-90</tooltip>
+      </value>
+      <value type="Real" name="ground maximum slope 1" disabled="false">
+        <tooltip>degrees 0-90.  and greater than slope 0</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed2" length="16" />
+      <value type="Real" name="anti_gravity_bank_lift" disabled="false">
+        <tooltip>lift per WU.</tooltip>
+      </value>
+      <value type="Real" name="steering_bank_reaction_scale" disabled="false">
+        <tooltip>how quickly we bank when we steer </tooltip>
+      </value>
+      <value type="Real" name="gravity scale" disabled="false">
+        <tooltip>value of 0 defaults to 1.  .5 is half gravity</tooltip>
+      </value>
+      <value type="Real" name="radius" disabled="true">
+        <tooltip>generated from the radius of the hkConvexShape for this vehicle</tooltip>
+      </value>
+      <struct name="AntiGravityPointDefinitionBlock">
+        <value type="StringId" name="marker name" disabled="false" blockname="true" />
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="gets damage from region" />
+        </value>
+        <value type="Real" name="antigrav strength" disabled="false" />
+        <value type="Real" name="antigrav offset" disabled="false" />
+        <value type="Real" name="antigrav height" disabled="false" />
+        <value type="Real" name="antigrav damp factor" disabled="false" />
+        <value type="Real" name="antigrav normal k1" disabled="false" />
+        <value type="Real" name="antigrav normal k0" disabled="false" />
+        <value type="Real" name="radius" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="12" />
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="StringId" name="damage source region name" disabled="false" />
+        <value type="Real" name="default state error" disabled="false" />
+        <value type="Real" name="minor damage error" disabled="false" />
+        <value type="Real" name="medium damage error" disabled="false" />
+        <value type="Real" name="major damage error" disabled="false" />
+        <value type="Real" name="destroyed state error" disabled="false" />
+      </struct>
+      <value type="Block" name="anti gravity points" disabled="false" struct="AntiGravityPointDefinitionBlock" maxelements="16" />
+      <struct name="FrictionPointDefinitionBlock">
+        <value type="StringId" name="marker name" disabled="false" blockname="true" />
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="gets damage from region" />
+          <bit index="1" name="powered" />
+          <bit index="2" name="front turning" />
+          <bit index="3" name="rear turning" />
+          <bit index="4" name="attached to e-brake" />
+          <bit index="5" name="can be destroyed" />
+        </value>
+        <value type="Real" name="fraction of total mass" disabled="false">
+          <tooltip>(0.0-1.0) fraction of total vehicle mass</tooltip>
+        </value>
+        <value type="Real" name="radius" disabled="false" />
+        <value type="Real" name="damaged radius" disabled="false">
+          <tooltip>radius when the tire is blown off.</tooltip>
+        </value>
+        <value type="Enum" name="friction type" length="2" disabled="false">
+          <item value="0" name="point" />
+          <item value="1" name="forward" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Real" name="moving friction velocity diff" disabled="false" />
+        <value type="Real" name="e-brake moving friction" disabled="false" />
+        <value type="Real" name="e-brake friction" disabled="false" />
+        <value type="Real" name="e-brake moving friction vel diff" disabled="false" />
+        <value type="Pad" name="_unnamed1" length="20" />
+        <value type="StringId" name="collision global material name" disabled="false" />
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Enum" name="model state destroyed" length="2" disabled="false">
+          <item value="0" name="default" />
+          <item value="1" name="minor damage" />
+          <item value="2" name="medium damage" />
+          <item value="3" name="major damage" />
+          <item value="4" name="destroyed" />
+          <tooltip>only need point can destroy flag set</tooltip>
+        </value>
+        <value type="StringId" name="region name" disabled="false">
+          <tooltip>only need point can destroy flag set</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed3" length="4" />
+      </struct>
+      <value type="Block" name="friction points" disabled="false" struct="FrictionPointDefinitionBlock" maxelements="16" />
+      <struct name="VehiclePhantomShapeBlock">
+        <value type="Skip" name="_unnamed0" length="4" />
+        <value type="ShortInteger" name="size" disabled="true" />
+        <value type="ShortInteger" name="count" disabled="true" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="Skip" name="_unnamed2" length="4" />
+        <value type="LongInteger" name="child shapes size" disabled="true" />
+        <value type="LongInteger" name="child shapes capacity" disabled="true" />
+        <value type="Enum" name="shape type" length="2" disabled="true">
+          <item value="0" name="sphere" />
+          <item value="1" name="pill" />
+          <item value="2" name="box" />
+          <item value="3" name="triangle" />
+          <item value="4" name="polyhedron" />
+          <item value="5" name="multi sphere" />
+          <item value="6" name="unused 0" />
+          <item value="7" name="unused 1" />
+          <item value="8" name="unused 2" />
+          <item value="9" name="unused 3" />
+          <item value="10" name="unused 4" />
+          <item value="11" name="unused 5" />
+          <item value="12" name="unused 6" />
+          <item value="13" name="unused 7" />
+          <item value="14" name="list" />
+          <item value="15" name="mopp" />
+        </value>
+        <value type="ShortInteger" name="shape" disabled="true" />
+        <value type="LongInteger" name="collision filter" disabled="true" />
+        <value type="Enum" name="shape type2" length="2" disabled="true">
+          <item value="0" name="sphere" />
+          <item value="1" name="pill" />
+          <item value="2" name="box" />
+          <item value="3" name="triangle" />
+          <item value="4" name="polyhedron" />
+          <item value="5" name="multi sphere" />
+          <item value="6" name="unused 0" />
+          <item value="7" name="unused 1" />
+          <item value="8" name="unused 2" />
+          <item value="9" name="unused 3" />
+          <item value="10" name="unused 4" />
+          <item value="11" name="unused 5" />
+          <item value="12" name="unused 6" />
+          <item value="13" name="unused 7" />
+          <item value="14" name="list" />
+          <item value="15" name="mopp" />
+        </value>
+        <value type="ShortInteger" name="shape2" disabled="true" />
+        <value type="LongInteger" name="collision filter2" disabled="true" />
+        <value type="Enum" name="shape type3" length="2" disabled="true">
+          <item value="0" name="sphere" />
+          <item value="1" name="pill" />
+          <item value="2" name="box" />
+          <item value="3" name="triangle" />
+          <item value="4" name="polyhedron" />
+          <item value="5" name="multi sphere" />
+          <item value="6" name="unused 0" />
+          <item value="7" name="unused 1" />
+          <item value="8" name="unused 2" />
+          <item value="9" name="unused 3" />
+          <item value="10" name="unused 4" />
+          <item value="11" name="unused 5" />
+          <item value="12" name="unused 6" />
+          <item value="13" name="unused 7" />
+          <item value="14" name="list" />
+          <item value="15" name="mopp" />
+        </value>
+        <value type="ShortInteger" name="shape3" disabled="true" />
+        <value type="LongInteger" name="collision filter3" disabled="true" />
+        <value type="Enum" name="shape type4" length="2" disabled="true">
+          <item value="0" name="sphere" />
+          <item value="1" name="pill" />
+          <item value="2" name="box" />
+          <item value="3" name="triangle" />
+          <item value="4" name="polyhedron" />
+          <item value="5" name="multi sphere" />
+          <item value="6" name="unused 0" />
+          <item value="7" name="unused 1" />
+          <item value="8" name="unused 2" />
+          <item value="9" name="unused 3" />
+          <item value="10" name="unused 4" />
+          <item value="11" name="unused 5" />
+          <item value="12" name="unused 6" />
+          <item value="13" name="unused 7" />
+          <item value="14" name="list" />
+          <item value="15" name="mopp" />
+        </value>
+        <value type="ShortInteger" name="shape4" disabled="true" />
+        <value type="LongInteger" name="collision filter4" disabled="true" />
+        <value type="LongInteger" name="multisphere count" disabled="true" />
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="has aabb phantom" />
+          <bit index="1" name="" />
+        </value>
+        <value type="Pad" name="_unnamed3" length="8" />
+        <value type="Real" name="x0" disabled="false" />
+        <value type="Real" name="x1" disabled="false" />
+        <value type="Real" name="y0" disabled="false" />
+        <value type="Real" name="y1" disabled="false" />
+        <value type="Real" name="z0" disabled="false" />
+        <value type="Real" name="z1" disabled="false" />
+        <value type="Skip" name="_unnamed4" length="4" />
+        <value type="ShortInteger" name="size2" disabled="true" />
+        <value type="ShortInteger" name="count2" disabled="true" />
+        <value type="Skip" name="_unnamed5" length="4" />
+        <value type="LongInteger" name="num spheres" disabled="true" />
+        <value type="RealVector3d" name="sphere" disabled="true" />
+        <value type="Skip" name="_unnamed6" length="4" />
+        <value type="RealVector3d" name="sphere2" disabled="true" />
+        <value type="Skip" name="_unnamed7" length="4" />
+        <value type="RealVector3d" name="sphere3" disabled="true" />
+        <value type="Skip" name="_unnamed8" length="4" />
+        <value type="RealVector3d" name="sphere4" disabled="true" />
+        <value type="Skip" name="_unnamed9" length="4" />
+        <value type="RealVector3d" name="sphere5" disabled="true" />
+        <value type="Skip" name="_unnamed10" length="4" />
+        <value type="RealVector3d" name="sphere6" disabled="true" />
+        <value type="Skip" name="_unnamed11" length="4" />
+        <value type="RealVector3d" name="sphere7" disabled="true" />
+        <value type="Skip" name="_unnamed12" length="4" />
+        <value type="RealVector3d" name="sphere8" disabled="true" />
+        <value type="Skip" name="_unnamed13" length="4" />
+        <value type="Skip" name="_unnamed14" length="4" />
+        <value type="ShortInteger" name="size3" disabled="true" />
+        <value type="ShortInteger" name="count3" disabled="true" />
+        <value type="Skip" name="_unnamed15" length="4" />
+        <value type="LongInteger" name="num spheres2" disabled="true" />
+        <value type="RealVector3d" name="sphere9" disabled="true" />
+        <value type="Skip" name="_unnamed16" length="4" />
+        <value type="RealVector3d" name="sphere10" disabled="true" />
+        <value type="Skip" name="_unnamed17" length="4" />
+        <value type="RealVector3d" name="sphere11" disabled="true" />
+        <value type="Skip" name="_unnamed18" length="4" />
+        <value type="RealVector3d" name="sphere12" disabled="true" />
+        <value type="Skip" name="_unnamed19" length="4" />
+        <value type="RealVector3d" name="sphere13" disabled="true" />
+        <value type="Skip" name="_unnamed20" length="4" />
+        <value type="RealVector3d" name="sphere14" disabled="true" />
+        <value type="Skip" name="_unnamed21" length="4" />
+        <value type="RealVector3d" name="sphere15" disabled="true" />
+        <value type="Skip" name="_unnamed22" length="4" />
+        <value type="RealVector3d" name="sphere16" disabled="true" />
+        <value type="Skip" name="_unnamed23" length="4" />
+        <value type="Skip" name="_unnamed24" length="4" />
+        <value type="ShortInteger" name="size4" disabled="true" />
+        <value type="ShortInteger" name="count4" disabled="true" />
+        <value type="Skip" name="_unnamed25" length="4" />
+        <value type="LongInteger" name="num spheres3" disabled="true" />
+        <value type="RealVector3d" name="sphere17" disabled="true" />
+        <value type="Skip" name="_unnamed26" length="4" />
+        <value type="RealVector3d" name="sphere18" disabled="true" />
+        <value type="Skip" name="_unnamed27" length="4" />
+        <value type="RealVector3d" name="sphere19" disabled="true" />
+        <value type="Skip" name="_unnamed28" length="4" />
+        <value type="RealVector3d" name="sphere20" disabled="true" />
+        <value type="Skip" name="_unnamed29" length="4" />
+        <value type="RealVector3d" name="sphere21" disabled="true" />
+        <value type="Skip" name="_unnamed30" length="4" />
+        <value type="RealVector3d" name="sphere22" disabled="true" />
+        <value type="Skip" name="_unnamed31" length="4" />
+        <value type="RealVector3d" name="sphere23" disabled="true" />
+        <value type="Skip" name="_unnamed32" length="4" />
+        <value type="RealVector3d" name="sphere24" disabled="true" />
+        <value type="Skip" name="_unnamed33" length="4" />
+        <value type="Skip" name="_unnamed34" length="4" />
+        <value type="ShortInteger" name="size5" disabled="true" />
+        <value type="ShortInteger" name="count5" disabled="true" />
+        <value type="Skip" name="_unnamed35" length="4" />
+        <value type="LongInteger" name="num spheres4" disabled="true" />
+        <value type="RealVector3d" name="sphere25" disabled="true" />
+        <value type="Skip" name="_unnamed36" length="4" />
+        <value type="RealVector3d" name="sphere26" disabled="true" />
+        <value type="Skip" name="_unnamed37" length="4" />
+        <value type="RealVector3d" name="sphere27" disabled="true" />
+        <value type="Skip" name="_unnamed38" length="4" />
+        <value type="RealVector3d" name="sphere28" disabled="true" />
+        <value type="Skip" name="_unnamed39" length="4" />
+        <value type="RealVector3d" name="sphere29" disabled="true" />
+        <value type="Skip" name="_unnamed40" length="4" />
+        <value type="RealVector3d" name="sphere30" disabled="true" />
+        <value type="Skip" name="_unnamed41" length="4" />
+        <value type="RealVector3d" name="sphere31" disabled="true" />
+        <value type="Skip" name="_unnamed42" length="4" />
+        <value type="RealVector3d" name="sphere32" disabled="true" />
+        <value type="Skip" name="_unnamed43" length="4" />
+      </struct>
+      <value type="Block" name="shape phantom shape" disabled="true" struct="VehiclePhantomShapeBlock" maxelements="1" />
+    </struct>
+  </plugin>
+</xml>

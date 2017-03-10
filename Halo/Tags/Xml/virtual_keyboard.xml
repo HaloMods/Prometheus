@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="vcky" parenttype="????">VirtualKeyboard</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="VirtualKeyboard">
+      <value type="TagReference" name="display font" extensions="font" />
+      <value type="TagReference" name="background bitmap" extensions="bitm" />
+      <value type="TagReference" name="special key labels string list" extensions="ustr" />
+      <struct name="VirtualKey">
+        <value type="Enum" name="keyboard key">
+          <item value="0" name="1" />
+          <item value="1" name="2" />
+          <item value="2" name="3" />
+          <item value="3" name="4" />
+          <item value="4" name="5" />
+          <item value="5" name="6" />
+          <item value="6" name="7" />
+          <item value="7" name="8" />
+          <item value="8" name="9" />
+          <item value="9" name="0" />
+          <item value="10" name="A" />
+          <item value="11" name="B" />
+          <item value="12" name="C" />
+          <item value="13" name="D" />
+          <item value="14" name="E" />
+          <item value="15" name="F" />
+          <item value="16" name="G" />
+          <item value="17" name="H" />
+          <item value="18" name="I" />
+          <item value="19" name="J" />
+          <item value="20" name="K" />
+          <item value="21" name="L" />
+          <item value="22" name="M" />
+          <item value="23" name="N" />
+          <item value="24" name="O" />
+          <item value="25" name="P" />
+          <item value="26" name="Q" />
+          <item value="27" name="R" />
+          <item value="28" name="S" />
+          <item value="29" name="T" />
+          <item value="30" name="U" />
+          <item value="31" name="V" />
+          <item value="32" name="W" />
+          <item value="33" name="X" />
+          <item value="34" name="Y" />
+          <item value="35" name="Z" />
+          <item value="36" name="DONE" />
+          <item value="37" name="SHIFT" />
+          <item value="38" name="CAPS LOCK" />
+          <item value="39" name="SYMBOLS" />
+          <item value="40" name="BACKSPACE" />
+          <item value="41" name="LEFT" />
+          <item value="42" name="RIGHT" />
+          <item value="43" name="SPACE" />
+        </value>
+        <value type="ShortInteger" name="lowercase character" />
+        <value type="ShortInteger" name="shift character" />
+        <value type="ShortInteger" name="caps character" />
+        <value type="ShortInteger" name="symbols character" />
+        <value type="ShortInteger" name="shift+caps character" />
+        <value type="ShortInteger" name="shift+symbols character" />
+        <value type="ShortInteger" name="caps+symbols character" />
+        <value type="TagReference" name="unselected background bitmap" extensions="bitm" />
+        <value type="TagReference" name="selected background bitmap" extensions="bitm" />
+        <value type="TagReference" name="active background bitmap" extensions="bitm" />
+        <value type="TagReference" name="sticky background bitmap" extensions="bitm" />
+      </struct>
+      <value type="Block" name="virtual keys" struct="VirtualKey" maxelements="44" />
+    </struct>
+  </plugin>
+</xml>

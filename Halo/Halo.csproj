@@ -1,0 +1,729 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{243ABFD3-007B-47EA-9C81-09C25AD8415E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Games.Halo</RootNamespace>
+    <AssemblyName>Halo</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=6.3.3.4, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\DotNetBar\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.Direct3D.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2911.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.Direct3DX.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectSound, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.DirectSound.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualC" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Threading, Version=1.0.2873.22603, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Block.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Block.Designer.cs">
+      <DependentUpon>Block.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Angle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Angle.Designer.cs">
+      <DependentUpon>Angle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ARGBColor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ARGBColor.Designer.cs">
+      <DependentUpon>ARGBColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CharInteger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CharInteger.Designer.cs">
+      <DependentUpon>CharInteger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Flags.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Flags.Designer.cs">
+      <DependentUpon>Flags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RealPoint2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealPoint2D.Designer.cs">
+      <DependentUpon>RealPoint2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShortBounds.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ShortBounds.Designer.cs">
+      <DependentUpon>ShortBounds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RealBounds.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealBounds.Designer.cs">
+      <DependentUpon>RealBounds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RealFractionBounds.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealFractionBounds.Designer.cs">
+      <DependentUpon>RealFractionBounds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RealFraction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealFraction.Designer.cs">
+      <DependentUpon>RealFraction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Rectangle2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Rectangle2D.Designer.cs">
+      <DependentUpon>Rectangle2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RealQuaternion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealQuaternion.Designer.cs">
+      <DependentUpon>RealQuaternion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RealEulerAngles2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealEulerAngles2D.Designer.cs">
+      <DependentUpon>RealEulerAngles2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RealVector3D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealVector3D.Designer.cs">
+      <DependentUpon>RealVector3D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RealARGBColor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealARGBColor.Designer.cs">
+      <DependentUpon>RealARGBColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RealVector2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealVector2D.Designer.cs">
+      <DependentUpon>RealVector2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Point2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Point2D.Designer.cs">
+      <DependentUpon>Point2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShortBlockIndex.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ShortBlockIndex.Designer.cs">
+      <DependentUpon>ShortBlockIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LongInteger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LongInteger.Designer.cs">
+      <DependentUpon>LongInteger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LongBlockIndex.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LongBlockIndex.Designer.cs">
+      <DependentUpon>LongBlockIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FixedLengthString.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FixedLengthString.Designer.cs">
+      <DependentUpon>FixedLengthString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Enum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Enum.Designer.cs">
+      <DependentUpon>Enum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RealPlane2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealPlane2D.Designer.cs">
+      <DependentUpon>RealPlane2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RealPlane3D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealPlane3D.Designer.cs">
+      <DependentUpon>RealPlane3D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShortInteger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ShortInteger.Designer.cs">
+      <DependentUpon>ShortInteger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RealEulerAngles3D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealEulerAngles3D.Designer.cs">
+      <DependentUpon>RealEulerAngles3D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RealRGBColor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealRGBColor.Designer.cs">
+      <DependentUpon>RealRGBColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RGBColor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RGBColor.Designer.cs">
+      <DependentUpon>RGBColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagReference.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagReference.Designer.cs">
+      <DependentUpon>TagReference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RealPoint3D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealPoint3D.Designer.cs">
+      <DependentUpon>RealPoint3D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Real.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Real.Designer.cs">
+      <DependentUpon>Real.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HaloException.cs" />
+    <Compile Include="Platforms\CE\HaloCEGameDefinition.cs" />
+    <Compile Include="Platforms\CE\MapFileList.cs" />
+    <Compile Include="Platforms\CE\ScriptEngine.cs" />
+    <Compile Include="Platforms\PC\MapFileList.cs" />
+    <Compile Include="Platforms\PC\HaloPCGameDefinition.cs" />
+    <Compile Include="Platforms\PC\HaloPCMapFile.cs" />
+    <Compile Include="Platforms\PC\ScriptEngine.cs" />
+    <Compile Include="Platforms\Shared\IndexItem.cs" />
+    <Compile Include="Platforms\Shared\PointerList.cs" />
+    <Compile Include="Platforms\Shared\SceneMenuDefinitions.cs" />
+    <Compile Include="Platforms\Shared\ShaderIndices.cs" />
+    <Compile Include="Platforms\Shared\SimplePointer.cs" />
+    <Compile Include="Platforms\Xbox\HaloXboxGameDefinition.cs" />
+    <Compile Include="Platforms\CE\HaloCEMapFile.cs" />
+    <Compile Include="Platforms\Xbox\MapFileList.cs" />
+    <Compile Include="Platforms\Xbox\HaloXboxMapFile.cs" />
+    <Compile Include="Platforms\Xbox\ScriptEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Tags\Classes\testing.cs" />
+    <Compile Include="Tags\Extensions.cs" />
+    <Compile Include="Tags\FieldControlTable.cs" />
+    <Compile Include="Tags\Implementations\model_collision_geometry.cs" />
+    <Compile Include="Tags\Implementations\sound_looping.cs" />
+    <Compile Include="Tags\Implementations\sound.cs" />
+    <Compile Include="Tags\Implementations\item_collection.cs" />
+    <Compile Include="Tags\Implementations\shader_transparent_generic.cs" />
+    <Compile Include="Tags\Implementations\lens_flare.cs" />
+    <Compile Include="Tags\Implementations\sky.cs" />
+    <Compile Include="Tags\Implementations\shader_transparent_plasma.cs" />
+    <Compile Include="Tags\Implementations\shader_transparent_chicago_extended.cs" />
+    <Compile Include="Tags\Implementations\object.cs" />
+    <Compile Include="Tags\Implementations\scenario.cs" />
+    <Compile Include="Tags\Implementations\shader_transparent_glass.cs" />
+    <Compile Include="Tags\Implementations\gbxmodel.cs" />
+    <Compile Include="Tags\Implementations\model.cs" />
+    <Compile Include="Tags\Implementations\scenario_structure_bsp.cs" />
+    <Compile Include="Tags\Classes\actor.cs" />
+    <Compile Include="Tags\Classes\actor_variant.cs" />
+    <Compile Include="Tags\Classes\antenna.cs" />
+    <Compile Include="Tags\Classes\biped.cs" />
+    <Compile Include="Tags\Classes\bitmap.cs" />
+    <Compile Include="Tags\Classes\camera_track.cs" />
+    <Compile Include="Tags\Classes\color_table.cs" />
+    <Compile Include="Tags\Classes\continuous_damage_effect.cs" />
+    <Compile Include="Tags\Classes\contrail.cs" />
+    <Compile Include="Tags\Classes\damage_effect.cs" />
+    <Compile Include="Tags\Classes\decal.cs" />
+    <Compile Include="Tags\Classes\detail_object_collection.cs" />
+    <Compile Include="Tags\Classes\device.cs" />
+    <Compile Include="Tags\Classes\device_control.cs" />
+    <Compile Include="Tags\Classes\device_light_fixture.cs" />
+    <Compile Include="Tags\Classes\device_machine.cs" />
+    <Compile Include="Tags\Classes\dialogue.cs" />
+    <Compile Include="Tags\Classes\effect.cs" />
+    <Compile Include="Tags\Classes\equipment.cs" />
+    <Compile Include="Tags\Classes\flag.cs" />
+    <Compile Include="Tags\Classes\fog.cs" />
+    <Compile Include="Tags\Classes\font.cs" />
+    <Compile Include="Tags\Classes\garbage.cs" />
+    <Compile Include="Tags\Classes\gbxmodel.cs" />
+    <Compile Include="Tags\Classes\globals.cs" />
+    <Compile Include="Tags\Classes\glow.cs" />
+    <Compile Include="Tags\Classes\grenade_hud_interface.cs" />
+    <Compile Include="Tags\Classes\hud_globals.cs" />
+    <Compile Include="Tags\Classes\hud_message_text.cs" />
+    <Compile Include="Tags\Classes\hud_number.cs" />
+    <Compile Include="Tags\Classes\input_device_defaults.cs" />
+    <Compile Include="Tags\Classes\item.cs" />
+    <Compile Include="Tags\Classes\item_collection.cs" />
+    <Compile Include="Tags\Classes\lens_flare.cs" />
+    <Compile Include="Tags\Classes\light.cs" />
+    <Compile Include="Tags\Classes\lightning.cs" />
+    <Compile Include="Tags\Classes\light_volume.cs" />
+    <Compile Include="Tags\Classes\material_effects.cs" />
+    <Compile Include="Tags\Classes\meter.cs" />
+    <Compile Include="Tags\Classes\model.cs" />
+    <Compile Include="Tags\Classes\model_animations.cs" />
+    <Compile Include="Tags\Classes\model_collision_geometry.cs" />
+    <Compile Include="Tags\Classes\multiplayer_scenario_description.cs" />
+    <Compile Include="Tags\Classes\object.cs" />
+    <Compile Include="Tags\Classes\particle.cs" />
+    <Compile Include="Tags\Classes\particle_system.cs" />
+    <Compile Include="Tags\Classes\physics.cs" />
+    <Compile Include="Tags\Classes\placeholder.cs" />
+    <Compile Include="Tags\Classes\point_physics.cs" />
+    <Compile Include="Tags\Classes\preferences_network_game.cs" />
+    <Compile Include="Tags\Classes\projectile.cs" />
+    <Compile Include="Tags\Classes\scenario.cs" />
+    <Compile Include="Tags\Classes\scenario_structure_bsp.cs" />
+    <Compile Include="Tags\Classes\scenery.cs" />
+    <Compile Include="Tags\Classes\shader.cs" />
+    <Compile Include="Tags\Classes\shader_environment.cs" />
+    <Compile Include="Tags\Classes\shader_model.cs" />
+    <Compile Include="Tags\Classes\shader_transparent_chicago.cs" />
+    <Compile Include="Tags\Classes\shader_transparent_chicago_extended.cs" />
+    <Compile Include="Tags\Classes\shader_transparent_generic.cs" />
+    <Compile Include="Tags\Classes\shader_transparent_glass.cs" />
+    <Compile Include="Tags\Classes\shader_transparent_meter.cs" />
+    <Compile Include="Tags\Classes\shader_transparent_plasma.cs" />
+    <Compile Include="Tags\Classes\shader_transparent_water.cs" />
+    <Compile Include="Tags\Classes\sky.cs" />
+    <Compile Include="Tags\Classes\sound.cs" />
+    <Compile Include="Tags\Classes\sound_environment.cs" />
+    <Compile Include="Tags\Classes\sound_looping.cs" />
+    <Compile Include="Tags\Classes\sound_scenery.cs" />
+    <Compile Include="Tags\Classes\spheroid.cs" />
+    <Compile Include="Tags\Classes\string_list.cs" />
+    <Compile Include="Tags\Classes\tag_collection.cs" />
+    <Compile Include="Tags\Classes\ui_widget_collection.cs" />
+    <Compile Include="Tags\Classes\ui_widget_definition.cs" />
+    <Compile Include="Tags\Classes\unicode_string_list.cs" />
+    <Compile Include="Tags\Classes\unit.cs" />
+    <Compile Include="Tags\Classes\unit_hud_interface.cs" />
+    <Compile Include="Tags\Classes\vehicle.cs" />
+    <Compile Include="Tags\Classes\virtual_keyboard.cs" />
+    <Compile Include="Tags\Classes\weapon.cs" />
+    <Compile Include="Tags\Classes\weapon_hud_interface.cs" />
+    <Compile Include="Tags\Classes\weather_particle_system.cs" />
+    <Compile Include="Tags\Classes\wind.cs" />
+    <Compile Include="Tags\Fields\Block.cs" />
+    <Compile Include="Tags\Fields\Angle.cs" />
+    <Compile Include="Tags\Fields\AngleBounds.cs" />
+    <Compile Include="Tags\Fields\ArgbColor.cs" />
+    <Compile Include="Tags\Fields\CharInteger.cs" />
+    <Compile Include="Tags\Fields\TagReference.cs" />
+    <Compile Include="Tags\Fields\TagSignature.cs" />
+    <Compile Include="Tags\Fields\VariableLengthString.cs" />
+    <Compile Include="Tags\Fields\ShortBounds.cs" />
+    <Compile Include="Tags\Fields\ShortInteger.cs" />
+    <Compile Include="Tags\Fields\RgbColor.cs" />
+    <Compile Include="Tags\Fields\ShortBlockIndex.cs" />
+    <Compile Include="Tags\Fields\RealVector2D.cs" />
+    <Compile Include="Tags\Fields\RealVector3D.cs" />
+    <Compile Include="Tags\Fields\Rectangle2D.cs" />
+    <Compile Include="Tags\Fields\RealRgbColor.cs" />
+    <Compile Include="Tags\Fields\RealQuaternion.cs" />
+    <Compile Include="Tags\Fields\RealPlane2D.cs" />
+    <Compile Include="Tags\Fields\RealPoint2D.cs" />
+    <Compile Include="Tags\Fields\RealPoint3D.cs" />
+    <Compile Include="Tags\Fields\RealPlane3D.cs" />
+    <Compile Include="Tags\Fields\RealEulerAngles2D.cs" />
+    <Compile Include="Tags\Fields\RealEulerAngles3D.cs" />
+    <Compile Include="Tags\Fields\Point2D.cs" />
+    <Compile Include="Tags\Fields\RealArgbColor.cs" />
+    <Compile Include="Tags\Fields\LongBlockIndex.cs" />
+    <Compile Include="Tags\Fields\LongInteger.cs" />
+    <Compile Include="Tags\Fields\Flags.cs" />
+    <Compile Include="Tags\Fields\FixedLengthString.cs" />
+    <Compile Include="Tags\Fields\Enum.cs" />
+    <Compile Include="Tags\Fields\Data.cs" />
+    <Compile Include="Tags\Fields\RealFractionBounds.cs" />
+    <Compile Include="Tags\Fields\RealFraction.cs" />
+    <Compile Include="Tags\Fields\RealBounds.cs" />
+    <Compile Include="Tags\Fields\Real.cs" />
+    <Compile Include="Tags\Fields\Pad.cs" />
+    <Compile Include="Tags\Fields\Skip.cs" />
+    <Compile Include="Tags\HaloTypeTable.cs" />
+    <Compile Include="Tags\Implementations\bitmap.cs" />
+    <Compile Include="Tags\Implementations\globals.cs" />
+    <Compile Include="Tags\Implementations\shader.cs" />
+    <Compile Include="Tags\Implementations\shader_environment.cs" />
+    <Compile Include="Tags\Implementations\shader_model.cs" />
+    <Compile Include="Tags\Implementations\shader_transparent_chicago.cs" />
+    <Compile Include="Tags\Implementations\shader_transparent_water.cs" />
+    <Compile Include="Tags\TagDebug.cs" />
+    <Compile Include="Compiler\BitmapPixel.cs" />
+    <Compile Include="Compiler\BspMagic.cs" />
+    <Compile Include="Compiler\IndexMagic.cs" />
+    <Compile Include="Compiler\MapBuildVersion.cs" />
+    <Compile Include="Compiler\MapFormat.cs" />
+    <Compile Include="Compiler\MapUsage.cs" />
+    <Compile Include="Compiler\Predictor.cs" />
+    <Compile Include="Compiler\Tag.cs" />
+    <Compile Include="Compiler\TagLibrary.cs" />
+    <Compile Include="Compiler\XPE\Cxpe.cs" />
+    <Compile Include="Compiler\XPE\Xpe.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{ED1C3C5A-392F-4B0A-830F-F33B066440B4}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Real.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Real.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\texture_palette.bin" />
+    <EmbeddedResource Include="Resources\halo.cxpe" />
+    <EmbeddedResource Include="Tags\Xml\actor.xml" />
+    <EmbeddedResource Include="Tags\Xml\actor_variant.xml" />
+    <EmbeddedResource Include="Tags\Xml\antenna.xml" />
+    <EmbeddedResource Include="Tags\Xml\biped.xml" />
+    <EmbeddedResource Include="Tags\Xml\bitmap.xml" />
+    <EmbeddedResource Include="Tags\Xml\camera_track.xml" />
+    <EmbeddedResource Include="Tags\Xml\color_table.xml" />
+    <EmbeddedResource Include="Tags\Xml\continuous_damage_effect.xml" />
+    <EmbeddedResource Include="Tags\Xml\contrail.xml" />
+    <EmbeddedResource Include="Tags\Xml\damage_effect.xml" />
+    <EmbeddedResource Include="Tags\Xml\decal.xml" />
+    <EmbeddedResource Include="Tags\Xml\detail_object_collection.xml" />
+    <EmbeddedResource Include="Tags\Xml\device.xml" />
+    <EmbeddedResource Include="Tags\Xml\device_control.xml" />
+    <EmbeddedResource Include="Tags\Xml\device_light_fixture.xml" />
+    <EmbeddedResource Include="Tags\Xml\device_machine.xml" />
+    <EmbeddedResource Include="Tags\Xml\dialogue.xml" />
+    <EmbeddedResource Include="Tags\Xml\effect.xml" />
+    <EmbeddedResource Include="Tags\Xml\equipment.xml" />
+    <EmbeddedResource Include="Tags\Xml\flag.xml" />
+    <EmbeddedResource Include="Tags\Xml\fog.xml" />
+    <EmbeddedResource Include="Tags\Xml\font.xml" />
+    <EmbeddedResource Include="Tags\Xml\garbage.xml" />
+    <EmbeddedResource Include="Tags\Xml\gbxmodel.xml" />
+    <EmbeddedResource Include="Tags\Xml\globals.xml" />
+    <EmbeddedResource Include="Tags\Xml\glow.xml" />
+    <EmbeddedResource Include="Tags\Xml\grenade_hud_interface.xml" />
+    <EmbeddedResource Include="Tags\Xml\hud_globals.xml" />
+    <EmbeddedResource Include="Tags\Xml\hud_message_text.xml" />
+    <EmbeddedResource Include="Tags\Xml\hud_number.xml" />
+    <EmbeddedResource Include="Tags\Xml\input_device_defaults.xml" />
+    <EmbeddedResource Include="Tags\Xml\item.xml" />
+    <EmbeddedResource Include="Tags\Xml\item_collection.xml" />
+    <EmbeddedResource Include="Tags\Xml\lens_flare.xml" />
+    <EmbeddedResource Include="Tags\Xml\light.xml" />
+    <EmbeddedResource Include="Tags\Xml\lightning.xml" />
+    <EmbeddedResource Include="Tags\Xml\light_volume.xml" />
+    <EmbeddedResource Include="Tags\Xml\material_effects.xml" />
+    <EmbeddedResource Include="Tags\Xml\meter.xml" />
+    <EmbeddedResource Include="Tags\Xml\model.xml" />
+    <EmbeddedResource Include="Tags\Xml\model_animations.xml" />
+    <EmbeddedResource Include="Tags\Xml\model_collision_geometry.xml" />
+    <EmbeddedResource Include="Tags\Xml\multiplayer_scenario_description.xml" />
+    <EmbeddedResource Include="Tags\Xml\object.xml" />
+    <EmbeddedResource Include="Tags\Xml\particle.xml" />
+    <EmbeddedResource Include="Tags\Xml\particle_system.xml" />
+    <EmbeddedResource Include="Tags\Xml\physics.xml" />
+    <EmbeddedResource Include="Tags\Xml\placeholder.xml" />
+    <EmbeddedResource Include="Tags\Xml\point_physics.xml" />
+    <EmbeddedResource Include="Tags\Xml\preferences_network_game.xml" />
+    <EmbeddedResource Include="Tags\Xml\projectile.xml" />
+    <EmbeddedResource Include="Tags\Xml\scenario.xml" />
+    <EmbeddedResource Include="Tags\Xml\scenario_structure_bsp.xml" />
+    <EmbeddedResource Include="Tags\Xml\scenery.xml" />
+    <EmbeddedResource Include="Tags\Xml\shader.xml" />
+    <EmbeddedResource Include="Tags\Xml\shader_environment.xml" />
+    <EmbeddedResource Include="Tags\Xml\shader_model.xml" />
+    <EmbeddedResource Include="Tags\Xml\shader_transparent_chicago.xml" />
+    <EmbeddedResource Include="Tags\Xml\shader_transparent_chicago_extended.xml" />
+    <EmbeddedResource Include="Tags\Xml\shader_transparent_generic.xml" />
+    <EmbeddedResource Include="Tags\Xml\shader_transparent_glass.xml" />
+    <EmbeddedResource Include="Tags\Xml\shader_transparent_meter.xml" />
+    <EmbeddedResource Include="Tags\Xml\shader_transparent_plasma.xml" />
+    <EmbeddedResource Include="Tags\Xml\shader_transparent_water.xml" />
+    <EmbeddedResource Include="Tags\Xml\sky.xml" />
+    <EmbeddedResource Include="Tags\Xml\sound.xml" />
+    <EmbeddedResource Include="Tags\Xml\sound_environment.xml" />
+    <EmbeddedResource Include="Tags\Xml\sound_looping.xml" />
+    <EmbeddedResource Include="Tags\Xml\sound_scenery.xml" />
+    <EmbeddedResource Include="Tags\Xml\spheroid.xml" />
+    <EmbeddedResource Include="Tags\Xml\string_list.xml" />
+    <EmbeddedResource Include="Tags\Xml\tag_collection.xml" />
+    <EmbeddedResource Include="Tags\Xml\ui_widget_collection.xml" />
+    <EmbeddedResource Include="Tags\Xml\ui_widget_definition.xml" />
+    <EmbeddedResource Include="Tags\Xml\unicode_string_list.xml" />
+    <EmbeddedResource Include="Tags\Xml\unit.xml" />
+    <EmbeddedResource Include="Tags\Xml\unit_hud_interface.xml" />
+    <EmbeddedResource Include="Tags\Xml\vehicle.xml" />
+    <EmbeddedResource Include="Tags\Xml\virtual_keyboard.xml" />
+    <EmbeddedResource Include="Tags\Xml\weapon.xml" />
+    <EmbeddedResource Include="Tags\Xml\weapon_hud_interface.xml" />
+    <EmbeddedResource Include="Tags\Xml\weather_particle_system.xml" />
+    <EmbeddedResource Include="Tags\Xml\wind.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\halopc.pta" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\haloxbox.pta" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\halopc_bitmaps.pci" />
+    <EmbeddedResource Include="Resources\halopc_sounds.pci" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Scripting\HaloPCScriptEngineDefinition.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Shaders\shader_environment.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Shaders\shader_transparent_glass.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Shaders\shader_model.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Shaders\shader_transparent_water.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Shaders\shader_transparent_plasma.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Shaders\shader_transparent_generic\generic_a.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Block.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Block.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Angle.resx">
+      <DependentUpon>Angle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ARGBColor.resx">
+      <DependentUpon>ARGBColor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CharInteger.resx">
+      <DependentUpon>CharInteger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Flags.resx">
+      <DependentUpon>Flags.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RealPoint2D.resx">
+      <DependentUpon>RealPoint2D.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ShortBounds.resx">
+      <DependentUpon>ShortBounds.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RealBounds.resx">
+      <DependentUpon>RealBounds.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RealFractionBounds.resx">
+      <DependentUpon>RealFractionBounds.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RealFraction.resx">
+      <DependentUpon>RealFraction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Rectangle2D.resx">
+      <DependentUpon>Rectangle2D.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RealQuaternion.resx">
+      <DependentUpon>RealQuaternion.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RealEulerAngles2D.resx">
+      <DependentUpon>RealEulerAngles2D.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RealVector3D.resx">
+      <DependentUpon>RealVector3D.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RealARGBColor.resx">
+      <DependentUpon>RealARGBColor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RealVector2D.resx">
+      <DependentUpon>RealVector2D.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Point2D.resx">
+      <DependentUpon>Point2D.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ShortBlockIndex.resx">
+      <DependentUpon>ShortBlockIndex.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LongInteger.resx">
+      <DependentUpon>LongInteger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LongBlockIndex.resx">
+      <DependentUpon>LongBlockIndex.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FixedLengthString.resx">
+      <DependentUpon>FixedLengthString.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Enum.resx">
+      <DependentUpon>Enum.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RealPlane2D.resx">
+      <DependentUpon>RealPlane2D.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RealPlane3D.resx">
+      <DependentUpon>RealPlane3D.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ShortInteger.resx">
+      <DependentUpon>ShortInteger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RealEulerAngles3D.resx">
+      <DependentUpon>RealEulerAngles3D.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RealRGBColor.resx">
+      <DependentUpon>RealRGBColor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RGBColor.resx">
+      <DependentUpon>RGBColor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TagReference.resx">
+      <DependentUpon>TagReference.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RealPoint3D.resx">
+      <DependentUpon>RealPoint3D.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Shaders\shader_transparent_generic\generic_b.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tags\Xml\testing.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)PrometheusMX\bin\$(ConfigurationName)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

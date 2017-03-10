@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="ant!" parenttype="????">Antenna</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Antenna">
+      <value type="FixedLengthString" name="attachment marker name">
+        <tooltip>The marker name where the antenna should be attached.</tooltip>
+      </value>
+      <value type="TagReference" name="bitmaps" extensions="bitm" />
+      <value type="TagReference" name="physics" extensions="pphy" />
+      <value type="Pad" name="_unnamed" length="80" />
+      <value type="RealFraction" name="spring strength coefficient">
+        <tooltip>Strength of the spring (larger values make the spring stronger).</tooltip>
+      </value>
+      <value type="Real" name="falloff pixels" />
+      <value type="Real" name="cutoff pixels" />
+      <value type="Pad" name="_unnamed2" length="40" />
+      <struct name="AntennaVertex">
+        <value type="RealFraction" name="spring strength coefficient">
+          <tooltip>Strength of the spring (larger values make the spring stronger).</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed" length="24" />
+        <value type="RealEulerAngles2D" name="angles">
+          <tooltip>Direction toward next vertex.</tooltip>
+        </value>
+        <value type="Real" name="length">
+          <tooltip>Distance between this vertex and the next.</tooltip>
+        </value>
+        <value type="ShortInteger" name="sequence index">
+          <tooltip>Bitmap group sequence index for this vertex's texture.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="RealARGBColor" name="color">
+          <tooltip>Color at this vertex.</tooltip>
+        </value>
+        <value type="RealARGBColor" name="LOD color">
+          <tooltip>Color at this vertex for the low-LOD line primitives.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed3" length="40" />
+        <value type="Pad" name="_unnamed4" length="12" />
+      </struct>
+      <value type="Block" name="vertices" struct="AntennaVertex" maxelements="20" />
+    </struct>
+  </plugin>
+</xml>

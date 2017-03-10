@@ -1,0 +1,9 @@
+<xml>
+  <name type="garb" parenttype="item">Garbage</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="GarbageBlock">
+      <value type="Pad" name="_unnamed0" length="168" />
+    </struct>
+  </plugin>
+</xml>

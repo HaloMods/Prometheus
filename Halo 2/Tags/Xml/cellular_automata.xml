@@ -1,0 +1,47 @@
+<xml>
+  <name type="devo" parenttype="????">CellularAutomata</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="CellularAutomataBlock">
+      <value type="ShortInteger" name="updates per second" disabled="false" unit="Hz" />
+      <value type="ShortInteger" name="x width" disabled="false" unit="cells" />
+      <value type="ShortInteger" name="y depth" disabled="false" unit="cells" />
+      <value type="ShortInteger" name="z height" disabled="false" unit="cells" />
+      <value type="Real" name="x width2" disabled="false" unit="world units" />
+      <value type="Real" name="y depth2" disabled="false" unit="world units" />
+      <value type="Real" name="z height2" disabled="false" unit="world units" />
+      <value type="Pad" name="_unnamed0" length="32" />
+      <value type="StringId" name="marker" disabled="false" />
+      <value type="RealFraction" name="cell birth chance" disabled="false" unit="[0,1]" />
+      <value type="Pad" name="_unnamed1" length="32" />
+      <value type="LongInteger" name="cell gene mutates 1 in" disabled="false" unit="times" />
+      <value type="LongInteger" name="virus gene mutations 1 in" disabled="false" unit="times" />
+      <value type="Pad" name="_unnamed2" length="32" />
+      <value type="ShortIntegerBounds" name="infected cell lifespan" disabled="false" unit="updates">
+        <tooltip>the lifespan of a cell once infected</tooltip>
+      </value>
+      <value type="ShortInteger" name="minimum infection age" disabled="false" unit="updates">
+        <tooltip>no cell can be infected before it has been alive this number of updates</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed3" length="2" />
+      <value type="RealFraction" name="cell infection chance" disabled="false" unit="[0,1]" />
+      <value type="RealFraction" name="infection threshold" disabled="false" unit="[0,1]">
+        <tooltip>0.0 is most difficult for the virus, 1.0 means any virus can infect any cell</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed4" length="32" />
+      <value type="RealFraction" name="new cell filled chance" disabled="false" unit="[0,1]" />
+      <value type="RealFraction" name="new cell infected chance" disabled="false" unit="[0,1]" />
+      <value type="Pad" name="_unnamed5" length="32" />
+      <value type="RealFraction" name="detail texture change chance" disabled="false" unit="[0,1]" />
+      <value type="Pad" name="_unnamed6" length="32" />
+      <value type="ShortInteger" name="detail texture width" disabled="false" unit="cells">
+        <tooltip>the number of cells repeating across the detail texture in both dimensions</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed7" length="2" />
+      <value type="TagReference" name="detail texture" disabled="false" extensions="bitm" />
+      <value type="Pad" name="_unnamed8" length="32" />
+      <value type="TagReference" name="mask bitmap" disabled="false" extensions="bitm" />
+      <value type="Pad" name="_unnamed9" length="240" />
+    </struct>
+  </plugin>
+</xml>

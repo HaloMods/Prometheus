@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="itmc" parenttype="????">ItemCollection</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="ItemCollection">
+      <struct name="ItemPermutation">
+        <value type="Pad" name="_unnamed" length="32" />
+        <value type="Real" name="weight">
+          <tooltip>Relatively how likely this item will be chosen.</tooltip>
+        </value>
+        <value type="TagReference" name="item" blockname="true" extensions="item">
+          <tooltip>Which item to .</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="32" />
+      </struct>
+      <value type="Block" name="item permutations" struct="ItemPermutation" maxelements="32" />
+      <value type="ShortInteger" name="spawn time in second" />
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Pad" name="_unnamed2" length="76" />
+    </struct>
+  </plugin>
+</xml>

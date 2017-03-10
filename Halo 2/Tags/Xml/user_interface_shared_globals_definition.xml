@@ -1,0 +1,714 @@
+<xml>
+  <name type="wigl" parenttype="????">UserInterfaceSharedGlobalsDefinition</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="UserInterfaceSharedGlobalsDefinitionBlock">
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Pad" name="_unnamed1" length="2" />
+      <value type="Pad" name="_unnamed2" length="16" />
+      <value type="Pad" name="_unnamed3" length="8" />
+      <value type="Pad" name="_unnamed4" length="8" />
+      <value type="Pad" name="_unnamed5" length="16" />
+      <value type="Pad" name="_unnamed6" length="8" />
+      <value type="Pad" name="_unnamed7" length="8" />
+      <value type="Real" name="overlayed screen alpha mod" disabled="false" />
+      <value type="ShortInteger" name="inc text update period" disabled="false" unit="milliseconds" />
+      <value type="ShortInteger" name="inc text block character" disabled="false" unit="ASCII code" />
+      <value type="Real" name="callout text scale" disabled="false" />
+      <value type="RealArgbColor" name="progress bar color" disabled="false" />
+      <value type="Real" name="near clip plane distance" disabled="false" unit="objects closer than this are not drawn" />
+      <value type="Real" name="projection plane distance" disabled="false" unit="distance at which objects are rendered when z=0 (normal size)" />
+      <value type="Real" name="far clip plane distance" disabled="false" unit="objects farther than this are not drawn" />
+      <value type="RealArgbColor" name="overlayed interface color" disabled="false" />
+      <value type="Pad" name="_unnamed8" length="12" />
+      <struct name="UiErrorCategoryBlock">
+        <value type="StringId" name="category name" disabled="false" blockname="true" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="use large dialog" />
+        </value>
+        <value type="Enum" name="default button" length="1" disabled="false">
+          <item value="0" name="no default" />
+          <item value="1" name="default ok" />
+          <item value="2" name="default cancel" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="1" />
+        <value type="TagReference" name="string tag" disabled="false" extensions="unic" />
+        <value type="StringId" name="default title" disabled="false" />
+        <value type="StringId" name="default message" disabled="false" />
+        <value type="StringId" name="default ok" disabled="false" />
+        <value type="StringId" name="default cancel" disabled="false" />
+        <struct name="UiErrorBlock">
+          <value type="Enum" name="error" length="4" disabled="false">
+            <item value="0" name="error_unknown" />
+            <item value="1" name="error_generic" />
+            <item value="2" name="error_generic_networking" />
+            <item value="3" name="error_system_link_generic_join_failure" />
+            <item value="4" name="error_system_link_no_network_connection" />
+            <item value="5" name="error_system_link_connection_lost" />
+            <item value="6" name="error_network_game_oos" />
+            <item value="7" name="error_xbox_live_sign_out_confirmation" />
+            <item value="8" name="error_confirm_revert_to_last_save" />
+            <item value="9" name="error_confirm_quit_without_save" />
+            <item value="10" name="error_confirm_delete_player_profile" />
+            <item value="11" name="error_confirm_delete_variant_file" />
+            <item value="12" name="error_player_profile_creation_failed" />
+            <item value="13" name="error_variant_profile_creation_failed" />
+            <item value="14" name="error_playlist_creation_failed" />
+            <item value="15" name="error_core_file_load_failed" />
+            <item value="16" name="error_mu_removed_during_player_profile_save" />
+            <item value="17" name="error_mu_removed_during_variant_save" />
+            <item value="18" name="error_mu_removed_during_playlist_save" />
+            <item value="19" name="error_message_saving_to_mu" />
+            <item value="20" name="error_message_saving_file" />
+            <item value="21" name="error_message_creating_player_profile" />
+            <item value="22" name="error_message_creating_variant_profile" />
+            <item value="23" name="error_message_saving_checkpoint" />
+            <item value="24" name="error_failed_to_load_player_profile" />
+            <item value="25" name="error_failed_to_load_variant" />
+            <item value="26" name="error_failed_to_load_playlist" />
+            <item value="27" name="error_failed_to_load_save_game" />
+            <item value="28" name="error_controller1_removed" />
+            <item value="29" name="error_controller2_removed" />
+            <item value="30" name="error_controller3_removed" />
+            <item value="31" name="error_controller4_removed" />
+            <item value="32" name="error_need_more_free_blocks_to_save" />
+            <item value="33" name="error_maximum_saved_game_files_already_exist" />
+            <item value="34" name="error_dirty_disk" />
+            <item value="35" name="error_xblive_cannot_access_service" />
+            <item value="36" name="error_xblive_title_update_required" />
+            <item value="37" name="error_xblive_servers_too_busy" />
+            <item value="38" name="error_xblive_duplicate_logon" />
+            <item value="39" name="error_xblive_account_management_required" />
+            <item value="40" name="error_warning_xblive_recommended_messages_available" />
+            <item value="41" name="error_xblive_invalid_match_session" />
+            <item value="42" name="error_warning_xblive_poor_network_performance" />
+            <item value="43" name="error_not_enough_open_slots_to_join_match_session" />
+            <item value="44" name="error_xblive_corrupt_download_content" />
+            <item value="45" name="error_confirm_xblive_corrupt_saved_game_file_removal" />
+            <item value="46" name="error_xblive_invalid_user_account" />
+            <item value="47" name="error_confirm_boot_clan_member" />
+            <item value="48" name="error_confirm_controller_sign_out" />
+            <item value="49" name="error_beta_xblive_service_qos_report" />
+            <item value="50" name="error_beta_feature_disabled" />
+            <item value="51" name="error_beta_network_connection_required" />
+            <item value="52" name="error_confirm_friend_removal" />
+            <item value="53" name="error_confirm_boot_to_dash" />
+            <item value="54" name="error_confirm_launch_xdemos" />
+            <item value="55" name="error_confirm_exit_game_session" />
+            <item value="56" name="error_xblive_connection_to_xbox_live_lost" />
+            <item value="57" name="error_xblive_message_send_failure" />
+            <item value="58" name="error_network_link_lost" />
+            <item value="59" name="error_network_link_required" />
+            <item value="60" name="error_xblive_invalid_passcode" />
+            <item value="61" name="error_join_aborted" />
+            <item value="62" name="error_join_session_not_found" />
+            <item value="63" name="error_join_qos_failure" />
+            <item value="64" name="error_join_data_decode_failure" />
+            <item value="65" name="error_join_game_full" />
+            <item value="66" name="error_join_game_closed" />
+            <item value="67" name="error_join_version_mismatch" />
+            <item value="68" name="error_join_failed_unknown_reason" />
+            <item value="69" name="error_join_failed_friend_in_matchmade_game" />
+            <item value="70" name="error_player_profile_name_must_be_unique" />
+            <item value="71" name="error_variant_name_must_be_unique" />
+            <item value="72" name="error_playlist_name_must_be_unique" />
+            <item value="73" name="error_saved_film_name_must_be_unique" />
+            <item value="74" name="error_no_free_slots_player_profile" />
+            <item value="75" name="error_no_free_slots_variant" />
+            <item value="76" name="error_no_free_slots_playlist" />
+            <item value="77" name="error_no_free_slots_saved_film" />
+            <item value="78" name="error_need_more_space_for_player_profile" />
+            <item value="79" name="error_need_more_space_for_variant" />
+            <item value="80" name="error_need_more_space_for_playlist" />
+            <item value="81" name="error_need_more_space_for_saved_film" />
+            <item value="82" name="error_cannot_set_privileges_on_member_whose_data_not_known" />
+            <item value="83" name="error_cant_delete_default_profile" />
+            <item value="84" name="error_cant_delete_default_variant" />
+            <item value="85" name="error_cant_delete_default_playlist" />
+            <item value="86" name="error_cant_delete_default_saved_film" />
+            <item value="87" name="error_cant_delete_profile_in_use" />
+            <item value="88" name="error_player_profile_name_must_have_alphanumeric_characters" />
+            <item value="89" name="error_variant_name_must_have_alphanumeric_characters" />
+            <item value="90" name="error_playlist_name_must_have_alphanumeric_characters" />
+            <item value="91" name="error_saved_film_name_must_have_alphanumeric_characters" />
+            <item value="92" name="error_teams_not_a_member" />
+            <item value="93" name="error_teams_insufficient_privileges" />
+            <item value="94" name="error_teams_server_busy" />
+            <item value="95" name="error_teams_team_full" />
+            <item value="96" name="error_teams_member_pending" />
+            <item value="97" name="error_teams_too_many_requests" />
+            <item value="98" name="error_teams_user_already_exists" />
+            <item value="99" name="error_teams_user_not_found" />
+            <item value="100" name="error_teams_user_teams_full" />
+            <item value="101" name="error_teams_no_task" />
+            <item value="102" name="error_teams_too_many_teams" />
+            <item value="103" name="error_teams_team_already_exists" />
+            <item value="104" name="error_teams_team_not_found" />
+            <item value="105" name="error_teams_name_contains_bad_words" />
+            <item value="106" name="error_teams_description_contains_bad_words" />
+            <item value="107" name="error_teams_motto_contains_bad_words" />
+            <item value="108" name="error_teams_url_contains_bad_words" />
+            <item value="109" name="error_teams_no_admin" />
+            <item value="110" name="error_teams_cannot_set_privileges_on_member_whose_data_not_known" />
+            <item value="111" name="error_live_unknown" />
+            <item value="112" name="error confirm_delete_profile" />
+            <item value="113" name="error confirm_delete_playlist" />
+            <item value="114" name="error confirm_delete_saved_film" />
+            <item value="115" name="error confirm_live_sign_out" />
+            <item value="116" name="error confirm_confirm_friend_removal" />
+            <item value="117" name="error confirm_promotion_to_superuser" />
+            <item value="118" name="error warn_no_more_clan_superusers" />
+            <item value="119" name="error confirm_corrupt_profile" />
+            <item value="120" name="error confirm_xbox_live_sign_out" />
+            <item value="121" name="error confirm_corrupt_game_variant" />
+            <item value="122" name="error confirm_leave_clan" />
+            <item value="123" name="error confirm_corrupt_playlist" />
+            <item value="124" name="error_cant_join_gameinvite_without_signon" />
+            <item value="125" name="error confirm_proceed_to_crossgame_invite" />
+            <item value="126" name="error confirm_decline_crossgame_invite" />
+            <item value="127" name="error warn_insert_cd_for_crossgame_invite" />
+            <item value="128" name="error need more space for saved game" />
+            <item value="129" name="error saved game cannot be loaded" />
+            <item value="130" name="error confirm controller signout with guests" />
+            <item value="131" name="error warning party closed" />
+            <item value="132" name="error warning party required" />
+            <item value="133" name="error warning party full" />
+            <item value="134" name="error warning player in mm game" />
+            <item value="135" name="error xblive failed to sign in" />
+            <item value="136" name="error cant sign out master with guests" />
+            <item value="137" name="error obsolete dot command" />
+            <item value="138" name="error not unlocked" />
+            <item value="139" name="confirm leave lobby" />
+            <item value="140" name="error confirm party leader leave matchmaking" />
+            <item value="141" name="error confirm single box leave matchmaking" />
+            <item value="142" name="error invalid clan name" />
+            <item value="143" name="error player list full" />
+            <item value="144" name="error blocked by player" />
+            <item value="145" name="error friend pending" />
+            <item value="146" name="error too many requests" />
+            <item value="147" name="error player already in list" />
+            <item value="148" name="error gamertag not found" />
+            <item value="149" name="error cannot message self" />
+            <item value="150" name="error warning last overlord cant leave clan" />
+            <item value="151" name="error confirm boot player" />
+            <item value="152" name="error confirm party member leave pcr" />
+            <item value="153" name="error cannot sign in during countdown" />
+            <item value="154" name="error xbl invalid user" />
+            <item value="155" name="error xbl user not authorized" />
+            <item value="156" name="OBSOLETE" />
+            <item value="157" name="OBSOLETE2" />
+            <item value="158" name="error xbl banned xbox" />
+            <item value="159" name="error xbl banned user" />
+            <item value="160" name="error xbl banned title" />
+            <item value="161" name="error confirm exit game session leader" />
+            <item value="162" name="error message objectionable content" />
+            <item value="163" name="error confirm enter downloader" />
+            <item value="164" name="error confirm block user" />
+            <item value="165" name="error confirm negative feedback" />
+            <item value="166" name="error confirm change clan member level" />
+            <item value="167" name="error blank gamertag" />
+            <item value="168" name="confirm save &amp; quit game" />
+            <item value="169" name="error cant join during matchmaking" />
+            <item value="170" name="error confirm restart level" />
+            <item value="171" name="matchmaking failure generic" />
+            <item value="172" name="matchmaking failure missing content" />
+            <item value="173" name="matchmaking failure aborted" />
+            <item value="174" name="matchmaking failure membership changed" />
+            <item value="175" name="confirm end game session" />
+            <item value="176" name="confirm exit game session only player" />
+            <item value="177" name="confirm exit game session xbox live ranked leader" />
+            <item value="178" name="confirm exit game session xbox live ranked" />
+            <item value="179" name="confirm exit game session xbox live leader" />
+            <item value="180" name="confirm exit game session xbox live only player" />
+            <item value="181" name="confirm exit game session xbox live" />
+            <item value="182" name="recipient's list full" />
+            <item value="183" name="confirm quit campaign (no save)" />
+            <item value="184" name="xblive connection to xbox live lost save and quit" />
+            <item value="185" name="booted from session" />
+            <item value="186" name="confirm_exit_game_session_xbox_live_guest" />
+            <item value="187" name="confirm_exit_game_session_xbox_live_ranked_only_player" />
+            <item value="188" name="confirm_exit_game_session_xbox_live_unranked_only_player" />
+            <item value="189" name="confirm_exit_game_session_xbox_live_unranked_leader" />
+            <item value="190" name="confirm_exit_game_session_xbox_live_unranked" />
+            <item value="191" name="cant join friend while in matchmade game" />
+            <item value="192" name="map load failure" />
+            <item value="193" name="error_achievements_interrupted" />
+            <item value="194" name="confirm_lose_progress" />
+            <item value="195" name="error_beta_achievements_disabled" />
+            <item value="196" name="error_cannot_connect_versions_wrong" />
+            <item value="197" name="confirm_booted_from_session" />
+            <item value="198" name="confirm_boot_player_from_squad" />
+            <item value="199" name="confirm_leave_system_link_lobby" />
+            <item value="200" name="confirm_party_member_leave_matchmaking" />
+            <item value="201" name="confirm_quit_single_player" />
+            <item value="202" name="error_controller_removed" />
+            <item value="203" name="error_download_in_progress" />
+            <item value="204" name="error_download_fail" />
+            <item value="205" name="error_failed_to_load_map" />
+            <item value="206" name="error_feature_requires_gold" />
+            <item value="207" name="error_keyboard_mapping" />
+            <item value="208" name="error_keyboard_removed" />
+            <item value="209" name="error_live_game_unavailable" />
+            <item value="210" name="error_map_missing" />
+            <item value="211" name="error_matchmaking_failed_generic" />
+            <item value="212" name="error_matchmaking_failed_missing_content" />
+            <item value="213" name="error_mouse_removed" />
+            <item value="214" name="error_party_not_all_on_live" />
+            <item value="215" name="error_party_subnet_not_shared" />
+            <item value="216" name="error_required_game_update" />
+            <item value="217" name="error_saved_game_cannot_be_saved" />
+            <item value="218" name="error_sound_microphone_not_supported" />
+            <item value="219" name="error_system_link_direct_IP" />
+            <item value="220" name="error_text_chat_muted" />
+            <item value="221" name="error_text_chat_parental_controls" />
+            <item value="222" name="error_update_start" />
+            <item value="223" name="error_update_fail" />
+            <item value="224" name="error_update_fail_blocks" />
+            <item value="225" name="error_update_exists" />
+            <item value="226" name="error_insert_original" />
+            <item value="227" name="error_update_fail_network_lost" />
+            <item value="228" name="error_update_mp_out_of_sync" />
+            <item value="229" name="error_update_must_upgrade" />
+            <item value="230" name="error_voice_gold_required" />
+            <item value="231" name="error_voice_parental_controls" />
+            <item value="232" name="error_warning_xblive_poor_network_perofrmance" />
+            <item value="233" name="error_you_missing_map" />
+            <item value="234" name="error_someone_missing_map" />
+            <item value="235" name="error_tnp_no_source" />
+            <item value="236" name="error_tnp_disk_read" />
+            <item value="237" name="error_tnp_no_engine_running" />
+            <item value="238" name="error_tnp_signature_verification" />
+            <item value="239" name="error_tnp_drive_removed" />
+            <item value="240" name="error_tnp_disk_full" />
+            <item value="241" name="error_tnp_permissions" />
+            <item value="242" name="error_tnp_unknown" />
+            <item value="243" name="continue_install" />
+            <item value="244" name="cancel_install" />
+            <item value="245" name="error_confirm_upsell_gold" />
+            <item value="246" name="error_add_to_favorites" />
+            <item value="247" name="error_remove_from_favorites" />
+            <item value="248" name="error_updating_favorites" />
+            <item value="249" name="choose existing checkpoint location" />
+            <item value="250" name="choose new checkpoint location (checkpoints exist on live and local)" />
+            <item value="251" name="choose new checkpoint location (checkpoints exist on live)" />
+            <item value="252" name="choose new checkpoint location (checkpoints exist locally)" />
+            <item value="253" name="xxx" />
+          </value>
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="use large dialog" />
+          </value>
+          <value type="Enum" name="default button" length="1" disabled="false">
+            <item value="0" name="no default" />
+            <item value="1" name="default ok" />
+            <item value="2" name="default cancel" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="1" />
+          <value type="StringId" name="title" disabled="false" />
+          <value type="StringId" name="message" disabled="false" />
+          <value type="StringId" name="ok" disabled="false" />
+          <value type="StringId" name="cancel" disabled="false" />
+        </struct>
+        <value type="Block" name="error block" disabled="false" struct="UiErrorBlock" maxelements="100" />
+      </struct>
+      <value type="Block" name="errors" disabled="false" struct="UiErrorCategoryBlock" maxelements="100" />
+      <value type="TagReference" name="sound tag" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="sound tag2" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="sound tag3" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="sound tag4" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="sound tag5" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="sound tag6" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="sound tag7" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="sound tag8" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="sound tag9" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="sound tag10" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="sound tag11" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="_unnamed9" extensions="snd!" />
+      <value type="TagReference" name="sound tag12" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="_unnamed10" extensions="snd!" />
+      <value type="TagReference" name="_unnamed11" extensions="snd!" />
+      <value type="TagReference" name="_unnamed12" extensions="snd!" />
+      <value type="TagReference" name="global bitmaps tag" disabled="false" extensions="bitm" />
+      <value type="TagReference" name="unicode string list tag" disabled="false" extensions="unic" />
+      <struct name="AnimationReferenceBlock">
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="unused" />
+        </value>
+        <value type="LongInteger" name="animation period" disabled="false" unit="milliseconds" />
+        <struct name="ScreenAnimationKeyframeReferenceBlock">
+          <value type="Pad" name="_unnamed0" length="4" />
+          <value type="Real" name="alpha" disabled="false" />
+          <value type="RealPoint3d" name="position" disabled="false" />
+        </struct>
+        <value type="Block" name="keyframes" disabled="false" struct="ScreenAnimationKeyframeReferenceBlock" maxelements="64" />
+        <value type="LongInteger" name="animation period2" disabled="false" unit="milliseconds" />
+        <value type="Block" name="keyframes2" disabled="false" struct="ScreenAnimationKeyframeReferenceBlock" maxelements="64" />
+        <value type="LongInteger" name="animation period3" disabled="false" unit="milliseconds" />
+        <value type="Enum" name="ambient animation looping style" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="reverse loop" />
+          <item value="2" name="loop" />
+          <item value="3" name="don't loop" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Block" name="keyframes3" disabled="false" struct="ScreenAnimationKeyframeReferenceBlock" maxelements="64" />
+      </struct>
+      <value type="Block" name="screen animations" disabled="false" struct="AnimationReferenceBlock" maxelements="64" />
+      <struct name="ShapeGroupReferenceBlock">
+        <struct name="ShapeBlockReferenceBlock">
+          <value type="Flags" name="flags" length="4" disabled="false">
+            <bit index="0" name="unused" />
+          </value>
+          <value type="Enum" name="animation index" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="00" />
+            <item value="2" name="01" />
+            <item value="3" name="02" />
+            <item value="4" name="03" />
+            <item value="5" name="04" />
+            <item value="6" name="05" />
+            <item value="7" name="06" />
+            <item value="8" name="07" />
+            <item value="9" name="08" />
+            <item value="10" name="09" />
+            <item value="11" name="10" />
+            <item value="12" name="11" />
+            <item value="13" name="12" />
+            <item value="14" name="13" />
+            <item value="15" name="14" />
+            <item value="16" name="15" />
+            <item value="17" name="16" />
+            <item value="18" name="17" />
+            <item value="19" name="18" />
+            <item value="20" name="19" />
+            <item value="21" name="20" />
+            <item value="22" name="21" />
+            <item value="23" name="22" />
+            <item value="24" name="23" />
+            <item value="25" name="24" />
+            <item value="26" name="25" />
+            <item value="27" name="26" />
+            <item value="28" name="27" />
+            <item value="29" name="28" />
+            <item value="30" name="29" />
+            <item value="31" name="30" />
+            <item value="32" name="31" />
+            <item value="33" name="32" />
+            <item value="34" name="33" />
+            <item value="35" name="34" />
+            <item value="36" name="35" />
+            <item value="37" name="36" />
+            <item value="38" name="37" />
+            <item value="39" name="38" />
+            <item value="40" name="39" />
+            <item value="41" name="40" />
+            <item value="42" name="41" />
+            <item value="43" name="42" />
+            <item value="44" name="43" />
+            <item value="45" name="44" />
+            <item value="46" name="45" />
+            <item value="47" name="46" />
+            <item value="48" name="47" />
+            <item value="49" name="48" />
+            <item value="50" name="49" />
+            <item value="51" name="50" />
+            <item value="52" name="51" />
+            <item value="53" name="52" />
+            <item value="54" name="53" />
+            <item value="55" name="54" />
+            <item value="56" name="55" />
+            <item value="57" name="56" />
+            <item value="58" name="57" />
+            <item value="59" name="58" />
+            <item value="60" name="59" />
+            <item value="61" name="60" />
+            <item value="62" name="61" />
+            <item value="63" name="62" />
+            <item value="64" name="63" />
+          </value>
+          <value type="ShortInteger" name="intro animation delay milliseconds" disabled="false" />
+          <value type="RealArgbColor" name="color" disabled="false" />
+          <struct name="PointBlockReferenceBlock">
+            <value type="Point2d" name="coordinates" disabled="false" />
+          </struct>
+          <value type="Block" name="points" disabled="false" struct="PointBlockReferenceBlock" maxelements="16" />
+          <value type="ShortInteger" name="render depth bias" disabled="false" />
+          <value type="Pad" name="_unnamed0" length="14" />
+        </struct>
+        <value type="Block" name="shapes" disabled="false" struct="ShapeBlockReferenceBlock" maxelements="32" />
+        <struct name="UiModelSceneReferenceBlock">
+          <value type="Flags" name="flags" length="4" disabled="false">
+            <bit index="0" name="unused" />
+          </value>
+          <value type="Enum" name="animation index" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="00" />
+            <item value="2" name="01" />
+            <item value="3" name="02" />
+            <item value="4" name="03" />
+            <item value="5" name="04" />
+            <item value="6" name="05" />
+            <item value="7" name="06" />
+            <item value="8" name="07" />
+            <item value="9" name="08" />
+            <item value="10" name="09" />
+            <item value="11" name="10" />
+            <item value="12" name="11" />
+            <item value="13" name="12" />
+            <item value="14" name="13" />
+            <item value="15" name="14" />
+            <item value="16" name="15" />
+            <item value="17" name="16" />
+            <item value="18" name="17" />
+            <item value="19" name="18" />
+            <item value="20" name="19" />
+            <item value="21" name="20" />
+            <item value="22" name="21" />
+            <item value="23" name="22" />
+            <item value="24" name="23" />
+            <item value="25" name="24" />
+            <item value="26" name="25" />
+            <item value="27" name="26" />
+            <item value="28" name="27" />
+            <item value="29" name="28" />
+            <item value="30" name="29" />
+            <item value="31" name="30" />
+            <item value="32" name="31" />
+            <item value="33" name="32" />
+            <item value="34" name="33" />
+            <item value="35" name="34" />
+            <item value="36" name="35" />
+            <item value="37" name="36" />
+            <item value="38" name="37" />
+            <item value="39" name="38" />
+            <item value="40" name="39" />
+            <item value="41" name="40" />
+            <item value="42" name="41" />
+            <item value="43" name="42" />
+            <item value="44" name="43" />
+            <item value="45" name="44" />
+            <item value="46" name="45" />
+            <item value="47" name="46" />
+            <item value="48" name="47" />
+            <item value="49" name="48" />
+            <item value="50" name="49" />
+            <item value="51" name="50" />
+            <item value="52" name="51" />
+            <item value="53" name="52" />
+            <item value="54" name="53" />
+            <item value="55" name="54" />
+            <item value="56" name="55" />
+            <item value="57" name="56" />
+            <item value="58" name="57" />
+            <item value="59" name="58" />
+            <item value="60" name="59" />
+            <item value="61" name="60" />
+            <item value="62" name="61" />
+            <item value="63" name="62" />
+            <item value="64" name="63" />
+          </value>
+          <value type="ShortInteger" name="intro animation delay milliseconds" disabled="false" />
+          <value type="ShortInteger" name="render depth bias" disabled="false" />
+          <value type="Pad" name="_unnamed0" length="2" />
+          <struct name="UiObjectReferenceBlock">
+            <value type="FixedLengthString" name="name" disabled="false" />
+          </struct>
+          <value type="Block" name="objects" disabled="false" struct="UiObjectReferenceBlock" maxelements="32" />
+          <struct name="UiLightReferenceBlock">
+            <value type="FixedLengthString" name="name" disabled="false" />
+          </struct>
+          <value type="Block" name="lights" disabled="false" struct="UiLightReferenceBlock" maxelements="8" />
+          <value type="RealVector3d" name="animation scale factor" disabled="false" />
+          <value type="RealPoint3d" name="camera position" disabled="false" />
+          <value type="Real" name="fov degress" disabled="false" />
+          <value type="Rectangle2D" name="ui viewport" disabled="false" />
+          <value type="StringId" name="UNUSED intro anim" disabled="false" />
+          <value type="StringId" name="UNUSED outro anim" disabled="false" />
+          <value type="StringId" name="UNUSED ambient anim" disabled="false" />
+        </struct>
+        <value type="Block" name="model scene blocks" disabled="false" struct="UiModelSceneReferenceBlock" maxelements="32" />
+        <struct name="BitmapBlockReferenceBlock">
+          <value type="Flags" name="flags" length="4" disabled="false">
+            <bit index="0" name="ignore for list skin size calculation" />
+            <bit index="1" name="swap on relative list position" />
+            <bit index="2" name="render as progress bar" />
+          </value>
+          <value type="Enum" name="animation index" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="00" />
+            <item value="2" name="01" />
+            <item value="3" name="02" />
+            <item value="4" name="03" />
+            <item value="5" name="04" />
+            <item value="6" name="05" />
+            <item value="7" name="06" />
+            <item value="8" name="07" />
+            <item value="9" name="08" />
+            <item value="10" name="09" />
+            <item value="11" name="10" />
+            <item value="12" name="11" />
+            <item value="13" name="12" />
+            <item value="14" name="13" />
+            <item value="15" name="14" />
+            <item value="16" name="15" />
+            <item value="17" name="16" />
+            <item value="18" name="17" />
+            <item value="19" name="18" />
+            <item value="20" name="19" />
+            <item value="21" name="20" />
+            <item value="22" name="21" />
+            <item value="23" name="22" />
+            <item value="24" name="23" />
+            <item value="25" name="24" />
+            <item value="26" name="25" />
+            <item value="27" name="26" />
+            <item value="28" name="27" />
+            <item value="29" name="28" />
+            <item value="30" name="29" />
+            <item value="31" name="30" />
+            <item value="32" name="31" />
+            <item value="33" name="32" />
+            <item value="34" name="33" />
+            <item value="35" name="34" />
+            <item value="36" name="35" />
+            <item value="37" name="36" />
+            <item value="38" name="37" />
+            <item value="39" name="38" />
+            <item value="40" name="39" />
+            <item value="41" name="40" />
+            <item value="42" name="41" />
+            <item value="43" name="42" />
+            <item value="44" name="43" />
+            <item value="45" name="44" />
+            <item value="46" name="45" />
+            <item value="47" name="46" />
+            <item value="48" name="47" />
+            <item value="49" name="48" />
+            <item value="50" name="49" />
+            <item value="51" name="50" />
+            <item value="52" name="51" />
+            <item value="53" name="52" />
+            <item value="54" name="53" />
+            <item value="55" name="54" />
+            <item value="56" name="55" />
+            <item value="57" name="56" />
+            <item value="58" name="57" />
+            <item value="59" name="58" />
+            <item value="60" name="59" />
+            <item value="61" name="60" />
+            <item value="62" name="61" />
+            <item value="63" name="62" />
+            <item value="64" name="63" />
+          </value>
+          <value type="ShortInteger" name="intro animation delay milliseconds" disabled="false" />
+          <value type="Enum" name="bitmap blend method" length="2" disabled="false">
+            <item value="0" name="standard" />
+            <item value="1" name="multiply" />
+            <item value="2" name="UNUSED" />
+          </value>
+          <value type="ShortInteger" name="initial sprite frame" disabled="false" />
+          <value type="Point2d" name="top-left" disabled="false" />
+          <value type="Real" name="horiz texture wrapssecond" disabled="false" />
+          <value type="Real" name="vert texture wrapssecond" disabled="false" />
+          <value type="TagReference" name="bitmap tag" disabled="false" extensions="bitm" />
+          <value type="ShortInteger" name="render depth bias" disabled="false" />
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Real" name="sprite animation speed fps" disabled="false" />
+          <value type="Point2d" name="progress bottom-left" disabled="false" />
+          <value type="StringId" name="string identifier" disabled="false" />
+          <value type="RealVector2d" name="progress scale" disabled="false" />
+        </struct>
+        <value type="Block" name="bitmap blocks" disabled="false" struct="BitmapBlockReferenceBlock" maxelements="64" />
+      </struct>
+      <value type="Block" name="shape groups" disabled="false" struct="ShapeGroupReferenceBlock" maxelements="64" />
+      <struct name="PersistentBackgroundAnimationBlock">
+        <value type="Pad" name="_unnamed0" length="4" />
+        <value type="LongInteger" name="animation period" disabled="false" unit="milliseconds" />
+        <struct name="BackgroundAnimationKeyframeReferenceBlock">
+          <value type="LongInteger" name="start transition index" disabled="false" />
+          <value type="Real" name="alpha" disabled="false" />
+          <value type="RealPoint3d" name="position" disabled="false" />
+        </struct>
+        <value type="Block" name="interpolated keyframes" disabled="false" struct="BackgroundAnimationKeyframeReferenceBlock" maxelements="64" />
+      </struct>
+      <value type="Block" name="animations" disabled="false" struct="PersistentBackgroundAnimationBlock" maxelements="100" />
+      <struct name="ListSkinReferenceBlock">
+        <value type="TagReference" name="list item skins" disabled="false" extensions="skin" />
+      </struct>
+      <value type="Block" name="list item skins" disabled="false" struct="ListSkinReferenceBlock" maxelements="32" />
+      <value type="TagReference" name="button key type strings" disabled="false" extensions="unic" />
+      <value type="TagReference" name="game type strings" disabled="false" extensions="unic" />
+      <value type="TagReference" name="_unnamed13" extensions="????" />
+      <struct name="SkillToRankMappingBlock">
+        <value type="ShortIntegerBounds" name="skill bounds" disabled="false" />
+      </struct>
+      <value type="Block" name="skill mappings" disabled="false" struct="SkillToRankMappingBlock" maxelements="65535" />
+      <value type="Enum" name="full screen header text font" length="2" disabled="false">
+        <item value="0" name="terminal" />
+        <item value="1" name="body text" />
+        <item value="2" name="title" />
+        <item value="3" name="super large font" />
+        <item value="4" name="large body text" />
+        <item value="5" name="split screen hud message" />
+        <item value="6" name="full screen hud message" />
+        <item value="7" name="english body text" />
+        <item value="8" name="HUD number text" />
+        <item value="9" name="subtitle font" />
+        <item value="10" name="main menu font" />
+        <item value="11" name="text chat font" />
+      </value>
+      <value type="Enum" name="large dialog header text font" length="2" disabled="false">
+        <item value="0" name="terminal" />
+        <item value="1" name="body text" />
+        <item value="2" name="title" />
+        <item value="3" name="super large font" />
+        <item value="4" name="large body text" />
+        <item value="5" name="split screen hud message" />
+        <item value="6" name="full screen hud message" />
+        <item value="7" name="english body text" />
+        <item value="8" name="HUD number text" />
+        <item value="9" name="subtitle font" />
+        <item value="10" name="main menu font" />
+        <item value="11" name="text chat font" />
+      </value>
+      <value type="Enum" name="half dialog header text font" length="2" disabled="false">
+        <item value="0" name="terminal" />
+        <item value="1" name="body text" />
+        <item value="2" name="title" />
+        <item value="3" name="super large font" />
+        <item value="4" name="large body text" />
+        <item value="5" name="split screen hud message" />
+        <item value="6" name="full screen hud message" />
+        <item value="7" name="english body text" />
+        <item value="8" name="HUD number text" />
+        <item value="9" name="subtitle font" />
+        <item value="10" name="main menu font" />
+        <item value="11" name="text chat font" />
+      </value>
+      <value type="Enum" name="qtr dialog header text font" length="2" disabled="false">
+        <item value="0" name="terminal" />
+        <item value="1" name="body text" />
+        <item value="2" name="title" />
+        <item value="3" name="super large font" />
+        <item value="4" name="large body text" />
+        <item value="5" name="split screen hud message" />
+        <item value="6" name="full screen hud message" />
+        <item value="7" name="english body text" />
+        <item value="8" name="HUD number text" />
+        <item value="9" name="subtitle font" />
+        <item value="10" name="main menu font" />
+        <item value="11" name="text chat font" />
+      </value>
+      <value type="RealArgbColor" name="default text color" disabled="false" />
+      <value type="Rectangle2D" name="full screen header text bounds" disabled="false" />
+      <value type="Rectangle2D" name="full screen button key text bounds" disabled="false" />
+      <value type="Rectangle2D" name="large dialog header text bounds" disabled="false" />
+      <value type="Rectangle2D" name="large dialog button key text bounds" disabled="false" />
+      <value type="Rectangle2D" name="half dialog header text bounds" disabled="false" />
+      <value type="Rectangle2D" name="half dialog button key text bounds" disabled="false" />
+      <value type="Rectangle2D" name="qtr dialog header text bounds" disabled="false" />
+      <value type="Rectangle2D" name="qtr dialog button key text bounds" disabled="false" />
+      <value type="TagReference" name="main menu music" disabled="false" extensions="lsnd" />
+      <value type="LongInteger" name="music fade time" disabled="false" unit="milliseconds" />
+    </struct>
+  </plugin>
+</xml>

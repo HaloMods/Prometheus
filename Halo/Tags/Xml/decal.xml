@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="deca" parenttype="????">Decal</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Decal">
+      <value type="Flags" name="flags" length="2">
+        <bit index="0" name="geometry inherited by next decal in chain" />
+        <bit index="1" name="interpolate color in hsv" />
+        <bit index="2" name="...more colors" />
+        <bit index="3" name="no random rotation" />
+        <bit index="4" name="water effect" />
+        <bit index="5" name="SAPIE" />
+        <bit index="6" name="SAPIE" />
+        <bit index="7" name="animation loop" />
+        <bit index="8" name="preserve aspect" />
+      </value>
+      <value type="Enum" name="type">
+        <tooltip>Controls how the decal wraps onto surface geometry.</tooltip>
+        <item value="0" name="scratch" />
+        <item value="1" name="splatter" />
+        <item value="2" name="burn" />
+        <item value="3" name="painted sign" />
+      </value>
+      <value type="Enum" name="layer">
+        <item value="0" name="primary" />
+        <item value="1" name="secondary" />
+        <item value="2" name="light" />
+        <item value="3" name="alph" />
+        <item value="4" name="water" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="TagReference" name="next decal in chain" extensions="deca" />
+      <value type="RealBounds" name="radius">
+        <tooltip>0 defaults to 0.125.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed2" length="12" />
+      <value type="RealFractionBounds" name="intensity">
+        <tooltip>1 is fully visible, 0 is invisible.</tooltip>
+      </value>
+      <value type="RealRGBColor" name="color lower bounds" />
+      <value type="RealRGBColor" name="color upper bounds" />
+      <value type="Pad" name="_unnamed3" length="12" />
+      <value type="ShortInteger" name="animation loop frame" />
+      <value type="ShortInteger" name="animation speed" />
+      <value type="Pad" name="_unnamed4" length="28" />
+      <value type="RealBounds" name="lifetime" />
+      <value type="RealBounds" name="decay time" />
+      <value type="Pad" name="_unnamed5" length="12" />
+      <value type="Pad" name="_unnamed6" length="40" />
+      <value type="Pad" name="_unnamed7" length="2" />
+      <value type="Pad" name="_unnamed8" length="2" />
+      <value type="Enum" name="framebuffer blend function">
+        <item value="0" name="alpha blend" />
+        <item value="1" name="multiply" />
+        <item value="2" name="double multiply" />
+        <item value="3" name="add" />
+        <item value="4" name="subtract" />
+        <item value="5" name="component min" />
+        <item value="6" name="component max" />
+        <item value="7" name="alph" />
+      </value>
+      <value type="Pad" name="_unnamed9" length="2" />
+      <value type="Pad" name="_unnamed10" length="20" />
+      <value type="TagReference" name="map" extensions="bitm" />
+      <value type="Pad" name="_unnamed11" length="20" />
+      <value type="Real" name="maximum sprite extent" />
+      <value type="Pad" name="_unnamed12" length="4" />
+      <value type="Pad" name="_unnamed13" length="8" />
+    </struct>
+  </plugin>
+</xml>

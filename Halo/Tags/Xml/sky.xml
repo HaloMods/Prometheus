@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="sky " parenttype="????">Sky</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Sky">
+      <value type="TagReference" name="model" extensions="mod2" />
+      <value type="TagReference" name="animation_graph" extensions="antr" />
+      <value type="Pad" name="_unnamed" length="24" />
+      <value type="RealRGBColor" name="indoor ambient radiosity color">
+        <tooltip>The indoor ambient light color.</tooltip>
+      </value>
+      <value type="Real" name="indoor ambient radiosity power">
+        <tooltip>The indoor ambient light power from 0 to infinity.</tooltip>
+      </value>
+      <value type="RealRGBColor" name="outdoor ambient radiosity color">
+        <tooltip>The outdoor ambient light color.</tooltip>
+      </value>
+      <value type="Real" name="outdoor ambient radiosity power">
+        <tooltip>The outdoor ambient light power from 0 to infinity.</tooltip>
+      </value>
+      <value type="RealRGBColor" name="outdoor fog color" />
+      <value type="Pad" name="_unnamed2" length="8" />
+      <value type="RealFraction" name="outdoor fog maximum density">
+        <tooltip>Density at opaque distance - 0 defaults to 1.</tooltip>
+      </value>
+      <value type="Real" name="outdoor fog start distance">
+        <tooltip>Below this distance there is no fog.</tooltip>
+      </value>
+      <value type="Real" name="outdoor fog opaque distance">
+        <tooltip>Beyond this distance surfaces are completely fogged.</tooltip>
+      </value>
+      <value type="RealRGBColor" name="indoor fog color" />
+      <value type="Pad" name="_unnamed3" length="8" />
+      <value type="RealFraction" name="indoor fog maximum density">
+        <tooltip>Density at opaque distance - 0 defaults to 1.</tooltip>
+      </value>
+      <value type="Real" name="indoor fog start distance">
+        <tooltip>Below this distance there is no fog.</tooltip>
+      </value>
+      <value type="Real" name="indoor fog opaque distance">
+        <tooltip>Beyond this distance surfaces are completely fogged.</tooltip>
+      </value>
+      <value type="TagReference" name="indoor fog screen" extensions="fog ">
+        <tooltip>Used for FOG SCREEN only; not used for planar fog.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed4" length="4" />
+      <struct name="SkyShaderFunction">
+        <value type="Pad" name="_unnamed" length="4" />
+        <value type="FixedLengthString" name="global function name" blockname="true">
+          <tooltip>The global function that controls this shader value.</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="shader functions" struct="SkyShaderFunction" maxelements="8" />
+      <struct name="SkyAnimation">
+        <value type="ShortInteger" name="animation index">
+          <tooltip>The index of the animation in the animation graph.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Real" name="period" />
+        <value type="Pad" name="_unnamed2" length="28" />
+      </struct>
+      <value type="Block" name="animations" struct="SkyAnimation" maxelements="8" />
+      <struct name="SkyLight">
+        <value type="TagReference" name="lens flare" extensions="lens" />
+        <value type="FixedLengthString" name="lens flare marker name">
+          <tooltip>The lens flare for this light will be attached to the specified marker in the model.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed" length="28" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="affects exteriors" />
+          <bit index="1" name="affects interiors" />
+        </value>
+        <value type="RealRGBColor" name="color">
+          <tooltip>Light color.</tooltip>
+        </value>
+        <value type="Real" name="power">
+          <tooltip>Light power from 0 to infinity.</tooltip>
+        </value>
+        <value type="Real" name="test distance">
+          <tooltip>The length of the ray for shadow testing..</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="RealEulerAngles2D" name="direction">
+          <tooltip>Direction toward the light source in the sky..</tooltip>
+        </value>
+        <value type="Angle" name="diameter">
+          <tooltip>Angular diameter of the light source in the sky..</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="lights" struct="SkyLight" maxelements="8" />
+    </struct>
+  </plugin>
+</xml>

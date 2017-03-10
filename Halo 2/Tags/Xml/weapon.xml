@@ -1,0 +1,594 @@
+<xml>
+  <name type="weap" parenttype="item">Weapon</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="WeaponSharedInterfaceStructBlock">
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="vertical heat display" />
+        <bit index="1" name="mutually exclusive triggers" />
+        <bit index="2" name="attacks automatically on bump" />
+        <bit index="3" name="must be readied" />
+        <bit index="4" name="doesn't count toward maximum" />
+        <bit index="5" name="aim assists only when zoomed" />
+        <bit index="6" name="prevents grenade throwing" />
+        <bit index="7" name="must be picked up" />
+        <bit index="8" name="holds triggers when dropped" />
+        <bit index="9" name="prevents melee attack" />
+        <bit index="10" name="detonates when dropped" />
+        <bit index="11" name="cannot fire at maximum age" />
+        <bit index="12" name="secondary trigger overrides grenades" />
+        <bit index="13" name="(OBSOLETE)does not depower active camo in multilplayer" />
+        <bit index="14" name="enables integrated night vision" />
+        <bit index="15" name="AIs use weapon melee damage" />
+        <bit index="16" name="forces no binoculars" />
+        <bit index="17" name="loop fp firing animation" />
+        <bit index="18" name="prevents sprinting" />
+        <bit index="19" name="cannot fire while boosting" />
+        <bit index="20" name="prevents driving" />
+        <bit index="21" name="prevents gunning" />
+        <bit index="22" name="can be dual wielded" />
+        <bit index="23" name="can only be dual wielded" />
+        <bit index="24" name="melee only" />
+        <bit index="25" name="cant fire if parent dead" />
+        <bit index="26" name="weapon ages with each kill" />
+        <bit index="27" name="weapon uses old dual fire error code" />
+        <bit index="28" name="primary trigger melee attacks" />
+        <bit index="29" name="cannot be used by player" />
+      </value>
+      <value type="StringId" name="_unnamed0" />
+      <value type="Enum" name="secondary trigger mode" length="2" disabled="false">
+        <item value="0" name="normal" />
+        <item value="1" name="slaved to primary" />
+        <item value="2" name="inhibits primary" />
+        <item value="3" name="loads alterate ammunition" />
+        <item value="4" name="loads multiple primary ammunition" />
+      </value>
+      <value type="ShortInteger" name="maximum alternate shots loaded" disabled="false">
+        <tooltip>if the second trigger loads alternate ammunition, this is the maximum number of shots that can be loaded at a time</tooltip>
+      </value>
+      <value type="Real" name="turn on time" disabled="false">
+        <tooltip>how long after being readied it takes this weapon to switch its 'turned_on' attachment to 1.0</tooltip>
+      </value>
+      <value type="Real" name="ready time" disabled="false" unit="seconds" />
+      <value type="TagReference" name="ready effect" disabled="false" extensions="snd!|effe" />
+      <value type="TagReference" name="ready damage effect" disabled="false" extensions="jpt!" />
+      <value type="RealFraction" name="heat recovery threshold" disabled="false" unit="[0,1]">
+        <tooltip>the heat value a weapon must return to before leaving the overheated state, once it has become overheated in the first place</tooltip>
+      </value>
+      <value type="RealFraction" name="overheated threshold" disabled="false" unit="[0,1]">
+        <tooltip>the heat value over which a weapon first becomes overheated (should be greater than the heat recovery threshold)</tooltip>
+      </value>
+      <value type="RealFraction" name="heat detonation threshold" disabled="false" unit="[0,1]">
+        <tooltip>the heat value above which the weapon has a chance of exploding each time it is fired</tooltip>
+      </value>
+      <value type="RealFraction" name="heat detonation fraction" disabled="false" unit="[0,1]">
+        <tooltip>the percent chance (between 0.0 and 1.0) the weapon will explode when fired over the heat detonation threshold</tooltip>
+      </value>
+      <value type="RealFraction" name="heat loss per second" disabled="false" unit="[0,1]">
+        <tooltip>the amount of heat lost each second when the weapon is not being fired</tooltip>
+      </value>
+      <value type="RealFraction" name="heat illumination" disabled="false" unit="[0,1]">
+        <tooltip>the amount of illumination given off when the weapon is overheated</tooltip>
+      </value>
+      <value type="RealFraction" name="overheated heat loss per second" disabled="false" unit="[0,1]">
+        <tooltip>the amount of heat lost each second when the weapon is not being fired</tooltip>
+      </value>
+      <value type="TagReference" name="overheated" disabled="false" extensions="snd!|effe" />
+      <value type="TagReference" name="overheated damage effect" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="detonation" disabled="false" extensions="snd!|effe" />
+      <value type="TagReference" name="detonation damage effect" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="player melee damage" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="player melee response" disabled="false" extensions="jpt!" />
+      <value type="Angle" name="magnetism angle" disabled="false" unit="degrees">
+        <tooltip>the maximum angle that magnetism works at full strength</tooltip>
+      </value>
+      <value type="Real" name="magnetism range" disabled="false" unit="world units">
+        <tooltip>the maximum distance that magnetism works at full strength</tooltip>
+      </value>
+      <value type="Real" name="throttle magnitude" disabled="false" />
+      <value type="Real" name="throttle minimum distance" disabled="false" />
+      <value type="Angle" name="throttle maximum adjustment angle" disabled="false" unit="degrees" />
+      <value type="RealEulerAngles2d" name="damage pyramid angles" disabled="false" />
+      <value type="Real" name="damage pyramid depth" disabled="false" />
+      <value type="TagReference" name="1st hit melee damage" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="1st hit melee response" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="2nd hit melee damage" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="2nd hit melee response" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="3rd hit melee damage" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="3rd hit melee response" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="lunge melee damage" disabled="false" extensions="jpt!">
+        <tooltip>this is only important for the energy sword</tooltip>
+      </value>
+      <value type="TagReference" name="lunge melee response" disabled="false" extensions="jpt!">
+        <tooltip>this is only important for the energy sword</tooltip>
+      </value>
+      <value type="Enum" name="melee damage reporting type" length="1" disabled="false">
+        <item value="0" name="teh guardians!!1!!1!" />
+        <item value="1" name="falling damage" />
+        <item value="2" name="generic collision damage" />
+        <item value="3" name="generic melee damage" />
+        <item value="4" name="generic explosion" />
+        <item value="5" name="magnum pistol" />
+        <item value="6" name="plasma pistol" />
+        <item value="7" name="needler" />
+        <item value="8" name="smg" />
+        <item value="9" name="plasma rifle" />
+        <item value="10" name="battle rifle" />
+        <item value="11" name="carbine" />
+        <item value="12" name="shotgun" />
+        <item value="13" name="sniper rifle" />
+        <item value="14" name="beam rifle" />
+        <item value="15" name="rocket launcher" />
+        <item value="16" name="flak cannon" />
+        <item value="17" name="brute shot" />
+        <item value="18" name="disintegrator" />
+        <item value="19" name="brute plasma rifle" />
+        <item value="20" name="energy sword" />
+        <item value="21" name="frag grenade" />
+        <item value="22" name="plasma grenade" />
+        <item value="23" name="flag melee damage" />
+        <item value="24" name="bomb melee damage" />
+        <item value="25" name="bomb explosion damage" />
+        <item value="26" name="ball melee damage" />
+        <item value="27" name="human turret" />
+        <item value="28" name="plasma turret" />
+        <item value="29" name="banshee" />
+        <item value="30" name="ghost" />
+        <item value="31" name="mongoose" />
+        <item value="32" name="scorpion" />
+        <item value="33" name="spectre driver" />
+        <item value="34" name="spectre gunner" />
+        <item value="35" name="warthog driver" />
+        <item value="36" name="warthog gunner" />
+        <item value="37" name="wraith" />
+        <item value="38" name="tank" />
+        <item value="39" name="sentinel beam" />
+        <item value="40" name="sentinel rpg" />
+        <item value="41" name="teleporter" />
+      </value>
+      <value type="Pad" name="_unnamed1" length="1" />
+      <value type="ShortInteger" name="magnification levels" disabled="false">
+        <tooltip>the number of magnification levels this weapon allows</tooltip>
+      </value>
+      <value type="RealBounds" name="magnification range" disabled="false" />
+      <value type="Angle" name="autoaim angle" disabled="false" unit="degrees">
+        <tooltip>the maximum angle that autoaim works at full strength</tooltip>
+      </value>
+      <value type="Real" name="autoaim range" disabled="false" unit="world units">
+        <tooltip>the maximum distance that autoaim works at full strength</tooltip>
+      </value>
+      <value type="Angle" name="magnetism angle2" disabled="false" unit="degrees">
+        <tooltip>the maximum angle that magnetism works at full strength</tooltip>
+      </value>
+      <value type="Real" name="magnetism range2" disabled="false" unit="world units">
+        <tooltip>the maximum distance that magnetism works at full strength</tooltip>
+      </value>
+      <value type="Angle" name="deviation angle" disabled="false" unit="degrees">
+        <tooltip>the maximum angle that a projectile is allowed to deviate from the gun barrel</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed2" length="4" />
+      <value type="Pad" name="_unnamed3" length="12" />
+      <value type="Enum" name="movement penalized" length="2" disabled="false">
+        <item value="0" name="always" />
+        <item value="1" name="when zoomed" />
+        <item value="2" name="when zoomed or reloading" />
+      </value>
+      <value type="Pad" name="_unnamed4" length="2" />
+      <value type="RealFraction" name="forward movement penalty" disabled="false">
+        <tooltip>percent slowdown to forward movement for units carrying this weapon</tooltip>
+      </value>
+      <value type="RealFraction" name="sideways movement penalty" disabled="false">
+        <tooltip>percent slowdown to sideways and backward movement for units carrying this weapon</tooltip>
+      </value>
+      <value type="Real" name="AI scariness" disabled="false" />
+      <value type="Real" name="weapon power-on time" disabled="false" unit="seconds" />
+      <value type="Real" name="weapon power-off time" disabled="false" unit="seconds" />
+      <value type="TagReference" name="weapon power-on effect" disabled="false" extensions="snd!|effe" />
+      <value type="TagReference" name="weapon power-off effect" disabled="false" extensions="snd!|effe" />
+      <value type="Real" name="age heat recovery penalty" disabled="false">
+        <tooltip>how much the weapon's heat recovery is penalized as it ages</tooltip>
+      </value>
+      <value type="Real" name="age rate of fire penalty" disabled="false">
+        <tooltip>how much the weapon's rate of fire is penalized as it ages</tooltip>
+      </value>
+      <value type="RealFraction" name="age misfire start" disabled="false" unit="[0,1]">
+        <tooltip>the age threshold when the weapon begins to misfire</tooltip>
+      </value>
+      <value type="RealFraction" name="age misfire chance" disabled="false" unit="[0,1]">
+        <tooltip>at age 1.0, the misfire chance per shot</tooltip>
+      </value>
+      <value type="TagReference" name="pickup sound" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="zoom-in sound" disabled="false" extensions="snd!" />
+      <value type="TagReference" name="zoom-out sound" disabled="false" extensions="snd!" />
+      <value type="Real" name="active camo ding" disabled="false">
+        <tooltip>how much to decrease active camo when a round is fired</tooltip>
+      </value>
+      <value type="Real" name="active camo regrowth rate" disabled="false">
+        <tooltip>how fast to increase active camo (per tick) when a round is fired</tooltip>
+      </value>
+      <value type="StringId" name="handle node" disabled="false">
+        <tooltip>the node that get's attached to the unit's hand</tooltip>
+      </value>
+      <value type="StringId" name="weapon class" disabled="false" />
+      <value type="StringId" name="weapon name" disabled="false" />
+      <value type="Enum" name="multiplayer weapon type" length="2" disabled="false">
+        <item value="0" name="none" />
+        <item value="1" name="ctf flag" />
+        <item value="2" name="oddball ball" />
+        <item value="3" name="headhunter head" />
+        <item value="4" name="juggernaut powerup" />
+      </value>
+      <value type="Enum" name="weapon type" length="2" disabled="false">
+        <item value="0" name="undefined" />
+        <item value="1" name="shotgun" />
+        <item value="2" name="needler" />
+        <item value="3" name="plasma pistol" />
+        <item value="4" name="plasma rifle" />
+        <item value="5" name="rocket launcher" />
+      </value>
+      <value type="Enum" name="tracking type" length="2" disabled="false">
+        <item value="0" name="no tracking" />
+        <item value="1" name="human tracking" />
+        <item value="2" name="plasma tracking" />
+      </value>
+      <value type="Pad" name="_unnamed5" length="2" />
+      <value type="Pad" name="_unnamed6" length="16" />
+      <struct name="WeaponFirstPersonInterfaceBlock">
+        <value type="TagReference" name="first person model" disabled="false" extensions="mode" />
+        <value type="TagReference" name="first person animations" disabled="false" extensions="jmad" />
+      </struct>
+      <value type="Block" name="first person" disabled="false" struct="WeaponFirstPersonInterfaceBlock" maxelements="4" />
+      <value type="TagReference" name="new hud interface" disabled="false" extensions="nhdt" />
+      <struct name="PredictedResourceBlock">
+        <value type="Enum" name="type" length="2" disabled="false">
+          <item value="0" name="bitmap" />
+          <item value="1" name="sound" />
+          <item value="2" name="render model geometry" />
+          <item value="3" name="cluster geometry" />
+          <item value="4" name="cluster instanced geometry" />
+          <item value="5" name="lightmap geometry object buckets" />
+          <item value="6" name="lightmap geometry instance buckets" />
+          <item value="7" name="lightmap cluster bitmaps" />
+          <item value="8" name="lightmap instance bitmaps" />
+        </value>
+        <value type="ShortInteger" name="resource index" disabled="false" />
+        <value type="LongInteger" name="tag index" disabled="false" />
+      </struct>
+      <value type="Block" name="predicted resources" disabled="false" struct="PredictedResourceBlock" maxelements="2048" />
+      <struct name="Magazines">
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="wastes rounds when reloaded" />
+          <bit index="1" name="every round must be chambered" />
+        </value>
+        <value type="ShortInteger" name="rounds recharged" disabled="false" unit="per second" />
+        <value type="ShortInteger" name="rounds total initial" disabled="false" />
+        <value type="ShortInteger" name="rounds total maximum" disabled="false" />
+        <value type="ShortInteger" name="rounds loaded maximum" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="4" />
+        <value type="Real" name="reload time" disabled="false" unit="seconds">
+          <tooltip>the length of time it takes to load a single magazine into the weapon</tooltip>
+        </value>
+        <value type="ShortInteger" name="rounds reloaded" disabled="false" />
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Real" name="chamber time" disabled="false" unit="seconds">
+          <tooltip>the length of time it takes to chamber the next round</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="8" />
+        <value type="Pad" name="_unnamed3" length="16" />
+        <value type="TagReference" name="reloading effect" disabled="false" extensions="snd!|effe" />
+        <value type="TagReference" name="reloading damage effect" disabled="false" extensions="jpt!" />
+        <value type="TagReference" name="chambering effect" disabled="false" extensions="snd!|effe" />
+        <value type="TagReference" name="chambering damage effect" disabled="false" extensions="jpt!" />
+        <struct name="MagazineObjects">
+          <value type="ShortInteger" name="rounds" disabled="false" />
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="TagReference" name="equipment" disabled="false" extensions="eqip" blockname="true" />
+        </struct>
+        <value type="Block" name="magazines" disabled="false" struct="MagazineObjects" maxelements="8" />
+      </struct>
+      <value type="Block" name="magazines" disabled="false" struct="Magazines" maxelements="2" />
+      <struct name="WeaponTriggers">
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="autofire single action only" />
+        </value>
+        <value type="Enum" name="input" length="2" disabled="false">
+          <item value="0" name="right trigger" />
+          <item value="1" name="left trigger" />
+          <item value="2" name="melee attack" />
+        </value>
+        <value type="Enum" name="behavior" length="2" disabled="false">
+          <item value="0" name="spew" />
+          <item value="1" name="latch" />
+          <item value="2" name="latch-autofire" />
+          <item value="3" name="charge" />
+          <item value="4" name="latch-zoom" />
+          <item value="5" name="latch-rocketlauncher" />
+        </value>
+        <value type="ShortBlockIndex" name="primary barrel" disabled="false" block="WeaponBarrels" />
+        <value type="ShortBlockIndex" name="secondary barrel" disabled="false" block="WeaponBarrels" />
+        <value type="Enum" name="prediction" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="spew" />
+          <item value="2" name="charge" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Real" name="autofire time" disabled="false" />
+        <value type="Real" name="autofire throw" disabled="false" />
+        <value type="Enum" name="secondary action" length="2" disabled="false">
+          <item value="0" name="fire" />
+          <item value="1" name="charge" />
+          <item value="2" name="track" />
+          <item value="3" name="fire other" />
+        </value>
+        <value type="Enum" name="primary action" length="2" disabled="false">
+          <item value="0" name="fire" />
+          <item value="1" name="charge" />
+          <item value="2" name="track" />
+          <item value="3" name="fire other" />
+        </value>
+        <value type="Real" name="charging time" disabled="false" unit="seconds">
+          <tooltip>the amount of time it takes for this trigger to become fully charged</tooltip>
+        </value>
+        <value type="Real" name="charged time" disabled="false" unit="seconds">
+          <tooltip>the amount of time this trigger can be charged before becoming overcharged</tooltip>
+        </value>
+        <value type="Enum" name="overcharged action" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="explode" />
+          <item value="2" name="discharge" />
+        </value>
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="Real" name="charged illumination" disabled="false" unit="[0,1]">
+          <tooltip>the amount of illumination given off when the weapon is fully charged</tooltip>
+        </value>
+        <value type="Real" name="spew time" disabled="false" unit="seconds">
+          <tooltip>length of time the weapon will spew (fire continuously) while discharging</tooltip>
+        </value>
+        <value type="TagReference" name="charging effect" disabled="false" extensions="snd!|effe">
+          <tooltip>the charging effect is created once when the trigger begins to charge</tooltip>
+        </value>
+        <value type="TagReference" name="charging damage effect" disabled="false" extensions="jpt!">
+          <tooltip>the charging effect is created once when the trigger begins to charge</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="new triggers" disabled="false" struct="WeaponTriggers" maxelements="2" />
+      <struct name="WeaponBarrels">
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="tracks fired projectile">
+            <tooltip>poo poo ca ca pee pee</tooltip>
+          </bit>
+          <bit index="1" name="random firing effects">
+            <tooltip>rather than being chosen sequentially, firing effects are picked randomly</tooltip>
+          </bit>
+          <bit index="2" name="can fire with partial ammo">
+            <tooltip>allows a weapon to be fired as long as there is a non-zero amount of ammunition loaded</tooltip>
+          </bit>
+          <bit index="3" name="projectiles use weapon origin">
+            <tooltip>instead of coming out of the magic first person camera origin, the projectiles for this weapon actually come out of the gun</tooltip>
+          </bit>
+          <bit index="4" name="ejects during chamber">
+            <tooltip>this trigger's ejection port is started during the key frame of its chamber animation</tooltip>
+          </bit>
+          <bit index="5" name="use error when unzoomed" />
+          <bit index="6" name="projectile vector cannot be adjusted">
+            <tooltip>projectiles fired by this weapon cannot have their direction adjusted by the AI to hit the target</tooltip>
+          </bit>
+          <bit index="7" name="projectiles have identical error" />
+          <bit index="8" name="projectiles fire parallel">
+            <tooltip>If there are multiple guns for this trigger, the projectiles emerge in parallel beams (rather than independant aiming)</tooltip>
+          </bit>
+          <bit index="9" name="cant fire when others firing" />
+          <bit index="10" name="cant fire when others recovering" />
+          <bit index="11" name="don't clear fire bit after recovering" />
+          <bit index="12" name="stagger fire across multiple markers" />
+          <bit index="13" name="fires locked projectiles" />
+        </value>
+        <value type="RealBounds" name="rounds per second" disabled="false">
+          <tooltip>the number of firing effects created per second</tooltip>
+        </value>
+        <value type="Real" name="acceleration time" disabled="false" unit="seconds">
+          <tooltip>the continuous firing time it takes for the weapon to achieve its final rounds per second</tooltip>
+        </value>
+        <value type="Real" name="deceleration time" disabled="false" unit="seconds">
+          <tooltip>the continuous idle time it takes for the weapon to return from its final rounds per second to its initial</tooltip>
+        </value>
+        <value type="RealFraction" name="barrel spin scale" disabled="false">
+          <tooltip>scale the barrel spin speed by this amount</tooltip>
+        </value>
+        <value type="RealFraction" name="blurred rate of fire" disabled="false">
+          <tooltip>a percentage between 0 and 1 which controls how soon in its firing animation the weapon blurs</tooltip>
+        </value>
+        <value type="ShortIntegerBounds" name="shots per fire" disabled="false">
+          <tooltip>allows designer caps to the shots you can fire from one firing action</tooltip>
+        </value>
+        <value type="Real" name="fire recovery time" disabled="false" unit="seconds">
+          <tooltip>how long after a set of shots it takes before the barrel can fire again</tooltip>
+        </value>
+        <value type="RealFraction" name="soft recovery fraction" disabled="false">
+          <tooltip>how much of the recovery allows shots to be queued</tooltip>
+        </value>
+        <value type="ShortBlockIndex" name="magazine" disabled="false" block="Magazines">
+          <tooltip>the magazine from which this trigger draws its ammunition</tooltip>
+        </value>
+        <value type="ShortInteger" name="rounds per shot" disabled="false">
+          <tooltip>the number of rounds expended to create a single firing effect</tooltip>
+        </value>
+        <value type="ShortInteger" name="minimum rounds loaded" disabled="false">
+          <tooltip>the minimum number of rounds necessary to fire the weapon</tooltip>
+        </value>
+        <value type="ShortInteger" name="rounds between tracers" disabled="false">
+          <tooltip>the number of non-tracer rounds fired between tracers</tooltip>
+        </value>
+        <value type="StringId" name="optional barrel marker name" disabled="false" />
+        <value type="Enum" name="prediction type" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="continuous" />
+          <item value="2" name="instant" />
+        </value>
+        <value type="Enum" name="firing noise" length="2" disabled="false">
+          <item value="0" name="silent" />
+          <item value="1" name="medium" />
+          <item value="2" name="loud" />
+          <item value="3" name="shout" />
+          <item value="4" name="quiet" />
+          <tooltip>how loud this weapon appears to the AI</tooltip>
+        </value>
+        <value type="Real" name="acceleration time2" disabled="false" unit="seconds">
+          <tooltip>the continuous firing time it takes for the weapon to achieve its final error</tooltip>
+        </value>
+        <value type="Real" name="deceleration time2" disabled="false" unit="seconds">
+          <tooltip>the continuous idle time it takes for the weapon to return to its initial error</tooltip>
+        </value>
+        <value type="RealBounds" name="damage error" disabled="false">
+          <tooltip>the range of angles (in degrees) that a damaged weapon will skew fire</tooltip>
+        </value>
+        <value type="Real" name="acceleration time3" disabled="false" unit="seconds">
+          <tooltip>the continuous firing time it takes for the weapon to achieve its final error</tooltip>
+        </value>
+        <value type="Real" name="deceleration time3" disabled="false" unit="seconds">
+          <tooltip>the continuous idle time it takes for the weapon to return to its initial error</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="8" />
+        <value type="Angle" name="minimum error" disabled="false" unit="degrees" />
+        <value type="AngleBounds" name="error angle" disabled="false" unit="degrees" />
+        <value type="RealFraction" name="dual wield damage scale" disabled="false" />
+        <value type="Enum" name="distribution function" length="2" disabled="false">
+          <item value="0" name="point" />
+          <item value="1" name="horizontal fan" />
+        </value>
+        <value type="ShortInteger" name="projectiles per shot" disabled="false" />
+        <value type="Real" name="distribution angle" disabled="false" unit="degrees" />
+        <value type="Angle" name="minimum error2" disabled="false" unit="degrees" />
+        <value type="AngleBounds" name="error angle2" disabled="false" unit="degrees" />
+        <value type="RealPoint3d" name="first person offset" disabled="false" unit="world units">
+          <tooltip>+x is forward, +z is up, +y is left</tooltip>
+        </value>
+        <value type="Enum" name="damage effect reporting type" length="1" disabled="false">
+          <item value="0" name="teh guardians!!1!!1!" />
+          <item value="1" name="falling damage" />
+          <item value="2" name="generic collision damage" />
+          <item value="3" name="generic melee damage" />
+          <item value="4" name="generic explosion" />
+          <item value="5" name="magnum pistol" />
+          <item value="6" name="plasma pistol" />
+          <item value="7" name="needler" />
+          <item value="8" name="smg" />
+          <item value="9" name="plasma rifle" />
+          <item value="10" name="battle rifle" />
+          <item value="11" name="carbine" />
+          <item value="12" name="shotgun" />
+          <item value="13" name="sniper rifle" />
+          <item value="14" name="beam rifle" />
+          <item value="15" name="rocket launcher" />
+          <item value="16" name="flak cannon" />
+          <item value="17" name="brute shot" />
+          <item value="18" name="disintegrator" />
+          <item value="19" name="brute plasma rifle" />
+          <item value="20" name="energy sword" />
+          <item value="21" name="frag grenade" />
+          <item value="22" name="plasma grenade" />
+          <item value="23" name="flag melee damage" />
+          <item value="24" name="bomb melee damage" />
+          <item value="25" name="bomb explosion damage" />
+          <item value="26" name="ball melee damage" />
+          <item value="27" name="human turret" />
+          <item value="28" name="plasma turret" />
+          <item value="29" name="banshee" />
+          <item value="30" name="ghost" />
+          <item value="31" name="mongoose" />
+          <item value="32" name="scorpion" />
+          <item value="33" name="spectre driver" />
+          <item value="34" name="spectre gunner" />
+          <item value="35" name="warthog driver" />
+          <item value="36" name="warthog gunner" />
+          <item value="37" name="wraith" />
+          <item value="38" name="tank" />
+          <item value="39" name="sentinel beam" />
+          <item value="40" name="sentinel rpg" />
+          <item value="41" name="teleporter" />
+        </value>
+        <value type="Pad" name="_unnamed1" length="3" />
+        <value type="TagReference" name="projectile" disabled="false" extensions="proj" />
+        <value type="TagReference" name="damage effect" disabled="false" extensions="jpt!" />
+        <value type="Real" name="ejection port recovery time" disabled="false">
+          <tooltip>the amount of time (in seconds) it takes for the ejection port to transition from 1.0 (open) to 0.0 (closed) after a shot has been fired</tooltip>
+        </value>
+        <value type="Real" name="illumination recovery time" disabled="false">
+          <tooltip>the amount of time (in seconds) it takes the illumination function to transition from 1.0 (bright) to 0.0 (dark) after a shot has been fired</tooltip>
+        </value>
+        <value type="RealFraction" name="heat generated per round" disabled="false" unit="[0,1]">
+          <tooltip>the amount of heat generated each time the trigger is fired</tooltip>
+        </value>
+        <value type="RealFraction" name="age generated per round" disabled="false" unit="[0,1]">
+          <tooltip>the amount the weapon ages each time the trigger is fired</tooltip>
+        </value>
+        <value type="Real" name="overload time" disabled="false" unit="seconds">
+          <tooltip>the next trigger fires this often while holding down this trigger</tooltip>
+        </value>
+        <value type="AngleBounds" name="angle change per shot" disabled="false">
+          <tooltip>angle change per shot of the weapon during firing</tooltip>
+        </value>
+        <value type="Real" name="acceleration time4" disabled="false" unit="seconds">
+          <tooltip>the continuous firing time it takes for the weapon to achieve its final angle change per shot</tooltip>
+        </value>
+        <value type="Real" name="deceleration time4" disabled="false" unit="seconds">
+          <tooltip>the continuous idle time it takes for the weapon to return to its initial angle change per shot</tooltip>
+        </value>
+        <value type="Enum" name="angle change function" length="2" disabled="false">
+          <item value="0" name="linear" />
+          <item value="1" name="early" />
+          <item value="2" name="very early" />
+          <item value="3" name="late" />
+          <item value="4" name="very late" />
+          <item value="5" name="cosine" />
+          <item value="6" name="one" />
+          <item value="7" name="zero" />
+          <tooltip>function used to scale between initial and final angle change per shot</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="8" />
+        <value type="Pad" name="_unnamed4" length="24" />
+        <struct name="BarrelFiringEffectBlock">
+          <value type="ShortInteger" name="shot count lower bound" disabled="false">
+            <tooltip>the minimum number of times this firing effect will be used, once it has been chosen</tooltip>
+          </value>
+          <value type="ShortInteger" name="shot count upper bound" disabled="false">
+            <tooltip>the maximum number of times this firing effect will be used, once it has been chosen</tooltip>
+          </value>
+          <value type="TagReference" name="firing effect" disabled="false" extensions="snd!|effe" blockname="true">
+            <tooltip>this effect is used when the weapon is loaded and fired normally</tooltip>
+          </value>
+          <value type="TagReference" name="misfire effect" disabled="false" extensions="snd!|effe">
+            <tooltip>this effect is used when the weapon is loaded but fired while overheated</tooltip>
+          </value>
+          <value type="TagReference" name="empty effect" disabled="false" extensions="snd!|effe">
+            <tooltip>this effect is used when the weapon is not loaded</tooltip>
+          </value>
+          <value type="TagReference" name="firing damage" disabled="false" extensions="jpt!">
+            <tooltip>this effect is used when the weapon is loaded and fired normally</tooltip>
+          </value>
+          <value type="TagReference" name="misfire damage" disabled="false" extensions="jpt!">
+            <tooltip>this effect is used when the weapon is loaded but fired while overheated</tooltip>
+          </value>
+          <value type="TagReference" name="empty damage" disabled="false" extensions="jpt!">
+            <tooltip>this effect is used when the weapon is not loaded</tooltip>
+          </value>
+        </struct>
+        <value type="Block" name="firing effects" disabled="false" struct="BarrelFiringEffectBlock" maxelements="3">
+          <tooltip>firing effects determine what happens when this trigger is fired</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="barrels" disabled="false" struct="WeaponBarrels" maxelements="2" />
+      <value type="Pad" name="_unnamed7" length="8" />
+      <value type="Real" name="max movement acceleration" disabled="false" />
+      <value type="Real" name="max movement velocity" disabled="false" />
+      <value type="Real" name="max turning acceleration" disabled="false" />
+      <value type="Real" name="max turning velocity" disabled="false" />
+      <value type="TagReference" name="deployed vehicle" disabled="false" extensions="vehi" />
+      <value type="TagReference" name="age effect" disabled="false" extensions="effe" />
+      <value type="TagReference" name="aged weapon" disabled="false" extensions="weap" />
+      <value type="RealVector3d" name="first person weapon offset" disabled="false" />
+      <value type="RealVector2d" name="first person scope size" disabled="false" />
+    </struct>
+  </plugin>
+</xml>

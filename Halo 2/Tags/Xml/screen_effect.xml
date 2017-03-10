@@ -1,0 +1,94 @@
+<xml>
+  <name type="egor" parenttype="????">ScreenEffect</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ScreenEffectBlock">
+      <value type="Pad" name="_unnamed0" length="64" />
+      <value type="TagReference" name="shader" disabled="false" extensions="shad" />
+      <value type="Pad" name="_unnamed1" length="64" />
+      <struct name="RasterizerScreenEffectPassReferenceBlock">
+        <value type="Data" name="explanation" disabled="false" />
+        <value type="ShortInteger" name="layer pass index" disabled="true" unit="leave as -1 unless debugging" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="CharInteger" name="primary0 and secondary0" disabled="false" unit="implementation index" />
+        <value type="CharInteger" name="primary0 and secondary02" disabled="false" unit="implementation index" />
+        <value type="CharInteger" name="primary0 and secondary03" disabled="false" unit="implementation index" />
+        <value type="CharInteger" name="primary0 and secondary04" disabled="false" unit="implementation index" />
+        <value type="Pad" name="_unnamed1" length="64" />
+        <value type="Enum" name="stage 0 mode" length="2" disabled="false">
+          <item value="0" name="default" />
+          <item value="1" name="viewport normalized" />
+          <item value="2" name="viewport relative" />
+          <item value="3" name="framebuffer relative" />
+          <item value="4" name="zero" />
+        </value>
+        <value type="Enum" name="stage 1 mode" length="2" disabled="false">
+          <item value="0" name="default" />
+          <item value="1" name="viewport normalized" />
+          <item value="2" name="viewport relative" />
+          <item value="3" name="framebuffer relative" />
+          <item value="4" name="zero" />
+        </value>
+        <value type="Enum" name="stage 2 mode" length="2" disabled="false">
+          <item value="0" name="default" />
+          <item value="1" name="viewport normalized" />
+          <item value="2" name="viewport relative" />
+          <item value="3" name="framebuffer relative" />
+          <item value="4" name="zero" />
+        </value>
+        <value type="Enum" name="stage 3 mode" length="2" disabled="false">
+          <item value="0" name="default" />
+          <item value="1" name="viewport normalized" />
+          <item value="2" name="viewport relative" />
+          <item value="3" name="framebuffer relative" />
+          <item value="4" name="zero" />
+        </value>
+        <struct name="RasterizerScreenEffectTexcoordGenerationAdvancedControlBlock">
+          <value type="Flags" name="stage 0 flags" length="2" disabled="false">
+            <bit index="0" name="xy scaled by z_far" />
+          </value>
+          <value type="Flags" name="stage 1 flags" length="2" disabled="false">
+            <bit index="0" name="xy scaled by z_far" />
+          </value>
+          <value type="Flags" name="stage 2 flags" length="2" disabled="false">
+            <bit index="0" name="xy scaled by z_far" />
+          </value>
+          <value type="Flags" name="stage 3 flags" length="2" disabled="false">
+            <bit index="0" name="xy scaled by z_far" />
+          </value>
+          <value type="RealPlane3d" name="stage 0 offset" disabled="false" />
+          <value type="RealPlane3d" name="stage 1 offset" disabled="false" />
+          <value type="RealPlane3d" name="stage 2 offset" disabled="false" />
+          <value type="RealPlane3d" name="stage 3 offset" disabled="false" />
+        </struct>
+        <value type="Block" name="advanced control" disabled="false" struct="RasterizerScreenEffectTexcoordGenerationAdvancedControlBlock" maxelements="1" />
+        <value type="Enum" name="target" length="2" disabled="false">
+          <item value="0" name="framebuffer" />
+          <item value="1" name="texaccum" />
+          <item value="2" name="texaccum small" />
+          <item value="3" name="texaccum tiny" />
+          <item value="4" name="copy fb to texaccum" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="64" />
+        <struct name="RasterizerScreenEffectConvolutionBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="only when primary is active" />
+            <bit index="1" name="only when secondary is active" />
+            <bit index="2" name="predator zoom" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Pad" name="_unnamed1" length="64" />
+          <value type="Real" name="convolution amount" disabled="false" unit="[0,+inf)" />
+          <value type="Real" name="filter scale" disabled="false" />
+          <value type="RealFraction" name="filter box factor" disabled="false" unit="[0,1] not used for zoom" />
+          <value type="Real" name="zoom falloff radius" disabled="false" />
+          <value type="Real" name="zoom cutoff radius" disabled="false" />
+          <value type="RealFraction" name="resolution scale" disabled="false" unit="[0,1]" />
+        </struct>
+        <value type="Block" name="convolution" disabled="false" struct="RasterizerScreenEffectConvolutionBlock" maxelements="2" />
+      </struct>
+      <value type="Block" name="pass references" disabled="false" struct="RasterizerScreenEffectPassReferenceBlock" maxelements="8" />
+    </struct>
+  </plugin>
+</xml>

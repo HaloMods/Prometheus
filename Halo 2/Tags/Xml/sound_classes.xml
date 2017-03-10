@@ -1,0 +1,77 @@
+<xml>
+  <name type="sncl" parenttype="????">SoundClasses</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="SoundClassesBlock">
+      <struct name="SoundClassBlock">
+        <value type="ShortInteger" name="max sounds per tag 116" disabled="false">
+          <tooltip>maximum number of sounds playing per individual sound tag</tooltip>
+        </value>
+        <value type="ShortInteger" name="max sounds per object 116" disabled="false">
+          <tooltip>maximum number of sounds of this type playing on an object</tooltip>
+        </value>
+        <value type="LongInteger" name="preemption time" disabled="false" unit="ms">
+          <tooltip>replaces other instances after this many milliseconds</tooltip>
+        </value>
+        <value type="Flags" name="internal flags" length="2" disabled="true">
+          <bit index="0" name="valid" />
+          <bit index="1" name="is speech" />
+          <bit index="2" name="scripted" />
+          <bit index="3" name="stops with object" />
+          <bit index="4" name="unused" />
+          <bit index="5" name="valid doppler factor" />
+          <bit index="6" name="valid obstruction factor" />
+          <bit index="7" name="multilingual" />
+        </value>
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="plays during pause" />
+          <bit index="1" name="dry stereo mix" />
+          <bit index="2" name="no object obstruction" />
+          <bit index="3" name="use center speaker unspatialized" />
+          <bit index="4" name="send (mono) to lfe" />
+          <bit index="5" name="deterministic" />
+          <bit index="6" name="use huge transmission" />
+          <bit index="7" name="always use speakers" />
+          <bit index="8" name="don't strip from main menu" />
+          <bit index="9" name="ignore stereo headroom" />
+          <bit index="10" name="loop fade out is linear" />
+          <bit index="11" name="stop when object dies" />
+          <bit index="12" name="allow cache file editing" />
+        </value>
+        <value type="ShortInteger" name="priority" disabled="true" />
+        <value type="Enum" name="cache miss mode" length="2" disabled="true">
+          <item value="0" name="discard" />
+          <item value="1" name="postpone" />
+        </value>
+        <value type="Real" name="reverb gain" disabled="false" unit="dB">
+          <tooltip>how much reverb applies to this sound class</tooltip>
+        </value>
+        <value type="Real" name="override speaker gain" disabled="false" unit="dB" />
+        <value type="RealBounds" name="distance bounds" disabled="false" />
+        <value type="RealBounds" name="gain bounds" disabled="false" unit="dB" />
+        <value type="Real" name="cutscene ducking" disabled="false" unit="dB" />
+        <value type="Real" name="cutscene ducking fade in time" disabled="false" unit="seconds" />
+        <value type="Real" name="cutscene ducking sustain time" disabled="false" unit="seconds">
+          <tooltip>how long this lasts after the cutscene ends</tooltip>
+        </value>
+        <value type="Real" name="cutscene ducking fade out time" disabled="false" unit="seconds" />
+        <value type="Real" name="scripted dialog ducking" disabled="false" unit="dB" />
+        <value type="Real" name="scripted dialog ducking fade in time" disabled="false" unit="seconds" />
+        <value type="Real" name="scripted dialog ducking sustain time" disabled="false" unit="seconds">
+          <tooltip>how long this lasts after the scripted dialog ends</tooltip>
+        </value>
+        <value type="Real" name="scripted dialog ducking fade out time" disabled="false" unit="seconds" />
+        <value type="Real" name="doppler factor" disabled="false" />
+        <value type="Enum" name="stereo playback type" length="1" disabled="false">
+          <item value="0" name="first person" />
+          <item value="1" name="ambient" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="3" />
+        <value type="Real" name="transmission multiplier" disabled="false" />
+        <value type="Real" name="obstruction max bend" disabled="false" />
+        <value type="Real" name="occlusion max bend" disabled="false" />
+      </struct>
+      <value type="Block" name="sound classes" disabled="false" struct="SoundClassBlock" maxelements="54" />
+    </struct>
+  </plugin>
+</xml>

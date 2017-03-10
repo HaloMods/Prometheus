@@ -1,0 +1,412 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED1C3C5A-392F-4B0A-830F-F33B066440B4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Interfaces</RootNamespace>
+    <AssemblyName>Interfaces</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=6.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\DotNetBar\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.Direct3D.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2911.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.Direct3DX.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectSound, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\Microsoft.DirectX.DirectSound.DLL</HintPath>
+    </Reference>
+    <Reference Include="Nini, Version=0.9.2.0, Culture=neutral, PublicKeyToken=691faec150a7fa7b">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Nini.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Threading, Version=1.0.2873.22603, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alignment.cs" />
+    <Compile Include="Compression.cs" />
+    <Compile Include="Controls\ImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeViewComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Conversion.cs" />
+    <Compile Include="DebugConsole\ConsoleAttribute.cs" />
+    <Compile Include="DynamicInterface\RuntimeMenu\RuntimeMenuBuilder.cs" />
+    <Compile Include="DynamicInterface\RuntimeMenu\RuntimeMenuTextbox.cs" />
+    <Compile Include="DynamicInterface\RuntimeMenu\RuntimeMenuCheckbox.cs" />
+    <Compile Include="DynamicInterface\RuntimeMenu\RuntimeMenuCombobox.cs" />
+    <Compile Include="DynamicInterface\RuntimeMenu\RuntimeMenuButton.cs" />
+    <Compile Include="DynamicInterface\RuntimeMenu\RuntimeMenuLabel.cs" />
+    <Compile Include="DynamicInterface\RuntimeMenu\RuntimeMenuObject.cs" />
+    <Compile Include="DynamicInterface\RuntimeMenu\RuntimeMenuType.cs" />
+    <Compile Include="DynamicInterface\SceneInstanceMenu\ISceneInstanceMenu.cs" />
+    <Compile Include="DynamicInterface\SceneInstanceMenu\ISceneInstanceProvider.cs" />
+    <Compile Include="DynamicInterface\SceneInstanceMenu\PaletteTarget.cs" />
+    <Compile Include="DynamicInterface\SceneInstanceMenu\SceneObject.cs" />
+    <Compile Include="DynamicInterface\SceneInstanceMenu\ScenePalette.cs" />
+    <Compile Include="Encryption.cs" />
+    <Compile Include="EnumReader.cs" />
+    <Compile Include="Factory\Accessors.cs" />
+    <Compile Include="Factory\CommonTypes\BindingAngle1.cs" />
+    <Compile Include="Factory\CommonTypes\BindingAngle3.cs" />
+    <Compile Include="Factory\CommonTypes\BindingVector3.cs" />
+    <Compile Include="Factory\GlobalMethods.cs" />
+    <Compile Include="Factory\IBinaryField.cs" />
+    <Compile Include="Factory\IFieldCodeGenerator.cs" />
+    <Compile Include="Factory\IStringField.cs" />
+    <Compile Include="Factory\StringOps.cs" />
+    <Compile Include="Games\GameDefinition.cs" />
+    <Compile Include="Games\IMapCompiler.cs" />
+    <Compile Include="Games\IMapFile.cs" />
+    <Compile Include="Games\MapFileDefinition.cs" />
+    <Compile Include="Games\ObjectNotInPackCacheException.cs" />
+    <Compile Include="Games\PackCacheIndex.cs" />
+    <Compile Include="Games\PaletteDefinition.cs" />
+    <Compile Include="Games\ScenarioBase.cs" />
+    <Compile Include="Games\TypeTable.cs" />
+    <Compile Include="Games\TypeTableEntry.cs" />
+    <Compile Include="Helpers\DNB.cs" />
+    <Compile Include="Helpers\Strings.cs" />
+    <Compile Include="IO\ByteOrder.cs" />
+    <Compile Include="IO\EndianReader.cs" />
+    <Compile Include="IO\EndianSwap.cs" />
+    <Compile Include="IO\EndianWriter.cs" />
+    <Compile Include="IO\Int24.cs" />
+    <Compile Include="IO\RIFF.cs" />
+    <Compile Include="Libraries\FileHierarchy.cs" />
+    <Compile Include="Libraries\RecycleBin.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Policies\Singleton.cs" />
+    <Compile Include="Project\TemplateTagList.cs" />
+    <Compile Include="Rendering\Interfaces\IMaterial.cs" />
+    <Compile Include="Rendering\Interfaces\IRealColor.cs" />
+    <Compile Include="Rendering\Primitives\Ray.cs" />
+    <Compile Include="Rendering\Primitives\RealColor.cs" />
+    <Compile Include="Rendering\Radiosity\Bounds.cs" />
+    <Compile Include="Rendering\Radiosity\Material.cs" />
+    <Compile Include="Rendering\Radiosity\RadiosityHelper.cs" />
+    <Compile Include="Rendering\Radiosity\RadiosityModel.cs" />
+    <Compile Include="Rendering\Radiosity\RadiosityIntersection.cs" />
+    <Compile Include="Rendering\Radiosity\RadiosityStage.cs" />
+    <Compile Include="Rendering\SceneType.cs" />
+    <Compile Include="Rendering\Selection\TargetType.cs" />
+    <Compile Include="Rendering\Wrappers\IBindingTransform.cs" />
+    <Compile Include="Scripting\Assembly\Compiled\CompiledScriptNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\Bsl\BslGameGlobalReferenceNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\Psl\ConstructNodes\RandomizeConstructNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\Psl\PslArrayElementReferenceNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\Psl\PslArrayNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\Psl\PslFunctionUsageNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\GroupingNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\Psl\ConstructNodes\ConditionalConstructNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\Psl\PslGameGlobalReferenceNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\NamespaceNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\Psl\PslOperatorUsageNode.cs" />
+    <Compile Include="Scripting\Assembly\Compiled\NodeTreeDecompiler.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\ValueNodes\ScriptReferenceValueNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\ValueNodes\VariableReferenceValueNode.cs" />
+    <Compile Include="Scripting\Assembly\Processors\BslTreeInterpreter.cs" />
+    <Compile Include="Scripting\Assembly\Processors\PslOutputGenerator.cs" />
+    <Compile Include="Scripting\Assembly\Processors\TemplateVisitorProcessor.cs" />
+    <Compile Include="Scripting\EngineDefinition\Lookup\DecompilerLookup.cs" />
+    <Compile Include="Scripting\EngineDefinition\Lookup\ExpressionReferences.cs" />
+    <Compile Include="Scripting\IScriptProcessor.cs" />
+    <Compile Include="Scripting\DynamicScriptProcessor.cs" />
+    <Compile Include="Scripting\MapScenarioScriptingAssembly.cs" />
+    <Compile Include="Scripting\ScriptingStringOps.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\Bsl\BslFunctionCallNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\NodeBase.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\ScriptCallNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\ScriptNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\ValueNodes\BoolValueNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\ValueNodes\EnumerationValueNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\ValueNodes\LongValueNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\ValueNodes\RealValueNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\ValueNodes\BlockReferenceValueNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\ValueNodes\ShortValueNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\ValueNodes\StringValueNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\ValueNodes\TagReferenceValueNode.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\ValueNodes\ValueNodeBase.cs" />
+    <Compile Include="Scripting\Assembly\Nodes\VariableNode.cs" />
+    <Compile Include="Scripting\Assembly\Processors\SingleValueDiscrepancySearch.cs" />
+    <Compile Include="Scripting\Assembly\Processors\VisitorProcessorBase.cs" />
+    <Compile Include="Scripting\Assembly\ScriptingAssembly.cs" />
+    <Compile Include="Scripting\EngineDefinition\Lookup\EditorLookup.cs" />
+    <Compile Include="Scripting\EngineDefinition\Types\EnumerationType.cs" />
+    <Compile Include="Scripting\EngineDefinition\Types\BlockReferenceType.cs" />
+    <Compile Include="Scripting\EngineDefinition\Types\TagReferenceType.cs" />
+    <Compile Include="Settings\OptionsMerger.cs" />
+    <Compile Include="SimpleContainers.cs" />
+    <Compile Include="TagEditor\IBlockIndexControl.cs" />
+    <Compile Include="TagEditor\ITagReferenceControl.cs" />
+    <Compile Include="UnsafeMemory.cs" />
+    <Compile Include="UserInterface\ISupportsUndoRedo.cs" />
+    <Compile Include="Libraries\ArchiveFileSystem\Archive.cs" />
+    <Compile Include="Libraries\ArchiveFileSystem\EntryFilters\ContainsFilesFilter.cs" />
+    <Compile Include="Libraries\ArchiveFileSystem\EntryFilters\EntryTypeFilter.cs" />
+    <Compile Include="Libraries\ArchiveFileSystem\EntryFilters\ExtensionFilter.cs" />
+    <Compile Include="Libraries\ArchiveFileSystem\EntryFilters\HasDataFilter.cs" />
+    <Compile Include="Libraries\ArchiveFileSystem\EntryFilters\IEntryFilter.cs" />
+    <Compile Include="Libraries\ArchiveFileSystem\EntryFilters\NameFilter.cs" />
+    <Compile Include="Libraries\ArchiveFileSystem\EntryFilters\OffsetFilter.cs" />
+    <Compile Include="Libraries\ArchiveFileSystem\FileTable.cs" />
+    <Compile Include="Libraries\ArchiveFileSystem\FileTableEntry.cs" />
+    <Compile Include="Libraries\ArchiveFileSystem\FilteredTagArchive.cs" />
+    <Compile Include="Libraries\ArchiveFileSystem\SubStream.cs" />
+    <Compile Include="Libraries\DiskFileLibrary.cs" />
+    <Compile Include="Libraries\TagArchive.cs" />
+    <Compile Include="Notes\NoteCollection.cs" />
+    <Compile Include="Notes\NoteEvent.cs" />
+    <Compile Include="Settings\Static\OptionAttribute.cs" />
+    <Compile Include="Settings\Static\OptionManager.cs" />
+    <Compile Include="Settings\Static\OptionType.cs" />
+    <Compile Include="Settings\Static\Setting.cs" />
+    <Compile Include="Settings\Static\SettingsInterface.cs" />
+    <Compile Include="Settings\Static\SettingsList.cs" />
+    <Compile Include="Output.cs" />
+    <Compile Include="PMath.cs" />
+    <Compile Include="Factory\IBlock.cs" />
+    <Compile Include="Factory\IField.cs" />
+    <Compile Include="Pool\CompressionStyle.cs" />
+    <Compile Include="Pool\ILibrary.cs" />
+    <Compile Include="Pool\IPool.cs" />
+    <Compile Include="Pool\Tag.cs" />
+    <Compile Include="Pool\TagErrorEventArgs.cs" />
+    <Compile Include="Pool\TagErrorEventHandler.cs" />
+    <Compile Include="Pool\TagFile.cs" />
+    <Compile Include="Notes\Note.cs" />
+    <Compile Include="Pool\TagLocation.cs" />
+    <Compile Include="Pool\TagPath.cs" />
+    <Compile Include="Project\ProjectFile.cs" />
+    <Compile Include="Project\ProjectTag.cs" />
+    <Compile Include="Project\ProjectTemplate.cs" />
+    <Compile Include="Project\ProjectVersion.cs" />
+    <Compile Include="Project\TemplateTag.cs" />
+    <Compile Include="Project\VersionDesignation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reinterpret.cs" />
+    <Compile Include="Rendering\CoordinateSystem.cs" />
+    <Compile Include="Rendering\Instancing\BillboardInstance.cs" />
+    <Compile Include="Rendering\Instancing\StateModifierInstance.cs" />
+    <Compile Include="Rendering\Instancing\DynamicObjects\DynamicColorRetrievalMethod.cs" />
+    <Compile Include="Rendering\Instancing\DynamicObjects\DynamicObjectColorProvider.cs" />
+    <Compile Include="Rendering\Instancing\DynamicObjectInstance.cs" />
+    <Compile Include="Rendering\Interfaces\IDynamicObject.cs" />
+    <Compile Include="Rendering\Interfaces\IDynamicShader.cs" />
+    <Compile Include="Rendering\Interfaces\IEnvironment.cs" />
+    <Compile Include="Rendering\Interfaces\IEnvironmentProvider.cs" />
+    <Compile Include="Rendering\Interfaces\IRenderStateModifier.cs" />
+    <Compile Include="Rendering\Primitives\Billboard.cs" />
+    <Compile Include="Rendering\Primitives\BillboardType.cs" />
+    <Compile Include="Rendering\Radiosity\Lights.cs" />
+    <Compile Include="Rendering\Radiosity\Photon.cs" />
+    <Compile Include="Rendering\Selection\MultiSelectMode.cs" />
+    <Compile Include="Rendering\Selection\SelectBox2D.cs" />
+    <Compile Include="Rendering\Utilities\FPSCounter.cs" />
+    <Compile Include="Rendering\Utilities\HighResTimer.cs" />
+    <Compile Include="Rendering\Instancing\InstanceCollection.cs" />
+    <Compile Include="Rendering\Instancing\PartInstance.cs" />
+    <Compile Include="Rendering\Instancing\ShaderPreviewInstance.cs" />
+    <Compile Include="Rendering\Instancing\TexturePreviewInstance.cs" />
+    <Compile Include="Rendering\Instancing\ViewerDistanceComparer.cs" />
+    <Compile Include="Rendering\Instancing\Instance.cs" />
+    <Compile Include="Rendering\Instancing\ObjectInstance.cs" />
+    <Compile Include="Rendering\Instancing\WorldInstance.cs" />
+    <Compile Include="Rendering\Interfaces\IBsp.cs" />
+    <Compile Include="Rendering\Interfaces\ICamera.cs" />
+    <Compile Include="Rendering\Instancing\IInstancable.cs" />
+    <Compile Include="Rendering\Interfaces\ILight.cs" />
+    <Compile Include="Rendering\Interfaces\IModel.cs" />
+    <Compile Include="Rendering\Interfaces\IPhoton.cs" />
+    <Compile Include="Rendering\Interfaces\IRenderable.cs" />
+    <Compile Include="Rendering\Interfaces\IShader.cs" />
+    <Compile Include="Rendering\Interfaces\ITextureMap.cs" />
+    <Compile Include="Rendering\Interfaces\ITextureMapCollection.cs" />
+    <Compile Include="Rendering\Interfaces\IToneMapOperator.cs" />
+    <Compile Include="Rendering\Lod.cs" />
+    <Compile Include="Rendering\MdxRender.cs" />
+    <Compile Include="Rendering\Primitives\BoundingBox.cs" />
+    <Compile Include="Rendering\Primitives\NodeTransform.cs" />
+    <Compile Include="Rendering\Primitives\Region.cs" />
+    <Compile Include="Rendering\Primitives\SubMesh.cs" />
+    <Compile Include="Rendering\Primitives\Vertex.cs" />
+    <Compile Include="Rendering\RenderException.cs" />
+    <Compile Include="Rendering\Selection\ArcHandle.cs" />
+    <Compile Include="Rendering\Selection\ArcMode.cs" />
+    <Compile Include="Rendering\Selection\EditMode.cs" />
+    <Compile Include="Rendering\Selection\SelectionBox.cs" />
+    <Compile Include="Rendering\Selection\SelectTool.cs" />
+    <Compile Include="Rendering\Wrappers\BindingTransform.cs" />
+    <Compile Include="Rendering\Wrappers\EnhancedMesh.cs" />
+    <Compile Include="Rendering\Wrappers\Intersection.cs" />
+    <Compile Include="Rendering\Wrappers\ScreenBillboard.cs" />
+    <Compile Include="Rendering\Wrappers\SimpleBitmapShader.cs" />
+    <Compile Include="Scripting\EngineDefinition\Argument.cs" />
+    <Compile Include="Scripting\EngineDefinition\Function.cs" />
+    <Compile Include="Scripting\EngineDefinition\Global.cs" />
+    <Compile Include="Scripting\EngineDefinition\InternalFunction.cs" />
+    <Compile Include="Scripting\EngineDefinition\InternalGlobal.cs" />
+    <Compile Include="Scripting\EngineDefinition\Namespace.cs" />
+    <Compile Include="Scripting\EngineDefinition\ScriptEngineDefinition.cs" />
+    <Compile Include="Scripting\EngineDefinition\Types\ExtendedTypeBase.cs" />
+    <Compile Include="Scripting\ScenarioInterface\ScenarioScriptGlobal.cs" />
+    <Compile Include="Scripting\ScenarioInterface\ScenarioScript.cs" />
+    <Compile Include="Settings\Instance\IPersistable.cs" />
+    <Compile Include="Settings\Instance\PersistableOption.cs" />
+    <Compile Include="Settings\Instance\SettingsManager.cs" />
+    <Compile Include="Settings\Instance\TypeReflectionCache.cs" />
+    <Compile Include="Sound\Codecs\ICodec.cs" />
+    <Compile Include="Sound\Codecs\PCM.cs" />
+    <Compile Include="Sound\Codecs\XboxADPCM.cs" />
+    <Compile Include="Sound\Instancing\EnvironmentSoundInstance.cs" />
+    <Compile Include="Sound\Instancing\SoundInstance.cs" />
+    <Compile Include="Sound\MdxSound.cs" />
+    <Compile Include="Factory\BlockCollection.cs" />
+    <Compile Include="Sound\ISoundDataProvider.cs" />
+    <Compile Include="Sound\SoundSystemException.cs" />
+    <Compile Include="Sound\StreamingSoundBuffer.cs" />
+    <Compile Include="TagEditor\FieldControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TagEditor\FieldControl.Designer.cs">
+      <DependentUpon>FieldControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TagEditor\FieldControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TagEditor\IBlockControl.cs" />
+    <Compile Include="TagEditor\IFieldControl.cs" />
+    <Compile Include="TagEditor\IFieldControlContainer.cs" />
+    <Compile Include="TagEditor\ControlNamer.cs" />
+    <Compile Include="Textures\DirectDrawPixelFormat.cs" />
+    <Compile Include="Textures\DirectDrawPixelFormatFlags.cs" />
+    <Compile Include="Textures\DirectDrawSurfaceCaps.cs" />
+    <Compile Include="Textures\DirectDrawSurfaceCapsAFlags.cs" />
+    <Compile Include="Textures\DirectDrawSurfaceCapsBFlags.cs" />
+    <Compile Include="Textures\DirectDrawSurfaceDescription.cs" />
+    <Compile Include="Textures\DirectDrawSurfaceDescriptionFlags.cs" />
+    <Compile Include="Textures\DirectDrawSurfaceHeader.cs" />
+    <Compile Include="Textures\DXT.cs" />
+    <Compile Include="Textures\Sampler.cs" />
+    <Compile Include="Textures\Swizzler.cs" />
+    <Compile Include="UniqueStringCollection.cs" />
+    <Compile Include="UserInterface\IDocument.cs" />
+    <Compile Include="UserInterface\IDocumentManager.cs" />
+    <Compile Include="UserInterface\IUndoableAction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TagEditor\FieldControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FieldControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TagEditor\FieldControlBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FieldControlBase.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ctf.dds" />
+    <EmbeddedResource Include="Resources\ctf_vehicle.dds" />
+    <EmbeddedResource Include="Resources\koh.dds" />
+    <EmbeddedResource Include="Resources\oddball.dds" />
+    <EmbeddedResource Include="Resources\race.dds" />
+    <EmbeddedResource Include="Resources\race_vehicle.dds" />
+    <EmbeddedResource Include="Resources\sound_scenery.dds" />
+    <EmbeddedResource Include="Resources\teleporter_enter.dds" />
+    <EmbeddedResource Include="Resources\teleporter_exit.dds" />
+    <EmbeddedResource Include="Resources\vegas_bank.dds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Options\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

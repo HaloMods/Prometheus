@@ -1,0 +1,36 @@
+<xml>
+  <name type="mach" parenttype="devi">DeviceMachine</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="DeviceMachineBlock">
+      <value type="Enum" name="type" length="2" disabled="false">
+        <item value="0" name="door" />
+        <item value="1" name="platform" />
+        <item value="2" name="gear" />
+      </value>
+      <value type="Flags" name="flags" length="2" disabled="false">
+        <bit index="0" name="pathfinding obstacle" />
+        <bit index="1" name="...but not when open" />
+        <bit index="2" name="elevator">
+          <tooltip>lighting based on what's around, rather than what's below</tooltip>
+        </bit>
+      </value>
+      <value type="Real" name="door open time" disabled="false" unit="seconds" />
+      <value type="FractionBounds" name="door occlusion bounds" disabled="false">
+        <tooltip>maps position [0,1] to occlusion</tooltip>
+      </value>
+      <value type="Enum" name="collision response" length="2" disabled="false">
+        <item value="0" name="pause until crushed" />
+        <item value="1" name="reverse directions" />
+      </value>
+      <value type="ShortInteger" name="elevator node" disabled="false" />
+      <value type="Enum" name="pathfinding policy" length="2" disabled="false">
+        <item value="0" name="discs" />
+        <item value="1" name="sectors" />
+        <item value="2" name="cut_out" />
+        <item value="3" name="none" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+    </struct>
+  </plugin>
+</xml>

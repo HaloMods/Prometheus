@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="jpt!" parenttype="????">DamageEffect</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="DamageEffect">
+      <value type="RealBounds" name="radius" />
+      <value type="RealFraction" name="cutoff scale" />
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="dont scale damage by distance" />
+      </value>
+      <value type="Pad" name="_unnamed" length="20" />
+      <value type="Enum" name="type">
+        <item value="0" name="none" />
+        <item value="1" name="lighten" />
+        <item value="2" name="darken" />
+        <item value="3" name="max" />
+        <item value="4" name="min" />
+        <item value="5" name="invert" />
+        <item value="6" name="tint" />
+      </value>
+      <value type="Enum" name="priority">
+        <item value="0" name="low" />
+        <item value="1" name="medium" />
+        <item value="2" name="high" />
+      </value>
+      <value type="Pad" name="_unnamed2" length="12" />
+      <value type="Real" name="duration" />
+      <value type="Enum" name="fade function">
+        <item value="0" name="linear" />
+        <item value="1" name="early" />
+        <item value="2" name="very early" />
+        <item value="3" name="late" />
+        <item value="4" name="very late" />
+        <item value="5" name="cosine" />
+      </value>
+      <value type="Pad" name="_unnamed3" length="2" />
+      <value type="Pad" name="_unnamed4" length="8" />
+      <value type="RealFraction" name="maximum intensity" />
+      <value type="Pad" name="_unnamed5" length="4" />
+      <value type="RealARGBColor" name="color" />
+      <value type="RealFraction" name="frequency" />
+      <value type="Real" name="duration2" />
+      <value type="Enum" name="fade function2">
+        <item value="0" name="linear" />
+        <item value="1" name="early" />
+        <item value="2" name="very early" />
+        <item value="3" name="late" />
+        <item value="4" name="very late" />
+        <item value="5" name="cosine" />
+      </value>
+      <value type="Pad" name="_unnamed6" length="2" />
+      <value type="Pad" name="_unnamed7" length="8" />
+      <value type="RealFraction" name="frequency2" />
+      <value type="Real" name="duration3" />
+      <value type="Enum" name="fade function3">
+        <item value="0" name="linear" />
+        <item value="1" name="early" />
+        <item value="2" name="very early" />
+        <item value="3" name="late" />
+        <item value="4" name="very late" />
+        <item value="5" name="cosine" />
+      </value>
+      <value type="Pad" name="_unnamed8" length="2" />
+      <value type="Pad" name="_unnamed9" length="8" />
+      <value type="Pad" name="_unnamed10" length="4" />
+      <value type="Pad" name="_unnamed11" length="16" />
+      <value type="Real" name="duration4" />
+      <value type="Enum" name="fade function4">
+        <item value="0" name="linear" />
+        <item value="1" name="early" />
+        <item value="2" name="very early" />
+        <item value="3" name="late" />
+        <item value="4" name="very late" />
+        <item value="5" name="cosine" />
+      </value>
+      <value type="Pad" name="_unnamed12" length="2" />
+      <value type="Angle" name="rotation" />
+      <value type="Real" name="pushback" />
+      <value type="RealBounds" name="jitter" />
+      <value type="Pad" name="_unnamed13" length="4" />
+      <value type="Pad" name="_unnamed14" length="4" />
+      <value type="Angle" name="angle" />
+      <value type="Pad" name="_unnamed15" length="4" />
+      <value type="Pad" name="_unnamed16" length="12" />
+      <value type="Real" name="duration5">
+        <tooltip>The effect will last for this duration..</tooltip>
+      </value>
+      <value type="Enum" name="falloff function">
+        <tooltip>A function to envelope the effect's magnitude over time.</tooltip>
+        <item value="0" name="linear" />
+        <item value="1" name="early" />
+        <item value="2" name="very early" />
+        <item value="3" name="late" />
+        <item value="4" name="very late" />
+        <item value="5" name="cosine" />
+      </value>
+      <value type="Pad" name="_unnamed17" length="2" />
+      <value type="Real" name="random translation">
+        <tooltip>Random translation in all directions.</tooltip>
+      </value>
+      <value type="Angle" name="random rotation">
+        <tooltip>Random rotation in all directions.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed18" length="12" />
+      <value type="Enum" name="wobble function">
+        <tooltip>A function to perturb the effect's behavior over time.</tooltip>
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Pad" name="_unnamed19" length="2" />
+      <value type="Real" name="wobble function period" />
+      <value type="RealFraction" name="wobble weight">
+        <tooltip>A value of 0.0 signifies that the wobble function has no effect; a value of 1.0 signifies that the effect will not be felt when the wobble function's value is zero..</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed20" length="4" />
+      <value type="Pad" name="_unnamed21" length="20" />
+      <value type="Pad" name="_unnamed22" length="8" />
+      <value type="TagReference" name="sound" extensions="snd!" />
+      <value type="Pad" name="_unnamed23" length="112" />
+      <value type="Real" name="forward velocity" />
+      <value type="Real" name="forward radius" />
+      <value type="Real" name="forward exponent" />
+      <value type="Pad" name="_unnamed24" length="12" />
+      <value type="Real" name="outward velocity" />
+      <value type="Real" name="outward radius" />
+      <value type="Real" name="outward exponent" />
+      <value type="Pad" name="_unnamed25" length="12" />
+      <value type="Enum" name="side effect">
+        <item value="0" name="none" />
+        <item value="1" name="harmless" />
+        <item value="2" name="lethal to the unsuspecting" />
+        <item value="3" name="emp" />
+      </value>
+      <value type="Enum" name="category">
+        <item value="0" name="none" />
+        <item value="1" name="falling" />
+        <item value="2" name="bullet" />
+        <item value="3" name="grenade" />
+        <item value="4" name="high explosive" />
+        <item value="5" name="sniper" />
+        <item value="6" name="melee" />
+        <item value="7" name="flame" />
+        <item value="8" name="mounted weapon" />
+        <item value="9" name="vehicle" />
+        <item value="10" name="plasma" />
+        <item value="11" name="needle" />
+        <item value="12" name="shotgun" />
+      </value>
+      <value type="Flags" name="flags2" length="4">
+        <bit index="0" name="does not hurt owner" />
+        <bit index="1" name="can cause headshots" />
+        <bit index="2" name="pings resistant units" />
+        <bit index="3" name="does not hurt friends" />
+        <bit index="4" name="does not ping units" />
+        <bit index="5" name="detonates explosives" />
+        <bit index="6" name="only hurts shields" />
+        <bit index="7" name="causes flaming death" />
+        <bit index="8" name="damage indicators always point down" />
+        <bit index="9" name="skips shields" />
+        <bit index="10" name="only hurts one infection form" />
+        <bit index="11" name="can cause multiplayer headshots" />
+        <bit index="12" name="infection form pop" />
+      </value>
+      <value type="Real" name="AOE core radius">
+        <tooltip>If this is area of effect damage.</tooltip>
+      </value>
+      <value type="Real" name="damage lower bound" />
+      <value type="RealBounds" name="damage upper bound" />
+      <value type="Real" name="vehicle passthrough penalty">
+        <tooltip>Zero damages passengers in vehicles, one does not.</tooltip>
+      </value>
+      <value type="Real" name="active camouflage damage">
+        <tooltip>How much more visible this damage makes a player who is active camouflaged.</tooltip>
+      </value>
+      <value type="Real" name="stun">
+        <tooltip>Amount of stun added to damaged unit.</tooltip>
+      </value>
+      <value type="Real" name="maximum stun">
+        <tooltip>Damaged unit's stun will never exceed this amount.</tooltip>
+      </value>
+      <value type="Real" name="stun time">
+        <tooltip>Duration of stun due to this damage.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed26" length="4" />
+      <value type="Real" name="instantaneous acceleration" />
+      <value type="Pad" name="_unnamed27" length="4" />
+      <value type="Pad" name="_unnamed28" length="4" />
+      <value type="Real" name="dirt" />
+      <value type="Real" name="sand" />
+      <value type="Real" name="stone" />
+      <value type="Real" name="snow" />
+      <value type="Real" name="wood" />
+      <value type="Real" name="metal hollow" />
+      <value type="Real" name="metal thin" />
+      <value type="Real" name="metal thick" />
+      <value type="Real" name="rubber" />
+      <value type="Real" name="glass" />
+      <value type="Real" name="force field" />
+      <value type="Real" name="grunt" />
+      <value type="Real" name="hunter armor" />
+      <value type="Real" name="hunter skin" />
+      <value type="Real" name="elite" />
+      <value type="Real" name="jackal" />
+      <value type="Real" name="jackal energy shield" />
+      <value type="Real" name="engineer" />
+      <value type="Real" name="engineer force field" />
+      <value type="Real" name="flood combat form" />
+      <value type="Real" name="flood carrier form" />
+      <value type="Real" name="cyborg" />
+      <value type="Real" name="cyborg energy shield" />
+      <value type="Real" name="armored human" />
+      <value type="Real" name="human" />
+      <value type="Real" name="sentinel" />
+      <value type="Real" name="monitor" />
+      <value type="Real" name="plastic" />
+      <value type="Real" name="water" />
+      <value type="Real" name="leaves" />
+      <value type="Real" name="elite energy shield" />
+      <value type="Real" name="ice" />
+      <value type="Real" name="hunter shield" />
+      <value type="Pad" name="_unnamed29" length="28" />
+    </struct>
+  </plugin>
+</xml>

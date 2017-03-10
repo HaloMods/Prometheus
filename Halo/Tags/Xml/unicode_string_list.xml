@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="ustr" parenttype="????">UnicodeStringList</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="UnicodeStringList">
+      <struct name="Stringreference">
+        <value type="Data" name="string" />
+      </struct>
+      <value type="Block" name="string references" struct="Stringreference" maxelements="800" />
+    </struct>
+  </plugin>
+</xml>

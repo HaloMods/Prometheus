@@ -1,0 +1,86 @@
+<xml>
+  <name type="phys" parenttype="????">Physics</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="PhysicsBlock">
+      <value type="Real" name="radius" disabled="false">
+        <tooltip>positive uses old inferior physics, negative uses new improved physics</tooltip>
+      </value>
+      <value type="RealFraction" name="moment scale" disabled="false" />
+      <value type="Real" name="mass" disabled="false" />
+      <value type="RealPoint3d" name="center of mass" disabled="true" />
+      <value type="Real" name="density" disabled="false" />
+      <value type="Real" name="gravity scale" disabled="false" />
+      <value type="Real" name="ground friction" disabled="false" />
+      <value type="Real" name="ground depth" disabled="false" />
+      <value type="RealFraction" name="ground damp fraction" disabled="false" />
+      <value type="Real" name="ground normal k1" disabled="false" />
+      <value type="Real" name="ground normal k0" disabled="false" />
+      <value type="Pad" name="_unnamed0" length="4" />
+      <value type="Real" name="water friction" disabled="false" />
+      <value type="Real" name="water depth" disabled="false" />
+      <value type="Real" name="water density" disabled="false" />
+      <value type="Pad" name="_unnamed1" length="4" />
+      <value type="RealFraction" name="air friction" disabled="false" />
+      <value type="Pad" name="_unnamed2" length="4" />
+      <value type="Real" name="xx moment" disabled="false" />
+      <value type="Real" name="yy moment" disabled="false" />
+      <value type="Real" name="zz moment" disabled="false" />
+      <struct name="InertialMatrixBlock">
+        <value type="RealVector3d" name="yy+zz    -xy     -zx" disabled="false" />
+        <value type="RealVector3d" name=" -xy    zz+xx    -yz" disabled="false" />
+        <value type="RealVector3d" name=" -zx     -yz    xx+yy" disabled="false" />
+      </struct>
+      <value type="Block" name="inertial matrix and inverse" disabled="true" struct="InertialMatrixBlock" maxelements="2" />
+      <struct name="PoweredMassPointBlock">
+        <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="ground friction" />
+          <bit index="1" name="water friction" />
+          <bit index="2" name="air friction" />
+          <bit index="3" name="water lift" />
+          <bit index="4" name="air lift" />
+          <bit index="5" name="thrust" />
+          <bit index="6" name="antigrav" />
+          <bit index="7" name="gets damage from region" />
+        </value>
+        <value type="Real" name="antigrav strength" disabled="false" />
+        <value type="Real" name="antigrav offset" disabled="false" />
+        <value type="Real" name="antigrav height" disabled="false" />
+        <value type="Real" name="antigrav damp fraction" disabled="false" />
+        <value type="Real" name="antigrav normal k1" disabled="false" />
+        <value type="Real" name="antigrav normal k0" disabled="false" />
+        <value type="StringId" name="damage source region name" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="64" />
+      </struct>
+      <value type="Block" name="powered mass points" disabled="false" struct="PoweredMassPointBlock" maxelements="32" />
+      <struct name="MassPointBlock">
+        <value type="FixedLengthString" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="powered mass point" disabled="false" block="PoweredMassPointBlock" />
+        <value type="ShortInteger" name="model node" disabled="true" />
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="metallic" />
+        </value>
+        <value type="Real" name="relative mass" disabled="false" />
+        <value type="Real" name="mass" disabled="true" />
+        <value type="Real" name="relative density" disabled="false" />
+        <value type="Real" name="density" disabled="true" />
+        <value type="RealPoint3d" name="position" disabled="false" />
+        <value type="RealVector3d" name="forward" disabled="false" />
+        <value type="RealVector3d" name="up" disabled="false" />
+        <value type="Enum" name="friction type" length="2" disabled="false">
+          <item value="0" name="point" />
+          <item value="1" name="forward" />
+          <item value="2" name="left" />
+          <item value="3" name="up" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Real" name="friction parallel scale" disabled="false" />
+        <value type="Real" name="friction perpendicular scale" disabled="false" />
+        <value type="Real" name="radius" disabled="false" />
+        <value type="Pad" name="_unnamed1" length="20" />
+      </struct>
+      <value type="Block" name="mass points" disabled="false" struct="MassPointBlock" maxelements="32" />
+    </struct>
+  </plugin>
+</xml>

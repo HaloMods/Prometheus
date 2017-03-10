@@ -1,0 +1,78 @@
+<xml>
+  <name type="slit" parenttype="????">ShaderLightResponse</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ShaderLightResponseBlock">
+      <struct name="ShaderTemplateCategoryBlock">
+        <value type="StringId" name="Name" disabled="false" blockname="true" />
+        <struct name="ShaderTemplateParameterBlock">
+          <value type="StringId" name="Name" disabled="false" blockname="true" />
+          <value type="Data" name="Explanation" disabled="false" />
+          <value type="Enum" name="Type" length="2" disabled="false">
+            <item value="0" name="Bitmap" />
+            <item value="1" name="Value" />
+            <item value="2" name="Color" />
+            <item value="3" name="Switch" />
+          </value>
+          <value type="Flags" name="Flags" length="2" disabled="false">
+            <bit index="0" name="Animated" />
+            <bit index="1" name="Hide Bitmap Reference" />
+          </value>
+          <value type="TagReference" name="Default Bitmap" disabled="false" extensions="bitm" />
+          <value type="Real" name="Default Const Value" disabled="false" />
+          <value type="RealRgbColor" name="Default Const Color" disabled="false" />
+          <value type="Enum" name="Bitmap Type" length="2" disabled="false">
+            <item value="0" name="2D" />
+            <item value="1" name="3D" />
+            <item value="2" name="Cube Map" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Flags" name="Bitmap Animation Flags" length="2" disabled="false">
+            <bit index="0" name="Scale Uniform" />
+            <bit index="1" name="Scale" />
+            <bit index="2" name="Translation" />
+            <bit index="3" name="Rotation" />
+            <bit index="4" name="Index" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Real" name="Bitmap Scale" disabled="false" />
+        </struct>
+        <value type="Block" name="Parameters" disabled="false" struct="ShaderTemplateParameterBlock" maxelements="64" />
+      </struct>
+      <value type="Block" name="categories" disabled="false" struct="ShaderTemplateCategoryBlock" maxelements="16" />
+      <struct name="ShaderTemplateLevelOfDetailBlock">
+        <value type="Real" name="Projected Diameter" disabled="false" unit="pixels" />
+        <struct name="ShaderTemplatePassReferenceBlock">
+          <value type="Enum" name="Layer" length="2" disabled="false">
+            <item value="0" name="texaccum" />
+            <item value="1" name="Environment Map" />
+            <item value="2" name="Self-Illumination" />
+            <item value="3" name="Overlay" />
+            <item value="4" name="Transparent" />
+            <item value="5" name="Lightmap (Indirect)" />
+            <item value="6" name="Diffuse" />
+            <item value="7" name="Specular" />
+            <item value="8" name="Shadow Generate" />
+            <item value="9" name="Shadow Apply" />
+            <item value="10" name="Boom" />
+            <item value="11" name="Fog" />
+            <item value="12" name="Sh Prt" />
+            <item value="13" name="Active Camo" />
+            <item value="14" name="Water Edge Blend" />
+            <item value="15" name="Decal" />
+            <item value="16" name="Active Camo Stencil Modulate" />
+            <item value="17" name="Hologram" />
+            <item value="18" name="Light Albedo" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="TagReference" name="Pass" disabled="false" extensions="spas" blockname="true" />
+          <value type="Pad" name="_unnamed1" length="12" />
+        </struct>
+        <value type="Block" name="Pass" disabled="false" struct="ShaderTemplatePassReferenceBlock" maxelements="16" />
+      </struct>
+      <value type="Block" name="shader LODs" disabled="false" struct="ShaderTemplateLevelOfDetailBlock" maxelements="8" />
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Pad" name="_unnamed1" length="2" />
+    </struct>
+  </plugin>
+</xml>

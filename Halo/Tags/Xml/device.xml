@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="devi" parenttype="obje">Device</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Device">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="position loops" />
+        <bit index="1" name="position not interpolated" />
+      </value>
+      <value type="Real" name="power transition time" />
+      <value type="Real" name="power acceleration time" />
+      <value type="Real" name="position transition time" />
+      <value type="Real" name="position acceleration time" />
+      <value type="Real" name="depowered position transition time" />
+      <value type="Real" name="depowered position acceleration time" />
+      <value type="Enum" name="A in">
+        <item value="0" name="none" />
+        <item value="1" name="power" />
+        <item value="2" name="change in power" />
+        <item value="3" name="position" />
+        <item value="4" name="change in position" />
+        <item value="5" name="locked" />
+        <item value="6" name="delay" />
+      </value>
+      <value type="Enum" name="B in">
+        <item value="0" name="none" />
+        <item value="1" name="power" />
+        <item value="2" name="change in power" />
+        <item value="3" name="position" />
+        <item value="4" name="change in position" />
+        <item value="5" name="locked" />
+        <item value="6" name="delay" />
+      </value>
+      <value type="Enum" name="C in">
+        <item value="0" name="none" />
+        <item value="1" name="power" />
+        <item value="2" name="change in power" />
+        <item value="3" name="position" />
+        <item value="4" name="change in position" />
+        <item value="5" name="locked" />
+        <item value="6" name="delay" />
+      </value>
+      <value type="Enum" name="D in">
+        <item value="0" name="none" />
+        <item value="1" name="power" />
+        <item value="2" name="change in power" />
+        <item value="3" name="position" />
+        <item value="4" name="change in position" />
+        <item value="5" name="locked" />
+        <item value="6" name="delay" />
+      </value>
+      <value type="TagReference" name="open up" extensions="snd!" />
+      <value type="TagReference" name="close down" extensions="snd!" />
+      <value type="TagReference" name="opened" extensions="snd!" />
+      <value type="TagReference" name="closed" extensions="snd!" />
+      <value type="TagReference" name="depowered" extensions="snd!" />
+      <value type="TagReference" name="repowered" extensions="snd!" />
+      <value type="Real" name="delay time" />
+      <value type="Pad" name="_unnamed" length="8" />
+      <value type="TagReference" name="delay effect" extensions="snd!" />
+      <value type="Real" name="automatic activation radius" />
+      <value type="Pad" name="_unnamed2" length="84" />
+      <value type="Pad" name="_unnamed3" length="28" />
+    </struct>
+  </plugin>
+</xml>

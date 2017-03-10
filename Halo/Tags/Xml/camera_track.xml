@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="trak" parenttype="????">CameraTrack</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="CameraTrack">
+      <value type="Flags" name="flags" length="4" />
+      <struct name="CameraTrackControlPoint">
+        <value type="RealVector3D" name="position" />
+        <value type="RealQuaternion" name="orientation" />
+        <value type="Pad" name="_unnamed" length="32" />
+      </struct>
+      <value type="Block" name="control points" struct="CameraTrackControlPoint" maxelements="16" />
+      <value type="Pad" name="_unnamed" length="32" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="lsnd" parenttype="????">SoundLooping</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="SoundLooping">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="deafening to AIs">
+          <tooltip>When used as a background stereo track, causes nearby AIs to be unable to hear.</tooltip>
+        </bit>
+        <bit index="1" name="not a loop">
+          <tooltip>This is a collection of permutations strung together that should play once then stop..</tooltip>
+        </bit>
+        <bit index="2" name="stops music">
+          <tooltip>All other music loops will stop when this one starts..</tooltip>
+        </bit>
+      </value>
+      <value type="Real" name="detail sound period" />
+      <value type="Pad" name="_unnamed" length="8" />
+      <value type="Real" name="detail sound period2" />
+      <value type="Pad" name="_unnamed2" length="8" />
+      <value type="Pad" name="_unnamed3" length="16" />
+      <value type="TagReference" name="continuous damage effect" extensions="cdmg" />
+      <struct name="LoopingSoundTrack">
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="fade in at start">
+            <tooltip>The loop sound should fade in while the start sound is playing..</tooltip>
+          </bit>
+          <bit index="1" name="fade out at stop">
+            <tooltip>The loop sound should fade out while the stop sound is playing..</tooltip>
+          </bit>
+          <bit index="2" name="fade in alternate">
+            <tooltip>When the sound changes to the alternate version,  ..</tooltip>
+          </bit>
+        </value>
+        <value type="RealFraction" name="gain" />
+        <value type="Real" name="fade in duration" />
+        <value type="Real" name="fade out duration" />
+        <value type="Pad" name="_unnamed" length="32" />
+        <value type="TagReference" name="start" extensions="snd!" />
+        <value type="TagReference" name="loop" blockname="true" extensions="snd!" />
+        <value type="TagReference" name="end" extensions="snd!" />
+        <value type="Pad" name="_unnamed2" length="32" />
+        <value type="TagReference" name="alternate loop" extensions="snd!" />
+        <value type="TagReference" name="alternate end" extensions="snd!" />
+        <value type="Custom" name="_unnamed3" />
+      </struct>
+      <value type="Block" name="tracks" struct="LoopingSoundTrack" maxelements="4">
+        <tooltip>Tracks play in parallel and loop continuously for the duration of the looping sound..</tooltip>
+      </value>
+      <struct name="LoopingSoundDetail">
+        <value type="TagReference" name="sound" blockname="true" extensions="snd!" />
+        <value type="RealBounds" name="random period bounds">
+          <tooltip>The time between successive playings of this sound will be randomly selected from this range..</tooltip>
+        </value>
+        <value type="RealFraction" name="gain" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="dont play with alternate" />
+          <bit index="1" name="dont play without alternate" />
+        </value>
+        <value type="Pad" name="_unnamed" length="48" />
+        <value type="AngleBounds" name="yaw bounds">
+          <tooltip>The sound's position along the horizon will be randomly selected from this range..</tooltip>
+        </value>
+        <value type="AngleBounds" name="pitch bounds">
+          <tooltip>The sound's position above (positive values) or below (negative values) the horizon will be randomly selected from this range..</tooltip>
+        </value>
+        <value type="RealBounds" name="distance bounds">
+          <tooltip>The sound's distance (from its spatialized looping sound or from the listener if the looping sound is stereo) will be randomly selected from this range..</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="detail sounds" struct="LoopingSoundDetail" maxelements="32">
+        <tooltip>Detail sounds play at random throughout the duration of the looping sound..</tooltip>
+      </value>
+    </struct>
+  </plugin>
+</xml>

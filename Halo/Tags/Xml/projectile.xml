@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="proj" parenttype="obje">Projectile</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Projectile">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="oriented along velocity" />
+        <bit index="1" name="AI must use ballistic aiming" />
+        <bit index="2" name="detonation max time if attached" />
+        <bit index="3" name="has super combining explosion" />
+        <bit index="4" name="combine initial velocity with parent velocity" />
+        <bit index="5" name="random attached detonation time" />
+        <bit index="6" name="minimum unattached detonation time" />
+      </value>
+      <value type="Enum" name="detonation timer starts">
+        <item value="0" name="immediately" />
+        <item value="1" name="after first bounce" />
+        <item value="2" name="when at rest" />
+      </value>
+      <value type="Enum" name="impact noise">
+        <item value="0" name="silent" />
+        <item value="1" name="medium" />
+        <item value="2" name="loud" />
+        <item value="3" name="shout" />
+        <item value="4" name="quiet" />
+      </value>
+      <value type="Enum" name="A in">
+        <item value="0" name="none" />
+        <item value="1" name="range remaining" />
+        <item value="2" name="time remaining" />
+        <item value="3" name="tracer" />
+      </value>
+      <value type="Enum" name="B in">
+        <item value="0" name="none" />
+        <item value="1" name="range remaining" />
+        <item value="2" name="time remaining" />
+        <item value="3" name="tracer" />
+      </value>
+      <value type="Enum" name="C in">
+        <item value="0" name="none" />
+        <item value="1" name="range remaining" />
+        <item value="2" name="time remaining" />
+        <item value="3" name="tracer" />
+      </value>
+      <value type="Enum" name="D in">
+        <item value="0" name="none" />
+        <item value="1" name="range remaining" />
+        <item value="2" name="time remaining" />
+        <item value="3" name="tracer" />
+      </value>
+      <value type="TagReference" name="super detonation" extensions="effe" />
+      <value type="Real" name="AI perception radius" />
+      <value type="Real" name="collision radius" />
+      <value type="Real" name="arming time">
+        <tooltip>Won't detonate before this time elapses.</tooltip>
+      </value>
+      <value type="Real" name="danger radius" />
+      <value type="TagReference" name="effect" extensions="effe" />
+      <value type="RealBounds" name="timer">
+        <tooltip>Detonation countdown (zero is untimed).</tooltip>
+      </value>
+      <value type="Real" name="minimum velocity">
+        <tooltip>Detonates when slowed below this velocity.</tooltip>
+      </value>
+      <value type="Real" name="maximum range">
+        <tooltip>Detonates after travelling this distance.</tooltip>
+      </value>
+      <value type="Real" name="air gravity scale">
+        <tooltip>The proportion of normal gravity applied to the projectile when in air..</tooltip>
+      </value>
+      <value type="RealBounds" name="air damage range">
+        <tooltip>The range over which damage is scaled when the projectile is in air..</tooltip>
+      </value>
+      <value type="Real" name="water gravity scale">
+        <tooltip>The proportion of normal gravity applied to the projectile when in water..</tooltip>
+      </value>
+      <value type="RealBounds" name="water damage range">
+        <tooltip>The range over which damage is scaled when the projectile is in water..</tooltip>
+      </value>
+      <value type="Real" name="initial velocity">
+        <tooltip>Bullet's velocity when inflicting maximum damage.</tooltip>
+      </value>
+      <value type="Real" name="final velocity">
+        <tooltip>Bullet's velocity when inflicting minimum damage.</tooltip>
+      </value>
+      <value type="Angle" name="guided angular velocity" />
+      <value type="Enum" name="detonation noise">
+        <item value="0" name="silent" />
+        <item value="1" name="medium" />
+        <item value="2" name="loud" />
+        <item value="3" name="shout" />
+        <item value="4" name="quiet" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="TagReference" name="detonation started" extensions="effe" />
+      <value type="TagReference" name="flyby sound" extensions="snd!" />
+      <value type="TagReference" name="attached detonation damage" extensions="jpt!" />
+      <value type="TagReference" name="impact damage" extensions="jpt!" />
+      <value type="Pad" name="_unnamed2" length="12" />
+      <struct name="ProjectileMaterialResponse">
+        <value type="Flags" name="flags" length="2">
+          <bit index="0" name="cannot be overpenetrated" />
+        </value>
+        <value type="Enum" name="response">
+          <item value="0" name="disappear" />
+          <item value="1" name="detonate" />
+          <item value="2" name="reflect" />
+          <item value="3" name="overpenetrate" />
+          <item value="4" name="attach" />
+        </value>
+        <value type="TagReference" name="effect" extensions="effe" />
+        <value type="Pad" name="_unnamed" length="16" />
+        <value type="Enum" name="response2">
+          <item value="0" name="disappear" />
+          <item value="1" name="detonate" />
+          <item value="2" name="reflect" />
+          <item value="3" name="overpenetrate" />
+          <item value="4" name="attach" />
+        </value>
+        <value type="Flags" name="flags2" length="2">
+          <bit index="0" name="only against units" />
+        </value>
+        <value type="RealFraction" name="skip fraction" />
+        <value type="AngleBounds" name="between" />
+        <value type="RealBounds" name="and" />
+        <value type="TagReference" name="effect2" extensions="effe" />
+        <value type="Pad" name="_unnamed2" length="16" />
+        <value type="Enum" name="scale effects by">
+          <item value="0" name="damage" />
+          <item value="1" name="angle" />
+        </value>
+        <value type="Pad" name="_unnamed3" length="2" />
+        <value type="Angle" name="angular noise">
+          <tooltip>The angle of incidence is randomly perturbed by at most this amount to simulate irregularity..</tooltip>
+        </value>
+        <value type="Real" name="velocity noise">
+          <tooltip>The velocity is randomly perturbed by at most this amount to simulate irregularity..</tooltip>
+        </value>
+        <value type="TagReference" name="detonation effect" extensions="effe" />
+        <value type="Pad" name="_unnamed4" length="24" />
+        <value type="Real" name="initial friction">
+          <tooltip>The fraction of the projectile's velocity lost on penetration.</tooltip>
+        </value>
+        <value type="Real" name="maximum distance">
+          <tooltip>The maximum distance the projectile can travel through on object of this material.</tooltip>
+        </value>
+        <value type="Real" name="parallel friction">
+          <tooltip>The fraction of the projectile's velocity parallel to the surface lost on impact.</tooltip>
+        </value>
+        <value type="Real" name="perpendicular friction">
+          <tooltip>The fraction of the projectile's velocity perpendicular to the surface lost on impact.</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="material responses" struct="ProjectileMaterialResponse" maxelements="33" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,1324 @@
+<xml>
+  <name type="matg" parenttype="????">Globals</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="GlobalsBlock">
+      <value type="Pad" name="_unnamed0" length="172" />
+      <value type="Enum" name="language" length="4" disabled="false">
+        <item value="0" name="english" />
+        <item value="1" name="japanese" />
+        <item value="2" name="german" />
+        <item value="3" name="french" />
+        <item value="4" name="spanish" />
+        <item value="5" name="italian" />
+        <item value="6" name="korean" />
+        <item value="7" name="chinese" />
+        <item value="8" name="portuguese" />
+      </value>
+      <struct name="HavokCleanupResourcesBlock">
+        <value type="TagReference" name="object cleanup effect" disabled="false" extensions="effe" />
+      </struct>
+      <value type="Block" name="havok cleanup resources" disabled="false" struct="HavokCleanupResourcesBlock" maxelements="1" />
+      <struct name="CollisionDamageBlock">
+        <value type="TagReference" name="collision damage" disabled="false" extensions="jpt!" />
+        <value type="Real" name="min game acc default" disabled="false">
+          <tooltip>0-oo</tooltip>
+        </value>
+        <value type="Real" name="max game acc default" disabled="false">
+          <tooltip>0-oo</tooltip>
+        </value>
+        <value type="Real" name="min game scale default" disabled="false">
+          <tooltip>0-1</tooltip>
+        </value>
+        <value type="Real" name="max game scale default" disabled="false">
+          <tooltip>0-1</tooltip>
+        </value>
+        <value type="Real" name="min abs acc default" disabled="false">
+          <tooltip>0-oo</tooltip>
+        </value>
+        <value type="Real" name="max abs acc default" disabled="false">
+          <tooltip>0-oo</tooltip>
+        </value>
+        <value type="Real" name="min abs scale default" disabled="false">
+          <tooltip>0-1</tooltip>
+        </value>
+        <value type="Real" name="max abs scale default" disabled="false">
+          <tooltip>0-1</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="collision damage" disabled="false" struct="CollisionDamageBlock" maxelements="1" />
+      <struct name="SoundGlobalsBlock">
+        <value type="TagReference" name="sound classes" disabled="false" extensions="sncl" />
+        <value type="TagReference" name="sound effects" disabled="false" extensions="sfx+" />
+        <value type="TagReference" name="sound mix" disabled="false" extensions="snmx" />
+        <value type="TagReference" name="sound combat dialogue constants" disabled="false" extensions="spk!" />
+        <value type="LongInteger" name="_unnamed0" />
+      </struct>
+      <value type="Block" name="sound globals" disabled="false" struct="SoundGlobalsBlock" maxelements="1" />
+      <struct name="AiGlobalsBlock">
+        <value type="Real" name="danger broadly facing" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="4" />
+        <value type="Real" name="danger shooting near" disabled="false" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <value type="Real" name="danger shooting at" disabled="false" />
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="Real" name="danger extremely close" disabled="false" />
+        <value type="Pad" name="_unnamed3" length="4" />
+        <value type="Real" name="danger shield damage" disabled="false" />
+        <value type="Real" name="danger exetended shield damage" disabled="false" />
+        <value type="Real" name="danger body damage" disabled="false" />
+        <value type="Real" name="danger extended body damage" disabled="false" />
+        <value type="Pad" name="_unnamed4" length="48" />
+        <value type="TagReference" name="global dialogue tag" disabled="false" extensions="adlg" />
+        <value type="StringId" name="default mission dialogue sound effect" disabled="false" />
+        <value type="Pad" name="_unnamed5" length="20" />
+        <value type="Real" name="jump down" disabled="false" unit="wu/tick" />
+        <value type="Real" name="jump step" disabled="false" unit="wu/tick" />
+        <value type="Real" name="jump crouch" disabled="false" unit="wu/tick" />
+        <value type="Real" name="jump stand" disabled="false" unit="wu/tick" />
+        <value type="Real" name="jump storey" disabled="false" unit="wu/tick" />
+        <value type="Real" name="jump tower" disabled="false" unit="wu/tick" />
+        <value type="Real" name="max jump down height down" disabled="false" unit="wu" />
+        <value type="Real" name="max jump down height step" disabled="false" unit="wu" />
+        <value type="Real" name="max jump down height crouch" disabled="false" unit="wu" />
+        <value type="Real" name="max jump down height stand" disabled="false" unit="wu" />
+        <value type="Real" name="max jump down height storey" disabled="false" unit="wu" />
+        <value type="Real" name="max jump down height tower" disabled="false" unit="wu" />
+        <value type="RealBounds" name="hoist step" disabled="false" unit="wus" />
+        <value type="RealBounds" name="hoist crouch" disabled="false" unit="wus" />
+        <value type="RealBounds" name="hoist stand" disabled="false" unit="wus" />
+        <value type="Pad" name="_unnamed6" length="24" />
+        <value type="RealBounds" name="vault step" disabled="false" unit="wus" />
+        <value type="RealBounds" name="vault crouch" disabled="false" unit="wus" />
+        <value type="Pad" name="_unnamed7" length="48" />
+        <struct name="AiGlobalsGravemindBlock">
+          <value type="Real" name="min retreat time" disabled="false" unit="secs" />
+          <value type="Real" name="ideal retreat time" disabled="false" unit="secs" />
+          <value type="Real" name="max retreat time" disabled="false" unit="secs" />
+        </struct>
+        <value type="Block" name="gravemind properties" disabled="false" struct="AiGlobalsGravemindBlock" maxelements="1" />
+        <value type="Pad" name="_unnamed8" length="48" />
+        <value type="Real" name="scary target threhold" disabled="false">
+          <tooltip>A target of this scariness is offically considered scary (by combat dialogue, etc.)</tooltip>
+        </value>
+        <value type="Real" name="scary weapon threhold" disabled="false">
+          <tooltip>A weapon of this scariness is offically considered scary (by combat dialogue, etc.)</tooltip>
+        </value>
+        <value type="Real" name="player scariness" disabled="false" />
+        <value type="Real" name="berserking actor scariness" disabled="false" />
+      </struct>
+      <value type="Block" name="ai globals" disabled="false" struct="AiGlobalsBlock" maxelements="1" />
+      <struct name="GameGlobalsDamageBlock">
+        <struct name="DamageGroupBlock">
+          <value type="StringId" name="name" disabled="false" blockname="true" />
+          <struct name="ArmorModifierBlock">
+            <value type="StringId" name="name" disabled="false" blockname="true" />
+            <value type="Real" name="damage multiplier" disabled="false" />
+          </struct>
+          <value type="Block" name="armor modifiers" disabled="false" struct="ArmorModifierBlock" maxelements="2147483647" />
+        </struct>
+        <value type="Block" name="damage groups" disabled="false" struct="DamageGroupBlock" maxelements="2147483647" />
+      </struct>
+      <value type="Block" name="damage table" disabled="false" struct="GameGlobalsDamageBlock" maxelements="1" />
+      <struct name="GNullBlock" />
+      <value type="Block" name="_unnamed1" struct="GNullBlock" maxelements="0" />
+      <struct name="SoundBlock">
+        <value type="TagReference" name="sound OBSOLETE" disabled="false" extensions="????" />
+      </struct>
+      <value type="Block" name="sounds" disabled="false" struct="SoundBlock" maxelements="2" />
+      <struct name="CameraBlock">
+        <value type="TagReference" name="default unit camera track" disabled="false" extensions="trak" />
+        <value type="Real" name="default change pause" disabled="false" />
+        <value type="Real" name="first person change pause" disabled="false" />
+        <value type="Real" name="following camera change pause" disabled="false" />
+      </struct>
+      <value type="Block" name="camera" disabled="false" struct="CameraBlock" maxelements="1" />
+      <struct name="PlayerControlBlock">
+        <value type="RealFraction" name="magnetism friction" disabled="false">
+          <tooltip>how much the crosshair slows over enemies</tooltip>
+        </value>
+        <value type="RealFraction" name="magnetism adhesion" disabled="false">
+          <tooltip>how much the crosshair sticks to enemies</tooltip>
+        </value>
+        <value type="RealFraction" name="inconsequential target scale" disabled="false">
+          <tooltip>scales magnetism level for inconsequential targets like infection forms</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="12" />
+        <value type="RealPoint2d" name="crosshair location" disabled="false">
+          <tooltip>-1..1, 0 is middle of the screen</tooltip>
+        </value>
+        <value type="Real" name="seconds to start" disabled="false">
+          <tooltip>how long you must be pegged before you start sprinting</tooltip>
+        </value>
+        <value type="Real" name="seconds to full speed" disabled="false">
+          <tooltip>how long you must sprint before you reach top speed</tooltip>
+        </value>
+        <value type="Real" name="decay rate" disabled="false">
+          <tooltip>how fast being unpegged decays the timer (seconds per second)</tooltip>
+        </value>
+        <value type="Real" name="full speed multiplier" disabled="false">
+          <tooltip>how much faster we actually go when at full sprint</tooltip>
+        </value>
+        <value type="Real" name="pegged magnitude" disabled="false">
+          <tooltip>how far the stick needs to be pressed before being considered pegged</tooltip>
+        </value>
+        <value type="Real" name="pegged angular threshold" disabled="false">
+          <tooltip>how far off straight up (in degrees) we consider pegged</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed1" length="8" />
+        <value type="Real" name="look default pitch rate" disabled="false" unit="degrees" />
+        <value type="Real" name="look default yaw rate" disabled="false" unit="degrees" />
+        <value type="RealFraction" name="look peg threshold 01" disabled="false">
+          <tooltip>magnitude of yaw for pegged acceleration to kick in</tooltip>
+        </value>
+        <value type="Real" name="look yaw acceleration time" disabled="false" unit="seconds">
+          <tooltip>time for a pegged look to reach maximum effect</tooltip>
+        </value>
+        <value type="Real" name="look yaw acceleration scale" disabled="false">
+          <tooltip>maximum effect of a pegged look (scales last value in the look function below)</tooltip>
+        </value>
+        <value type="Real" name="look pitch acceleration time" disabled="false" unit="seconds">
+          <tooltip>time for a pegged look to reach maximum effect</tooltip>
+        </value>
+        <value type="Real" name="look pitch acceleration scale" disabled="false">
+          <tooltip>maximum effect of a pegged look (scales last value in the look function below)</tooltip>
+        </value>
+        <value type="Real" name="look autolevelling scale" disabled="false">
+          <tooltip>1 is fast, 0 is none, &gt;1 will probably be really fast</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="8" />
+        <value type="Real" name="gravity_scale" disabled="false" />
+        <value type="Pad" name="_unnamed3" length="2" />
+        <value type="ShortInteger" name="minimum autolevelling ticks" disabled="false">
+          <tooltip>amount of time player needs to move and not look up or down for autolevelling to kick in</tooltip>
+        </value>
+        <value type="Angle" name="minimum angle for vehicle flipping" disabled="false">
+          <tooltip>0 means the vehicle's up vector is along the ground, 90 means the up vector is pointing straight up:degrees</tooltip>
+        </value>
+        <struct name="LookFunctionBlock">
+          <value type="Real" name="scale" disabled="false" />
+        </struct>
+        <value type="Block" name="look function" disabled="false" struct="LookFunctionBlock" maxelements="16" />
+        <value type="Real" name="minimum action hold time" disabled="false" unit="seconds">
+          <tooltip>time that player needs to press ACTION to register as a HOLD</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="player control" disabled="false" struct="PlayerControlBlock" maxelements="1" />
+      <struct name="DifficultyBlock">
+        <value type="Real" name="easy enemy damage" disabled="false">
+          <tooltip>enemy damage multiplier on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal enemy damage" disabled="false">
+          <tooltip>enemy damage multiplier on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard enemy damage" disabled="false">
+          <tooltip>enemy damage multiplier on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs enemy damage" disabled="false">
+          <tooltip>enemy damage multiplier on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy enemy vitality" disabled="false">
+          <tooltip>enemy maximum body vitality scale on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal enemy vitality" disabled="false">
+          <tooltip>enemy maximum body vitality scale on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard enemy vitality" disabled="false">
+          <tooltip>enemy maximum body vitality scale on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs enemy vitality" disabled="false">
+          <tooltip>enemy maximum body vitality scale on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy enemy shield" disabled="false">
+          <tooltip>enemy maximum shield vitality scale on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal enemy shield" disabled="false">
+          <tooltip>enemy maximum shield vitality scale on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard enemy shield" disabled="false">
+          <tooltip>enemy maximum shield vitality scale on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs enemy shield" disabled="false">
+          <tooltip>enemy maximum shield vitality scale on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy enemy recharge" disabled="false">
+          <tooltip>enemy shield recharge scale on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal enemy recharge" disabled="false">
+          <tooltip>enemy shield recharge scale on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard enemy recharge" disabled="false">
+          <tooltip>enemy shield recharge scale on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs enemy recharge" disabled="false">
+          <tooltip>enemy shield recharge scale on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy friend damage" disabled="false">
+          <tooltip>friend damage multiplier on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal friend damage" disabled="false">
+          <tooltip>friend damage multiplier on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard friend damage" disabled="false">
+          <tooltip>friend damage multiplier on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs friend damage" disabled="false">
+          <tooltip>friend damage multiplier on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy friend vitality" disabled="false">
+          <tooltip>friend maximum body vitality scale on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal friend vitality" disabled="false">
+          <tooltip>friend maximum body vitality scale on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard friend vitality" disabled="false">
+          <tooltip>friend maximum body vitality scale on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs friend vitality" disabled="false">
+          <tooltip>friend maximum body vitality scale on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy friend shield" disabled="false">
+          <tooltip>friend maximum shield vitality scale on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal friend shield" disabled="false">
+          <tooltip>friend maximum shield vitality scale on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard friend shield" disabled="false">
+          <tooltip>friend maximum shield vitality scale on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs friend shield" disabled="false">
+          <tooltip>friend maximum shield vitality scale on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy friend recharge" disabled="false">
+          <tooltip>friend shield recharge scale on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal friend recharge" disabled="false">
+          <tooltip>friend shield recharge scale on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard friend recharge" disabled="false">
+          <tooltip>friend shield recharge scale on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs friend recharge" disabled="false">
+          <tooltip>friend shield recharge scale on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy infection forms" disabled="false">
+          <tooltip>toughness of infection forms (may be negative) on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal infection forms" disabled="false">
+          <tooltip>toughness of infection forms (may be negative) on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard infection forms" disabled="false">
+          <tooltip>toughness of infection forms (may be negative) on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs infection forms" disabled="false">
+          <tooltip>toughness of infection forms (may be negative) on impossible difficulty</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="16" />
+        <value type="Real" name="easy rate of fire" disabled="false">
+          <tooltip>enemy rate of fire scale on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal rate of fire" disabled="false">
+          <tooltip>enemy rate of fire scale on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard rate of fire" disabled="false">
+          <tooltip>enemy rate of fire scale on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs rate of fire" disabled="false">
+          <tooltip>enemy rate of fire scale on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy projectile error" disabled="false">
+          <tooltip>enemy projectile error scale, as a fraction of their base firing error. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal projectile error" disabled="false">
+          <tooltip>enemy projectile error scale, as a fraction of their base firing error. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard projectile error" disabled="false">
+          <tooltip>enemy projectile error scale, as a fraction of their base firing error. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs projectile error" disabled="false">
+          <tooltip>enemy projectile error scale, as a fraction of their base firing error. on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy burst error" disabled="false">
+          <tooltip>enemy burst error scale; reduces intra-burst shot distance. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal burst error" disabled="false">
+          <tooltip>enemy burst error scale; reduces intra-burst shot distance. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard burst error" disabled="false">
+          <tooltip>enemy burst error scale; reduces intra-burst shot distance. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs burst error" disabled="false">
+          <tooltip>enemy burst error scale; reduces intra-burst shot distance. on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy new target delay" disabled="false">
+          <tooltip>enemy new-target delay scale factor. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal new target delay" disabled="false">
+          <tooltip>enemy new-target delay scale factor. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard new target delay" disabled="false">
+          <tooltip>enemy new-target delay scale factor. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs new target delay" disabled="false">
+          <tooltip>enemy new-target delay scale factor. on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy burst separation" disabled="false">
+          <tooltip>delay time between bursts scale factor for enemies. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal burst separation" disabled="false">
+          <tooltip>delay time between bursts scale factor for enemies. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard burst separation" disabled="false">
+          <tooltip>delay time between bursts scale factor for enemies. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs burst separation" disabled="false">
+          <tooltip>delay time between bursts scale factor for enemies. on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy target tracking" disabled="false">
+          <tooltip>additional target tracking fraction for enemies. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal target tracking" disabled="false">
+          <tooltip>additional target tracking fraction for enemies. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard target tracking" disabled="false">
+          <tooltip>additional target tracking fraction for enemies. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs target tracking" disabled="false">
+          <tooltip>additional target tracking fraction for enemies. on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy target leading" disabled="false">
+          <tooltip>additional target leading fraction for enemies. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal target leading" disabled="false">
+          <tooltip>additional target leading fraction for enemies. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard target leading" disabled="false">
+          <tooltip>additional target leading fraction for enemies. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs target leading" disabled="false">
+          <tooltip>additional target leading fraction for enemies. on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy overcharge chance" disabled="false">
+          <tooltip>overcharge chance scale factor for enemies. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal overcharge chance" disabled="false">
+          <tooltip>overcharge chance scale factor for enemies. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard overcharge chance" disabled="false">
+          <tooltip>overcharge chance scale factor for enemies. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs overcharge chance" disabled="false">
+          <tooltip>overcharge chance scale factor for enemies. on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy special fire delay" disabled="false">
+          <tooltip>delay between special-fire shots (overcharge, banshee bombs) scale factor for enemies. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal special fire delay" disabled="false">
+          <tooltip>delay between special-fire shots (overcharge, banshee bombs) scale factor for enemies. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard special fire delay" disabled="false">
+          <tooltip>delay between special-fire shots (overcharge, banshee bombs) scale factor for enemies. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs special fire delay" disabled="false">
+          <tooltip>delay between special-fire shots (overcharge, banshee bombs) scale factor for enemies. on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy guidance vs player" disabled="false">
+          <tooltip>guidance velocity scale factor for all projectiles targeted on a player. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal guidance vs player" disabled="false">
+          <tooltip>guidance velocity scale factor for all projectiles targeted on a player. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard guidance vs player" disabled="false">
+          <tooltip>guidance velocity scale factor for all projectiles targeted on a player. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs guidance vs player" disabled="false">
+          <tooltip>guidance velocity scale factor for all projectiles targeted on a player. on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy melee delay base" disabled="false">
+          <tooltip>delay period added to all melee attacks, even when berserk. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal melee delay base" disabled="false">
+          <tooltip>delay period added to all melee attacks, even when berserk. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard melee delay base" disabled="false">
+          <tooltip>delay period added to all melee attacks, even when berserk. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs melee delay base" disabled="false">
+          <tooltip>delay period added to all melee attacks, even when berserk. on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy melee delay scale" disabled="false">
+          <tooltip>multiplier for all existing non-berserk melee delay times. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal melee delay scale" disabled="false">
+          <tooltip>multiplier for all existing non-berserk melee delay times. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard melee delay scale" disabled="false">
+          <tooltip>multiplier for all existing non-berserk melee delay times. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs melee delay scale" disabled="false">
+          <tooltip>multiplier for all existing non-berserk melee delay times. on impossible difficulty</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed1" length="16" />
+        <value type="Real" name="easy grenade chance scale" disabled="false">
+          <tooltip>scale factor affecting the desicions to throw a grenade. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal grenade chance scale" disabled="false">
+          <tooltip>scale factor affecting the desicions to throw a grenade. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard grenade chance scale" disabled="false">
+          <tooltip>scale factor affecting the desicions to throw a grenade. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs grenade chance scale" disabled="false">
+          <tooltip>scale factor affecting the desicions to throw a grenade. on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy grenade timer scale" disabled="false">
+          <tooltip>scale factor affecting the delay period between grenades thrown from the same encounter (lower is more often). on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal grenade timer scale" disabled="false">
+          <tooltip>scale factor affecting the delay period between grenades thrown from the same encounter (lower is more often). on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard grenade timer scale" disabled="false">
+          <tooltip>scale factor affecting the delay period between grenades thrown from the same encounter (lower is more often). on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs grenade timer scale" disabled="false">
+          <tooltip>scale factor affecting the delay period between grenades thrown from the same encounter (lower is more often). on impossible difficulty</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed2" length="16" />
+        <value type="Pad" name="_unnamed3" length="16" />
+        <value type="Pad" name="_unnamed4" length="16" />
+        <value type="Real" name="easy major upgrade normal" disabled="false">
+          <tooltip>fraction of actors upgraded to their major variant. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal major upgrade normal" disabled="false">
+          <tooltip>fraction of actors upgraded to their major variant. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard major upgrade normal" disabled="false">
+          <tooltip>fraction of actors upgraded to their major variant. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs major upgrade normal" disabled="false">
+          <tooltip>fraction of actors upgraded to their major variant. on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy major upgrade few" disabled="false">
+          <tooltip>fraction of actors upgraded to their major variant when mix = normal. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal major upgrade few" disabled="false">
+          <tooltip>fraction of actors upgraded to their major variant when mix = normal. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard major upgrade few" disabled="false">
+          <tooltip>fraction of actors upgraded to their major variant when mix = normal. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs major upgrade few" disabled="false">
+          <tooltip>fraction of actors upgraded to their major variant when mix = normal. on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy major upgrade many" disabled="false">
+          <tooltip>fraction of actors upgraded to their major variant when mix = many. on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal major upgrade many" disabled="false">
+          <tooltip>fraction of actors upgraded to their major variant when mix = many. on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard major upgrade many" disabled="false">
+          <tooltip>fraction of actors upgraded to their major variant when mix = many. on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs major upgrade many" disabled="false">
+          <tooltip>fraction of actors upgraded to their major variant when mix = many. on impossible difficulty</tooltip>
+        </value>
+        <value type="Real" name="easy player vehicle ram chance" disabled="false">
+          <tooltip>Chance of deciding to ram the player in a vehicle on easy difficulty</tooltip>
+        </value>
+        <value type="Real" name="normal player vehicle ram chance" disabled="false">
+          <tooltip>Chance of deciding to ram the player in a vehicle on normal difficulty</tooltip>
+        </value>
+        <value type="Real" name="hard player vehicle ram chance" disabled="false">
+          <tooltip>Chance of deciding to ram the player in a vehicle on hard difficulty</tooltip>
+        </value>
+        <value type="Real" name="imposs player vehicle ram chance" disabled="false">
+          <tooltip>Chance of deciding to ram the player in a vehicle on impossible difficulty</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed5" length="16" />
+        <value type="Pad" name="_unnamed6" length="16" />
+        <value type="Pad" name="_unnamed7" length="16" />
+        <value type="Pad" name="_unnamed8" length="84" />
+      </struct>
+      <value type="Block" name="difficulty" disabled="false" struct="DifficultyBlock" maxelements="1" />
+      <struct name="GrenadesBlock">
+        <value type="ShortInteger" name="maximum count" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="TagReference" name="throwing effect" disabled="false" extensions="effe" />
+        <value type="Pad" name="_unnamed1" length="16" />
+        <value type="TagReference" name="equipment" disabled="false" extensions="eqip" />
+        <value type="TagReference" name="projectile" disabled="false" extensions="proj" />
+      </struct>
+      <value type="Block" name="grenades" disabled="false" struct="GrenadesBlock" maxelements="2" />
+      <struct name="RasterizerDataBlock">
+        <value type="TagReference" name="distance attenuation" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="vector normalization" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="gradients" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="UNUSED" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="UNUSED2" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="UNUSED3" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="glow" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="UNUSED4" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="UNUSED5" disabled="false" extensions="bitm" />
+        <value type="Pad" name="_unnamed0" length="16" />
+        <struct name="VertexShaderReferenceBlock">
+          <value type="TagReference" name="vertex shader" disabled="false" extensions="vrtx" />
+        </struct>
+        <value type="Block" name="global vertex shaders" disabled="false" struct="VertexShaderReferenceBlock" maxelements="32" />
+        <value type="TagReference" name="default 2D" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="default 3D" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="default cube map" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="UNUSED6" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="UNUSED7" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="UNUSED8" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="UNUSED9" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="UNUSED10" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="UNUSED11" disabled="false" extensions="bitm" />
+        <value type="Pad" name="_unnamed1" length="36" />
+        <value type="TagReference" name="global shader" disabled="false" extensions="shad" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="tint edge density" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Real" name="refraction amount" disabled="false" unit="pixels" />
+        <value type="Real" name="distance falloff" disabled="false" />
+        <value type="RealRgbColor" name="tint color" disabled="false" />
+        <value type="Real" name="hyper-stealth refraction" disabled="false" unit="pixels" />
+        <value type="Real" name="hyper-stealth distance falloff" disabled="false" />
+        <value type="RealRgbColor" name="hyper-stealth tint color" disabled="false" />
+        <value type="TagReference" name="UNUSED12" disabled="false" extensions="bitm" />
+      </struct>
+      <value type="Block" name="rasterizer data" disabled="false" struct="RasterizerDataBlock" maxelements="1" />
+      <struct name="InterfaceTagReferences">
+        <value type="TagReference" name="obsolete1" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="obsolete2" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="screen color table" disabled="false" extensions="colo" />
+        <value type="TagReference" name="hud color table" disabled="false" extensions="colo" />
+        <value type="TagReference" name="editor color table" disabled="false" extensions="colo" />
+        <value type="TagReference" name="dialog color table" disabled="false" extensions="colo" />
+        <value type="TagReference" name="hud globals" disabled="false" extensions="hudg" />
+        <value type="TagReference" name="motion sensor sweep bitmap" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="motion sensor sweep bitmap mask" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="multiplayer hud bitmap" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="_unnamed0" extensions="????" />
+        <value type="TagReference" name="hud digits definition" disabled="false" extensions="hud#" />
+        <value type="TagReference" name="motion sensor blip bitmap" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="interface goo map1" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="interface goo map2" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="interface goo map3" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="mainmenu ui globals" disabled="false" extensions="wgtz" />
+        <value type="TagReference" name="singleplayer ui globals" disabled="false" extensions="wgtz" />
+        <value type="TagReference" name="multiplayer ui globals" disabled="false" extensions="wgtz" />
+      </struct>
+      <value type="Block" name="interface tags" disabled="false" struct="InterfaceTagReferences" maxelements="1" />
+      <struct name="CheatWeaponsBlock">
+        <value type="TagReference" name="weapon" disabled="false" extensions="item" blockname="true" />
+      </struct>
+      <value type="Block" name="weapon list update _weapon_list enum in game_globalsh" disabled="false" struct="CheatWeaponsBlock" maxelements="20" />
+      <struct name="CheatPowerupsBlock">
+        <value type="TagReference" name="powerup" disabled="false" extensions="eqip" blockname="true" />
+      </struct>
+      <value type="Block" name="cheat powerups" disabled="false" struct="CheatPowerupsBlock" maxelements="20" />
+      <struct name="MultiplayerInformationBlock">
+        <value type="TagReference" name="flag" disabled="false" extensions="item" />
+        <value type="TagReference" name="unit" disabled="false" extensions="unit" />
+        <struct name="VehiclesBlock">
+          <value type="TagReference" name="vehicle" disabled="false" extensions="vehi" blockname="true" />
+        </struct>
+        <value type="Block" name="vehicles" disabled="false" struct="VehiclesBlock" maxelements="20" />
+        <value type="TagReference" name="hill shader" disabled="false" extensions="shad" />
+        <value type="TagReference" name="flag shader" disabled="false" extensions="shad" />
+        <value type="TagReference" name="ball" disabled="false" extensions="item" />
+        <struct name="SoundsBlock">
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+        </struct>
+        <value type="Block" name="sounds" disabled="false" struct="SoundsBlock" maxelements="60" />
+        <value type="TagReference" name="in game text" disabled="false" extensions="unic" />
+        <value type="Pad" name="_unnamed0" length="40" />
+        <struct name="GameEngineGeneralEventBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="quantity message" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="event" length="2" disabled="false" blockname="true">
+            <item value="0" name="kill" />
+            <item value="1" name="suicide" />
+            <item value="2" name="kill teammate" />
+            <item value="3" name="victory" />
+            <item value="4" name="team victory" />
+            <item value="5" name="unused1" />
+            <item value="6" name="unused2" />
+            <item value="7" name="1 min to win" />
+            <item value="8" name="team 1 min to win" />
+            <item value="9" name="30 secs to win" />
+            <item value="10" name="team 30 secs to win" />
+            <item value="11" name="player quit" />
+            <item value="12" name="player joined" />
+            <item value="13" name="killed by unknown" />
+            <item value="14" name="30 minutes left" />
+            <item value="15" name="15 minutes left" />
+            <item value="16" name="5 minutes left" />
+            <item value="17" name="1 minute left" />
+            <item value="18" name="time expired" />
+            <item value="19" name="game over" />
+            <item value="20" name="respawn tick" />
+            <item value="21" name="last respawn tick" />
+            <item value="22" name="teleporter used" />
+            <item value="23" name="player changed team" />
+            <item value="24" name="player rejoined" />
+            <item value="25" name="gained lead" />
+            <item value="26" name="gained team lead" />
+            <item value="27" name="lost lead" />
+            <item value="28" name="lost team lead" />
+            <item value="29" name="tied leader" />
+            <item value="30" name="tied team leader" />
+            <item value="31" name="round over" />
+            <item value="32" name="30 seconds left" />
+            <item value="33" name="10 seconds left" />
+            <item value="34" name="kill (falling)" />
+            <item value="35" name="kill (collision)" />
+            <item value="36" name="kill (melee)" />
+            <item value="37" name="sudden death" />
+            <item value="38" name="player booted player" />
+            <item value="39" name="kill (flag carrier)" />
+            <item value="40" name="kill (bomb carrier)" />
+            <item value="41" name="kill (sticky grenade)" />
+            <item value="42" name="kill (sniper)" />
+            <item value="43" name="kill (st. melee)" />
+            <item value="44" name="boarded vehicle" />
+            <item value="45" name="start team noti." />
+            <item value="46" name="telefrag" />
+            <item value="47" name="10 secs to win" />
+            <item value="48" name="team 10 secs to win" />
+          </value>
+          <value type="Enum" name="audience" length="2" disabled="false" blockname="true">
+            <item value="0" name="cause player" />
+            <item value="1" name="cause team" />
+            <item value="2" name="effect player" />
+            <item value="3" name="effect team" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="StringId" name="display string" disabled="false" />
+          <value type="Enum" name="required field" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="Enum" name="excluded audience" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="StringId" name="primary string" disabled="false" />
+          <value type="LongInteger" name="primary string duration" disabled="false" unit="seconds" />
+          <value type="StringId" name="plural display string" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="28" />
+          <value type="Real" name="sound delay announcer only" disabled="false" />
+          <value type="Flags" name="sound flags" length="2" disabled="false">
+            <bit index="0" name="announcer sound" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+          <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="16" />
+          <struct name="SoundResponseDefinitionBlock">
+            <value type="Flags" name="sound flags" length="2" disabled="false">
+              <bit index="0" name="announcer sound" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="TagReference" name="english sound" disabled="false" extensions="snd!" blockname="true" />
+            <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+            <value type="Real" name="probability" disabled="false" />
+          </struct>
+          <value type="Block" name="sound permutations" disabled="false" struct="SoundResponseDefinitionBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="general events" disabled="false" struct="GameEngineGeneralEventBlock" maxelements="128" />
+        <struct name="GameEngineSlayerEventBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="quantity message" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="event" length="2" disabled="false" blockname="true">
+            <item value="0" name="game start" />
+            <item value="1" name="new target" />
+          </value>
+          <value type="Enum" name="audience" length="2" disabled="false" blockname="true">
+            <item value="0" name="cause player" />
+            <item value="1" name="cause team" />
+            <item value="2" name="effect player" />
+            <item value="3" name="effect team" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="StringId" name="display string" disabled="false" />
+          <value type="Enum" name="required field" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="Enum" name="excluded audience" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="StringId" name="primary string" disabled="false" />
+          <value type="LongInteger" name="primary string duration" disabled="false" unit="seconds" />
+          <value type="StringId" name="plural display string" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="28" />
+          <value type="Real" name="sound delay announcer only" disabled="false" />
+          <value type="Flags" name="sound flags" length="2" disabled="false">
+            <bit index="0" name="announcer sound" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+          <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="16" />
+          <struct name="SoundResponseDefinitionBlock">
+            <value type="Flags" name="sound flags" length="2" disabled="false">
+              <bit index="0" name="announcer sound" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="TagReference" name="english sound" disabled="false" extensions="snd!" blockname="true" />
+            <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+            <value type="Real" name="probability" disabled="false" />
+          </struct>
+          <value type="Block" name="sound permutations" disabled="false" struct="SoundResponseDefinitionBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="slayer events" disabled="false" struct="GameEngineSlayerEventBlock" maxelements="128" />
+        <struct name="GameEngineCtfEventBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="quantity message" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="event" length="2" disabled="false" blockname="true">
+            <item value="0" name="game start" />
+            <item value="1" name="flag taken" />
+            <item value="2" name="flag dropped" />
+            <item value="3" name="flag returned by player" />
+            <item value="4" name="flag returned by timeout" />
+            <item value="5" name="flag captured" />
+            <item value="6" name="flag new defensive team" />
+            <item value="7" name="flag return faliure" />
+            <item value="8" name="side switch tick" />
+            <item value="9" name="side switch final tick" />
+            <item value="10" name="side switch 30 seconds" />
+            <item value="11" name="side switch 10 seconds" />
+            <item value="12" name="flag contested" />
+            <item value="13" name="flag capture faliure" />
+          </value>
+          <value type="Enum" name="audience" length="2" disabled="false" blockname="true">
+            <item value="0" name="cause player" />
+            <item value="1" name="cause team" />
+            <item value="2" name="effect player" />
+            <item value="3" name="effect team" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="StringId" name="display string" disabled="false" />
+          <value type="Enum" name="required field" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="Enum" name="excluded audience" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="StringId" name="primary string" disabled="false" />
+          <value type="LongInteger" name="primary string duration" disabled="false" unit="seconds" />
+          <value type="StringId" name="plural display string" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="28" />
+          <value type="Real" name="sound delay announcer only" disabled="false" />
+          <value type="Flags" name="sound flags" length="2" disabled="false">
+            <bit index="0" name="announcer sound" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+          <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="16" />
+          <struct name="SoundResponseDefinitionBlock">
+            <value type="Flags" name="sound flags" length="2" disabled="false">
+              <bit index="0" name="announcer sound" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="TagReference" name="english sound" disabled="false" extensions="snd!" blockname="true" />
+            <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+            <value type="Real" name="probability" disabled="false" />
+          </struct>
+          <value type="Block" name="sound permutations" disabled="false" struct="SoundResponseDefinitionBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="ctf events" disabled="false" struct="GameEngineCtfEventBlock" maxelements="128" />
+        <struct name="GameEngineOddballEventBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="quantity message" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="event" length="2" disabled="false" blockname="true">
+            <item value="0" name="game start" />
+            <item value="1" name="ball spawned" />
+            <item value="2" name="ball picked up" />
+            <item value="3" name="ball dropped" />
+            <item value="4" name="ball reset" />
+            <item value="5" name="ball tick" />
+          </value>
+          <value type="Enum" name="audience" length="2" disabled="false" blockname="true">
+            <item value="0" name="cause player" />
+            <item value="1" name="cause team" />
+            <item value="2" name="effect player" />
+            <item value="3" name="effect team" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="StringId" name="display string" disabled="false" />
+          <value type="Enum" name="required field" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="Enum" name="excluded audience" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="StringId" name="primary string" disabled="false" />
+          <value type="LongInteger" name="primary string duration" disabled="false" unit="seconds" />
+          <value type="StringId" name="plural display string" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="28" />
+          <value type="Real" name="sound delay announcer only" disabled="false" />
+          <value type="Flags" name="sound flags" length="2" disabled="false">
+            <bit index="0" name="announcer sound" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+          <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="16" />
+          <struct name="SoundResponseDefinitionBlock">
+            <value type="Flags" name="sound flags" length="2" disabled="false">
+              <bit index="0" name="announcer sound" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="TagReference" name="english sound" disabled="false" extensions="snd!" blockname="true" />
+            <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+            <value type="Real" name="probability" disabled="false" />
+          </struct>
+          <value type="Block" name="sound permutations" disabled="false" struct="SoundResponseDefinitionBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="oddball events" disabled="false" struct="GameEngineOddballEventBlock" maxelements="128" />
+        <struct name="GNullBlock" />
+        <value type="Block" name="_unnamed1" struct="GNullBlock" maxelements="0" />
+        <struct name="GameEngineKingEventBlock">
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="quantity message" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Enum" name="event" length="2" disabled="false" blockname="true">
+            <item value="0" name="game start" />
+            <item value="1" name="hill controlled" />
+            <item value="2" name="hill contested" />
+            <item value="3" name="hill tick" />
+            <item value="4" name="hill move" />
+            <item value="5" name="hill controlled team" />
+            <item value="6" name="hill contested team" />
+          </value>
+          <value type="Enum" name="audience" length="2" disabled="false" blockname="true">
+            <item value="0" name="cause player" />
+            <item value="1" name="cause team" />
+            <item value="2" name="effect player" />
+            <item value="3" name="effect team" />
+            <item value="4" name="all" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="2" />
+          <value type="StringId" name="display string" disabled="false" />
+          <value type="Enum" name="required field" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="Enum" name="excluded audience" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="cause player" />
+            <item value="2" name="cause team" />
+            <item value="3" name="effect player" />
+            <item value="4" name="effect team" />
+          </value>
+          <value type="StringId" name="primary string" disabled="false" />
+          <value type="LongInteger" name="primary string duration" disabled="false" unit="seconds" />
+          <value type="StringId" name="plural display string" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="28" />
+          <value type="Real" name="sound delay announcer only" disabled="false" />
+          <value type="Flags" name="sound flags" length="2" disabled="false">
+            <bit index="0" name="announcer sound" />
+          </value>
+          <value type="Pad" name="_unnamed4" length="2" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!" blockname="true" />
+          <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+          <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+          <value type="Pad" name="_unnamed5" length="4" />
+          <value type="Pad" name="_unnamed6" length="16" />
+          <struct name="SoundResponseDefinitionBlock">
+            <value type="Flags" name="sound flags" length="2" disabled="false">
+              <bit index="0" name="announcer sound" />
+            </value>
+            <value type="Pad" name="_unnamed0" length="2" />
+            <value type="TagReference" name="english sound" disabled="false" extensions="snd!" blockname="true" />
+            <value type="TagReference" name="japanese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="german sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="french sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="spanish sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="italian sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="korean sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="chinese sound" disabled="false" extensions="snd!" />
+            <value type="TagReference" name="portuguese sound" disabled="false" extensions="snd!" />
+            <value type="Real" name="probability" disabled="false" />
+          </struct>
+          <value type="Block" name="sound permutations" disabled="false" struct="SoundResponseDefinitionBlock" maxelements="10" />
+        </struct>
+        <value type="Block" name="king events" disabled="false" struct="GameEngineKingEventBlock" maxelements="128" />
+      </struct>
+      <value type="Block" name="multiplayer information" disabled="false" struct="MultiplayerInformationBlock" maxelements="1" />
+      <struct name="PlayerInformationBlock">
+        <value type="TagReference" name="unused" disabled="false" extensions="unit" />
+        <value type="Pad" name="_unnamed0" length="28" />
+        <value type="Real" name="walking speed" disabled="false" unit="world units per second" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <value type="Real" name="run forward" disabled="false" unit="world units per second" />
+        <value type="Real" name="run backward" disabled="false" unit="world units per second" />
+        <value type="Real" name="run sideways" disabled="false" unit="world units per second" />
+        <value type="Real" name="run acceleration" disabled="false" unit="world units per second squared" />
+        <value type="Real" name="sneak forward" disabled="false" unit="world units per second" />
+        <value type="Real" name="sneak backward" disabled="false" unit="world units per second" />
+        <value type="Real" name="sneak sideways" disabled="false" unit="world units per second" />
+        <value type="Real" name="sneak acceleration" disabled="false" unit="world units per second squared" />
+        <value type="Real" name="airborne acceleration" disabled="false" unit="world units per second squared" />
+        <value type="Pad" name="_unnamed2" length="16" />
+        <value type="RealPoint3d" name="grenade origin" disabled="false" />
+        <value type="Pad" name="_unnamed3" length="12" />
+        <value type="Real" name="stun movement penalty" disabled="false" unit="[0,1]">
+          <tooltip>1.0 prevents moving while stunned</tooltip>
+        </value>
+        <value type="Real" name="stun turning penalty" disabled="false" unit="[0,1]">
+          <tooltip>1.0 prevents turning while stunned</tooltip>
+        </value>
+        <value type="Real" name="stun jumping penalty" disabled="false" unit="[0,1]">
+          <tooltip>1.0 prevents jumping while stunned</tooltip>
+        </value>
+        <value type="Real" name="minimum stun time" disabled="false" unit="seconds">
+          <tooltip>all stunning damage will last for at least this long</tooltip>
+        </value>
+        <value type="Real" name="maximum stun time" disabled="false" unit="seconds">
+          <tooltip>no stunning damage will last for longer than this</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed4" length="8" />
+        <value type="RealBounds" name="first person idle time" disabled="false" unit="seconds" />
+        <value type="RealFraction" name="first person skip fraction" disabled="false" unit="[0,1]" />
+        <value type="Pad" name="_unnamed5" length="16" />
+        <value type="TagReference" name="coop respawn effect" disabled="false" extensions="effe" />
+        <value type="LongInteger" name="binoculars zoom count" disabled="false" />
+        <value type="RealBounds" name="binoculars zoom range" disabled="false" />
+        <value type="TagReference" name="binoculars zoom in sound" disabled="false" extensions="snd!" />
+        <value type="TagReference" name="binoculars zoom out sound" disabled="false" extensions="snd!" />
+        <value type="Pad" name="_unnamed6" length="16" />
+        <value type="TagReference" name="active camouflage on" disabled="false" extensions="snd!" />
+        <value type="TagReference" name="active camouflage off" disabled="false" extensions="snd!" />
+        <value type="TagReference" name="active camouflage error" disabled="false" extensions="snd!" />
+        <value type="TagReference" name="active camouflage ready" disabled="false" extensions="snd!" />
+        <value type="TagReference" name="flashlight on" disabled="false" extensions="snd!" />
+        <value type="TagReference" name="flashlight off" disabled="false" extensions="snd!" />
+        <value type="TagReference" name="ice cream" disabled="false" extensions="snd!" />
+      </struct>
+      <value type="Block" name="player information" disabled="false" struct="PlayerInformationBlock" maxelements="1" />
+      <struct name="PlayerRepresentationBlock">
+        <value type="TagReference" name="first person hands" disabled="false" extensions="mode" />
+        <value type="TagReference" name="first person body" disabled="false" extensions="mode" />
+        <value type="Pad" name="_unnamed0" length="40" />
+        <value type="Pad" name="_unnamed1" length="120" />
+        <value type="TagReference" name="third person unit" disabled="false" extensions="unit" />
+        <value type="StringId" name="third person variant" disabled="false" />
+      </struct>
+      <value type="Block" name="player representation" disabled="false" struct="PlayerRepresentationBlock" maxelements="4" />
+      <struct name="FallingDamageBlock">
+        <value type="Pad" name="_unnamed0" length="8" />
+        <value type="RealBounds" name="harmful falling distance" disabled="false" unit="world units" />
+        <value type="TagReference" name="falling damage" disabled="false" extensions="jpt!" />
+        <value type="Pad" name="_unnamed1" length="8" />
+        <value type="Real" name="maximum falling distance" disabled="false" unit="world units" />
+        <value type="TagReference" name="distance damage" disabled="false" extensions="jpt!" />
+        <value type="TagReference" name="vehicle environemtn collision damage effect" disabled="false" extensions="jpt!" />
+        <value type="TagReference" name="vehicle killed unit damage effect" disabled="false" extensions="jpt!" />
+        <value type="TagReference" name="vehicle collision damage" disabled="false" extensions="jpt!" />
+        <value type="TagReference" name="flaming death damage" disabled="false" extensions="jpt!" />
+        <value type="Pad" name="_unnamed2" length="28" />
+      </struct>
+      <value type="Block" name="falling damage" disabled="false" struct="FallingDamageBlock" maxelements="1" />
+      <struct name="OldMaterialsBlock">
+        <value type="StringId" name="new material name" disabled="false" />
+        <value type="StringId" name="new general material name" disabled="false" />
+        <value type="Real" name="ground friction scale" disabled="false">
+          <tooltip>fraction of original velocity parallel to the ground after one tick</tooltip>
+        </value>
+        <value type="Real" name="ground friction normal k1 scale" disabled="false">
+          <tooltip>cosine of angle at which friction falls off</tooltip>
+        </value>
+        <value type="Real" name="ground friction normal k0 scale" disabled="false">
+          <tooltip>cosine of angle at which friction is zero</tooltip>
+        </value>
+        <value type="Real" name="ground depth scale" disabled="false">
+          <tooltip>depth a point mass rests in the ground</tooltip>
+        </value>
+        <value type="Real" name="ground damp fraction scale" disabled="false">
+          <tooltip>fraction of original velocity perpendicular to the ground after one tick</tooltip>
+        </value>
+        <value type="TagReference" name="melee hit sound" disabled="false" extensions="snd!" />
+      </struct>
+      <value type="Block" name="old materials" disabled="false" struct="OldMaterialsBlock" maxelements="33" />
+      <struct name="MaterialsBlock">
+        <value type="StringId" name="name" disabled="false" blockname="true" />
+        <value type="StringId" name="parent name" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="flammable" />
+          <bit index="1" name="biomass" />
+        </value>
+        <value type="Enum" name="old material type" length="2" disabled="false">
+          <item value="0" name="dirt" />
+          <item value="1" name="sand" />
+          <item value="2" name="stone" />
+          <item value="3" name="snow" />
+          <item value="4" name="wood" />
+          <item value="5" name="metal (hollow)" />
+          <item value="6" name="metal (thin)" />
+          <item value="7" name="metal (thick)" />
+          <item value="8" name="rubber" />
+          <item value="9" name="glass" />
+          <item value="10" name="force field" />
+          <item value="11" name="grunt" />
+          <item value="12" name="hunter armor" />
+          <item value="13" name="hunter skin" />
+          <item value="14" name="elite" />
+          <item value="15" name="jackal" />
+          <item value="16" name="jackal energy shield" />
+          <item value="17" name="engineer skin" />
+          <item value="18" name="engineer force field" />
+          <item value="19" name="flood combat form" />
+          <item value="20" name="flood carrier form" />
+          <item value="21" name="cyborg armor" />
+          <item value="22" name="cyborg energy shield" />
+          <item value="23" name="human armor" />
+          <item value="24" name="human skin" />
+          <item value="25" name="sentinel" />
+          <item value="26" name="monitor" />
+          <item value="27" name="plastic" />
+          <item value="28" name="water" />
+          <item value="29" name="leaves" />
+          <item value="30" name="elite energy shield" />
+          <item value="31" name="ice" />
+          <item value="32" name="hunter shield" />
+        </value>
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="StringId" name="general armor" disabled="false" />
+        <value type="StringId" name="specific armor" disabled="false" />
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="Real" name="friction" disabled="false" />
+        <value type="RealFraction" name="restitution" disabled="false" />
+        <value type="Real" name="density" disabled="false" unit="kg/m3" blockname="true" />
+        <value type="TagReference" name="old material physics" disabled="false" extensions="mpdt" />
+        <value type="TagReference" name="breakable surface" disabled="false" extensions="bsdt" />
+        <value type="TagReference" name="sound sweetener small" disabled="false" extensions="snd!" />
+        <value type="TagReference" name="sound sweetener medium" disabled="false" extensions="snd!" />
+        <value type="TagReference" name="sound sweetener large" disabled="false" extensions="snd!" />
+        <value type="TagReference" name="sound sweetener rolling" disabled="false" extensions="lsnd" />
+        <value type="TagReference" name="sound sweetener grinding" disabled="false" extensions="lsnd" />
+        <value type="TagReference" name="sound sweetener melee" disabled="false" extensions="snd!" />
+        <value type="TagReference" name="_unnamed3" extensions="????" />
+        <value type="TagReference" name="effect sweetener small" disabled="false" extensions="effe" />
+        <value type="TagReference" name="effect sweetener medium" disabled="false" extensions="effe" />
+        <value type="TagReference" name="effect sweetener large" disabled="false" extensions="effe" />
+        <value type="TagReference" name="effect sweetener rolling" disabled="false" extensions="effe" />
+        <value type="TagReference" name="effect sweetener grinding" disabled="false" extensions="effe" />
+        <value type="TagReference" name="effect sweetener melee" disabled="false" extensions="effe" />
+        <value type="TagReference" name="_unnamed4" extensions="????" />
+        <value type="Flags" name="sweetener inheritance flags" length="4" disabled="false">
+          <bit index="0" name="sound_small" />
+          <bit index="1" name="sound_medium" />
+          <bit index="2" name="sound_large" />
+          <bit index="3" name="sound_rolling" />
+          <bit index="4" name="sound_grinding" />
+          <bit index="5" name="sound_melee" />
+          <bit index="6" name="" />
+          <bit index="7" name="effect_small" />
+          <bit index="8" name="effect_medium" />
+          <bit index="9" name="effect_large" />
+          <bit index="10" name="effect_rolling" />
+          <bit index="11" name="effect_grinding" />
+          <bit index="12" name="effect_melee" />
+          <bit index="13" name="" />
+        </value>
+        <value type="TagReference" name="material effects" disabled="false" extensions="foot" />
+      </struct>
+      <value type="Block" name="materials" disabled="false" struct="MaterialsBlock" maxelements="256" />
+      <struct name="MultiplayerUiBlock">
+        <value type="TagReference" name="random player names" disabled="false" extensions="unic" />
+        <struct name="MultiplayerColorBlock">
+          <value type="RealRgbColor" name="color" disabled="false" />
+        </struct>
+        <value type="Block" name="obsolete profile colors" disabled="false" struct="MultiplayerColorBlock" maxelements="32" />
+        <value type="Block" name="team colors" disabled="false" struct="MultiplayerColorBlock" maxelements="32" />
+        <value type="TagReference" name="team names" disabled="false" extensions="unic" />
+      </struct>
+      <value type="Block" name="multiplayer UI" disabled="false" struct="MultiplayerUiBlock" maxelements="1" />
+      <struct name="MultiplayerColorBlock">
+        <value type="RealRgbColor" name="color" disabled="false" />
+      </struct>
+      <value type="Block" name="profile colors" disabled="false" struct="MultiplayerColorBlock" maxelements="32" />
+      <value type="TagReference" name="multiplayer globals" disabled="false" extensions="mulg" />
+      <struct name="RuntimeLevelsDefinitionBlock">
+        <struct name="RuntimeCampaignLevelBlock">
+          <value type="LongInteger" name="Campaign ID" disabled="false" />
+          <value type="LongInteger" name="Map ID" disabled="false" />
+          <value type="LongerFixedLengthString" name="Path" disabled="false" />
+        </struct>
+        <value type="Block" name="Campaign Levels" disabled="false" struct="RuntimeCampaignLevelBlock" maxelements="20" />
+      </struct>
+      <value type="Block" name="runtime level data" disabled="false" struct="RuntimeLevelsDefinitionBlock" maxelements="1" />
+      <struct name="UiLevelsDefinitionBlock">
+        <struct name="UiCampaignBlock">
+          <value type="LongInteger" name="Campaign ID" disabled="false" />
+          <value type="Skip" name="_unnamed0" length="576" />
+          <value type="Skip" name="_unnamed1" length="2304" />
+        </struct>
+        <value type="Block" name="Campaigns" disabled="false" struct="UiCampaignBlock" maxelements="4" />
+        <struct name="GlobalUiCampaignLevelBlock">
+          <value type="LongInteger" name="Campaign ID" disabled="false" />
+          <value type="LongInteger" name="Map ID" disabled="false" />
+          <value type="TagReference" name="Bitmap" disabled="false" extensions="bitm" />
+          <value type="Skip" name="_unnamed0" length="576" />
+          <value type="Skip" name="_unnamed1" length="2304" />
+        </struct>
+        <value type="Block" name="Campaign Levels" disabled="false" struct="GlobalUiCampaignLevelBlock" maxelements="20" />
+        <struct name="GlobalUiMultiplayerLevelBlock">
+          <value type="LongInteger" name="Map ID" disabled="false" />
+          <value type="TagReference" name="Bitmap" disabled="false" extensions="bitm" />
+          <value type="Skip" name="_unnamed0" length="576" />
+          <value type="Skip" name="_unnamed1" length="2304" />
+          <value type="LongerFixedLengthString" name="Path" disabled="false" />
+          <value type="LongInteger" name="Sort Order" disabled="false" />
+          <value type="Flags" name="Flags" length="1" disabled="false">
+            <bit index="0" name="Unlockable" />
+          </value>
+          <value type="Pad" name="_unnamed2" length="3" />
+          <value type="CharInteger" name="Max Teams None" disabled="false" />
+          <value type="CharInteger" name="Max Teams CTF" disabled="false" />
+          <value type="CharInteger" name="Max Teams Slayer" disabled="false" />
+          <value type="CharInteger" name="Max Teams Oddball" disabled="false" />
+          <value type="CharInteger" name="Max Teams KOTH" disabled="false" />
+          <value type="CharInteger" name="Max Teams Race" disabled="false" />
+          <value type="CharInteger" name="Max Teams Headhunter" disabled="false" />
+          <value type="CharInteger" name="Max Teams Juggernaut" disabled="false" />
+          <value type="CharInteger" name="Max Teams Territories" disabled="false" />
+          <value type="CharInteger" name="Max Teams Assault" disabled="false" />
+          <value type="CharInteger" name="Max Teams Stub 10" disabled="false" />
+          <value type="CharInteger" name="Max Teams Stub 11" disabled="false" />
+          <value type="CharInteger" name="Max Teams Stub 12" disabled="false" />
+          <value type="CharInteger" name="Max Teams Stub 13" disabled="false" />
+          <value type="CharInteger" name="Max Teams Stub 14" disabled="false" />
+          <value type="CharInteger" name="Max Teams Stub 15" disabled="false" />
+        </struct>
+        <value type="Block" name="Multiplayer Levels" disabled="false" struct="GlobalUiMultiplayerLevelBlock" maxelements="50" />
+      </struct>
+      <value type="Block" name="ui level data" disabled="false" struct="UiLevelsDefinitionBlock" maxelements="1" />
+      <value type="TagReference" name="default global lighting" disabled="false" extensions="gldf" />
+      <value type="Pad" name="_unnamed2" length="252" />
+    </struct>
+  </plugin>
+</xml>

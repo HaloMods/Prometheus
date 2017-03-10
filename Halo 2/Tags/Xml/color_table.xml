@@ -1,0 +1,13 @@
+<xml>
+  <name type="colo" parenttype="????">ColorTable</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ColorTableBlock">
+      <struct name="ColorBlock">
+        <value type="FixedLengthString" name="name" disabled="false" blockname="true" />
+        <value type="RealArgbColor" name="color" disabled="false" />
+      </struct>
+      <value type="Block" name="colors" disabled="false" struct="ColorBlock" maxelements="512" />
+    </struct>
+  </plugin>
+</xml>

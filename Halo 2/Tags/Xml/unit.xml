@@ -1,0 +1,256 @@
+<xml>
+  <name type="unit" parenttype="obje">Unit</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="UnitLipsyncScalesStructBlock">
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="circular aiming" />
+        <bit index="1" name="destroyed after dying" />
+        <bit index="2" name="half-speed interpolation" />
+        <bit index="3" name="fires from camera" />
+        <bit index="4" name="entrance inside bounding sphere" />
+        <bit index="5" name="doesn't show readied weapon" />
+        <bit index="6" name="causes passenger dialogue" />
+        <bit index="7" name="resists pings" />
+        <bit index="8" name="melee attack is fatal" />
+        <bit index="9" name="don't reface during pings" />
+        <bit index="10" name="has no aiming" />
+        <bit index="11" name="simple creature" />
+        <bit index="12" name="impact melee attaches to unit" />
+        <bit index="13" name="impact melee dies on shields" />
+        <bit index="14" name="cannot open doors automatically" />
+        <bit index="15" name="melee attackers cannot attach" />
+        <bit index="16" name="not instantly killed by melee" />
+        <bit index="17" name="shield sapping" />
+        <bit index="18" name="runs around flaming" />
+        <bit index="19" name="inconsequential" />
+        <bit index="20" name="special cinematic unit" />
+        <bit index="21" name="ignored by autoaiming" />
+        <bit index="22" name="shields fry infection forms" />
+        <bit index="23" name="unused" />
+        <bit index="24" name="unused" />
+        <bit index="25" name="acts as gunner for parent" />
+        <bit index="26" name="controlled by parent gunner" />
+        <bit index="27" name="parent's primary weapon" />
+        <bit index="28" name="unit has boost" />
+      </value>
+      <value type="Enum" name="default team" length="2" disabled="false">
+        <item value="0" name="default" />
+        <item value="1" name="player" />
+        <item value="2" name="human" />
+        <item value="3" name="covenant" />
+        <item value="4" name="flood" />
+        <item value="5" name="sentinel" />
+        <item value="6" name="heretic" />
+        <item value="7" name="prophet" />
+        <item value="8" name="unused8" />
+        <item value="9" name="unused9" />
+        <item value="10" name="unused10" />
+        <item value="11" name="unused11" />
+        <item value="12" name="unused12" />
+        <item value="13" name="unused13" />
+        <item value="14" name="unused14" />
+        <item value="15" name="unused15" />
+      </value>
+      <value type="Enum" name="constant sound volume" length="2" disabled="false">
+        <item value="0" name="silent" />
+        <item value="1" name="medium" />
+        <item value="2" name="loud" />
+        <item value="3" name="shout" />
+        <item value="4" name="quiet" />
+      </value>
+      <value type="TagReference" name="integrated light toggle" disabled="false" extensions="effe" />
+      <value type="Angle" name="camera field of view" disabled="false" unit="degrees" />
+      <value type="Real" name="camera stiffness" disabled="false" />
+      <value type="StringId" name="camera marker name" disabled="false" />
+      <value type="StringId" name="camera submerged marker name" disabled="false" />
+      <value type="Angle" name="pitch auto-level" disabled="false" />
+      <value type="AngleBounds" name="pitch range" disabled="false" />
+      <struct name="UnitCameraTrackBlock">
+        <value type="TagReference" name="track" disabled="false" extensions="trak" />
+      </struct>
+      <value type="Block" name="camera tracks" disabled="false" struct="UnitCameraTrackBlock" maxelements="2" />
+      <value type="RealVector3d" name="acceleration range" disabled="false" unit="world units per second squared" />
+      <value type="Real" name="accel action scale" disabled="false" unit="actions fail [0,1+]" />
+      <value type="Real" name="accel attach scale" disabled="false" unit="detach unit [0,1+]" />
+      <value type="Real" name="soft ping threshold" disabled="false" unit="[0,1]" />
+      <value type="Real" name="soft ping interrupt time" disabled="false" unit="seconds" />
+      <value type="Real" name="hard ping threshold" disabled="false" unit="[0,1]" />
+      <value type="Real" name="hard ping interrupt time" disabled="false" unit="seconds" />
+      <value type="Real" name="hard death threshold" disabled="false" unit="[0,1]" />
+      <value type="Real" name="feign death threshold" disabled="false" unit="[0,1]" />
+      <value type="Real" name="feign death time" disabled="false" unit="seconds" />
+      <value type="Real" name="distance of evade anim" disabled="false" unit="world units">
+        <tooltip>this must be set to tell the AI how far it should expect our evade animation to move us</tooltip>
+      </value>
+      <value type="Real" name="distance of dive anim" disabled="false" unit="world units">
+        <tooltip>this must be set to tell the AI how far it should expect our dive animation to move us</tooltip>
+      </value>
+      <value type="Real" name="stunned movement threshold" disabled="false" unit="[0,1]">
+        <tooltip>if we take this much damage in a short space of time we will play our 'stunned movement' animations</tooltip>
+      </value>
+      <value type="Real" name="feign death chance" disabled="false" unit="[0,1]" />
+      <value type="Real" name="feign repeat chance" disabled="false" unit="[0,1]" />
+      <value type="TagReference" name="spawned turret character" disabled="false" extensions="char">
+        <tooltip>automatically created character when this unit is driven</tooltip>
+      </value>
+      <value type="ShortIntegerBounds" name="spawned actor count" disabled="false">
+        <tooltip>number of actors which we spawn</tooltip>
+      </value>
+      <value type="Real" name="spawned velocity" disabled="false">
+        <tooltip>velocity at which we throw spawned actors</tooltip>
+      </value>
+      <value type="Angle" name="aiming velocity maximum" disabled="false" unit="degrees per second" />
+      <value type="Angle" name="aiming acceleration maximum" disabled="false" unit="degrees per second squared" />
+      <value type="RealFraction" name="casual aiming modifier" disabled="false" unit="[0,1]" />
+      <value type="Angle" name="looking velocity maximum" disabled="false" unit="degrees per second" />
+      <value type="Angle" name="looking acceleration maximum" disabled="false" unit="degrees per second squared" />
+      <value type="StringId" name="right_hand_node" disabled="false">
+        <tooltip>where the primary weapon is attached</tooltip>
+      </value>
+      <value type="StringId" name="left_hand_node" disabled="false">
+        <tooltip>where the seconday weapon is attached (for dual-pistol modes)</tooltip>
+      </value>
+      <value type="StringId" name="preferred_gun_node" disabled="false">
+        <tooltip>if found, use this gun marker</tooltip>
+      </value>
+      <value type="TagReference" name="melee damage" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="boarding melee damage" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="boarding melee response" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="landing melee damage" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="flurry melee damage" disabled="false" extensions="jpt!" />
+      <value type="TagReference" name="obstacle smash damage" disabled="false" extensions="jpt!" />
+      <value type="Enum" name="motion sensor blip size" length="2" disabled="false">
+        <item value="0" name="medium" />
+        <item value="1" name="small" />
+        <item value="2" name="large" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+      <struct name="UnitPosturesBlock">
+        <value type="StringId" name="name" disabled="false" blockname="true" />
+        <value type="RealVector3d" name="pill offset" disabled="false" />
+      </struct>
+      <value type="Block" name="postures" disabled="false" struct="UnitPosturesBlock" maxelements="20" />
+      <struct name="UnitHudReferenceBlock">
+        <value type="TagReference" name="new unit hud interface" disabled="false" extensions="nhdt" />
+      </struct>
+      <value type="Block" name="NEW HUD INTERFACES" disabled="false" struct="UnitHudReferenceBlock" maxelements="2" />
+      <struct name="DialogueVariantBlock">
+        <value type="ShortInteger" name="variant number" disabled="false">
+          <tooltip>variant number to use this dialogue with (must match the suffix in the permutations on the unit's model)</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="TagReference" name="dialogue" disabled="false" extensions="udlg" />
+      </struct>
+      <value type="Block" name="dialogue variants" disabled="false" struct="DialogueVariantBlock" maxelements="16" />
+      <value type="Real" name="grenade velocity" disabled="false" unit="world units per second" />
+      <value type="Enum" name="grenade type" length="2" disabled="false">
+        <item value="0" name="human fragmentation" />
+        <item value="1" name="covenant plasma" />
+      </value>
+      <value type="ShortInteger" name="grenade count" disabled="false" />
+      <struct name="PoweredSeatBlock">
+        <value type="Real" name="driver powerup time" disabled="false" unit="seconds" />
+        <value type="Real" name="driver powerdown time" disabled="false" unit="seconds" />
+      </struct>
+      <value type="Block" name="powered seats" disabled="false" struct="PoweredSeatBlock" maxelements="2" />
+      <struct name="UnitWeaponBlock">
+        <value type="TagReference" name="weapon" disabled="false" extensions="weap" blockname="true" />
+      </struct>
+      <value type="Block" name="weapons" disabled="false" struct="UnitWeaponBlock" maxelements="4" />
+      <struct name="UnitSeatBlock">
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="invisible" />
+          <bit index="1" name="locked" />
+          <bit index="2" name="driver" />
+          <bit index="3" name="gunner" />
+          <bit index="4" name="third person camera" />
+          <bit index="5" name="allows weapons" />
+          <bit index="6" name="third person on enter" />
+          <bit index="7" name="first person camera slaved to gun." />
+          <bit index="8" name="allow vehicle communication animations" />
+          <bit index="9" name="not valid without driver" />
+          <bit index="10" name="allow AI noncombatants" />
+          <bit index="11" name="boarding seat" />
+          <bit index="12" name="ai firing disabled by max acceleration" />
+          <bit index="13" name="boarding enters seat" />
+          <bit index="14" name="boarding need any passenger" />
+          <bit index="15" name="controls open and close" />
+          <bit index="16" name="invalid for player" />
+          <bit index="17" name="invalid for non-player" />
+          <bit index="18" name="gunner (player only)" />
+          <bit index="19" name="invisible under major damage" />
+        </value>
+        <value type="StringId" name="label" disabled="false" blockname="true" />
+        <value type="StringId" name="marker name" disabled="false" />
+        <value type="StringId" name="entry markers name" disabled="false" />
+        <value type="StringId" name="boarding grenade marker" disabled="false" />
+        <value type="StringId" name="boarding grenade string" disabled="false" />
+        <value type="StringId" name="boarding melee string" disabled="false" />
+        <value type="RealFraction" name="ping scale" disabled="false">
+          <tooltip>nathan is too lazy to make pings for each seat.</tooltip>
+        </value>
+        <value type="Real" name="turnover time" disabled="false" unit="seconds">
+          <tooltip>how much time it takes to evict a rider from a flipped vehicle</tooltip>
+        </value>
+        <value type="RealVector3d" name="acceleration range" disabled="false" unit="world units per second squared" />
+        <value type="Real" name="accel action scale" disabled="false" unit="actions fail [0,1+]" />
+        <value type="Real" name="accel attach scale" disabled="false" unit="detach unit [0,1+]" />
+        <value type="Real" name="AI scariness" disabled="false" />
+        <value type="Enum" name="ai seat type" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="passenger" />
+          <item value="2" name="gunner" />
+          <item value="3" name="small cargo" />
+          <item value="4" name="large cargo" />
+          <item value="5" name="driver" />
+        </value>
+        <value type="ShortBlockIndex" name="boarding seat" disabled="false" block="UnitSeatBlock" />
+        <value type="RealFraction" name="listener interpolation factor" disabled="false">
+          <tooltip>how far to interpolate listener position from camera to occupant's head</tooltip>
+        </value>
+        <value type="RealBounds" name="yaw rate bounds" disabled="false" unit="degrees per second" />
+        <value type="RealBounds" name="pitch rate bounds" disabled="false" unit="degrees per second" />
+        <value type="Real" name="min speed reference" disabled="false" />
+        <value type="Real" name="max speed reference" disabled="false" />
+        <value type="Real" name="speed exponent" disabled="false" />
+        <value type="StringId" name="camera marker name" disabled="false" />
+        <value type="StringId" name="camera submerged marker name" disabled="false" />
+        <value type="Angle" name="pitch auto-level" disabled="false" />
+        <value type="AngleBounds" name="pitch range" disabled="false" />
+        <struct name="UnitCameraTrackBlock">
+          <value type="TagReference" name="track" disabled="false" extensions="trak" />
+        </struct>
+        <value type="Block" name="camera tracks" disabled="false" struct="UnitCameraTrackBlock" maxelements="2" />
+        <struct name="UnitHudReferenceBlock">
+          <value type="TagReference" name="new unit hud interface" disabled="false" extensions="nhdt" />
+        </struct>
+        <value type="Block" name="unit hud interface" disabled="false" struct="UnitHudReferenceBlock" maxelements="2" />
+        <value type="StringId" name="enter seat string" disabled="false" />
+        <value type="Angle" name="yaw minimum" disabled="false" />
+        <value type="Angle" name="yaw maximum" disabled="false" />
+        <value type="TagReference" name="built-in gunner" disabled="false" extensions="char" />
+        <value type="Real" name="entry radius" disabled="false">
+          <tooltip>how close to the entry marker a unit must be</tooltip>
+        </value>
+        <value type="Angle" name="entry marker cone angle" disabled="false">
+          <tooltip>angle from marker forward the unit must be</tooltip>
+        </value>
+        <value type="Angle" name="entry marker facing angle" disabled="false">
+          <tooltip>angle from unit facing the marker must be</tooltip>
+        </value>
+        <value type="Real" name="maximum relative velocity" disabled="false" />
+        <value type="StringId" name="invisible seat region" disabled="false" />
+        <value type="LongInteger" name="runtime invisible seat region index" disabled="true" />
+      </struct>
+      <value type="Block" name="seats" disabled="false" struct="UnitSeatBlock" maxelements="32" />
+      <value type="Real" name="boost peak power" disabled="false" />
+      <value type="Real" name="boost rise power" disabled="false" />
+      <value type="Real" name="boost peak time" disabled="false" />
+      <value type="Real" name="boost fall power" disabled="false" />
+      <value type="Real" name="dead time" disabled="false" />
+      <value type="RealFraction" name="attack weight" disabled="false" />
+      <value type="RealFraction" name="decay weight" disabled="false" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,18 @@
+<xml>
+  <name type="coln" parenttype="????">Colony</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ColonyBlock">
+      <value type="Flags" name="flags" length="2" disabled="false">
+        <bit index="0" name="unused" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+      <value type="Pad" name="_unnamed1" length="4" />
+      <value type="RealBounds" name="radius" disabled="false" />
+      <value type="Pad" name="_unnamed2" length="12" />
+      <value type="RealArgbColor" name="debug color" disabled="false" />
+      <value type="TagReference" name="base map" disabled="false" extensions="bitm" />
+      <value type="TagReference" name="detail map" disabled="false" extensions="bitm" />
+    </struct>
+  </plugin>
+</xml>

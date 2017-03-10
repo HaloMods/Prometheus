@@ -1,0 +1,37 @@
+<xml>
+  <name type="item" parenttype="obje">Item</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ItemBlock">
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="always maintains z up" />
+        <bit index="1" name="destroyed by explosions" />
+        <bit index="2" name="unaffected by gravity" />
+      </value>
+      <value type="ShortInteger" name="OLD message index" disabled="false" />
+      <value type="ShortInteger" name="sort order" disabled="false" />
+      <value type="Real" name="multiplayer on-ground scale" disabled="false" />
+      <value type="Real" name="campaign on-ground scale" disabled="false" />
+      <value type="StringId" name="pickup message" disabled="false" />
+      <value type="StringId" name="swap message" disabled="false" />
+      <value type="StringId" name="pickup or dual msg" disabled="false" />
+      <value type="StringId" name="swap or dual msg" disabled="false" />
+      <value type="StringId" name="dual-only msg" disabled="false" />
+      <value type="StringId" name="picked up msg" disabled="false" />
+      <value type="StringId" name="singluar quantity msg" disabled="false" />
+      <value type="StringId" name="plural quantity msg" disabled="false" />
+      <value type="StringId" name="switch-to msg" disabled="false" />
+      <value type="StringId" name="switch-to from ai msg" disabled="false" />
+      <value type="TagReference" name="UNUSED" disabled="true" extensions="foot" />
+      <value type="TagReference" name="collision sound" disabled="false" extensions="snd!" />
+      <struct name="PredictedBitmapsBlock">
+        <value type="TagReference" name="bitmap" disabled="false" extensions="bitm" />
+      </struct>
+      <value type="Block" name="predicted bitmaps" disabled="false" struct="PredictedBitmapsBlock" maxelements="8" />
+      <value type="TagReference" name="detonation damage effect" disabled="false" extensions="jpt!" />
+      <value type="RealBounds" name="detonation delay" disabled="false" unit="seconds" />
+      <value type="TagReference" name="detonating effect" disabled="false" extensions="effe" />
+      <value type="TagReference" name="detonation effect" disabled="false" extensions="effe" />
+    </struct>
+  </plugin>
+</xml>

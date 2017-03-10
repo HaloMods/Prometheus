@@ -1,0 +1,1506 @@
+<xml>
+  <name type="adlg" parenttype="????">AiDialogueGlobals</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="AiDialogueGlobalsBlock">
+      <struct name="VocalizationDefinitionsBlock0">
+        <value type="StringId" name="vocalization" disabled="false" blockname="true" />
+        <value type="StringId" name="parent vocalization" disabled="false" />
+        <value type="ShortInteger" name="parent index" disabled="true" />
+        <value type="Enum" name="priority" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="recall" />
+          <item value="2" name="idle" />
+          <item value="3" name="comment" />
+          <item value="4" name="idle_response" />
+          <item value="5" name="postcombat" />
+          <item value="6" name="combat" />
+          <item value="7" name="status" />
+          <item value="8" name="respond" />
+          <item value="9" name="warn" />
+          <item value="10" name="act" />
+          <item value="11" name="react" />
+          <item value="12" name="involuntary" />
+          <item value="13" name="scream" />
+          <item value="14" name="scripted" />
+          <item value="15" name="death" />
+        </value>
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="immediate" />
+          <bit index="1" name="interrupt" />
+          <bit index="2" name="cancel low priority" />
+        </value>
+        <value type="Enum" name="glance behavior" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="glance subject short" />
+          <item value="2" name="glance subject long" />
+          <item value="3" name="glance cause short" />
+          <item value="4" name="glance cause long" />
+          <item value="5" name="glance friend short" />
+          <item value="6" name="glance friend long" />
+          <tooltip>how does the speaker of this vocalization direct his gaze?</tooltip>
+        </value>
+        <value type="Enum" name="glance recipient behavior" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="glance subject short" />
+          <item value="2" name="glance subject long" />
+          <item value="3" name="glance cause short" />
+          <item value="4" name="glance cause long" />
+          <item value="5" name="glance friend short" />
+          <item value="6" name="glance friend long" />
+          <tooltip>how does someone who hears me behave?</tooltip>
+        </value>
+        <value type="Enum" name="perception type" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="speaker" />
+          <item value="2" name="listener" />
+        </value>
+        <value type="Enum" name="max combat status" length="2" disabled="false">
+          <item value="0" name="asleep" />
+          <item value="1" name="idle" />
+          <item value="2" name="alert" />
+          <item value="3" name="active" />
+          <item value="4" name="uninspected" />
+          <item value="5" name="definite" />
+          <item value="6" name="certain" />
+          <item value="7" name="visible" />
+          <item value="8" name="clear_los" />
+          <item value="9" name="dangerous" />
+        </value>
+        <value type="Enum" name="animation impulse" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="shakefist" />
+          <item value="2" name="cheer" />
+          <item value="3" name="surprise-front" />
+          <item value="4" name="surprise-back" />
+          <item value="5" name="taunt" />
+          <item value="6" name="brace" />
+          <item value="7" name="point" />
+          <item value="8" name="hold" />
+          <item value="9" name="wave" />
+          <item value="10" name="advance" />
+          <item value="11" name="fallback" />
+        </value>
+        <value type="Enum" name="overlap priority" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="recall" />
+          <item value="2" name="idle" />
+          <item value="3" name="comment" />
+          <item value="4" name="idle_response" />
+          <item value="5" name="postcombat" />
+          <item value="6" name="combat" />
+          <item value="7" name="status" />
+          <item value="8" name="respond" />
+          <item value="9" name="warn" />
+          <item value="10" name="act" />
+          <item value="11" name="react" />
+          <item value="12" name="involuntary" />
+          <item value="13" name="scream" />
+          <item value="14" name="scripted" />
+          <item value="15" name="death" />
+        </value>
+        <value type="Real" name="sound repetition delay" disabled="false" unit="minutes">
+          <tooltip>Minimum delay time between playing the same permutation</tooltip>
+        </value>
+        <value type="Real" name="allowable queue delay" disabled="false" unit="seconds">
+          <tooltip>How long to wait to actually start the vocalization</tooltip>
+        </value>
+        <value type="Real" name="pre voc delay" disabled="false" unit="seconds">
+          <tooltip>How long to wait to actually start the vocalization</tooltip>
+        </value>
+        <value type="Real" name="notification delay" disabled="false" unit="seconds">
+          <tooltip>How long into the vocalization the AI should be notified</tooltip>
+        </value>
+        <value type="Real" name="post voc delay" disabled="false" unit="seconds">
+          <tooltip>How long speech is suppressed in the speaking unit after vocalizing</tooltip>
+        </value>
+        <value type="Real" name="repeat delay" disabled="false" unit="seconds">
+          <tooltip>How long before the same vocalization can be repeated</tooltip>
+        </value>
+        <value type="Real" name="weight" disabled="false" unit="[0-1]">
+          <tooltip>Inherent weight of this vocalization</tooltip>
+        </value>
+        <value type="Real" name="speaker freeze time" disabled="false">
+          <tooltip>speaker won't move for the given amount of time</tooltip>
+        </value>
+        <value type="Real" name="listener freeze time" disabled="false">
+          <tooltip>listener won't move for the given amount of time (from start of vocalization)</tooltip>
+        </value>
+        <value type="Enum" name="speaker emotion" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="asleep" />
+          <item value="2" name="amorous" />
+          <item value="3" name="happy" />
+          <item value="4" name="inquisitive" />
+          <item value="5" name="repulsed" />
+          <item value="6" name="disappointed" />
+          <item value="7" name="shocked" />
+          <item value="8" name="scared" />
+          <item value="9" name="arrogant" />
+          <item value="10" name="annoyed" />
+          <item value="11" name="angry" />
+          <item value="12" name="pensive" />
+          <item value="13" name="pain" />
+        </value>
+        <value type="Enum" name="listener emotion" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="asleep" />
+          <item value="2" name="amorous" />
+          <item value="3" name="happy" />
+          <item value="4" name="inquisitive" />
+          <item value="5" name="repulsed" />
+          <item value="6" name="disappointed" />
+          <item value="7" name="shocked" />
+          <item value="8" name="scared" />
+          <item value="9" name="arrogant" />
+          <item value="10" name="annoyed" />
+          <item value="11" name="angry" />
+          <item value="12" name="pensive" />
+          <item value="13" name="pain" />
+        </value>
+        <value type="Real" name="player skip fraction" disabled="false" />
+        <value type="Real" name="skip fraction" disabled="false" />
+        <value type="StringId" name="Sample line" disabled="false" />
+        <struct name="ResponseBlock">
+          <value type="StringId" name="vocalization name" disabled="false" />
+          <value type="Flags" name="flags" length="2" disabled="false">
+            <bit index="0" name="nonexclusive" />
+            <bit index="1" name="trigger response" />
+          </value>
+          <value type="ShortInteger" name="vocalization index post process" disabled="true" />
+          <value type="Enum" name="response type" length="2" disabled="false">
+            <item value="0" name="friend" />
+            <item value="1" name="enemy" />
+            <item value="2" name="listener" />
+            <item value="3" name="joint" />
+            <item value="4" name="peer" />
+          </value>
+          <value type="ShortInteger" name="dialogue index import" disabled="true" />
+        </struct>
+        <value type="Block" name="reponses" disabled="false" struct="ResponseBlock" maxelements="20" />
+        <struct name="VocalizationDefinitionsBlock1">
+          <value type="StringId" name="vocalization" disabled="false" blockname="true" />
+          <value type="StringId" name="parent vocalization" disabled="false" />
+          <value type="ShortInteger" name="parent index" disabled="true" />
+          <value type="Enum" name="priority" length="2" disabled="false">
+            <item value="0" name="none" />
+            <item value="1" name="recall" />
+            <item value="2" name="idle" />
+            <item value="3" name="comment" />
+            <item value="4" name="idle_response" />
+            <item value="5" name="postcombat" />
+            <item value="6" name="combat" />
+            <item value="7" name="status" />
+            <item value="8" name="respond" />
+            <item value="9" name="warn" />
+            <item value="10" name="act" />
+            <item value="11" name="react" />
+            <item value="12" name="involuntary" />
+            <item value="13" name="scream" />
+            <item value="14" name="scripted" />
+            <item value="15" name="death" />
+          </value>
+          <value type="Flags" name="flags" length="4" disabled="false">
+            <bit index="0" name="immediate" />
+            <bit index="1" name="interrupt" />
+            <bit index="2" name="cancel low priority" />
+          </value>
+          <value type="Enum" name="glance behavior" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="glance subject short" />
+            <item value="2" name="glance subject long" />
+            <item value="3" name="glance cause short" />
+            <item value="4" name="glance cause long" />
+            <item value="5" name="glance friend short" />
+            <item value="6" name="glance friend long" />
+            <tooltip>how does the speaker of this vocalization direct his gaze?</tooltip>
+          </value>
+          <value type="Enum" name="glance recipient behavior" length="2" disabled="false">
+            <item value="0" name="NONE" />
+            <item value="1" name="glance subject short" />
+            <item value="2" name="glance subject long" />
+            <item value="3" name="glance cause short" />
+            <item value="4" name="glance cause long" />
+            <item value="5" name="glance friend short" />
+            <item value="6" name="glance friend long" />
+            <tooltip>how does someone who hears me behave?</tooltip>
+          </value>
+          <value type="Enum" name="perception type" length="2" disabled="false">
+            <item value="0" name="none" />
+            <item value="1" name="speaker" />
+            <item value="2" name="listener" />
+          </value>
+          <value type="Enum" name="max combat status" length="2" disabled="false">
+            <item value="0" name="asleep" />
+            <item value="1" name="idle" />
+            <item value="2" name="alert" />
+            <item value="3" name="active" />
+            <item value="4" name="uninspected" />
+            <item value="5" name="definite" />
+            <item value="6" name="certain" />
+            <item value="7" name="visible" />
+            <item value="8" name="clear_los" />
+            <item value="9" name="dangerous" />
+          </value>
+          <value type="Enum" name="animation impulse" length="2" disabled="false">
+            <item value="0" name="none" />
+            <item value="1" name="shakefist" />
+            <item value="2" name="cheer" />
+            <item value="3" name="surprise-front" />
+            <item value="4" name="surprise-back" />
+            <item value="5" name="taunt" />
+            <item value="6" name="brace" />
+            <item value="7" name="point" />
+            <item value="8" name="hold" />
+            <item value="9" name="wave" />
+            <item value="10" name="advance" />
+            <item value="11" name="fallback" />
+          </value>
+          <value type="Enum" name="overlap priority" length="2" disabled="false">
+            <item value="0" name="none" />
+            <item value="1" name="recall" />
+            <item value="2" name="idle" />
+            <item value="3" name="comment" />
+            <item value="4" name="idle_response" />
+            <item value="5" name="postcombat" />
+            <item value="6" name="combat" />
+            <item value="7" name="status" />
+            <item value="8" name="respond" />
+            <item value="9" name="warn" />
+            <item value="10" name="act" />
+            <item value="11" name="react" />
+            <item value="12" name="involuntary" />
+            <item value="13" name="scream" />
+            <item value="14" name="scripted" />
+            <item value="15" name="death" />
+          </value>
+          <value type="Real" name="sound repetition delay" disabled="false" unit="minutes">
+            <tooltip>Minimum delay time between playing the same permutation</tooltip>
+          </value>
+          <value type="Real" name="allowable queue delay" disabled="false" unit="seconds">
+            <tooltip>How long to wait to actually start the vocalization</tooltip>
+          </value>
+          <value type="Real" name="pre voc delay" disabled="false" unit="seconds">
+            <tooltip>How long to wait to actually start the vocalization</tooltip>
+          </value>
+          <value type="Real" name="notification delay" disabled="false" unit="seconds">
+            <tooltip>How long into the vocalization the AI should be notified</tooltip>
+          </value>
+          <value type="Real" name="post voc delay" disabled="false" unit="seconds">
+            <tooltip>How long speech is suppressed in the speaking unit after vocalizing</tooltip>
+          </value>
+          <value type="Real" name="repeat delay" disabled="false" unit="seconds">
+            <tooltip>How long before the same vocalization can be repeated</tooltip>
+          </value>
+          <value type="Real" name="weight" disabled="false" unit="[0-1]">
+            <tooltip>Inherent weight of this vocalization</tooltip>
+          </value>
+          <value type="Real" name="speaker freeze time" disabled="false">
+            <tooltip>speaker won't move for the given amount of time</tooltip>
+          </value>
+          <value type="Real" name="listener freeze time" disabled="false">
+            <tooltip>listener won't move for the given amount of time (from start of vocalization)</tooltip>
+          </value>
+          <value type="Enum" name="speaker emotion" length="2" disabled="false">
+            <item value="0" name="none" />
+            <item value="1" name="asleep" />
+            <item value="2" name="amorous" />
+            <item value="3" name="happy" />
+            <item value="4" name="inquisitive" />
+            <item value="5" name="repulsed" />
+            <item value="6" name="disappointed" />
+            <item value="7" name="shocked" />
+            <item value="8" name="scared" />
+            <item value="9" name="arrogant" />
+            <item value="10" name="annoyed" />
+            <item value="11" name="angry" />
+            <item value="12" name="pensive" />
+            <item value="13" name="pain" />
+          </value>
+          <value type="Enum" name="listener emotion" length="2" disabled="false">
+            <item value="0" name="none" />
+            <item value="1" name="asleep" />
+            <item value="2" name="amorous" />
+            <item value="3" name="happy" />
+            <item value="4" name="inquisitive" />
+            <item value="5" name="repulsed" />
+            <item value="6" name="disappointed" />
+            <item value="7" name="shocked" />
+            <item value="8" name="scared" />
+            <item value="9" name="arrogant" />
+            <item value="10" name="annoyed" />
+            <item value="11" name="angry" />
+            <item value="12" name="pensive" />
+            <item value="13" name="pain" />
+          </value>
+          <value type="Real" name="player skip fraction" disabled="false" />
+          <value type="Real" name="skip fraction" disabled="false" />
+          <value type="StringId" name="Sample line" disabled="false" />
+          <struct name="ResponseBlock">
+            <value type="StringId" name="vocalization name" disabled="false" />
+            <value type="Flags" name="flags" length="2" disabled="false">
+              <bit index="0" name="nonexclusive" />
+              <bit index="1" name="trigger response" />
+            </value>
+            <value type="ShortInteger" name="vocalization index post process" disabled="true" />
+            <value type="Enum" name="response type" length="2" disabled="false">
+              <item value="0" name="friend" />
+              <item value="1" name="enemy" />
+              <item value="2" name="listener" />
+              <item value="3" name="joint" />
+              <item value="4" name="peer" />
+            </value>
+            <value type="ShortInteger" name="dialogue index import" disabled="true" />
+          </struct>
+          <value type="Block" name="reponses" disabled="false" struct="ResponseBlock" maxelements="20" />
+          <struct name="VocalizationDefinitionsBlock2">
+            <value type="StringId" name="vocalization" disabled="false" blockname="true" />
+            <value type="StringId" name="parent vocalization" disabled="false" />
+            <value type="ShortInteger" name="parent index" disabled="true" />
+            <value type="Enum" name="priority" length="2" disabled="false">
+              <item value="0" name="none" />
+              <item value="1" name="recall" />
+              <item value="2" name="idle" />
+              <item value="3" name="comment" />
+              <item value="4" name="idle_response" />
+              <item value="5" name="postcombat" />
+              <item value="6" name="combat" />
+              <item value="7" name="status" />
+              <item value="8" name="respond" />
+              <item value="9" name="warn" />
+              <item value="10" name="act" />
+              <item value="11" name="react" />
+              <item value="12" name="involuntary" />
+              <item value="13" name="scream" />
+              <item value="14" name="scripted" />
+              <item value="15" name="death" />
+            </value>
+            <value type="Flags" name="flags" length="4" disabled="false">
+              <bit index="0" name="immediate" />
+              <bit index="1" name="interrupt" />
+              <bit index="2" name="cancel low priority" />
+            </value>
+            <value type="Enum" name="glance behavior" length="2" disabled="false">
+              <item value="0" name="NONE" />
+              <item value="1" name="glance subject short" />
+              <item value="2" name="glance subject long" />
+              <item value="3" name="glance cause short" />
+              <item value="4" name="glance cause long" />
+              <item value="5" name="glance friend short" />
+              <item value="6" name="glance friend long" />
+              <tooltip>how does the speaker of this vocalization direct his gaze?</tooltip>
+            </value>
+            <value type="Enum" name="glance recipient behavior" length="2" disabled="false">
+              <item value="0" name="NONE" />
+              <item value="1" name="glance subject short" />
+              <item value="2" name="glance subject long" />
+              <item value="3" name="glance cause short" />
+              <item value="4" name="glance cause long" />
+              <item value="5" name="glance friend short" />
+              <item value="6" name="glance friend long" />
+              <tooltip>how does someone who hears me behave?</tooltip>
+            </value>
+            <value type="Enum" name="perception type" length="2" disabled="false">
+              <item value="0" name="none" />
+              <item value="1" name="speaker" />
+              <item value="2" name="listener" />
+            </value>
+            <value type="Enum" name="max combat status" length="2" disabled="false">
+              <item value="0" name="asleep" />
+              <item value="1" name="idle" />
+              <item value="2" name="alert" />
+              <item value="3" name="active" />
+              <item value="4" name="uninspected" />
+              <item value="5" name="definite" />
+              <item value="6" name="certain" />
+              <item value="7" name="visible" />
+              <item value="8" name="clear_los" />
+              <item value="9" name="dangerous" />
+            </value>
+            <value type="Enum" name="animation impulse" length="2" disabled="false">
+              <item value="0" name="none" />
+              <item value="1" name="shakefist" />
+              <item value="2" name="cheer" />
+              <item value="3" name="surprise-front" />
+              <item value="4" name="surprise-back" />
+              <item value="5" name="taunt" />
+              <item value="6" name="brace" />
+              <item value="7" name="point" />
+              <item value="8" name="hold" />
+              <item value="9" name="wave" />
+              <item value="10" name="advance" />
+              <item value="11" name="fallback" />
+            </value>
+            <value type="Enum" name="overlap priority" length="2" disabled="false">
+              <item value="0" name="none" />
+              <item value="1" name="recall" />
+              <item value="2" name="idle" />
+              <item value="3" name="comment" />
+              <item value="4" name="idle_response" />
+              <item value="5" name="postcombat" />
+              <item value="6" name="combat" />
+              <item value="7" name="status" />
+              <item value="8" name="respond" />
+              <item value="9" name="warn" />
+              <item value="10" name="act" />
+              <item value="11" name="react" />
+              <item value="12" name="involuntary" />
+              <item value="13" name="scream" />
+              <item value="14" name="scripted" />
+              <item value="15" name="death" />
+            </value>
+            <value type="Real" name="sound repetition delay" disabled="false" unit="minutes">
+              <tooltip>Minimum delay time between playing the same permutation</tooltip>
+            </value>
+            <value type="Real" name="allowable queue delay" disabled="false" unit="seconds">
+              <tooltip>How long to wait to actually start the vocalization</tooltip>
+            </value>
+            <value type="Real" name="pre voc delay" disabled="false" unit="seconds">
+              <tooltip>How long to wait to actually start the vocalization</tooltip>
+            </value>
+            <value type="Real" name="notification delay" disabled="false" unit="seconds">
+              <tooltip>How long into the vocalization the AI should be notified</tooltip>
+            </value>
+            <value type="Real" name="post voc delay" disabled="false" unit="seconds">
+              <tooltip>How long speech is suppressed in the speaking unit after vocalizing</tooltip>
+            </value>
+            <value type="Real" name="repeat delay" disabled="false" unit="seconds">
+              <tooltip>How long before the same vocalization can be repeated</tooltip>
+            </value>
+            <value type="Real" name="weight" disabled="false" unit="[0-1]">
+              <tooltip>Inherent weight of this vocalization</tooltip>
+            </value>
+            <value type="Real" name="speaker freeze time" disabled="false">
+              <tooltip>speaker won't move for the given amount of time</tooltip>
+            </value>
+            <value type="Real" name="listener freeze time" disabled="false">
+              <tooltip>listener won't move for the given amount of time (from start of vocalization)</tooltip>
+            </value>
+            <value type="Enum" name="speaker emotion" length="2" disabled="false">
+              <item value="0" name="none" />
+              <item value="1" name="asleep" />
+              <item value="2" name="amorous" />
+              <item value="3" name="happy" />
+              <item value="4" name="inquisitive" />
+              <item value="5" name="repulsed" />
+              <item value="6" name="disappointed" />
+              <item value="7" name="shocked" />
+              <item value="8" name="scared" />
+              <item value="9" name="arrogant" />
+              <item value="10" name="annoyed" />
+              <item value="11" name="angry" />
+              <item value="12" name="pensive" />
+              <item value="13" name="pain" />
+            </value>
+            <value type="Enum" name="listener emotion" length="2" disabled="false">
+              <item value="0" name="none" />
+              <item value="1" name="asleep" />
+              <item value="2" name="amorous" />
+              <item value="3" name="happy" />
+              <item value="4" name="inquisitive" />
+              <item value="5" name="repulsed" />
+              <item value="6" name="disappointed" />
+              <item value="7" name="shocked" />
+              <item value="8" name="scared" />
+              <item value="9" name="arrogant" />
+              <item value="10" name="annoyed" />
+              <item value="11" name="angry" />
+              <item value="12" name="pensive" />
+              <item value="13" name="pain" />
+            </value>
+            <value type="Real" name="player skip fraction" disabled="false" />
+            <value type="Real" name="skip fraction" disabled="false" />
+            <value type="StringId" name="Sample line" disabled="false" />
+            <struct name="ResponseBlock">
+              <value type="StringId" name="vocalization name" disabled="false" />
+              <value type="Flags" name="flags" length="2" disabled="false">
+                <bit index="0" name="nonexclusive" />
+                <bit index="1" name="trigger response" />
+              </value>
+              <value type="ShortInteger" name="vocalization index post process" disabled="true" />
+              <value type="Enum" name="response type" length="2" disabled="false">
+                <item value="0" name="friend" />
+                <item value="1" name="enemy" />
+                <item value="2" name="listener" />
+                <item value="3" name="joint" />
+                <item value="4" name="peer" />
+              </value>
+              <value type="ShortInteger" name="dialogue index import" disabled="true" />
+            </struct>
+            <value type="Block" name="reponses" disabled="false" struct="ResponseBlock" maxelements="20" />
+            <struct name="VocalizationDefinitionsBlock3">
+              <value type="StringId" name="vocalization" disabled="false" blockname="true" />
+              <value type="StringId" name="parent vocalization" disabled="false" />
+              <value type="ShortInteger" name="parent index" disabled="true" />
+              <value type="Enum" name="priority" length="2" disabled="false">
+                <item value="0" name="none" />
+                <item value="1" name="recall" />
+                <item value="2" name="idle" />
+                <item value="3" name="comment" />
+                <item value="4" name="idle_response" />
+                <item value="5" name="postcombat" />
+                <item value="6" name="combat" />
+                <item value="7" name="status" />
+                <item value="8" name="respond" />
+                <item value="9" name="warn" />
+                <item value="10" name="act" />
+                <item value="11" name="react" />
+                <item value="12" name="involuntary" />
+                <item value="13" name="scream" />
+                <item value="14" name="scripted" />
+                <item value="15" name="death" />
+              </value>
+              <value type="Flags" name="flags" length="4" disabled="false">
+                <bit index="0" name="immediate" />
+                <bit index="1" name="interrupt" />
+                <bit index="2" name="cancel low priority" />
+              </value>
+              <value type="Enum" name="glance behavior" length="2" disabled="false">
+                <item value="0" name="NONE" />
+                <item value="1" name="glance subject short" />
+                <item value="2" name="glance subject long" />
+                <item value="3" name="glance cause short" />
+                <item value="4" name="glance cause long" />
+                <item value="5" name="glance friend short" />
+                <item value="6" name="glance friend long" />
+                <tooltip>how does the speaker of this vocalization direct his gaze?</tooltip>
+              </value>
+              <value type="Enum" name="glance recipient behavior" length="2" disabled="false">
+                <item value="0" name="NONE" />
+                <item value="1" name="glance subject short" />
+                <item value="2" name="glance subject long" />
+                <item value="3" name="glance cause short" />
+                <item value="4" name="glance cause long" />
+                <item value="5" name="glance friend short" />
+                <item value="6" name="glance friend long" />
+                <tooltip>how does someone who hears me behave?</tooltip>
+              </value>
+              <value type="Enum" name="perception type" length="2" disabled="false">
+                <item value="0" name="none" />
+                <item value="1" name="speaker" />
+                <item value="2" name="listener" />
+              </value>
+              <value type="Enum" name="max combat status" length="2" disabled="false">
+                <item value="0" name="asleep" />
+                <item value="1" name="idle" />
+                <item value="2" name="alert" />
+                <item value="3" name="active" />
+                <item value="4" name="uninspected" />
+                <item value="5" name="definite" />
+                <item value="6" name="certain" />
+                <item value="7" name="visible" />
+                <item value="8" name="clear_los" />
+                <item value="9" name="dangerous" />
+              </value>
+              <value type="Enum" name="animation impulse" length="2" disabled="false">
+                <item value="0" name="none" />
+                <item value="1" name="shakefist" />
+                <item value="2" name="cheer" />
+                <item value="3" name="surprise-front" />
+                <item value="4" name="surprise-back" />
+                <item value="5" name="taunt" />
+                <item value="6" name="brace" />
+                <item value="7" name="point" />
+                <item value="8" name="hold" />
+                <item value="9" name="wave" />
+                <item value="10" name="advance" />
+                <item value="11" name="fallback" />
+              </value>
+              <value type="Enum" name="overlap priority" length="2" disabled="false">
+                <item value="0" name="none" />
+                <item value="1" name="recall" />
+                <item value="2" name="idle" />
+                <item value="3" name="comment" />
+                <item value="4" name="idle_response" />
+                <item value="5" name="postcombat" />
+                <item value="6" name="combat" />
+                <item value="7" name="status" />
+                <item value="8" name="respond" />
+                <item value="9" name="warn" />
+                <item value="10" name="act" />
+                <item value="11" name="react" />
+                <item value="12" name="involuntary" />
+                <item value="13" name="scream" />
+                <item value="14" name="scripted" />
+                <item value="15" name="death" />
+              </value>
+              <value type="Real" name="sound repetition delay" disabled="false" unit="minutes">
+                <tooltip>Minimum delay time between playing the same permutation</tooltip>
+              </value>
+              <value type="Real" name="allowable queue delay" disabled="false" unit="seconds">
+                <tooltip>How long to wait to actually start the vocalization</tooltip>
+              </value>
+              <value type="Real" name="pre voc delay" disabled="false" unit="seconds">
+                <tooltip>How long to wait to actually start the vocalization</tooltip>
+              </value>
+              <value type="Real" name="notification delay" disabled="false" unit="seconds">
+                <tooltip>How long into the vocalization the AI should be notified</tooltip>
+              </value>
+              <value type="Real" name="post voc delay" disabled="false" unit="seconds">
+                <tooltip>How long speech is suppressed in the speaking unit after vocalizing</tooltip>
+              </value>
+              <value type="Real" name="repeat delay" disabled="false" unit="seconds">
+                <tooltip>How long before the same vocalization can be repeated</tooltip>
+              </value>
+              <value type="Real" name="weight" disabled="false" unit="[0-1]">
+                <tooltip>Inherent weight of this vocalization</tooltip>
+              </value>
+              <value type="Real" name="speaker freeze time" disabled="false">
+                <tooltip>speaker won't move for the given amount of time</tooltip>
+              </value>
+              <value type="Real" name="listener freeze time" disabled="false">
+                <tooltip>listener won't move for the given amount of time (from start of vocalization)</tooltip>
+              </value>
+              <value type="Enum" name="speaker emotion" length="2" disabled="false">
+                <item value="0" name="none" />
+                <item value="1" name="asleep" />
+                <item value="2" name="amorous" />
+                <item value="3" name="happy" />
+                <item value="4" name="inquisitive" />
+                <item value="5" name="repulsed" />
+                <item value="6" name="disappointed" />
+                <item value="7" name="shocked" />
+                <item value="8" name="scared" />
+                <item value="9" name="arrogant" />
+                <item value="10" name="annoyed" />
+                <item value="11" name="angry" />
+                <item value="12" name="pensive" />
+                <item value="13" name="pain" />
+              </value>
+              <value type="Enum" name="listener emotion" length="2" disabled="false">
+                <item value="0" name="none" />
+                <item value="1" name="asleep" />
+                <item value="2" name="amorous" />
+                <item value="3" name="happy" />
+                <item value="4" name="inquisitive" />
+                <item value="5" name="repulsed" />
+                <item value="6" name="disappointed" />
+                <item value="7" name="shocked" />
+                <item value="8" name="scared" />
+                <item value="9" name="arrogant" />
+                <item value="10" name="annoyed" />
+                <item value="11" name="angry" />
+                <item value="12" name="pensive" />
+                <item value="13" name="pain" />
+              </value>
+              <value type="Real" name="player skip fraction" disabled="false" />
+              <value type="Real" name="skip fraction" disabled="false" />
+              <value type="StringId" name="Sample line" disabled="false" />
+              <struct name="ResponseBlock">
+                <value type="StringId" name="vocalization name" disabled="false" />
+                <value type="Flags" name="flags" length="2" disabled="false">
+                  <bit index="0" name="nonexclusive" />
+                  <bit index="1" name="trigger response" />
+                </value>
+                <value type="ShortInteger" name="vocalization index post process" disabled="true" />
+                <value type="Enum" name="response type" length="2" disabled="false">
+                  <item value="0" name="friend" />
+                  <item value="1" name="enemy" />
+                  <item value="2" name="listener" />
+                  <item value="3" name="joint" />
+                  <item value="4" name="peer" />
+                </value>
+                <value type="ShortInteger" name="dialogue index import" disabled="true" />
+              </struct>
+              <value type="Block" name="reponses" disabled="false" struct="ResponseBlock" maxelements="20" />
+              <struct name="VocalizationDefinitionsBlock4">
+                <value type="StringId" name="vocalization" disabled="false" blockname="true" />
+                <value type="StringId" name="parent vocalization" disabled="false" />
+                <value type="ShortInteger" name="parent index" disabled="true" />
+                <value type="Enum" name="priority" length="2" disabled="false">
+                  <item value="0" name="none" />
+                  <item value="1" name="recall" />
+                  <item value="2" name="idle" />
+                  <item value="3" name="comment" />
+                  <item value="4" name="idle_response" />
+                  <item value="5" name="postcombat" />
+                  <item value="6" name="combat" />
+                  <item value="7" name="status" />
+                  <item value="8" name="respond" />
+                  <item value="9" name="warn" />
+                  <item value="10" name="act" />
+                  <item value="11" name="react" />
+                  <item value="12" name="involuntary" />
+                  <item value="13" name="scream" />
+                  <item value="14" name="scripted" />
+                  <item value="15" name="death" />
+                </value>
+                <value type="Flags" name="flags" length="4" disabled="false">
+                  <bit index="0" name="immediate" />
+                  <bit index="1" name="interrupt" />
+                  <bit index="2" name="cancel low priority" />
+                </value>
+                <value type="Enum" name="glance behavior" length="2" disabled="false">
+                  <item value="0" name="NONE" />
+                  <item value="1" name="glance subject short" />
+                  <item value="2" name="glance subject long" />
+                  <item value="3" name="glance cause short" />
+                  <item value="4" name="glance cause long" />
+                  <item value="5" name="glance friend short" />
+                  <item value="6" name="glance friend long" />
+                  <tooltip>how does the speaker of this vocalization direct his gaze?</tooltip>
+                </value>
+                <value type="Enum" name="glance recipient behavior" length="2" disabled="false">
+                  <item value="0" name="NONE" />
+                  <item value="1" name="glance subject short" />
+                  <item value="2" name="glance subject long" />
+                  <item value="3" name="glance cause short" />
+                  <item value="4" name="glance cause long" />
+                  <item value="5" name="glance friend short" />
+                  <item value="6" name="glance friend long" />
+                  <tooltip>how does someone who hears me behave?</tooltip>
+                </value>
+                <value type="Enum" name="perception type" length="2" disabled="false">
+                  <item value="0" name="none" />
+                  <item value="1" name="speaker" />
+                  <item value="2" name="listener" />
+                </value>
+                <value type="Enum" name="max combat status" length="2" disabled="false">
+                  <item value="0" name="asleep" />
+                  <item value="1" name="idle" />
+                  <item value="2" name="alert" />
+                  <item value="3" name="active" />
+                  <item value="4" name="uninspected" />
+                  <item value="5" name="definite" />
+                  <item value="6" name="certain" />
+                  <item value="7" name="visible" />
+                  <item value="8" name="clear_los" />
+                  <item value="9" name="dangerous" />
+                </value>
+                <value type="Enum" name="animation impulse" length="2" disabled="false">
+                  <item value="0" name="none" />
+                  <item value="1" name="shakefist" />
+                  <item value="2" name="cheer" />
+                  <item value="3" name="surprise-front" />
+                  <item value="4" name="surprise-back" />
+                  <item value="5" name="taunt" />
+                  <item value="6" name="brace" />
+                  <item value="7" name="point" />
+                  <item value="8" name="hold" />
+                  <item value="9" name="wave" />
+                  <item value="10" name="advance" />
+                  <item value="11" name="fallback" />
+                </value>
+                <value type="Enum" name="overlap priority" length="2" disabled="false">
+                  <item value="0" name="none" />
+                  <item value="1" name="recall" />
+                  <item value="2" name="idle" />
+                  <item value="3" name="comment" />
+                  <item value="4" name="idle_response" />
+                  <item value="5" name="postcombat" />
+                  <item value="6" name="combat" />
+                  <item value="7" name="status" />
+                  <item value="8" name="respond" />
+                  <item value="9" name="warn" />
+                  <item value="10" name="act" />
+                  <item value="11" name="react" />
+                  <item value="12" name="involuntary" />
+                  <item value="13" name="scream" />
+                  <item value="14" name="scripted" />
+                  <item value="15" name="death" />
+                </value>
+                <value type="Real" name="sound repetition delay" disabled="false" unit="minutes">
+                  <tooltip>Minimum delay time between playing the same permutation</tooltip>
+                </value>
+                <value type="Real" name="allowable queue delay" disabled="false" unit="seconds">
+                  <tooltip>How long to wait to actually start the vocalization</tooltip>
+                </value>
+                <value type="Real" name="pre voc delay" disabled="false" unit="seconds">
+                  <tooltip>How long to wait to actually start the vocalization</tooltip>
+                </value>
+                <value type="Real" name="notification delay" disabled="false" unit="seconds">
+                  <tooltip>How long into the vocalization the AI should be notified</tooltip>
+                </value>
+                <value type="Real" name="post voc delay" disabled="false" unit="seconds">
+                  <tooltip>How long speech is suppressed in the speaking unit after vocalizing</tooltip>
+                </value>
+                <value type="Real" name="repeat delay" disabled="false" unit="seconds">
+                  <tooltip>How long before the same vocalization can be repeated</tooltip>
+                </value>
+                <value type="Real" name="weight" disabled="false" unit="[0-1]">
+                  <tooltip>Inherent weight of this vocalization</tooltip>
+                </value>
+                <value type="Real" name="speaker freeze time" disabled="false">
+                  <tooltip>speaker won't move for the given amount of time</tooltip>
+                </value>
+                <value type="Real" name="listener freeze time" disabled="false">
+                  <tooltip>listener won't move for the given amount of time (from start of vocalization)</tooltip>
+                </value>
+                <value type="Enum" name="speaker emotion" length="2" disabled="false">
+                  <item value="0" name="none" />
+                  <item value="1" name="asleep" />
+                  <item value="2" name="amorous" />
+                  <item value="3" name="happy" />
+                  <item value="4" name="inquisitive" />
+                  <item value="5" name="repulsed" />
+                  <item value="6" name="disappointed" />
+                  <item value="7" name="shocked" />
+                  <item value="8" name="scared" />
+                  <item value="9" name="arrogant" />
+                  <item value="10" name="annoyed" />
+                  <item value="11" name="angry" />
+                  <item value="12" name="pensive" />
+                  <item value="13" name="pain" />
+                </value>
+                <value type="Enum" name="listener emotion" length="2" disabled="false">
+                  <item value="0" name="none" />
+                  <item value="1" name="asleep" />
+                  <item value="2" name="amorous" />
+                  <item value="3" name="happy" />
+                  <item value="4" name="inquisitive" />
+                  <item value="5" name="repulsed" />
+                  <item value="6" name="disappointed" />
+                  <item value="7" name="shocked" />
+                  <item value="8" name="scared" />
+                  <item value="9" name="arrogant" />
+                  <item value="10" name="annoyed" />
+                  <item value="11" name="angry" />
+                  <item value="12" name="pensive" />
+                  <item value="13" name="pain" />
+                </value>
+                <value type="Real" name="player skip fraction" disabled="false" />
+                <value type="Real" name="skip fraction" disabled="false" />
+                <value type="StringId" name="Sample line" disabled="false" />
+                <struct name="ResponseBlock">
+                  <value type="StringId" name="vocalization name" disabled="false" />
+                  <value type="Flags" name="flags" length="2" disabled="false">
+                    <bit index="0" name="nonexclusive" />
+                    <bit index="1" name="trigger response" />
+                  </value>
+                  <value type="ShortInteger" name="vocalization index post process" disabled="true" />
+                  <value type="Enum" name="response type" length="2" disabled="false">
+                    <item value="0" name="friend" />
+                    <item value="1" name="enemy" />
+                    <item value="2" name="listener" />
+                    <item value="3" name="joint" />
+                    <item value="4" name="peer" />
+                  </value>
+                  <value type="ShortInteger" name="dialogue index import" disabled="true" />
+                </struct>
+                <value type="Block" name="reponses" disabled="false" struct="ResponseBlock" maxelements="20" />
+                <struct name="VocalizationDefinitionsBlock5">
+                  <value type="StringId" name="vocalization" disabled="false" blockname="true" />
+                  <value type="StringId" name="parent vocalization" disabled="false" />
+                  <value type="ShortInteger" name="parent index" disabled="true" />
+                  <value type="Enum" name="priority" length="2" disabled="false">
+                    <item value="0" name="none" />
+                    <item value="1" name="recall" />
+                    <item value="2" name="idle" />
+                    <item value="3" name="comment" />
+                    <item value="4" name="idle_response" />
+                    <item value="5" name="postcombat" />
+                    <item value="6" name="combat" />
+                    <item value="7" name="status" />
+                    <item value="8" name="respond" />
+                    <item value="9" name="warn" />
+                    <item value="10" name="act" />
+                    <item value="11" name="react" />
+                    <item value="12" name="involuntary" />
+                    <item value="13" name="scream" />
+                    <item value="14" name="scripted" />
+                    <item value="15" name="death" />
+                  </value>
+                  <value type="Flags" name="flags" length="4" disabled="false">
+                    <bit index="0" name="immediate" />
+                    <bit index="1" name="interrupt" />
+                    <bit index="2" name="cancel low priority" />
+                  </value>
+                  <value type="Enum" name="glance behavior" length="2" disabled="false">
+                    <item value="0" name="NONE" />
+                    <item value="1" name="glance subject short" />
+                    <item value="2" name="glance subject long" />
+                    <item value="3" name="glance cause short" />
+                    <item value="4" name="glance cause long" />
+                    <item value="5" name="glance friend short" />
+                    <item value="6" name="glance friend long" />
+                    <tooltip>how does the speaker of this vocalization direct his gaze?</tooltip>
+                  </value>
+                  <value type="Enum" name="glance recipient behavior" length="2" disabled="false">
+                    <item value="0" name="NONE" />
+                    <item value="1" name="glance subject short" />
+                    <item value="2" name="glance subject long" />
+                    <item value="3" name="glance cause short" />
+                    <item value="4" name="glance cause long" />
+                    <item value="5" name="glance friend short" />
+                    <item value="6" name="glance friend long" />
+                    <tooltip>how does someone who hears me behave?</tooltip>
+                  </value>
+                  <value type="Enum" name="perception type" length="2" disabled="false">
+                    <item value="0" name="none" />
+                    <item value="1" name="speaker" />
+                    <item value="2" name="listener" />
+                  </value>
+                  <value type="Enum" name="max combat status" length="2" disabled="false">
+                    <item value="0" name="asleep" />
+                    <item value="1" name="idle" />
+                    <item value="2" name="alert" />
+                    <item value="3" name="active" />
+                    <item value="4" name="uninspected" />
+                    <item value="5" name="definite" />
+                    <item value="6" name="certain" />
+                    <item value="7" name="visible" />
+                    <item value="8" name="clear_los" />
+                    <item value="9" name="dangerous" />
+                  </value>
+                  <value type="Enum" name="animation impulse" length="2" disabled="false">
+                    <item value="0" name="none" />
+                    <item value="1" name="shakefist" />
+                    <item value="2" name="cheer" />
+                    <item value="3" name="surprise-front" />
+                    <item value="4" name="surprise-back" />
+                    <item value="5" name="taunt" />
+                    <item value="6" name="brace" />
+                    <item value="7" name="point" />
+                    <item value="8" name="hold" />
+                    <item value="9" name="wave" />
+                    <item value="10" name="advance" />
+                    <item value="11" name="fallback" />
+                  </value>
+                  <value type="Enum" name="overlap priority" length="2" disabled="false">
+                    <item value="0" name="none" />
+                    <item value="1" name="recall" />
+                    <item value="2" name="idle" />
+                    <item value="3" name="comment" />
+                    <item value="4" name="idle_response" />
+                    <item value="5" name="postcombat" />
+                    <item value="6" name="combat" />
+                    <item value="7" name="status" />
+                    <item value="8" name="respond" />
+                    <item value="9" name="warn" />
+                    <item value="10" name="act" />
+                    <item value="11" name="react" />
+                    <item value="12" name="involuntary" />
+                    <item value="13" name="scream" />
+                    <item value="14" name="scripted" />
+                    <item value="15" name="death" />
+                  </value>
+                  <value type="Real" name="sound repetition delay" disabled="false" unit="minutes">
+                    <tooltip>Minimum delay time between playing the same permutation</tooltip>
+                  </value>
+                  <value type="Real" name="allowable queue delay" disabled="false" unit="seconds">
+                    <tooltip>How long to wait to actually start the vocalization</tooltip>
+                  </value>
+                  <value type="Real" name="pre voc delay" disabled="false" unit="seconds">
+                    <tooltip>How long to wait to actually start the vocalization</tooltip>
+                  </value>
+                  <value type="Real" name="notification delay" disabled="false" unit="seconds">
+                    <tooltip>How long into the vocalization the AI should be notified</tooltip>
+                  </value>
+                  <value type="Real" name="post voc delay" disabled="false" unit="seconds">
+                    <tooltip>How long speech is suppressed in the speaking unit after vocalizing</tooltip>
+                  </value>
+                  <value type="Real" name="repeat delay" disabled="false" unit="seconds">
+                    <tooltip>How long before the same vocalization can be repeated</tooltip>
+                  </value>
+                  <value type="Real" name="weight" disabled="false" unit="[0-1]">
+                    <tooltip>Inherent weight of this vocalization</tooltip>
+                  </value>
+                  <value type="Real" name="speaker freeze time" disabled="false">
+                    <tooltip>speaker won't move for the given amount of time</tooltip>
+                  </value>
+                  <value type="Real" name="listener freeze time" disabled="false">
+                    <tooltip>listener won't move for the given amount of time (from start of vocalization)</tooltip>
+                  </value>
+                  <value type="Enum" name="speaker emotion" length="2" disabled="false">
+                    <item value="0" name="none" />
+                    <item value="1" name="asleep" />
+                    <item value="2" name="amorous" />
+                    <item value="3" name="happy" />
+                    <item value="4" name="inquisitive" />
+                    <item value="5" name="repulsed" />
+                    <item value="6" name="disappointed" />
+                    <item value="7" name="shocked" />
+                    <item value="8" name="scared" />
+                    <item value="9" name="arrogant" />
+                    <item value="10" name="annoyed" />
+                    <item value="11" name="angry" />
+                    <item value="12" name="pensive" />
+                    <item value="13" name="pain" />
+                  </value>
+                  <value type="Enum" name="listener emotion" length="2" disabled="false">
+                    <item value="0" name="none" />
+                    <item value="1" name="asleep" />
+                    <item value="2" name="amorous" />
+                    <item value="3" name="happy" />
+                    <item value="4" name="inquisitive" />
+                    <item value="5" name="repulsed" />
+                    <item value="6" name="disappointed" />
+                    <item value="7" name="shocked" />
+                    <item value="8" name="scared" />
+                    <item value="9" name="arrogant" />
+                    <item value="10" name="annoyed" />
+                    <item value="11" name="angry" />
+                    <item value="12" name="pensive" />
+                    <item value="13" name="pain" />
+                  </value>
+                  <value type="Real" name="player skip fraction" disabled="false" />
+                  <value type="Real" name="skip fraction" disabled="false" />
+                  <value type="StringId" name="Sample line" disabled="false" />
+                  <struct name="ResponseBlock">
+                    <value type="StringId" name="vocalization name" disabled="false" />
+                    <value type="Flags" name="flags" length="2" disabled="false">
+                      <bit index="0" name="nonexclusive" />
+                      <bit index="1" name="trigger response" />
+                    </value>
+                    <value type="ShortInteger" name="vocalization index post process" disabled="true" />
+                    <value type="Enum" name="response type" length="2" disabled="false">
+                      <item value="0" name="friend" />
+                      <item value="1" name="enemy" />
+                      <item value="2" name="listener" />
+                      <item value="3" name="joint" />
+                      <item value="4" name="peer" />
+                    </value>
+                    <value type="ShortInteger" name="dialogue index import" disabled="true" />
+                  </struct>
+                  <value type="Block" name="reponses" disabled="false" struct="ResponseBlock" maxelements="20" />
+                  <struct name="GNullBlock" />
+                  <value type="Block" name="_unnamed0" struct="GNullBlock" maxelements="0" />
+                </struct>
+                <value type="Block" name="children" disabled="false" struct="VocalizationDefinitionsBlock5" maxelements="500" />
+              </struct>
+              <value type="Block" name="children" disabled="false" struct="VocalizationDefinitionsBlock4" maxelements="500" />
+            </struct>
+            <value type="Block" name="children" disabled="false" struct="VocalizationDefinitionsBlock3" maxelements="500" />
+          </struct>
+          <value type="Block" name="children" disabled="false" struct="VocalizationDefinitionsBlock2" maxelements="500" />
+        </struct>
+        <value type="Block" name="children" disabled="false" struct="VocalizationDefinitionsBlock1" maxelements="500" />
+      </struct>
+      <value type="Block" name="vocalizations" disabled="false" struct="VocalizationDefinitionsBlock0" maxelements="500" />
+      <struct name="VocalizationPatternsBlock">
+        <value type="Enum" name="dialogue type" length="2" disabled="false">
+          <item value="0" name="death" />
+          <item value="1" name="unused" />
+          <item value="2" name="unused" />
+          <item value="3" name="damage" />
+          <item value="4" name="damage unused 1" />
+          <item value="5" name="damage unused 2" />
+          <item value="6" name="sighted_new" />
+          <item value="7" name="sighted_new major" />
+          <item value="8" name="unused" />
+          <item value="9" name="sighted_old" />
+          <item value="10" name="sighted_first" />
+          <item value="11" name="sighted_special" />
+          <item value="12" name="unused" />
+          <item value="13" name="heard_new" />
+          <item value="14" name="unused" />
+          <item value="15" name="heard_old" />
+          <item value="16" name="unused" />
+          <item value="17" name="unused" />
+          <item value="18" name="unused" />
+          <item value="19" name="acknowledge_multiple" />
+          <item value="20" name="unused" />
+          <item value="21" name="unused" />
+          <item value="22" name="unused" />
+          <item value="23" name="found_unit" />
+          <item value="24" name="found_unit_presearch" />
+          <item value="25" name="found_unit_pursuit" />
+          <item value="26" name="found_unit_self_preserving" />
+          <item value="27" name="found_unit_retreating" />
+          <item value="28" name="throwing_grenade" />
+          <item value="29" name="noticed_grenade" />
+          <item value="30" name="fighting" />
+          <item value="31" name="charging" />
+          <item value="32" name="suppressing_fire" />
+          <item value="33" name="grenade_uncover" />
+          <item value="34" name="unused" />
+          <item value="35" name="unused" />
+          <item value="36" name="dive" />
+          <item value="37" name="evade" />
+          <item value="38" name="avoid" />
+          <item value="39" name="surprised" />
+          <item value="40" name="unused" />
+          <item value="41" name="unused" />
+          <item value="42" name="presearch" />
+          <item value="43" name="presearch_start" />
+          <item value="44" name="search" />
+          <item value="45" name="search_start" />
+          <item value="46" name="investigate_failed" />
+          <item value="47" name="uncover_failed" />
+          <item value="48" name="pursuit_failed" />
+          <item value="49" name="investigate_start" />
+          <item value="50" name="abandoned_search_space" />
+          <item value="51" name="abandoned_search_time" />
+          <item value="52" name="presearch_failed" />
+          <item value="53" name="abandoned_search_restricted" />
+          <item value="54" name="investigate_pursuit_start" />
+          <item value="55" name="postcombat_inspect_body" />
+          <item value="56" name="vehicle_slow_down" />
+          <item value="57" name="vehicle_get_in" />
+          <item value="58" name="idle" />
+          <item value="59" name="taunt" />
+          <item value="60" name="taunt_reply" />
+          <item value="61" name="retreat" />
+          <item value="62" name="retreat_from_scary_target" />
+          <item value="63" name="retreat_from_dead_leader" />
+          <item value="64" name="retreat_from_proximity" />
+          <item value="65" name="retreat_from_low_shield" />
+          <item value="66" name="flee" />
+          <item value="67" name="cowering" />
+          <item value="68" name="unused" />
+          <item value="69" name="unused" />
+          <item value="70" name="unused" />
+          <item value="71" name="cover" />
+          <item value="72" name="covered" />
+          <item value="73" name="unused" />
+          <item value="74" name="unused" />
+          <item value="75" name="unused" />
+          <item value="76" name="pursuit_start" />
+          <item value="77" name="pursuit_sync_start" />
+          <item value="78" name="pursuit_sync_join" />
+          <item value="79" name="pursuit_sync_quorum" />
+          <item value="80" name="melee" />
+          <item value="81" name="unused" />
+          <item value="82" name="unused" />
+          <item value="83" name="unused" />
+          <item value="84" name="vehicle_falling" />
+          <item value="85" name="vehicle_woohoo" />
+          <item value="86" name="vehicle_scared" />
+          <item value="87" name="vehicle_crazy" />
+          <item value="88" name="unused" />
+          <item value="89" name="unused" />
+          <item value="90" name="leap" />
+          <item value="91" name="unused" />
+          <item value="92" name="unused" />
+          <item value="93" name="postcombat_win" />
+          <item value="94" name="postcombat_lose" />
+          <item value="95" name="postcombat_neutral" />
+          <item value="96" name="shoot_corpse" />
+          <item value="97" name="postcombat start" />
+          <item value="98" name="inspect_body_start" />
+          <item value="99" name="postcombat_status" />
+          <item value="100" name="unused" />
+          <item value="101" name="vehicle_entry_start_driver" />
+          <item value="102" name="vehicle_enter" />
+          <item value="103" name="vehicle_entry_start_gun" />
+          <item value="104" name="vehicle_entry_start_passenger" />
+          <item value="105" name="vehicle_exit" />
+          <item value="106" name="evict_driver" />
+          <item value="107" name="evict_gunner" />
+          <item value="108" name="evict_passenger" />
+          <item value="109" name="unused" />
+          <item value="110" name="unused" />
+          <item value="111" name="new_order_advance" />
+          <item value="112" name="new_order_charge" />
+          <item value="113" name="new_order_fallback" />
+          <item value="114" name="new_order_retreat" />
+          <item value="115" name="new_order_moveon" />
+          <item value="116" name="new_order_arrival" />
+          <item value="117" name="new_order_entervcl" />
+          <item value="118" name="new_order_exitvcl" />
+          <item value="119" name="new_order_fllplr" />
+          <item value="120" name="new_order_leaveplr" />
+          <item value="121" name="new_order_support" />
+          <item value="122" name="unused" />
+          <item value="123" name="unused" />
+          <item value="124" name="unused" />
+          <item value="125" name="unused" />
+          <item value="126" name="unused" />
+          <item value="127" name="unused" />
+          <item value="128" name="unused" />
+          <item value="129" name="unused" />
+          <item value="130" name="unused" />
+          <item value="131" name="unused" />
+          <item value="132" name="unused" />
+          <item value="133" name="unused" />
+          <item value="134" name="emerge" />
+          <item value="135" name="unused" />
+          <item value="136" name="unused" />
+          <item value="137" name="unused" />
+          <item value="138" name="curse" />
+          <item value="139" name="unused" />
+          <item value="140" name="unused" />
+          <item value="141" name="unused" />
+          <item value="142" name="threaten" />
+          <item value="143" name="unused" />
+          <item value="144" name="unused" />
+          <item value="145" name="unused" />
+          <item value="146" name="cover_friend" />
+          <item value="147" name="unused" />
+          <item value="148" name="unused" />
+          <item value="149" name="unused" />
+          <item value="150" name="strike" />
+          <item value="151" name="unused" />
+          <item value="152" name="unused" />
+          <item value="153" name="unused" />
+          <item value="154" name="unused" />
+          <item value="155" name="unused" />
+          <item value="156" name="unused" />
+          <item value="157" name="unused" />
+          <item value="158" name="unused" />
+          <item value="159" name="gloat" />
+          <item value="160" name="unused" />
+          <item value="161" name="unused" />
+          <item value="162" name="unused" />
+          <item value="163" name="greet" />
+          <item value="164" name="unused" />
+          <item value="165" name="unused" />
+          <item value="166" name="unused" />
+          <item value="167" name="unused" />
+          <item value="168" name="player_look" />
+          <item value="169" name="player_look_longtime" />
+          <item value="170" name="unused" />
+          <item value="171" name="unused" />
+          <item value="172" name="unused" />
+          <item value="173" name="unused" />
+          <item value="174" name="panic_grenade_attached" />
+          <item value="175" name="unused" />
+          <item value="176" name="unused" />
+          <item value="177" name="unused" />
+          <item value="178" name="unused" />
+          <item value="179" name="help response" />
+          <item value="180" name="unused" />
+          <item value="181" name="unused" />
+          <item value="182" name="unused" />
+          <item value="183" name="remind" />
+          <item value="184" name="unused" />
+          <item value="185" name="unused" />
+          <item value="186" name="unused" />
+          <item value="187" name="unused" />
+          <item value="188" name="weapon_trade_better" />
+          <item value="189" name="weapon_trade_worse" />
+          <item value="190" name="weapon_reade_equal" />
+          <item value="191" name="unused" />
+          <item value="192" name="unused" />
+          <item value="193" name="unused" />
+          <item value="194" name="betray" />
+          <item value="195" name="unused" />
+          <item value="196" name="forgive" />
+          <item value="197" name="unused" />
+          <item value="198" name="reanimate" />
+          <item value="199" name="unused" />
+        </value>
+        <value type="ShortInteger" name="vocalization index" disabled="false" />
+        <value type="StringId" name="vocalization name" disabled="false" />
+        <value type="Enum" name="speaker type" length="2" disabled="false">
+          <item value="0" name="subject" />
+          <item value="1" name="cause" />
+          <item value="2" name="friend" />
+          <item value="3" name="target" />
+          <item value="4" name="enemy" />
+          <item value="5" name="vehicle" />
+          <item value="6" name="joint" />
+          <item value="7" name="squad" />
+          <item value="8" name="leader" />
+          <item value="9" name="joint_leader" />
+          <item value="10" name="clump" />
+          <item value="11" name="peer" />
+        </value>
+        <value type="Flags" name="flags" length="2" disabled="false">
+          <bit index="0" name="subject visible" />
+          <bit index="1" name="cause visible" />
+          <bit index="2" name="friends present" />
+          <bit index="3" name="subject is speaker's target" />
+          <bit index="4" name="cause is speaker's target" />
+          <bit index="5" name="cause is player or speaker is player ally" />
+          <bit index="6" name="speaker is searching" />
+          <bit index="7" name="speaker is following player" />
+          <bit index="8" name="cause is primary player ally" />
+        </value>
+        <value type="Enum" name="listenertarget" length="2" disabled="false">
+          <item value="0" name="subject" />
+          <item value="1" name="cause" />
+          <item value="2" name="friend" />
+          <item value="3" name="target" />
+          <item value="4" name="enemy" />
+          <item value="5" name="vehicle" />
+          <item value="6" name="joint" />
+          <item value="7" name="squad" />
+          <item value="8" name="leader" />
+          <item value="9" name="joint_leader" />
+          <item value="10" name="clump" />
+          <item value="11" name="peer" />
+          <tooltip>who/what am I speaking to/of?</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <value type="Enum" name="hostility" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="self" />
+          <item value="2" name="neutral" />
+          <item value="3" name="friend" />
+          <item value="4" name="enemy" />
+          <item value="5" name="traitor" />
+          <tooltip>The relationship between the subject and the cause</tooltip>
+        </value>
+        <value type="Enum" name="damage type" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="falling" />
+          <item value="2" name="bullet" />
+          <item value="3" name="grenade" />
+          <item value="4" name="explosive" />
+          <item value="5" name="sniper" />
+          <item value="6" name="melee" />
+          <item value="7" name="flame" />
+          <item value="8" name="mounted weapon" />
+          <item value="9" name="vehicle" />
+          <item value="10" name="plasma" />
+          <item value="11" name="needle" />
+          <item value="12" name="shotgun" />
+        </value>
+        <value type="Enum" name="danger level" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="broadly facing" />
+          <item value="2" name="shooting near" />
+          <item value="3" name="shooting at" />
+          <item value="4" name="extremely close" />
+          <item value="5" name="shield damage" />
+          <item value="6" name="shield extended damage" />
+          <item value="7" name="body damage" />
+          <item value="8" name="body extended damage" />
+          <tooltip>Speaker must have danger level of at least this much</tooltip>
+        </value>
+        <value type="Enum" name="attitude" length="2" disabled="false">
+          <item value="0" name="Normal" />
+          <item value="1" name="Timid" />
+          <item value="2" name="Aggressive" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="Enum" name="subject actor type" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="elite" />
+          <item value="2" name="jackal" />
+          <item value="3" name="grunt" />
+          <item value="4" name="hunter" />
+          <item value="5" name="engineer" />
+          <item value="6" name="assassin" />
+          <item value="7" name="player" />
+          <item value="8" name="marine" />
+          <item value="9" name="crew" />
+          <item value="10" name="combat form" />
+          <item value="11" name="infection form" />
+          <item value="12" name="carrier form" />
+          <item value="13" name="monitor" />
+          <item value="14" name="sentinel" />
+          <item value="15" name="none" />
+          <item value="16" name="mounted weapon" />
+          <item value="17" name="brute" />
+          <item value="18" name="prophet" />
+          <item value="19" name="bugger" />
+          <item value="20" name="juggernaut" />
+        </value>
+        <value type="Enum" name="cause actor type" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="elite" />
+          <item value="2" name="jackal" />
+          <item value="3" name="grunt" />
+          <item value="4" name="hunter" />
+          <item value="5" name="engineer" />
+          <item value="6" name="assassin" />
+          <item value="7" name="player" />
+          <item value="8" name="marine" />
+          <item value="9" name="crew" />
+          <item value="10" name="combat form" />
+          <item value="11" name="infection form" />
+          <item value="12" name="carrier form" />
+          <item value="13" name="monitor" />
+          <item value="14" name="sentinel" />
+          <item value="15" name="none" />
+          <item value="16" name="mounted weapon" />
+          <item value="17" name="brute" />
+          <item value="18" name="prophet" />
+          <item value="19" name="bugger" />
+          <item value="20" name="juggernaut" />
+        </value>
+        <value type="Enum" name="cause type" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="player" />
+          <item value="2" name="actor" />
+          <item value="3" name="biped" />
+          <item value="4" name="body" />
+          <item value="5" name="vehicle" />
+          <item value="6" name="projectile" />
+          <item value="7" name="actor or player" />
+          <item value="8" name="turret" />
+          <item value="9" name="unit in vehicle" />
+          <item value="10" name="unit in turret" />
+          <item value="11" name="driver" />
+          <item value="12" name="gunner" />
+          <item value="13" name="passenger" />
+          <item value="14" name="postcombat" />
+          <item value="15" name="postcombat_won" />
+          <item value="16" name="postcombat_lost" />
+          <item value="17" name="player masterchief" />
+          <item value="18" name="player dervish" />
+          <item value="19" name="heretic" />
+          <item value="20" name="majorly scary" />
+          <item value="21" name="last man in vehicle" />
+          <item value="22" name="male" />
+          <item value="23" name="female" />
+          <item value="24" name="grenade" />
+        </value>
+        <value type="Enum" name="subject type" length="2" disabled="false">
+          <item value="0" name="NONE" />
+          <item value="1" name="player" />
+          <item value="2" name="actor" />
+          <item value="3" name="biped" />
+          <item value="4" name="body" />
+          <item value="5" name="vehicle" />
+          <item value="6" name="projectile" />
+          <item value="7" name="actor or player" />
+          <item value="8" name="turret" />
+          <item value="9" name="unit in vehicle" />
+          <item value="10" name="unit in turret" />
+          <item value="11" name="driver" />
+          <item value="12" name="gunner" />
+          <item value="13" name="passenger" />
+          <item value="14" name="postcombat" />
+          <item value="15" name="postcombat_won" />
+          <item value="16" name="postcombat_lost" />
+          <item value="17" name="player masterchief" />
+          <item value="18" name="player dervish" />
+          <item value="19" name="heretic" />
+          <item value="20" name="majorly scary" />
+          <item value="21" name="last man in vehicle" />
+          <item value="22" name="male" />
+          <item value="23" name="female" />
+          <item value="24" name="grenade" />
+        </value>
+        <value type="StringId" name="cause ai type name" disabled="false" />
+        <value type="Enum" name="spatial relation" length="2" disabled="false">
+          <item value="0" name="none" />
+          <item value="1" name="very near (&lt;1wu)" />
+          <item value="2" name="near (&lt;2.5wus)" />
+          <item value="3" name="medium range (&lt;5wus)" />
+          <item value="4" name="far (&lt;10wus)" />
+          <item value="5" name="very far (&gt;10wus)" />
+          <item value="6" name="in front of" />
+          <item value="7" name="behind" />
+          <item value="8" name="above (delta&gt;1 wu)" />
+          <item value="9" name="below (delta&gt;1 wu)" />
+          <tooltip>with respect to the subject, the cause is ...</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed3" length="2" />
+        <value type="StringId" name="subject ai type name" disabled="false" />
+        <value type="Pad" name="_unnamed4" length="8" />
+        <value type="Flags" name="Conditions" length="4" disabled="false">
+          <bit index="0" name="asleep" />
+          <bit index="1" name="idle" />
+          <bit index="2" name="alert" />
+          <bit index="3" name="active" />
+          <bit index="4" name="uninspected orphan" />
+          <bit index="5" name="definite orphan" />
+          <bit index="6" name="certain orphan" />
+          <bit index="7" name="visible enemy" />
+          <bit index="8" name="clear los enemy" />
+          <bit index="9" name="dangerous enemy" />
+          <bit index="10" name="no vehicle" />
+          <bit index="11" name="vehicle driver" />
+          <bit index="12" name="vehicle passenger" />
+        </value>
+      </struct>
+      <value type="Block" name="patterns" disabled="false" struct="VocalizationPatternsBlock" maxelements="1000" />
+      <value type="Pad" name="_unnamed0" length="12" />
+      <struct name="DialogueDataBlock">
+        <value type="ShortInteger" name="start index postprocess" disabled="true" />
+        <value type="ShortInteger" name="length postprocess" disabled="true" />
+      </struct>
+      <value type="Block" name="dialogue data" disabled="false" struct="DialogueDataBlock" maxelements="200" />
+      <struct name="InvoluntaryDataBlock">
+        <value type="ShortInteger" name="involuntary vocalization index" disabled="true" />
+        <value type="Pad" name="_unnamed0" length="2" />
+      </struct>
+      <value type="Block" name="involuntary data" disabled="false" struct="InvoluntaryDataBlock" maxelements="100" />
+    </struct>
+  </plugin>
+</xml>

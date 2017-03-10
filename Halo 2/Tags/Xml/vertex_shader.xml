@@ -1,0 +1,26 @@
+<xml>
+  <name type="vrtx" parenttype="????">VertexShader</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="VertexShaderBlock">
+      <value type="Enum" name="platform" length="2" disabled="false">
+        <item value="0" name="pc" />
+        <item value="1" name="xbox" />
+      </value>
+      <value type="Pad" name="_unnamed0" length="2" />
+      <struct name="VertexShaderClassificationBlock">
+        <value type="Pad" name="_unnamed0" length="4" />
+        <struct name="IndexBlockHandcoded">
+          <value type="ShortInteger" name="index" disabled="false" />
+        </struct>
+        <value type="Block" name="index block" disabled="false" struct="IndexBlockHandcoded" maxelements="8192" />
+        <struct name="ByteBlockHandcoded">
+          <value type="CharInteger" name="index" disabled="false" />
+        </struct>
+        <value type="Block" name="byte block" disabled="false" struct="ByteBlockHandcoded" maxelements="65535" />
+        <value type="Skip" name="_unnamed1" length="8" />
+      </struct>
+      <value type="Block" name="geometry classifications" disabled="false" struct="VertexShaderClassificationBlock" maxelements="12" />
+    </struct>
+  </plugin>
+</xml>

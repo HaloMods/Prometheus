@@ -1,0 +1,120 @@
+<xml>
+  <name type="DECP" parenttype="????">Decorators</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="DecoratorsBlock">
+      <value type="RealPoint3d" name="Grid Origin" disabled="false" />
+      <value type="LongInteger" name="Cell Count per Dimension" disabled="false" />
+      <struct name="DecoratorCacheBlockBlock">
+        <value type="ResourceBlock" name="Resource Data" disabled="false" />
+        <value type="LongInteger" name="Section Data Size" disabled="true" />
+        <value type="LongInteger" name="Resource Data Size" disabled="true" />
+        <struct name="GlobalGeometryBlockResourceBlock">
+          <value type="Enum" name="Type" length="1" disabled="true">
+            <item value="0" name="Tag Block" />
+            <item value="1" name="Tag Data" />
+            <item value="2" name="Vertex Buffer" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="3" />
+          <value type="ShortInteger" name="Primary Locator" disabled="true" />
+          <value type="ShortInteger" name="Secondary Locator" disabled="true" />
+          <value type="LongInteger" name="Resource Data Size" disabled="true" />
+          <value type="LongInteger" name="Resource Data Offset" disabled="true" />
+        </struct>
+        <value type="Block" name="Resources" disabled="true" struct="GlobalGeometryBlockResourceBlock" maxelements="1024" />
+        <value type="Skip" name="Geometry Self Reference" length="4" disabled="false" />
+        <value type="ShortInteger" name="Owner Tag Section Offset" disabled="true" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <struct name="DecoratorCacheBlockDataBlock">
+          <struct name="DecoratorPlacementBlock">
+            <value type="LongInteger" name="Internal Data 1" disabled="false" />
+            <value type="LongInteger" name="Compressed Position" disabled="false" />
+            <value type="RgbColor" name="Tint Color" disabled="false" />
+            <value type="RgbColor" name="Lightmap Color" disabled="false" />
+            <value type="LongInteger" name="Compressed Light Direction" disabled="false" />
+            <value type="LongInteger" name="Compressed Light 2 Direction" disabled="false" />
+          </struct>
+          <value type="Block" name="Placements" disabled="true" struct="DecoratorPlacementBlock" maxelements="32768" />
+          <struct name="DecalVerticesBlock">
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="RealPoint2d" name="texcoord 0" disabled="true" />
+            <value type="RealPoint2d" name="texcoord 1" disabled="true" />
+            <value type="RgbColor" name="Color" disabled="true" />
+          </struct>
+          <value type="Block" name="Decal Vertices" disabled="true" struct="DecalVerticesBlock" maxelements="65536" />
+          <struct name="IndicesBlock">
+            <value type="ShortInteger" name="Index" disabled="true" />
+          </struct>
+          <value type="Block" name="Decal Indices" disabled="true" struct="IndicesBlock" maxelements="65536" />
+          <value type="Skip" name="decal vertex buffer" length="32" disabled="true" />
+          <value type="Pad" name="_unnamed0" length="16" />
+          <struct name="SpriteVerticesBlock">
+            <value type="RealPoint3d" name="Position" disabled="true" />
+            <value type="RealVector3d" name="Offset" disabled="true" />
+            <value type="RealVector3d" name="Axis" disabled="true" />
+            <value type="RealPoint2d" name="texcoord" disabled="true" />
+            <value type="RgbColor" name="Color" disabled="true" />
+          </struct>
+          <value type="Block" name="Sprite Vertices" disabled="true" struct="SpriteVerticesBlock" maxelements="65536" />
+          <value type="Block" name="Sprite Indices" disabled="true" struct="IndicesBlock" maxelements="65536" />
+          <value type="Skip" name="sprite vertex buffer" length="32" disabled="true" />
+          <value type="Pad" name="_unnamed1" length="16" />
+        </struct>
+        <value type="Block" name="Cache Block Data" disabled="true" struct="DecoratorCacheBlockDataBlock" maxelements="1" />
+        <value type="Pad" name="_unnamed2" length="4" />
+        <value type="Pad" name="_unnamed3" length="4" />
+      </struct>
+      <value type="Block" name="Cache Blocks" disabled="false" struct="DecoratorCacheBlockBlock" maxelements="4096" />
+      <struct name="DecoratorGroupBlock">
+        <value type="CharBlockIndex" name="Decorator Set" disabled="true" />
+        <value type="Enum" name="Decorator Type" length="1" disabled="false">
+          <item value="0" name="model" />
+          <item value="1" name="floating decal" />
+          <item value="2" name="projected decal" />
+          <item value="3" name="screen facing quad" />
+          <item value="4" name="axis rotating quad" />
+          <item value="5" name="cross quad" />
+        </value>
+        <value type="CharInteger" name="Shader Index" disabled="true" />
+        <value type="CharInteger" name="Compressed Radius" disabled="true" />
+        <value type="ShortInteger" name="Cluster" disabled="true" />
+        <value type="ShortBlockIndex" name="Cache Block" disabled="true" block="DecoratorCacheBlockBlock" />
+        <value type="ShortInteger" name="Decorator Start Index" disabled="true" />
+        <value type="ShortInteger" name="Decorator Count" disabled="true" />
+        <value type="ShortInteger" name="Vertex Start Offset" disabled="true" />
+        <value type="ShortInteger" name="Vertex Count" disabled="true" />
+        <value type="ShortInteger" name="Index Start Offset" disabled="true" />
+        <value type="ShortInteger" name="Index Count" disabled="true" />
+        <value type="LongInteger" name="Compressed Bounding Center" disabled="true" />
+      </struct>
+      <value type="Block" name="Groups" disabled="false" struct="DecoratorGroupBlock" maxelements="131072" />
+      <struct name="DecoratorCellCollectionBlock">
+        <value type="ShortInteger" name="Child Index" disabled="false" />
+        <value type="ShortInteger" name="Child Index2" disabled="false" />
+        <value type="ShortInteger" name="Child Index3" disabled="false" />
+        <value type="ShortInteger" name="Child Index4" disabled="false" />
+        <value type="ShortInteger" name="Child Index5" disabled="false" />
+        <value type="ShortInteger" name="Child Index6" disabled="false" />
+        <value type="ShortInteger" name="Child Index7" disabled="false" />
+        <value type="ShortInteger" name="Child Index8" disabled="false" />
+        <value type="ShortBlockIndex" name="Cache Block Index" disabled="false" block="DecoratorCacheBlockBlock" />
+        <value type="ShortInteger" name="Group Count" disabled="false" />
+        <value type="LongInteger" name="Group Start Index" disabled="false" />
+      </struct>
+      <value type="Block" name="Cells" disabled="false" struct="DecoratorCellCollectionBlock" maxelements="65535" />
+      <struct name="DecoratorProjectedDecalBlock">
+        <value type="CharBlockIndex" name="Decorator Set" disabled="false" />
+        <value type="CharInteger" name="Decorator Class" disabled="false" />
+        <value type="CharInteger" name="Decorator Permutation" disabled="false" />
+        <value type="CharInteger" name="Sprite Index" disabled="false" />
+        <value type="RealPoint3d" name="Position" disabled="false" />
+        <value type="RealVector3d" name="Left" disabled="false" />
+        <value type="RealVector3d" name="Up" disabled="false" />
+        <value type="RealVector3d" name="Extents" disabled="false" />
+        <value type="RealPoint3d" name="Previous Position" disabled="false" />
+      </struct>
+      <value type="Block" name="Decals" disabled="false" struct="DecoratorProjectedDecalBlock" maxelements="32768" />
+    </struct>
+  </plugin>
+</xml>

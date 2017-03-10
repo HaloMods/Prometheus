@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="sgla" parenttype="shdr">ShaderTransparentGlass</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="ShaderTransparentGlass">
+      <value type="Flags" name="flags" length="2">
+        <bit index="0" name="alph" />
+        <bit index="1" name="decal" />
+        <bit index="2" name="tw" />
+        <bit index="3" name="bump map is specular mask" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Pad" name="_unnamed2" length="40" />
+      <value type="RealRGBColor" name="background tint color" />
+      <value type="Real" name="background tint map scale">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="TagReference" name="background tint map" extensions="bitm" />
+      <value type="Pad" name="_unnamed3" length="20" />
+      <value type="Pad" name="_unnamed4" length="2" />
+      <value type="Enum" name="reflection type">
+        <item value="0" name="bumped cub" />
+        <item value="1" name="flat cub" />
+        <item value="2" name="dynamic mirror" />
+      </value>
+      <value type="RealFraction" name="perpendicular brightness" />
+      <value type="RealRGBColor" name="perpendicular tint color" />
+      <value type="RealFraction" name="parallel brightness" />
+      <value type="RealRGBColor" name="parallel tint color" />
+      <value type="TagReference" name="reflection map" extensions="bitm" />
+      <value type="Real" name="bump map scale" />
+      <value type="TagReference" name="bump map" extensions="bitm" />
+      <value type="Pad" name="_unnamed5" length="128" />
+      <value type="Pad" name="_unnamed6" length="4" />
+      <value type="Real" name="diffuse map scale">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="TagReference" name="diffuse map" extensions="bitm" />
+      <value type="Real" name="diffuse detail map scale">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="TagReference" name="diffuse detail map" extensions="bitm" />
+      <value type="Pad" name="_unnamed7" length="28" />
+      <value type="Pad" name="_unnamed8" length="4" />
+      <value type="Real" name="specular map scale">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="TagReference" name="specular map" extensions="bitm" />
+      <value type="Real" name="specular detail map scale">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="TagReference" name="specular detail map" extensions="bitm" />
+      <value type="Pad" name="_unnamed9" length="28" />
+    </struct>
+  </plugin>
+</xml>

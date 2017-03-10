@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="part" parenttype="????">Particle</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Particle">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="can animate backwards" />
+        <bit index="1" name="animation stops at rest" />
+        <bit index="2" name="animation starts on random frame" />
+        <bit index="3" name="animate once per frame" />
+        <bit index="4" name="dies at rest" />
+        <bit index="5" name="dies on contact with structure" />
+        <bit index="6" name="tint from diffuse texture" />
+        <bit index="7" name="dies on contact with water" />
+        <bit index="8" name="dies on contact with air" />
+        <bit index="9" name="sel">
+          <tooltip>Don't cast world-lights onto this particle.</tooltip>
+        </bit>
+        <bit index="10" name="random horizontal mirroring" />
+        <bit index="11" name="random vertical mirroring" />
+      </value>
+      <value type="TagReference" name="bitmap" extensions="bitm" />
+      <value type="TagReference" name="physics" extensions="pphy" />
+      <value type="TagReference" name="marty traded his kids for this" extensions="foot" />
+      <value type="Pad" name="_unnamed" length="4" />
+      <value type="RealBounds" name="lifespan" />
+      <value type="Real" name="fade in time" />
+      <value type="Real" name="fade out time" />
+      <value type="TagReference" name="collision effect" extensions="snd!" />
+      <value type="TagReference" name="death effect" extensions="snd!" />
+      <value type="Real" name="minimum size">
+        <tooltip>In the distance, don't get any smaller than this size on the screen.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed2" length="8" />
+      <value type="RealBounds" name="radius animation">
+        <tooltip>When created, the radius is multiplied by the first number. at the end of the lifetime, the radius is multiplied by the second number..</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed3" length="4" />
+      <value type="RealBounds" name="animation rate">
+        <tooltip>Rate at which the particle animates.</tooltip>
+      </value>
+      <value type="Real" name="contact deterioration">
+        <tooltip>The decrease in the frame rate caused by a collision.</tooltip>
+      </value>
+      <value type="Real" name="fade start size">
+        <tooltip>Begin fading the particle out when it's smaller than this size on the screen.</tooltip>
+      </value>
+      <value type="Real" name="fade end size">
+        <tooltip>Kill the particle when it's smaller than this size on the screen.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed4" length="4" />
+      <value type="ShortInteger" name="first sequence index">
+        <tooltip>The index of the first sequence in the bitmap group used by this particle.</tooltip>
+      </value>
+      <value type="ShortInteger" name="initial sequence count" />
+      <value type="ShortInteger" name="looping sequence count" />
+      <value type="ShortInteger" name="final sequence count" />
+      <value type="Pad" name="_unnamed5" length="12" />
+      <value type="Enum" name="orientation">
+        <item value="0" name="screen facing" />
+        <item value="1" name="parallel to direction" />
+        <item value="2" name="perpendicular to direction" />
+      </value>
+      <value type="Pad" name="_unnamed6" length="2" />
+      <value type="Pad" name="_unnamed7" length="40" />
+      <value type="Flags" name="shader flags" length="2">
+        <bit index="0" name="sort bias" />
+        <bit index="1" name="nonlinear tint" />
+        <bit index="2" name="dont overdraw fp weapon" />
+      </value>
+      <value type="Enum" name="framebuffer blend function">
+        <item value="0" name="alpha blend" />
+        <item value="1" name="multiply" />
+        <item value="2" name="double multiply" />
+        <item value="3" name="add" />
+        <item value="4" name="subtract" />
+        <item value="5" name="component min" />
+        <item value="6" name="component max" />
+        <item value="7" name="alph" />
+      </value>
+      <value type="Enum" name="framebuffer fade mode">
+        <item value="0" name="none" />
+        <item value="1" name="fade when perpendicular" />
+        <item value="2" name="fade when parallel" />
+      </value>
+      <value type="Flags" name="map flags" length="2">
+        <bit index="0" name="unfiltered" />
+      </value>
+      <value type="Pad" name="_unnamed8" length="28" />
+      <value type="TagReference" name="bitmap2" extensions="bitm" />
+      <value type="Enum" name="anchor">
+        <item value="0" name="with primary" />
+        <item value="1" name="with screen space" />
+        <item value="2" name="zsprite" />
+      </value>
+      <value type="Flags" name="flags2" length="2">
+        <bit index="0" name="unfiltered" />
+      </value>
+      <value type="Enum" name="_unnamed9">
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="_unnamed10">
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Real" name="_unnamed11">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Real" name="_unnamed12" />
+      <value type="Real" name="_unnamed13">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Enum" name="_unnamed14">
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="_unnamed15">
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Real" name="_unnamed16">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Real" name="_unnamed17" />
+      <value type="Real" name="_unnamed18">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Enum" name="rotatio">
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="rotatio2">
+        <item value="0" name="one" />
+        <item value="1" name="zero" />
+        <item value="2" name="cosine" />
+        <item value="3" name="cosine variable period" />
+        <item value="4" name="diagonal wave" />
+        <item value="5" name="diagonal wave variable period" />
+        <item value="6" name="slide" />
+        <item value="7" name="slide variable period" />
+        <item value="8" name="noise" />
+        <item value="9" name="jitter" />
+        <item value="10" name="wander" />
+        <item value="11" name="spark" />
+      </value>
+      <value type="Real" name="rotatio3">
+        <tooltip>0 defaults to 1.</tooltip>
+      </value>
+      <value type="Real" name="rotatio4" />
+      <value type="Real" name="rotatio5">
+        <tooltip>0 defaults to 360.</tooltip>
+      </value>
+      <value type="RealPoint2D" name="rotatio6" />
+      <value type="Pad" name="_unnamed19" length="4" />
+      <value type="Real" name="zsprite radius scale" />
+      <value type="Pad" name="_unnamed20" length="20" />
+    </struct>
+  </plugin>
+</xml>

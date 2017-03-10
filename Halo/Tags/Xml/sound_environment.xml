@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="snde" parenttype="????">SoundEnvironment</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="SoundEnvironment">
+      <value type="Pad" name="_unnamed" length="4" />
+      <value type="ShortInteger" name="priority">
+        <tooltip>When multiple listeners are in different sound environments in split screen, the combined environment will be the one with the highest priority..</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed2" length="2" />
+      <value type="RealFraction" name="room intensity">
+        <tooltip>Intensity of the room effect.</tooltip>
+      </value>
+      <value type="RealFraction" name="room intensity hf">
+        <tooltip>Intensity of the room effect above the reference high frequency.</tooltip>
+      </value>
+      <value type="Real" name="room rolloff 0 to 10">
+        <tooltip>How quickly the room effect rolls off, from 0.0 to 10.0.</tooltip>
+      </value>
+      <value type="Real" name="decay time .1 to 20" />
+      <value type="Real" name="decay hf ratio .1 to 2" />
+      <value type="RealFraction" name="reflections intensity" />
+      <value type="Real" name="reflections delay 0 to .3" />
+      <value type="RealFraction" name="reverb intensity" />
+      <value type="Real" name="reverb delay 0 to .1" />
+      <value type="Real" name="diffusion" />
+      <value type="Real" name="density" />
+      <value type="Real" name="hf reference20 to 2">
+        <tooltip>For hf values, what frequency defines hf, from 20 to 20,000.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed3" length="16" />
+    </struct>
+  </plugin>
+</xml>

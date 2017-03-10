@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="elec" parenttype="????">Lightning</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Lightning">
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="ShortInteger" name="count">
+        <tooltip>Number of overlapping lightning effects to render; 0 defaults to 1.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed2" length="16" />
+      <value type="Real" name="near fade distance">
+        <tooltip>Distance at which lightning is at full brightness.</tooltip>
+      </value>
+      <value type="Real" name="far fade distance">
+        <tooltip>Distance at which lightning is at zero brightness.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed3" length="16" />
+      <value type="Enum" name="jitter scale source">
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="thickness scale source">
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Enum" name="tint modulation source">
+        <item value="0" name="none" />
+        <item value="1" name="A" />
+        <item value="2" name="B" />
+        <item value="3" name="C" />
+        <item value="4" name="D" />
+      </value>
+      <value type="Enum" name="brightness scale source">
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="TagReference" name="bitmap" extensions="bitm" />
+      <value type="Pad" name="_unnamed4" length="84" />
+      <struct name="LightningMarker">
+        <value type="FixedLengthString" name="attachment marker" />
+        <value type="Flags" name="flags" length="2">
+          <bit index="0" name="not connected to next marker" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="ShortInteger" name="octaves to next marker" />
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="76" />
+        <value type="RealVector3D" name="random position bounds" />
+        <value type="Real" name="random jitter" />
+        <value type="Real" name="thickness" />
+        <value type="RealARGBColor" name="tint">
+          <tooltip>Alpha is brightness.</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed4" length="76" />
+      </struct>
+      <value type="Block" name="markers" struct="LightningMarker" maxelements="16" />
+      <struct name="LightningShader">
+        <value type="Pad" name="_unnamed" length="40" />
+        <value type="Flags" name="shader flags" length="2">
+          <bit index="0" name="sort bias" />
+          <bit index="1" name="nonlinear tint" />
+          <bit index="2" name="dont overdraw fp weapon" />
+        </value>
+        <value type="Enum" name="framebuffer blend function">
+          <item value="0" name="alpha blend" />
+          <item value="1" name="multiply" />
+          <item value="2" name="double multiply" />
+          <item value="3" name="add" />
+          <item value="4" name="subtract" />
+          <item value="5" name="component min" />
+          <item value="6" name="component max" />
+          <item value="7" name="alph" />
+        </value>
+        <value type="Enum" name="framebuffer fade mode">
+          <item value="0" name="none" />
+          <item value="1" name="fade when perpendicular" />
+          <item value="2" name="fade when parallel" />
+        </value>
+        <value type="Flags" name="map flags" length="2">
+          <bit index="0" name="unfiltered" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="28" />
+        <value type="Pad" name="_unnamed3" length="16" />
+        <value type="Pad" name="_unnamed4" length="2" />
+        <value type="Pad" name="_unnamed5" length="2" />
+        <value type="Pad" name="_unnamed6" length="56" />
+        <value type="Pad" name="_unnamed7" length="28" />
+      </struct>
+      <value type="Block" name="shader" struct="LightningShader" maxelements="1" />
+      <value type="Pad" name="_unnamed5" length="88" />
+    </struct>
+  </plugin>
+</xml>

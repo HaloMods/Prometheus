@@ -1,0 +1,9 @@
+<xml>
+  <name type="ssce" parenttype="obje">SoundScenery</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="SoundSceneryBlock">
+      <value type="Pad" name="_unnamed0" length="16" />
+    </struct>
+  </plugin>
+</xml>

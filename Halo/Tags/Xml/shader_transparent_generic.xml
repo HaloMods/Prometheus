@@ -1,0 +1,585 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="sotr" parenttype="shdr">ShaderTransparentGeneric</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="ShaderTransparentGeneric">
+      <value type="CharInteger" name="numeric counter limit" />
+      <value type="Flags" name="flags" length="1">
+        <bit index="0" name="alph" />
+        <bit index="1" name="decal" />
+        <bit index="2" name="tw" />
+        <bit index="3" name="first map is in screenspace" />
+        <bit index="4" name="draw before water" />
+        <bit index="5" name="ignore effect" />
+        <bit index="6" name="scale first map with distance" />
+        <bit index="7" name="numeric" />
+      </value>
+      <value type="Enum" name="first map type">
+        <item value="0" name="2D map" />
+        <item value="1" name="reflection cube map" />
+        <item value="2" name="objec" />
+        <item value="3" name="viewe" />
+      </value>
+      <value type="Enum" name="framebuffer blend function">
+        <item value="0" name="alpha blend" />
+        <item value="1" name="multiply" />
+        <item value="2" name="double multiply" />
+        <item value="3" name="add" />
+        <item value="4" name="subtract" />
+        <item value="5" name="component min" />
+        <item value="6" name="component max" />
+        <item value="7" name="alph" />
+      </value>
+      <value type="Enum" name="framebuffer fade mode">
+        <item value="0" name="none" />
+        <item value="1" name="fade when perpendicular" />
+        <item value="2" name="fade when parallel" />
+      </value>
+      <value type="Enum" name="framebuffer fade source">
+        <tooltip>Fade is multiplied by this external value.</tooltip>
+        <item value="0" name="none" />
+        <item value="1" name="A out" />
+        <item value="2" name="B out" />
+        <item value="3" name="C out" />
+        <item value="4" name="D out" />
+      </value>
+      <value type="Pad" name="_unnamed" length="2" />
+      <value type="Real" name="lens flare spacing">
+        <tooltip>0 places a single lens flare.</tooltip>
+      </value>
+      <value type="TagReference" name="lens flare" extensions="lens" />
+      <struct name="ShaderTransparentLayer">
+        <value type="TagReference" name="shader" extensions="shdr" />
+      </struct>
+      <value type="Block" name="extra layers" struct="ShaderTransparentLayer" maxelements="4" />
+      <struct name="ShaderTransparentGenericMap">
+        <value type="Flags" name="flags" length="2">
+          <bit index="0" name="unfiltered" />
+          <bit index="1" name="" />
+          <bit index="2" name="" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Real" name="map">
+          <tooltip>0 defaults to 1.</tooltip>
+        </value>
+        <value type="Real" name="map2">
+          <tooltip>0 defaults to 1.</tooltip>
+        </value>
+        <value type="Real" name="map3" />
+        <value type="Real" name="map4" />
+        <value type="Real" name="map rotation" />
+        <value type="RealFraction" name="mipmap bias" />
+        <value type="TagReference" name="map5" extensions="bitm" />
+        <value type="Enum" name="_unnamed2">
+          <item value="0" name="none" />
+          <item value="1" name="A out" />
+          <item value="2" name="B out" />
+          <item value="3" name="C out" />
+          <item value="4" name="D out" />
+        </value>
+        <value type="Enum" name="_unnamed3">
+          <item value="0" name="one" />
+          <item value="1" name="zero" />
+          <item value="2" name="cosine" />
+          <item value="3" name="cosine variable period" />
+          <item value="4" name="diagonal wave" />
+          <item value="5" name="diagonal wave variable period" />
+          <item value="6" name="slide" />
+          <item value="7" name="slide variable period" />
+          <item value="8" name="noise" />
+          <item value="9" name="jitter" />
+          <item value="10" name="wander" />
+          <item value="11" name="spark" />
+        </value>
+        <value type="Real" name="_unnamed4">
+          <tooltip>0 defaults to 1.</tooltip>
+        </value>
+        <value type="Real" name="_unnamed5" />
+        <value type="Real" name="_unnamed6">
+          <tooltip>0 defaults to 1.</tooltip>
+        </value>
+        <value type="Enum" name="_unnamed7">
+          <item value="0" name="none" />
+          <item value="1" name="A out" />
+          <item value="2" name="B out" />
+          <item value="3" name="C out" />
+          <item value="4" name="D out" />
+        </value>
+        <value type="Enum" name="_unnamed8">
+          <item value="0" name="one" />
+          <item value="1" name="zero" />
+          <item value="2" name="cosine" />
+          <item value="3" name="cosine variable period" />
+          <item value="4" name="diagonal wave" />
+          <item value="5" name="diagonal wave variable period" />
+          <item value="6" name="slide" />
+          <item value="7" name="slide variable period" />
+          <item value="8" name="noise" />
+          <item value="9" name="jitter" />
+          <item value="10" name="wander" />
+          <item value="11" name="spark" />
+        </value>
+        <value type="Real" name="_unnamed9">
+          <tooltip>0 defaults to 1.</tooltip>
+        </value>
+        <value type="Real" name="_unnamed10" />
+        <value type="Real" name="_unnamed11">
+          <tooltip>0 defaults to 1.</tooltip>
+        </value>
+        <value type="Enum" name="rotatio">
+          <item value="0" name="none" />
+          <item value="1" name="A out" />
+          <item value="2" name="B out" />
+          <item value="3" name="C out" />
+          <item value="4" name="D out" />
+        </value>
+        <value type="Enum" name="rotatio2">
+          <item value="0" name="one" />
+          <item value="1" name="zero" />
+          <item value="2" name="cosine" />
+          <item value="3" name="cosine variable period" />
+          <item value="4" name="diagonal wave" />
+          <item value="5" name="diagonal wave variable period" />
+          <item value="6" name="slide" />
+          <item value="7" name="slide variable period" />
+          <item value="8" name="noise" />
+          <item value="9" name="jitter" />
+          <item value="10" name="wander" />
+          <item value="11" name="spark" />
+        </value>
+        <value type="Real" name="rotatio3">
+          <tooltip>0 defaults to 1.</tooltip>
+        </value>
+        <value type="Real" name="rotatio4" />
+        <value type="Real" name="rotatio5">
+          <tooltip>0 defaults to 360.</tooltip>
+        </value>
+        <value type="RealPoint2D" name="rotatio6" />
+      </struct>
+      <value type="Block" name="maps" struct="ShaderTransparentGenericMap" maxelements="4" />
+      <struct name="ShaderTransparentGenericStage">
+        <value type="Flags" name="flags" length="2">
+          <bit index="0" name="color mux" />
+          <bit index="1" name="alpha mux" />
+          <bit index="2" name="" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Enum" name="color0 source">
+          <item value="0" name="none" />
+          <item value="1" name="A" />
+          <item value="2" name="B" />
+          <item value="3" name="C" />
+          <item value="4" name="D" />
+        </value>
+        <value type="Enum" name="color0 animation function">
+          <item value="0" name="one" />
+          <item value="1" name="zero" />
+          <item value="2" name="cosine" />
+          <item value="3" name="cosine variable period" />
+          <item value="4" name="diagonal wave" />
+          <item value="5" name="diagonal wave variable period" />
+          <item value="6" name="slide" />
+          <item value="7" name="slide variable period" />
+          <item value="8" name="noise" />
+          <item value="9" name="jitter" />
+          <item value="10" name="wander" />
+          <item value="11" name="spark" />
+        </value>
+        <value type="Real" name="color0 animation period">
+          <tooltip>0 defaults to 1.</tooltip>
+        </value>
+        <value type="RealARGBColor" name="color0 animation lower bound" />
+        <value type="RealARGBColor" name="color0 animation upper bound" />
+        <value type="RealARGBColor" name="color1" />
+        <value type="Enum" name="input A">
+          <item value="0" name="zero" />
+          <item value="1" name="one" />
+          <item value="2" name="one half" />
+          <item value="3" name="negative one" />
+          <item value="4" name="negative one half" />
+          <item value="5" name="map color 0" />
+          <item value="6" name="map color 1" />
+          <item value="7" name="map color 2" />
+          <item value="8" name="map color 3" />
+          <item value="9" name="vertex color 0  diffuse light" />
+          <item value="10" name="vertex color 1  fadeperpendicular" />
+          <item value="11" name="scratch color 0" />
+          <item value="12" name="scratch color 1" />
+          <item value="13" name="constant color 0" />
+          <item value="14" name="constant color 1" />
+          <item value="15" name="map alpha 0" />
+          <item value="16" name="map alpha 1" />
+          <item value="17" name="map alpha 2" />
+          <item value="18" name="map alpha 3" />
+          <item value="19" name="vertex alpha 0  fadenone" />
+          <item value="20" name="vertex alpha 1  fadeperpendicular" />
+          <item value="21" name="scratch alpha 0" />
+          <item value="22" name="scratch alpha 1" />
+          <item value="23" name="constant alpha 0" />
+          <item value="24" name="constant alpha 1" />
+        </value>
+        <value type="Enum" name="input A mapping">
+          <item value="0" name="clampx" />
+          <item value="1" name="1" />
+          <item value="2" name="2" />
+          <item value="3" name="1" />
+          <item value="4" name="clampx" />
+          <item value="5" name="12" />
+          <item value="6" name="x" />
+          <item value="7" name="-x" />
+        </value>
+        <value type="Enum" name="input B">
+          <item value="0" name="zero" />
+          <item value="1" name="one" />
+          <item value="2" name="one half" />
+          <item value="3" name="negative one" />
+          <item value="4" name="negative one half" />
+          <item value="5" name="map color 0" />
+          <item value="6" name="map color 1" />
+          <item value="7" name="map color 2" />
+          <item value="8" name="map color 3" />
+          <item value="9" name="vertex color 0  diffuse light" />
+          <item value="10" name="vertex color 1  fadeperpendicular" />
+          <item value="11" name="scratch color 0" />
+          <item value="12" name="scratch color 1" />
+          <item value="13" name="constant color 0" />
+          <item value="14" name="constant color 1" />
+          <item value="15" name="map alpha 0" />
+          <item value="16" name="map alpha 1" />
+          <item value="17" name="map alpha 2" />
+          <item value="18" name="map alpha 3" />
+          <item value="19" name="vertex alpha 0  fadenone" />
+          <item value="20" name="vertex alpha 1  fadeperpendicular" />
+          <item value="21" name="scratch alpha 0" />
+          <item value="22" name="scratch alpha 1" />
+          <item value="23" name="constant alpha 0" />
+          <item value="24" name="constant alpha 1" />
+        </value>
+        <value type="Enum" name="input B mapping">
+          <item value="0" name="clampx" />
+          <item value="1" name="1" />
+          <item value="2" name="2" />
+          <item value="3" name="1" />
+          <item value="4" name="clampx" />
+          <item value="5" name="12" />
+          <item value="6" name="x" />
+          <item value="7" name="-x" />
+        </value>
+        <value type="Enum" name="input C">
+          <item value="0" name="zero" />
+          <item value="1" name="one" />
+          <item value="2" name="one half" />
+          <item value="3" name="negative one" />
+          <item value="4" name="negative one half" />
+          <item value="5" name="map color 0" />
+          <item value="6" name="map color 1" />
+          <item value="7" name="map color 2" />
+          <item value="8" name="map color 3" />
+          <item value="9" name="vertex color 0  diffuse light" />
+          <item value="10" name="vertex color 1  fadeperpendicular" />
+          <item value="11" name="scratch color 0" />
+          <item value="12" name="scratch color 1" />
+          <item value="13" name="constant color 0" />
+          <item value="14" name="constant color 1" />
+          <item value="15" name="map alpha 0" />
+          <item value="16" name="map alpha 1" />
+          <item value="17" name="map alpha 2" />
+          <item value="18" name="map alpha 3" />
+          <item value="19" name="vertex alpha 0  fadenone" />
+          <item value="20" name="vertex alpha 1  fadeperpendicular" />
+          <item value="21" name="scratch alpha 0" />
+          <item value="22" name="scratch alpha 1" />
+          <item value="23" name="constant alpha 0" />
+          <item value="24" name="constant alpha 1" />
+        </value>
+        <value type="Enum" name="input C mapping">
+          <item value="0" name="clampx" />
+          <item value="1" name="1" />
+          <item value="2" name="2" />
+          <item value="3" name="1" />
+          <item value="4" name="clampx" />
+          <item value="5" name="12" />
+          <item value="6" name="x" />
+          <item value="7" name="-x" />
+        </value>
+        <value type="Enum" name="input D">
+          <item value="0" name="zero" />
+          <item value="1" name="one" />
+          <item value="2" name="one half" />
+          <item value="3" name="negative one" />
+          <item value="4" name="negative one half" />
+          <item value="5" name="map color 0" />
+          <item value="6" name="map color 1" />
+          <item value="7" name="map color 2" />
+          <item value="8" name="map color 3" />
+          <item value="9" name="vertex color 0  diffuse light" />
+          <item value="10" name="vertex color 1  fadeperpendicular" />
+          <item value="11" name="scratch color 0" />
+          <item value="12" name="scratch color 1" />
+          <item value="13" name="constant color 0" />
+          <item value="14" name="constant color 1" />
+          <item value="15" name="map alpha 0" />
+          <item value="16" name="map alpha 1" />
+          <item value="17" name="map alpha 2" />
+          <item value="18" name="map alpha 3" />
+          <item value="19" name="vertex alpha 0  fadenone" />
+          <item value="20" name="vertex alpha 1  fadeperpendicular" />
+          <item value="21" name="scratch alpha 0" />
+          <item value="22" name="scratch alpha 1" />
+          <item value="23" name="constant alpha 0" />
+          <item value="24" name="constant alpha 1" />
+        </value>
+        <value type="Enum" name="input D mapping">
+          <item value="0" name="clampx" />
+          <item value="1" name="1" />
+          <item value="2" name="2" />
+          <item value="3" name="1" />
+          <item value="4" name="clampx" />
+          <item value="5" name="12" />
+          <item value="6" name="x" />
+          <item value="7" name="-x" />
+        </value>
+        <value type="Enum" name="output AB">
+          <item value="0" name="discard" />
+          <item value="1" name="scratch color 0  final color" />
+          <item value="2" name="scratch color 1" />
+          <item value="3" name="vertex color 0" />
+          <item value="4" name="vertex color 1" />
+          <item value="5" name="map color 0" />
+          <item value="6" name="map color 1" />
+          <item value="7" name="map color 2" />
+          <item value="8" name="map color 3" />
+        </value>
+        <value type="Enum" name="output AB function">
+          <item value="0" name="multiply" />
+          <item value="1" name="dot product" />
+        </value>
+        <value type="Enum" name="output CD">
+          <item value="0" name="discard" />
+          <item value="1" name="scratch color 0  final color" />
+          <item value="2" name="scratch color 1" />
+          <item value="3" name="vertex color 0" />
+          <item value="4" name="vertex color 1" />
+          <item value="5" name="map color 0" />
+          <item value="6" name="map color 1" />
+          <item value="7" name="map color 2" />
+          <item value="8" name="map color 3" />
+        </value>
+        <value type="Enum" name="output CD function">
+          <item value="0" name="multiply" />
+          <item value="1" name="dot product" />
+        </value>
+        <value type="Enum" name="output AB CD muxsum">
+          <item value="0" name="discard" />
+          <item value="1" name="scratch color 0  final color" />
+          <item value="2" name="scratch color 1" />
+          <item value="3" name="vertex color 0" />
+          <item value="4" name="vertex color 1" />
+          <item value="5" name="map color 0" />
+          <item value="6" name="map color 1" />
+          <item value="7" name="map color 2" />
+          <item value="8" name="map color 3" />
+        </value>
+        <value type="Enum" name="output mapping">
+          <item value="0" name="identity" />
+          <item value="1" name="scale by 12" />
+          <item value="2" name="scale by 2" />
+          <item value="3" name="scale by 4" />
+          <item value="4" name="bias by" />
+          <item value="5" name="expand normal" />
+        </value>
+        <value type="Enum" name="input A2">
+          <item value="0" name="zero" />
+          <item value="1" name="one" />
+          <item value="2" name="one half" />
+          <item value="3" name="negative one" />
+          <item value="4" name="negative one half" />
+          <item value="5" name="map alpha 0" />
+          <item value="6" name="map alpha 1" />
+          <item value="7" name="map alpha 2" />
+          <item value="8" name="map alpha 3" />
+          <item value="9" name="vertex alpha 0  fadenone" />
+          <item value="10" name="vertex alpha 1  fadeperpendicular" />
+          <item value="11" name="scratch alpha 0" />
+          <item value="12" name="scratch alpha 1" />
+          <item value="13" name="constant alpha 0" />
+          <item value="14" name="constant alpha 1" />
+          <item value="15" name="map blue 0" />
+          <item value="16" name="map blue 1" />
+          <item value="17" name="map blue 2" />
+          <item value="18" name="map blue 3" />
+          <item value="19" name="vertex blue 0  blue light" />
+          <item value="20" name="vertex blue 1  fadeparallel" />
+          <item value="21" name="scratch blue 0" />
+          <item value="22" name="scratch blue 1" />
+          <item value="23" name="constant blue 0" />
+          <item value="24" name="constant blue 1" />
+        </value>
+        <value type="Enum" name="input A mapping2">
+          <item value="0" name="clampx" />
+          <item value="1" name="1" />
+          <item value="2" name="2" />
+          <item value="3" name="1" />
+          <item value="4" name="clampx" />
+          <item value="5" name="12" />
+          <item value="6" name="x" />
+          <item value="7" name="-x" />
+        </value>
+        <value type="Enum" name="input B2">
+          <item value="0" name="zero" />
+          <item value="1" name="one" />
+          <item value="2" name="one half" />
+          <item value="3" name="negative one" />
+          <item value="4" name="negative one half" />
+          <item value="5" name="map alpha 0" />
+          <item value="6" name="map alpha 1" />
+          <item value="7" name="map alpha 2" />
+          <item value="8" name="map alpha 3" />
+          <item value="9" name="vertex alpha 0  fadenone" />
+          <item value="10" name="vertex alpha 1  fadeperpendicular" />
+          <item value="11" name="scratch alpha 0" />
+          <item value="12" name="scratch alpha 1" />
+          <item value="13" name="constant alpha 0" />
+          <item value="14" name="constant alpha 1" />
+          <item value="15" name="map blue 0" />
+          <item value="16" name="map blue 1" />
+          <item value="17" name="map blue 2" />
+          <item value="18" name="map blue 3" />
+          <item value="19" name="vertex blue 0  blue light" />
+          <item value="20" name="vertex blue 1  fadeparallel" />
+          <item value="21" name="scratch blue 0" />
+          <item value="22" name="scratch blue 1" />
+          <item value="23" name="constant blue 0" />
+          <item value="24" name="constant blue 1" />
+        </value>
+        <value type="Enum" name="input B mapping2">
+          <item value="0" name="clampx" />
+          <item value="1" name="1" />
+          <item value="2" name="2" />
+          <item value="3" name="1" />
+          <item value="4" name="clampx" />
+          <item value="5" name="12" />
+          <item value="6" name="x" />
+          <item value="7" name="-x" />
+        </value>
+        <value type="Enum" name="input C2">
+          <item value="0" name="zero" />
+          <item value="1" name="one" />
+          <item value="2" name="one half" />
+          <item value="3" name="negative one" />
+          <item value="4" name="negative one half" />
+          <item value="5" name="map alpha 0" />
+          <item value="6" name="map alpha 1" />
+          <item value="7" name="map alpha 2" />
+          <item value="8" name="map alpha 3" />
+          <item value="9" name="vertex alpha 0  fadenone" />
+          <item value="10" name="vertex alpha 1  fadeperpendicular" />
+          <item value="11" name="scratch alpha 0" />
+          <item value="12" name="scratch alpha 1" />
+          <item value="13" name="constant alpha 0" />
+          <item value="14" name="constant alpha 1" />
+          <item value="15" name="map blue 0" />
+          <item value="16" name="map blue 1" />
+          <item value="17" name="map blue 2" />
+          <item value="18" name="map blue 3" />
+          <item value="19" name="vertex blue 0  blue light" />
+          <item value="20" name="vertex blue 1  fadeparallel" />
+          <item value="21" name="scratch blue 0" />
+          <item value="22" name="scratch blue 1" />
+          <item value="23" name="constant blue 0" />
+          <item value="24" name="constant blue 1" />
+        </value>
+        <value type="Enum" name="input C mapping2">
+          <item value="0" name="clampx" />
+          <item value="1" name="1" />
+          <item value="2" name="2" />
+          <item value="3" name="1" />
+          <item value="4" name="clampx" />
+          <item value="5" name="12" />
+          <item value="6" name="x" />
+          <item value="7" name="-x" />
+        </value>
+        <value type="Enum" name="input D2">
+          <item value="0" name="zero" />
+          <item value="1" name="one" />
+          <item value="2" name="one half" />
+          <item value="3" name="negative one" />
+          <item value="4" name="negative one half" />
+          <item value="5" name="map alpha 0" />
+          <item value="6" name="map alpha 1" />
+          <item value="7" name="map alpha 2" />
+          <item value="8" name="map alpha 3" />
+          <item value="9" name="vertex alpha 0  fadenone" />
+          <item value="10" name="vertex alpha 1  fadeperpendicular" />
+          <item value="11" name="scratch alpha 0" />
+          <item value="12" name="scratch alpha 1" />
+          <item value="13" name="constant alpha 0" />
+          <item value="14" name="constant alpha 1" />
+          <item value="15" name="map blue 0" />
+          <item value="16" name="map blue 1" />
+          <item value="17" name="map blue 2" />
+          <item value="18" name="map blue 3" />
+          <item value="19" name="vertex blue 0  blue light" />
+          <item value="20" name="vertex blue 1  fadeparallel" />
+          <item value="21" name="scratch blue 0" />
+          <item value="22" name="scratch blue 1" />
+          <item value="23" name="constant blue 0" />
+          <item value="24" name="constant blue 1" />
+        </value>
+        <value type="Enum" name="input D mapping2">
+          <item value="0" name="clampx" />
+          <item value="1" name="1" />
+          <item value="2" name="2" />
+          <item value="3" name="1" />
+          <item value="4" name="clampx" />
+          <item value="5" name="12" />
+          <item value="6" name="x" />
+          <item value="7" name="-x" />
+        </value>
+        <value type="Enum" name="output AB2">
+          <item value="0" name="discard" />
+          <item value="1" name="scratch alpha 0  final alpha" />
+          <item value="2" name="scratch alpha 1" />
+          <item value="3" name="vertex alpha 0  fog" />
+          <item value="4" name="vertex alpha 1" />
+          <item value="5" name="map alpha 0" />
+          <item value="6" name="map alpha 1" />
+          <item value="7" name="map alpha 2" />
+          <item value="8" name="map alpha 3" />
+        </value>
+        <value type="Enum" name="output CD2">
+          <item value="0" name="discard" />
+          <item value="1" name="scratch alpha 0  final alpha" />
+          <item value="2" name="scratch alpha 1" />
+          <item value="3" name="vertex alpha 0  fog" />
+          <item value="4" name="vertex alpha 1" />
+          <item value="5" name="map alpha 0" />
+          <item value="6" name="map alpha 1" />
+          <item value="7" name="map alpha 2" />
+          <item value="8" name="map alpha 3" />
+        </value>
+        <value type="Enum" name="output AB CD muxsum2">
+          <item value="0" name="discard" />
+          <item value="1" name="scratch alpha 0  final alpha" />
+          <item value="2" name="scratch alpha 1" />
+          <item value="3" name="vertex alpha 0  fog" />
+          <item value="4" name="vertex alpha 1" />
+          <item value="5" name="map alpha 0" />
+          <item value="6" name="map alpha 1" />
+          <item value="7" name="map alpha 2" />
+          <item value="8" name="map alpha 3" />
+        </value>
+        <value type="Enum" name="output mapping2">
+          <item value="0" name="identity" />
+          <item value="1" name="scale by 12" />
+          <item value="2" name="scale by 2" />
+          <item value="3" name="scale by 4" />
+          <item value="4" name="bias by" />
+          <item value="5" name="expand normal" />
+        </value>
+      </struct>
+      <value type="Block" name="stages" struct="ShaderTransparentGenericStage" maxelements="7" />
+    </struct>
+  </plugin>
+</xml>

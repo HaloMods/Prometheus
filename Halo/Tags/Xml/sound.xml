@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="snd!" parenttype="????">Sound</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="Sound">
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="fit to adpcm blocksize" />
+        <bit index="1" name="split long sound into permutations" />
+      </value>
+      <value type="Enum" name="class">
+        <item value="0" name="projectile_impact" />
+        <item value="1" name="projectile_detonation" />
+        <item value="2" name="" />
+        <item value="3" name="" />
+        <item value="4" name="weapon_fire" />
+        <item value="5" name="weapon_ready" />
+        <item value="6" name="weapon_reload" />
+        <item value="7" name="weapon_empty" />
+        <item value="8" name="weapon_charge" />
+        <item value="9" name="weapon_overheat" />
+        <item value="10" name="weapon_idle" />
+        <item value="11" name="" />
+        <item value="12" name="" />
+        <item value="13" name="object_impacts" />
+        <item value="14" name="particle_impacts" />
+        <item value="15" name="slow_particle_impacts" />
+        <item value="16" name="" />
+        <item value="17" name="" />
+        <item value="18" name="unit_footsteps" />
+        <item value="19" name="unit_dialog" />
+        <item value="20" name="" />
+        <item value="21" name="" />
+        <item value="22" name="vehicle_collision" />
+        <item value="23" name="vehicle_engine" />
+        <item value="24" name="" />
+        <item value="25" name="" />
+        <item value="26" name="device_door" />
+        <item value="27" name="device_force_field" />
+        <item value="28" name="device_machinery" />
+        <item value="29" name="device_nature" />
+        <item value="30" name="device_computers" />
+        <item value="31" name="" />
+        <item value="32" name="music" />
+        <item value="33" name="ambient_nature" />
+        <item value="34" name="ambient_machinery" />
+        <item value="35" name="ambient_computers" />
+        <item value="36" name="" />
+        <item value="37" name="" />
+        <item value="38" name="" />
+        <item value="39" name="first_person_damage" />
+        <item value="40" name="" />
+        <item value="41" name="" />
+        <item value="42" name="" />
+        <item value="43" name="" />
+        <item value="44" name="scripted_dialog_player" />
+        <item value="45" name="scripted_effect" />
+        <item value="46" name="scripted_dialog_other" />
+        <item value="47" name="scripted_dialog_force_unspatialized" />
+        <item value="48" name="" />
+        <item value="49" name="" />
+        <item value="50" name="game_event" />
+      </value>
+      <value type="Enum" name="sample rate">
+        <item value="0" name="22kHz" />
+        <item value="1" name="44kHz" />
+      </value>
+      <value type="Real" name="minimum distance">
+        <tooltip>The distance below which this sound no longer gets louder.</tooltip>
+      </value>
+      <value type="Real" name="maximum distance">
+        <tooltip>The distance beyond which this sound is no longer audible.</tooltip>
+      </value>
+      <value type="RealFraction" name="skip fraction">
+        <tooltip>Fraction of requests to play this sound that will be ignored (0 means always play.).</tooltip>
+      </value>
+      <value type="RealBounds" name="random pitch bounds">
+        <tooltip>The sound's pitch will be randomly selected and will be in this range. (1.0 is the recorded pitch.).</tooltip>
+      </value>
+      <value type="Angle" name="inner cone angle">
+        <tooltip>Within the cone defined by this angle and the sound's direction, the sound plays with a gain of 1.0..</tooltip>
+      </value>
+      <value type="Angle" name="outer cone angle">
+        <tooltip>Outside the cone defined by this angle and the sound's direction, the sound plays with a gain of OUTER CONE GAIN. (0 means the sound does not attenuate with direction.).</tooltip>
+      </value>
+      <value type="RealFraction" name="outer cone gain">
+        <tooltip>The gain to use when the sound is directed away from the listener.</tooltip>
+      </value>
+      <value type="Real" name="gain modifier" />
+      <value type="Real" name="maximum bend per second" />
+      <value type="Pad" name="_unnamed" length="12" />
+      <value type="Real" name="skip fraction modifier" />
+      <value type="Real" name="gain modifier2" />
+      <value type="Real" name="pitch modifier" />
+      <value type="Pad" name="_unnamed2" length="12" />
+      <value type="Real" name="skip fraction modifier2" />
+      <value type="Real" name="gain modifier3" />
+      <value type="Real" name="pitch modifier2" />
+      <value type="Pad" name="_unnamed3" length="12" />
+      <value type="Enum" name="encoding">
+        <item value="0" name="mono" />
+        <item value="1" name="stereo" />
+      </value>
+      <value type="Enum" name="compression">
+        <item value="0" name="none" />
+        <item value="1" name="xbox adpcm" />
+        <item value="2" name="ima adpcm" />
+        <item value="3" name="ogg" />
+      </value>
+      <value type="TagReference" name="promotion sound" extensions="snd!" />
+      <value type="ShortInteger" name="promotion count">
+        <tooltip>When there are this many instances of the sound, promote to the new sound..</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed4" length="2" />
+      <value type="Pad" name="_unnamed5" length="20" />
+      <struct name="SoundPitchRange">
+        <value type="FixedLengthString" name="name">
+          <tooltip>The name of the imported pitch range directory.</tooltip>
+        </value>
+        <value type="Real" name="natural pitch">
+          <tooltip>The apparent pitch when these samples are played at their recorded pitch..</tooltip>
+        </value>
+        <value type="RealBounds" name="bend bounds">
+          <tooltip>The range of pitches that will be represented using this sample. this should always contain the natural pitch..</tooltip>
+        </value>
+        <value type="ShortInteger" name="actual permutation count" />
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Pad" name="_unnamed2" length="12" />
+        <struct name="SoundPermutations">
+          <value type="FixedLengthString" name="name" blockname="true">
+            <tooltip>Name of the file from which this sample was imported.</tooltip>
+          </value>
+          <value type="RealFraction" name="skip fraction">
+            <tooltip>Fraction of requests to play this permutation that are ignored (a different permutation is selected.).</tooltip>
+          </value>
+          <value type="RealFraction" name="gain">
+            <tooltip>Fraction of recorded volume to play at..</tooltip>
+          </value>
+          <value type="Enum" name="compression">
+            <item value="0" name="none" />
+            <item value="1" name="xbox adpcm" />
+            <item value="2" name="ima adpcm" />
+            <item value="3" name="ogg" />
+          </value>
+          <value type="ShortInteger" name="next permutation index" />
+          <value type="Pad" name="_unnamed" length="20" />
+          <value type="Data" name="samples">
+            <tooltip>Sampled sound data.</tooltip>
+          </value>
+          <value type="Data" name="mouth data" />
+          <value type="Data" name="subtitle data" />
+        </struct>
+        <value type="Block" name="permutations" struct="SoundPermutations" maxelements="256">
+          <tooltip>Permutations represent equivalent variations of this sound..</tooltip>
+        </value>
+      </struct>
+      <value type="Block" name="pitch ranges" struct="SoundPitchRange" maxelements="8">
+        <tooltip>Pitch ranges allow multiple samples to represent the same sound at different pitches.</tooltip>
+      </value>
+    </struct>
+  </plugin>
+</xml>

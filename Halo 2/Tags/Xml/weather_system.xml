@@ -1,0 +1,155 @@
+<xml>
+  <name type="weat" parenttype="????">WeatherSystem</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="GlobalWindModelStructBlock">
+      <struct name="GlobalParticleSystemLiteBlock">
+        <value type="TagReference" name="sprites" disabled="false" extensions="bitm" />
+        <value type="Real" name="view box width" disabled="false" />
+        <value type="Real" name="view box height" disabled="false" />
+        <value type="Real" name="view box depth" disabled="false" />
+        <value type="Real" name="exclusion radius" disabled="false" />
+        <value type="Real" name="max velocity" disabled="false" />
+        <value type="Real" name="min mass" disabled="false" />
+        <value type="Real" name="max mass" disabled="false" />
+        <value type="Real" name="min size" disabled="false" />
+        <value type="Real" name="max size" disabled="false" />
+        <value type="LongInteger" name="maximum number of particles" disabled="false" />
+        <value type="RealVector3d" name="initial velocity" disabled="false" />
+        <value type="Real" name="bitmap animation speed" disabled="false" />
+        <value type="ResourceBlock" name="Resource Data" disabled="false" />
+        <value type="LongInteger" name="Section Data Size" disabled="true" />
+        <value type="LongInteger" name="Resource Data Size" disabled="true" />
+        <struct name="GlobalGeometryBlockResourceBlock">
+          <value type="Enum" name="Type" length="1" disabled="true">
+            <item value="0" name="Tag Block" />
+            <item value="1" name="Tag Data" />
+            <item value="2" name="Vertex Buffer" />
+          </value>
+          <value type="Pad" name="_unnamed0" length="3" />
+          <value type="ShortInteger" name="Primary Locator" disabled="true" />
+          <value type="ShortInteger" name="Secondary Locator" disabled="true" />
+          <value type="LongInteger" name="Resource Data Size" disabled="true" />
+          <value type="LongInteger" name="Resource Data Offset" disabled="true" />
+        </struct>
+        <value type="Block" name="Resources" disabled="true" struct="GlobalGeometryBlockResourceBlock" maxelements="1024" />
+        <value type="Skip" name="Geometry Self Reference" length="4" disabled="false" />
+        <value type="ShortInteger" name="Owner Tag Section Offset" disabled="true" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <struct name="ParticleSystemLiteDataBlock">
+          <struct name="ParticlesRenderDataBlock">
+            <value type="Real" name="positionx" disabled="true" />
+            <value type="Real" name="positiony" disabled="true" />
+            <value type="Real" name="positionz" disabled="true" />
+            <value type="Real" name="size" disabled="true" />
+            <value type="RgbColor" name="color" disabled="true" />
+          </struct>
+          <value type="Block" name="particles render data" disabled="true" struct="ParticlesRenderDataBlock" maxelements="4096" />
+          <struct name="ParticlesUpdateDataBlock">
+            <value type="Real" name="velocityx" disabled="true" />
+            <value type="Real" name="velocityy" disabled="true" />
+            <value type="Real" name="velocityz" disabled="true" />
+            <value type="Pad" name="_unnamed0" length="12" />
+            <value type="Real" name="mass" disabled="true" />
+            <value type="Real" name="creation time stamp" disabled="true" />
+          </struct>
+          <value type="Block" name="particles other data" disabled="true" struct="ParticlesUpdateDataBlock" maxelements="4096" />
+          <value type="Pad" name="_unnamed0" length="32" />
+        </struct>
+        <value type="Block" name="particle system data" disabled="false" struct="ParticleSystemLiteDataBlock" maxelements="1" />
+        <value type="Enum" name="type" length="2" disabled="false">
+          <item value="0" name="generic" />
+          <item value="1" name="snow" />
+          <item value="2" name="rain" />
+          <item value="3" name="rain splash" />
+          <item value="4" name="bugs" />
+          <item value="5" name="sand storm" />
+          <item value="6" name="debris" />
+          <item value="7" name="bubbles" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Real" name="mininum opacity" disabled="false" />
+        <value type="Real" name="maxinum opacity" disabled="false" />
+        <value type="Real" name="rain streak scale" disabled="false" />
+        <value type="Real" name="rain line width" disabled="false" />
+        <value type="Pad" name="_unnamed3" length="4" />
+        <value type="Pad" name="_unnamed4" length="4" />
+        <value type="Pad" name="_unnamed5" length="4" />
+      </struct>
+      <value type="Block" name="particle system" disabled="false" struct="GlobalParticleSystemLiteBlock" maxelements="1" />
+      <struct name="GlobalWeatherBackgroundPlateBlock">
+        <value type="TagReference" name="texture 0" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="texture 1" disabled="false" extensions="bitm" />
+        <value type="TagReference" name="texture 2" disabled="false" extensions="bitm" />
+        <value type="Real" name="plate positions 0" disabled="false" />
+        <value type="Real" name="plate positions 1" disabled="false" />
+        <value type="Real" name="plate positions 2" disabled="false" />
+        <value type="RealVector3d" name="move speed 0" disabled="false" />
+        <value type="RealVector3d" name="move speed 1" disabled="false" />
+        <value type="RealVector3d" name="move speed 2" disabled="false" />
+        <value type="Real" name="texture scale 0" disabled="false" />
+        <value type="Real" name="texture scale 1" disabled="false" />
+        <value type="Real" name="texture scale 2" disabled="false" />
+        <value type="RealVector3d" name="jitter 0" disabled="false" />
+        <value type="RealVector3d" name="jitter 1" disabled="false" />
+        <value type="RealVector3d" name="jitter 2" disabled="false" />
+        <value type="Real" name="plate z near" disabled="false" />
+        <value type="Real" name="plate z far" disabled="false" />
+        <value type="Real" name="depth blend z near" disabled="false" />
+        <value type="Real" name="depth blend z far" disabled="false" />
+        <value type="Real" name="opacity 0" disabled="false" />
+        <value type="Real" name="opacity 1" disabled="false" />
+        <value type="Real" name="opacity 2" disabled="false" />
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="forward motion" />
+          <bit index="1" name="auto position planes" />
+          <bit index="2" name="auto scale planesauto update speed" />
+        </value>
+        <value type="RealRgbColor" name="tint color0" disabled="false" />
+        <value type="RealRgbColor" name="tint color1" disabled="false" />
+        <value type="RealRgbColor" name="tint color2" disabled="false" />
+        <value type="Real" name="mass 1" disabled="false" />
+        <value type="Real" name="mass 2" disabled="false" />
+        <value type="Real" name="mass 3" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="736" />
+      </struct>
+      <value type="Block" name="background plates" disabled="false" struct="GlobalWeatherBackgroundPlateBlock" maxelements="3" />
+      <value type="Real" name="wind tiling scale" disabled="false" />
+      <value type="RealVector3d" name="wind primary headingpitchstrength" disabled="false" />
+      <value type="Real" name="primary rate of change" disabled="false" />
+      <value type="Real" name="primary min strength" disabled="false" />
+      <value type="Pad" name="_unnamed0" length="4" />
+      <value type="Pad" name="_unnamed1" length="4" />
+      <value type="Pad" name="_unnamed2" length="12" />
+      <value type="RealVector3d" name="wind gusting headingpitchstrength" disabled="false" />
+      <value type="Real" name="gust diretional rate of change" disabled="false" />
+      <value type="Real" name="gust strength rate of change" disabled="false" />
+      <value type="Real" name="gust cone angle" disabled="false" />
+      <value type="Pad" name="_unnamed3" length="4" />
+      <value type="Pad" name="_unnamed4" length="4" />
+      <value type="Pad" name="_unnamed5" length="12" />
+      <value type="Pad" name="_unnamed6" length="12" />
+      <value type="Pad" name="_unnamed7" length="12" />
+      <value type="Pad" name="_unnamed8" length="12" />
+      <value type="Real" name="turbulance rate of change" disabled="false" />
+      <value type="RealVector3d" name="turbulence_scale x y z" disabled="false" />
+      <value type="Real" name="gravity constant" disabled="false" />
+      <struct name="GloalWindPrimitivesBlock">
+        <value type="RealVector3d" name="position" disabled="false" />
+        <value type="Real" name="radius" disabled="false" />
+        <value type="Real" name="strength" disabled="false" />
+        <value type="Enum" name="wind primitive type" length="2" disabled="false">
+          <item value="0" name="vortex" />
+          <item value="1" name="gust" />
+          <item value="2" name="implosion" />
+          <item value="3" name="explosion" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+      </struct>
+      <value type="Block" name="wind_pirmitives" disabled="false" struct="GloalWindPrimitivesBlock" maxelements="128" />
+      <value type="Pad" name="_unnamed9" length="4" />
+      <value type="Real" name="fade radius" disabled="false" />
+    </struct>
+  </plugin>
+</xml>

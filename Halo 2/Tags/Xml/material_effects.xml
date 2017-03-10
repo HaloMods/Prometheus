@@ -1,0 +1,38 @@
+<xml>
+  <name type="foot" parenttype="????">MaterialEffects</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="MaterialEffectsBlock">
+      <struct name="MaterialEffectBlockV2">
+        <struct name="OldMaterialEffectMaterialBlock">
+          <value type="TagReference" name="effect" disabled="false" extensions="effe" />
+          <value type="TagReference" name="sound" disabled="false" extensions="snd!|lsnd" />
+          <value type="StringId" name="material name" disabled="false" blockname="true" />
+          <value type="Skip" name="_unnamed0" length="4" />
+          <value type="Enum" name="sweetener mode" length="1" disabled="false">
+            <item value="0" name="sweetener default" />
+            <item value="1" name="sweetener enabled" />
+            <item value="2" name="sweetener disabled" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="3" />
+        </struct>
+        <value type="Block" name="old materials DO NOT USE" disabled="false" struct="OldMaterialEffectMaterialBlock" maxelements="33" />
+        <struct name="MaterialEffectMaterialBlock">
+          <value type="TagReference" name="tag effect or sound" disabled="false" extensions="snd!|lsnd|effe" />
+          <value type="TagReference" name="secondary tag effect or sound" disabled="false" extensions="snd!|lsnd|effe" />
+          <value type="StringId" name="material name" disabled="false" blockname="true" />
+          <value type="Skip" name="_unnamed0" length="2" />
+          <value type="Enum" name="sweetener mode" length="1" disabled="false">
+            <item value="0" name="sweetener default" />
+            <item value="1" name="sweetener enabled" />
+            <item value="2" name="sweetener disabled" />
+          </value>
+          <value type="Pad" name="_unnamed1" length="1" />
+        </struct>
+        <value type="Block" name="sounds" disabled="false" struct="MaterialEffectMaterialBlock" maxelements="500" />
+        <value type="Block" name="effects" disabled="false" struct="MaterialEffectMaterialBlock" maxelements="500" />
+      </struct>
+      <value type="Block" name="effects" disabled="false" struct="MaterialEffectBlockV2" maxelements="21" />
+    </struct>
+  </plugin>
+</xml>

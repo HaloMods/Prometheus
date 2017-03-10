@@ -1,0 +1,18 @@
+<xml>
+  <name type="wind" parenttype="????">Wind</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="WindBlock">
+      <value type="RealBounds" name="velocity" disabled="false" unit="world units">
+        <tooltip>the wind magnitude in the weather region scales the wind between these bounds</tooltip>
+      </value>
+      <value type="RealEulerAngles2d" name="variation area" disabled="false">
+        <tooltip>the wind direction varies inside a box defined by these angles on either side of the direction from the weather region.</tooltip>
+      </value>
+      <value type="Real" name="local variation weight" disabled="false" />
+      <value type="Real" name="local variation rate" disabled="false" />
+      <value type="Real" name="damping" disabled="false" />
+      <value type="Pad" name="_unnamed0" length="36" />
+    </struct>
+  </plugin>
+</xml>

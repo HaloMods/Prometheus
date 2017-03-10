@@ -1,0 +1,574 @@
+<xml>
+  <name type="hlmt" parenttype="????">Model</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="ModelBlock">
+      <value type="TagReference" name="render model" disabled="false" extensions="mode" />
+      <value type="TagReference" name="collision model" disabled="false" extensions="coll" />
+      <value type="TagReference" name="animation" disabled="false" extensions="jmad" />
+      <value type="TagReference" name="physics" disabled="false" extensions="phys" />
+      <value type="TagReference" name="physics_model" disabled="false" extensions="phmo" />
+      <value type="Real" name="disappear distance" disabled="false" unit="world units" />
+      <value type="Real" name="begin fade distance" disabled="false" unit="world units" />
+      <value type="Pad" name="_unnamed0" length="4" />
+      <value type="Real" name="reduce to L1" disabled="false" unit="world units (super low)" />
+      <value type="Real" name="reduce to L2" disabled="false" unit="world units (low)" />
+      <value type="Real" name="reduce to L3" disabled="false" unit="world units (medium)" />
+      <value type="Real" name="reduce to L4" disabled="false" unit="world units (high)" />
+      <value type="Real" name="reduce to L5" disabled="false" unit="world units (super high)" />
+      <value type="Skip" name="_unnamed1" length="4" />
+      <value type="Enum" name="shadow fade distance" length="2" disabled="false">
+        <item value="0" name="fade at super high detail level" />
+        <item value="1" name="fade at high detail level" />
+        <item value="2" name="fade at medium detail level" />
+        <item value="3" name="fade at low detail level" />
+        <item value="4" name="fade at super low detail level" />
+        <item value="5" name="fade never" />
+      </value>
+      <value type="Pad" name="_unnamed2" length="2" />
+      <struct name="ModelVariantBlock">
+        <value type="StringId" name="name" disabled="false" blockname="true" />
+        <value type="Pad" name="_unnamed0" length="16" />
+        <struct name="ModelVariantRegionBlock">
+          <value type="StringId" name="region name" disabled="false" unit="must match region name in render_model" blockname="true" />
+          <value type="Pad" name="_unnamed0" length="1" />
+          <value type="Pad" name="_unnamed1" length="1" />
+          <value type="ShortBlockIndex" name="parent variant" disabled="false" block="ModelVariantBlock" />
+          <struct name="ModelVariantPermutationBlock">
+            <value type="StringId" name="permutation name" disabled="false" blockname="true" />
+            <value type="Pad" name="_unnamed0" length="1" />
+            <value type="Flags" name="flags" length="1" disabled="false">
+              <bit index="0" name="copy states to all permutations" />
+            </value>
+            <value type="Pad" name="_unnamed1" length="2" />
+            <value type="Real" name="probability" disabled="false" unit="(0,+inf)" />
+            <struct name="ModelVariantStateBlock">
+              <value type="StringId" name="permutation name" disabled="false" />
+              <value type="Pad" name="_unnamed0" length="1" />
+              <value type="Flags" name="property flags" length="1" disabled="false">
+                <bit index="0" name="blurred" />
+                <bit index="1" name="hella blurred" />
+                <bit index="2" name="shielded" />
+              </value>
+              <value type="Enum" name="state" length="2" disabled="false" blockname="true">
+                <item value="0" name="default" />
+                <item value="1" name="minor damage" />
+                <item value="2" name="medium damage" />
+                <item value="3" name="major damage" />
+                <item value="4" name="destroyed" />
+              </value>
+              <value type="TagReference" name="looping effect" disabled="false" extensions="effe">
+                <tooltip>played while the model is in this state</tooltip>
+              </value>
+              <value type="StringId" name="looping effect marker name" disabled="false" />
+              <value type="RealFraction" name="initial probability" disabled="false" />
+            </struct>
+            <value type="Block" name="states" disabled="false" struct="ModelVariantStateBlock" maxelements="10" />
+            <value type="Pad" name="_unnamed2" length="5" />
+            <value type="Pad" name="_unnamed3" length="7" />
+          </struct>
+          <value type="Block" name="permutations" disabled="false" struct="ModelVariantPermutationBlock" maxelements="32" />
+          <value type="Enum" name="sort order" length="2" disabled="false">
+            <item value="0" name="no sorting" />
+            <item value="1" name="-5 (closest)" />
+            <item value="2" name="-4" />
+            <item value="3" name="-3" />
+            <item value="4" name="-2" />
+            <item value="5" name="-1" />
+            <item value="6" name="0 (same as model)" />
+            <item value="7" name="1" />
+            <item value="8" name="2" />
+            <item value="9" name="3" />
+            <item value="10" name="4" />
+            <item value="11" name="5 (farthest)" />
+            <tooltip>negative values mean closer to the camera</tooltip>
+          </value>
+          <value type="Pad" name="_unnamed2" length="2" />
+        </struct>
+        <value type="Block" name="regions" disabled="false" struct="ModelVariantRegionBlock" maxelements="16" />
+        <struct name="ModelVariantObjectBlock">
+          <value type="StringId" name="parent marker" disabled="false" blockname="true" />
+          <value type="StringId" name="child marker" disabled="false" />
+          <value type="TagReference" name="child object" disabled="false" extensions="obje" />
+        </struct>
+        <value type="Block" name="objects" disabled="false" struct="ModelVariantObjectBlock" maxelements="16" />
+        <value type="Pad" name="_unnamed1" length="8" />
+        <value type="StringId" name="dialogue sound effect" disabled="false" />
+        <value type="TagReference" name="dialogue" disabled="false" extensions="udlg" />
+      </struct>
+      <value type="Block" name="variants" disabled="false" struct="ModelVariantBlock" maxelements="64" />
+      <struct name="ModelMaterialBlock">
+        <value type="StringId" name="material name" disabled="false" />
+        <value type="Enum" name="material type" length="2" disabled="false">
+          <item value="0" name="dirt" />
+          <item value="1" name="sand" />
+          <item value="2" name="stone" />
+          <item value="3" name="snow" />
+          <item value="4" name="wood" />
+          <item value="5" name="metal (hollow)" />
+          <item value="6" name="metal (thin)" />
+          <item value="7" name="metal (thick)" />
+          <item value="8" name="rubber" />
+          <item value="9" name="glass" />
+          <item value="10" name="force field" />
+          <item value="11" name="grunt" />
+          <item value="12" name="hunter armor" />
+          <item value="13" name="hunter skin" />
+          <item value="14" name="elite" />
+          <item value="15" name="jackal" />
+          <item value="16" name="jackal energy shield" />
+          <item value="17" name="engineer skin" />
+          <item value="18" name="engineer force field" />
+          <item value="19" name="flood combat form" />
+          <item value="20" name="flood carrier form" />
+          <item value="21" name="cyborg armor" />
+          <item value="22" name="cyborg energy shield" />
+          <item value="23" name="human armor" />
+          <item value="24" name="human skin" />
+          <item value="25" name="sentinel" />
+          <item value="26" name="monitor" />
+          <item value="27" name="plastic" />
+          <item value="28" name="water" />
+          <item value="29" name="leaves" />
+          <item value="30" name="elite energy shield" />
+          <item value="31" name="ice" />
+          <item value="32" name="hunter shield" />
+        </value>
+        <value type="ShortInteger" name="damage section" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="2" />
+        <value type="StringId" name="global material name" disabled="false" />
+        <value type="Pad" name="_unnamed2" length="4" />
+      </struct>
+      <value type="Block" name="materials" disabled="false" struct="ModelMaterialBlock" maxelements="32" />
+      <struct name="GlobalDamageInfoBlock">
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="takes shield damage for children" />
+          <bit index="1" name="takes body damage for children" />
+          <bit index="2" name="always shields friendly damage" />
+          <bit index="3" name="passes area damage to children" />
+          <bit index="4" name="parent never takes body damage for us" />
+          <bit index="5" name="only damaged by explosives" />
+          <bit index="6" name="parent never takes shield damage for us" />
+          <bit index="7" name="cannot die from damage" />
+          <bit index="8" name="passes attached damage to riders" />
+        </value>
+        <value type="StringId" name="global indirect material name" disabled="false">
+          <tooltip>absorbes AOE or child damage</tooltip>
+        </value>
+        <value type="ShortInteger" name="indirect damage section" disabled="false">
+          <tooltip>absorbes AOE or child damage</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="Pad" name="_unnamed1" length="4" />
+        <value type="Enum" name="collision damage reporting type" length="1" disabled="false">
+          <item value="0" name="teh guardians!!1!!1!" />
+          <item value="1" name="falling damage" />
+          <item value="2" name="generic collision damage" />
+          <item value="3" name="generic melee damage" />
+          <item value="4" name="generic explosion" />
+          <item value="5" name="magnum pistol" />
+          <item value="6" name="plasma pistol" />
+          <item value="7" name="needler" />
+          <item value="8" name="smg" />
+          <item value="9" name="plasma rifle" />
+          <item value="10" name="battle rifle" />
+          <item value="11" name="carbine" />
+          <item value="12" name="shotgun" />
+          <item value="13" name="sniper rifle" />
+          <item value="14" name="beam rifle" />
+          <item value="15" name="rocket launcher" />
+          <item value="16" name="flak cannon" />
+          <item value="17" name="brute shot" />
+          <item value="18" name="disintegrator" />
+          <item value="19" name="brute plasma rifle" />
+          <item value="20" name="energy sword" />
+          <item value="21" name="frag grenade" />
+          <item value="22" name="plasma grenade" />
+          <item value="23" name="flag melee damage" />
+          <item value="24" name="bomb melee damage" />
+          <item value="25" name="bomb explosion damage" />
+          <item value="26" name="ball melee damage" />
+          <item value="27" name="human turret" />
+          <item value="28" name="plasma turret" />
+          <item value="29" name="banshee" />
+          <item value="30" name="ghost" />
+          <item value="31" name="mongoose" />
+          <item value="32" name="scorpion" />
+          <item value="33" name="spectre driver" />
+          <item value="34" name="spectre gunner" />
+          <item value="35" name="warthog driver" />
+          <item value="36" name="warthog gunner" />
+          <item value="37" name="wraith" />
+          <item value="38" name="tank" />
+          <item value="39" name="sentinel beam" />
+          <item value="40" name="sentinel rpg" />
+          <item value="41" name="teleporter" />
+        </value>
+        <value type="Enum" name="response damage reporting type" length="1" disabled="false">
+          <item value="0" name="teh guardians!!1!!1!" />
+          <item value="1" name="falling damage" />
+          <item value="2" name="generic collision damage" />
+          <item value="3" name="generic melee damage" />
+          <item value="4" name="generic explosion" />
+          <item value="5" name="magnum pistol" />
+          <item value="6" name="plasma pistol" />
+          <item value="7" name="needler" />
+          <item value="8" name="smg" />
+          <item value="9" name="plasma rifle" />
+          <item value="10" name="battle rifle" />
+          <item value="11" name="carbine" />
+          <item value="12" name="shotgun" />
+          <item value="13" name="sniper rifle" />
+          <item value="14" name="beam rifle" />
+          <item value="15" name="rocket launcher" />
+          <item value="16" name="flak cannon" />
+          <item value="17" name="brute shot" />
+          <item value="18" name="disintegrator" />
+          <item value="19" name="brute plasma rifle" />
+          <item value="20" name="energy sword" />
+          <item value="21" name="frag grenade" />
+          <item value="22" name="plasma grenade" />
+          <item value="23" name="flag melee damage" />
+          <item value="24" name="bomb melee damage" />
+          <item value="25" name="bomb explosion damage" />
+          <item value="26" name="ball melee damage" />
+          <item value="27" name="human turret" />
+          <item value="28" name="plasma turret" />
+          <item value="29" name="banshee" />
+          <item value="30" name="ghost" />
+          <item value="31" name="mongoose" />
+          <item value="32" name="scorpion" />
+          <item value="33" name="spectre driver" />
+          <item value="34" name="spectre gunner" />
+          <item value="35" name="warthog driver" />
+          <item value="36" name="warthog gunner" />
+          <item value="37" name="wraith" />
+          <item value="38" name="tank" />
+          <item value="39" name="sentinel beam" />
+          <item value="40" name="sentinel rpg" />
+          <item value="41" name="teleporter" />
+        </value>
+        <value type="Pad" name="_unnamed2" length="2" />
+        <value type="Pad" name="_unnamed3" length="20" />
+        <value type="Real" name="maximum vitality" disabled="false" />
+        <value type="Real" name="minimum stun damage" disabled="false">
+          <tooltip>the minimum damage required to stun this object's health</tooltip>
+        </value>
+        <value type="Real" name="stun time" disabled="false" unit="seconds">
+          <tooltip>the length of time the health stay stunned (do not recharge) after taking damage</tooltip>
+        </value>
+        <value type="Real" name="recharge time" disabled="false" unit="seconds">
+          <tooltip>the length of time it would take for the shields to fully recharge after being completely depleted</tooltip>
+        </value>
+        <value type="RealFraction" name="recharge fraction" disabled="false">
+          <tooltip>0 defaults to 1 - to what maximum level the body health will be allowed to recharge</tooltip>
+        </value>
+        <value type="Pad" name="_unnamed4" length="64" />
+        <value type="TagReference" name="shield damaged first person shader" disabled="false" extensions="shad" />
+        <value type="TagReference" name="shield damaged shader" disabled="false" extensions="shad" />
+        <value type="Real" name="maximum shield vitality" disabled="false">
+          <tooltip>the default initial and maximum shield vitality of this object</tooltip>
+        </value>
+        <value type="StringId" name="global shield material name" disabled="false" />
+        <value type="Real" name="minimum stun damage2" disabled="false">
+          <tooltip>the minimum damage required to stun this object's shields</tooltip>
+        </value>
+        <value type="Real" name="stun time2" disabled="false" unit="seconds">
+          <tooltip>the length of time the shields stay stunned (do not recharge) after taking damage</tooltip>
+        </value>
+        <value type="Real" name="recharge time2" disabled="false" unit="seconds">
+          <tooltip>the length of time it would take for the shields to fully recharge after being completely depleted</tooltip>
+        </value>
+        <value type="Real" name="shield damaged threshold" disabled="false" />
+        <value type="TagReference" name="shield damaged effect" disabled="false" extensions="effe" />
+        <value type="TagReference" name="shield depleted effect" disabled="false" extensions="effe" />
+        <value type="TagReference" name="shield recharging effect" disabled="false" extensions="effe" />
+        <struct name="GlobalDamageSectionBlock">
+          <value type="StringId" name="name" disabled="false" blockname="true" />
+          <value type="Flags" name="flags" length="4" disabled="false">
+            <bit index="0" name="absorbs body damage" />
+            <bit index="1" name="takes full dmg when object dies" />
+            <bit index="2" name="cannot die with riders" />
+            <bit index="3" name="takes full dmg when obj dstryd" />
+            <bit index="4" name="restored on ressurection" />
+            <bit index="5" name="unused" />
+            <bit index="6" name="unused" />
+            <bit index="7" name="heatshottable" />
+            <bit index="8" name="ignores shields" />
+          </value>
+          <value type="RealFraction" name="vitality percentage" disabled="false" unit="[0.1]">
+            <tooltip>percentage of total object vitality</tooltip>
+          </value>
+          <struct name="InstantaneousDamageRepsonseBlock">
+            <value type="Enum" name="response type" length="2" disabled="false">
+              <item value="0" name="receives all damage" />
+              <item value="1" name="receives area effect damage" />
+              <item value="2" name="receives local damage" />
+            </value>
+            <value type="Enum" name="constraint damage type" length="2" disabled="false">
+              <item value="0" name="none" />
+              <item value="1" name="destroy one of group" />
+              <item value="2" name="destroy entire group" />
+              <item value="3" name="loosen one of group" />
+              <item value="4" name="loosen entire group" />
+            </value>
+            <value type="Flags" name="flags" length="4" disabled="false">
+              <bit index="0" name="kills object" />
+              <bit index="1" name="inhibits melee attack" />
+              <bit index="2" name="inhibits weapon attack" />
+              <bit index="3" name="inhibits walking" />
+              <bit index="4" name="forces drop weapon" />
+              <bit index="5" name="kills weapon primary trigger" />
+              <bit index="6" name="kills weapon secondary trigger" />
+              <bit index="7" name="destroys object" />
+              <bit index="8" name="damages weapon primary trigger" />
+              <bit index="9" name="damages weapon secondary trigger" />
+              <bit index="10" name="light damage left turn" />
+              <bit index="11" name="major damage left turn" />
+              <bit index="12" name="light damage right turn" />
+              <bit index="13" name="major damage right turn" />
+              <bit index="14" name="light damage engine" />
+              <bit index="15" name="major damage engine" />
+              <bit index="16" name="kills object (no player solo)" />
+              <bit index="17" name="causes detonation" />
+              <bit index="18" name="destroy all group constraints" />
+              <bit index="19" name="kills variant objects" />
+              <bit index="20" name="force unattached effects" />
+              <bit index="21" name="fires under threshold" />
+              <bit index="22" name="triggers special death" />
+              <bit index="23" name="only on special death" />
+              <bit index="24" name="only NOT on special death" />
+            </value>
+            <value type="Real" name="damage threshold" disabled="false">
+              <tooltip>repsonse fires after crossing this threshold.  1=full health</tooltip>
+            </value>
+            <value type="TagReference" name="transition effect" disabled="false" extensions="effe" />
+            <value type="TagReference" name="transition damage effect" disabled="false" extensions="jpt!" />
+            <value type="StringId" name="region" disabled="false" />
+            <value type="Enum" name="new state" length="2" disabled="false">
+              <item value="0" name="default" />
+              <item value="1" name="minor damage" />
+              <item value="2" name="medium damage" />
+              <item value="3" name="major damage" />
+              <item value="4" name="destroyed" />
+            </value>
+            <value type="ShortInteger" name="runtime region index" disabled="true" />
+            <value type="StringId" name="effect marker name" disabled="false" />
+            <value type="StringId" name="damage effect marker name" disabled="false" />
+            <value type="Real" name="response delay" disabled="false">
+              <tooltip>in seconds</tooltip>
+            </value>
+            <value type="TagReference" name="delay effect" disabled="false" extensions="effe" />
+            <value type="StringId" name="delay effect marker name" disabled="false" />
+            <value type="StringId" name="constraintgroup name" disabled="false" />
+            <value type="StringId" name="ejecting seat label" disabled="false" />
+            <value type="RealFraction" name="skip fraction" disabled="false" />
+            <value type="StringId" name="destroyed child object marker name" disabled="false" />
+            <value type="RealFraction" name="total damage threshold" disabled="false" />
+          </struct>
+          <value type="Block" name="instant responses" disabled="false" struct="InstantaneousDamageRepsonseBlock" maxelements="16" />
+          <struct name="GNullBlock" />
+          <value type="Block" name="_unnamed0" struct="GNullBlock" maxelements="0" />
+          <value type="Block" name="_unnamed1" struct="GNullBlock" maxelements="0" />
+          <value type="Real" name="stun time" disabled="false" unit="seconds" />
+          <value type="Real" name="recharge time" disabled="false" unit="seconds" />
+          <value type="Pad" name="_unnamed2" length="4" />
+          <value type="StringId" name="resurrection restored region name" disabled="false" />
+          <value type="Pad" name="_unnamed3" length="4" />
+        </struct>
+        <value type="Block" name="damage sections" disabled="false" struct="GlobalDamageSectionBlock" maxelements="16" />
+        <struct name="GlobalDamageNodesBlock">
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Pad" name="_unnamed1" length="2" />
+          <value type="Pad" name="_unnamed2" length="12" />
+        </struct>
+        <value type="Block" name="nodes" disabled="true" struct="GlobalDamageNodesBlock" maxelements="255" />
+        <value type="Pad" name="_unnamed5" length="2" />
+        <value type="Pad" name="_unnamed6" length="2" />
+        <value type="Pad" name="_unnamed7" length="4" />
+        <value type="Pad" name="_unnamed8" length="4" />
+        <struct name="DamageSeatInfoBlock">
+          <value type="StringId" name="seat label" disabled="false" blockname="true" />
+          <value type="RealFraction" name="direct damage scale" disabled="false">
+            <tooltip>0==no damage, 1==full damage</tooltip>
+          </value>
+          <value type="Real" name="damage transfer fall-off radius" disabled="false" />
+          <value type="Real" name="maximum transfer damage scale" disabled="false" />
+          <value type="Real" name="minimum transfer damage scale" disabled="false" />
+        </struct>
+        <value type="Block" name="damage seats" disabled="false" struct="DamageSeatInfoBlock" maxelements="16" />
+        <struct name="DamageConstraintInfoBlock">
+          <value type="StringId" name="physics model constraint name" disabled="false" />
+          <value type="StringId" name="damage constraint name" disabled="false" />
+          <value type="StringId" name="damage constraint group name" disabled="false" />
+          <value type="Real" name="group probability scale" disabled="false" />
+          <value type="Pad" name="_unnamed0" length="4" />
+        </struct>
+        <value type="Block" name="damage constraints" disabled="false" struct="DamageConstraintInfoBlock" maxelements="16" />
+        <value type="TagReference" name="overshield first person shader" disabled="false" extensions="shad" />
+        <value type="TagReference" name="overshield shader" disabled="false" extensions="shad" />
+      </struct>
+      <value type="Block" name="new damage info" disabled="false" struct="GlobalDamageInfoBlock" maxelements="1" />
+      <struct name="ModelTargetBlock">
+        <value type="StringId" name="marker name" disabled="false" blockname="true">
+          <tooltip>multiple markers become multiple spheres of the same radius</tooltip>
+        </value>
+        <value type="Real" name="size" disabled="false">
+          <tooltip>sphere radius</tooltip>
+        </value>
+        <value type="Angle" name="cone angle" disabled="false">
+          <tooltip>the target is only visible when viewed within this angle of the marker's x axis</tooltip>
+        </value>
+        <value type="ShortInteger" name="damage section" disabled="false">
+          <tooltip>the target is associated with this damage section</tooltip>
+        </value>
+        <value type="ShortBlockIndex" name="variant" disabled="false" block="ModelVariantBlock">
+          <tooltip>the target will only appear with this variant</tooltip>
+        </value>
+        <value type="RealFraction" name="targeting relevance" disabled="false">
+          <tooltip>higher relevances turn into stronger magnetisms</tooltip>
+        </value>
+        <value type="Flags" name="flags" length="4" disabled="false">
+          <bit index="0" name="locked by human tracking" />
+          <bit index="1" name="locked by plasma tracking" />
+          <bit index="2" name="headshot" />
+          <bit index="3" name="vulnerable" />
+          <bit index="4" name="alwas locked by plasma tracking" />
+        </value>
+        <value type="Real" name="lock on distance" disabled="false" />
+      </struct>
+      <value type="Block" name="targets" disabled="false" struct="ModelTargetBlock" maxelements="32" />
+      <struct name="ModelRegionBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="CharInteger" name="collision region index" disabled="true" />
+        <value type="CharInteger" name="physics region index" disabled="true" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <struct name="ModelPermutationBlock">
+          <value type="StringId" name="name" disabled="true" blockname="true" />
+          <value type="Flags" name="flags" length="1" disabled="true">
+            <bit index="0" name="cannot be chosen randomly" />
+          </value>
+          <value type="CharInteger" name="collision permutation index" disabled="true" />
+          <value type="Pad" name="_unnamed0" length="2" />
+        </struct>
+        <value type="Block" name="permutations" disabled="true" struct="ModelPermutationBlock" maxelements="32" />
+      </struct>
+      <value type="Block" name="_unnamed3" struct="ModelRegionBlock" maxelements="16" />
+      <struct name="ModelNodeBlock">
+        <value type="StringId" name="name" disabled="true" blockname="true" />
+        <value type="ShortBlockIndex" name="parent node" disabled="true" block="ModelNodeBlock" />
+        <value type="ShortBlockIndex" name="first child node" disabled="true" block="ModelNodeBlock" />
+        <value type="ShortBlockIndex" name="next sibling node" disabled="true" block="ModelNodeBlock" />
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="RealPoint3d" name="default translation" disabled="true" />
+        <value type="RealQuaternion" name="default rotation" disabled="true" />
+        <value type="Real" name="default inverse scale" disabled="true" />
+        <value type="RealVector3d" name="default inverse forward" disabled="true" />
+        <value type="RealVector3d" name="default inverse left" disabled="true" />
+        <value type="RealVector3d" name="default inverse up" disabled="true" />
+        <value type="RealPoint3d" name="default inverse position" disabled="true" />
+      </struct>
+      <value type="Block" name="_unnamed4" struct="ModelNodeBlock" maxelements="255" />
+      <value type="Pad" name="_unnamed5" length="4" />
+      <struct name="ModelObjectDataBlock">
+        <value type="Enum" name="type" length="2" disabled="true">
+          <item value="0" name="not set" />
+          <item value="1" name="user defined" />
+          <item value="2" name="auto generated" />
+        </value>
+        <value type="Pad" name="_unnamed0" length="2" />
+        <value type="RealPoint3d" name="offset" disabled="true" />
+        <value type="Real" name="radius" disabled="true" />
+      </struct>
+      <value type="Block" name="model object data" disabled="false" struct="ModelObjectDataBlock" maxelements="1" />
+      <value type="TagReference" name="default dialogue" disabled="false" extensions="udlg">
+        <tooltip>The default dialogue tag for this model (overriden by variants)</tooltip>
+      </value>
+      <value type="TagReference" name="UNUSED" disabled="true" extensions="shad" />
+      <value type="Flags" name="flags" length="4" disabled="false">
+        <bit index="0" name="active camo always on" />
+        <bit index="1" name="active camo always merge" />
+        <bit index="2" name="active camo never merge" />
+      </value>
+      <value type="StringId" name="default dialogue effect" disabled="false">
+        <tooltip>The default dialogue tag for this model (overriden by variants)</tooltip>
+      </value>
+      <value type="CharInteger" name="_unnamed6" />
+      <value type="CharInteger" name="_unnamed7" />
+      <value type="CharInteger" name="_unnamed8" />
+      <value type="CharInteger" name="_unnamed9" />
+      <value type="CharInteger" name="_unnamed10" />
+      <value type="CharInteger" name="_unnamed11" />
+      <value type="CharInteger" name="_unnamed12" />
+      <value type="CharInteger" name="_unnamed13" />
+      <value type="CharInteger" name="_unnamed14" />
+      <value type="CharInteger" name="_unnamed15" />
+      <value type="CharInteger" name="_unnamed16" />
+      <value type="CharInteger" name="_unnamed17" />
+      <value type="CharInteger" name="_unnamed18" />
+      <value type="CharInteger" name="_unnamed19" />
+      <value type="CharInteger" name="_unnamed20" />
+      <value type="CharInteger" name="_unnamed21" />
+      <value type="CharInteger" name="_unnamed22" />
+      <value type="CharInteger" name="_unnamed23" />
+      <value type="CharInteger" name="_unnamed24" />
+      <value type="CharInteger" name="_unnamed25" />
+      <value type="CharInteger" name="_unnamed26" />
+      <value type="CharInteger" name="_unnamed27" />
+      <value type="CharInteger" name="_unnamed28" />
+      <value type="CharInteger" name="_unnamed29" />
+      <value type="CharInteger" name="_unnamed30" />
+      <value type="CharInteger" name="_unnamed31" />
+      <value type="CharInteger" name="_unnamed32" />
+      <value type="CharInteger" name="_unnamed33" />
+      <value type="CharInteger" name="_unnamed34" />
+      <value type="CharInteger" name="_unnamed35" />
+      <value type="CharInteger" name="_unnamed36" />
+      <value type="CharInteger" name="_unnamed37" />
+      <value type="CharInteger" name="_unnamed38" />
+      <value type="CharInteger" name="_unnamed39" />
+      <value type="CharInteger" name="_unnamed40" />
+      <value type="CharInteger" name="_unnamed41" />
+      <value type="CharInteger" name="_unnamed42" />
+      <value type="CharInteger" name="_unnamed43" />
+      <value type="CharInteger" name="_unnamed44" />
+      <value type="CharInteger" name="_unnamed45" />
+      <value type="CharInteger" name="_unnamed46" />
+      <value type="CharInteger" name="_unnamed47" />
+      <value type="CharInteger" name="_unnamed48" />
+      <value type="CharInteger" name="_unnamed49" />
+      <value type="CharInteger" name="_unnamed50" />
+      <value type="CharInteger" name="_unnamed51" />
+      <value type="CharInteger" name="_unnamed52" />
+      <value type="CharInteger" name="_unnamed53" />
+      <value type="CharInteger" name="_unnamed54" />
+      <value type="CharInteger" name="_unnamed55" />
+      <value type="CharInteger" name="_unnamed56" />
+      <value type="CharInteger" name="_unnamed57" />
+      <value type="CharInteger" name="_unnamed58" />
+      <value type="CharInteger" name="_unnamed59" />
+      <value type="CharInteger" name="_unnamed60" />
+      <value type="CharInteger" name="_unnamed61" />
+      <value type="CharInteger" name="_unnamed62" />
+      <value type="CharInteger" name="_unnamed63" />
+      <value type="CharInteger" name="_unnamed64" />
+      <value type="CharInteger" name="_unnamed65" />
+      <value type="CharInteger" name="_unnamed66" />
+      <value type="CharInteger" name="_unnamed67" />
+      <value type="CharInteger" name="_unnamed68" />
+      <value type="CharInteger" name="_unnamed69" />
+      <value type="Flags" name="runtime flags" length="4" disabled="true">
+        <bit index="0" name="contains run-time nodes" />
+      </value>
+      <struct name="GlobalScenarioLoadParametersBlock">
+        <value type="TagReference" name="scenario" disabled="false" extensions="scnr" blockname="true" />
+        <value type="Data" name="parameters" disabled="false" />
+        <value type="Pad" name="_unnamed0" length="32" />
+      </struct>
+      <value type="Block" name="scenario load parameters" disabled="false" struct="GlobalScenarioLoadParametersBlock" maxelements="32" />
+      <value type="TagReference" name="hologram shader" disabled="false" extensions="shad" />
+      <value type="StringId" name="hologram control function" disabled="false" />
+    </struct>
+  </plugin>
+</xml>

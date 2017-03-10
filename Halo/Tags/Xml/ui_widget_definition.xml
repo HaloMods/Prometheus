@@ -1,0 +1,444 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="DeLa" parenttype="????">UiWidgetDefinition</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="UiWidgetDefinition">
+      <value type="Enum" name="widget type">
+        <item value="0" name="container" />
+        <item value="1" name="text box" />
+        <item value="2" name="spinner list" />
+        <item value="3" name="column list" />
+        <item value="4" name="game model not implemented" />
+        <item value="5" name="movie not implemented" />
+        <item value="6" name="custom not implemented" />
+      </value>
+      <value type="Enum" name="controller index">
+        <item value="0" name="player 1" />
+        <item value="1" name="player 2" />
+        <item value="2" name="player 3" />
+        <item value="3" name="player 4" />
+        <item value="4" name="any player" />
+      </value>
+      <value type="FixedLengthString" name="name" />
+      <value type="Rectangle2D" name="bounds" />
+      <value type="Flags" name="flags" length="4">
+        <bit index="0" name="pass unhandled events to focused child" />
+        <bit index="1" name="pause game time" />
+        <bit index="2" name="flash background bitmap" />
+        <bit index="3" name="dpad updown tabs thru children" />
+        <bit index="4" name="dpad leftright tabs thru children" />
+        <bit index="5" name="dpad updown tabs thru list items" />
+        <bit index="6" name="dpad leftright tabs thru list items" />
+        <bit index="7" name="dont focus a specific child widget" />
+        <bit index="8" name="pass unhandled events to all children" />
+        <bit index="9" name="render regardless of controller index" />
+        <bit index="10" name="pass handled events to all children" />
+        <bit index="11" name="return to main menu if no history" />
+        <bit index="12" name="always use tag controller index" />
+        <bit index="13" name="always use nifty render fx" />
+        <bit index="14" name="dont push history" />
+        <bit index="15" name="force handle mouse" />
+      </value>
+      <value type="LongInteger" name="milliseconds to auto close">
+        <tooltip>&lt;=0 to never auto-close.</tooltip>
+      </value>
+      <value type="LongInteger" name="milliseconds auto close fade time">
+        <tooltip>&lt;= 0 for immediate close.</tooltip>
+      </value>
+      <value type="TagReference" name="background bitmap" extensions="bitm" />
+      <struct name="GameDataInputReferences">
+        <value type="Enum" name="function">
+          <item value="0" name="NULL" />
+          <item value="1" name="player settings menu update desc" />
+          <item value="2" name="unused" />
+          <item value="3" name="playlist settings menu update desc" />
+          <item value="4" name="gametype select menu update desc" />
+          <item value="5" name="multiplayer type menu update desc" />
+          <item value="6" name="solo level select update" />
+          <item value="7" name="difficulty menu update desc" />
+          <item value="8" name="build number textbox only" />
+          <item value="9" name="server list update" />
+          <item value="10" name="network pregame status update" />
+          <item value="11" name="splitscreen pregame status update" />
+          <item value="12" name="netsplitscreen prejoin players" />
+          <item value="13" name="mp profile list update" />
+          <item value="14" name="3wide player profile list update" />
+          <item value="15" name="plyr prof edi" />
+          <item value="16" name="player profile small menu update" />
+          <item value="17" name="game settings lists text update" />
+          <item value="18" name="solo game objective text" />
+          <item value="19" name="color picker update" />
+          <item value="20" name="game settings lists pic update" />
+          <item value="21" name="main menu fake animate" />
+          <item value="22" name="mp level select update" />
+          <item value="23" name="get active plyr profile name" />
+          <item value="24" name="get edit plyr profile name" />
+          <item value="25" name="get edit game settings name" />
+          <item value="26" name="get active plyr profile color" />
+          <item value="27" name="mp set textbox map name" />
+          <item value="28" name="mp set textbox game ruleset" />
+          <item value="29" name="mp set textbox teams noteams" />
+          <item value="30" name="mp set textbox score limit" />
+          <item value="31" name="mp set textbox score limit type" />
+          <item value="32" name="mp set bitmap for map" />
+          <item value="33" name="mp set bitmap for ruleset" />
+          <item value="34" name="mp set textbox">
+            <tooltip>
+            </tooltip>
+          </item>
+          <item value="35" name="mp edit profile set rule text" />
+          <item value="36" name="system link status check" />
+          <item value="37" name="mp game directions" />
+          <item value="38" name="teamsno teams bitmap update" />
+          <item value="39" name="warn if diff. will nuke saved game" />
+          <item value="40" name="dim if no net cable" />
+          <item value="41" name="pause game set textbox inverted" />
+          <item value="42" name="dim unless two controllers" />
+          <item value="43" name="controls update menu" />
+          <item value="44" name="video menu update" />
+          <item value="45" name="gamespy screen update" />
+          <item value="46" name="common button bar update" />
+          <item value="47" name="gamepad update menu" />
+          <item value="48" name="server settings update" />
+          <item value="49" name="audio_menu_update" />
+          <item value="50" name="mp prof vehicles update" />
+          <item value="51" name="solo map list update" />
+          <item value="52" name="mp map list update" />
+          <item value="53" name="gt select list update" />
+          <item value="54" name="gt edit list update" />
+          <item value="55" name="load game list update" />
+          <item value="56" name="checking for updates" />
+          <item value="57" name="direct ip connect update" />
+          <item value="58" name="network settings update" />
+        </value>
+        <value type="Pad" name="_unnamed" length="2" />
+        <value type="Pad" name="_unnamed2" length="32" />
+      </struct>
+      <value type="Block" name="game data inputs" struct="GameDataInputReferences" maxelements="64" />
+      <struct name="EventHandlerReferences">
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="close current widget" />
+          <bit index="1" name="close other widget" />
+          <bit index="2" name="close all widgets" />
+          <bit index="3" name="open widget" />
+          <bit index="4" name="reload self" />
+          <bit index="5" name="reload other widget" />
+          <bit index="6" name="give focus to widget" />
+          <bit index="7" name="run function" />
+          <bit index="8" name="replace self w widget" />
+          <bit index="9" name="go back to previous widget" />
+          <bit index="10" name="run scenario script" />
+          <bit index="11" name="try to branch on failure" />
+        </value>
+        <value type="Enum" name="event type">
+          <item value="0" name="A button" />
+          <item value="1" name="B button" />
+          <item value="2" name="X button" />
+          <item value="3" name="Y button" />
+          <item value="4" name="black button" />
+          <item value="5" name="white button" />
+          <item value="6" name="left trigger" />
+          <item value="7" name="right trigger" />
+          <item value="8" name="dpad up" />
+          <item value="9" name="dpad down" />
+          <item value="10" name="dpad left" />
+          <item value="11" name="dpad right" />
+          <item value="12" name="start button" />
+          <item value="13" name="back button" />
+          <item value="14" name="left thumb" />
+          <item value="15" name="right thumb" />
+          <item value="16" name="left analog stick up" />
+          <item value="17" name="left analog stick down" />
+          <item value="18" name="left analog stick left" />
+          <item value="19" name="left analog stick right" />
+          <item value="20" name="left analog stick up" />
+          <item value="21" name="right analog stick down" />
+          <item value="22" name="right analog stick left" />
+          <item value="23" name="right analog stick right" />
+          <item value="24" name="created" />
+          <item value="25" name="deleted" />
+          <item value="26" name="get focus" />
+          <item value="27" name="lose focus" />
+          <item value="28" name="left mouse" />
+          <item value="29" name="middle mouse" />
+          <item value="30" name="right mouse" />
+          <item value="31" name="double click" />
+          <item value="32" name="custom activation" />
+          <item value="33" name="pos" />
+        </value>
+        <value type="Enum" name="function">
+          <item value="0" name="NULL" />
+          <item value="1" name="list goto next item" />
+          <item value="2" name="list goto previous item" />
+          <item value="3" name="unused" />
+          <item value="4" name="unused" />
+          <item value="5" name="initialize sp level list solo" />
+          <item value="6" name="initialize sp level list coop" />
+          <item value="7" name="dispose sp level list" />
+          <item value="8" name="solo level set map" />
+          <item value="9" name="set difficulty" />
+          <item value="10" name="start new game" />
+          <item value="11" name="pause game restart at checkpoint" />
+          <item value="12" name="pause game restart level" />
+          <item value="13" name="pause game return to main menu" />
+          <item value="14" name="clear multiplayer player joins" />
+          <item value="15" name="join controller to mp game" />
+          <item value="16" name="initialize net game server list" />
+          <item value="17" name="start network game server" />
+          <item value="18" name="dispose net game server list" />
+          <item value="19" name="shutdown network game" />
+          <item value="20" name="net game join from server list" />
+          <item value="21" name="split screen game initialize" />
+          <item value="22" name="coop game initialize" />
+          <item value="23" name="main menu intialize" />
+          <item value="24" name="mp type menu initialize" />
+          <item value="25" name="pick play stage for quick start" />
+          <item value="26" name="mp level list initialize" />
+          <item value="27" name="mp level list dispose" />
+          <item value="28" name="mp level select" />
+          <item value="29" name="mp profiles list initialize" />
+          <item value="30" name="mp profiles list dispose" />
+          <item value="31" name="mp profile set for game" />
+          <item value="32" name="swap player team" />
+          <item value="33" name="net game join player" />
+          <item value="34" name="player profile list initialize" />
+          <item value="35" name="player profile list dispose" />
+          <item value="36" name="3wide plyr prof set for game" />
+          <item value="37" name="1wide plyr prof set for game" />
+          <item value="38" name="mp profile begin editing" />
+          <item value="39" name="mp profile end editing" />
+          <item value="40" name="mp profile set game engine" />
+          <item value="41" name="mp profile change name" />
+          <item value="42" name="mp profile set ctf rules" />
+          <item value="43" name="mp profile set koth rules" />
+          <item value="44" name="mp profile set slayer rules" />
+          <item value="45" name="mp profile set oddball rules" />
+          <item value="46" name="mp profile set racing rules" />
+          <item value="47" name="mp profile set player options" />
+          <item value="48" name="mp profile set item options" />
+          <item value="49" name="mp profile set indicator opts" />
+          <item value="50" name="mp profile init game engine" />
+          <item value="51" name="mp profile init name" />
+          <item value="52" name="mp profile init ctf rules" />
+          <item value="53" name="mp profile init koth rules" />
+          <item value="54" name="mp profile init slayer rules" />
+          <item value="55" name="mp profile init oddball rules" />
+          <item value="56" name="mp profile init racing rules" />
+          <item value="57" name="mp profile init player opts" />
+          <item value="58" name="mp profile init item options" />
+          <item value="59" name="mp profile init indicator opts" />
+          <item value="60" name="mp profile save changes" />
+          <item value="61" name="color picker menu initialize" />
+          <item value="62" name="color picker menu dispose" />
+          <item value="63" name="color picker select color" />
+          <item value="64" name="player profile begin editing" />
+          <item value="65" name="player profile end editing" />
+          <item value="66" name="player profile change name" />
+          <item value="67" name="player profile save changes" />
+          <item value="68" name="plyr prf init cntl settings" />
+          <item value="69" name="plyr prf init adv cntl set" />
+          <item value="70" name="plyr prf save cntl settings" />
+          <item value="71" name="plyr prf save adv cntl set" />
+          <item value="72" name="mp game player quit" />
+          <item value="73" name="main menu switch to solo game" />
+          <item value="74" name="request del player profile" />
+          <item value="75" name="request del playlist profile" />
+          <item value="76" name="final del player profile" />
+          <item value="77" name="final del playlist profile" />
+          <item value="78" name="cancel profile delete" />
+          <item value="79" name="create&amp;edit playlist profile" />
+          <item value="80" name="create&amp;edit player profile" />
+          <item value="81" name="net game speed start" />
+          <item value="82" name="net game delay start" />
+          <item value="83" name="net server accept conx" />
+          <item value="84" name="net server defer start" />
+          <item value="85" name="net server allow start" />
+          <item value="86" name="disable if no xdemos" />
+          <item value="87" name="run xdemos" />
+          <item value="88" name="sp reset controller choices" />
+          <item value="89" name="sp set p1 controller choice" />
+          <item value="90" name="sp set p2 controller choice" />
+          <item value="91" name="error if no network connection" />
+          <item value="92" name="start server if none advertised" />
+          <item value="93" name="net game unjoin player" />
+          <item value="94" name="close if not editing profile" />
+          <item value="95" name="exit to xbox dashboard" />
+          <item value="96" name="new campaign chosen" />
+          <item value="97" name="new campaign decision" />
+          <item value="98" name="pop history stack once" />
+          <item value="99" name="difficulty menu init" />
+          <item value="100" name="begin music fade out" />
+          <item value="101" name="new game if no plyr profiles" />
+          <item value="102" name="exit gracefully to xbox dashboard" />
+          <item value="103" name="pause game invert pitch" />
+          <item value="104" name="start new coop game" />
+          <item value="105" name="pause game invert spinner get" />
+          <item value="106" name="pause game invert spinner set" />
+          <item value="107" name="main menu quit game" />
+          <item value="108" name="mouse" />
+          <item value="109" name="mouse" />
+          <item value="110" name="mouse" />
+          <item value="111" name="mouse" />
+          <item value="112" name="mouse spinner 3wide click" />
+          <item value="113" name="controls screen init" />
+          <item value="114" name="video screen init" />
+          <item value="115" name="controls begin binding" />
+          <item value="116" name="gamespy screen init" />
+          <item value="117" name="gamespy screen dispose" />
+          <item value="118" name="gamespy select header" />
+          <item value="119" name="gamespy select item" />
+          <item value="120" name="gamespy select button" />
+          <item value="121" name="plr prof init mouse set" />
+          <item value="122" name="plr prof change mouse set" />
+          <item value="123" name="plr prof init audio set" />
+          <item value="124" name="plr prof change audio set" />
+          <item value="125" name="plr prof change video set" />
+          <item value="126" name="controls screen dispose" />
+          <item value="127" name="controls screen change set" />
+          <item value="128" name="mouse" />
+          <item value="129" name="gamepad screen init" />
+          <item value="130" name="gamepad screen dispose" />
+          <item value="131" name="gamepad screen change gamepads" />
+          <item value="132" name="gamepad screen select item" />
+          <item value="133" name="mouse screen defaults" />
+          <item value="134" name="audio screen defaults" />
+          <item value="135" name="video screen defaults" />
+          <item value="136" name="controls screen defaults" />
+          <item value="137" name="profile set edit begin" />
+          <item value="138" name="profile manager delete" />
+          <item value="139" name="profile manager select" />
+          <item value="140" name="gamespy dismiss error" />
+          <item value="141" name="server settings init" />
+          <item value="142" name="ss edit server name" />
+          <item value="143" name="ss edit server password" />
+          <item value="144" name="ss start game" />
+          <item value="145" name="video test dialog init" />
+          <item value="146" name="video test dialog dispose" />
+          <item value="147" name="video test dialog accept" />
+          <item value="148" name="gamespy dismiss filters" />
+          <item value="149" name="gamespy update filter settings" />
+          <item value="150" name="gamespy back handler" />
+          <item value="151" name="mouse spinner 1wide click" />
+          <item value="152" name="controls back handler" />
+          <item value="153" name="controls advanced launch" />
+          <item value="154" name="controls advanced ok" />
+          <item value="155" name="mp pause menu open" />
+          <item value="156" name="mp game options open" />
+          <item value="157" name="mp choose team" />
+          <item value="158" name="mp prof init vehicle options" />
+          <item value="159" name="mp prof save vehicle options" />
+          <item value="160" name="single prev cl item activated" />
+          <item value="161" name="mp prof init teamplay options" />
+          <item value="162" name="mp prof save teamplay options" />
+          <item value="163" name="mp game options choose" />
+          <item value="164" name="emit custom activation event" />
+          <item value="165" name="plr prof cancel audio set" />
+          <item value="166" name="plr prof init network options" />
+          <item value="167" name="plr prof save network options" />
+          <item value="168" name="credits post render" />
+          <item value="169" name="difficulty item select" />
+          <item value="170" name="credits initialize" />
+          <item value="171" name="credits dispose" />
+          <item value="172" name="gamespy get patch" />
+          <item value="173" name="video screen dispose" />
+          <item value="174" name="campaign menu init" />
+          <item value="175" name="campaign menu continue" />
+          <item value="176" name="load game menu init" />
+          <item value="177" name="load game menu dispose" />
+          <item value="178" name="load game menu activated" />
+          <item value="179" name="solo menu save checkpoint" />
+          <item value="180" name="mp type set mode" />
+          <item value="181" name="checking for updates ok" />
+          <item value="182" name="checking for updates dismiss" />
+          <item value="183" name="direct ip connect init" />
+          <item value="184" name="direct ip connect go" />
+          <item value="185" name="direct ip edit field" />
+          <item value="186" name="network settings edit a port" />
+          <item value="187" name="network settings defaults" />
+          <item value="188" name="load game menu delete request" />
+          <item value="189" name="load game menu delete finish" />
+        </value>
+        <value type="TagReference" name="widget tag" extensions="DeLa" />
+        <value type="TagReference" name="sound effect" extensions="snd!" />
+        <value type="FixedLengthString" name="script" />
+      </struct>
+      <value type="Block" name="event handlers" struct="EventHandlerReferences" maxelements="32" />
+      <struct name="SearchAndReplaceReference">
+        <value type="FixedLengthString" name="search string" />
+        <value type="Enum" name="replace function">
+          <item value="0" name="NULL" />
+          <item value="1" name="widgets controller" />
+          <item value="2" name="build number" />
+          <item value="3" name="pid" />
+        </value>
+      </struct>
+      <value type="Block" name="search and replace functions" struct="SearchAndReplaceReference" maxelements="32" />
+      <value type="Pad" name="_unnamed" length="128" />
+      <value type="TagReference" name="text label unicode strings list" extensions="ustr" />
+      <value type="TagReference" name="text font" extensions="font" />
+      <value type="RealARGBColor" name="text color" />
+      <value type="Enum" name="justification">
+        <item value="0" name="left justify" />
+        <item value="1" name="right justify" />
+        <item value="2" name="center justify" />
+      </value>
+      <value type="Flags" name="flags2" length="4">
+        <bit index="0" name="editable" />
+        <bit index="1" name="password" />
+        <bit index="2" name="flashing" />
+        <bit index="3" name="dont do that weird focus test" />
+      </value>
+      <value type="Pad" name="_unnamed2" length="12" />
+      <value type="ShortInteger" name="string list index">
+        <tooltip>Default is 0.</tooltip>
+      </value>
+      <value type="ShortInteger" name="horiz offset">
+        <tooltip>Offsets text position in its bounding area.</tooltip>
+      </value>
+      <value type="ShortInteger" name="vert offset">
+        <tooltip>Offsets the text position in its bounding area.</tooltip>
+      </value>
+      <value type="Pad" name="_unnamed3" length="26" />
+      <value type="Pad" name="_unnamed4" length="2" />
+      <value type="Flags" name="flags3" length="4">
+        <bit index="0" name="list items generated in code" />
+        <bit index="1" name="list items from string list tag" />
+        <bit index="2" name="list items only one tooltip" />
+        <bit index="3" name="list single preview no scroll" />
+      </value>
+      <value type="TagReference" name="list header bitmap" extensions="bitm" />
+      <value type="TagReference" name="list footer bitmap" extensions="bitm" />
+      <value type="Rectangle2D" name="header bounds" />
+      <value type="Rectangle2D" name="footer bounds" />
+      <value type="Pad" name="_unnamed5" length="32" />
+      <value type="TagReference" name="extended description widget" extensions="DeLa" />
+      <value type="Pad" name="_unnamed6" length="32" />
+      <value type="Pad" name="_unnamed7" length="256" />
+      <struct name="ConditionalWidgetReference">
+        <value type="TagReference" name="widget tag" extensions="DeLa" />
+        <value type="FixedLengthString" name="name unused" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="load if event handler function fails" />
+        </value>
+        <value type="ShortInteger" name="custom controller index unused" />
+        <value type="Pad" name="_unnamed" length="26" />
+      </struct>
+      <value type="Block" name="conditional widgets" struct="ConditionalWidgetReference" maxelements="32" />
+      <value type="Pad" name="_unnamed8" length="128" />
+      <value type="Pad" name="_unnamed9" length="128" />
+      <struct name="ChildWidgetReference">
+        <value type="TagReference" name="widget tag" extensions="DeLa" />
+        <value type="FixedLengthString" name="name unused" />
+        <value type="Flags" name="flags" length="4">
+          <bit index="0" name="use custom controller index" />
+        </value>
+        <value type="ShortInteger" name="custom controller index" />
+        <value type="ShortInteger" name="vertical offset" />
+        <value type="ShortInteger" name="horizontal offset" />
+        <value type="Pad" name="_unnamed" length="22" />
+      </struct>
+      <value type="Block" name="child widgets" struct="ChildWidgetReference" maxelements="32" />
+    </struct>
+  </plugin>
+</xml>

@@ -1,0 +1,183 @@
+<xml>
+  <name type="bitm" parenttype="????">Bitmap</name>
+  <platform>Halo2</platform>
+  <plugin>
+    <struct name="BitmapBlock">
+      <value type="Enum" name="Type" length="2" disabled="false">
+        <item value="0" name="2D Textures" />
+        <item value="1" name="3D Textures" />
+        <item value="2" name="Cube Maps" />
+        <item value="3" name="Sprites" />
+        <item value="4" name="Interface Bitmaps" />
+      </value>
+      <value type="Enum" name="Format" length="2" disabled="false">
+        <item value="0" name="Compressed with Color-Key Transparency" />
+        <item value="1" name="Compressed with Explicit Alpha" />
+        <item value="2" name="Compressed with Interpolated Alpha" />
+        <item value="3" name="16-Bit Color" />
+        <item value="4" name="32-Bit Color" />
+        <item value="5" name="Monochrome" />
+      </value>
+      <value type="Enum" name="Usage" length="2" disabled="false">
+        <item value="0" name="Alpha Blend" />
+        <item value="1" name="Default" />
+        <item value="2" name="Height Map" />
+        <item value="3" name="Detail Map" />
+        <item value="4" name="Light Map" />
+        <item value="5" name="Vector Map" />
+        <item value="6" name="Height Map BLUE 255" />
+        <item value="7" name="embm" />
+        <item value="8" name="Height Map A8L8" />
+        <item value="9" name="Height Map G8B8" />
+        <item value="10" name="Height Map G8B8 w/ Alpha" />
+      </value>
+      <value type="Flags" name="Flags" length="2" disabled="false">
+        <bit index="0" name="Enable Diffusion Dithering" />
+        <bit index="1" name="Disable Height Map Compression" />
+        <bit index="2" name="Uniform Sprite Sequences" />
+        <bit index="3" name="Filthy Sprite Bug Fix" />
+        <bit index="4" name="Use Sharp Bump Filter" />
+        <bit index="5" name="UNUSED" />
+        <bit index="6" name="Use Clamped/Mirrored Bump Filter" />
+        <bit index="7" name="Invert Detail Fade" />
+        <bit index="8" name="Swap x-y Vector Components" />
+        <bit index="9" name="Convert from Signed" />
+        <bit index="10" name="Convert to Signed" />
+        <bit index="11" name="Import mipmap Chains" />
+        <bit index="12" name="Intentionally True Color" />
+      </value>
+      <value type="RealFraction" name="Detail Fade Factor" disabled="false" unit="[0,1]">
+        <tooltip>0 means fade to gray by last mipmap; 1 means fade to gray by first mipmap.</tooltip>
+      </value>
+      <value type="RealFraction" name="Sharpen Amount" disabled="false" unit="[0,1]">
+        <tooltip>Sharpens mipmap after downsampling.</tooltip>
+      </value>
+      <value type="Real" name="Bump Height" disabled="false" unit="repeats">
+        <tooltip>tApparent height of the bump map above the triangle onto which it is textured, in texture repeats (i.e., 1.0 would be as high as the texture is wide).</tooltip>
+      </value>
+      <value type="Enum" name="_unnamed0" length="2">
+        <item value="0" name="32 x 32" />
+        <item value="1" name="64 x 64" />
+        <item value="2" name="128 x 128" />
+        <item value="3" name="256 x 256" />
+        <item value="4" name="512 x 512" />
+        <item value="5" name="1024 x 1024" />
+      </value>
+      <value type="ShortInteger" name="_unnamed1" />
+      <value type="ShortInteger" name="Color Plate Width" disabled="true" unit="pixels" />
+      <value type="ShortInteger" name="Color Plate Height" disabled="true" unit="pixels" />
+      <value type="Skip" name="_unnamed2" length="8" />
+      <value type="Data" name="Processed Pixel Data" disabled="true" />
+      <value type="Real" name="Blur Filter Size" disabled="false" unit="[0,10] pixels">
+        <tooltip>Blurs the bitmap before generating mipmaps.</tooltip>
+      </value>
+      <value type="Real" name="Alpha Bias" disabled="false" unit="[-1,1]">
+        <tooltip>Affects alpha mipmap generation.</tooltip>
+      </value>
+      <value type="ShortInteger" name="Mipmap Count" disabled="false" unit="levels">
+        <tooltip>0 Defaults to all levels.</tooltip>
+      </value>
+      <value type="Enum" name="Sprite Usage" length="2" disabled="false">
+        <item value="0" name="Blend/Add/Subtract/Max" />
+        <item value="1" name="Multiply/Min" />
+        <item value="2" name="Double Multiply" />
+      </value>
+      <value type="ShortInteger" name="Sprite Spacing" disabled="true" />
+      <value type="Enum" name="Force Format" length="2" disabled="false">
+        <item value="0" name="Default" />
+        <item value="1" name="Force G8B8" />
+        <item value="2" name="Force DXT1" />
+        <item value="3" name="Force DXT3" />
+        <item value="4" name="Force DXT5" />
+        <item value="5" name="Force ALPHA-LUMINANCE8" />
+        <item value="6" name="Force A4R4G4B4" />
+      </value>
+      <struct name="BitmapGroupSequenceBlock">
+        <value type="FixedLengthString" name="Name" disabled="false" blockname="true" />
+        <value type="ShortInteger" name="First Bitmap Index" disabled="true" />
+        <value type="ShortInteger" name="Bitmap Count" disabled="true" />
+        <value type="Pad" name="_unnamed0" length="16" />
+        <struct name="BitmapGroupSpriteBlock">
+          <value type="ShortInteger" name="Bitmap Index" disabled="true" />
+          <value type="Pad" name="_unnamed0" length="2" />
+          <value type="Pad" name="_unnamed1" length="4" />
+          <value type="Real" name="Left" disabled="true" />
+          <value type="Real" name="Right" disabled="true" />
+          <value type="Real" name="Top" disabled="true" />
+          <value type="Real" name="Bottom" disabled="true" />
+          <value type="RealPoint2d" name="Registration Point" disabled="true" />
+        </struct>
+        <value type="Block" name="Sprites" disabled="true" struct="BitmapGroupSpriteBlock" maxelements="64" />
+      </struct>
+      <value type="Block" name="Sequences" disabled="true" struct="BitmapGroupSequenceBlock" maxelements="256" />
+      <struct name="BitmapDataBlock">
+        <value type="Tag" name="Signature" disabled="true" />
+        <value type="ShortInteger" name="Width" disabled="true" unit="pixels" />
+        <value type="ShortInteger" name="Height" disabled="true" unit="pixels" />
+        <value type="CharInteger" name="Depth" disabled="true" unit="pixels">
+          <tooltip>Depth is 1 for 2D textures and cube maps.</tooltip>
+        </value>
+        <value type="Flags" name="More Flags" length="1" disabled="false">
+          <bit index="0" name="Delete from Cache File" />
+          <bit index="1" name="bitmap create attempted" />
+          <bit index="2" name="" />
+        </value>
+        <value type="Enum" name="Type" length="2" disabled="true">
+          <item value="0" name="2D Texture" />
+          <item value="1" name="3D Texture" />
+          <item value="2" name="Cube Map" />
+          <tooltip>Determines bitmap "geometry."</tooltip>
+        </value>
+        <value type="Enum" name="Format" length="2" disabled="true">
+          <item value="0" name="a8" />
+          <item value="1" name="y8" />
+          <item value="2" name="ay8" />
+          <item value="3" name="a8y8" />
+          <item value="4" name="unused1" />
+          <item value="5" name="unused2" />
+          <item value="6" name="r5g6b5" />
+          <item value="7" name="unused3" />
+          <item value="8" name="a1r5g5b5" />
+          <item value="9" name="a4r4g4b4" />
+          <item value="10" name="x8r8g8b8" />
+          <item value="11" name="a8r8g8b8" />
+          <item value="12" name="unused4" />
+          <item value="13" name="unused5" />
+          <item value="14" name="dxt1" />
+          <item value="15" name="dxt3" />
+          <item value="16" name="dxt5" />
+          <item value="17" name="p8-bump" />
+          <item value="18" name="p8" />
+          <item value="19" name="argbfp32" />
+          <item value="20" name="rgbfp32" />
+          <item value="21" name="rgbfp16" />
+          <item value="22" name="v8u8" />
+          <item value="23" name="g8b8" />
+          <tooltip>Determines how pixels are represented internally.</tooltip>
+        </value>
+        <value type="Flags" name="Flags" length="2" disabled="true">
+          <bit index="0" name="Power of Two Dimensions" />
+          <bit index="1" name="Compressed" />
+          <bit index="2" name="Palettized" />
+          <bit index="3" name="Swizzled" />
+          <bit index="4" name="Linear" />
+          <bit index="5" name="v16u16" />
+          <bit index="6" name="MIP Map Debug Level" />
+          <bit index="7" name="Prefer Stutter (Prefer Low Detail)" />
+        </value>
+        <value type="Point2d" name="Registration Point" disabled="true" />
+        <value type="ShortInteger" name="mipmap Count" disabled="true" />
+        <value type="ShortInteger" name="Low-Detail mipmap Count" disabled="true" />
+        <value type="LongInteger" name="Pixels Offset" disabled="true" />
+        <value type="BitmapData" name="Bitmap Data" disabled="false" />
+        <value type="Skip" name="Bitmap Self Reference" length="4" disabled="false" />
+        <value type="Skip" name="_unnamed0" length="4" />
+        <value type="Skip" name="_unnamed1" length="4" />
+        <value type="Skip" name="_unnamed2" length="4" />
+        <value type="Skip" name="_unnamed3" length="20" />
+        <value type="Skip" name="_unnamed4" length="4" />
+      </struct>
+      <value type="Block" name="Bitmaps" disabled="true" struct="BitmapDataBlock" maxelements="65536" />
+    </struct>
+  </plugin>
+</xml>

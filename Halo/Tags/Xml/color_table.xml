@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xml>
+  <name type="colo" parenttype="????">ColorTable</name>
+  <platform>Halo1</platform>
+  <plugin>
+    <struct name="ColorTable">
+      <struct name="Color">
+        <value type="FixedLengthString" name="name" blockname="true" />
+        <value type="RealARGBColor" name="color" />
+      </struct>
+      <value type="Block" name="colors" struct="Color" maxelements="512" />
+    </struct>
+  </plugin>
+</xml>
